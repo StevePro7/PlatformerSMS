@@ -1,3 +1,9 @@
+*.sms
+*dev/.vs/*
+*dev/*db
+*bin
+*obj
+
 # Prerequisites
 *.d
 
