@@ -4,12 +4,12 @@ void main(void)
 {
 	SMS_init();
 	SMS_displayOff();
-
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
 	SMS_useFirstHalfTilesforSprites( true );
 	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 
 	engine_asm_manager_clear_VRAM();
+	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
 	//engine_font_manager_draw_text("STEVEPRO", 1, 1);
@@ -32,7 +32,11 @@ void main(void)
 	SMS_displayOn();
 	for (;;)
 	{
+		SMS_initSprites();
+		engine_sprite_manager_draw_player( 16, 144 );
+		SMS_finalizeSprites();
 		SMS_waitForVBlank();
+		SMS_copySpritestoSAT();
 	}
 }
 
