@@ -22,6 +22,7 @@
 #include "engine\enum_manager.h"
 #include "engine\content_manager.h"
 #include "engine\font_manager.h"
+#include "engine\sprite_manager.h"
 #include "engine\tile_manager.h"
 #include "engine\level_manager.h"
 #include "engine\asm_manager.h"

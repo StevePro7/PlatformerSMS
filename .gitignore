@@ -3,6 +3,7 @@
 *dev/*db
 *bin
 *obj
+*.vcxproj.user
 
 # Prerequisites
 *.d

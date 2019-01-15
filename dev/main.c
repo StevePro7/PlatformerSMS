@@ -27,7 +27,7 @@ void main(void)
 
 	//engine_content_manager_load();
 
-	load_room(level0401_txt);
+	load_room( level0401_txt );
 
 	SMS_displayOn();
 	for (;;)

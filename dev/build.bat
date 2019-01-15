@@ -38,6 +38,8 @@ gfx.rel
 REM echo Binary output
 ihx2sms output.ihx output.sms
 
+REM copy output.sms
+copy output.sms ..\
 REM copy output.sms ..\asm
 REM cd ..\asm
 REM smsexamine.exe output.sms

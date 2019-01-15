@@ -161,6 +161,7 @@
     <ClInclude Include="engine\global_manager.h" />
     <ClInclude Include="engine\level_manager.h" />
     <ClInclude Include="engine\locale_manager.h" />
+    <ClInclude Include="engine\sprite_manager.h" />
     <ClInclude Include="engine\tile_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
