@@ -12,8 +12,8 @@ void load_room( const unsigned char *map )
 	unsigned char i, j, x, y, ch;
 
 	//engine_font_manager_draw_data(3, 10, 1);
-	SMS_mapROMBank( 2 );		// bank2
-	//SMS_mapROMBank( 4 );		// bank4
+	//SMS_mapROMBank( 2 );		// bank2
+	SMS_mapROMBank( 4 );		// bank4
 
 	for( j = 0; j < ROWS; j++ )
 	{
