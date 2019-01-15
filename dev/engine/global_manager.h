@@ -1,6 +1,9 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
+#define TILE_X_OFFSET			1
+#define GAME_X_OFFSET			TILE_X_OFFSET * 8
+
 #define SPRITE_TILES_OFFSET		128
 
 const unsigned char list_entity_type[] =
