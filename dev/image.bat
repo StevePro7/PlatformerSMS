@@ -10,7 +10,7 @@ REM bmp2tile.exe Tiles\font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -
 bmp2tile.exe Tiles\back_tiles.bmp -savetiles "back_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -savetilemap "back_tiles (tilemap).bin" -savepalette "back_tiles (palette).bin" -fullpalette -exit
 
 REM Sprites
-bmp2tile.exe Sprites\Player_Idle.bmp -savetiles "Player_Idle (tiles).psgcompr" -noremovedupes -planar -tileoffset 96 -savepalette "Sprites (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe Sprites\Player_Idle.bmp -savetiles "Player_Idle (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -savepalette "Sprites (palette).bin" -fullpalette  -spritepalette -exit
 bmp2tile.exe Sprites\EnemyA_Idle_01.bmp -savetiles "EnemyA_Idle_01 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
 bmp2tile.exe Sprites\EnemyB_Idle_01.bmp -savetiles "EnemyB_Idle_01 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
 bmp2tile.exe Sprites\EnemyC_Idle_01.bmp -savetiles "EnemyC_Idle_01 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit

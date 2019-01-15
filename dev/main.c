@@ -27,14 +27,19 @@ void main(void)
 
 	//engine_content_manager_load();
 
-	load_room( level0401_txt );
+	load_room( level0201_txt );
 
 	SMS_displayOn();
 	for (;;)
 	{
 		SMS_initSprites();
-		//engine_sprite_manager_draw_player( 16, 144 );
-		engine_sprite_manager_draw_enemyA( 16, 144 );
+		
+		engine_sprite_manager_draw_player( 16 * 1 + 8, 144 );
+		engine_sprite_manager_draw_enemyA( 16 * 4 + 8, 144 );
+		engine_sprite_manager_draw_enemyB( 16 * 7 + 8, 144 );
+		engine_sprite_manager_draw_enemyC( 16 * 10 + 8, 144 );
+		engine_sprite_manager_draw_enemyD( 16 * 7 + 8, 48 );
+
 		SMS_finalizeSprites();
 		SMS_waitForVBlank();
 		SMS_copySpritestoSAT();

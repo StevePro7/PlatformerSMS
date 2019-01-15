@@ -18,4 +18,14 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
+typedef enum tag_enum_entity_type
+{
+	player = 0,
+	enemyA = 1,
+	enemyB = 2,
+	enemyC = 3,
+	enemyD = 4,
+
+} enum_entity_type;
+
 #endif//_ENUM_MANAGER_H_

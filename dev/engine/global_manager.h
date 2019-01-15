@@ -3,4 +3,13 @@
 
 #define SPRITE_TILES_OFFSET		128
 
+const unsigned char list_entity_type[] =
+{
+	SPRITE_TILES_OFFSET + 0,
+	SPRITE_TILES_OFFSET + 8,
+	SPRITE_TILES_OFFSET + 16,
+	SPRITE_TILES_OFFSET + 24,
+	SPRITE_TILES_OFFSET + 32,
+};
+
 #endif//_GLOBAL_MANAGER_H_

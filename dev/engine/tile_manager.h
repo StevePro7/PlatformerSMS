@@ -6,7 +6,7 @@
 void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = back_tiles__tilemap__bin;
-	index = BASE_TILE_OFFSET + (index / 8 ) * 16 + index * 2;
+	index = BASE_TILE_OFFSET + ( index / 8 ) * 16 + index * 2;
 
 	SMS_setNextTileatXY( x + 0, y + 0 );	SMS_setTile( *pnt + index + 0 );
 	SMS_setNextTileatXY( x + 1, y + 0 );	SMS_setTile( *pnt + index + 1 );
