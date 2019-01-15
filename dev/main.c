@@ -33,7 +33,8 @@ void main(void)
 	for (;;)
 	{
 		SMS_initSprites();
-		engine_sprite_manager_draw_player( 16, 144 );
+		//engine_sprite_manager_draw_player( 16, 144 );
+		engine_sprite_manager_draw_enemyA( 16, 144 );
 		SMS_finalizeSprites();
 		SMS_waitForVBlank();
 		SMS_copySpritestoSAT();
