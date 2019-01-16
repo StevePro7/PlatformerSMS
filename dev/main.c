@@ -2,6 +2,9 @@
 
 void main(void)
 {
+	bool test = false;
+	int i = 0;
+
 	SMS_init();
 	SMS_displayOff();
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
@@ -29,18 +32,27 @@ void main(void)
 
 	//load_room( level0201_txt );
 	//load_room( level0301_txt );
-	load_room( level0402_txt );
+	load_room( level0200_txt, 2 );
+	engine_font_manager_draw_data( i, 20, 0 );
 
 	SMS_displayOn();
 	for (;;)
 	{
 		SMS_initSprites();
 		
+		engine_input_manager_update();
+		//test = engine_input_manager_hold_up();
+		test = engine_input_manager_move_down();
+		if( test )
+		{
+			i++;
+			engine_font_manager_draw_data( i, 20, 0 );
+		}
 		engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
-		engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
+		/*engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
 		engine_sprite_manager_draw_enemyC( 16 * 10 + GAME_X_OFFSET, 144 );
-		engine_sprite_manager_draw_enemyD( 16 * 7 + GAME_X_OFFSET, 48 );
+		engine_sprite_manager_draw_enemyD( 16 * 7 + GAME_X_OFFSET, 48 );*/
 
 		SMS_finalizeSprites();
 		SMS_waitForVBlank();

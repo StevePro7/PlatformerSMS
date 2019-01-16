@@ -9,3 +9,9 @@ i.e.
 
 This will ensure CRLF for the level and COLS + 2 continues to work
 Otherwise the first byte of the next level will be used..! 
+
+
+bool true	1
+bool false	0
+
+but return type unsigned char otherwise warnings / errors

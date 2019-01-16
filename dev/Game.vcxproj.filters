@@ -83,6 +83,9 @@
     <ClInclude Include="engine\sprite_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
+    <ClInclude Include="engine\input_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
