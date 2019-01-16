@@ -27,3 +27,7 @@
 #include "engine\level_manager.h"
 #include "engine\input_manager.h"
 #include "engine\asm_manager.h"
+
+#include "screen\none_screen.h"
+#include "screen\test_screen.h"
+#include "screen\splash_screen.h"

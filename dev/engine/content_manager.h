@@ -13,11 +13,11 @@ void engine_content_manager_load_back_tiles()
 void engine_content_manager_load_sprites()
 {
 	// Sprites.
-	SMS_loadPSGaidencompressedTiles( Player_Idle__tiles__psgcompr, list_entity_type[ player ] );
-	SMS_loadPSGaidencompressedTiles( EnemyA_Idle_01__tiles__psgcompr, list_entity_type[ enemyA ] );
-	SMS_loadPSGaidencompressedTiles( EnemyB_Idle_01__tiles__psgcompr, list_entity_type[ enemyB ] );
-	SMS_loadPSGaidencompressedTiles( EnemyC_Idle_01__tiles__psgcompr, list_entity_type[ enemyC ] );
-	SMS_loadPSGaidencompressedTiles( EnemyD_Idle_01__tiles__psgcompr, list_entity_type[ enemyD ] );
+	SMS_loadPSGaidencompressedTiles( Player_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_player ] );
+	SMS_loadPSGaidencompressedTiles( EnemyA_Idle_01__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyA ] );
+	SMS_loadPSGaidencompressedTiles( EnemyB_Idle_01__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyB ] );
+	SMS_loadPSGaidencompressedTiles( EnemyC_Idle_01__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyC ] );
+	SMS_loadPSGaidencompressedTiles( EnemyD_Idle_01__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyD ] );
 	SMS_loadSpritePalette( ( void * ) Sprites__palette__bin );
 }
 

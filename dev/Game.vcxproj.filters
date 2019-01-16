@@ -22,6 +22,9 @@
     <Filter Include="Source Files\banks">
       <UniqueIdentifier>{3118bec3-4f18-45fb-91c4-a66b59092a7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\screen">
+      <UniqueIdentifier>{74a20b80-c679-4938-af84-530851f1c5be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -85,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="engine\input_manager.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\test_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\none_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\splash_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

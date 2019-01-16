@@ -2,34 +2,34 @@
 #define _SPRITE_MANAGER_H_
 
 // Private helper method.
-static void engine_sprite_manager_draw( unsigned char x, unsigned char y, enum_entity_type entity );
+static void engine_sprite_manager_draw( unsigned char x, unsigned char y, enum_sprite_type sprite_type );
 
 
 void engine_sprite_manager_draw_player( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, player );
+	engine_sprite_manager_draw( x, y, sprite_type_player );
 }
 
 void engine_sprite_manager_draw_enemyA( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, enemyA );
+	engine_sprite_manager_draw( x, y, sprite_type_enemyA );
 }
 void engine_sprite_manager_draw_enemyB( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, enemyB );
+	engine_sprite_manager_draw( x, y, sprite_type_enemyB );
 }
 void engine_sprite_manager_draw_enemyC( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, enemyC );
+	engine_sprite_manager_draw( x, y, sprite_type_enemyC );
 }
 void engine_sprite_manager_draw_enemyD( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, enemyD );
+	engine_sprite_manager_draw( x, y, sprite_type_enemyD );
 }
 
-static void engine_sprite_manager_draw( unsigned char x, unsigned char y, enum_entity_type entity )
+static void engine_sprite_manager_draw( unsigned char x, unsigned char y, enum_sprite_type sprite_type )
 {
-	const unsigned char tile = list_entity_type[ entity ];
+	const unsigned char tile = list_sprite_tile_offset[ sprite_type ];
 
 	SMS_addSprite( x + 0, y + 0, tile + 0 );
 	SMS_addSprite( x + 8, y + 0, tile + 1 );

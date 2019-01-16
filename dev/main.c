@@ -1,5 +1,12 @@
 #include "main.h"
 
+enum_screen_type curr_screen_type, next_screen_type;
+
+void( *load_method[ MAX_STATES ] )( );
+void( *update_method[ MAX_STATES ] )( enum_screen_type *screen_type );
+
+void custom_initialize();
+
 void main(void)
 {
 	bool test = false;
@@ -18,46 +25,61 @@ void main(void)
 	//engine_font_manager_draw_text("STEVEPRO", 1, 1);
 	//engine_font_manager_draw_char('D', 1, 0);
 
-	//engine_tile_manager_draw_tile(0, 4, 2);
-	/*engine_tile_manager_draw_tile(blockerD, 4, 2);
-	engine_tile_manager_draw_tile(blockerE, 6, 2);
-	engine_tile_manager_draw_tile(passable, 8, 2);
-	engine_tile_manager_draw_tile(passable, 10, 2);
-	engine_tile_manager_draw_tile(exitgame, 12, 2);
-	engine_tile_manager_draw_tile(blockerG, 14, 2);
-	engine_tile_manager_draw_tile(blockerG, 16, 2);
-	engine_tile_manager_draw_tile(gemscore, 16, 0);*/
-
-	//engine_content_manager_load();
-
 	//load_room( level0201_txt );
 	//load_room( level0301_txt );
 	load_room( level0200_txt, 2 );
 	engine_font_manager_draw_data( i, 20, 0 );
 
+	custom_initialize();
+	curr_screen_type = screen_type_none;
+	next_screen_type = screen_type_test;
+
 	SMS_displayOn();
 	for (;;)
 	{
+		if( curr_screen_type != next_screen_type )
+		{
+			curr_screen_type = next_screen_type;
+			load_method[ curr_screen_type ]();
+		}
+
+
 		SMS_initSprites();
 		
 		engine_input_manager_update();
 		//test = engine_input_manager_hold_up();
-		test = engine_input_manager_move_down();
-		if( test )
-		{
-			i++;
-			engine_font_manager_draw_data( i, 20, 0 );
-		}
-		engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
-		/*engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
-		engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
+		////test = engine_input_manager_move_down();
+		//if( test )
+		//{
+		//	i++;
+		//	engine_font_manager_draw_data( i, 20, 0 );
+		//}
+		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
+		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
+		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
 		engine_sprite_manager_draw_enemyC( 16 * 10 + GAME_X_OFFSET, 144 );
 		engine_sprite_manager_draw_enemyD( 16 * 7 + GAME_X_OFFSET, 48 );*/
+
+		//screen_none_screen_update();
+		update_method[ curr_screen_type ]( &next_screen_type );
 
 		SMS_finalizeSprites();
 		SMS_waitForVBlank();
 		SMS_copySpritestoSAT();
 	}
+}
+
+void custom_initialize()
+{
+	// Set load methods.
+	load_method[ screen_type_none ] = screen_none_screen_load;
+	load_method[ screen_type_test ] = screen_test_screen_load;
+	load_method[ screen_type_splash ] = screen_splash_screen_load;
+
+	// Set update methods.
+	update_method[ screen_type_none ] = screen_none_screen_update;
+	update_method[ screen_type_test ] = screen_test_screen_update;
+	update_method[ screen_type_splash ] = screen_splash_screen_update;
 }
 
 #ifdef _CONSOLE

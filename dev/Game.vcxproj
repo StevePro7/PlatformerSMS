@@ -166,6 +166,9 @@
     <ClInclude Include="engine\tile_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="screen\none_screen.h" />
+    <ClInclude Include="screen\splash_screen.h" />
+    <ClInclude Include="screen\test_screen.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat" />
