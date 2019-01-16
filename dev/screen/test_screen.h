@@ -11,7 +11,7 @@ void screen_test_screen_update( enum_screen_type *screen_type )
 	bool test = engine_input_manager_hold_right();
 	if( test )
 	{
-		*screen_type = screen_type_splash;
+		*screen_type = screen_type_load;
 		return;
 	}
 

@@ -30,4 +30,5 @@
 
 #include "screen\none_screen.h"
 #include "screen\test_screen.h"
+#include "screen\load_screen.h"
 #include "screen\splash_screen.h"

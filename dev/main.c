@@ -74,11 +74,13 @@ void custom_initialize()
 	// Set load methods.
 	load_method[ screen_type_none ] = screen_none_screen_load;
 	load_method[ screen_type_test ] = screen_test_screen_load;
+	load_method[ screen_type_load ] = screen_load_screen_load;
 	load_method[ screen_type_splash ] = screen_splash_screen_load;
 
 	// Set update methods.
 	update_method[ screen_type_none ] = screen_none_screen_update;
 	update_method[ screen_type_test ] = screen_test_screen_update;
+	update_method[ screen_type_load ] = screen_load_screen_update;
 	update_method[ screen_type_splash ] = screen_splash_screen_update;
 }
 

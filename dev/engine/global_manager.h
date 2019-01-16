@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_STATES				3
+#define MAX_STATES				4
 #define TILE_X_OFFSET			1
 #define GAME_X_OFFSET			TILE_X_OFFSET * 8
 
