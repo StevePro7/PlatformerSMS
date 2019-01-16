@@ -1,24 +1,5 @@
 @echo off
 
-REM folder2c ..\gfx gfx
-
-REM echo Build gfx
-REM sdcc -c -mz80 gfx.c
-sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
-
-
-REM echo Build banks.c and banks.h from banks folder
-cd banks
-
-REM echo Build banks
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK4 bank4.c
-cd ..
-
-
-REM echo Build main
-REM sdcc -c -mz80 main.c
 sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -48,10 +29,10 @@ REM cd ..\dev
 
 REM echo Delete
 cd banks
-del *.asm > nul
-del *.lst > nul
-del *.rel > nul
-del *.sym > nul
+rem del *.asm > nul
+rem del *.lst > nul
+REM del *.rel > nul
+rem del *.sym > nul
 cd ..
 
 del *.asm > nul
@@ -60,7 +41,7 @@ del *.lk > nul
 del *.lst > nul
 del *.map > nul
 del *.noi > nul
-del *.rel > nul
+REM del *.rel > nul
 del *.sym > nul
 
 C:\SEGA\Fusion\fusion.exe output.sms

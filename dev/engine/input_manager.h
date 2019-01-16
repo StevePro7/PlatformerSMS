@@ -71,7 +71,6 @@ unsigned char engine_input_manager_move_fire2()
 // Private helper methods.
 static unsigned char engine_input_manager_hold( unsigned int data )
 {
-	//bool input = false;
 	if( curr_joypad1 & data && !( prev_joypad1 & data ) )
 	{
 		return true;
@@ -81,7 +80,6 @@ static unsigned char engine_input_manager_hold( unsigned int data )
 }
 static unsigned char engine_input_manager_move( unsigned int data )
 {
-	//bool input = false;
 	if( curr_joypad1 & data )
 	{
 		return true;
