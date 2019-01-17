@@ -71,21 +71,23 @@ unsigned char engine_input_manager_move_fire2()
 // Private helper methods.
 static unsigned char engine_input_manager_hold( unsigned int data )
 {
-	if( curr_joypad1 & data && !( prev_joypad1 & data ) )
+	return curr_joypad1 & data && !( prev_joypad1 & data );
+	/*if( curr_joypad1 & data && !( prev_joypad1 & data ) )
 	{
 		return true;
 	}
 
-	return false;
+	return false;*/
 }
 static unsigned char engine_input_manager_move( unsigned int data )
 {
-	if( curr_joypad1 & data )
+	return curr_joypad1 & data;
+	/*if( curr_joypad1 & data )
 	{
 		return true;
 	}
 
-	return false;
+	return false;*/
 }
 
 #endif//_INPUT_MANAGER_H_

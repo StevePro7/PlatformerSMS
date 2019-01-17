@@ -45,15 +45,14 @@ void main(void)
 
 
 		SMS_initSprites();
-		
 		engine_input_manager_update();
 		//test = engine_input_manager_hold_up();
-		////test = engine_input_manager_move_down();
-		//if( test )
-		//{
-		//	i++;
-		//	engine_font_manager_draw_data( i, 20, 0 );
-		//}
+		test = engine_input_manager_move_up();
+		if( test )
+		{
+			i++;
+			engine_font_manager_draw_data( i, 20, 0 );
+		}
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );

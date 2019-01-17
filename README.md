@@ -15,3 +15,6 @@ bool true	1
 bool false	0
 
 but return type unsigned char otherwise warnings / errors
+
+
+https://github.com/darconeous/sdcc/blob/master/device/include/math.h

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 #ifdef _CONSOLE
 #include "..\tmp\SMSlib.h"
 #include "..\tmp\PSGlib.h"
