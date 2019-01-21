@@ -3,45 +3,37 @@
 
 extern unsigned char level_map[ ROWS * COLS ];
 extern unsigned char tiles_map[ ROWS * COLS ];
-extern unsigned char crash_map[ ROWS * COLS ];
 extern unsigned char level_mat[ ROWS ][ COLS ];
-extern unsigned char tiles_mat[ ROWS ][ COLS ];
-extern unsigned char crash_mat[ ROWS ][ COLS ];
+//extern unsigned char tiles_mat[ ROWS ][ COLS ];
 
 void engine_level_manager_load_level( const unsigned char *level )
 {
 	const unsigned char *o = level;
-	unsigned char x, y, tile;
+	unsigned char x, y, ch;
 	unsigned int index;
-	enum_tile_type tile_type;
-	enum_crash_type crash_type;
 
 	for( y = 0; y < ROWS; y++ )
 	{
 		for( x = 0; x < COLS + 2; x++ )
 		{
-			tile = *o;
-			if( !(tile == CR || tile == LF ) )
+			ch = *o;
+			if( !(ch == CR || ch == LF ) )
 			{
 				index = y * COLS + x;
-				level_map[ index ] = tile;
-				level_mat[ y ][ x ] = tile;
-
-				engine_tile_manager_get_crash( &crash_type, tile );
-				crash_map[ index ] = crash_type;
-				crash_mat[ y ][ x ] = crash_type;
+				level_map[ index ] = ch;
+				level_mat[ y ][ x ] = ch;
 			}
 
 			o++;
 		}
 	}
 
-	tile = 'c';
+	ch = 'c';
 }
 
 void engine_level_manager_draw_level()
 {
-	unsigned char x, y, tile;
+	unsigned char x, y, ch;
 	unsigned int index;
 
 	for( y = 0; y < ROWS; y++ )
@@ -49,11 +41,48 @@ void engine_level_manager_draw_level()
 		for( x = 0; x < COLS; x++ )
 		{
 			index = y * COLS + x;
-			tile = level_map[ index ];
+			ch = level_map[ index ];
 
-			engine_font_manager_draw_char( tile, x, y );
+			engine_font_manager_draw_char( ch, x, y );
 		}
 	}
+}
+
+void engine_level_manager_load_levelXX( const unsigned char *level )
+{
+	const unsigned char *o = level;
+	unsigned char i, j, x, y, ch;
+	unsigned int index;
+
+	i = COLS;
+	j = ROWS;
+	//for( y = 0; y < ROWS; y++ )
+	for( y = 0; y < j; y++ )
+	{
+		//for( x = 0; x < COLS + 2; x++ )
+		for( x = 0; x < i + 2; x++ )
+		{
+			ch = *o;
+			/*if( ch == '\n' || ch == '\r' )
+			{
+			}
+			else
+			{
+			index = y * i + x;
+			level_map[ index ] = ch;
+			}*/
+
+			if( !( ch == CR || ch == LF ) )
+			{
+				index = y * i + x;
+				level_map[ index ] = ch;
+			}
+
+			o++;
+		}
+	}
+
+	ch = 'c';
 }
 
 void engine_level_manager_load_levelX( const unsigned char *level )
@@ -64,6 +93,8 @@ void engine_level_manager_load_levelX( const unsigned char *level )
 
 	size_t size = sizeof level;
 
+	//const unsigned char *level = level0201_txt;
+	//while( level[ index++ ] != '0x0d' )
 	while ( true )
 	{
 		const unsigned char tile = level[ index ];
@@ -78,7 +109,9 @@ void engine_level_manager_load_levelX( const unsigned char *level )
 	level_wide = index;
 
 
-	level_high = 1;
+	level_high = 1;// sizeof( *level );// / sizeof( unsigned char );
+	//engine_font_manager_draw_text( "SUZANNE", 1, 5 );
+
 }
 
 void load_room( const unsigned char *map, unsigned char bank )
@@ -86,7 +119,7 @@ void load_room( const unsigned char *map, unsigned char bank )
 	//const unsigned char *map = level_txt;
 
 	const unsigned char *o = map;// , *line;
-	unsigned char i, j, x, y, tile;
+	unsigned char i, j, x, y, ch;
 
 	//engine_font_manager_draw_data(3, 10, 1);
 	//SMS_mapROMBank( 2 );		// bank2
@@ -96,16 +129,16 @@ void load_room( const unsigned char *map, unsigned char bank )
 	{
 		for( i = 0; i < COLS + 2; i++ )
 		{
-			tile = *o;
-			if( tile == '\n' || tile == '\r' )
+			ch = *o;
+			if( ch == '\n' || ch == '\r' )
 			{
 			}
 			else
 			{
 				x = i * 2 + TILE_X_OFFSET;
 				y = j * 2;
-				//engine_font_manager_draw_char(tile, i * 2, j * 2);
-				if( tile == '#' )
+				//engine_font_manager_draw_char(ch, i * 2, j * 2);
+				if( ch == '#' )
 				{
 					//No passable
 					//unsigned char rnd = rand() % 9;
@@ -113,11 +146,11 @@ void load_room( const unsigned char *map, unsigned char bank )
 					unsigned char rnd = rand() % 10;
 					engine_tile_manager_draw_tile( rnd, x, y );
 				}
-				if( tile == 'G' )
+				if( ch == 'G' )
 				{
 					engine_tile_manager_draw_tile( tile_type_gemscore, x, y );
 				}
-				if( tile == 'X' )
+				if( ch == 'X' )
 				{
 					engine_tile_manager_draw_tile( tile_type_exitgame, x, y );
 				}
@@ -126,6 +159,8 @@ void load_room( const unsigned char *map, unsigned char bank )
 			o++;
 		}
 	}
+
+	//engine_font_manager_draw_data(5, 10, 0);
 }
 
 #endif//_LEVEL_MANAGER_H_
