@@ -7,6 +7,12 @@
 
 #define SPRITE_TILES_OFFSET		128
 
+#define COLS	15
+#define ROWS	12
+
+#define CR	'\r'				// 0x0d
+#define LF	'\n'				// 0x0a
+
 const unsigned char list_sprite_tile_offset[] =
 {
 	SPRITE_TILES_OFFSET + 0,

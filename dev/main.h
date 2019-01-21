@@ -33,3 +33,7 @@
 #include "screen\test_screen.h"
 #include "screen\load_screen.h"
 #include "screen\splash_screen.h"
+
+
+// LEVEL_MANAGER
+unsigned char level_map[ ROWS * COLS ];

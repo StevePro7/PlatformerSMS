@@ -8,7 +8,7 @@ void screen_test_screen_load()
 	int test;
 	//float data = powf( 2, 3 );
 	//float data = ceilf( 2.3 );
-	float data = floorf( 2.3 );
+	float data = (float)floorf( 2.3 );
 
 	test = data * 1000;
 	//float test = powf( 2, 3 ) * 1000;

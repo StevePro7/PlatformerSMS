@@ -3,7 +3,9 @@
 
 void screen_load_screen_load()
 {
-	engine_font_manager_draw_text( "ADRIANA", 1, 5 );
+	engine_level_manager_load_level( level0201_txt );
+
+	engine_level_manager_draw_level();
 }
 
 void screen_load_screen_update( enum_screen_type *screen_type )

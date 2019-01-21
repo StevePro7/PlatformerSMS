@@ -9,14 +9,14 @@ void custom_initialize();
 
 void main(void)
 {
-	bool test = false;
-	int i = 0;
+	/*bool test = false;
+	int i = 0;*/
 
 	SMS_init();
 	SMS_displayOff();
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
 	SMS_useFirstHalfTilesforSprites( true );
-	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
+	//SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_sprites();
@@ -27,12 +27,12 @@ void main(void)
 
 	//load_room( level0201_txt );
 	//load_room( level0301_txt );
-	load_room( level0200_txt, 2 );
-	engine_font_manager_draw_data( i, 20, 0 );
+	//load_room( level0200_txt, 2 );
+	//engine_font_manager_draw_data( i, 20, 0 );
 
 	custom_initialize();
 	curr_screen_type = screen_type_none;
-	next_screen_type = screen_type_test;
+	next_screen_type = screen_type_load;
 
 	SMS_displayOn();
 	for (;;)
@@ -47,12 +47,12 @@ void main(void)
 		SMS_initSprites();
 		engine_input_manager_update();
 		//test = engine_input_manager_hold_up();
-		test = engine_input_manager_move_up();
+		/*test = engine_input_manager_move_up();
 		if( test )
 		{
 			i++;
 			engine_font_manager_draw_data( i, 20, 0 );
-		}
+		}*/
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
