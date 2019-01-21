@@ -19,7 +19,6 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 	if( '#' == tile )
 	{
 		*tile_type = rand() % MAX_BLOCK_TILES + 1;
-		//*tile_type = tile_type_blockerE;
 		return;
 	}
 	if( '-' == tile )

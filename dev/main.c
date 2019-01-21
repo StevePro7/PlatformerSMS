@@ -32,8 +32,8 @@ void main(void)
 
 	custom_initialize();
 	curr_screen_type = screen_type_none;
-	next_screen_type = screen_type_load;
-	//next_screen_type = screen_type_test;
+	//next_screen_type = screen_type_load;
+	next_screen_type = screen_type_test;
 
 	SMS_displayOn();
 	for (;;)
