@@ -16,7 +16,29 @@ void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsign
 
 void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile )
 {
+	if( '#' == tile )
+	{
+		*tile_type = rand() % MAX_BLOCK_TILES + 1;
+		//*tile_type = tile_type_blockerE;
+		return;
+	}
+	if( '-' == tile )
+	{
+		*tile_type = tile_type_platform;
+		return;
+	}
+	if( 'X' == tile )
+	{
+		*tile_type = tile_type_exitgame;
+		return;
+	}
+	if( 'G' == tile )
+	{
+		*tile_type = tile_type_gemscore;
+		return;
+	}
 
+	*tile_type = tile_type_blankGap;
 }
 
 void engine_tile_manager_get_crash( enum_crash_type *crash_type, unsigned char tile )

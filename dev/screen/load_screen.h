@@ -3,8 +3,9 @@
 
 void screen_load_screen_load()
 {
-	engine_level_manager_load_level( level0201_txt );
+	engine_level_manager_load_level( level0301_txt, 3 );
 
+	//engine_level_manager_text_level();
 	engine_level_manager_draw_level();
 }
 

@@ -6,6 +6,7 @@
 #define GAME_X_OFFSET			TILE_X_OFFSET * 8
 
 #define SPRITE_TILES_OFFSET		128
+#define MAX_BLOCK_TILES			9
 
 #define COLS	15
 #define ROWS	12

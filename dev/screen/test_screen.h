@@ -16,6 +16,15 @@ void screen_test_screen_load()
 	//float test = sqrtf( 225 ) * 1000;
 
 	engine_font_manager_draw_data( test, 10, 4 );
+
+	/*while( true )
+	{
+		unsigned char rnd = rand() % MAX_BLOCK_TILES + 1;
+		if( 9 == rnd )
+		{
+			int x = 7;
+		}
+	}*/
 }
 
 void screen_test_screen_update( enum_screen_type *screen_type )

@@ -8,7 +8,7 @@ extern unsigned char level_mat[ ROWS ][ COLS ];
 extern unsigned char tiles_mat[ ROWS ][ COLS ];
 extern unsigned char crash_mat[ ROWS ][ COLS ];
 
-void engine_level_manager_load_level( const unsigned char *level )
+void engine_level_manager_load_level( const unsigned char *level, unsigned char bank )
 {
 	const unsigned char *o = level;
 	unsigned char x, y, tile;
@@ -16,6 +16,7 @@ void engine_level_manager_load_level( const unsigned char *level )
 	enum_tile_type tile_type;
 	enum_crash_type crash_type;
 
+	SMS_mapROMBank( bank );
 	for( y = 0; y < ROWS; y++ )
 	{
 		for( x = 0; x < COLS + 2; x++ )
@@ -26,6 +27,10 @@ void engine_level_manager_load_level( const unsigned char *level )
 				index = y * COLS + x;
 				level_map[ index ] = tile;
 				level_mat[ y ][ x ] = tile;
+
+				engine_tile_manager_get_tile( &tile_type, tile );
+				tiles_map[ index ] = tile_type;
+				tiles_mat[ y ][ x ] = tile_type;
 
 				engine_tile_manager_get_crash( &crash_type, tile );
 				crash_map[ index ] = crash_type;
@@ -49,9 +54,27 @@ void engine_level_manager_draw_level()
 		for( x = 0; x < COLS; x++ )
 		{
 			index = y * COLS + x;
-			tile = level_map[ index ];
+			tile = tiles_map[ index ];
+			//tile = tiles_mat[ y ][ x ];
 
-			engine_font_manager_draw_char( tile, x, y );
+			engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
+		}
+	}
+}
+
+void engine_level_manager_text_level()
+{
+	unsigned char x, y, ch;
+	unsigned int index;
+
+	for( y = 0; y < ROWS; y++ )
+	{
+		for( x = 0; x < COLS; x++ )
+		{
+			index = y * COLS + x;
+			ch = level_map[ index ];
+
+			engine_font_manager_draw_char( ch, x + TILE_X_OFFSET, y );
 		}
 	}
 }
