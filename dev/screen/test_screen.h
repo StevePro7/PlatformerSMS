@@ -6,11 +6,12 @@
 void screen_test_screen_load()
 {
 	int test;
+	float numb = 2.3f;
 	//float data = powf( 2, 3 );
-	//float data = ceilf( 2.3 );
-	float data = (float)floorf( 2.3 );
+	float data = ceilf( numb );
+	//float data = floorf( numb );
 
-	test = data * 1000;
+	test = ( int ) ( data * 1000 );
 	//float test = powf( 2, 3 ) * 1000;
 	//float test = sqrtf( 225 ) * 1000;
 
