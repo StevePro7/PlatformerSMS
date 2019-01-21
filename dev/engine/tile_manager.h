@@ -14,4 +14,25 @@ void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsign
 	SMS_setNextTileatXY( x + 1, y + 1 );	SMS_setTile( *pnt + index + 17 );
 }
 
+void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile )
+{
+
+}
+
+void engine_tile_manager_get_crash( enum_crash_type *crash_type, unsigned char tile )
+{
+	if( '#' == tile )
+	{
+		*crash_type = crash_type_impassable;
+		return;
+	}
+	if( '-' == tile )
+	{
+		*crash_type = crash_type_platform;
+		return;
+	}
+
+	*crash_type = crash_type_passable;
+}
+
 #endif//_TILE_MANAGER_H_

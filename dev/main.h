@@ -37,3 +37,8 @@
 
 // LEVEL_MANAGER
 unsigned char level_map[ ROWS * COLS ];
+unsigned char tiles_map[ ROWS * COLS ];
+unsigned char crash_map[ ROWS * COLS ];
+unsigned char level_mat[ ROWS ][ COLS ];
+unsigned char tiles_mat[ ROWS ][ COLS ];
+unsigned char crash_mat[ ROWS ][ COLS ];
