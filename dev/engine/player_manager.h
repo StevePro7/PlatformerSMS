@@ -17,7 +17,7 @@ void engine_player_manager_load()
 	po->br = 192;
 	po->vx = +1;
 	po->vy = 0;
-	engine_font_manager_draw_text( "PLAY SCREEN...", 0, 1 );
+	//engine_font_manager_draw_text( "PLAY SCREEN...", 0, 1 );
 }
 
 void engine_player_manager_update()

@@ -8,8 +8,8 @@ void screen_play_screen_load()
 	unsigned char t2 = VDP_NTSC == vdp;
 
 	//engine_font_manager_draw_text( "PLAY SCREEN", 0, 0 );
-	engine_font_manager_draw_data( t1, 20, 2 );
-	engine_font_manager_draw_data( t2, 20, 3 );
+	/*engine_font_manager_draw_data( t1, 20, 2 );
+	engine_font_manager_draw_data( t2, 20, 3 );*/
 
 	engine_player_manager_load();
 }
