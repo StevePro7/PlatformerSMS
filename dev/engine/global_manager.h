@@ -2,7 +2,7 @@
 #define _GLOBAL_MANAGER_H_
 
 #define MAX_STATES				4
-#define TILE_X_OFFSET			1
+#define TILE_X_OFFSET			0
 #define GAME_X_OFFSET			TILE_X_OFFSET * 8
 
 #define SPRITE_TILES_OFFSET		128

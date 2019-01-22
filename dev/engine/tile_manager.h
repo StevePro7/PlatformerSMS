@@ -14,9 +14,22 @@ void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsign
 	SMS_setNextTileatXY( x + 1, y + 1 );	SMS_setTile( *pnt + index + 17 );
 }
 
-//void engine_tile_manager_draw_tile_side( unsigned char index, unsigned char x, unsigned char y )
-//{
-//}
+void engine_tile_manager_draw_tile_side( enum_side_type side_type, unsigned char index, unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = back_tiles__tilemap__bin;
+	index = BASE_TILE_OFFSET + ( index / 8 ) * 16 + index * 2;
+
+	if( side_type_left == side_type )
+	{
+		SMS_setNextTileatXY( x + 0, y + 0 );	SMS_setTile( *pnt + index + 0 );
+		SMS_setNextTileatXY( x + 0, y + 1 );	SMS_setTile( *pnt + index + 16 );
+	}
+	else if( side_type_rght == side_type )
+	{
+		SMS_setNextTileatXY( x + 1, y + 0 );	SMS_setTile( *pnt + index + 1 );
+		SMS_setNextTileatXY( x + 1, y + 1 );	SMS_setTile( *pnt + index + 17 );
+	}
+}
 
 void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile )
 {
