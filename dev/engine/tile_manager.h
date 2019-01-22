@@ -14,9 +14,9 @@ void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsign
 	SMS_setNextTileatXY( x + 1, y + 1 );	SMS_setTile( *pnt + index + 17 );
 }
 
-void engine_tile_manager_draw_tile_side( unsigned char index, unsigned char x, unsigned char y )
-{
-}
+//void engine_tile_manager_draw_tile_side( unsigned char index, unsigned char x, unsigned char y )
+//{
+//}
 
 void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile )
 {

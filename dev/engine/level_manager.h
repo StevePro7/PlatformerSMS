@@ -49,9 +49,7 @@ void engine_level_manager_load_level( const unsigned char *level, unsigned char 
 
 void engine_level_manager_draw_level()
 {
-	unsigned char x, y, tile;
-	unsigned int index;
-
+	unsigned char x, y;
 	for( y = 0; y < ROWS; y++ )
 	{
 		for( x = 0; x < COLS; x++ )
@@ -62,19 +60,12 @@ void engine_level_manager_draw_level()
 }
 void engine_level_manager_draw_level_column( unsigned char column )
 {
-	unsigned char x, y, tile;
-	unsigned int index;
+	unsigned char x, y;
 
 	x = column;
 	for( y = 0; y < ROWS; y++ )
 	{
 		engine_level_manager_draw_tiles( x, y );
-
-		//index = y * COLS + x;
-		////tile = tiles_map[ index ];
-		//tile = tiles_mat[ y ][ x ];
-
-		//engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
 	}
 }
 static void engine_level_manager_draw_tiles( unsigned char x, unsigned char y )
