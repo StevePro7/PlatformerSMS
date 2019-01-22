@@ -2,7 +2,7 @@
 #define _GLOBAL_MANAGER_H_
 
 #define MAX_STATES				6
-#define MAX_ENEMIES				2
+#define MAX_ENEMIES				6
 #define TILE_X_OFFSET			0
 #define GAME_X_OFFSET			TILE_X_OFFSET * 8
 
