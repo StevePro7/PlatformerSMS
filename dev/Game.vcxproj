@@ -166,8 +166,10 @@
     <ClInclude Include="engine\tile_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="screen\init_screen.h" />
     <ClInclude Include="screen\load_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
+    <ClInclude Include="screen\play_screen.h" />
     <ClInclude Include="screen\splash_screen.h" />
     <ClInclude Include="screen\test_screen.h" />
   </ItemGroup>
