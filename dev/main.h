@@ -19,20 +19,26 @@
 #include "banks\bank3.h"
 #include "banks\bank4.h"
 
+// MANAGERS
+#include "engine\global_manager.h"
+#include "engine\locale_manager.h"
+#include "engine\enum_manager.h"
+
 // OBJECTS
 #include "object\enemy_object.h"
 #include "object\player_object.h"
 
 // MANAGERS
-#include "engine\global_manager.h"
-#include "engine\locale_manager.h"
-#include "engine\enum_manager.h"
+//#include "engine\global_manager.h"
+//#include "engine\locale_manager.h"
+//#include "engine\enum_manager.h"
 #include "engine\content_manager.h"
 #include "engine\font_manager.h"
 #include "engine\sprite_manager.h"
 #include "engine\tile_manager.h"
 #include "engine\level_manager.h"
 #include "engine\input_manager.h"
+#include "engine\enemy_manager.h"
 #include "engine\player_manager.h"
 #include "engine\asm_manager.h"
 

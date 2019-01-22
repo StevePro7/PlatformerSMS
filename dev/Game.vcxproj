@@ -156,6 +156,7 @@
     <ClInclude Include="banks\bank3.h" />
     <ClInclude Include="banks\bank4.h" />
     <ClInclude Include="engine\content_manager.h" />
+    <ClInclude Include="engine\enemy_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
     <ClInclude Include="engine\font_manager.h" />
     <ClInclude Include="engine\global_manager.h" />
