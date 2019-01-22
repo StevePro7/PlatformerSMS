@@ -162,10 +162,13 @@
     <ClInclude Include="engine\input_manager.h" />
     <ClInclude Include="engine\level_manager.h" />
     <ClInclude Include="engine\locale_manager.h" />
+    <ClInclude Include="engine\player_manager.h" />
     <ClInclude Include="engine\sprite_manager.h" />
     <ClInclude Include="engine\tile_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="object\enemy_object.h" />
+    <ClInclude Include="object\player_object.h" />
     <ClInclude Include="screen\init_screen.h" />
     <ClInclude Include="screen\load_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
