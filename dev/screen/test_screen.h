@@ -23,6 +23,7 @@ void screen_test_screen_update( enum_screen_type *screen_type )
 {
 	float numb = 2.3f;
 	float data;
+	unsigned int show;
 	//float data = powf( 2, 3 );
 	//float data = ceilf( numb );
 	//float data = floorf( numb );
@@ -31,7 +32,8 @@ void screen_test_screen_update( enum_screen_type *screen_type )
 	if( test )
 	{
 		data = powf( 2, 3 ) * 1000;
-		engine_font_manager_draw_data( data, 13, 5 );
+		show = ( unsigned int ) data;
+		engine_font_manager_draw_data( show, 13, 5 );
 		//engine_font_manager_draw_text( "TEST UP", 10, 5 );
 	}
 
@@ -39,7 +41,8 @@ void screen_test_screen_update( enum_screen_type *screen_type )
 	if( test )
 	{
 		data = sqrtf( 225 ) * 1000;
-		engine_font_manager_draw_data( data, 13, 6 );
+		show = ( unsigned int ) data;
+		engine_font_manager_draw_data( show, 13, 6 );
 		//engine_font_manager_draw_text( "TEST DOWN", 10, 6 );
 	}
 
@@ -47,15 +50,17 @@ void screen_test_screen_update( enum_screen_type *screen_type )
 	if( test )
 	{
 		data = floorf( numb ) * 1000;
-		engine_font_manager_draw_data( data, 13, 7 );
+		show = ( unsigned int ) data;
+		engine_font_manager_draw_data( show, 13, 7 );
 		//engine_font_manager_draw_text( "TEST LEFT", 10, 5 );
 	}
 
 	test = engine_input_manager_hold_right();
 	if( test )
 	{
-		data = ceilf( numb ) * 1000;
-		engine_font_manager_draw_data( data, 13, 8 );
+		data = ceilf( numb ) *1000.0f;
+		show = ( unsigned int ) data;
+		engine_font_manager_draw_data( show, 13, 8 );
 		//engine_font_manager_draw_text( "TEST LEFT", 10, 5 );
 	}
 

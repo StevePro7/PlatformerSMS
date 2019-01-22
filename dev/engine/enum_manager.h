@@ -49,4 +49,11 @@ typedef enum tag_enum_sprite_type
 
 } enum_sprite_type;
 
+typedef enum tag_enum_side_type
+{
+	side_type_left = 0,
+	side_type_rght = 1,
+
+} enum_side_type;
+
 #endif//_ENUM_MANAGER_H_

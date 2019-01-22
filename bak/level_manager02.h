@@ -57,6 +57,11 @@ void engine_level_manager_draw_level()
 		for( x = 0; x < COLS; x++ )
 		{
 			engine_level_manager_draw_tiles( x, y );
+			//index = y * COLS + x;
+			//tile = tiles_map[ index ];
+			////tile = tiles_mat[ y ][ x ];
+
+			//engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
 		}
 	}
 }
@@ -68,13 +73,11 @@ void engine_level_manager_draw_level_column( unsigned char column )
 	x = column;
 	for( y = 0; y < ROWS; y++ )
 	{
-		engine_level_manager_draw_tiles( x, y );
+		index = y * COLS + x;
+		//tile = tiles_map[ index ];
+		tile = tiles_mat[ y ][ x ];
 
-		//index = y * COLS + x;
-		////tile = tiles_map[ index ];
-		//tile = tiles_mat[ y ][ x ];
-
-		//engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
+		engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
 	}
 }
 static void engine_level_manager_draw_tiles( unsigned char x, unsigned char y )
