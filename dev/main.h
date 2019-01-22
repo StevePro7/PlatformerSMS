@@ -55,4 +55,4 @@ unsigned char crash_mat[ ROWS ][ COLS ];
 
 // PLAYER_MANAGER
 //struct_player_object player_object;
-MyStruct theVar;
+//MyStruct theVar;
