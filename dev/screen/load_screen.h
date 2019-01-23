@@ -17,8 +17,8 @@ void screen_load_screen_load()
 
 void screen_load_screen_update( enum_screen_type *screen_type )
 {
-	//*screen_type = screen_type_play;
-	*screen_type = screen_type_init;
+	*screen_type = screen_type_play;
+	//*screen_type = screen_type_init;
 }
 
 #endif//_LOAD_SCREEN_H_

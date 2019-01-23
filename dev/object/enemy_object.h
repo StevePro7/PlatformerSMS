@@ -6,6 +6,7 @@ typedef struct tag_struct_enemy_object
 	enum_sprite_type sprite_type;
 	unsigned char sx, sy;
 	unsigned char bl, br;
+	unsigned char fr, fm;
 	signed char vx, vy;
 
 } struct_enemy_object;

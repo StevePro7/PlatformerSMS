@@ -16,7 +16,7 @@ void main(void)
 	SMS_displayOff();
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
 	SMS_useFirstHalfTilesforSprites( true );
-	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
+	//SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_sprites();

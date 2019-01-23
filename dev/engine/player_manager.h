@@ -17,12 +17,29 @@ void engine_player_manager_load()
 	po->br = 192;
 	po->vx = +1;
 	po->vy = 0;
+	po->fr = 0;
+	po->fm = 5;
 	//engine_font_manager_draw_text( "PLAY SCREEN...", 0, 1 );
+}
+
+void engine_player_manager_animate( unsigned char index )
+{
+	const unsigned char *tilemap = ( unsigned char * ) stageinitdata[ index ];
+	SMS_loadPSGaidencompressedTiles( tilemap, list_sprite_tile_offset[ sprite_type_player ] );
 }
 
 void engine_player_manager_update()
 {
+	unsigned index;
 	struct_player_object *po = &player_object;
+
+	index = po->fr;
+	engine_player_manager_animate( index );
+	po->fr++;
+	if( po->fr >= po->fm )
+	{
+		po->fr = 0;
+	}
 
 	po->sx += po->vx;
 	if( po->sx <= po->bl || po->sx >= po->br )
