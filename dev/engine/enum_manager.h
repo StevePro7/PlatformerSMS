@@ -26,8 +26,7 @@ typedef enum tag_enum_tile_type
 	tile_type_blockerI = 9,
 	tile_type_platform = 10,
 	tile_type_exitgame = 11,
-	//tile_type_gemscore = 12,
-	tile_type_gemscore = 13,
+	tile_type_gemscore = 12,
 	tile_type_gempower = 13,
 
 } enum_tile_type;
