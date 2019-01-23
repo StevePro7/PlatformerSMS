@@ -1,5 +1,19 @@
 @echo off
 
+REM echo Build gfx.c and gfx.h from gfx folder
+REM folder2c ..\gfx gfx
+
+REM echo Build psg.c and psg.h from psg folder
+REM folder2c ..\psg psg
+
+
+REM echo Build gfx
+REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
+
+REM echo Build psg
+REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
+
+REM echo Build main
 sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -44,6 +58,6 @@ del *.noi > nul
 REM del *.rel > nul
 del *.sym > nul
 
-REM C:\SEGA\Fusion\fusion.exe output.sms
+C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

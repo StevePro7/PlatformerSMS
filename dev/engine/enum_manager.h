@@ -14,8 +14,7 @@ typedef enum tag_enum_screen_type
 
 typedef enum tag_enum_tile_type
 {
-	//tile_type_blankGap = 0,
-	tile_type_platform = 0,
+	tile_type_blankGap = 0,
 	tile_type_blockerA = 1,
 	tile_type_blockerB = 2,
 	tile_type_blockerC = 3,
@@ -25,10 +24,11 @@ typedef enum tag_enum_tile_type
 	tile_type_blockerG = 7,
 	tile_type_blockerH = 8,
 	tile_type_blockerI = 9,
-	//tile_type_platform = 10,
-	tile_type_exitgame = 10,
-	tile_type_gemscore = 11,
-	tile_type_blankGap = 12,
+	tile_type_platform = 10,
+	tile_type_exitgame = 11,
+	//tile_type_gemscore = 12,
+	tile_type_gemscore = 13,
+	tile_type_gempower = 13,
 
 } enum_tile_type;
 

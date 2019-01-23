@@ -5,7 +5,7 @@ extern const unsigned char	back_tiles__tilemap__bin[];
 #define				back_tiles__tilemap__bin_size 256
 
 extern const unsigned char	back_tiles__tiles__psgcompr[];
-#define				back_tiles__tiles__psgcompr_size 1827
+#define				back_tiles__tiles__psgcompr_size 1846
 
 extern const unsigned char	EnemyA_Idle_01__tiles__psgcompr[];
 #define				EnemyA_Idle_01__tiles__psgcompr_size 139
