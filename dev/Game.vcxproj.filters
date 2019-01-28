@@ -122,6 +122,9 @@
     <ClInclude Include="engine\enemy_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
+    <ClInclude Include="screen\func_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">

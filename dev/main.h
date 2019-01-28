@@ -48,6 +48,7 @@
 #include "screen\init_screen.h"
 #include "screen\load_screen.h"
 #include "screen\play_screen.h"
+#include "screen\func_screen.h"
 #include "screen\splash_screen.h"
 
 

@@ -2,8 +2,8 @@
 
 enum_screen_type curr_screen_type, next_screen_type;
 
-void( *load_method[ MAX_STATES ] )( );
-void( *update_method[ MAX_STATES ] )( enum_screen_type *screen_type );
+void( *load_method[ MAX_SCREEENS ] )( );
+void( *update_method[ MAX_SCREEENS ] )( enum_screen_type *screen_type );
 
 void custom_initialize();
 
@@ -34,6 +34,7 @@ void main(void)
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;
 	//next_screen_type = screen_type_test;
+	next_screen_type = screen_type_func;
 
 	SMS_displayOn();
 	for (;;)
@@ -77,6 +78,7 @@ void custom_initialize()
 	load_method[ screen_type_init ] = screen_init_screen_load;
 	load_method[ screen_type_load ] = screen_load_screen_load;
 	load_method[ screen_type_play ] = screen_play_screen_load;
+	load_method[ screen_type_func ] = screen_func_screen_load;
 	load_method[ screen_type_splash ] = screen_splash_screen_load;
 
 	// Set update methods.
@@ -85,6 +87,7 @@ void custom_initialize()
 	update_method[ screen_type_init ] = screen_init_screen_update;
 	update_method[ screen_type_load ] = screen_load_screen_update;
 	update_method[ screen_type_play ] = screen_play_screen_update;
+	update_method[ screen_type_func ] = screen_func_screen_update;
 	update_method[ screen_type_splash ] = screen_splash_screen_update;
 }
 
