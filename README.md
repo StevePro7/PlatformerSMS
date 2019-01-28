@@ -1,6 +1,12 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+28/01/2019
+Can I dynamically determine the width of any given level by
+dividing the array[] count by 12 as will always be 12 height
+e.g.
+should be 204 for "default" level i.e. 17 * 12 = 204 (17 = 15 + 2)
+
 21/01/2019
 TODO
 Re-arrange the tile bitmap so that the first index zero is 16x16 blank
