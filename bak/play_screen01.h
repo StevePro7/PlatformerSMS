@@ -21,7 +21,7 @@ void screen_play_screen_update( enum_screen_type *screen_type )
 	engine_player_manager_draw();
 
 	engine_enemy_manager_update();
-	//engine_enemy_manager_draw();
+	engine_enemy_manager_draw();
 
 	*screen_type = screen_type_play;
 }

@@ -45,6 +45,9 @@
     <ClCompile Include="banks\bank3.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="banks\bank5.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -130,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="object\level_object.h">
       <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank5.h">
+      <Filter>Header Files\banks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

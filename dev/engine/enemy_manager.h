@@ -51,7 +51,7 @@ void engine_enemy_manager_update()
 
 		index = eo->fr;
 		engine_enemy_manager_animate( index, eo->sprite_type );
-		eo->fr++;
+		//eo->fr++;
 		if( eo->fr >= eo->fm )
 		{
 			eo->fr = 0;

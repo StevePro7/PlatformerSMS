@@ -19,6 +19,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	unsigned int index;
 	enum_tile_type tile_type;
 	enum_crash_type crash_type;
+	index = size;					// TODO use size to calculate wide i.e. (size / 12) - 2		12=high	2=CRLF
 
 	SMS_mapROMBank( bank );
 	for( y = 0; y < ROWS; y++ )
@@ -44,8 +45,6 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 			o++;
 		}
 	}
-
-	tile = 'c';
 }
 
 void engine_level_manager_load_index( const unsigned char index )
