@@ -125,6 +125,12 @@
     <ClInclude Include="screen\func_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="engine\hack_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="object\level_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">

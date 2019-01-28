@@ -1,5 +1,7 @@
 #include "main.h"
 
+// Global variables.
+bool global_pause;
 enum_screen_type curr_screen_type, next_screen_type;
 
 void( *load_method[ MAX_SCREEENS ] )( );
@@ -34,7 +36,6 @@ void main(void)
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;
 	//next_screen_type = screen_type_test;
-	next_screen_type = screen_type_func;
 
 	SMS_displayOn();
 	for (;;)
@@ -89,6 +90,10 @@ void custom_initialize()
 	update_method[ screen_type_play ] = screen_play_screen_update;
 	update_method[ screen_type_func ] = screen_func_screen_update;
 	update_method[ screen_type_splash ] = screen_splash_screen_update;
+
+	// Initialize hack manager.
+	engine_hack_manager_init();
+	engine_hack_manager_invert();
 }
 
 #ifdef _CONSOLE

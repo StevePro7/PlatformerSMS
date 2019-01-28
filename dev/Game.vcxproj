@@ -160,6 +160,7 @@
     <ClInclude Include="engine\enum_manager.h" />
     <ClInclude Include="engine\font_manager.h" />
     <ClInclude Include="engine\global_manager.h" />
+    <ClInclude Include="engine\hack_manager.h" />
     <ClInclude Include="engine\input_manager.h" />
     <ClInclude Include="engine\level_manager.h" />
     <ClInclude Include="engine\locale_manager.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="object\enemy_object.h" />
+    <ClInclude Include="object\level_object.h" />
     <ClInclude Include="object\player_object.h" />
     <ClInclude Include="screen\func_screen.h" />
     <ClInclude Include="screen\init_screen.h" />

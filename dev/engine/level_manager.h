@@ -11,7 +11,8 @@ extern unsigned char crash_mat[ ROWS ][ COLS ];
 // Private helper methods.
 static void engine_level_manager_draw_tiles( unsigned char x, unsigned char y );
 
-void engine_level_manager_load_level( const unsigned char *level, unsigned char bank )
+
+void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size )
 {
 	const unsigned char *o = level;
 	unsigned char x, y, tile;
@@ -45,6 +46,15 @@ void engine_level_manager_load_level( const unsigned char *level, unsigned char 
 	}
 
 	tile = 'c';
+}
+
+void engine_level_manager_load_index( const unsigned char index )
+{
+	const unsigned char *level = leveldata[ index ];
+	const unsigned char bank = levelbank[ index ];
+	const unsigned char size = levelsize[ index ];
+
+	engine_level_manager_load_level( level, bank, size );
 }
 
 void engine_level_manager_draw_level()

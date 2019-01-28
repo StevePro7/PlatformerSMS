@@ -23,9 +23,11 @@
 #include "engine\global_manager.h"
 #include "engine\locale_manager.h"
 #include "engine\enum_manager.h"
+#include "engine\hack_manager.h"
 
 // OBJECTS
 #include "object\enemy_object.h"
+#include "object\level_object.h"
 #include "object\player_object.h"
 
 // MANAGERS
@@ -51,6 +53,9 @@
 #include "screen\func_screen.h"
 #include "screen\splash_screen.h"
 
+// HACK_MANAGER
+unsigned char hacker_debug;
+unsigned char hacker_level;
 
 // LEVEL_MANAGER
 unsigned char level_map[ ROWS * COLS ];
