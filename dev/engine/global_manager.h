@@ -2,7 +2,7 @@
 #define _GLOBAL_MANAGER_H_
 
 #define MAX_SCREEENS			7
-#define MAX_ENEMIES				6
+#define MAX_ENEMIES				8
 #define TILE_X_OFFSET			0
 #define GAME_X_OFFSET			TILE_X_OFFSET * 8
 
