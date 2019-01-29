@@ -93,7 +93,7 @@ REM copy output.sms
 copy output.sms ..\
 copy output.sms ..\asm
 cd ..\asm
-rem smsexamine.exe output.sms
+smsexamine.exe output.sms
 cd ..\dev
 
 
@@ -114,6 +114,6 @@ rem del *.noi > nul
 REM del *.rel > nul
 rem del *.sym > nul
 
-C:\SEGA\Fusion\fusion.exe output.sms
+REM C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

@@ -1,11 +1,11 @@
 #include "_sms_manager.h"
-//#include "..\gfx.h"
+#include "game_manager.h"
 #include <stdbool.h>
 
 #ifdef _CONSOLE
-#include "..\..\tmp\SMSlib.h"
+	#include "..\..\tmp\SMSlib.h"
 #else
-#include "..\..\lib\SMSlib.h"
+	#include "..\..\lib\SMSlib.h"
 #endif
 
 // GAME_MANAGER
@@ -23,14 +23,16 @@ void engine_game_manager_common()
 {
 	SMS_displayOn();
 }
-void engine_game_manager_render()
+void devkit_SMS_setSpritePaletteColor( const unsigned char entry, const unsigned char r, const unsigned char g, const unsigned char b )
 {
-	SMS_setSpritePaletteColor( 0, RGB( 1, 3, 1 ) );
+	const unsigned char color = RGB( r, g, b );
+	//SMS_setSpritePaletteColor( 0, RGB( 1, 3, 1 ) );
+	SMS_setSpritePaletteColor( entry, color );
 }
 
 
 #ifdef _CONSOLE
 #else
-SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
-SMS_EMBED_SDSC_HEADER( 1, 0, 2019, 3, 27, "StevePro Studios", "Platformer", "This is a generic platformer game!" );
+	SMS_EMBED_SEGA_ROM_HEADER( productCode, revision );
+	SMS_EMBED_SDSC_HEADER( verMaj, verMin, dateYear, dateMonth, dateDay, author, name, descr );
 #endif

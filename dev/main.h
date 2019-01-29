@@ -6,7 +6,9 @@
 
 #include "gfx.h"
 
+//#include "source\game_manager.h"
 #include "source\_sms_manager.h"
+//#include "source\_snd_manager.h"
 
 // BANKS
 #include "banks\bank2.h"
