@@ -39,15 +39,6 @@
     <ClCompile Include="banks\bank2.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
-    <ClCompile Include="banks\bank4.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="banks\bank3.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="banks\bank5.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -78,12 +69,6 @@
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="banks\bank2.h">
-      <Filter>Header Files\banks</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank4.h">
-      <Filter>Header Files\banks</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank3.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
     <ClInclude Include="engine\asm_manager.h">
@@ -133,9 +118,6 @@
     </ClInclude>
     <ClInclude Include="object\level_object.h">
       <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank5.h">
-      <Filter>Header Files\banks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

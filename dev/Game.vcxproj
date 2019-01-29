@@ -145,18 +145,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="banks\bank2.c" />
-    <ClCompile Include="banks\bank3.c" />
-    <ClCompile Include="banks\bank4.c" />
-    <ClCompile Include="banks\bank5.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="banks\bank5.h" />
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="banks\bank2.h" />
-    <ClInclude Include="banks\bank3.h" />
-    <ClInclude Include="banks\bank4.h" />
     <ClInclude Include="engine\content_manager.h" />
     <ClInclude Include="engine\enemy_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
