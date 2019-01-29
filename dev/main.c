@@ -2,17 +2,18 @@
 
 // Global variables.
 bool global_pause;
-enum_screen_type curr_screen_type, next_screen_type;
+//enum_screen_type curr_screen_type, next_screen_type;
 
-void( *load_method[ MAX_SCREEENS ] )( );
-void( *update_method[ MAX_SCREEENS ] )( enum_screen_type *screen_type );
+//void( *load_method[ MAX_SCREEENS ] )( );
+//void( *update_method[ MAX_SCREEENS ] )( enum_screen_type *screen_type );
 
-void custom_initialize();
+//void custom_initialize();
+
 
 void main(void)
 {
-	/*bool test = false;
-	int i = 0;*/
+	bool test = false;
+	int i = 0;
 
 	SMS_init();
 	SMS_displayOff();
@@ -24,31 +25,26 @@ void main(void)
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
-	//engine_font_manager_draw_text("STEVEPRO", 1, 1);
-	//engine_font_manager_draw_char('D', 1, 0);
-
-	//load_room( level0201_txt );
-	//load_room( level0301_txt );
-	//load_room( level0200_txt, 2 );
 	//engine_font_manager_draw_data( i, 20, 0 );
 
-	custom_initialize();
+	/*custom_initialize();
 	curr_screen_type = screen_type_none;
-	next_screen_type = screen_type_load;
+	next_screen_type = screen_type_load;*/
 	//next_screen_type = screen_type_test;
 
+	SMS_setSpritePaletteColor( 0, RGB( 1, 2, 2 ) );
 	SMS_displayOn();
 	for (;;)
 	{
-		if( curr_screen_type != next_screen_type )
+		/*if( curr_screen_type != next_screen_type )
 		{
 			curr_screen_type = next_screen_type;
 			load_method[ curr_screen_type ]();
-		}
+		}*/
 
 
-		SMS_initSprites();
-		engine_input_manager_update();
+		//SMS_initSprites();
+		//engine_input_manager_update();
 		//test = engine_input_manager_hold_up();
 		/*test = engine_input_manager_move_up();
 		if( test )
@@ -63,38 +59,38 @@ void main(void)
 		engine_sprite_manager_draw_enemyD( 16 * 7 + GAME_X_OFFSET, 48 );*/
 
 		//screen_none_screen_update();
-		update_method[ curr_screen_type ]( &next_screen_type );
+		/*update_method[ curr_screen_type ]( &next_screen_type );
 
 		SMS_finalizeSprites();
 		SMS_waitForVBlank();
-		SMS_copySpritestoSAT();
+		SMS_copySpritestoSAT();*/
 	}
 }
 
-void custom_initialize()
-{
-	// Set load methods.
-	load_method[ screen_type_none ] = screen_none_screen_load;
-	load_method[ screen_type_test ] = screen_test_screen_load;
-	load_method[ screen_type_init ] = screen_init_screen_load;
-	load_method[ screen_type_load ] = screen_load_screen_load;
-	load_method[ screen_type_play ] = screen_play_screen_load;
-	load_method[ screen_type_func ] = screen_func_screen_load;
-	load_method[ screen_type_splash ] = screen_splash_screen_load;
-
-	// Set update methods.
-	update_method[ screen_type_none ] = screen_none_screen_update;
-	update_method[ screen_type_test ] = screen_test_screen_update;
-	update_method[ screen_type_init ] = screen_init_screen_update;
-	update_method[ screen_type_load ] = screen_load_screen_update;
-	update_method[ screen_type_play ] = screen_play_screen_update;
-	update_method[ screen_type_func ] = screen_func_screen_update;
-	update_method[ screen_type_splash ] = screen_splash_screen_update;
-
-	// Initialize hack manager.
-	engine_hack_manager_init();
-	engine_hack_manager_invert();
-}
+//void custom_initialize()
+//{
+//	// Set load methods.
+//	load_method[ screen_type_none ] = screen_none_screen_load;
+//	load_method[ screen_type_test ] = screen_test_screen_load;
+//	load_method[ screen_type_init ] = screen_init_screen_load;
+//	load_method[ screen_type_load ] = screen_load_screen_load;
+//	load_method[ screen_type_play ] = screen_play_screen_load;
+//	load_method[ screen_type_func ] = screen_func_screen_load;
+//	load_method[ screen_type_splash ] = screen_splash_screen_load;
+//
+//	// Set update methods.
+//	update_method[ screen_type_none ] = screen_none_screen_update;
+//	update_method[ screen_type_test ] = screen_test_screen_update;
+//	update_method[ screen_type_init ] = screen_init_screen_update;
+//	update_method[ screen_type_load ] = screen_load_screen_update;
+//	update_method[ screen_type_play ] = screen_play_screen_update;
+//	update_method[ screen_type_func ] = screen_func_screen_update;
+//	update_method[ screen_type_splash ] = screen_splash_screen_update;
+//
+//	// Initialize hack manager.
+//	engine_hack_manager_init();
+//	engine_hack_manager_invert();
+//}
 
 #ifdef _CONSOLE
 #else

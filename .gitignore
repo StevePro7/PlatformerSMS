@@ -4,6 +4,12 @@
 *bin
 *obj
 *.vcxproj.user
+*.asm
+*.lst
+*.sym
+*.ihx
+*.lk
+*.noi
 
 # Prerequisites
 *.d
