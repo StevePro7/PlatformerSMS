@@ -15,7 +15,7 @@
 #include "gfx.h"
 
 // BANKS
-//#include "banks\bank2.h"
+#include "banks\bank2.h"
 //#include "banks\bank3.h"
 //#include "banks\bank4.h"
 //#include "banks\bank5.h"
@@ -24,7 +24,7 @@
 #include "engine\global_manager.h"
 //#include "engine\locale_manager.h"
 #include "engine\enum_manager.h"
-//#include "engine\hack_manager.h"
+#include "engine\hack_manager.h"
 
 // OBJECTS
 //#include "object\enemy_object.h"
@@ -37,10 +37,10 @@
 //#include "engine\enum_manager.h"
 #include "engine\content_manager.h"
 #include "engine\font_manager.h"
-//#include "engine\sprite_manager.h"
+#include "engine\sprite_manager.h"
 //#include "engine\tile_manager.h"
 //#include "engine\level_manager.h"
-//#include "engine\input_manager.h"
+#include "engine\input_manager.h"
 //#include "engine\enemy_manager.h"
 //#include "engine\player_manager.h"
 #include "engine\asm_manager.h"
@@ -55,8 +55,8 @@
 //#include "screen\splash_screen.h"
 
 // HACK_MANAGER
-//unsigned char hacker_debug;
-//unsigned char hacker_level;
+unsigned char hacker_debug;
+unsigned char hacker_level;
 
 // LEVEL_MANAGER
 //unsigned char level_map[ ROWS * COLS ];
@@ -69,3 +69,10 @@
 // PLAYER_MANAGER
 //struct_player_object player_object;
 //MyStruct theVar;
+
+
+#ifdef _CONSOLE
+#else
+SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
+SMS_EMBED_SDSC_HEADER( 1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!" );
+#endif

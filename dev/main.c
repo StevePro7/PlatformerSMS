@@ -13,7 +13,7 @@ bool global_pause;
 void main(void)
 {
 	bool test = false;
-	int i = 0;
+	int i = 2;
 
 	SMS_init();
 	SMS_displayOff();
@@ -25,14 +25,14 @@ void main(void)
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
-	//engine_font_manager_draw_data( i, 20, 0 );
+	engine_font_manager_draw_data( i, 20, 0 );
 
 	/*custom_initialize();
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;*/
 	//next_screen_type = screen_type_test;
 
-	SMS_setSpritePaletteColor( 0, RGB( 1, 2, 2 ) );
+	SMS_setSpritePaletteColor( 0, RGB( 2, 2, 2 ) );
 	SMS_displayOn();
 	for (;;)
 	{
@@ -92,8 +92,8 @@ void main(void)
 //	engine_hack_manager_invert();
 //}
 
-#ifdef _CONSOLE
-#else
-	SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
-	SMS_EMBED_SDSC_HEADER(1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!");
-#endif
+//#ifdef _CONSOLE
+//#else
+//	SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
+//	SMS_EMBED_SDSC_HEADER(1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!");
+//#endif

@@ -14,8 +14,8 @@ typedef enum tag_enum_screen_type
 } enum_screen_type;
 
 typedef enum tag_enum_tile_type
-{
-	tile_type_blankGap = 0,
+{tile_type_blankGap
+	 = 0,
 	tile_type_blockerA = 1,
 	tile_type_blockerB = 2,
 	tile_type_blockerC = 3,
