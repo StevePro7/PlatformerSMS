@@ -10,6 +10,7 @@
 *.ihx
 *.lk
 *.noi
+main.rel
 
 # Prerequisites
 *.d
