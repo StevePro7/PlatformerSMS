@@ -147,34 +147,13 @@
     <ClCompile Include="banks\bank2.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="source\_sms_manager.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="banks\bank2.h" />
-    <ClInclude Include="engine\content_manager.h" />
-    <ClInclude Include="engine\enemy_manager.h" />
-    <ClInclude Include="engine\enum_manager.h" />
-    <ClInclude Include="engine\font_manager.h" />
-    <ClInclude Include="engine\global_manager.h" />
-    <ClInclude Include="engine\hack_manager.h" />
-    <ClInclude Include="engine\input_manager.h" />
-    <ClInclude Include="engine\level_manager.h" />
-    <ClInclude Include="engine\locale_manager.h" />
-    <ClInclude Include="engine\player_manager.h" />
-    <ClInclude Include="engine\sprite_manager.h" />
-    <ClInclude Include="engine\tile_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="object\enemy_object.h" />
-    <ClInclude Include="object\level_object.h" />
-    <ClInclude Include="object\player_object.h" />
-    <ClInclude Include="screen\func_screen.h" />
-    <ClInclude Include="screen\init_screen.h" />
-    <ClInclude Include="screen\load_screen.h" />
-    <ClInclude Include="screen\none_screen.h" />
-    <ClInclude Include="screen\play_screen.h" />
-    <ClInclude Include="screen\splash_screen.h" />
-    <ClInclude Include="screen\test_screen.h" />
+    <ClInclude Include="source\_sms_manager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat" />

@@ -24,7 +24,13 @@
     <Filter Include="Header Files\object">
       <UniqueIdentifier>{79a8a461-c450-49f0-8f11-63f21e770726}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Resource Files">
+    <Filter Include="Header Files\source">
+      <UniqueIdentifier>{94e40a83-d16c-4dc9-8e12-729397c74e68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\source">
+      <UniqueIdentifier>{26f64808-1ba2-4e89-acd9-d35b0f52c691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
@@ -39,6 +45,9 @@
     <ClCompile Include="banks\bank2.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="source\_sms_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -47,82 +56,16 @@
     <ClInclude Include="gfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\content_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\global_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\font_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\enum_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\tile_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\locale_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\level_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
     <ClInclude Include="banks\bank2.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="engine\asm_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\sprite_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\input_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\test_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\none_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\splash_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\load_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\play_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\init_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="object\enemy_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="object\player_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\player_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\enemy_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\func_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\hack_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="object\level_object.h">
-      <Filter>Header Files\object</Filter>
+    <ClInclude Include="source\_sms_manager.h">
+      <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
-      <Filter>Header Files\Resource Files</Filter>
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>

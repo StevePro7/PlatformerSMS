@@ -4,15 +4,9 @@
 //#include <string.h>
 
 
-#ifdef _CONSOLE
-#include "..\tmp\SMSlib.h"
-#include "..\tmp\PSGlib.h"
-#else
-#include "..\lib\SMSlib.h"
-#include "..\lib\PSGlib.h"
-#endif
-
 #include "gfx.h"
+
+//#include "source\_sms_manager.h"
 
 // BANKS
 #include "banks\bank2.h"
@@ -21,10 +15,10 @@
 //#include "banks\bank5.h"
 
 // MANAGERS
-#include "engine\global_manager.h"
+//#include "engine\global_manager.h"
 //#include "engine\locale_manager.h"
-#include "engine\enum_manager.h"
-#include "engine\hack_manager.h"
+//#include "engine\enum_manager.h"
+//#include "engine\hack_manager.h"
 
 // OBJECTS
 //#include "object\enemy_object.h"
@@ -35,15 +29,15 @@
 //#include "engine\global_manager.h"
 //#include "engine\locale_manager.h"
 //#include "engine\enum_manager.h"
-#include "engine\content_manager.h"
-#include "engine\font_manager.h"
-#include "engine\sprite_manager.h"
+//#include "engine\content_manager.h"	//TODO
+//#include "engine\font_manager.h"	//TODO
+//#include "engine\sprite_manager.h"	//TODO
 //#include "engine\tile_manager.h"
 //#include "engine\level_manager.h"
-#include "engine\input_manager.h"
+//#include "engine\input_manager.h"	//TODO
 //#include "engine\enemy_manager.h"
 //#include "engine\player_manager.h"
-#include "engine\asm_manager.h"
+//#include "engine\asm_manager.h"
 
 // SCREENS
 //#include "screen\none_screen.h"
@@ -55,8 +49,8 @@
 //#include "screen\splash_screen.h"
 
 // HACK_MANAGER
-unsigned char hacker_debug;
-unsigned char hacker_level;
+//unsigned char hacker_debug;
+//unsigned char hacker_level;
 
 // LEVEL_MANAGER
 //unsigned char level_map[ ROWS * COLS ];
@@ -71,8 +65,8 @@ unsigned char hacker_level;
 //MyStruct theVar;
 
 
-#ifdef _CONSOLE
-#else
-SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
-SMS_EMBED_SDSC_HEADER( 1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!" );
-#endif
+//#ifdef _CONSOLE
+//#else
+//SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
+//SMS_EMBED_SDSC_HEADER( 1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!" );
+//#endif

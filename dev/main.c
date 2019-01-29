@@ -1,7 +1,7 @@
 #include "main.h"
 
 // Global variables.
-bool global_pause;
+//bool global_pause;
 //enum_screen_type curr_screen_type, next_screen_type;
 
 //void( *load_method[ MAX_SCREEENS ] )( );
@@ -15,25 +15,25 @@ void main(void)
 	bool test = false;
 	int i = 2;
 
-	SMS_init();
+	/*SMS_init();
 	SMS_displayOff();
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
-	SMS_useFirstHalfTilesforSprites( true );
+	SMS_useFirstHalfTilesforSprites( true );*/
 	//SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_load_sprites();
-	engine_content_manager_load_back_tiles();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_load_sprites();
+	//engine_content_manager_load_back_tiles();
 
-	engine_font_manager_draw_data( i, 20, 0 );
+	//engine_font_manager_draw_data( i, 20, 0 );
 
 	/*custom_initialize();
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;*/
 	//next_screen_type = screen_type_test;
 
-	SMS_setSpritePaletteColor( 0, RGB( 2, 2, 2 ) );
-	SMS_displayOn();
+	/*SMS_setSpritePaletteColor( 0, RGB( 3, 3, 2 ) );
+	SMS_displayOn();*/
 	for (;;)
 	{
 		/*if( curr_screen_type != next_screen_type )
