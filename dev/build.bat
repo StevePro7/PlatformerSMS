@@ -58,6 +58,6 @@ del *.noi > nul
 REM del *.rel > nul
 del *.sym > nul
 
-C:\SEGA\Fusion\fusion.exe output.sms
+REM C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
