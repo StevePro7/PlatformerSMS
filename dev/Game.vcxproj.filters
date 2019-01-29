@@ -48,6 +48,12 @@
     <ClCompile Include="source\_sms_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
+    <ClCompile Include="source\render_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\common_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -61,6 +67,15 @@
     </ClInclude>
     <ClInclude Include="source\_sms_manager.h">
       <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\render_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\common_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\asm_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

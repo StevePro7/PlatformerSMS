@@ -6,7 +6,7 @@
 
 #include "gfx.h"
 
-//#include "source\_sms_manager.h"
+#include "source\_sms_manager.h"
 
 // BANKS
 #include "banks\bank2.h"
@@ -15,6 +15,8 @@
 //#include "banks\bank5.h"
 
 // MANAGERS
+#include "source\common_manager.h"
+#include "source\render_manager.h"
 //#include "engine\global_manager.h"
 //#include "engine\locale_manager.h"
 //#include "engine\enum_manager.h"
@@ -37,7 +39,7 @@
 //#include "engine\input_manager.h"	//TODO
 //#include "engine\enemy_manager.h"
 //#include "engine\player_manager.h"
-//#include "engine\asm_manager.h"
+#include "engine\asm_manager.h"
 
 // SCREENS
 //#include "screen\none_screen.h"

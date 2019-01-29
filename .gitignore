@@ -1,4 +1,5 @@
 *.sms
+*asm/*
 *dev/.vs/*
 *dev/*db
 *bin
