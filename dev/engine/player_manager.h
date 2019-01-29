@@ -35,7 +35,7 @@ void engine_player_manager_update()
 
 	index = po->fr;
 	engine_player_manager_animate( index );
-	po->fr++;
+	//po->fr++;
 	if( po->fr >= po->fm )
 	{
 		po->fr = 0;

@@ -2,6 +2,9 @@
 Placeholder repo for PlatformerSMS
 
 29/01/2019
+Build - maybe not able to split into C files
+as need SMSlib.h in main.c for SMS header
+
 Compare AstroForce with current build:
 All tiles are loaded once and only once into Tile Viewer [VRAM]
 just like Wonderboy

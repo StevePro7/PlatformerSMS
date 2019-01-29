@@ -30,6 +30,15 @@ void engine_enemy_manager_load()
 	eo->sprite_type = sprite_type_enemyC;
 	eo->sx = 160; eo->sy = 0; eo->bl = 144; eo->br = 192; eo->vx = -1; eo->vy = 0;
 	eo->fr = 3; eo->fm = 5;
+
+	eo = &enemy_object[ 6 ];
+	eo->sprite_type = sprite_type_enemyB;
+	eo->sx = 100; eo->sy = 100; eo->bl = 0; eo->br = 255; eo->vx = 0; eo->vy = 0;
+	eo->fr = 2; eo->fm = 5;
+	eo = &enemy_object[ 7 ];
+	eo->sprite_type = sprite_type_enemyC;
+	eo->sx = 100; eo->sy = 50; eo->bl = 0; eo->br = 255; eo->vx = 0; eo->vy = 0;
+	eo->fr = 2; eo->fm = 5;
 }
 
 void engine_enemy_manager_animate( unsigned char index, enum_sprite_type sprite_type )
@@ -51,7 +60,7 @@ void engine_enemy_manager_update()
 
 		index = eo->fr;
 		engine_enemy_manager_animate( index, eo->sprite_type );
-		eo->fr++;
+		//eo->fr++;
 		if( eo->fr >= eo->fm )
 		{
 			eo->fr = 0;
