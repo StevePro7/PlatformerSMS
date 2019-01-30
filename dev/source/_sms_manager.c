@@ -61,6 +61,26 @@ void devkit_SMS_setTile( const unsigned char tile )
 	SMS_setTile( tile );
 }
 
+void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned char tile )
+{
+	SMS_addSprite( x, y, tile );
+}
+void devkit_SMS_initSprites()
+{
+	SMS_initSprites();
+}
+void devkit_SMS_finalizeSprites()
+{
+	SMS_finalizeSprites();
+}
+void devkit_SMS_waitForVBlank()
+{
+	SMS_waitForVBlank();
+}
+void devkit_SMS_copySpritestoSAT()
+{
+	SMS_copySpritestoSAT();
+}
 
 #ifdef _CONSOLE
 #else

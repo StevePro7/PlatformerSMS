@@ -153,6 +153,7 @@
     <ClCompile Include="source\game_manager.c" />
     <ClCompile Include="source\global_manager.c" />
     <ClCompile Include="source\render_manager.c" />
+    <ClCompile Include="source\sprite_manager.c" />
     <ClCompile Include="source\tile_manager.c" />
     <ClCompile Include="source\_sms_manager.c" />
   </ItemGroup>
@@ -168,6 +169,7 @@
     <ClInclude Include="source\game_manager.h" />
     <ClInclude Include="source\global_manager.h" />
     <ClInclude Include="source\render_manager.h" />
+    <ClInclude Include="source\sprite_manager.h" />
     <ClInclude Include="source\tile_manager.h" />
     <ClInclude Include="source\_sms_manager.h" />
   </ItemGroup>

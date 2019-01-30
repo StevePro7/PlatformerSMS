@@ -20,7 +20,7 @@
 #include "source\common_manager.h"
 #include "source\render_manager.h"
 //#include "engine\locale_manager.h"
-//#include "engine\enum_manager.h"
+#include "source\enum_manager.h"
 //#include "engine\hack_manager.h"
 
 // OBJECTS
@@ -34,7 +34,7 @@
 //#include "engine\enum_manager.h"
 #include "source\content_manager.h"
 #include "source\font_manager.h"
-//#include "engine\sprite_manager.h"	//TODO
+#include "source\sprite_manager.h"
 #include "source\tile_manager.h"
 //#include "engine\level_manager.h"
 //#include "engine\input_manager.h"	//TODO

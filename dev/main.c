@@ -21,7 +21,7 @@ void main(void)
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 	devkit_SMS_setSpriteMode_Normal();
-	//devkit_SMS_useFirstHalfTilesforSprites_True();			// this line changes Tile Viewer color
+	devkit_SMS_useFirstHalfTilesforSprites_True();			// this line changes Tile Viewer color
 	//devkit_SMS_VDPturnOnFeature_HideFirstCol();				// TODO remember to uncomment this...!
 
 	/*SMS_init();
@@ -42,12 +42,14 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 
 	//engine_font_manager_draw_data( i, 20, 0 );
-	engine_font_manager_draw_text( "SUZANNE", 0, 0 );
+	//engine_font_manager_draw_text( "SUZANNE", 0, 0 );
 	engine_font_manager_draw_text( "!@#$%^&*()", 20, 0 );
-	engine_font_manager_draw_data( 7000, 10, 1 );
-	engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
+	//engine_font_manager_draw_data( 7000, 10, 1 );
+	//engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
 
-	engine_tile_manager_draw_tile( 1, 5, 5 );
+	engine_tile_manager_draw_tile( 1, 4, 14 );
+	engine_tile_manager_draw_tile( 2, 6, 9 );
+	
 	/*custom_initialize();
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;*/
@@ -65,7 +67,7 @@ void main(void)
 		}*/
 
 
-		//SMS_initSprites();
+		devkit_SMS_initSprites();
 		//engine_input_manager_update();
 		//test = engine_input_manager_hold_up();
 		/*test = engine_input_manager_move_up();
@@ -74,6 +76,7 @@ void main(void)
 			i++;
 			engine_font_manager_draw_data( i, 20, 0 );
 		}*/
+		engine_sprite_manager_draw( 0, 0, sprite_type_player );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
@@ -81,11 +84,11 @@ void main(void)
 		engine_sprite_manager_draw_enemyD( 16 * 7 + GAME_X_OFFSET, 48 );*/
 
 		//screen_none_screen_update();
-		/*update_method[ curr_screen_type ]( &next_screen_type );
+		//update_method[ curr_screen_type ]( &next_screen_type );
 
-		SMS_finalizeSprites();
-		SMS_waitForVBlank();
-		SMS_copySpritestoSAT();*/
+		devkit_SMS_finalizeSprites();
+		devkit_SMS_waitForVBlank();
+		devkit_SMS_copySpritestoSAT();
 	}
 }
 
