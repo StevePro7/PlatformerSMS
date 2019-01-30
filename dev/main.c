@@ -76,7 +76,7 @@ void main(void)
 			i++;
 			engine_font_manager_draw_data( i, 20, 0 );
 		}*/
-		engine_sprite_manager_draw( 0, 0, sprite_type_player );
+		engine_sprite_manager_draw( 160, 80, sprite_type_player );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
