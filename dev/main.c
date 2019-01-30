@@ -13,7 +13,7 @@
 void main(void)
 {
 	bool test = false;
-	int i = 2;
+	int i = 0;
 
 	engine_asm_manager_clear_VRAM();
 
@@ -41,9 +41,9 @@ void main(void)
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
-	//engine_font_manager_draw_data( i, 20, 0 );
+	engine_font_manager_draw_data( i, 10, 0 );
 	//engine_font_manager_draw_text( "SUZANNE", 0, 0 );
-	engine_font_manager_draw_text( "!@#$%^&*()", 20, 0 );
+	//engine_font_manager_draw_text( "!@#$%^&*()", 20, 0 );
 	//engine_font_manager_draw_data( 7000, 10, 1 );
 	//engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
 
@@ -68,15 +68,15 @@ void main(void)
 
 
 		devkit_SMS_initSprites();
-		//engine_input_manager_update();
-		//test = engine_input_manager_hold_up();
-		/*test = engine_input_manager_move_up();
+		engine_input_manager_update();
+		test = engine_input_manager_hold_fire1();
+		//test = engine_input_manager_move_fire2();
 		if( test )
 		{
 			i++;
-			engine_font_manager_draw_data( i, 20, 0 );
-		}*/
-		engine_sprite_manager_draw( 160, 80, sprite_type_player );
+			engine_font_manager_draw_data( i, 10, 0 );
+		}
+		//engine_sprite_manager_draw( 160, 80, sprite_type_player );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );

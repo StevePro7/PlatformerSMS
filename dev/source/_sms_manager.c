@@ -82,6 +82,35 @@ void devkit_SMS_copySpritestoSAT()
 	SMS_copySpritestoSAT();
 }
 
+unsigned int devkit_SMS_getKeysStatus()
+{
+	return SMS_getKeysStatus();
+}
+unsigned int devkit_PORT_A_KEY_UP()
+{
+	return PORT_A_KEY_UP;
+}
+unsigned int devkit_PORT_A_KEY_DOWN()
+{
+	return PORT_A_KEY_DOWN;
+}
+unsigned int devkit_PORT_A_KEY_LEFT()
+{
+	return PORT_A_KEY_LEFT;
+}
+unsigned int devkit_PORT_A_KEY_RIGHT()
+{
+	return PORT_A_KEY_RIGHT;
+}
+unsigned int devkit_PORT_A_KEY_1()
+{
+	return PORT_A_KEY_1;
+}
+unsigned int devkit_PORT_A_KEY_2()
+{
+	return PORT_A_KEY_2;
+}
+
 #ifdef _CONSOLE
 #else
 	SMS_EMBED_SEGA_ROM_HEADER( productCode, revision );

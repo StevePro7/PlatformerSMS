@@ -24,6 +24,8 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
 
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
+
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
 
@@ -79,6 +81,7 @@ source\content_manager.rel ^
 source\font_manager.rel ^
 source\sprite_manager.rel ^
 source\tile_manager.rel ^
+source\input_manager.rel ^
 source\common_manager.rel ^
 source\render_manager.rel ^
 gfx.rel
@@ -123,6 +126,7 @@ if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
 cd ..
 
+if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul
 if exist "*.lk"  del "*.lk"  > nul
 if exist "*.lst" del "*.lst" > nul

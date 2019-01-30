@@ -37,7 +37,7 @@
 #include "source\sprite_manager.h"
 #include "source\tile_manager.h"
 //#include "engine\level_manager.h"
-//#include "engine\input_manager.h"	//TODO
+#include "source\input_manager.h"
 //#include "engine\enemy_manager.h"
 //#include "engine\player_manager.h"
 #include "engine\asm_manager.h"

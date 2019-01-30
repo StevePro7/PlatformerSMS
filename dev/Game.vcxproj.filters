@@ -72,6 +72,9 @@
     <ClCompile Include="source\sprite_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
+    <ClCompile Include="source\input_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -114,6 +117,9 @@
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="source\sprite_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\input_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>
