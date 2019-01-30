@@ -16,12 +16,12 @@
 //#include "banks\bank5.h"
 
 // MANAGERS
-//#include "source\global_manager.h"
+#include "source\global_manager.h"
 #include "source\common_manager.h"
 #include "source\render_manager.h"
 //#include "engine\locale_manager.h"
 #include "source\enum_manager.h"
-//#include "engine\hack_manager.h"
+#include "source\hack_manager.h"
 
 // OBJECTS
 //#include "object\enemy_object.h"

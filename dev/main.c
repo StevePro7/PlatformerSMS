@@ -9,12 +9,14 @@
 
 //void custom_initialize();
 void draw_grid();
+void draw_floor();
 
 void main(void)
 {
 	bool test = false;
 	int i = 0;
-
+	float x = 128;
+	float y = 128;
 	engine_asm_manager_clear_VRAM();
 
 	//engine_game_manager_init();
@@ -27,7 +29,7 @@ void main(void)
 
 
 	//source_game_manager_common();
-	//source_game_manager_render();
+	engine_hack_manager_init();
 
 	//engine_game_manager_common();
 	//engine_game_manager_render();
@@ -35,16 +37,17 @@ void main(void)
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
-	draw_grid();
-	engine_font_manager_draw_data( i, 10, 0 );
+	//draw_grid();
+	draw_floor();
+	//engine_font_manager_draw_data( i, 10, 0 );
 	//engine_font_manager_draw_text( "SUZANNE", 0, 0 );
 	//engine_font_manager_draw_text( "!@#$%^&*()", 20, 0 );
 	//engine_font_manager_draw_data( 7000, 10, 1 );
 	//engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
 
-	engine_tile_manager_draw_tile( tile_type_blockerA, 6, 14 );
+	/*engine_tile_manager_draw_tile( tile_type_blockerA, 6, 14 );
 	engine_tile_manager_draw_tile( tile_type_blockerB, 8, 14 );
-	engine_tile_manager_draw_tile( tile_type_blockerC, 10, 14 );
+	engine_tile_manager_draw_tile( tile_type_blockerC, 10, 14 );*/
 	
 	
 	/*custom_initialize();
@@ -68,12 +71,13 @@ void main(void)
 		engine_input_manager_update();
 		test = engine_input_manager_hold_fire2();
 		//test = engine_input_manager_move_fire2();
-		if( test )
+		/*if( test )
 		{
 			i++;
 			engine_font_manager_draw_data( i, 10, 0 );
-		}
-		engine_sprite_manager_draw( 64, 80, sprite_type_player );
+		}*/
+		//engine_sprite_manager_draw( 64, 80, sprite_type_player );
+		engine_sprite_manager_draw_player( x, y );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
@@ -98,6 +102,18 @@ void draw_grid()
 		{
 			engine_tile_manager_draw_tile( tile_type_gridline, x, y );
 		}
+	}
+}
+void draw_floor()
+{
+	unsigned char x;
+	enum_tile_type tile_type;
+	for( x = 0; x < 32; x += 2 )
+	{
+		tile_type = rand() % MAX_BLOCK_TILES + 1;
+		engine_tile_manager_draw_tile( tile_type, x, 20 );
+		tile_type = rand() % MAX_BLOCK_TILES + 1;
+		engine_tile_manager_draw_tile( tile_type, x, 22 );
 	}
 }
 
