@@ -29,6 +29,8 @@ typedef enum tag_enum_tile_type
 	tile_type_exitgame = 11,
 	tile_type_gemscore = 12,
 	tile_type_gempower = 13,
+	tile_type_emptyspc = 14,
+	tile_type_gridline = 15,
 
 } enum_tile_type;
 

@@ -8,7 +8,7 @@
 //void( *update_method[ MAX_SCREEENS ] )( enum_screen_type *screen_type );
 
 //void custom_initialize();
-
+void draw_grid();
 
 void main(void)
 {
@@ -23,7 +23,7 @@ void main(void)
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites_True();						// true changes tile color in Tile Viewer
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );	// TODO remember to uncomment this...!
+	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );	// TODO remember to uncomment this...!
 
 
 	//source_game_manager_common();
@@ -35,22 +35,25 @@ void main(void)
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
+	draw_grid();
 	engine_font_manager_draw_data( i, 10, 0 );
 	//engine_font_manager_draw_text( "SUZANNE", 0, 0 );
 	//engine_font_manager_draw_text( "!@#$%^&*()", 20, 0 );
 	//engine_font_manager_draw_data( 7000, 10, 1 );
 	//engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
 
-	engine_tile_manager_draw_tile( 1, 4, 14 );
-	engine_tile_manager_draw_tile( 2, 6, 9 );
+	engine_tile_manager_draw_tile( tile_type_blockerA, 6, 14 );
+	engine_tile_manager_draw_tile( tile_type_blockerB, 8, 14 );
+	engine_tile_manager_draw_tile( tile_type_blockerC, 10, 14 );
+	
 	
 	/*custom_initialize();
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;*/
 	//next_screen_type = screen_type_test;
 
-	/*SMS_setSpritePaletteColor( 0, RGB( 3, 3, 2 ) );
-	SMS_displayOn();*/
+	//SMS_setSpritePaletteColor( 0, RGB( 3, 3, 2 ) );
+	
 	devkit_SMS_displayOn();
 	for (;;)
 	{
@@ -70,7 +73,7 @@ void main(void)
 			i++;
 			engine_font_manager_draw_data( i, 10, 0 );
 		}
-		engine_sprite_manager_draw( 160, 80, sprite_type_player );
+		engine_sprite_manager_draw( 64, 80, sprite_type_player );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
@@ -83,6 +86,18 @@ void main(void)
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
 		devkit_SMS_copySpritestoSAT();
+	}
+}
+
+void draw_grid()
+{
+	unsigned char x, y;
+	for( y = 0; y < 24; y+=2)
+	{
+		for( x = 0; x < 32; x+=2 )
+		{
+			engine_tile_manager_draw_tile( tile_type_gridline, x, y );
+		}
 	}
 }
 
