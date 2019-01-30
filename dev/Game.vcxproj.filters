@@ -54,10 +54,13 @@
     <ClCompile Include="source\common_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
-    <ClCompile Include="source\_snd_manager.c">
+    <ClCompile Include="source\game_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
-    <ClCompile Include="source\game_manager.c">
+    <ClCompile Include="source\content_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\global_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,10 +86,16 @@
     <ClInclude Include="engine\asm_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="source\_snd_manager.h">
+    <ClInclude Include="source\game_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
-    <ClInclude Include="source\game_manager.h">
+    <ClInclude Include="source\content_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\global_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\enum_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,7 +18,9 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 
 cd source
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 cd ..
@@ -68,7 +70,9 @@ sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC0
 ..\lib\PSGlib.rel ^
 banks\bank2.rel ^
 source\_sms_manager.rel ^
+source\global_manager.rel ^
 source\common_manager.rel ^
+source\content_manager.rel ^
 source\render_manager.rel ^
 gfx.rel
 
@@ -91,10 +95,10 @@ ihx2sms output.ihx output.sms
 
 REM copy output.sms
 copy output.sms ..\
-copy output.sms ..\asm
-cd ..\asm
-smsexamine.exe output.sms
-cd ..\dev
+REM copy output.sms ..\asm
+REM cd ..\asm
+REM smsexamine.exe output.sms
+REM cd ..\dev
 
 
 REM echo Delete

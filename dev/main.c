@@ -15,7 +15,7 @@ void main(void)
 	bool test = false;
 	int i = 2;
 
-	engine_game_manager_init();
+	//engine_game_manager_init();
 	/*SMS_init();
 	SMS_displayOff();
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
@@ -24,14 +24,14 @@ void main(void)
 
 	engine_asm_manager_clear_VRAM();
 
-	source_game_manager_common();
-	source_game_manager_render();
+	//source_game_manager_common();
+	//source_game_manager_render();
 
 	//engine_game_manager_common();
 	//engine_game_manager_render();
 
-	//engine_content_manager_load_sprites();
-	//engine_content_manager_load_back_tiles();
+	engine_content_manager_load_sprites();
+	engine_content_manager_load_back_tiles();
 
 	//engine_font_manager_draw_data( i, 20, 0 );
 
@@ -42,6 +42,7 @@ void main(void)
 
 	/*SMS_setSpritePaletteColor( 0, RGB( 3, 3, 2 ) );
 	SMS_displayOn();*/
+	devkit_SMS_displayOn();
 	for (;;)
 	{
 		/*if( curr_screen_type != next_screen_type )

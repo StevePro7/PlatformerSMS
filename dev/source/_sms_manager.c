@@ -18,17 +18,38 @@ void engine_game_manager_init()
 	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 }
 
-// TEST_MANAGER
-void engine_game_manager_common()
+void devkit_SMS_init()
+{
+	SMS_init();
+}
+void devkit_SMS_displayOn()
 {
 	SMS_displayOn();
+}
+void devkit_SMS_displayOff()
+{
+	SMS_displayOff();
+}
+
+void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom )
+{
+	SMS_loadPSGaidencompressedTiles( src, tilefrom );
+}
+void devkit_SMS_loadBGPalette( void *palette )
+{
+	SMS_loadBGPalette( palette );
+}
+void devkit_SMS_loadSpritePalette( void *palette )
+{
+	SMS_loadSpritePalette( palette );
 }
 void devkit_SMS_setSpritePaletteColor( const unsigned char entry, const unsigned char r, const unsigned char g, const unsigned char b )
 {
 	const unsigned char color = RGB( r, g, b );
-	//SMS_setSpritePaletteColor( 0, RGB( 1, 3, 1 ) );
 	SMS_setSpritePaletteColor( entry, color );
 }
+
+
 
 
 #ifdef _CONSOLE
