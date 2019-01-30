@@ -66,6 +66,9 @@
     <ClCompile Include="source\font_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
+    <ClCompile Include="source\tile_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="source\font_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tile_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>

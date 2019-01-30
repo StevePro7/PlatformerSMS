@@ -35,7 +35,7 @@
 #include "source\content_manager.h"
 #include "source\font_manager.h"
 //#include "engine\sprite_manager.h"	//TODO
-//#include "engine\tile_manager.h"
+#include "source\tile_manager.h"
 //#include "engine\level_manager.h"
 //#include "engine\input_manager.h"	//TODO
 //#include "engine\enemy_manager.h"

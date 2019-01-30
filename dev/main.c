@@ -42,10 +42,12 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 
 	//engine_font_manager_draw_data( i, 20, 0 );
-	engine_font_manager_draw_text( "STEVEPRO", 0, 0 );
+	engine_font_manager_draw_text( "SUZANNE", 0, 0 );
+	engine_font_manager_draw_text( "!@#$%^&*()", 20, 0 );
 	engine_font_manager_draw_data( 7000, 10, 1 );
 	engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
 
+	engine_tile_manager_draw_tile( 1, 5, 5 );
 	/*custom_initialize();
 	curr_screen_type = screen_type_none;
 	next_screen_type = screen_type_load;*/

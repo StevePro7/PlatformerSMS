@@ -22,6 +22,8 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 globa
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
+
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
 
@@ -75,6 +77,7 @@ source\_sms_manager.rel ^
 source\global_manager.rel ^
 source\content_manager.rel ^
 source\font_manager.rel ^
+source\tile_manager.rel ^
 source\common_manager.rel ^
 source\render_manager.rel ^
 gfx.rel
@@ -117,15 +120,16 @@ cd source
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
-
-rem del *.ihx > nul
-rem del *.lk > nul
-rem del *.lst > nul
-rem del *.map > nul
-rem del *.noi > nul
-REM del *.rel > nul
-rem del *.sym > nul
 cd ..
+
+if exist "*.ihx" del "*.ihx" > nul
+if exist "*.lk"  del "*.lk"  > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.map" del "*.map" > nul
+if exist "*.noi" del "*.noi" > nul
+REM if exist "*.rel" del "*.rel" > nul
+if exist "*.sym" del "*.sym" > nul
+
 
 C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
