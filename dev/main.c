@@ -15,7 +15,7 @@ void main(void)
 {
 	bool test = false;
 	int i = 0;
-	float x = 128;
+	float x = 80;
 	float y = 128;
 	engine_asm_manager_clear_VRAM();
 
