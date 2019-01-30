@@ -3,9 +3,9 @@
 #include <stdbool.h>
 
 #ifdef _CONSOLE
-	#include "..\..\tmp\SMSlib.h"
+#include "..\..\tmp\SMSlib.h"
 #else
-	#include "..\..\lib\SMSlib.h"
+#include "..\..\lib\SMSlib.h"
 #endif
 
 void devkit_SMS_init()
@@ -21,17 +21,17 @@ void devkit_SMS_displayOff()
 	SMS_displayOff();
 }
 
-void devkit_SMS_setSpriteMode_Normal()
+void devkit_SMS_setSpriteMode( unsigned char mode )
 {
-	SMS_setSpriteMode( SPRITEMODE_NORMAL );
+	SMS_setSpriteMode( mode );
 }
 void devkit_SMS_useFirstHalfTilesforSprites_True()
 {
 	SMS_useFirstHalfTilesforSprites( true );
 }
-void devkit_SMS_VDPturnOnFeature_HideFirstCol()
+void devkit_SMS_VDPturnOnFeature( unsigned int feature )
 {
-	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
+	SMS_VDPturnOnFeature( feature );
 }
 
 void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom )
@@ -86,6 +86,17 @@ unsigned int devkit_SMS_getKeysStatus()
 {
 	return SMS_getKeysStatus();
 }
+
+// #defines
+unsigned char devkit_SPRITEMODE_NORMAL()
+{
+	return SPRITEMODE_NORMAL;
+}
+unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL()
+{
+	return VDPFEATURE_HIDEFIRSTCOL;
+}
+
 unsigned int devkit_PORT_A_KEY_UP()
 {
 	return PORT_A_KEY_UP;

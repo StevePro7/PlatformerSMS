@@ -1,13 +1,16 @@
 #ifndef _SMS_MANAGER_H_
 #define _SMS_MANAGER_H_
 
+//#include <stdbool.h>
+
+
 void devkit_SMS_init();
 void devkit_SMS_displayOn();
 void devkit_SMS_displayOff();
 
-void devkit_SMS_setSpriteMode_Normal();
+void devkit_SMS_setSpriteMode( unsigned char mode );
 void devkit_SMS_useFirstHalfTilesforSprites_True();
-void devkit_SMS_VDPturnOnFeature_HideFirstCol();
+void devkit_SMS_VDPturnOnFeature( unsigned int feature );
 
 void devkit_SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilefrom );
 void devkit_SMS_loadBGPalette( void *palette );
@@ -25,6 +28,11 @@ void devkit_SMS_waitForVBlank();
 void devkit_SMS_copySpritestoSAT();
 
 unsigned int devkit_SMS_getKeysStatus();
+
+// #defines
+unsigned char devkit_SPRITEMODE_NORMAL();
+unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL();
+
 unsigned int devkit_PORT_A_KEY_UP();
 unsigned int devkit_PORT_A_KEY_DOWN();
 unsigned int devkit_PORT_A_KEY_LEFT();

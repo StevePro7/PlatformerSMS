@@ -20,16 +20,10 @@ void main(void)
 	//engine_game_manager_init();
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
-	devkit_SMS_setSpriteMode_Normal();
-	devkit_SMS_useFirstHalfTilesforSprites_True();			// this line changes Tile Viewer color
-	//devkit_SMS_VDPturnOnFeature_HideFirstCol();				// TODO remember to uncomment this...!
 
-	/*SMS_init();
-	SMS_displayOff();
-	SMS_setSpriteMode( SPRITEMODE_NORMAL );
-	SMS_useFirstHalfTilesforSprites( true );*/
-	//SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
-
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+	devkit_SMS_useFirstHalfTilesforSprites_True();						// true changes tile color in Tile Viewer
+	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );	// TODO remember to uncomment this...!
 
 
 	//source_game_manager_common();
@@ -69,14 +63,14 @@ void main(void)
 
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
-		test = engine_input_manager_hold_fire1();
+		test = engine_input_manager_hold_fire2();
 		//test = engine_input_manager_move_fire2();
 		if( test )
 		{
 			i++;
 			engine_font_manager_draw_data( i, 10, 0 );
 		}
-		//engine_sprite_manager_draw( 160, 80, sprite_type_player );
+		engine_sprite_manager_draw( 160, 80, sprite_type_player );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );
