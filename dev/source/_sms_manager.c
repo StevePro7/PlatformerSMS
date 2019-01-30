@@ -8,16 +8,6 @@
 	#include "..\..\lib\SMSlib.h"
 #endif
 
-// GAME_MANAGER
-void engine_game_manager_init()
-{
-	SMS_init();
-	SMS_displayOff();
-	SMS_setSpriteMode( SPRITEMODE_NORMAL );
-	SMS_useFirstHalfTilesforSprites( true );
-	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
-}
-
 void devkit_SMS_init()
 {
 	SMS_init();
@@ -29,6 +19,19 @@ void devkit_SMS_displayOn()
 void devkit_SMS_displayOff()
 {
 	SMS_displayOff();
+}
+
+void devkit_SMS_setSpriteMode_Normal()
+{
+	SMS_setSpriteMode( SPRITEMODE_NORMAL );
+}
+void devkit_SMS_useFirstHalfTilesforSprites_True()
+{
+	SMS_useFirstHalfTilesforSprites( true );
+}
+void devkit_SMS_VDPturnOnFeature_HideFirstCol()
+{
+	SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 }
 
 void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom )
@@ -49,7 +52,14 @@ void devkit_SMS_setSpritePaletteColor( const unsigned char entry, const unsigned
 	SMS_setSpritePaletteColor( entry, color );
 }
 
-
+void devkit_SMS_setNextTileatXY( unsigned char x, unsigned char y )
+{
+	SMS_setNextTileatXY( x, y );
+}
+void devkit_SMS_setTile( const unsigned char tile )
+{
+	SMS_setTile( tile );
+}
 
 
 #ifdef _CONSOLE

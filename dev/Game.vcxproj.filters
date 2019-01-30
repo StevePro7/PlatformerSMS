@@ -63,6 +63,9 @@
     <ClCompile Include="source\global_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
+    <ClCompile Include="source\font_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -96,6 +99,9 @@
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="source\enum_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\font_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>

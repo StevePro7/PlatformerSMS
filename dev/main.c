@@ -18,6 +18,12 @@ void main(void)
 	engine_asm_manager_clear_VRAM();
 
 	//engine_game_manager_init();
+	devkit_SMS_init();
+	devkit_SMS_displayOff();
+	devkit_SMS_setSpriteMode_Normal();
+	//devkit_SMS_useFirstHalfTilesforSprites_True();			// this line changes Tile Viewer color
+	//devkit_SMS_VDPturnOnFeature_HideFirstCol();				// TODO remember to uncomment this...!
+
 	/*SMS_init();
 	SMS_displayOff();
 	SMS_setSpriteMode( SPRITEMODE_NORMAL );
@@ -36,6 +42,9 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 
 	//engine_font_manager_draw_data( i, 20, 0 );
+	engine_font_manager_draw_text( "STEVEPRO", 0, 0 );
+	engine_font_manager_draw_data( 7000, 10, 1 );
+	engine_font_manager_draw_data_ZERO( 8000, 10, 2 );
 
 	/*custom_initialize();
 	curr_screen_type = screen_type_none;

@@ -149,6 +149,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="source\common_manager.c" />
     <ClCompile Include="source\content_manager.c" />
+    <ClCompile Include="source\font_manager.c" />
     <ClCompile Include="source\game_manager.c" />
     <ClCompile Include="source\global_manager.c" />
     <ClCompile Include="source\render_manager.c" />
@@ -162,6 +163,7 @@
     <ClInclude Include="source\common_manager.h" />
     <ClInclude Include="source\content_manager.h" />
     <ClInclude Include="source\enum_manager.h" />
+    <ClInclude Include="source\font_manager.h" />
     <ClInclude Include="source\game_manager.h" />
     <ClInclude Include="source\global_manager.h" />
     <ClInclude Include="source\render_manager.h" />

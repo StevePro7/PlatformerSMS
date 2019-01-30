@@ -17,12 +17,14 @@ REM echo Build psg
 REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 
 cd source
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
+
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
+
 cd ..
 
 REM echo Build main
@@ -71,8 +73,9 @@ sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC0
 banks\bank2.rel ^
 source\_sms_manager.rel ^
 source\global_manager.rel ^
-source\common_manager.rel ^
 source\content_manager.rel ^
+source\font_manager.rel ^
+source\common_manager.rel ^
 source\render_manager.rel ^
 gfx.rel
 
@@ -124,6 +127,6 @@ REM del *.rel > nul
 rem del *.sym > nul
 cd ..
 
-REM C:\SEGA\Fusion\fusion.exe output.sms
+C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-rem java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

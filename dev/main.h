@@ -33,7 +33,7 @@
 //#include "engine\locale_manager.h"
 //#include "engine\enum_manager.h"
 #include "source\content_manager.h"
-//#include "engine\font_manager.h"	//TODO
+#include "source\font_manager.h"
 //#include "engine\sprite_manager.h"	//TODO
 //#include "engine\tile_manager.h"
 //#include "engine\level_manager.h"
