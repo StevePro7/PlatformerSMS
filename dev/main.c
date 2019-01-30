@@ -15,7 +15,7 @@ void main(void)
 {
 	bool test = false;
 	int i = 0;
-	float x = 80;
+	float x = 96;
 	float y = 128;
 	engine_asm_manager_clear_VRAM();
 
@@ -77,7 +77,7 @@ void main(void)
 			engine_font_manager_draw_data( i, 10, 0 );
 		}*/
 		//engine_sprite_manager_draw( 64, 80, sprite_type_player );
-		engine_sprite_manager_draw_player( x, y );
+		engine_sprite_manager_draw_player( ( unsigned char ) x, ( unsigned char ) y );
 		//engine_sprite_manager_draw_player( 16 * 1 + GAME_X_OFFSET, 144 );
 		//engine_sprite_manager_draw_enemyA( 16 * 4 + GAME_X_OFFSET, 144 );
 		/*engine_sprite_manager_draw_enemyB( 16 * 7 + GAME_X_OFFSET, 144 );

@@ -1,0 +1,4 @@
+#ifndef _PLAYER_MANAGER_H_
+#define _PLAYER_MANAGER_H_
+
+#endif//_PLAYER_MANAGER_H_
