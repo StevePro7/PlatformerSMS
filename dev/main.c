@@ -15,6 +15,8 @@ void main(void)
 	bool test = false;
 	int i = 2;
 
+	engine_asm_manager_clear_VRAM();
+
 	//engine_game_manager_init();
 	/*SMS_init();
 	SMS_displayOff();
@@ -22,7 +24,7 @@ void main(void)
 	SMS_useFirstHalfTilesforSprites( true );*/
 	//SMS_VDPturnOnFeature( VDPFEATURE_HIDEFIRSTCOL );
 
-	engine_asm_manager_clear_VRAM();
+
 
 	//source_game_manager_common();
 	//source_game_manager_render();

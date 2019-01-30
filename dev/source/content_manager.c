@@ -22,4 +22,4 @@ void engine_content_manager_load_sprites()
 	devkit_SMS_loadPSGaidencompressedTiles( EnemyC_Idle_01__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyC ] );
 	devkit_SMS_loadPSGaidencompressedTiles( EnemyD_Idle_01__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyD ] );
 	devkit_SMS_loadSpritePalette( ( void * ) Sprites__palette__bin );
-}
+}+

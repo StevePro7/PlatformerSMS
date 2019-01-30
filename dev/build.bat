@@ -17,11 +17,11 @@ REM echo Build psg
 REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 
 cd source
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 cd ..
 
@@ -109,7 +109,12 @@ REM del *.rel > nul
 REM del *.sym > nul
 REM cd ..
 
-rem del *.asm > nul
+REM https://www.askingbox.com/question/batch-script-delete-file-if-it-exists
+cd source
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+
 rem del *.ihx > nul
 rem del *.lk > nul
 rem del *.lst > nul
@@ -117,7 +122,8 @@ rem del *.map > nul
 rem del *.noi > nul
 REM del *.rel > nul
 rem del *.sym > nul
+cd ..
 
 REM C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+rem java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
