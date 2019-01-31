@@ -4,6 +4,11 @@
 //#include <string.h>
 
 
+const int MoveAcceleration = 13000;
+const int MaxMoveSpeed = 1750;
+//const float GroundDragFactor = 0.48f;
+//const float AirDragFactor = 0.58f;
+
 #include "gfx.h"
 
 #include "source\_sms_manager.h"

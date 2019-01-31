@@ -1,6 +1,12 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+31/01/2019
+Math functions
+did prototype testing on this before but couldn't find my code samples...!
+Here is the header file to reference what math functions are available in SDCC
+https://github.com/darconeous/sdcc/blob/master/device/include/math.h
+
 29/01/2019
 Build - maybe not able to split into C files
 as need SMSlib.h in main.c for SMS header
