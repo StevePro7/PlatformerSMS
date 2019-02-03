@@ -2,10 +2,10 @@
 
 // Global variables.
 bool global_pause;
-enum_screen_type curr_screen_type, next_screen_type;
+unsigned char curr_screen_type, next_screen_type;
 
 void( *load_method[ MAX_SCREEENS ] )( );
-void( *update_method[ MAX_SCREEENS ] )( enum_screen_type *screen_type );
+void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
 void custom_initialize();
 
 void draw_grid();
@@ -113,7 +113,7 @@ void main(void)
 		//engine_sprite_manager_draw_player( px, py );
 
 		//screen_none_screen_update();
-		//update_method[ curr_screen_type ]( &next_screen_type );
+		update_method[ curr_screen_type ]( &next_screen_type );
 
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
