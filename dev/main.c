@@ -1,5 +1,13 @@
 #include "main.h"
 
+// Global variables.
+bool global_pause;
+enum_screen_type curr_screen_type, next_screen_type;
+
+void( *load_method[ MAX_SCREEENS ] )( );
+void( *update_method[ MAX_SCREEENS ] )( enum_screen_type *screen_type );
+void custom_initialize();
+
 void draw_grid();
 void draw_floor();
 void print( int px, int vx, int dx, unsigned char yy );
@@ -65,14 +73,19 @@ void main(void)
 	//px = px + dx;
 	//print( px, vx, dx, yy++ );
 
+	custom_initialize();
+	curr_screen_type = screen_type_none;
+	//next_screen_type = screen_type_load;
+	next_screen_type = screen_type_test;
+
 	devkit_SMS_displayOn();
 	for (;;)
 	{
-		/*if( curr_screen_type != next_screen_type )
+		if( curr_screen_type != next_screen_type )
 		{
 			curr_screen_type = next_screen_type;
 			load_method[ curr_screen_type ]();
-		}*/
+		}
 
 
 		devkit_SMS_initSprites();
@@ -82,8 +95,6 @@ void main(void)
 		{
 			engine_sprite_manager_draw_player( px, py );
 		}
-
-		
 		/*else
 		{
 			test = engine_input_manager_move_right();
@@ -138,6 +149,36 @@ void draw_floor()
 		tile_type = rand() % MAX_BLOCK_TILES + 1;
 		engine_tile_manager_draw_tile( tile_type, x, 22 );
 	}
+}
+
+
+void custom_initialize()
+{
+	// Set load methods.
+	load_method[ screen_type_none ] = screen_none_screen_load;
+	load_method[ screen_type_test ] = screen_test_screen_load;
+	/*
+	load_method[ screen_type_init ] = screen_init_screen_load;
+	load_method[ screen_type_load ] = screen_load_screen_load;
+	load_method[ screen_type_play ] = screen_play_screen_load;
+	load_method[ screen_type_func ] = screen_func_screen_load;
+	load_method[ screen_type_splash ] = screen_splash_screen_load;
+	*/
+
+	// Set update methods.
+	update_method[ screen_type_none ] = screen_none_screen_update;
+	update_method[ screen_type_test ] = screen_test_screen_update;
+	/*
+	update_method[ screen_type_init ] = screen_init_screen_update;
+	update_method[ screen_type_load ] = screen_load_screen_update;
+	update_method[ screen_type_play ] = screen_play_screen_update;
+	update_method[ screen_type_func ] = screen_func_screen_update;
+	update_method[ screen_type_splash ] = screen_splash_screen_update;
+	*/
+
+	// Initialize hack manager.
+	engine_hack_manager_init();
+	engine_hack_manager_invert();
 }
 
 

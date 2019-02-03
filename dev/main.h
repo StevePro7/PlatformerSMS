@@ -48,8 +48,8 @@ const int MaxMoveSpeed = 1750;
 #include "engine\asm_manager.h"
 
 // SCREENS
-//#include "screen\none_screen.h"
-//#include "screen\test_screen.h"
+#include "source\none_screen.h"
+#include "source\test_screen.h"
 //#include "screen\init_screen.h"
 //#include "screen\load_screen.h"
 //#include "screen\play_screen.h"
