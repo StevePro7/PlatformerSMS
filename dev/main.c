@@ -27,7 +27,6 @@ void main(void)
 	int movement = 0;
 
 	engine_asm_manager_clear_VRAM();
-
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 

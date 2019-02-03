@@ -1,6 +1,23 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+03/02/2019
+Conclusive proof that cannot include *.cpp files in this type of project
+https://stackoverflow.com/questions/9928238/unresolved-external-symbol-in-object-files
+
+?ASlink-Warning-Undefined Global '_engine_scroll_manager_load' referenced by module 'main'
+#include "scroll_manager.h"
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+void engine_scroll_manager_load()
+{
+}
+#ifdef __cplusplus
+}
+#endif
+
 31/01/2019
 Math functions
 did prototype testing on this before but couldn't find my code samples...!

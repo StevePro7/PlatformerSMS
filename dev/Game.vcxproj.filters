@@ -96,6 +96,9 @@
     <ClCompile Include="source\test_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="source\scroll_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="source\test_screen.h">
       <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scroll_manager.h">
+      <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

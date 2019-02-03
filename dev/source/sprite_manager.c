@@ -1,9 +1,10 @@
 #include "sprite_manager.h"
 #include "_sms_manager.h"
 #include "global_manager.h"
+#include "enum_manager.h"
 #include "..\gfx.h"
 
-void engine_sprite_manager_draw( unsigned char x, unsigned char y, enum_sprite_type sprite_type )
+void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned char sprite_type )
 {
 	const unsigned char tile = list_sprite_tile_offset[ sprite_type ];
 
@@ -20,5 +21,5 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, enum_sprite_t
 
 void engine_sprite_manager_draw_player( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, sprite_type_player );
+	engine_sprite_manager_draw( x, y, ( enum_sprite_type )sprite_type_player );
 }
