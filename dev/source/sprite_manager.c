@@ -21,5 +21,5 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned char
 
 void engine_sprite_manager_draw_player( unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_draw( x, y, ( enum_sprite_type )sprite_type_player );
+	engine_sprite_manager_draw( x, y, ( enum_sprite_type ) sprite_type_player );
 }
