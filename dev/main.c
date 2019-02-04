@@ -10,21 +10,30 @@ void custom_initialize();
 
 void draw_grid();
 void draw_floor();
-void print( int px, int vx, int dx, unsigned char yy );
+void print( int  px, int  vx, int  dx, unsigned char yy );
 
 void main(void)
 {
-	bool test = false;
+	//bool test;// = false;
+	unsigned char test;
 	int i = 0;
 	int yy = 0;
-	int px = 96, py = 128;
+	static int px, py;
+	static int vx, vy;
+	static int dx, dy;
 	//int ppx = 0, ppy = 0;
-	int vx = 0, vy = 0;
-	int dx = 0, dy = 0;
+	//int vx = 0, vy = 0;
+	//int dx = 0, dy = 0;
 	unsigned char bx = 0;
 
 //	int elapsed = 0.02;
 	int movement = 0;
+
+	//test = true;
+	test = 0;
+	px = 96; py = 128;
+	vx = 0; vy = 0;
+	dx = 0; dy = 0;
 
 	engine_asm_manager_clear_VRAM();
 	devkit_SMS_init();
@@ -43,40 +52,15 @@ void main(void)
 	//draw_grid();
 	draw_floor();
 	
-	/*custom_initialize();
-	curr_screen_type = screen_type_none;
-	next_screen_type = screen_type_load;*/
-	//next_screen_type = screen_type_test;
-
-	//SMS_setSpritePaletteColor( 0, RGB( 3, 3, 2 ) );
-	
-
-	print( px, vx, dx, yy++ );
-	//vx += movement * MoveAcceleration * elapsed;
-	print( px, vx, dx, yy++ );
-	//vx *= GroundDragFactor;
-	print( px, vx, dx, yy++ );
-	if( vx < -MaxMoveSpeed )
-	{
-		vx = -MaxMoveSpeed;
-	}
-	if( vx > MaxMoveSpeed )
-	{
-		vx = MaxMoveSpeed;
-	}
-	print( px, vx, dx, yy++ );
-	//dx = vx * elapsed;
-	print( px, vx, dx, yy++ );
-	px += dx;
-	print( px, vx, dx, yy++ );
-	//px = px + dx;
-	//print( px, vx, dx, yy++ );
-
 	custom_initialize();
 	curr_screen_type = screen_type_none;
 	//next_screen_type = screen_type_load;
 	next_screen_type = screen_type_test;
 
+	//print( px, vx, dx, 0 );
+	//engine_input_manager_update();
+	
+//	print( px, vx, dx, 0 );
 	devkit_SMS_displayOn();
 	for (;;)
 	{
@@ -85,41 +69,40 @@ void main(void)
 			curr_screen_type = next_screen_type;
 			load_method[ curr_screen_type ]();
 		}
-
-
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
-		test = engine_input_manager_hold_left();
+
+		test = engine_input_manager_move_left();
+		//engine_font_manager_draw_data( test, 10, 10);
 		if( test )
 		{
-			engine_sprite_manager_draw_player( px, py );
+			movement = -1;
+			px -= 1;
+			//print( px, vx, dx, 1 );
 		}
-		/*else
-		{
+		//else
+		//{
 			test = engine_input_manager_move_right();
+			//engine_font_manager_draw_data( test, 10, 11 );
 			if( test )
 			{
-				movement = 1.0f;
+				movement = 1;
+				px += 1;
+				//print( px, vx, dx, 2 );
 			}
-		}*/
-		//if( test )
-		//{
-			//engine_font_manager_draw_data( test, 10, 0 );
 		//}
-		//engine_sprite_manager_draw( 64, 80, sprite_type_player );
-		//engine_sprite_manager_draw_player( ( unsigned char ) px, ( unsigned char ) py );
-		
-		//engine_sprite_manager_draw_player( px, py );
 
-		//screen_none_screen_update();
-		update_method[ curr_screen_type ]( &next_screen_type );
+		//print( px, vx, dx, 1 );
+		//engine_sprite_manager_draw_player( px, py );
+		engine_sprite_manager_draw_player( px, py );
+		//update_method[ curr_screen_type ]( &next_screen_type );
 
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
 		devkit_SMS_copySpritestoSAT();
 	}
 }
-void print( int px, int vx, int dx, unsigned char yy )
+void print( int  px, int  vx, int  dx, unsigned char yy )
 {
 	engine_font_manager_draw_data( px, 10, yy );
 	engine_font_manager_draw_data( vx, 20, yy );
