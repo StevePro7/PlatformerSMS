@@ -27,11 +27,11 @@ void main(void)
 	unsigned char bx = 0;
 
 //	int elapsed = 0.02;
-	int movement = 0;
+	int movement = 1;
 
 	//test = true;
 	test = 0;
-	px = 96; py = 128;
+	px = 96; py = 80;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
 
@@ -76,21 +76,25 @@ void main(void)
 		//engine_font_manager_draw_data( test, 10, 10);
 		if( test )
 		{
-			movement = -1;
-			px -= 1;
-			//print( px, vx, dx, 1 );
+			px -= movement;
 		}
-		//else
-		//{
-			test = engine_input_manager_move_right();
-			//engine_font_manager_draw_data( test, 10, 11 );
-			if( test )
+		test = engine_input_manager_move_right();
+		if( test )
+		{
+			px += movement	;
+		}
+		test = engine_input_manager_move_down();
+		if( test )
+		{
+			if( py >= 128 )
 			{
-				movement = 1;
-				px += 1;
-				//print( px, vx, dx, 2 );
+				py = 128;
 			}
-		//}
+			else
+			{
+				py += movement * 2;
+			}
+		}
 
 		//print( px, vx, dx, 1 );
 		//engine_sprite_manager_draw_player( px, py );
