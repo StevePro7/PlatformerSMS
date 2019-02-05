@@ -31,7 +31,7 @@ void main(void)
 
 	//test = true;
 	test = 0;
-	px = 96; py = 80;
+	px = 96; py = 112;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
 
@@ -72,16 +72,21 @@ void main(void)
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 
-		test = engine_input_manager_move_left();
+		test = engine_input_manager_hold_left();
 		//engine_font_manager_draw_data( test, 10, 10);
 		if( test )
 		{
 			px -= movement;
 		}
-		test = engine_input_manager_move_right();
+		test = engine_input_manager_hold_right();
 		if( test )
 		{
-			px += movement	;
+			px += movement;
+		}
+		test = engine_input_manager_move_up();
+		if( test )
+		{
+			py -= movement;
 		}
 		test = engine_input_manager_move_down();
 		if( test )
@@ -96,10 +101,10 @@ void main(void)
 			}
 		}
 
-		//print( px, vx, dx, 1 );
-		//engine_sprite_manager_draw_player( px, py );
+		print( px, vx, dx, 1 );
 		engine_sprite_manager_draw_player( px, py );
-		//update_method[ curr_screen_type ]( &next_screen_type );
+		//engine_sprite_manager_draw( px, py, sprite_type_enemyD );
+		update_method[ curr_screen_type ]( &next_screen_type );
 
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
@@ -135,6 +140,11 @@ void draw_floor()
 		tile_type = rand() % MAX_BLOCK_TILES + 1;
 		engine_tile_manager_draw_tile( tile_type, x, 22 );
 	}
+
+	tile_type = rand() % MAX_BLOCK_TILES + 1;
+	engine_tile_manager_draw_tile( tile_type, 10, 18 );	engine_tile_manager_draw_tile( tile_type, 10, 16 );
+	tile_type = rand() % MAX_BLOCK_TILES + 1;
+	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
 }
 
 

@@ -1,6 +1,13 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+05/02/2019
+16x32 pixel
+width goes like this 2px + 12px + 2px
+i.e. 2px either side of the player / enemy sprites
+if posX = 96 then can be range 94 (-2) to 98 (+2) either side of center tile
+before hit wall on either side and stop on tile for idle animation for enemy
+
 03/02/2019
 Conclusive proof that cannot include *.cpp files in this type of project
 https://stackoverflow.com/questions/9928238/unresolved-external-symbol-in-object-files
