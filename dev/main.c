@@ -31,7 +31,7 @@ void main(void)
 
 	//test = true;
 	test = 0;
-	px = 96; py = 112;
+	px = 96; py = 128;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
 
@@ -57,10 +57,10 @@ void main(void)
 	//next_screen_type = screen_type_load;
 	next_screen_type = screen_type_test;
 
-	//print( px, vx, dx, 0 );
+	//print( px, py, dx, 0 );
 	//engine_input_manager_update();
 	
-//	print( px, vx, dx, 0 );
+//	print( px, py, dx, 0 );
 	devkit_SMS_displayOn();
 	for (;;)
 	{
@@ -83,7 +83,7 @@ void main(void)
 		{
 			px += movement;
 		}
-		test = engine_input_manager_move_up();
+		test = engine_input_manager_hold_up();
 		if( test )
 		{
 			py -= movement;
@@ -97,11 +97,11 @@ void main(void)
 			}
 			else
 			{
-				py += movement * 2;
+				py += movement;
 			}
 		}
 
-		print( px, vx, dx, 1 );
+		print( px, py, dx, 1 );
 		engine_sprite_manager_draw_player( px, py );
 		//engine_sprite_manager_draw( px, py, sprite_type_enemyD );
 		update_method[ curr_screen_type ]( &next_screen_type );
@@ -111,10 +111,10 @@ void main(void)
 		devkit_SMS_copySpritestoSAT();
 	}
 }
-void print( int  px, int  vx, int  dx, unsigned char yy )
+void print( int  px, int  py, int  dx, unsigned char yy )
 {
 	engine_font_manager_draw_data( px, 10, yy );
-	engine_font_manager_draw_data( vx, 20, yy );
+	engine_font_manager_draw_data( py, 20, yy );
 	engine_font_manager_draw_data( dx, 30, yy );
 }
 
@@ -145,6 +145,9 @@ void draw_floor()
 	engine_tile_manager_draw_tile( tile_type, 10, 18 );	engine_tile_manager_draw_tile( tile_type, 10, 16 );
 	tile_type = rand() % MAX_BLOCK_TILES + 1;
 	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
+
+	tile_type = rand() % MAX_BLOCK_TILES + 1;
+	engine_tile_manager_draw_tile( tile_type, 12, 14 );
 }
 
 
