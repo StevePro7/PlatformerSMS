@@ -1,21 +1,16 @@
 XL2
-H 9 areas F global symbols
+H 9 areas A global symbols
 M content_manager
 O -mz80
-S _EnemyA_Idle_01__tiles__psgcompr Ref0000
-S _EnemyB_Idle_01__tiles__psgcompr Ref0000
-S _list_sprite_tile_offset Ref0000
-S _EnemyC_Idle_01__tiles__psgcompr Ref0000
 S _EnemyD_Idle_01__tiles__psgcompr Ref0000
 S _devkit_SMS_loadBGPalette Ref0000
 S _back_tiles__palette__bin Ref0000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref0000
 S .__.ABS. Def0000
 S _Sprites__palette__bin Ref0000
-S _Player_Idle__tiles__psgcompr Ref0000
 S _back_tiles__tiles__psgcompr Ref0000
 S _devkit_SMS_loadSpritePalette Ref0000
-A _CODE size 6F flags 0 addr 0
+A _CODE size 43 flags 0 addr 0
 S _engine_content_manager_load_sprites Def0016
 S _engine_content_manager_load_back_tiles Def0000
 A _DATA size 0 flags 0 addr 0
@@ -29,22 +24,22 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 21 00 00 E5 21 00 00 E5 CD 00 00 F1 F1 01
-R 00 00 00 00 02 07 0B 00 02 0B 07 00
+R 00 00 00 00 02 07 06 00 02 0B 03 00
 T 0E 00 00 00 C5 CD 00 00 F1 C9
-R 00 00 00 00 02 02 06 00 02 06 05 00
+R 00 00 00 00 02 02 02 00 02 06 01 00
 T 16 00
 R 00 00 00 00
-T 16 00 21 00 00 4E 06 00 C5 21 00 00 E5 CD 00 00
-R 00 00 00 00 02 03 02 00 02 0A 0A 00 02 0E 07 00
-T 24 00 F1 F1 21 01 00 4E 06 00 C5 21 00 00 E5 CD
-R 00 00 00 00 02 05 02 00 02 0C 00 00
-T 32 00 00 00 F1 F1 21 02 00 4E 06 00 C5 21 00 00
-R 00 00 00 00 02 02 07 00 02 07 02 00 02 0E 01 00
-T 40 00 E5 CD 00 00 F1 F1 21 03 00 4E 06 00 C5 21
-R 00 00 00 00 02 04 07 00 02 09 02 00
-T 4E 00 00 00 E5 CD 00 00 F1 F1 21 04 00 4E 06 00
-R 00 00 00 00 02 02 03 00 02 06 07 00 02 0B 02 00
-T 5C 00 C5 21 00 00 E5 CD 00 00 F1 F1 01 00 00 C5
-R 00 00 00 00 02 04 04 00 02 08 07 00 02 0D 09 00
-T 6A 00 CD 00 00 F1 C9
-R 00 00 00 00 02 03 0C 00
+T 16 00 0E 00 11 00 00
+R 00 00 00 00
+T 1B 00
+R 00 00 00 00
+T 1B 00 79 D6 10 30 1A 21 00 01 19 C5 D5 E5 21
+R 00 00 00 00
+T 28 00 00 00 E5 CD 00 00 F1 F1 D1 C1 21 08 00 19
+R 00 00 00 00 02 02 00 00 02 06 03 00
+T 36 00 EB 0C 18 E1
+R 00 00 00 00
+T 3A 00
+R 00 00 00 00
+T 3A 00 01 00 00 C5 CD 00 00 F1 C9
+R 00 00 00 00 02 03 05 00 02 07 07 00

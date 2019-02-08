@@ -27,7 +27,7 @@ void devkit_SMS_setSpriteMode( unsigned char mode )
 }
 void devkit_SMS_useFirstHalfTilesforSprites_True()
 {
-	SMS_useFirstHalfTilesforSprites( true );
+	SMS_useFirstHalfTilesforSprites( false );
 }
 void devkit_SMS_VDPturnOnFeature( unsigned int feature )
 {

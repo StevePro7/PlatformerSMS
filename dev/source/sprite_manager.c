@@ -6,7 +6,8 @@
 
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned char sprite_type )
 {
-	const unsigned char tile = list_sprite_tile_offset[ sprite_type ];
+	//const unsigned char tile = list_sprite_tile_offset[ sprite_type ];
+	const int tile = 128 + 128 ;
 
 	devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );
 	devkit_SMS_addSprite( x + 8, y + 0, tile + 1 );
