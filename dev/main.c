@@ -30,7 +30,7 @@ void main(void)
 	//int dx = 0, dy = 0;
 	unsigned char bx = 0;
 	static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
-	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 };
+	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 };	// TODO change last value to 5!
 	static unsigned char idx = 0;
 //	int elapsed = 0.02;
 	int movement = 1;
@@ -238,10 +238,3 @@ void custom_initialize()
 	engine_hack_manager_init();
 	engine_hack_manager_invert();
 }
-
-
-//#ifdef _CONSOLE
-//#else
-//	SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
-//	SMS_EMBED_SDSC_HEADER(1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!");
-//#endif
