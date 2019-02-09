@@ -12,10 +12,14 @@ void draw_grid();
 void draw_floor();
 void print( int  px, int  vx, int  dx, unsigned char yy );
 
+#define COUNT 17
+
 void main(void)
 {
+	static bool isJ = false;
+	static bool was = false;
 	//bool test;// = false;
-	unsigned char test;
+	static unsigned char test;
 	int i = 0;
 	int yy = 0;
 	static int px, py;
@@ -25,11 +29,15 @@ void main(void)
 	//int vx = 0, vy = 0;
 	//int dx = 0, dy = 0;
 	unsigned char bx = 0;
-
+	static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
+	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 };
+	static unsigned char idx = 0;
 //	int elapsed = 0.02;
 	int movement = 1;
 
 	//test = true;
+	isJ = false;
+	was = false;
 	test = 0;
 	px = 96; py = 128;
 	vx = 0; vy = 0;
@@ -72,32 +80,83 @@ void main(void)
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 
-		test = engine_input_manager_hold_left();
-		//engine_font_manager_draw_data( test, 10, 10);
-		if( test )
+		//test = engine_input_manager_hold_left();
+		////engine_font_manager_draw_data( test, 10, 10);
+		//if( test )
+		//{
+		//	px -= movement;
+		//}
+		//test = engine_input_manager_hold_right();
+		//if( test )
+		//{
+		//	px += movement;
+		//}
+		//test = engine_input_manager_hold_up();
+		//if( test )
+		//{
+		//	py -= movement;
+		//}
+		//test = engine_input_manager_move_down();
+		//if( test )
+		//{
+		//	if( py >= 128 )
+		//	{
+		//		py = 128;
+		//	}
+		//	else
+		//	{
+		//		py += movement;
+		//	}
+		//}
+
+		if( !isJ  && !was )
 		{
-			px -= movement;
-		}
-		test = engine_input_manager_hold_right();
-		if( test )
-		{
-			px += movement;
-		}
-		test = engine_input_manager_hold_up();
-		if( test )
-		{
-			py -= movement;
-		}
-		test = engine_input_manager_move_down();
-		if( test )
-		{
-			if( py >= 128 )
+			test = engine_input_manager_hold_fire1();
+			if( test )
 			{
-				py = 128;
+				isJ = true;
+				print( 1, 1, 1, 5 );
 			}
-			else
+			test = engine_input_manager_hold_fire2();
+			if( test )
 			{
-				py += movement;
+				was = true;
+				print( 2, 2, 2, 6 );
+			}
+		}
+
+		if( isJ )
+		{
+			//test = engine_input_manager_hold_left();
+			//test = 1;
+			//if( test )
+			{
+				dy = velY[ idx ];
+				py = py - dy;
+				//print( idx, 0, dy, 0 + idx );
+				idx++;
+				if( idx >= COUNT )
+				{
+					idx = 0;
+					isJ = false;
+				}
+			}
+		}
+		if( was )
+		{
+			//test = engine_input_manager_hold_left();
+			//test = 1;
+			//if( test )
+			{
+				dy = grav[ idx ];
+				py = py + dy;
+				//print( idx, 0, dy, 0 + idx );
+				idx++;
+				if( idx >= COUNT )
+				{
+					idx = 0;
+					was = false;
+				}
 			}
 		}
 
@@ -114,7 +173,7 @@ void main(void)
 void print( int  px, int  py, int  dx, unsigned char yy )
 {
 	engine_font_manager_draw_data( px, 10, yy );
-	engine_font_manager_draw_data( py, 20, yy );
+	engine_font_manager_draw_data( py, 30, yy );
 	engine_font_manager_draw_data( dx, 30, yy );
 }
 
@@ -142,12 +201,12 @@ void draw_floor()
 	}
 
 	tile_type = rand() % MAX_BLOCK_TILES + 1;
-	engine_tile_manager_draw_tile( tile_type, 10, 18 );	engine_tile_manager_draw_tile( tile_type, 10, 16 );
+	engine_tile_manager_draw_tile( tile_type, 14, 12 );	engine_tile_manager_draw_tile( tile_type, 14, 14 );
 	tile_type = rand() % MAX_BLOCK_TILES + 1;
 	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
 
-	tile_type = rand() % MAX_BLOCK_TILES + 1;
-	engine_tile_manager_draw_tile( tile_type, 12, 14 );
+	//tile_type = rand() % MAX_BLOCK_TILES + 1;
+	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
 }
 
 

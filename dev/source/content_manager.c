@@ -21,7 +21,7 @@ void engine_content_manager_load_sprites()
 	unsigned char offset = 8;
 	for( index = 0; index < count; index++ )
 	{
-		devkit_SMS_loadPSGaidencompressedTiles( EnemyD_Idle_01__tiles__psgcompr, index * offset + SPRITE_TILES_OFFSET );
+		devkit_SMS_loadPSGaidencompressedTiles( Player_Idle__tiles__psgcompr, index * offset + SPRITE_TILES_OFFSET );
 	}
 
 	//devkit_SMS_loadPSGaidencompressedTiles( Player_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_player ] );
