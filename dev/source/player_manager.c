@@ -7,7 +7,7 @@
 void engine_player_manager_load()
 {
 	struct_player_object *po = &player_object;
-	po->sx = 16;
+	po->sx = 32;
 	po->sy = 128;
 	engine_font_manager_draw_data( po->sx, 5, 5 );
 }

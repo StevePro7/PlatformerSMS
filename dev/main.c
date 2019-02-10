@@ -248,6 +248,8 @@ void main(void)
 }
 void print( int  px, int  py, int  dx, unsigned char yy )
 {
+	int b = px;		int c = py;	int d = dx;	int y = yy;
+
 	/*engine_font_manager_draw_data( px, 10, yy );
 	engine_font_manager_draw_data( py, 20, yy );
 	engine_font_manager_draw_data( dx, 30, yy );*/

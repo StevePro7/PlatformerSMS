@@ -180,6 +180,7 @@
     <ClInclude Include="source\hack_manager.h" />
     <ClInclude Include="source\input_manager.h" />
     <ClInclude Include="source\level_manager.h" />
+    <ClInclude Include="source\level_object.h" />
     <ClInclude Include="source\none_screen.h" />
     <ClInclude Include="source\player_manager.h" />
     <ClInclude Include="source\player_object.h" />

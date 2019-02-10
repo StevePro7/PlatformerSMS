@@ -20,6 +20,10 @@ void devkit_SMS_displayOff()
 {
 	SMS_displayOff();
 }
+void devkit_SMS_mapROMBank( unsigned char n )
+{
+	SMS_mapROMBank( n );
+}
 
 void devkit_SMS_setSpriteMode( unsigned char mode )
 {
