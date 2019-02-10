@@ -9,7 +9,7 @@ void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
 void custom_initialize();
 
 void draw_grid();
-void draw_floor();
+//void draw_floor();
 void print( int  px, int  vx, int  dx, unsigned char yy );
 
 #define COUNT 17
@@ -28,13 +28,15 @@ void main(void)
 	static int px, py;
 	static int vx, vy;
 	static int dx, dy;
+	static signed char jumpIdx;
+
 	//int ppx = 0, ppy = 0;
 	//int vx = 0, vy = 0;
 	//int dx = 0, dy = 0;
 	unsigned char bx = 0;
 	//static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
 	static signed char velY[ COUNT ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
-	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 };	// TODO change last value to 5!
+	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 16 };	// TODO change last value to 5!
 
 	//static signed char velX[ MAX_X ] = { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
 	static unsigned char velX[ MAX_X ] = { 1, 2, 2, 2, 2 };
@@ -46,6 +48,7 @@ void main(void)
 
 	unsigned char force = 2;
 	player_move_type = move_type_idle;
+	jumpIdx = -1;
 	//player_move_type = move_type_left;
 	//player_move_type = move_type_rght;
 
@@ -86,6 +89,7 @@ void main(void)
 	devkit_SMS_displayOn();
 	for (;;)
 	{
+		isJ = false;
 		if( curr_screen_type != next_screen_type )
 		{
 			curr_screen_type = next_screen_type;
@@ -148,7 +152,34 @@ void main(void)
 			print( px, dx, player_move_type, 0 );
 		}
 
-		if( !isJ  && !was )
+		//test = engine_input_manager_hold_fire1();
+		test = engine_input_manager_move_fire1();
+		isJ = test;
+		if( isJ )
+		{
+			idx = 0;
+			if( !was || jumpIdx >= 0 )
+			{
+				jumpIdx++;
+				//print( isJ, was, jumpIdx, 10 );
+			}
+
+			if( 0 <= jumpIdx && jumpIdx < COUNT )
+			{
+				dy = velY[ jumpIdx ];
+				py = py + dy;
+				//print( jumpIdx, dy, py, 0 + jumpIdx );
+			}
+		}
+		else
+		{
+			jumpIdx = -1;
+		}
+		was = isJ;
+
+		
+
+		/*if( !isJ  && idx  )
 		{
 			test = engine_input_manager_hold_fire1();
 			if( test )
@@ -156,46 +187,52 @@ void main(void)
 				isJ = true;
 				print( 1, 1, 1, 5 );
 			}
-		
-		}
+		}*/
 
-		if( was )
-		{
-			//test = engine_input_manager_hold_down();
+		//if( was )
+		//{
+			test = engine_input_manager_move_fire2();
 			//test = 1;
-			//if( test )
+			if( test )
 			{
 				dy = grav[ idx ];
 				py = py + dy;
+				if( py > 128 )
+				{
+					py = 128;
+				}
+				
+				idx++;
 				print( idx, 0, dy, 0 + idx );
-				idx++;
 				if( idx >= COUNT )
 				{
 					idx = 0;
-					was = false;
+					//was = false;
 				}
-			}
-		}
 
-		if( isJ )
-		{
-			//test = engine_input_manager_hold_up();
-			//test = 1;
-			//if( test )
-			{
-				dy = velY[ idx ];
-				py = py + dy;
-				print( idx, dy, py, 0 + idx );
-				idx++;
-				if( idx >= COUNT )
-				{
-					idx = 0;
-					isJ = false;
-					was = true;
-					print( 9, 9, 9, 19 );
-				}
+				print( idx, 0, dy, 0 + idx );
 			}
-		}
+		//}
+
+		//if( isJ )
+		//{
+		//	//test = engine_input_manager_hold_up();
+		//	//test = 1;
+		//	//if( test )
+		//	{
+		//		dy = velY[ idx ];
+		//		py = py + dy;
+		//		print( idx, dy, py, 0 + idx );
+		//		idx++;
+		//		if( idx >= COUNT )
+		//		{
+		//			idx = 0;
+		//			isJ = false;
+		//			was = true;
+		//			print( 9, 9, 9, 19 );
+		//		}
+		//	}
+		//}
 
 		
 
