@@ -98,6 +98,18 @@ void main(void)
 		test = engine_input_manager_move_left();
 		if( test )
 		{
+			/*if( move_type_rght == player_move_type )
+			{
+				player_idxX = 0;
+				player_move_type = move_type_idle;
+			}
+			else if( move_type_idle == player_move_type )
+			{
+				player_idxX = 0;
+				dx = velX[ player_idxX ];
+				player_move_type = move_type_left;
+				print( player_idxX, dx, player_move_type, 5 );
+			}*/
 			if( move_type_left != player_move_type )
 			{
 				player_idxX = 0;
@@ -125,6 +137,18 @@ void main(void)
 		test = engine_input_manager_move_right();
 		if( test )
 		{
+			/*if( move_type_left == player_move_type )
+			{
+				player_idxX = 0;
+				player_move_type = move_type_idle;
+			}
+			else if( move_type_idle == player_move_type )
+			{
+				player_idxX = 0;
+				dx = velX[ player_idxX ];
+				player_move_type = move_type_rght;
+				print( player_idxX, dx, player_move_type, 1 );
+			}*/
 			if( move_type_rght != player_move_type )
 			{
 				player_idxX = 0;
@@ -147,6 +171,23 @@ void main(void)
 			px += dx * player_move_type;
 			print( px, dx, player_move_type, 0 );
 		}
+		//test = engine_input_manager_hold_up();
+		//if( test )
+		//{
+		//	py -= movement;
+		//}
+		//test = engine_input_manager_move_down();
+		//if( test )
+		//{
+		//	if( py >= 128 )
+		//	{
+		//		py = 128;
+		//	}
+		//	else
+		//	{
+		//		py += movement;
+		//	}
+		//}
 
 		if( !isJ  && !was )
 		{
@@ -156,7 +197,12 @@ void main(void)
 				isJ = true;
 				print( 1, 1, 1, 5 );
 			}
-		
+			/*test = engine_input_manager_hold_fire2();
+			if( test )
+			{
+				was = true;
+				print( 2, 2, 2, 6 );
+			}*/
 		}
 
 		if( was )

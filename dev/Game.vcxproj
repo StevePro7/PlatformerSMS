@@ -182,6 +182,7 @@
     <ClInclude Include="source\level_manager.h" />
     <ClInclude Include="source\none_screen.h" />
     <ClInclude Include="source\player_manager.h" />
+    <ClInclude Include="source\player_object.h" />
     <ClInclude Include="source\render_manager.h" />
     <ClInclude Include="source\scroll_manager.h" />
     <ClInclude Include="source\sprite_manager.h" />

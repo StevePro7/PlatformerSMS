@@ -167,6 +167,9 @@
     <ClInclude Include="source\scroll_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
+    <ClInclude Include="source\player_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">

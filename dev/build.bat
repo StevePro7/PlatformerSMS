@@ -26,6 +26,7 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprit
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 common_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
@@ -87,6 +88,7 @@ source\font_manager.rel ^
 source\sprite_manager.rel ^
 source\tile_manager.rel ^
 source\input_manager.rel ^
+source\player_manager.rel ^
 source\common_manager.rel ^
 source\render_manager.rel ^
 source\scroll_manager.rel ^

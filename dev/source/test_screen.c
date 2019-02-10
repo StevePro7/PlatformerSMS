@@ -5,6 +5,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
+#include "player_manager.h"
 #include <stdlib.h>
 
 void screen_test_screen_load()
@@ -24,11 +25,14 @@ void screen_test_screen_load()
 	tile_type = rand() % MAX_BLOCK_TILES + 1;
 	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
 
+	engine_player_manager_load();
+
 	//tile_type = rand() % MAX_BLOCK_TILES + 1;
 	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
+	engine_player_manager_update();
 	*screen_type = screen_type_test;
 }
