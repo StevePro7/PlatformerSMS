@@ -2,6 +2,7 @@
 #include "level_object.h"
 #include "_sms_manager.h"
 #include "global_manager.h"
+//#include "font_manager.h"
 #include "tile_manager.h"
 #include <stdlib.h>
 
@@ -33,8 +34,8 @@ void engine_level_manager_load_levelX()
 	tile_type = rand() % MAX_BLOCK_TILES + 1;
 	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
 
-	tile_type = rand() % MAX_BLOCK_TILES + 1;
-	engine_tile_manager_draw_tile( tile_type, 12, 14 );
+	//tile_type = rand() % MAX_BLOCK_TILES + 1;
+	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
 }
 
 void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size )

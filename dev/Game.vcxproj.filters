@@ -37,6 +37,9 @@
     <Filter Include="Source Files\screen">
       <UniqueIdentifier>{25c793a4-5510-464f-a9eb-2e0fac2d651f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{f8c005f3-0117-4353-a8e5-2661e1f520cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -98,6 +101,12 @@
     </ClCompile>
     <ClCompile Include="source\scroll_manager.c">
       <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\level_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank3.c">
+      <Filter>Source Files\banks</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="source\level_object.h">
       <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank3.h">
+      <Filter>Header Files\banks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
