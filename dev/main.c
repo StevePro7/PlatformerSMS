@@ -20,6 +20,8 @@ void main(void)
 	static bool was = false;
 	//bool test;// = false;
 	static unsigned char test;
+	static enum_move_type player_move_type;
+
 	int i = 0;
 	int yy = 0;
 	static int px, py;
@@ -29,17 +31,23 @@ void main(void)
 	//int vx = 0, vy = 0;
 	//int dx = 0, dy = 0;
 	unsigned char bx = 0;
-	static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
+	//static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
+	static signed char velY[ COUNT ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
 	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 };	// TODO change last value to 5!
 	static unsigned char idx = 0;
 //	int elapsed = 0.02;
 	int movement = 1;
 
+	unsigned char force = 2;
+	//player_move_type = move_type_idle;
+	player_move_type = move_type_left;
+	//player_move_type = move_type_rght;
+
 	//test = true;
 	isJ = false;
 	was = false;
 	test = 0;
-	px = 96; py = 128;
+	px = 16; py = 128;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
 
@@ -65,7 +73,7 @@ void main(void)
 	//next_screen_type = screen_type_load;
 	next_screen_type = screen_type_test;
 
-	//print( px, py, dx, 0 );
+	print( px, py, player_move_type, 0 );
 	//engine_input_manager_update();
 	
 //	print( px, py, dx, 0 );
@@ -87,10 +95,12 @@ void main(void)
 		//	px -= movement;
 		//}
 		//test = engine_input_manager_hold_right();
-		//if( test )
-		//{
-		//	px += movement;
-		//}
+		test = engine_input_manager_move_right();
+		if( test )
+		{
+			//px += player_move_type * force;
+			print( px, py, player_move_type, 0 );
+		}
 		//test = engine_input_manager_hold_up();
 		//if( test )
 		//{
@@ -117,23 +127,22 @@ void main(void)
 				isJ = true;
 				print( 1, 1, 1, 5 );
 			}
-			test = engine_input_manager_hold_fire2();
+			/*test = engine_input_manager_hold_fire2();
 			if( test )
 			{
 				was = true;
 				print( 2, 2, 2, 6 );
-			}
+			}*/
 		}
-
 		if( isJ )
 		{
 			//test = engine_input_manager_hold_left();
-			//test = 1;
-			//if( test )
+			test = 1;
+			if( test )
 			{
 				dy = velY[ idx ];
-				py = py - dy;
-				//print( idx, 0, dy, 0 + idx );
+				py = py + dy;
+				print( idx, dy, py, 0 + idx );
 				idx++;
 				if( idx >= COUNT )
 				{
@@ -142,25 +151,25 @@ void main(void)
 				}
 			}
 		}
-		if( was )
-		{
-			//test = engine_input_manager_hold_left();
-			//test = 1;
-			//if( test )
-			{
-				dy = grav[ idx ];
-				py = py + dy;
-				//print( idx, 0, dy, 0 + idx );
-				idx++;
-				if( idx >= COUNT )
-				{
-					idx = 0;
-					was = false;
-				}
-			}
-		}
+		//if( was )
+		//{
+		//	//test = engine_input_manager_hold_left();
+		//	//test = 1;
+		//	//if( test )
+		//	{
+		//		dy = grav[ idx ];
+		//		py = py + dy;
+		//		//print( idx, 0, dy, 0 + idx );
+		//		idx++;
+		//		if( idx >= COUNT )
+		//		{
+		//			idx = 0;
+		//			was = false;
+		//		}
+		//	}
+		//}
 
-		print( px, py, dx, 1 );
+		//print( px, py, dx, 1 );
 		engine_sprite_manager_draw_player( px, py );
 		//engine_sprite_manager_draw( px, py, sprite_type_enemyD );
 		update_method[ curr_screen_type ]( &next_screen_type );
@@ -173,7 +182,7 @@ void main(void)
 void print( int  px, int  py, int  dx, unsigned char yy )
 {
 	engine_font_manager_draw_data( px, 10, yy );
-	engine_font_manager_draw_data( py, 30, yy );
+	engine_font_manager_draw_data( py, 20, yy );
 	engine_font_manager_draw_data( dx, 30, yy );
 }
 
@@ -188,26 +197,26 @@ void draw_grid()
 		}
 	}
 }
-void draw_floor()
-{
-	unsigned char x;
-	enum_tile_type tile_type;
-	for( x = 0; x < 32; x += 2 )
-	{
-		tile_type = rand() % MAX_BLOCK_TILES + 1;
-		engine_tile_manager_draw_tile( tile_type, x, 20 );
-		tile_type = rand() % MAX_BLOCK_TILES + 1;
-		engine_tile_manager_draw_tile( tile_type, x, 22 );
-	}
-
-	tile_type = rand() % MAX_BLOCK_TILES + 1;
-	engine_tile_manager_draw_tile( tile_type, 14, 12 );	engine_tile_manager_draw_tile( tile_type, 14, 14 );
-	tile_type = rand() % MAX_BLOCK_TILES + 1;
-	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
-
-	//tile_type = rand() % MAX_BLOCK_TILES + 1;
-	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
-}
+//void draw_floor()
+//{
+//	unsigned char x;
+//	enum_tile_type tile_type;
+//	for( x = 0; x < 32; x += 2 )
+//	{
+//		tile_type = rand() % MAX_BLOCK_TILES + 1;
+//		engine_tile_manager_draw_tile( tile_type, x, 20 );
+//		tile_type = rand() % MAX_BLOCK_TILES + 1;
+//		engine_tile_manager_draw_tile( tile_type, x, 22 );
+//	}
+//
+//	tile_type = rand() % MAX_BLOCK_TILES + 1;
+//	engine_tile_manager_draw_tile( tile_type, 14, 12 );	engine_tile_manager_draw_tile( tile_type, 14, 14 );
+//	tile_type = rand() % MAX_BLOCK_TILES + 1;
+//	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
+//
+//	//tile_type = rand() % MAX_BLOCK_TILES + 1;
+//	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
+//}
 
 
 void custom_initialize()
