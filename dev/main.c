@@ -34,20 +34,24 @@ void main(void)
 	//static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
 	static signed char velY[ COUNT ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
 	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6 };	// TODO change last value to 5!
+
+	static signed char velX[ 5 ] = { 1, 1, 2, 2, 2 };
+
 	static unsigned char idx = 0;
+	static unsigned char player_idxX = 0;
 //	int elapsed = 0.02;
 	int movement = 1;
 
 	unsigned char force = 2;
-	//player_move_type = move_type_idle;
-	player_move_type = move_type_left;
+	player_move_type = move_type_idle;
+	//player_move_type = move_type_left;
 	//player_move_type = move_type_rght;
 
 	//test = true;
 	isJ = false;
 	was = false;
 	test = 0;
-	px = 16; py = 128;
+	px = 160; py = 128;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
 
@@ -73,7 +77,7 @@ void main(void)
 	//next_screen_type = screen_type_load;
 	next_screen_type = screen_type_test;
 
-	print( px, py, player_move_type, 0 );
+	print( px, dx, player_move_type, 0 );
 	//engine_input_manager_update();
 	
 //	print( px, py, dx, 0 );
@@ -89,17 +93,66 @@ void main(void)
 		engine_input_manager_update();
 
 		//test = engine_input_manager_hold_left();
-		////engine_font_manager_draw_data( test, 10, 10);
-		//if( test )
-		//{
-		//	px -= movement;
-		//}
+		test = engine_input_manager_move_left();
+		if( test )
+		{
+			if( move_type_rght == player_move_type )
+			{
+				player_idxX = 0;
+				player_move_type = move_type_idle;
+			}
+			else if( move_type_idle == player_move_type )
+			{
+				player_idxX = 0;
+				dx = velX[ player_idxX ];
+				player_move_type = move_type_left;
+				print( player_idxX, dx, player_move_type, 5 );
+			}
+			else if( move_type_left == player_move_type )
+			{
+				player_idxX++;
+				if( player_idxX > 4 )
+				{
+					player_idxX = 4;
+				}
+				dx = velX[ player_idxX ];
+				//player_move_type = move_type_left;
+				print( player_idxX, dx, player_move_type, 7 );
+			}
+
+			px += dx *player_move_type;
+			print( px, dx, player_move_type, 0 );
+		}
 		//test = engine_input_manager_hold_right();
 		test = engine_input_manager_move_right();
 		if( test )
 		{
-			//px += player_move_type * force;
-			print( px, py, player_move_type, 0 );
+			if( move_type_left == player_move_type )
+			{
+				player_idxX = 0;
+				player_move_type = move_type_idle;
+			}
+			else if( move_type_idle == player_move_type )
+			{
+				player_idxX = 0;
+				dx = velX[ player_idxX ];
+				player_move_type = move_type_rght;
+				print( player_idxX, dx, player_move_type, 1 );
+			}
+			else if( move_type_rght == player_move_type )
+			{
+				player_idxX++;
+				if( player_idxX > 4 )
+				{
+					player_idxX = 4;
+				}
+				dx = velX[ player_idxX ];
+				//player_move_type = move_type_rght;
+				print( player_idxX, dx, player_move_type, 2 );
+			}
+
+			px += dx * player_move_type;
+			print( px, dx, player_move_type, 0 );
 		}
 		//test = engine_input_manager_hold_up();
 		//if( test )
@@ -118,7 +171,7 @@ void main(void)
 		//		py += movement;
 		//	}
 		//}
-
+/*
 		if( !isJ  && !was )
 		{
 			test = engine_input_manager_hold_fire1();
@@ -127,17 +180,17 @@ void main(void)
 				isJ = true;
 				print( 1, 1, 1, 5 );
 			}
-			/*test = engine_input_manager_hold_fire2();
+			test = engine_input_manager_hold_fire2();
 			if( test )
 			{
 				was = true;
 				print( 2, 2, 2, 6 );
-			}*/
+			}
 		}
 		if( isJ )
 		{
-			//test = engine_input_manager_hold_left();
-			test = 1;
+			test = engine_input_manager_hold_left();
+			//test = 1;
 			if( test )
 			{
 				dy = velY[ idx ];
@@ -151,6 +204,7 @@ void main(void)
 				}
 			}
 		}
+*/
 		//if( was )
 		//{
 		//	//test = engine_input_manager_hold_left();
@@ -181,9 +235,9 @@ void main(void)
 }
 void print( int  px, int  py, int  dx, unsigned char yy )
 {
-	engine_font_manager_draw_data( px, 10, yy );
-	engine_font_manager_draw_data( py, 20, yy );
-	engine_font_manager_draw_data( dx, 30, yy );
+	//engine_font_manager_draw_data( px, 10, yy );
+	//engine_font_manager_draw_data( py, 20, yy );
+	//engine_font_manager_draw_data( dx, 30, yy );
 }
 
 void draw_grid()
