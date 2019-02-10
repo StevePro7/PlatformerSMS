@@ -3,7 +3,7 @@ H 9 areas 5 global symbols
 M level_object
 O -mz80
 S .__.ABS. Def0000
-S _level0301_txt Ref0000
+S _level0200_txt Ref0000
 A _CODE size 2 flags 0 addr 0
 S _levelbank Def0001
 S _levelsize Def0000
@@ -26,7 +26,7 @@ T 00 00 CC
 R 00 00 00 00
 T 01 00
 R 00 00 00 00
-T 01 00 03
+T 01 00 02
 R 00 00 00 00
 T 00 00
 R 00 00 07 00
