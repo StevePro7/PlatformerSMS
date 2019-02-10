@@ -21,7 +21,7 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
 
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
 
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
@@ -89,6 +89,7 @@ banks\bank3.rel ^
 source\_sms_manager.rel ^
 source\global_manager.rel ^
 source\hack_manager.rel ^
+source\level_object.rel ^
 source\content_manager.rel ^
 source\font_manager.rel ^
 source\sprite_manager.rel ^
