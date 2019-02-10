@@ -58,7 +58,7 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 
 	//draw_grid();
-	draw_floor();
+	//draw_floor();
 	
 	custom_initialize();
 	curr_screen_type = screen_type_none;
