@@ -1,12 +1,12 @@
 #include "level_object.h"
 
 #include "..\banks\bank2.h"
-//#include "..\banks\bank3.h"
+#include "..\banks\bank3.h"
 
 const unsigned char *leveldata[] =
 {
 	level0200_txt,
-	//level0301_txt,
+	level0301_txt,
 	/*level0301_txt,
 	level0401_txt,
 	level0402_txt,
@@ -19,7 +19,7 @@ const unsigned char *leveldata[] =
 const unsigned char levelsize[] =
 {
 	level0200_txt_size,
-	//level0301_txt_size,
+	level0301_txt_size,
 	/*level0301_txt_size,
 	level0401_txt_size,
 	level0402_txt_size,
@@ -32,7 +32,7 @@ const unsigned char levelsize[] =
 const unsigned char levelbank[] =
 {
 	level0200_txt_bank,
-	//level0301_txt_bank,
+	level0301_txt_bank,
 	/*level0301_txt_bank,
 	level0401_txt_bank,
 	level0402_txt_bank,
