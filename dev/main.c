@@ -99,6 +99,7 @@ void main(void)
 		engine_input_manager_update();
 
 		//test = engine_input_manager_hold_left();
+		dx = 0;
 		test = engine_input_manager_move_left();
 		if( test )
 		{
@@ -121,8 +122,8 @@ void main(void)
 				print( player_idxX, dx, player_move_type, 7 );
 			}
 
-			px += dx *player_move_type;
-			print( px, dx, player_move_type, 0 );
+			//px += dx * ( player_move_type - 1 );
+			//print( px, dx, player_move_type, 0 );
 		}
 
 		//test = engine_input_manager_hold_right();
@@ -148,10 +149,15 @@ void main(void)
 				print( player_idxX, dx, player_move_type, 2 );
 			}
 
-			px += dx * player_move_type;
-			print( px, dx, player_move_type, 0 );
+			//px += dx * player_move_type;
+			//print( px, dx, player_move_type, 0 );
 		}
 
+		if( move_type_idle != player_move_type )
+		{
+			px += dx * ( player_move_type - 1 );
+			print( px, dx, player_move_type, 0 );
+		}
 		//test = engine_input_manager_hold_fire1();
 		test = engine_input_manager_move_fire1();
 		isJ = test;

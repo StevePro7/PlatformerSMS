@@ -62,9 +62,9 @@ typedef enum tag_enum_side_type
 
 typedef enum tag_enum_move_type
 {
-	move_type_left = -1,
-	move_type_idle = 0,
-	move_type_rght = 1,
+	move_type_left = 0,
+	move_type_idle = 1,
+	move_type_rght = 2,
 
 } enum_move_type;
 
