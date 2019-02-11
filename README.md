@@ -1,6 +1,16 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+11/02/2019
+Sprite palette
+.db $00 $00 $01 $00 $11 $16 $25 $15 $15 $05 $27 $0B $2A $1A $2F $3F
+
+spritesheet.bmp
+E:\Steven\XNA\Platformer\SpriteBlackBG\Game\bin\x86\Debug
+
+All black 64x64 sprites
+
+
 05/02/2019
 16x32 pixel
 width goes like this 2px + 12px + 2px
