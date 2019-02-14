@@ -32,14 +32,15 @@ void screen_test_screen_load()
 	//engine_level_manager_load_levelX();
 
 
-	engine_level_manager_load_index( 1 );
+	//engine_level_manager_load_index( 1 );		// TODO uncomment
+
 	//engine_level_manager_draw_level_column( 5 );
 	//engine_level_manager_draw_level_column_side( side_type_left, 6 );
 	//engine_level_manager_draw_level_column( 7 );
 
-	engine_level_manager_draw_level();			// TODO this now has issues!!
-
-	engine_player_manager_load();
+	// TODO uncomment
+	//engine_level_manager_draw_level();
+	//engine_player_manager_load();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )

@@ -1,6 +1,16 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+14/02/2019
+Here is a reference to the pedantic warning
+https://juju.nz/src/juju/gbdk/src/branch/master/sdcc/support/Util/SDCCerr.c
+conditional flow changed by optimizer '%s(%d)':so said EVELYN the modified DOG"
+
+Here is how I got the warning and how I "removed" it:
+initially the variables were declared as int but because max value could be 255
+I changed the variables to unsigned char and now the compiler warning disappears
+
+
 11/02/2019
 Sprite palette
 .db $00 $00 $01 $00 $11 $16 $25 $15 $15 $05 $27 $0B $2A $1A $2F $3F

@@ -3,6 +3,11 @@
 #include <stdlib.h>
 //#include <string.h>
 
+#ifdef _CONSOLE
+#else
+	//#pragma disable_warning 110
+#endif
+
 
 const int MoveAcceleration = 13000;
 const int MaxMoveSpeed = 1750;

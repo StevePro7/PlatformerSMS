@@ -23,6 +23,7 @@ void main(void)
 	static unsigned char test;
 	static enum_move_type player_move_type;
 
+	unsigned char sgbX, quoX, remX;
 	int i = 0;
 	int yy = 0;
 	static int px, py;
@@ -51,6 +52,12 @@ void main(void)
 	jumpIdx = -1;
 	//player_move_type = move_type_left;
 	//player_move_type = move_type_rght;
+
+	sgbX = 60;
+	//quoX = 3;
+	//remX = 2;
+	quoX = sgbX / 32;
+	remX = sgbX % 32;
 
 	//test = true;
 	isJ = false;
@@ -82,10 +89,13 @@ void main(void)
 	//next_screen_type = screen_type_load;
 	next_screen_type = screen_type_test;
 
-	print( px, dx, player_move_type, 0 );
+	print( sgbX, quoX, remX, 0 );
 	//engine_input_manager_update();
 	
-//	print( px, py, dx, 0 );
+	//print( px, py, dx, 0 );
+
+	//engine_font_manager_draw_data( px, 10, yy );
+
 	devkit_SMS_displayOn();
 	for (;;)
 	{
@@ -256,9 +266,9 @@ void print( int  px, int  py, int  dx, unsigned char yy )
 {
 	int b = px;		int c = py;	int d = dx;	int y = yy;
 
-	/*engine_font_manager_draw_data( px, 10, yy );
+	engine_font_manager_draw_data( px, 10, yy );
 	engine_font_manager_draw_data( py, 20, yy );
-	engine_font_manager_draw_data( dx, 30, yy );*/
+	engine_font_manager_draw_data( dx, 30, yy );
 }
 
 void draw_grid()
