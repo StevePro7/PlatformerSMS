@@ -20,7 +20,7 @@ void main(void)
 	static bool isJ = false;
 	static bool was = false;
 	//bool test;// = false;
-	static unsigned char test;
+	static unsigned char test, test1, test2;
 	static enum_move_type player_move_type;
 
 	unsigned char sgbX, quoX, remX;
@@ -37,7 +37,7 @@ void main(void)
 	unsigned char bx = 0;
 	//static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
 	static signed char velY[ COUNT ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
-	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 16 };	// TODO change last value to 5!
+	static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };	// TODO change last value to 5!
 
 	//static signed char velX[ MAX_X ] = { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
 	static unsigned char velX[ MAX_X ] = { 1, 2, 2, 2, 2 };
@@ -62,7 +62,7 @@ void main(void)
 	//test = true;
 	isJ = false;
 	was = false;
-	test = 0;
+	test = 0;  test1 = 0; test2 = 0;
 	px = 16; py = 128;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
@@ -110,8 +110,8 @@ void main(void)
 
 		//test = engine_input_manager_hold_left();
 		dx = 0;
-		test = engine_input_manager_move_left();
-		if( test )
+		test1 = engine_input_manager_move_left();
+		if( test1 )
 		{
 			if( move_type_left != player_move_type )
 			{
@@ -137,8 +137,8 @@ void main(void)
 		}
 
 		//test = engine_input_manager_hold_right();
-		test = engine_input_manager_move_right();
-		if( test )
+		test2 = engine_input_manager_move_right();
+		if( test2 )
 		{
 			if( move_type_rght != player_move_type )
 			{
@@ -163,11 +163,17 @@ void main(void)
 			//print( px, dx, player_move_type, 0 );
 		}
 
+		if( !test1 && !test2 )
+		{
+			player_move_type = move_type_idle;
+		}
 		if( move_type_idle != player_move_type )
 		{
 			px += dx * ( player_move_type - 1 );
 			print( px, dx, player_move_type, 0 );
 		}
+		engine_font_manager_draw_data( player_move_type, 20, 10 );
+
 		//test = engine_input_manager_hold_fire1();
 		test = engine_input_manager_move_fire1();
 		isJ = test;
