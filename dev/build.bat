@@ -37,7 +37,8 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 rende
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
 cd ..
 
 REM echo Build main
@@ -102,6 +103,7 @@ source\render_manager.rel ^
 source\scroll_manager.rel ^
 source\none_screen.rel ^
 source\test_screen.rel ^
+source\func_screen.rel ^
 gfx.rel
 
 REM sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
@@ -124,7 +126,7 @@ ihx2sms output.ihx output.sms
 REM copy output.sms
 copy output.sms ..\
 REM copy output.sms ..\asm
-REM cd ..\asm
+REM cd ..\asmB
 REM smsexamine.exe output.sms
 REM cd ..\dev
 
@@ -154,6 +156,6 @@ REM if exist "*.rel" del "*.rel" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-C:\SEGA\Fusion\fusion.exe output.sms
+REM C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
