@@ -87,8 +87,8 @@ void main(void)
 	custom_initialize();
 	curr_screen_type = screen_type_none;
 	//next_screen_type = screen_type_load;
-	//next_screen_type = screen_type_test;
-	next_screen_type = screen_type_func;
+	next_screen_type = screen_type_test;
+	//next_screen_type = screen_type_func;
 
 //	print( sgbX, quoX, remX, 0 );
 	//engine_input_manager_update();
