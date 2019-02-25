@@ -14,9 +14,8 @@ void screen_play_screen_load()
 	//engine_font_manager_draw_data( ho->hacker_debug, 20, 7 );
 	//engine_font_manager_draw_data( ho->hacker_level, 22, 8 );
 
-	//source_game_manager_render();
-	//engine_level_manager_load_levelX();
-	//engine_player_manager_load();
+	engine_level_manager_load_levelX();
+	engine_player_manager_load();
 }
 
 void screen_play_screen_update( unsigned char *screen_type )

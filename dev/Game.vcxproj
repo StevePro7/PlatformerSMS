@@ -177,6 +177,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="source\common_manager.h" />
     <ClInclude Include="source\content_manager.h" />
+    <ClInclude Include="source\enemy_object.h" />
     <ClInclude Include="source\enemy_manager.h" />
     <ClInclude Include="source\enum_manager.h" />
     <ClInclude Include="source\font_manager.h" />

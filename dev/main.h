@@ -27,12 +27,9 @@ const int MaxMoveSpeed = 1750;
 
 // MANAGERS
 #include "source\global_manager.h"
-#include "source\common_manager.h"
-
 //#include "engine\locale_manager.h"
 #include "source\enum_manager.h"
 #include "source\hack_manager.h"
-
 
 
 // OBJECTS
@@ -52,7 +49,7 @@ const int MaxMoveSpeed = 1750;
 #include "source\input_manager.h"
 //#include "engine\enemy_manager.h"
 //#include "engine\player_manager.h"
-#include "source\scroll_manager.h"
+//#include "source\scroll_manager.h"
 #include "engine\asm_manager.h"
 
 #include "source\render_manager.h"
