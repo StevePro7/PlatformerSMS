@@ -7,13 +7,12 @@
 
 #define HACKER_START		0x0050
 
-struct_hack_object hack_object;
-//unsigned char hacker_debug;
-//unsigned char hacker_level;
+// Global variable.
+struct_hack_object global_hack_object;
 
 void engine_hack_manager_init()
 {
-	struct_hack_object *ho = &hack_object;
+	struct_hack_object *ho = &global_hack_object;
 	ho->hacker_debug = 0;
 	ho->hacker_level = 0;
 

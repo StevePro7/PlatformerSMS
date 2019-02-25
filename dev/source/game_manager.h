@@ -13,4 +13,4 @@
 #define name		"Platformer"
 #define descr		"his is a generic platformer game!"
 
-#endif//_GAME_MANAGER_H_H_
+#endif//_GAME_MANAGER_H_

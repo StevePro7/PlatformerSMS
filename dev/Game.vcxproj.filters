@@ -40,6 +40,9 @@
     <Filter Include="Source Files\object">
       <UniqueIdentifier>{f8c005f3-0117-4353-a8e5-2661e1f520cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{bed91bba-6ee2-4948-b3e3-58ed5eb1b3ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -51,34 +54,7 @@
     <ClCompile Include="banks\bank2.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
-    <ClCompile Include="source\_sms_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\render_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\common_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\game_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\content_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
     <ClCompile Include="source\global_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\font_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\tile_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\sprite_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\input_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
     <ClCompile Include="source\hack_manager.c">
@@ -99,9 +75,6 @@
     <ClCompile Include="source\test_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
-    <ClCompile Include="source\scroll_manager.c">
-      <Filter>Source Files\source</Filter>
-    </ClCompile>
     <ClCompile Include="source\level_object.c">
       <Filter>Source Files\object</Filter>
     </ClCompile>
@@ -114,6 +87,36 @@
     <ClCompile Include="source\play_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="source\_sms_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\common_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\content_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\font_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\input_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sprite_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scroll_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\render_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tile_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -125,40 +128,10 @@
     <ClInclude Include="banks\bank2.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="source\_sms_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\render_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\common_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
     <ClInclude Include="engine\asm_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="source\game_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\content_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
     <ClInclude Include="source\global_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\enum_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\font_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\tile_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\sprite_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\input_manager.h">
       <Filter>Header Files\source</Filter>
     </ClInclude>
     <ClInclude Include="source\hack_manager.h">
@@ -179,9 +152,6 @@
     <ClInclude Include="source\test_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
-    <ClInclude Include="source\scroll_manager.h">
-      <Filter>Header Files\source</Filter>
-    </ClInclude>
     <ClInclude Include="source\player_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
@@ -199,6 +169,39 @@
     </ClInclude>
     <ClInclude Include="source\hack_object.h">
       <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\content_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\input_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\sprite_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tile_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\font_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\common_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\render_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\_sms_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scroll_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\enum_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
