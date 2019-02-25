@@ -7,4 +7,6 @@ extern unsigned char hacker_level;
 void engine_hack_manager_init();
 void engine_hack_manager_invert();
 
+void engine_hack_manager_draw_grid();
+
 #endif//_HACK_MANAGER_H_

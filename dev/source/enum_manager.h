@@ -7,8 +7,8 @@ typedef enum tag_enum_screen_type
 	screen_type_test = 1,
 	//screen_type_init = 2,
 	//screen_type_load = 3,
-	//screen_type_play = 4,
-	screen_type_func = 2,
+	screen_type_play = 2,
+	screen_type_func = 3,
 	screen_type_splash = 6,
 
 } enum_screen_type;

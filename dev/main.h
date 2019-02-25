@@ -58,7 +58,7 @@ const int MaxMoveSpeed = 1750;
 #include "source\test_screen.h"
 //#include "screen\init_screen.h"
 //#include "screen\load_screen.h"
-//#include "screen\play_screen.h"
+#include "source\play_screen.h"
 #include "source\func_screen.h"
 //#include "screen\splash_screen.h"
 

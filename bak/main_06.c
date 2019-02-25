@@ -9,6 +9,7 @@ void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
 void custom_initialize();
 
 void draw_grid();
+//void draw_floor();
 void print( int  px, int  vx, int  dx, unsigned char yy );
 
 #define COUNT 17
@@ -80,6 +81,9 @@ void main(void)
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 
+	//draw_grid();
+	//draw_floor();
+	
 	custom_initialize();
 	curr_screen_type = screen_type_none;
 	//next_screen_type = screen_type_load;
@@ -275,6 +279,38 @@ void print( int  px, int  py, int  dx, unsigned char yy )
 	//engine_font_manager_draw_data( py, 20, yy );
 	//engine_font_manager_draw_data( dx, 30, yy );
 }
+
+void draw_grid()
+{
+	unsigned char x, y;
+	for( y = 0; y < 24; y+=2)
+	{
+		for( x = 0; x < 32; x+=2 )
+		{
+			engine_tile_manager_draw_tile( tile_type_gridline, x, y );
+		}
+	}
+}
+//void draw_floor()
+//{
+//	unsigned char x;
+//	enum_tile_type tile_type;
+//	for( x = 0; x < 32; x += 2 )
+//	{
+//		tile_type = rand() % MAX_BLOCK_TILES + 1;
+//		engine_tile_manager_draw_tile( tile_type, x, 20 );
+//		tile_type = rand() % MAX_BLOCK_TILES + 1;
+//		engine_tile_manager_draw_tile( tile_type, x, 22 );
+//	}
+//
+//	tile_type = rand() % MAX_BLOCK_TILES + 1;
+//	engine_tile_manager_draw_tile( tile_type, 14, 12 );	engine_tile_manager_draw_tile( tile_type, 14, 14 );
+//	tile_type = rand() % MAX_BLOCK_TILES + 1;
+//	engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
+//
+//	//tile_type = rand() % MAX_BLOCK_TILES + 1;
+//	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
+//}
 
 
 void custom_initialize()
