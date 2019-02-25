@@ -6,7 +6,9 @@
 #define TILE_X_OFFSET			0
 #define GAME_X_OFFSET			TILE_X_OFFSET * 8
 
-#define SPRITE_TILES_OFFSET		128
+//#define SPRITE_TILES_OFFSET		128
+#define SPRITE_TILES_OFFSET		256
+#define SPRITE_TILES_NUMBER		12
 #define MAX_BLOCK_TILES			9
 
 #define COLS	15
@@ -15,6 +17,6 @@
 #define CR	'\r'				// 0x0d
 #define LF	'\n'				// 0x0a
 
-extern const unsigned char list_sprite_tile_offset[];
+extern const unsigned int list_sprite_tile_offset[];
 
 #endif//_GLOBAL_MANAGER_H_

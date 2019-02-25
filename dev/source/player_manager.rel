@@ -2,10 +2,10 @@ XL2
 H 9 areas C global symbols
 M player_manager
 O -mz80
-S _EnemyA_Idle_01__tiles__psgcompr Ref0000
-S _EnemyB_Idle_01__tiles__psgcompr Ref0000
-S _EnemyC_Idle_01__tiles__psgcompr Ref0000
-S _EnemyD_Idle_01__tiles__psgcompr Ref0000
+S _EnemyA_Idle__tiles__psgcompr Ref0000
+S _EnemyB_Idle__tiles__psgcompr Ref0000
+S _EnemyC_Idle__tiles__psgcompr Ref0000
+S _EnemyD_Idle__tiles__psgcompr Ref0000
 S .__.ABS. Def0000
 S _engine_input_manager_hold_right Ref0000
 S _engine_font_manager_draw_data Ref0000

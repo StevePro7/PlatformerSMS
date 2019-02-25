@@ -20,10 +20,10 @@ struct_player_object player_object;
 const unsigned char *stageinitdata[] =
 {
 	Player_Idle__tiles__psgcompr,
-	EnemyA_Idle_01__tiles__psgcompr,
-	EnemyB_Idle_01__tiles__psgcompr,
-	EnemyC_Idle_01__tiles__psgcompr,
-	EnemyD_Idle_01__tiles__psgcompr,
+	EnemyA_Idle__tiles__psgcompr,
+	EnemyB_Idle__tiles__psgcompr,
+	EnemyC_Idle__tiles__psgcompr,
+	EnemyD_Idle__tiles__psgcompr,
 };
 
 //TODO delete

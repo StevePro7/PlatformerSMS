@@ -10,6 +10,7 @@ void devkit_SMS_displayOff();
 void devkit_SMS_mapROMBank( unsigned char n );
 
 void devkit_SMS_setSpriteMode( unsigned char mode );
+void devkit_SMS_useFirstHalfTilesforSprites_False();
 void devkit_SMS_useFirstHalfTilesforSprites_True();
 void devkit_SMS_VDPturnOnFeature( unsigned int feature );
 

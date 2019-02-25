@@ -63,7 +63,7 @@ void main(void)
 	isJ = false;
 	was = false;
 	test = 0;  test1 = 0; test2 = 0;
-	px = 16; py = 128;
+	px = 12; py = 128;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;
 
@@ -72,7 +72,7 @@ void main(void)
 	devkit_SMS_displayOff();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
-	devkit_SMS_useFirstHalfTilesforSprites_True();						// true changes tile color in Tile Viewer
+	devkit_SMS_useFirstHalfTilesforSprites_False();						// true changes tile color in Tile Viewer
 	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );	// TODO remember to uncomment this...!
 
 	engine_hack_manager_init();
@@ -119,7 +119,7 @@ void main(void)
 				player_idxX = 0;
 				dx = velX[ player_idxX ];
 				player_move_type = move_type_left;
-				print( player_idxX, dx, player_move_type, 5 );
+				//print( player_idxX, dx, player_move_type, 5 );
 			}
 			else if( move_type_left == player_move_type )
 			{
@@ -130,38 +130,40 @@ void main(void)
 				}
 				dx = velX[ player_idxX ];
 				//player_move_type = move_type_left;
-				print( player_idxX, dx, player_move_type, 7 );
+				//print( player_idxX, dx, player_move_type, 7 );
 			}
 
 			//px += dx * ( player_move_type - 1 );
 			//print( px, dx, player_move_type, 0 );
 		}
-
-		//test = engine_input_manager_hold_right();
-		test2 = engine_input_manager_move_right();
-		if( test2 )
+		else
 		{
-			if( move_type_rght != player_move_type )
+			//test = engine_input_manager_hold_right();
+			test2 = engine_input_manager_move_right();
+			if( test2 )
 			{
-				player_idxX = 0;
-				dx = velX[ player_idxX ];
-				player_move_type = move_type_rght;
-				print( player_idxX, dx, player_move_type, 1 );
-			}
-			else if( move_type_rght == player_move_type )
-			{
-				player_idxX++;
-				if( player_idxX > MAX_X - 1 )
+				if( move_type_rght != player_move_type )
 				{
-					player_idxX = MAX_X - 1;
+					player_idxX = 0;
+					dx = velX[ player_idxX ];
+					player_move_type = move_type_rght;
+					//print( player_idxX, dx, player_move_type, 1 );
 				}
-				dx = velX[ player_idxX ];
-				//player_move_type = move_type_rght;
-				print( player_idxX, dx, player_move_type, 2 );
-			}
+				else if( move_type_rght == player_move_type )
+				{
+					player_idxX++;
+					if( player_idxX > MAX_X - 1 )
+					{
+						player_idxX = MAX_X - 1;
+					}
+					dx = velX[ player_idxX ];
+					//player_move_type = move_type_rght;
+					//print( player_idxX, dx, player_move_type, 2 );
+				}
 
-			//px += dx * player_move_type;
-			//print( px, dx, player_move_type, 0 );
+				//px += dx * player_move_type;
+				//print( px, dx, player_move_type, 0 );
+			}
 		}
 
 		if( !test1 && !test2 )
@@ -173,7 +175,7 @@ void main(void)
 			px += dx * ( player_move_type - 1 );
 			print( px, dx, player_move_type, 0 );
 		}
-		engine_font_manager_draw_data( player_move_type, 20, 10 );
+		//engine_font_manager_draw_data( player_move_type, 20, 10 );
 
 		//test = engine_input_manager_hold_fire1();
 		test = engine_input_manager_move_fire1();
@@ -273,9 +275,9 @@ void print( int  px, int  py, int  dx, unsigned char yy )
 {
 	int b = px;		int c = py;	int d = dx;	int y = yy;
 
-	engine_font_manager_draw_data( px, 10, yy );
-	engine_font_manager_draw_data( py, 20, yy );
-	engine_font_manager_draw_data( dx, 30, yy );
+	//engine_font_manager_draw_data( px, 10, yy );
+	//engine_font_manager_draw_data( py, 20, yy );
+	//engine_font_manager_draw_data( dx, 30, yy );
 }
 
 void draw_grid()
