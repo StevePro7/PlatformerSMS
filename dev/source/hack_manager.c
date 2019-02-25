@@ -7,20 +7,23 @@
 
 #define HACKER_START		0x0050
 
-unsigned char hacker_debug;
-unsigned char hacker_level;
+struct_hack_object hack_object;
+//unsigned char hacker_debug;
+//unsigned char hacker_level;
 
 void engine_hack_manager_init()
 {
-	hacker_debug = 0;
-	hacker_level = 0;
+	struct_hack_object *ho = &hack_object;
+	ho->hacker_debug = 0;
+	ho->hacker_level = 0;
 
 #ifndef _CONSOLE
 
-	hacker_debug = PEEK( HACKER_START - 1 );	// 0x004F		// 0=debug on otherwise off.
-	hacker_level = PEEK( HACKER_START + 0 );	// 0x0050		//
+	ho->hacker_debug = PEEK( HACKER_START - 1 );	// 0x004F		// 0=debug on otherwise off.
+	ho->hacker_level = PEEK( HACKER_START + 0 );	// 0x0050		//
 
 #endif
+
 }
 
 void engine_hack_manager_invert()

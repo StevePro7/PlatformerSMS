@@ -74,9 +74,6 @@ void main(void)
 	devkit_SMS_useFirstHalfTilesforSprites_False();						// true changes tile color in Tile Viewer
 	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );	// TODO remember to uncomment this...!
 
-	engine_hack_manager_init();
-
-
 	engine_content_manager_load_sprites();
 	engine_content_manager_load_back_tiles();
 

@@ -1,16 +1,15 @@
 XL2
-H 9 areas 7 global symbols
+H 9 areas 6 global symbols
 M hack_manager
 O -mz80
 S .__.ABS. Def0000
 S _engine_tile_manager_draw_tile Ref0000
-A _CODE size 31 flags 0 addr 0
-S _engine_hack_manager_draw_grid Def000E
+A _CODE size 37 flags 0 addr 0
+S _engine_hack_manager_draw_grid Def0014
 S _engine_hack_manager_init Def0000
-S _engine_hack_manager_invert Def000D
+S _engine_hack_manager_invert Def0013
 A _DATA size 2 flags 0 addr 0
-S _hacker_level Def0001
-S _hacker_debug Def0000
+S _hack_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -22,31 +21,29 @@ T 00 00
 R 00 00 01 00
 T 00 00
 R 00 00 01 00
-T 01 00
-R 00 00 01 00
-T 01 00
-R 00 00 01 00
 T 00 00
 R 00 00 00 00
-T 00 00 3A 4F 00 32 00 00 3A 50 00 32 01 00 C9
-R 00 00 00 00 00 06 01 00 00 0C 01 00
-T 0D 00
+T 00 00 11 00 00 AF 12 4B 42 03 AF 02 3A 4F 00 12
+R 00 00 00 00 00 03 01 00
+T 0E 00 3A 50 00 02 C9
 R 00 00 00 00
-T 0D 00 C9
+T 13 00
 R 00 00 00 00
-T 0E 00
+T 13 00 C9
 R 00 00 00 00
-T 0E 00 0E 00
+T 14 00
 R 00 00 00 00
-T 10 00
+T 14 00 0E 00
 R 00 00 00 00
-T 10 00 06 00
+T 16 00
 R 00 00 00 00
-T 12 00
+T 16 00 06 00
 R 00 00 00 00
-T 12 00 C5 79 F5 33 C5 33 3E 0F F5 33 CD 00 00 F1
+T 18 00
+R 00 00 00 00
+T 18 00 C5 79 F5 33 C5 33 3E 0F F5 33 CD 00 00 F1
 R 00 00 00 00 02 0D 01 00
-T 20 00 33 C1 04 04 78 D6 20 38 E9 0C 0C 79 D6 18
+T 26 00 33 C1 04 04 78 D6 20 38 E9 0C 0C 79 D6 18
 R 00 00 00 00
-T 2E 00 38 E0 C9
+T 34 00 38 E0 C9
 R 00 00 00 00

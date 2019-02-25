@@ -28,10 +28,12 @@ const int MaxMoveSpeed = 1750;
 // MANAGERS
 #include "source\global_manager.h"
 #include "source\common_manager.h"
-#include "source\render_manager.h"
+
 //#include "engine\locale_manager.h"
 #include "source\enum_manager.h"
 #include "source\hack_manager.h"
+
+
 
 // OBJECTS
 //#include "object\enemy_object.h"
@@ -52,6 +54,8 @@ const int MaxMoveSpeed = 1750;
 //#include "engine\player_manager.h"
 #include "source\scroll_manager.h"
 #include "engine\asm_manager.h"
+
+#include "source\render_manager.h"
 
 // SCREENS
 #include "source\none_screen.h"

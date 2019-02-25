@@ -184,6 +184,7 @@
     <ClInclude Include="source\game_manager.h" />
     <ClInclude Include="source\global_manager.h" />
     <ClInclude Include="source\hack_manager.h" />
+    <ClInclude Include="source\hack_object.h" />
     <ClInclude Include="source\input_manager.h" />
     <ClInclude Include="source\level_manager.h" />
     <ClInclude Include="source\level_object.h" />
