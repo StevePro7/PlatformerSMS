@@ -100,99 +100,97 @@ void main(void)
 		engine_input_manager_update();
 
 		//test = engine_input_manager_hold_left();
-		dx = 0;
-		test1 = engine_input_manager_move_left();
-		if( test1 )
-		{
-			if( move_type_left != player_move_type )
-			{
-				player_idxX = 0;
-				dx = velX[ player_idxX ];
-				player_move_type = move_type_left;
-				//print( player_idxX, dx, player_move_type, 5 );
-			}
-			else if( move_type_left == player_move_type )
-			{
-				player_idxX++;
-				if( player_idxX > MAX_X - 1 )
-				{
-					player_idxX = MAX_X - 1;
-				}
-				dx = velX[ player_idxX ];
-				//player_move_type = move_type_left;
-				//print( player_idxX, dx, player_move_type, 7 );
-			}
+		//dx = 0;
+		//test1 = engine_input_manager_move_left();
+		//if( test1 )
+		//{
+		//	if( move_type_left != player_move_type )
+		//	{
+		//		player_idxX = 0;
+		//		dx = velX[ player_idxX ];
+		//		player_move_type = move_type_left;
+		//		//print( player_idxX, dx, player_move_type, 5 );
+		//	}
+		//	else if( move_type_left == player_move_type )
+		//	{
+		//		player_idxX++;
+		//		if( player_idxX > MAX_X - 1 )
+		//		{
+		//			player_idxX = MAX_X - 1;
+		//		}
+		//		dx = velX[ player_idxX ];
+		//		//player_move_type = move_type_left;
+		//		//print( player_idxX, dx, player_move_type, 7 );
+		//	}
 
-			//px += dx * ( player_move_type - 1 );
-			//print( px, dx, player_move_type, 0 );
-		}
-		else
-		{
-			//test = engine_input_manager_hold_right();
-			test2 = engine_input_manager_move_right();
-			if( test2 )
-			{
-				if( move_type_rght != player_move_type )
-				{
-					player_idxX = 0;
-					dx = velX[ player_idxX ];
-					player_move_type = move_type_rght;
-					//print( player_idxX, dx, player_move_type, 1 );
-				}
-				else if( move_type_rght == player_move_type )
-				{
-					player_idxX++;
-					if( player_idxX > MAX_X - 1 )
-					{
-						player_idxX = MAX_X - 1;
-					}
-					dx = velX[ player_idxX ];
-					//player_move_type = move_type_rght;
-					//print( player_idxX, dx, player_move_type, 2 );
-				}
+		//	//px += dx * ( player_move_type - 1 );
+		//	//print( px, dx, player_move_type, 0 );
+		//}
+		//else
+		//{
+		//	//test = engine_input_manager_hold_right();
+		//	test2 = engine_input_manager_move_right();
+		//	if( test2 )
+		//	{
+		//		if( move_type_rght != player_move_type )
+		//		{
+		//			player_idxX = 0;
+		//			dx = velX[ player_idxX ];
+		//			player_move_type = move_type_rght;
+		//			//print( player_idxX, dx, player_move_type, 1 );
+		//		}
+		//		else if( move_type_rght == player_move_type )
+		//		{
+		//			player_idxX++;
+		//			if( player_idxX > MAX_X - 1 )
+		//			{
+		//				player_idxX = MAX_X - 1;
+		//			}
+		//			dx = velX[ player_idxX ];
+		//			//player_move_type = move_type_rght;
+		//			//print( player_idxX, dx, player_move_type, 2 );
+		//		}
 
-				//px += dx * player_move_type;
-				//print( px, dx, player_move_type, 0 );
-			}
-		}
+		//		//px += dx * player_move_type;
+		//		//print( px, dx, player_move_type, 0 );
+		//	}
+		//}
 
-		if( !test1 && !test2 )
-		{
-			player_move_type = move_type_idle;
-		}
-		if( move_type_idle != player_move_type )
-		{
-			px += dx * ( player_move_type - 1 );
-			print( px, dx, player_move_type, 0 );
-		}
+		//if( !test1 && !test2 )
+		//{
+		//	player_move_type = move_type_idle;
+		//}
+		//if( move_type_idle != player_move_type )
+		//{
+		//	px += dx * ( player_move_type - 1 );
+		//	print( px, dx, player_move_type, 0 );
+		//}
 		//engine_font_manager_draw_data( player_move_type, 20, 10 );
 
 		//test = engine_input_manager_hold_fire1();
-		test = engine_input_manager_move_fire1();
-		isJ = test;
-		if( isJ )
-		{
-			idx = 0;
-			if( !was || jumpIdx >= 0 )
-			{
-				jumpIdx++;
-				//print( isJ, was, jumpIdx, 10 );
-			}
+		//test = engine_input_manager_move_fire1();
+		//isJ = test;
+		//if( isJ )
+		//{
+		//	idx = 0;
+		//	if( !was || jumpIdx >= 0 )
+		//	{
+		//		jumpIdx++;
+		//		//print( isJ, was, jumpIdx, 10 );
+		//	}
 
-			if( 0 <= jumpIdx && jumpIdx < COUNT )
-			{
-				dy = velY[ jumpIdx ];
-				py = py + dy;
-				//print( jumpIdx, dy, py, 0 + jumpIdx );
-			}
-		}
-		else
-		{
-			jumpIdx = -1;
-		}
-		was = isJ;
-
-		
+		//	if( 0 <= jumpIdx && jumpIdx < COUNT )
+		//	{
+		//		dy = velY[ jumpIdx ];
+		//		py = py + dy;
+		//		//print( jumpIdx, dy, py, 0 + jumpIdx );
+		//	}
+		//}
+		//else
+		//{
+		//	jumpIdx = -1;
+		//}
+		//was = isJ;
 
 		/*if( !isJ  && idx  )
 		{
@@ -206,27 +204,27 @@ void main(void)
 
 		//if( was )
 		//{
-			test = engine_input_manager_move_fire2();
-			//test = 1;
-			if( test )
-			{
-				dy = grav[ idx ];
-				py = py + dy;
-				if( py > 128 )
-				{
-					py = 128;
-				}
-				
-				idx++;
-				print( idx, 0, dy, 0 + idx );
-				if( idx >= COUNT )
-				{
-					idx = 0;
-					//was = false;
-				}
+			//test = engine_input_manager_move_fire2();
+			////test = 1;
+			//if( test )
+			//{
+			//	dy = grav[ idx ];
+			//	py = py + dy;
+			//	if( py > 128 )
+			//	{
+			//		py = 128;
+			//	}
+			//	
+			//	idx++;
+			//	print( idx, 0, dy, 0 + idx );
+			//	if( idx >= COUNT )
+			//	{
+			//		idx = 0;
+			//		//was = false;
+			//	}
 
-				print( idx, 0, dy, 0 + idx );
-			}
+			//	print( idx, 0, dy, 0 + idx );
+			//}
 		//}
 
 		//if( isJ )
@@ -252,7 +250,7 @@ void main(void)
 		
 
 		//print( px, py, dx, 1 );
-		engine_sprite_manager_draw_player( px, py );
+		//engine_sprite_manager_draw_player( px, py );
 		//engine_sprite_manager_draw( px, py, sprite_type_enemyD );
 		update_method[ curr_screen_type ]( &next_screen_type );
 

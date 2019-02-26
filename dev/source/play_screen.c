@@ -1,5 +1,6 @@
 #include "play_screen.h"
 #include "global_manager.h"
+#include "debug_manager.h"
 #include "enum_manager.h"
 //#include "hack_manager.h"
 #include "font_manager.h"
@@ -18,6 +19,8 @@ void screen_play_screen_load()
 	po->sx = 32;
 	po->sy = 32;
 
+	engine_debug_manager_draw_grid();		// TODO remove this!
+
 	engine_level_manager_load_levelX();
 	engine_player_manager_load();
 }
@@ -25,5 +28,7 @@ void screen_play_screen_load()
 void screen_play_screen_update( unsigned char *screen_type )
 {
 	engine_player_manager_update();
+	engine_player_manager_draw();
+
 	*screen_type = screen_type_play;
 }

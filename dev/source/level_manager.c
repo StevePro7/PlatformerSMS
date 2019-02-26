@@ -24,7 +24,7 @@ void engine_level_manager_load_levelX()
 	for( x = 0; x < 32; x += 2 )
 	{
 		tile_type = rand() % MAX_BLOCK_TILES + 1;
-		engine_tile_manager_draw_tile( tile_type, x, 2 );
+		engine_tile_manager_draw_tile( tile_type, x, 4 );
 		//tile_type = rand() % MAX_BLOCK_TILES + 1;
 		//engine_tile_manager_draw_tile( tile_type, x, 22 );
 	}

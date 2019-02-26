@@ -19,6 +19,7 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 cd source
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 debug_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
@@ -90,6 +91,7 @@ banks\bank2.rel ^
 banks\bank3.rel ^
 source\_sms_manager.rel ^
 source\global_manager.rel ^
+source\debug_manager.rel ^
 source\hack_manager.rel ^
 source\level_object.rel ^
 source\content_manager.rel ^
@@ -160,4 +162,4 @@ if exist "*.sym" del "*.sym" > nul
 
 C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+rem java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

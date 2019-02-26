@@ -6,8 +6,6 @@
 void engine_hack_manager_init();
 void engine_hack_manager_invert();
 
-void engine_hack_manager_draw_grid();
-
 // Global variable.
 extern struct_hack_object global_hack_object;
 

@@ -9,8 +9,8 @@ struct_player_object global_player_object;
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->sx = 64;
-	po->sy = 128;
+	po->sx = 12;
+	po->sy = 0;
 	//engine_font_manager_draw_data( po->sx, 15, 5 );
 }
 
