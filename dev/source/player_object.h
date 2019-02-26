@@ -6,7 +6,11 @@
 typedef struct tag_struct_player_object
 {
 	enum_move_type player_move_type;
-	unsigned char sx, sy;
+	//unsigned char sx, sy;
+	int posX, posY;
+	int velX, velY;
+	unsigned char deltaX, deltaY;
+	unsigned char player_idxX;
 	unsigned char bl, br;
 	unsigned char fr, fm;
 	signed char vx, vy;

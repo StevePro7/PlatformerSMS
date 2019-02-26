@@ -1,9 +1,6 @@
 #ifndef _SMS_MANAGER_H_
 #define _SMS_MANAGER_H_
 
-//#include <stdbool.h>
-
-
 void devkit_SMS_init();
 void devkit_SMS_displayOn();
 void devkit_SMS_displayOff();
