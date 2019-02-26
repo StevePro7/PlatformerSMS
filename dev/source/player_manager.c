@@ -22,3 +22,9 @@ void engine_player_manager_update()
 	test = engine_input_manager_hold_right();
 	//engine_sprite_manager_draw_player( po->sx, po->sy );
 }
+
+void engine_player_manager_draw()
+{
+	struct_player_object *po = &global_player_object;
+	engine_sprite_manager_draw_player( po->sx, po->sy );
+}

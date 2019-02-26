@@ -5,6 +5,7 @@
 
 void engine_player_manager_load();
 void engine_player_manager_update();
+void engine_player_manager_draw();
 
 // Global variable.
 extern struct_player_object global_player_object;

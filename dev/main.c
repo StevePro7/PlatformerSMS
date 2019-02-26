@@ -30,9 +30,6 @@ void main(void)
 	static int dx, dy;
 	static signed char jumpIdx;
 
-	//int ppx = 0, ppy = 0;
-	//int vx = 0, vy = 0;
-	//int dx = 0, dy = 0;
 	unsigned char bx = 0;
 	//static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
 	static signed char velY[ COUNT ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };

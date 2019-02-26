@@ -14,6 +14,10 @@ void screen_play_screen_load()
 	//engine_font_manager_draw_data( ho->hacker_debug, 20, 7 );
 	//engine_font_manager_draw_data( ho->hacker_level, 22, 8 );
 
+	struct_player_object *po = &global_player_object;
+	po->sx = 32;
+	po->sy = 32;
+
 	engine_level_manager_load_levelX();
 	engine_player_manager_load();
 }
