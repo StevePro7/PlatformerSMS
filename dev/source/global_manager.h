@@ -11,6 +11,8 @@
 #define SPRITE_TILES_NUMBER		12
 #define MAX_BLOCK_TILES			9
 
+#define INVALID_INDEX			-1
+
 #define COLS	15
 #define ROWS	12
 

@@ -2,6 +2,7 @@
 #define _PLAYER_OBJECT_H_
 
 #include "enum_manager.h"
+#include <stdbool.h>
 
 typedef struct tag_struct_player_object
 {
@@ -10,10 +11,11 @@ typedef struct tag_struct_player_object
 	int posX, posY;
 	int velX, velY;
 	unsigned char deltaX, deltaY;
-	unsigned char player_idxX;
+	signed char player_idxX;
 	unsigned char bl, br;
 	unsigned char fr, fm;
 	signed char vx, vy;
+	bool isOnGround;
 
 } struct_player_object;
 

@@ -1,6 +1,13 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+26/02/2019
+In VS2015 here is how to "force" Visual Studio to use // for multi line comments
+Reference:
+https://stackoverflow.com/questions/14872680/visual-studio-c-multiline-comments
+Triple click the starting line and while mouse click still held drag down the number of lines
+you want to comment out... unclick and press the comment icon to multi comment using // style
+
 14/02/2019
 Here is a reference to the pedantic warning
 https://juju.nz/src/juju/gbdk/src/branch/master/sdcc/support/Util/SDCCerr.c

@@ -1,5 +1,4 @@
 #include "player_manager.h"
-#include "global_manager.h"
 #include "font_manager.h"
 #include "sprite_manager.h"
 #include "input_manager.h"
@@ -23,7 +22,6 @@ void engine_player_manager_load()
 	po->velX = 0;	po->velY = 0;
 	po->player_idxX = 0;
 	po->player_move_type = move_type_idle;
-	po->isOnGround = true;
 }
 
 void engine_player_manager_update()
@@ -37,7 +35,15 @@ void engine_player_manager_update()
 		if( move_type_left != po->player_move_type )
 		{
 			po->player_move_type = move_type_left;
-			po->player_idxX = INVALID_INDEX;
+			po->player_idxX = 0;
+		}
+		else
+		{
+			po->player_idxX++;
+			if( po->player_idxX > MAX_VELOCITY_X - 1 )
+			{
+				po->player_idxX = MAX_VELOCITY_X - 1;
+			}
 		}
 	}
 
@@ -47,30 +53,28 @@ void engine_player_manager_update()
 		if( move_type_rght != po->player_move_type )
 		{
 			po->player_move_type = move_type_rght;
-			po->player_idxX = INVALID_INDEX;
+			po->player_idxX = 0;
+		}
+		else
+		{
+			po->player_idxX++;
+			if( po->player_idxX > MAX_VELOCITY_X - 1 )
+			{
+				po->player_idxX = MAX_VELOCITY_X - 1;
+			}
 		}
 	}
 
 	if( test1 || test2 )
 	{
-		//TODO delete debug info
-		//engine_font_manager_draw_data( po->player_idxX, 15, 9 );
-
-		po->player_idxX++;
-		if( po->player_idxX > MAX_VELOCITY_X - 1 )
-		{
-			po->player_idxX = MAX_VELOCITY_X - 1;
-		}
-
-		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
+		po->deltaX = velocityXgnd[ po->player_idxX ];
 		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
 		po->posX += po->velX;
 
-		//TODO delete debug info
-		//engine_font_manager_draw_data( po->player_idxX, 15, 10 );
-		//engine_font_manager_draw_data( po->deltaX, 15, 11 );
-		//engine_font_manager_draw_data( po->velX, 15, 12 );
-		//engine_font_manager_draw_data( po->posX, 15, 13 );
+		/*engine_font_manager_draw_data( po->player_idxX, 15, 10 );
+		engine_font_manager_draw_data( po->deltaX, 15, 11 );
+		engine_font_manager_draw_data( po->velX, 15, 12 );
+		engine_font_manager_draw_data( po->posX, 15, 13 );*/
 	}
 	else
 	{
