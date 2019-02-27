@@ -12,7 +12,10 @@ void screen_play_screen_load()
 {
 	engine_debug_manager_draw_grid();		// TODO remove this!
 
-	engine_level_manager_load_levelX();
+	engine_level_manager_load_index( 0 );
+	engine_level_manager_draw_level();
+
+	//engine_level_manager_load_levelX();
 	engine_player_manager_load();
 }
 

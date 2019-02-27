@@ -118,7 +118,10 @@ void engine_level_manager_draw_level_column_side( unsigned side_type, unsigned c
 			//tile = tiles_map[ index ];
 			tile = tiles_mat[ y ][ x ];
 
-			engine_tile_manager_draw_tile_side( side_type, tile, x * 2 + TILE_X_OFFSET, y * 2 );
+			if( 0 != tile )
+			{
+				engine_tile_manager_draw_tile_side( side_type, tile, x * 2 + TILE_X_OFFSET, y * 2 );
+			}
 		}
 	}
 }
@@ -132,5 +135,8 @@ static void engine_level_manager_draw_tiles( unsigned char x, unsigned char y )
 	//tile = tiles_map[ index ];
 	tile = tiles_mat[ y ][ x ];
 
-	engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
+	if( 0 != tile )
+	{
+		engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
+	}
 }
