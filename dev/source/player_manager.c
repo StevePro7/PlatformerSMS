@@ -24,6 +24,7 @@ static unsigned char topXTileArray[ TILE_COLLISION ] = { 0, 0, 0, 0, 0, 0, 0, 0,
 static unsigned char botXTileArray[ TILE_COLLISION ] = { 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 
 // Private helper methods.
+static void do_jump( int inpVelocityY );
 static void get_coll_position();
 static void get_draw_position();
 static void get_common_position( int posX, int posY, signed char offsetX );
@@ -31,15 +32,19 @@ static void get_common_position( int posX, int posY, signed char offsetX );
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 24;	po->posnY = 160;
+	//po->posnX = 24;	po->posnY = 160;		// TODO on the base stevepro
+	po->posnX = 24;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->velX = 0;	po->velY = 0;
 	po->player_idxX = 0;
 	po->player_move_type = move_type_idle;
 	po->isOnGround = true;
+	po->isJumping = false;
+	po->wasJumping = false;
+	po->jumpFrame = 0;
 }
 
-void engine_player_manager_update()
+void engine_player_manager_get_input()
 {
 	unsigned char test1, test2;
 	struct_player_object *po = &global_player_object;
@@ -64,6 +69,8 @@ void engine_player_manager_update()
 		}
 	}
 
+	po->isJumping = engine_input_manager_move_fire1();
+
 	if( test1 || test2 )
 	{
 		//TODO delete debug info
@@ -77,7 +84,7 @@ void engine_player_manager_update()
 
 		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
 		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
-		po->posnX += po->velX;
+		//po->posnX += po->velX;
 
 		//TODO delete debug info
 		//engine_font_manager_draw_data( po->player_idxX, 15, 10 );
@@ -88,6 +95,58 @@ void engine_player_manager_update()
 	else
 	{
 		po->player_move_type = move_type_idle;
+		po->velX = 0;
+	}
+}
+
+// TODO debug this method to ensure all calculations correct!
+void engine_player_manager_apply_physics()
+{
+	struct_player_object *po = &global_player_object;
+	po->prevX = po->posnX;
+	po->prevY = po->posnY;
+
+	if( !po->isOnGround )
+	{
+		po->player_grav++;
+		if( po->player_grav > MAX_VELOCITY_Y - 1 )
+		{
+			po->player_grav = MAX_VELOCITY_Y - 1;
+		}
+	}
+	else
+	{
+		po->player_grav = 0;
+	}
+
+	po->deltaY = gravityZ[ po->player_grav ];
+	po->velY = po->deltaY;
+
+	//engine_font_manager_draw_data( po->velY, 15, 10 );		// TODO delete
+	do_jump( po->velY );
+	//engine_font_manager_draw_data( po->velY, 15, 11 );		// TODO delete
+
+	po->posnX += po->velX;
+	po->posnY += po->velY;
+}
+
+void engine_player_manager_handle_collisions()
+{
+}
+
+void engine_player_manager_cleanup()
+{
+	struct_player_object *po = &global_player_object;
+	if( po->posnX == po->prevX )
+	{
+		po->velX = 0;
+	}
+
+	if( po->posnY == po->prevY )
+	{
+		po->velX = 0;
+		po->player_grav = 0;
+		po->jumpFrame = 0;
 	}
 }
 
@@ -96,6 +155,55 @@ void engine_player_manager_draw()
 	struct_player_object *po = &global_player_object;
 	get_draw_position();
 	engine_sprite_manager_draw_player( po->drawX, po->drawY );
+}
+
+static void do_jump( int inpVelocityY )
+{
+	struct_player_object *po = &global_player_object;
+	if( !po->isJumping && po->jumpFrame > 0 || po->isJumping && po->jumpFrame >= MAX_VELOCITY_Y )
+	{
+		po->player_grav = 0;
+		inpVelocityY = 0;
+	}
+
+	// If the player wants to jump
+	if( po->isJumping )
+	{
+		// Begin or continue a jump
+		if( ( !po->wasJumping && po->isOnGround ) || po->jumpFrame > 0 )
+		{
+			po->jumpFrame++;
+		}
+
+		// If we are in the ascent of the jump
+		if( 0 < po->jumpFrame && po->jumpFrame <= MAX_VELOCITY_Y )
+		{
+			// Fully override the vertical velocity with a power curve that gives players more control over the top of the jump
+			po->deltaY = velocityY[ po->player_idxY ];
+			inpVelocityY = po->deltaY;
+
+			po->player_idxY++;
+			if( po->player_idxY > MAX_VELOCITY_Y - 1 )
+			{
+				po->player_idxY = MAX_VELOCITY_Y - 1;
+			}
+		}
+		else
+		{
+			// Reached the apex of the jump
+			po->player_idxY = 0;
+			po->jumpFrame = 0;
+		}
+	}
+	else
+	{
+		// Continues not jumping or cancels a jump in progress
+		po->player_idxY = 0;
+		po->jumpFrame = 0;
+	}
+
+	po->wasJumping = po->isJumping;
+	po->velY = inpVelocityY;
 }
 
 static void get_coll_position()
