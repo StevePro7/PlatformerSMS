@@ -7,7 +7,6 @@
 typedef struct tag_struct_player_object
 {
 	enum_move_type player_move_type;
-	//int posX, posY;
 	int posnX, posnY;
 	int drawX, drawY;
 	int collX, collY;
@@ -18,9 +17,7 @@ typedef struct tag_struct_player_object
 	signed char player_idxX;
 	signed char player_idxY;
 	signed char player_grav;
-	/*unsigned char bl, br;
-	unsigned char fr, fm;
-	signed char vx, vy;*/
+	int depthX, depthY;
 	bool isOnGround;
 	bool isJumping;
 	bool wasJumping;

@@ -23,6 +23,20 @@ static unsigned char rghtTileArray[ TILE_COLLISION ] = { 0, 0, 0, 1, 1, 1, 1, 1,
 static unsigned char topXTileArray[ TILE_COLLISION ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1 };
 static unsigned char botXTileArray[ TILE_COLLISION ] = { 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 
+#define localBoundsWidth	12
+#define localBoundsHeight	26
+#define halfBoundsWidth		localBoundsWidth / 2
+
+#define rectAWidth			localBoundsWidth
+#define rectAHeight			localBoundsHeight
+#define rectBWidth			TILE_WIDE
+#define rectBHeight			TILE_HIGH
+
+#define halfWidthA			rectAWidth / 2
+#define halfHeightA			rectAHeight / 2
+#define halfWidthB			rectBWidth / 2
+#define halfHeightB			rectBHeight / 2
+
 // Private helper methods.
 static void do_jump( int inpVelocityY );
 static void get_coll_position();
@@ -42,6 +56,11 @@ void engine_player_manager_load()
 	po->isJumping = false;
 	po->wasJumping = false;
 	po->jumpFrame = 0;
+
+	engine_font_manager_draw_data( halfWidthA, 15, 10 );
+	engine_font_manager_draw_data( halfHeightA, 15, 11 );
+	engine_font_manager_draw_data( halfWidthB, 15, 12 );
+	engine_font_manager_draw_data( halfHeightB, 15, 13 );
 }
 
 void engine_player_manager_get_input()
@@ -127,7 +146,7 @@ void engine_player_manager_apply_physics()
 	//engine_font_manager_draw_data( po->velY, 15, 11 );		// TODO delete
 
 	po->posnX += po->velX;
-	po->posnY += po->velY;
+	//po->posnY += po->velY;									// TODO revert - IMPORTANT
 }
 
 void engine_player_manager_handle_collisions()
