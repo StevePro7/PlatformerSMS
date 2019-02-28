@@ -52,7 +52,7 @@ void engine_level_manager_load_levelX()
 	//tile_type = rand() % MAX_BLOCK_TILES + 1;
 	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
 
-	engine_font_manager_draw_data( idx, 15, 10 );
+	engine_font_manager_draw_data( idx, 16, 10 );
 
 	// NULL <stdlib.h>
 	if( NULL == lo->collision_matrix )

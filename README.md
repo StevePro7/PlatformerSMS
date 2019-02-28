@@ -15,6 +15,13 @@ compilation terminated.
 
 To be on the safe side, should have static array memory allocation anyway just as a contingency plan...!
 
+Also, reading about using malloc in the SMSpower forums I see this thread
+http://www.smspower.org/forums/16785-SdccVsZ88dkAnd3MainBanks?highlight=malloc
+
+On a different topic, do I want to use the proposed "--opt-code-size" compiler switch?
+However, another quick google suggests that shouldn't use both speed + size options
+Therefore, will leave --opt-code-speed for now as I currently have in my build script
+
 
 26/02/2019
 In VS2015 here is how to "force" Visual Studio to use // for multi line comments
