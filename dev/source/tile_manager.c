@@ -1,6 +1,7 @@
 #include "tile_manager.h"
 #include "_sms_manager.h"
 #include "global_manager.h"
+#include "level_object.h"
 #include "..\gfx.h"
 #include <stdlib.h>
 
