@@ -155,8 +155,10 @@ void engine_player_manager_handle_collisions()
 	int boundsLeft;
 	int boundsTopX;
 
-	int leftTile, rghtTile, topXTile, botXTile;
-	int idxLeftTile, idxRghtTile, idxTopXTile, idxBotXTile;
+	unsigned char leftTile, rghtTile, topXTile, botXTile;
+	unsigned char idxLeftTile, idxRghtTile, idxTopXTile, idxBotXTile;
+	unsigned char x, y;
+
 	//int idxX, idxY;	//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
 	unsigned char idxX, idxY;		// TODO ensure that will NOT overflow i.e. >= 256 if btwn 8 and 15*16+8 then should be OK
 	unsigned char quoX, remX;
@@ -172,7 +174,6 @@ void engine_player_manager_handle_collisions()
 
 	// Determine left + rght tile lookups.
 	idxX = po->collX;
-	idxX = 248;
 	quoX = idxX / TILE_WIDE;
 	remX = idxX % TILE_WIDE;
 
@@ -194,8 +195,17 @@ void engine_player_manager_handle_collisions()
 	// Reset flag to search for ground collision.
 	po->isOnGround = false;
 
-	//engine_font_manager_draw_data( idxTopXTile, 15, 10 );
-	//engine_font_manager_draw_data( idxBotXTile, 15, 11 );
+	// For each potentially colliding tile,
+	for( y = topXTile; y <= botXTile; ++y )
+	{
+		for( x = leftTile; x <= rghtTile; ++x )
+		{
+		}
+
+	}
+
+	//engine_font_manager_draw_data( leftTile, 15, 10 );
+	//engine_font_manager_draw_data( rghtTile, 15, 11 );
 	//engine_font_manager_draw_data( topXTile, 15, 12 );
 	//engine_font_manager_draw_data( botXTile, 15, 13 );
 }

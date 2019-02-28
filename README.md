@@ -1,6 +1,21 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
+ATTEMPED
+PLATFORM
+
+28/02/2019
+Dynamic memory allocation example - checked online for malloc support and free in 
+https://github.com/darconeous/sdcc/blob/master/device/include/malloc.h
+
+IMPORTANT here
+do NOT include <malloc.h> as will get the following errors
+level_manager.c:7:20: fatal error: malloc.h: No such file or directory
+compilation terminated.
+
+To be on the safe side, should have static array memory allocation anyway just as a contingency plan...!
+
+
 26/02/2019
 In VS2015 here is how to "force" Visual Studio to use // for multi line comments
 Reference:
