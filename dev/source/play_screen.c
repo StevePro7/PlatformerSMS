@@ -17,12 +17,19 @@ void screen_play_screen_load()
 
 	//engine_level_manager_load_levelX();
 	engine_player_manager_load();
+
+	// TODO put in the update method
+	//engine_player_manager_get_input();
+	engine_player_manager_apply_physics();
+	engine_player_manager_handle_collisions();
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
-	engine_player_manager_get_input();
-	engine_player_manager_apply_physics();
+	//engine_player_manager_get_input();
+	//engine_player_manager_apply_physics();
+	//engine_player_manager_handle_collisions();
+
 	engine_player_manager_draw();
 
 	*screen_type = screen_type_play;
