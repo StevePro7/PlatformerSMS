@@ -16,7 +16,7 @@ void screen_play_screen_load()
 	engine_debug_manager_draw_grid();		// TODO remove this!
 
 	engine_level_manager_load_index( 0 );
-	//engine_level_manager_draw_level();
+	engine_level_manager_draw_level();
 
 	//TODO refactor this so can lookup as unsigned char but cast back as enum
 	//engine_level_manager_get_collision( &int_coll_type, 9, 5 );

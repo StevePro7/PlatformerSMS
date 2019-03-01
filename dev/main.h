@@ -3,14 +3,17 @@
 #include <stdlib.h>
 //#include <string.h>
 
+// disable warning 110: conditional flow changed by optimizer : so said EVELYN the modified DOG.
+// SDCC may emil this compiler warning for certain calculations involving int or float data type
+// This is just a warning so can be disbled; often replacing data type with unsigned char works!
 //#ifdef _CONSOLE
 //#else
 //	#pragma disable_warning 110
 //#endif
 
-
-const int MoveAcceleration = 13000;
-const int MaxMoveSpeed = 1750;
+//TODO delete this dead code
+//const int MoveAcceleration = 13000;
+//const int MaxMoveSpeed = 1750;
 //const float GroundDragFactor = 0.48f;
 //const float AirDragFactor = 0.58f;
 

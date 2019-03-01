@@ -6,9 +6,10 @@
 #include "input_manager.h"
 #include <math.h>
 
+// IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE
 #else
-	#pragma disable_warning 110
+	//#pragma disable_warning 110
 #endif
 
 // Global variable.
@@ -158,11 +159,6 @@ void engine_player_manager_apply_physics()
 }
 
 void engine_player_manager_handle_collisions()
-{
-	process_collision( 18, 7, 16, 32 );
-}
-
-void engine_player_manager_handle_collisionsX()
 {
 	struct_player_object *po = &global_player_object;
 
@@ -386,13 +382,10 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	fDistanceY = fabsf( distanceY );
 	if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
 	{
-		//return;
+		return;
 	}
 
-	engine_font_manager_draw_data( fDistanceX, 15, 10 );
-	engine_font_manager_draw_data( minDistanceX, 15, 11 );
-	engine_font_manager_draw_data( fDistanceY, 15, 12 );
-	engine_font_manager_draw_data( minDistanceY, 15, 13 );
-
 	// Calculate and return intersection depths.
+	po->depthX = distanceX > 0 ? minDistanceX - distanceX : -minDistanceX - distanceX;
+	po->depthY = distanceY > 0 ? minDistanceY - distanceY : -minDistanceY - distanceY;
 }
