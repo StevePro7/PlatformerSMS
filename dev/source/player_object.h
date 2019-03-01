@@ -22,6 +22,7 @@ typedef struct tag_struct_player_object
 	bool isJumping;
 	bool wasJumping;
 	unsigned char jumpFrame;
+	signed char coll_horz, coll_vert;
 
 } struct_player_object;
 

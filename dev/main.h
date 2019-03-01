@@ -3,10 +3,10 @@
 #include <stdlib.h>
 //#include <string.h>
 
-#ifdef _CONSOLE
-#else
-	//#pragma disable_warning 110
-#endif
+//#ifdef _CONSOLE
+//#else
+//	#pragma disable_warning 110
+//#endif
 
 
 const int MoveAcceleration = 13000;
@@ -38,13 +38,10 @@ const int MaxMoveSpeed = 1750;
 //#include "object\player_object.h"
 
 // MANAGERS
-//#include "engine\global_manager.h"
-//#include "engine\locale_manager.h"
-//#include "engine\enum_manager.h"
 #include "source\content_manager.h"
-#include "source\font_manager.h"
-#include "source\sprite_manager.h"
-#include "source\tile_manager.h"
+//#include "source\font_manager.h"
+//#include "source\sprite_manager.h"
+//#include "source\tile_manager.h"
 //#include "engine\level_manager.h"
 #include "source\input_manager.h"
 //#include "engine\enemy_manager.h"

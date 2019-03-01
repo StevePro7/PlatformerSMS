@@ -2,7 +2,14 @@
 #include "global_manager.h"
 #include "font_manager.h"
 #include "sprite_manager.h"
+#include "level_manager.h"
 #include "input_manager.h"
+#include <math.h>
+
+#ifdef _CONSOLE
+#else
+	#pragma disable_warning 110
+#endif
 
 // Global variable.
 struct_player_object global_player_object;
@@ -42,6 +49,7 @@ static void do_jump( int inpVelocityY );
 static void get_coll_position();
 static void get_draw_position();
 static void get_common_position( int posX, int posY, signed char offsetX );
+static void process_collision( int rectALeft, int rectATop, int rectBLeft, int rectBTop );
 
 void engine_player_manager_load()
 {
@@ -151,19 +159,24 @@ void engine_player_manager_apply_physics()
 
 void engine_player_manager_handle_collisions()
 {
+	process_collision( 18, 7, 16, 32 );
+}
+
+void engine_player_manager_handle_collisionsX()
+{
 	struct_player_object *po = &global_player_object;
 
 	unsigned char int_coll_type;
 	enum_coll_type coll_type;
-	int boundsLeft;
-	int boundsTopX;
+	int boundsLeft, boundsTopX;
+	int tileBoundsLeft, tileBoundsTopX;
 
 	unsigned char leftTile, rghtTile, topXTile, botXTile;
 	unsigned char idxLeftTile, idxRghtTile, idxTopXTile, idxBotXTile;
 	unsigned char x, y;
 
-	//int idxX, idxY;	//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
-	unsigned char idxX, idxY;		// TODO ensure that will NOT overflow i.e. >= 256 if btwn 8 and 15*16+8 then should be OK
+	int idxX, idxY;	//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+	//unsigned char idxX, idxY;		// TODO ensure that will NOT overflow i.e. >= 256 if btwn 8 and 15*16+8 then should be OK
 	unsigned char quoX, remX;
 	unsigned char quoY, remY;
 
@@ -198,19 +211,39 @@ void engine_player_manager_handle_collisions()
 	// Reset flag to search for ground collision.
 	po->isOnGround = false;
 
+	// if player in between tiles then don't check for collisions with gems or exit.
+	po->coll_horz = INVALID_INDEX;
+	po->coll_vert = INVALID_INDEX;
+	if( leftTile == rghtTile )
+	{
+		po->coll_horz = leftTile;
+		po->coll_vert = topXTile;
+	}
+
 	// For each potentially colliding tile,
 	for( y = topXTile; y <= botXTile; ++y )
 	{
 		for( x = leftTile; x <= rghtTile; ++x )
 		{
-		}
+			// If this tile is collidable,
+			engine_level_manager_get_collision( &int_coll_type, x, y );
+			coll_type = ( enum_coll_type ) int_coll_type;
 
+			if( coll_type_passable != coll_type )
+			{
+				// Determine collision depth (with direction) and magnitude.
+				tileBoundsLeft = x * TILE_WIDE;
+				tileBoundsTopX = y * TILE_HIGH;
+
+				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
+			}
+		}
 	}
 
-	//engine_font_manager_draw_data( leftTile, 15, 10 );
-	//engine_font_manager_draw_data( rghtTile, 15, 11 );
-	//engine_font_manager_draw_data( topXTile, 15, 12 );
-	//engine_font_manager_draw_data( botXTile, 15, 13 );
+	/*engine_font_manager_draw_data( leftTile, 15, 10 );
+	engine_font_manager_draw_data( rghtTile, 15, 11 );
+	engine_font_manager_draw_data( topXTile, 15, 12 );
+	engine_font_manager_draw_data( botXTile, 15, 13 );*/
 }
 
 void engine_player_manager_cleanup()
@@ -319,4 +352,47 @@ static void get_common_position( int posX, int posY, signed char offsetX )
 	//engine_font_manager_draw_data( offsetX, 15, 13 );
 	//engine_font_manager_draw_data( po->commX, 15, 14 );
 	//engine_font_manager_draw_data( po->commY, 15, 15 );
+}
+static void process_collision( int rectALeft, int rectATop, int rectBLeft, int rectBTop )
+{
+	struct_player_object *po = &global_player_object;
+
+	int centerAX, centerAY;
+	int centerBX, centerBY;
+	int distanceX, distanceY;
+	int minDistanceX, minDistanceY;
+	float fDistanceX, fDistanceY;
+
+	// Calculate half sizes.	DONE
+
+	// Calculate centers.
+	centerAX = rectALeft + halfWidthA;
+	centerAY = rectATop + halfHeightA;
+	centerBX = rectBLeft + halfWidthB;
+	centerBY = rectBTop + halfHeightB;
+
+	// Calculate current and minimum-non-intersecting distances between centers.
+	distanceX = centerAX - centerBX;
+	distanceY = centerAY - centerBY;
+
+	minDistanceX = halfWidthA + halfWidthB;
+	minDistanceY = halfHeightA + halfHeightB;
+
+	po->depthX = 0;
+	po->depthY = 0;
+
+	// If we are not intersecting at all, return (0, 0).
+	fDistanceX = fabsf( distanceX );
+	fDistanceY = fabsf( distanceY );
+	if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
+	{
+		//return;
+	}
+
+	engine_font_manager_draw_data( fDistanceX, 15, 10 );
+	engine_font_manager_draw_data( minDistanceX, 15, 11 );
+	engine_font_manager_draw_data( fDistanceY, 15, 12 );
+	engine_font_manager_draw_data( minDistanceY, 15, 13 );
+
+	// Calculate and return intersection depths.
 }

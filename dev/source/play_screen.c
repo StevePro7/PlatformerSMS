@@ -10,13 +10,13 @@
 
 void screen_play_screen_load()
 {
-	unsigned char int_coll_type;
-	enum_coll_type coll_type;
+	/*unsigned char int_coll_type;
+	enum_coll_type coll_type;*/
 
 	engine_debug_manager_draw_grid();		// TODO remove this!
 
 	engine_level_manager_load_index( 0 );
-	engine_level_manager_draw_level();
+	//engine_level_manager_draw_level();
 
 	//TODO refactor this so can lookup as unsigned char but cast back as enum
 	//engine_level_manager_get_collision( &int_coll_type, 9, 5 );
@@ -29,6 +29,8 @@ void screen_play_screen_load()
 	// TODO put in the update method
 	//engine_player_manager_get_input();
 	engine_player_manager_apply_physics();
+
+	
 	engine_player_manager_handle_collisions();
 }
 

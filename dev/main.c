@@ -19,7 +19,7 @@ void main(void)
 	static bool isJ = false;
 	static bool was = false;
 	//bool test;// = false;
-	static unsigned char test, test1, test2;
+//	static unsigned char test, test1, test2;
 	static enum_move_type player_move_type;
 
 	unsigned char sgbX, quoX, remX;
@@ -58,7 +58,7 @@ void main(void)
 	//test = true;
 	isJ = false;
 	was = false;
-	test = 0;  test1 = 0; test2 = 0;
+	//test = 0;  test1 = 0; test2 = 0;
 	px = 12; py = 128;
 	vx = 0; vy = 0;
 	dx = 0; dy = 0;

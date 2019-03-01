@@ -4,6 +4,7 @@
 #include "player_object.h"
 
 void engine_player_manager_load();
+//void engine_player_manager_update();		// TODO refactor private methods into this public method
 void engine_player_manager_get_input();
 void engine_player_manager_apply_physics();
 void engine_player_manager_handle_collisions();
