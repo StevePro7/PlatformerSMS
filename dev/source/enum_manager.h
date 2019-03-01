@@ -34,13 +34,13 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
-typedef enum tag_enum_crash_type
+typedef enum tag_enum_coll_type
 {
-	crash_type_passable = 0,
-	crash_type_impassable = 1,
-	crash_type_platform = 2,
+	coll_type_passable = 0,
+	coll_type_impassable = 1,
+	coll_type_platform = 2,
 
-} enum_crash_type;
+} enum_coll_type;
 
 
 typedef enum tag_enum_sprite_type

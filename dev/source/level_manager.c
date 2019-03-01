@@ -50,7 +50,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	//unsigned char idx, row, col;
 	unsigned int idx;
 	enum_tile_type tile_type;
-	enum_crash_type crash_type;
+	enum_coll_type coll_type;
 
 	lo->load_cols = size / MAX_ROWS;
 	lo->draw_cols = lo->load_cols - CRlf;
@@ -75,12 +75,12 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 				//tiles_map[ idx ] = tile_type;
 				//tiles_mat[ row ][ col ] = tile_type;
 
-				engine_tile_manager_get_crash( &crash_type, tile );
-				//crash_map[ idx ] = crash_type;
-				//crash_mat[ row ][ col ] = crash_type;
+				engine_tile_manager_get_crash( &coll_type, tile );
+				//crash_map[ idx ] = coll_type;
+				//crash_mat[ row ][ col ] = coll_type;
 
-				//lo->collision_matrix[ index ] = crash_type;
-				lo->collision_array[ idx ] = crash_type;
+				//lo->collision_matrix[ index ] = coll_type;
+				lo->collision_array[ idx ] = coll_type;
 			}
 
 			o++;
@@ -177,13 +177,13 @@ void engine_level_manager_load_levelX()
 	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
 }
 
-void engine_level_manager_get_collision( unsigned char *crash_type, unsigned char x, unsigned char y )
+void engine_level_manager_get_collision( unsigned char *coll_type, unsigned char x, unsigned char y )
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned int idx;
 
 	idx = y * lo->draw_cols + x;
-	*crash_type = lo->collision_array[ idx ];
+	*coll_type = lo->collision_array[ idx ];
 }
 
 static void engine_level_manager_draw_tiles( unsigned char x, unsigned char y )

@@ -152,6 +152,9 @@ void engine_player_manager_apply_physics()
 void engine_player_manager_handle_collisions()
 {
 	struct_player_object *po = &global_player_object;
+
+	unsigned char int_coll_type;
+	enum_coll_type coll_type;
 	int boundsLeft;
 	int boundsTopX;
 

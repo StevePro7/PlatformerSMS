@@ -61,18 +61,18 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 	*tile_type = tile_type_blankGap;
 }
 
-void engine_tile_manager_get_crash( enum_crash_type *crash_type, unsigned char tile )
+void engine_tile_manager_get_crash( enum_coll_type *coll_type, unsigned char tile )
 {
 	if( '#' == tile )
 	{
-		*crash_type = crash_type_impassable;
+		*coll_type = coll_type_impassable;
 		return;
 	}
 	if( '-' == tile )
 	{
-		*crash_type = crash_type_platform;
+		*coll_type = coll_type_platform;
 		return;
 	}
 
-	*crash_type = crash_type_passable;
+	*coll_type = coll_type_passable;
 }

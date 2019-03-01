@@ -10,8 +10,8 @@
 
 void screen_play_screen_load()
 {
-	unsigned char int_crash_type;
-	enum_crash_type crash_type;
+	unsigned char int_coll_type;
+	enum_coll_type coll_type;
 
 	engine_debug_manager_draw_grid();		// TODO remove this!
 
@@ -19,12 +19,12 @@ void screen_play_screen_load()
 	engine_level_manager_draw_level();
 
 	//TODO refactor this so can lookup as unsigned char but cast back as enum
-	engine_level_manager_get_collision( &int_crash_type, 9, 5 );
-	crash_type = ( enum_crash_type ) int_crash_type;
-	engine_font_manager_draw_data( crash_type, 9, 10 );
+	//engine_level_manager_get_collision( &int_coll_type, 9, 5 );
+	//coll_type = ( enum_coll_type ) int_coll_type;
+	//engine_font_manager_draw_data( coll_type, 9, 10 );
 
 		//engine_level_manager_load_levelX();
-	engine_player_manager_load(  );
+	engine_player_manager_load();
 
 	// TODO put in the update method
 	//engine_player_manager_get_input();

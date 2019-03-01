@@ -10,3 +10,7 @@ extern const unsigned char	level0202_txt[];
 #define				level0202_txt_size 204
 #define				level0202_txt_bank 2
 
+extern const unsigned char	level0203_txt[];
+#define				level0203_txt_size 204
+#define				level0203_txt_bank 2
+
