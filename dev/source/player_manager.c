@@ -65,7 +65,8 @@ void engine_player_manager_load()
 	po->isJumping = false;
 	po->wasJumping = false;
 	po->jumpFrame = 0;
-
+	po->coll_horz = 0;	po->coll_vert = 0;
+	po->previousBottom = 0;
 	//engine_font_manager_draw_data( halfWidthA, 15, 10 );
 	//engine_font_manager_draw_data( halfHeightA, 15, 11 );
 	//engine_font_manager_draw_data( halfWidthB, 15, 12 );
@@ -164,7 +165,7 @@ void engine_player_manager_handle_collisions()
 
 	unsigned char int_coll_type;
 	enum_coll_type coll_type;
-	int boundsLeft, boundsTopX;
+	int boundsLeft, boundsTopX, boundsBotX;
 	int tileBoundsLeft, tileBoundsTopX;
 
 	unsigned char leftTile, rghtTile, topXTile, botXTile;
@@ -176,6 +177,7 @@ void engine_player_manager_handle_collisions()
 	unsigned char quoX, remX;
 	unsigned char quoY, remY;
 
+	float absDepthX, absDepthY;
 	boundsLeft = po->posnX - halfBoundsWidth;
 	boundsTopX = po->posnY - localBoundsHeight;
 
@@ -232,10 +234,23 @@ void engine_player_manager_handle_collisions()
 				tileBoundsTopX = y * TILE_HIGH;
 
 				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
+
+				absDepthX = fabsf( ( float ) po->depthX );
+				absDepthY = fabsf( ( float ) po->depthY );
+
+				// Resolve the collision along the shallow axis.
 			}
 		}
 	}
 
+
+	// Save the new bounds bottom.
+	boundsLeft = po->posnX - halfBoundsWidth;
+	boundsTopX = po->posnY - localBoundsHeight;
+	boundsBotX = boundsTopX + localBoundsHeight;
+	po->previousBottom = boundsBotX;
+
+	engine_font_manager_draw_data( po->previousBottom, 15, 10 );
 	/*engine_font_manager_draw_data( leftTile, 15, 10 );
 	engine_font_manager_draw_data( rghtTile, 15, 11 );
 	engine_font_manager_draw_data( topXTile, 15, 12 );
@@ -378,8 +393,8 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	po->depthY = 0;
 
 	// If we are not intersecting at all, return (0, 0).
-	fDistanceX = fabsf( distanceX );
-	fDistanceY = fabsf( distanceY );
+	fDistanceX = fabsf( ( float ) distanceX );
+	fDistanceY = fabsf( ( float ) distanceY );
 	if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
 	{
 		return;
