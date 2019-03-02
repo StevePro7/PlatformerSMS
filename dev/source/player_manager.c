@@ -56,7 +56,8 @@ void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
 	//po->posnX = 24;	po->posnY = 160;		// TODO on the base stevepro
-	po->posnX = 24;	po->posnY = 32;
+	//po->posnX = 24;	po->posnY = 32;
+	po->posnX = 37;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->velX = 0;	po->velY = 0;
 	po->player_idxX = 0;
@@ -234,15 +235,44 @@ void engine_player_manager_handle_collisions()
 				tileBoundsTopX = y * TILE_HIGH;
 
 				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
+				if( 0 != po->depthX || 0 != po->depthY )
+				{
+					absDepthX = fabsf( ( float ) po->depthX );
+					absDepthY = fabsf( ( float ) po->depthY );
 
-				absDepthX = fabsf( ( float ) po->depthX );
-				absDepthY = fabsf( ( float ) po->depthY );
+					// Resolve the collision along the shallow axis.
+					if( absDepthY < absDepthX || coll_type_platform == coll_type )
+					{
+						// If we crossed the top of a tile, we are on the ground.
+						if( po->previousBottom <= tileBoundsTopX )
+						{
+							po->isOnGround = true;
+						}
 
-				// Resolve the collision along the shallow axis.
+						// Ignore platforms, unless we are on the ground.
+						if( coll_type_impassable == coll_type || po->isOnGround )
+						{
+							// Resolve the collision along the Y axis.
+							po->posnY = po->posnY + po->depthY;
+
+							// Perform further collisions with the new bounds.
+							boundsLeft = po->posnX - halfBoundsWidth;
+							boundsTopX = po->posnY - localBoundsHeight;
+						}
+					}
+					else if( coll_type_impassable == coll_type ) // Ignore platforms.
+					{
+						// Resolve the collision along the X axis.
+						po->posnX = po->posnX + po->depthX;
+
+						// Perform further collisions with the new bounds.
+						boundsLeft = po->posnX - halfBoundsWidth;
+						boundsTopX = po->posnY - localBoundsHeight;
+					}
+				}
 			}
 		}
 	}
-
 
 	// Save the new bounds bottom.
 	boundsLeft = po->posnX - halfBoundsWidth;
@@ -250,11 +280,13 @@ void engine_player_manager_handle_collisions()
 	boundsBotX = boundsTopX + localBoundsHeight;
 	po->previousBottom = boundsBotX;
 
-	engine_font_manager_draw_data( po->previousBottom, 15, 10 );
-	/*engine_font_manager_draw_data( leftTile, 15, 10 );
+	//engine_font_manager_draw_data( po->previousBottom, 15, 10 );
+	/*
+	engine_font_manager_draw_data( leftTile, 15, 10 );
 	engine_font_manager_draw_data( rghtTile, 15, 11 );
 	engine_font_manager_draw_data( topXTile, 15, 12 );
-	engine_font_manager_draw_data( botXTile, 15, 13 );*/
+	engine_font_manager_draw_data( botXTile, 15, 13 );
+	*/
 }
 
 void engine_player_manager_cleanup()
