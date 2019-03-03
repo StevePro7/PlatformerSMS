@@ -20,6 +20,7 @@ const unsigned char *stageinitdata[] =
 	EnemyD_Idle__tiles__psgcompr,
 };
 
+// https://stackoverflow.com/questions/9772348/get-absolute-value-without-using-abs-function-nor-if-statement
 int myabs( int v )
 {
 	return v * ( ( v < 0 ) * ( -1 ) + ( v > 0 ) );

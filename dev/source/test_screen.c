@@ -5,7 +5,7 @@
 #include "font_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
-#include "scroll_manager.h"
+#include "tester_manager.h"
 #include "render_manager.h"
 
 static void dynamic_memory_allocation()
@@ -105,14 +105,14 @@ void screen_test_screen_load()
 	//engine_level_manager_draw_level_column( 7 );
 
 	engine_level_manager_draw_level();
-	engine_scroll_manager_load();
+	engine_tester_manager_load();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	engine_scroll_manager_update();
+	engine_tester_manager_update();
 	
-	engine_scroll_manager_draw();
+	engine_tester_manager_draw();
 
 	*screen_type = screen_type_test;
 }

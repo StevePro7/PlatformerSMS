@@ -29,14 +29,6 @@ void main(void)
 	static int dx, dy;
 	static signed char jumpIdx;
 
-	unsigned char bx = 0;
-	//static signed char velY[ COUNT ] = { 11, 9, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
-	//static signed char velY[ COUNT ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
-	//static signed char grav[ COUNT ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };	// TODO change last value to 5!
-
-	//static signed char velX[ MAX_X ] = { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
-	//static unsigned char velX[ MAX_X ] = { 1, 2, 2, 2, 2 };
-
 	static unsigned char idx = 0;
 	//static unsigned char player_idxX = 0;
 //	int elapsed = 0.02;
@@ -76,9 +68,9 @@ void main(void)
 	custom_initialize();
 	curr_screen_type = screen_type_none;
 	//next_screen_type = screen_type_load;
-	next_screen_type = screen_type_test;
 	//next_screen_type = screen_type_func;
-	//next_screen_type = screen_type_play;
+	//next_screen_type = screen_type_test;
+	next_screen_type = screen_type_play;
 
 //	print( sgbX, quoX, remX, 0 );
 	//engine_input_manager_update();

@@ -58,7 +58,7 @@ void engine_player_manager_load()
 	po->posnX = 8*16+24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
 	po->posnX = 24 + 4* 16;	po->posnY = 160;
-	po->posnX = 24 + 4 * 16;	po->posnY = 32;
+	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;
@@ -168,7 +168,21 @@ void engine_player_manager_apply_physics()
 	//engine_font_manager_draw_data( po->velY, 20, 10 );
 
 	po->posnX += po->velX;
+	// TODO update this code
+	if( po->posnX <= 12 )
+	{
+		po->posnX = 12;
+	}
+	if( po->posnX >= 232 )
+	{
+		po->posnX = 232;
+	}
+
 	po->posnY += po->velY;									// TODO revert - IMPORTANT
+	if( po->posnY >= 192 )
+	{
+		engine_font_manager_draw_text( "DEAD", 20, 20 );
+	}
 }
 
 void engine_player_manager_handle_collisions()
@@ -196,6 +210,8 @@ void engine_player_manager_handle_collisions()
 
 	// Pg.97 Teach Yourself C in 24hrs
 	leftTile = rghtTile = topXTile = botXTile = 0;
+	idxX = idxY = 0;
+	quoX = quoY = remX = remY = 0;
 
 	get_coll_position();
 
@@ -210,12 +226,18 @@ void engine_player_manager_handle_collisions()
 	rghtTile = idxRghtTile + quoX;
 
 	// Determine topX + botX tile lookups.
-	idxY = po->collY;
-	quoY = idxY / TILE_HIGH;
-	remY = idxY % TILE_HIGH;
-	if( remY < 0 )
+	topXTile = 0;
+	botXTile = 1;
+	if( po->collY >= 0 )
 	{
-		remY = 0;
+		idxY = po->collY;
+		quoY = idxY / TILE_HIGH;
+		remY = idxY % TILE_HIGH;
+
+		idxTopXTile = topXTileArray[ remY ];
+		idxBotXTile = botXTileArray[ remY ];
+		topXTile = idxTopXTile + quoY;
+		botXTile = idxBotXTile + quoY;
 	}
 
 	idxTopXTile = topXTileArray[ remY ];
@@ -320,7 +342,12 @@ void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
 	get_draw_position();
-	engine_sprite_manager_draw_player( po->drawX, po->drawY );
+	if( po->posnY >= 0 )
+	{
+		engine_sprite_manager_draw_player( po->drawX, po->drawY );
+	}
+
+	//engine_font_manager_draw_data( po->posnY, 20, 10 );
 }
 
 static int do_jump( int inpVelocityY )

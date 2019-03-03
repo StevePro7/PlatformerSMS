@@ -4,7 +4,6 @@
 #include "sprite_manager.h"
 #include "level_manager.h"
 #include "input_manager.h"
-#include "player_manager.h"
 //#include <math.h>
 
 // IMPORTANT disable compiler warning 110
@@ -24,7 +23,7 @@ struct_player_object global_player_objectX;
 static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
 static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3 };
 
-static int velocityY[ MAX_VELOCITY_Y ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
+static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
 static signed char gravityZZ[ MAX_VELOCITY_Y ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
 static unsigned char leftTileArray[ TILE_COLLISION ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 };
@@ -62,8 +61,8 @@ void engine_tester_manager_load()
 	struct_player_object *po = &global_player_objectX;
 	//po->posnX = 8 * 16 + 24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
-	po->posnX = 24 + 5 * 16;	po->posnY = 160;
-	//po->posnX = 24 + 7 * 16;	po->posnY = 32;
+	po->posnX = 24 + 5 * 16;	po->posnY = 32;
+	//po->posnX = 24 + 5 * 16;	po->posnY = 160;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;
@@ -128,25 +127,19 @@ static void engine_tester_manager_apply_physics()
 		po->velY = po->deltaY;
 	}
 
+	engine_font_manager_draw_data( po->posnY, 10, 10 );
+	engine_font_manager_draw_data( po->velY, 10, 11 );
 	if( po->advUp )
 	{
-		engine_font_manager_draw_data( po->posnY, 20, 10 );
-
-		engine_font_manager_draw_data( po->velY, 10, 0 );
 		po->velY = do_jump( po->velY );
-		engine_font_manager_draw_data( po->velY, 10, 1 );
-
 	}
 
 	if( po->advUp || po->advDown )
 	{
-		if( po->velY < 0 )
-		{
-			engine_font_manager_draw_text( "NEGATIVE", 2, 17 );
-		}
 		po->posnY += po->velY;
-		engine_font_manager_draw_data( po->posnY, 20, 11 );
 	}
+	engine_font_manager_draw_data( po->velY, 10, 12 );
+	engine_font_manager_draw_data( po->posnY, 10, 13 );
 }
 
 static void engine_tester_manager_handle_collisions()
@@ -163,9 +156,9 @@ static void engine_tester_manager_handle_collisions()
 	unsigned char x, y;
 
 	int idxX, idxY;	//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
-					//unsigned char idxX, idxY;		// TODO ensure that will NOT overflow i.e. >= 256 if btwn 8 and 15*16+8 then should be OK
-	unsigned char quoX, remX;
-	unsigned char quoY, remY;
+	//unsigned char idxX, idxY;		// TODO ensure that will NOT overflow i.e. >= 256 if btwn 8 and 15*16+8 then should be OK
+	signed char quoX, remX;
+	signed char quoY, remY;
 
 	//float absDepthX, absDepthY;
 	int absDepthX, absDepthY;
@@ -176,8 +169,6 @@ static void engine_tester_manager_handle_collisions()
 	leftTile = rghtTile = topXTile = botXTile = 0;
 
 	get_coll_position();
-	engine_font_manager_draw_data( po->collX, 25, 15 );
-	engine_font_manager_draw_data( po->collY, 25, 16 );
 
 	// Determine left + rght tile lookups.
 	idxX = po->collX;
@@ -190,14 +181,19 @@ static void engine_tester_manager_handle_collisions()
 	rghtTile = idxRghtTile + quoX;
 
 	// Determine topX + botX tile lookups.
-	idxY = po->collY;
-	quoY = idxY / TILE_HIGH;
-	remY = idxY % TILE_HIGH;
+	topXTile = 0;
+	botXTile = 1;
+	if( po->collY >= 0 )
+	{
+		idxY = po->collY;
+		quoY = idxY / TILE_HIGH;
+		remY = idxY % TILE_HIGH;
 
-	idxTopXTile = topXTileArray[ remY ];
-	idxBotXTile = botXTileArray[ remY ];
-	topXTile = idxTopXTile + quoY;
-	botXTile = idxBotXTile + quoY;
+		idxTopXTile = topXTileArray[ remY ];
+		idxBotXTile = botXTileArray[ remY ];
+		topXTile = idxTopXTile + quoY;
+		botXTile = idxBotXTile + quoY;
+	}
 
 	// Reset flag to search for ground collision.
 	po->isOnGround = false;
@@ -219,14 +215,6 @@ static void engine_tester_manager_handle_collisions()
 			// If this tile is collidable,
 			engine_level_manager_get_collision( &int_coll_type, x, y );
 			coll_type = ( enum_coll_type ) int_coll_type;
-
-			/*engine_font_manager_draw_data( topXTile, 15, 5 );
-			engine_font_manager_draw_data( botXTile, 15, 6 );
-			engine_font_manager_draw_data( leftTile, 15, 7 );
-			engine_font_manager_draw_data( rghtTile, 15, 8 );
-			engine_font_manager_draw_data( x, 15, 9 );
-			engine_font_manager_draw_data( x, 15, 10 );
-			engine_font_manager_draw_data( coll_type, 15, 11 );*/
 
 			if( coll_type_passable != coll_type )
 			{
@@ -316,9 +304,6 @@ void engine_tester_manager_update()
 		engine_tester_manager_handle_collisions();
 		engine_tester_manager_cleanup();
 	}
-
-	//engine_font_manager_draw_data( po->advUp, 10, 10 );
-	//engine_font_manager_draw_data( po->advDown, 10, 11 );
 }
 
 
@@ -353,8 +338,6 @@ static int do_jump( int inpVelocityY )
 		{
 			// Fully override the vertical velocity with a power curve that gives players more control over the top of the jump
 			po->deltaY = velocityY[ po->player_idxY ];
-
-			engine_font_manager_draw_data( po->deltaY, 20, 10 );
 			inpVelocityY = po->deltaY;
 
 			po->player_idxY++;

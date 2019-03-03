@@ -13,7 +13,7 @@ void screen_play_screen_load()
 	/*unsigned char int_coll_type;
 	enum_coll_type coll_type;*/
 
-	engine_debug_manager_draw_grid();		// TODO remove this!
+	//engine_debug_manager_draw_grid();		// TODO remove this!
 
 	engine_level_manager_load_index( 0 );
 	engine_level_manager_draw_level();
