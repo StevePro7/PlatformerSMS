@@ -206,7 +206,6 @@ static void load_entities( enum_sprite_type sprite_type, unsigned char index )
 	struct_level_object *lo = &global_level_object;
 	if( sprite_type_player == sprite_type )
 	{
-		engine_font_manager_draw_data( index, 10, 10 );
 		lo->player_spot = index;
 	}
 }

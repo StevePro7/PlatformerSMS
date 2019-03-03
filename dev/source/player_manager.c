@@ -56,20 +56,13 @@ void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
 
+	// Calculate player starting spot based on level.
 	int rectX, rectB;
 	po->posnX = 0;	po->posnY = 0;
-
-	engine_font_manager_draw_data( po->spotX, 20, 2 );
-	engine_font_manager_draw_data( po->spotY, 20, 3 );
-
 	rectX = po->spotX * TILE_WIDE;
 	rectB = po->spotY * TILE_HIGH + TILE_HIGH;
 	po->posnX = rectX + TILE_WIDE / 2;
 	po->posnY = rectB;
-
-	engine_font_manager_draw_data( po->posnX, 10, 12 );
-	engine_font_manager_draw_data( po->posnY, 10, 13 );
-
 
 	//po->posnX = 8*16+24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
@@ -181,7 +174,6 @@ void engine_player_manager_apply_physics()
 	po->velY = po->deltaY;
 
 	po->velY = do_jump( po->velY );
-	//engine_font_manager_draw_data( po->velY, 20, 10 );
 
 	po->posnX += po->velX;
 	// TODO update this code
@@ -194,7 +186,7 @@ void engine_player_manager_apply_physics()
 		po->posnX = 232;
 	}
 
-	po->posnY += po->velY;									// TODO revert - IMPORTANT
+	po->posnY += po->velY;
 	if( po->posnY >= 192 )
 	{
 		engine_font_manager_draw_text( "DEAD", 20, 20 );
@@ -362,8 +354,6 @@ void engine_player_manager_draw()
 		get_draw_position();
 		engine_sprite_manager_draw_player( po->drawX, po->drawY );
 	}
-
-	//engine_font_manager_draw_data( po->posnY, 10, 10 );
 }
 
 static int do_jump( int inpVelocityY )
