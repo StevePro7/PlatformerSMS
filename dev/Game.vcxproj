@@ -160,12 +160,14 @@
     <ClCompile Include="source\input_manager.c" />
     <ClCompile Include="source\level_manager.c" />
     <ClCompile Include="source\level_object.c" />
+    <ClCompile Include="source\load_screen.c" />
     <ClCompile Include="source\none_screen.c" />
     <ClCompile Include="source\player_manager.c" />
     <ClCompile Include="source\play_screen.c" />
     <ClCompile Include="source\render_manager.c" />
     <ClCompile Include="source\scroll_manager.c" />
     <ClCompile Include="source\sprite_manager.c" />
+    <ClCompile Include="source\state_manager.c" />
     <ClCompile Include="source\tester_manager.c" />
     <ClCompile Include="source\test_screen.c" />
     <ClCompile Include="source\tile_manager.c" />
@@ -192,6 +194,7 @@
     <ClInclude Include="source\input_manager.h" />
     <ClInclude Include="source\level_manager.h" />
     <ClInclude Include="source\level_object.h" />
+    <ClInclude Include="source\load_screen.h" />
     <ClInclude Include="source\none_screen.h" />
     <ClInclude Include="source\player_manager.h" />
     <ClInclude Include="source\player_object.h" />
@@ -199,6 +202,7 @@
     <ClInclude Include="source\render_manager.h" />
     <ClInclude Include="source\scroll_manager.h" />
     <ClInclude Include="source\sprite_manager.h" />
+    <ClInclude Include="source\state_manager.h" />
     <ClInclude Include="source\tester_manager.h" />
     <ClInclude Include="source\test_screen.h" />
     <ClInclude Include="source\tile_manager.h" />

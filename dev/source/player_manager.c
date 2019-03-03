@@ -341,13 +341,13 @@ void engine_player_manager_cleanup()
 void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
-	get_draw_position();
 	if( po->posnY >= 0 )
 	{
+		get_draw_position();
 		engine_sprite_manager_draw_player( po->drawX, po->drawY );
 	}
 
-	//engine_font_manager_draw_data( po->posnY, 20, 10 );
+	//engine_font_manager_draw_data( po->posnY, 10, 10 );
 }
 
 static int do_jump( int inpVelocityY )
