@@ -120,6 +120,9 @@
     <ClCompile Include="source\debug_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
+    <ClCompile Include="source\tester_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -211,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="source\debug_manager.h">
       <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tester_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

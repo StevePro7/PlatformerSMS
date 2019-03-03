@@ -5,6 +5,15 @@ ATTEMPED
 PLATFORM
 
 03/03/2019
+TODO
+player jump higher than screen is causing issue
+check player going below 192 to die method because player fell in pit
+wire up player X,Y start on level into player manager	[currently hardcoded]
+do I want to replace custom myabs() function with built in fabsa() function?
+I want to refactor player_update() into smaller methods
+I want to separate better the velX from input() to physics()
+
+03/03/2019
 While integrating all the player manager code there was a nasty bug with do_jump()
 Basically, by setting deltaY to unsigned char this messes up everything for negative valocity
 -11 should be interpreted as 65525 but comes out as 245 and is added to positionY
