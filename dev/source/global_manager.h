@@ -23,8 +23,9 @@
 #define TILE_HIGH				16
 
 
-
 extern const unsigned int list_sprite_tile_offset[];
 extern const unsigned char *stageinitdata[];
+
+int myabs( int v );
 
 #endif//_GLOBAL_MANAGER_H_

@@ -8,7 +8,6 @@ void( *load_method[ MAX_SCREEENS ] )( );
 void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
 void custom_initialize();
 
-void draw_grid();
 void print( int  px, int  vx, int  dx, unsigned char yy );
 
 #define COUNT 17
@@ -78,6 +77,7 @@ void main(void)
 	curr_screen_type = screen_type_none;
 	//next_screen_type = screen_type_load;
 	//next_screen_type = screen_type_test;
+	//next_screen_type = screen_type_func;
 	next_screen_type = screen_type_play;
 
 //	print( sgbX, quoX, remX, 0 );

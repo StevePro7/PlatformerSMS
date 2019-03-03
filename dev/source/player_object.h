@@ -13,7 +13,8 @@ typedef struct tag_struct_player_object
 	int prevX, prevY;
 	int commX, commY;
 	int velX, velY;
-	unsigned char deltaX, deltaY;
+	//unsigned char deltaX, deltaY;		// WRONG! - messes things up and creates 245 NOT 65525
+	signed char deltaX, deltaY;
 	signed char player_idxX;
 	signed char player_idxY;
 	signed char player_grav;
@@ -24,6 +25,7 @@ typedef struct tag_struct_player_object
 	unsigned char jumpFrame;
 	signed char coll_horz, coll_vert;
 	int previousBottom;
+	bool advUp, advDown;				// TODO get rid of this as was used for debugging!!
 
 } struct_player_object;
 

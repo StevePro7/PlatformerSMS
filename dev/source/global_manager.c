@@ -19,3 +19,8 @@ const unsigned char *stageinitdata[] =
 	EnemyC_Idle__tiles__psgcompr,
 	EnemyD_Idle__tiles__psgcompr,
 };
+
+int myabs( int v )
+{
+	return v * ( ( v < 0 ) * ( -1 ) + ( v > 0 ) );
+}

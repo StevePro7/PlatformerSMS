@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "level_manager.h"
 #include "input_manager.h"
-#include <math.h>
+//#include <math.h>
 
 // IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE
@@ -57,7 +57,7 @@ void engine_player_manager_load()
 	struct_player_object *po = &global_player_object;
 	po->posnX = 8*16+24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
-	//po->posnX = 24 + 32;	po->posnY = 160;
+	po->posnX = 24 + 4* 16;	po->posnY = 160;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;
@@ -85,8 +85,8 @@ void engine_player_manager_update()
 
 void engine_player_manager_get_input()
 {
-	unsigned char test1, test2;
 	struct_player_object *po = &global_player_object;
+	unsigned char test1, test2;
 
 	test1 = engine_input_manager_move_left();
 	if( test1 )
@@ -164,7 +164,7 @@ void engine_player_manager_apply_physics()
 	po->velY = po->deltaY;
 
 	po->velY = do_jump( po->velY );
-	engine_font_manager_draw_data( po->velY, 20, 10 );
+	//engine_font_manager_draw_data( po->velY, 20, 10 );
 
 	po->posnX += po->velX;
 	po->posnY += po->velY;									// TODO revert - IMPORTANT
@@ -188,7 +188,8 @@ void engine_player_manager_handle_collisions()
 	unsigned char quoX, remX;
 	unsigned char quoY, remY;
 
-	float absDepthX, absDepthY;
+	//float absDepthX, absDepthY;
+	int absDepthX, absDepthY;
 	boundsLeft = po->posnX - halfBoundsWidth;
 	boundsTopX = po->posnY - localBoundsHeight;
 
@@ -247,8 +248,11 @@ void engine_player_manager_handle_collisions()
 				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
 				if( 0 != po->depthX || 0 != po->depthY )
 				{
-					absDepthX = fabsf( ( float ) po->depthX );
-					absDepthY = fabsf( ( float ) po->depthY );
+					//absDepthX = fabsf( ( float ) po->depthX );
+					//absDepthY = fabsf( ( float ) po->depthY );
+					absDepthX = myabs( po->depthX );
+					absDepthY = myabs( po->depthY );
+
 
 					// Resolve the collision along the shallow axis.
 					if( absDepthY < absDepthX || coll_type_platform == coll_type )
@@ -301,7 +305,7 @@ void engine_player_manager_cleanup()
 
 	if( po->posnY == po->prevY )
 	{
-		po->velX = 0;
+		po->velY = 0;
 		po->player_grav = 0;
 		po->jumpFrame = 0;
 	}
@@ -396,7 +400,8 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	int centerBX, centerBY;
 	int distanceX, distanceY;
 	int minDistanceX, minDistanceY;
-	float fDistanceX, fDistanceY;
+	//float fDistanceX, fDistanceY;
+	int fDistanceX, fDistanceY;
 
 	// Calculate half sizes.	DONE
 
@@ -417,8 +422,12 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	po->depthY = 0;
 
 	// If we are not intersecting at all, return (0, 0).
-	fDistanceX = fabsf( ( float ) distanceX );
-	fDistanceY = fabsf( ( float ) distanceY );
+	//fDistanceX = fabsf( ( float ) distanceX );
+	//fDistanceY = fabsf( ( float ) distanceY );
+
+	fDistanceX = myabs( distanceX );
+	fDistanceY = myabs( distanceY );
+
 	if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
 	{
 		return;

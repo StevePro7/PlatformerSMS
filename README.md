@@ -4,6 +4,14 @@ Placeholder repo for PlatformerSMS
 ATTEMPED
 PLATFORM
 
+03/03/2019
+While integrating all the player manager code there was a nasty bug with do_jump()
+Basically, by setting deltaY to unsigned char this messes up everything for negative valocity
+-11 should be interpreted as 65525 but comes out as 245 and is added to positionY
+which causes posnY to always be added [not subtracted] and this wreaks havoc on collisionY
+As a result, the collision tile map look up fails and the player falls "forever"
+
+
 28/02/2019
 Dynamic memory allocation example - checked online for malloc support and free in 
 https://github.com/darconeous/sdcc/blob/master/device/include/malloc.h

@@ -1,13 +1,12 @@
 #include "test_screen.h"
-
-//#include "hack_manager.h"
 #include "global_manager.h"
+#include "debug_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
-#include "player_manager.h"
-#include <stdlib.h>
+#include "scroll_manager.h"
+#include "render_manager.h"
 
 static void dynamic_memory_allocation()
 {
@@ -97,20 +96,23 @@ void screen_test_screen_load()
 
 	//engine_level_manager_load_levelX();
 
+	engine_debug_manager_draw_grid();		// TODO remove this!
 
-	engine_level_manager_load_index( 1 );
+	engine_level_manager_init_level();
+	engine_level_manager_load_index( 0 );
 	//engine_level_manager_draw_level_column( 5 );
 	//engine_level_manager_draw_level_column_side( side_type_left, 6 );
 	//engine_level_manager_draw_level_column( 7 );
 
 	engine_level_manager_draw_level();
-	engine_player_manager_load();
+	engine_scroll_manager_load();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	engine_player_manager_get_input();
-	engine_player_manager_draw();
+	engine_scroll_manager_update();
+	
+	engine_scroll_manager_draw();
 
 	*screen_type = screen_type_test;
 }
