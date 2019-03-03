@@ -8,7 +8,7 @@ void engine_scroll_manager_update();
 void engine_scroll_manager_draw();
 
 // Global variable.
-extern struct_player_object global_player_object;
+extern struct_player_object global_player_objectX;
 
 
 #endif//_SCROLL_MANAGER_H_

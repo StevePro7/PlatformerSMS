@@ -14,7 +14,7 @@
 #endif
 
 // Global variable.
-struct_player_object global_player_object;
+struct_player_object global_player_objectX;
 
 #define MAX_VELOCITY_X	10
 #define MAX_VELOCITY_Y	17
@@ -59,7 +59,7 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 
 void engine_scroll_manager_load()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	//po->posnX = 8 * 16 + 24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
 	po->posnX = 24 + 5 * 16;	po->posnY = 160;
@@ -83,7 +83,7 @@ void engine_scroll_manager_load()
 
 static void engine_scroll_manager_get_input()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	unsigned char test1, test2;
 
 	test1 = engine_input_manager_hold_fire1();
@@ -102,7 +102,7 @@ static void engine_scroll_manager_get_input()
 
 static void engine_scroll_manager_apply_physics()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	po->prevX = po->posnX;
 	po->prevY = po->posnY;
 
@@ -151,7 +151,7 @@ static void engine_scroll_manager_apply_physics()
 
 static void engine_scroll_manager_handle_collisions()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 
 	unsigned char int_coll_type;
 	enum_coll_type coll_type;
@@ -286,7 +286,7 @@ static void engine_scroll_manager_handle_collisions()
 
 static void engine_scroll_manager_cleanup()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	if( po->posnX == po->prevX )
 	{
 		po->velX = 0;
@@ -302,7 +302,7 @@ static void engine_scroll_manager_cleanup()
 
 void engine_scroll_manager_update()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	po->player_move_type = move_type_idle;
 	po->velX = 0;
 
@@ -324,7 +324,7 @@ void engine_scroll_manager_update()
 
 void engine_scroll_manager_draw()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	get_draw_position();
 	engine_sprite_manager_draw_player( po->drawX, po->drawY );
 }
@@ -332,7 +332,7 @@ void engine_scroll_manager_draw()
 
 static int do_jump( int inpVelocityY )
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	if( !po->isJumping && po->jumpFrame > 0 || po->isJumping && po->jumpFrame >= MAX_VELOCITY_Y )
 	{
 		po->player_grav = 0;
@@ -383,21 +383,21 @@ static int do_jump( int inpVelocityY )
 }
 static void get_coll_position()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	get_common_position( po->posnX, po->posnY, 0 );
 	po->collX = po->commX;
 	po->collY = po->commY;
 }
 static void get_draw_position()
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 	get_common_position( po->posnX, po->posnY, DRAW_OFFSET_X );
 	po->drawX = po->commX;
 	po->drawY = po->commY;
 }
 static void get_common_position( int posX, int posY, signed char offsetX )
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 
 	int halfTileSizeX = TILE_WIDE / 2;
 	int twiceTileSizeY = 2 * TILE_HIGH;
@@ -407,7 +407,7 @@ static void get_common_position( int posX, int posY, signed char offsetX )
 }
 static void process_collision( int rectALeft, int rectATop, int rectBLeft, int rectBTop )
 {
-	struct_player_object *po = &global_player_object;
+	struct_player_object *po = &global_player_objectX;
 
 	int centerAX, centerAY;
 	int centerBX, centerBY;
