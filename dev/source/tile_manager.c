@@ -61,7 +61,7 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 	*tile_type = tile_type_blankGap;
 }
 
-void engine_tile_manager_get_crash( enum_coll_type *coll_type, unsigned char tile )
+void engine_tile_manager_get_collision( enum_coll_type *coll_type, unsigned char tile )
 {
 	if( '#' == tile )
 	{
@@ -75,4 +75,35 @@ void engine_tile_manager_get_crash( enum_coll_type *coll_type, unsigned char til
 	}
 
 	*coll_type = coll_type_passable;
+}
+
+void engine_tile_manager_get_sprite( enum_sprite_type *sprite_type, unsigned char tile )
+{
+	if( '1' == tile )
+	{
+		*sprite_type = sprite_type_player;
+		return;
+	}
+	if( 'A' == tile )
+	{
+		*sprite_type = sprite_type_enemyA;
+		return;
+	}
+	if( 'B' == tile )
+	{
+		*sprite_type = sprite_type_enemyB;
+		return;
+	}
+	if( 'C' == tile )
+	{
+		*sprite_type = sprite_type_enemyC;
+		return;
+	}
+	if( 'D' == tile )
+	{
+		*sprite_type = sprite_type_enemyD;
+		return;
+	}
+
+	*sprite_type = sprite_type_unknown;
 }

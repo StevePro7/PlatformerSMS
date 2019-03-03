@@ -1,20 +1,20 @@
 #include "main.h"
 
 // Global variables.
-bool global_pause;
-unsigned char curr_screen_type, next_screen_type;
+//bool global_pause;
+//unsigned char curr_screen_type, next_screen_type;
 
 void( *load_method[ MAX_SCREEENS ] )( );
 void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
 void custom_initialize();
 
-void print( int  px, int  vx, int  dx, unsigned char yy );
-
-#define COUNT 17
-#define MAX_X 5
-
 void main(void)
 {
+	// Global variables.
+	static bool global_pause;
+	static unsigned char curr_screen_type;
+	static unsigned char next_screen_type;
+
 	engine_asm_manager_clear_VRAM();
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
@@ -41,6 +41,7 @@ void main(void)
 			curr_screen_type = next_screen_type;
 			load_method[ curr_screen_type ]();
 		}
+
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 

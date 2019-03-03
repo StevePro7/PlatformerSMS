@@ -1,5 +1,5 @@
 XL2
-H 9 areas A global symbols
+H 9 areas B global symbols
 M tile_manager
 O -mz80
 S _rand Ref0000
@@ -8,9 +8,10 @@ S _devkit_SMS_setNextTileatXY Ref0000
 S .__.ABS. Def0000
 S _devkit_SMS_setTile Ref0000
 S __modsint Ref0000
-A _CODE size 1AE flags 0 addr 0
+A _CODE size 1F7 flags 0 addr 0
 S _engine_tile_manager_get_tile Def013D
-S _engine_tile_manager_get_crash Def0187
+S _engine_tile_manager_get_collision Def0187
+S _engine_tile_manager_get_sprite Def01AE
 S _engine_tile_manager_draw_tile Def0000
 S _engine_tile_manager_draw_tile_side Def0092
 A _DATA size 0 flags 0 addr 0
@@ -118,4 +119,34 @@ R 00 00 00 00
 T AB 01
 R 00 00 00 00
 T AB 01 36 00 C9
+R 00 00 00 00
+T AE 01
+R 00 00 00 00
+T AE 01 DD E5 DD 21 00 00 DD 39 DD 6E 04 DD 66 05
+R 00 00 00 00
+T BC 01 DD 7E 06 D6 31 20 03 77 18 2E
+R 00 00 00 00
+T C6 01
+R 00 00 00 00
+T C6 01 DD 7E 06 D6 41 20 04 36 01 18 23
+R 00 00 00 00
+T D1 01
+R 00 00 00 00
+T D1 01 DD 7E 06 D6 42 20 04 36 02 18 18
+R 00 00 00 00
+T DC 01
+R 00 00 00 00
+T DC 01 DD 7E 06 D6 43 20 04 36 03 18 0D
+R 00 00 00 00
+T E7 01
+R 00 00 00 00
+T E7 01 DD 7E 06 D6 44 20 04 36 04 18 02
+R 00 00 00 00
+T F2 01
+R 00 00 00 00
+T F2 01 36 FF
+R 00 00 00 00
+T F4 01
+R 00 00 00 00
+T F4 01 DD E1 C9
 R 00 00 00 00

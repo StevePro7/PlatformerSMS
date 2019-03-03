@@ -55,9 +55,25 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 8*16+24;	po->posnY = 32;		// TODO on the base stevepro
+
+	int rectX, rectB;
+	po->posnX = 0;	po->posnY = 0;
+
+	engine_font_manager_draw_data( po->spotX, 20, 2 );
+	engine_font_manager_draw_data( po->spotY, 20, 3 );
+
+	rectX = po->spotX * TILE_WIDE;
+	rectB = po->spotY * TILE_HIGH + TILE_HIGH;
+	po->posnX = rectX + TILE_WIDE / 2;
+	po->posnY = rectB;
+
+	engine_font_manager_draw_data( po->posnX, 10, 12 );
+	engine_font_manager_draw_data( po->posnY, 10, 13 );
+
+
+	//po->posnX = 8*16+24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
-	po->posnX = 24 + 4* 16;	po->posnY = 160;
+	//po->posnX = 24 + 4* 16;	po->posnY = 160;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;

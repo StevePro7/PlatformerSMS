@@ -5,13 +5,21 @@ ATTEMPED
 PLATFORM
 
 03/03/2019
+IMPORTANT
+be careful of data type incompatibility esp. when one is int but other is unsigned char
+if the unsigned char overflows or becomes negative then this has dire consequences
+i.e. can break code all over the place
+Plus just setting one property from one object based on another with different type can cause issues
+
 TODO
-player jump higher than screen is causing issue
 check player going below 192 to die method because player fell in pit
-wire up player X,Y start on level into player manager	[currently hardcoded]
-do I want to replace custom myabs() function with built in fabsa() function?
 I want to refactor player_update() into smaller methods
 I want to separate better the velX from input() to physics()
+
+DONE
+player jump higher than screen is causing issue
+wire up player X,Y start on level into player manager	[currently hardcoded]
+do I want to replace custom myabs() function with built in fabsa() function?
 
 03/03/2019
 While integrating all the player manager code there was a nasty bug with do_jump()

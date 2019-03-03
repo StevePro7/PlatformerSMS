@@ -42,9 +42,9 @@ typedef enum tag_enum_coll_type
 
 } enum_coll_type;
 
-
 typedef enum tag_enum_sprite_type
 {
+	sprite_type_unknown = -1,
 	sprite_type_player = 0,
 	sprite_type_enemyA = 1,
 	sprite_type_enemyB = 2,

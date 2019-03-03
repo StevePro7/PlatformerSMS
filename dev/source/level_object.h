@@ -9,8 +9,9 @@ typedef struct tag_struct_level_object
 	unsigned char *drawtiles_matrix;
 	unsigned char collision_array[ MAX_ROWS * MAX_COLS ];
 	unsigned char drawtiles_array[ MAX_ROWS * MAX_COLS ];
-	unsigned char load_cols;
-	unsigned char draw_cols;
+	unsigned int load_cols;
+	unsigned int draw_cols;
+	unsigned int player_spot;
 
 } struct_level_object;
 
