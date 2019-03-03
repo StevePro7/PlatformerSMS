@@ -1,11 +1,9 @@
 XL2
-H 9 areas 6 global symbols
+H 9 areas 4 global symbols
 M hack_manager
 O -mz80
 S .__.ABS. Def0000
-S _engine_tile_manager_draw_tile Ref0000
-A _CODE size 37 flags 0 addr 0
-S _engine_hack_manager_draw_grid Def0014
+A _CODE size 14 flags 0 addr 0
 S _engine_hack_manager_init Def0000
 S _engine_hack_manager_invert Def0013
 A _DATA size 2 flags 0 addr 0
@@ -30,20 +28,4 @@ R 00 00 00 00
 T 13 00
 R 00 00 00 00
 T 13 00 C9
-R 00 00 00 00
-T 14 00
-R 00 00 00 00
-T 14 00 0E 00
-R 00 00 00 00
-T 16 00
-R 00 00 00 00
-T 16 00 06 00
-R 00 00 00 00
-T 18 00
-R 00 00 00 00
-T 18 00 C5 79 F5 33 C5 33 3E 0F F5 33 CD 00 00 F1
-R 00 00 00 00 02 0D 01 00
-T 26 00 33 C1 04 04 78 D6 20 38 E9 0C 0C 79 D6 18
-R 00 00 00 00
-T 34 00 38 E0 C9
 R 00 00 00 00

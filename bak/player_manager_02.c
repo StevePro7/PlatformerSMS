@@ -46,7 +46,7 @@ static unsigned char botXTileArray[ TILE_COLLISION ] = { 1, 2, 2, 2, 2, 2, 2, 2,
 #define halfHeightB			rectBHeight / 2
 
 // Private helper methods.
-static int do_jump( int inpVelocityY );
+static void do_jump( int inpVelocityY );
 static void get_coll_position();
 static void get_draw_position();
 static void get_common_position( int posX, int posY, signed char offsetX );
@@ -55,9 +55,10 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 8*16+24;	po->posnY = 32;		// TODO on the base stevepro
+	//po->posnX = 24;	po->posnY = 160;		// TODO on the base stevepro
+	//po->posnX = 37;	po->posnY = 32;
 	po->player_move_type = move_type_idle;
-	//po->posnX = 24 + 32;	po->posnY = 160;
+	po->posnX = 24;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;
@@ -72,15 +73,10 @@ void engine_player_manager_load()
 	po->jumpFrame = 0;
 	po->coll_horz = 0;	po->coll_vert = 0;
 	po->previousBottom = 0;
-}
-
-void engine_player_manager_update()
-{
-	struct_player_object *po = &global_player_object;
-	po->player_move_type = move_type_idle;
-	po->velX = 0;
-
-	engine_player_manager_get_input();
+	//engine_font_manager_draw_data( halfWidthA, 15, 10 );
+	//engine_font_manager_draw_data( halfHeightA, 15, 11 );
+	//engine_font_manager_draw_data( halfWidthB, 15, 12 );
+	//engine_font_manager_draw_data( halfHeightB, 15, 13 );
 }
 
 void engine_player_manager_get_input()
@@ -108,10 +104,13 @@ void engine_player_manager_get_input()
 		}
 	}
 
-	po->isJumping = engine_input_manager_move_fire1();
+	//po->isJumping = engine_input_manager_move_fire1();
 
 	if( test1 || test2 )
 	{
+		//TODO delete debug info
+		//engine_font_manager_draw_data( po->player_idxX, 15, 9 );
+
 		po->player_idxX++;
 		if( po->player_idxX > MAX_VELOCITY_X - 1 )
 		{
@@ -120,6 +119,13 @@ void engine_player_manager_get_input()
 
 		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
 		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
+		//po->posnX += po->velX;
+
+		//TODO delete debug info
+		//engine_font_manager_draw_data( po->player_idxX, 15, 10 );
+		//engine_font_manager_draw_data( po->deltaX, 15, 11 );
+		//engine_font_manager_draw_data( po->velX, 15, 12 );
+		//engine_font_manager_draw_data( po->posX, 15, 13 );
 	}
 	else
 	{
@@ -134,18 +140,6 @@ void engine_player_manager_apply_physics()
 	struct_player_object *po = &global_player_object;
 	po->prevX = po->posnX;
 	po->prevY = po->posnY;
-
-	/*if( move_type_idle != po->player_move_type )
-	{
-		po->player_idxX++;
-		if( po->player_idxX > MAX_VELOCITY_X - 1 )
-		{
-			po->player_idxX = MAX_VELOCITY_X - 1;
-		}
-
-		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
-		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
-	}*/
 
 	if( !po->isOnGround )
 	{
@@ -163,8 +157,9 @@ void engine_player_manager_apply_physics()
 	po->deltaY = gravityZZ[ po->player_grav ];
 	po->velY = po->deltaY;
 
-	po->velY = do_jump( po->velY );
-	engine_font_manager_draw_data( po->velY, 20, 10 );
+	//engine_font_manager_draw_data( po->velY, 15, 10 );		// TODO delete
+	//do_jump( po->velY );
+	//engine_font_manager_draw_data( po->velY, 15, 11 );		// TODO delete
 
 	po->posnX += po->velX;
 	po->posnY += po->velY;									// TODO revert - IMPORTANT
@@ -289,6 +284,14 @@ void engine_player_manager_handle_collisions()
 	boundsTopX = po->posnY - localBoundsHeight;
 	boundsBotX = boundsTopX + localBoundsHeight;
 	po->previousBottom = boundsBotX;
+
+	//engine_font_manager_draw_data( po->previousBottom, 15, 10 );
+	/*
+	engine_font_manager_draw_data( leftTile, 15, 10 );
+	engine_font_manager_draw_data( rghtTile, 15, 11 );
+	engine_font_manager_draw_data( topXTile, 15, 12 );
+	engine_font_manager_draw_data( botXTile, 15, 13 );
+	*/
 }
 
 void engine_player_manager_cleanup()
@@ -314,7 +317,7 @@ void engine_player_manager_draw()
 	engine_sprite_manager_draw_player( po->drawX, po->drawY );
 }
 
-static int do_jump( int inpVelocityY )
+static void do_jump( int inpVelocityY )
 {
 	struct_player_object *po = &global_player_object;
 	if( !po->isJumping && po->jumpFrame > 0 || po->isJumping && po->jumpFrame >= MAX_VELOCITY_Y )
@@ -360,8 +363,7 @@ static int do_jump( int inpVelocityY )
 	}
 
 	po->wasJumping = po->isJumping;
-	return inpVelocityY;
-	//po->velY = inpVelocityY;
+	po->velY = inpVelocityY;
 }
 
 static void get_coll_position()
@@ -374,9 +376,13 @@ static void get_coll_position()
 static void get_draw_position()
 {
 	struct_player_object *po = &global_player_object;
+	//engine_font_manager_draw_data( po->posnX, 15, 10 );
+	//engine_font_manager_draw_data( po->posnY, 15, 11 );
 	get_common_position( po->posnX, po->posnY, DRAW_OFFSET_X );
 	po->drawX = po->commX;
 	po->drawY = po->commY;
+	//engine_font_manager_draw_data( po->drawX, 15, 12 );
+	//engine_font_manager_draw_data( po->drawY, 15, 13 );
 }
 static void get_common_position( int posX, int posY, signed char offsetX )
 {
@@ -387,6 +393,13 @@ static void get_common_position( int posX, int posY, signed char offsetX )
 
 	po->commX = posX - halfTileSizeX + offsetX;
 	po->commY = posY - twiceTileSizeY;
+
+	//engine_font_manager_draw_data( posX, 15, 10 );
+	//engine_font_manager_draw_data( halfTileSizeX, 15, 11 );
+	//engine_font_manager_draw_data( twiceTileSizeY, 15, 12 );
+	//engine_font_manager_draw_data( offsetX, 15, 13 );
+	//engine_font_manager_draw_data( po->commX, 15, 14 );
+	//engine_font_manager_draw_data( po->commY, 15, 15 );
 }
 static void process_collision( int rectALeft, int rectATop, int rectBLeft, int rectBTop )
 {
