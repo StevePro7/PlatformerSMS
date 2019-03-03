@@ -5,6 +5,17 @@ ATTEMPED
 PLATFORM
 
 03/03/2019
+VGMs
+Trivial Pursuit - 030 - Minuet in G Major
+D:\Steven\Personal\_Platformer\VGMs\TrivialPursuit-SMS
+
+Fanfare4
+Fanfare7
+D:\Steven\Personal\_Platformer\VGMs\ZanGear-GG
+
+GameOver
+D:\Steven\Personal\_Platformer\VGMs\StreetsOfRageII-GG
+
 IMPORTANT
 be careful of data type incompatibility esp. when one is int but other is unsigned char
 if the unsigned char overflows or becomes negative then this has dire consequences
