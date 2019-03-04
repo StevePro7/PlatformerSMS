@@ -24,8 +24,8 @@ void screen_play_screen_load()
 	//engine_font_manager_draw_data( coll_type, 9, 10 );
 
 		//engine_level_manager_load_levelX();
-	//engine_state_manager_load();
-	//engine_player_manager_load();
+	engine_state_manager_load();
+	engine_player_manager_load();
 
 	// TODO put in the update method
 	//engine_player_manager_get_input();
@@ -35,11 +35,11 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
-	/*engine_player_manager_get_input();
+	engine_player_manager_get_input();
 	engine_player_manager_apply_physics();
 	engine_player_manager_handle_collisions();
 	engine_player_manager_cleanup();
 
-	engine_player_manager_draw();*/
+	engine_player_manager_draw();
 	*screen_type = screen_type_play;
 }

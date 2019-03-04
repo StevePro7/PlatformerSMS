@@ -17,6 +17,9 @@ struct_player_object global_player_object;
 
 #define MAX_VELOCITY_X	10
 #define MAX_VELOCITY_Y	17
+#define MIN_POSITION_X	22
+#define MAX_POSITION_X	250
+#define MAX_POSITION_Y	192
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
 
@@ -177,17 +180,17 @@ void engine_player_manager_apply_physics()
 
 	po->posnX += po->velX;
 	// TODO update this code
-	if( po->posnX <= 12 )
+	if( po->posnX <= MIN_POSITION_X )
 	{
-		po->posnX = 12;
+		po->posnX = MIN_POSITION_X;
 	}
-	if( po->posnX >= 232 )
+	if( po->posnX >= MAX_POSITION_X )
 	{
-		po->posnX = 232;
+		po->posnX = MAX_POSITION_X;
 	}
 
 	po->posnY += po->velY;
-	if( po->posnY >= 192 )
+	if( po->posnY >= MAX_POSITION_Y )
 	{
 		engine_font_manager_draw_text( "DEAD", 20, 20 );
 	}
