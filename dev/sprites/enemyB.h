@@ -31,3 +31,33 @@ extern const unsigned char	enemyB_run_left_09__tiles__psgcompr[];
 extern const unsigned char	enemyB_run_left_10__tiles__psgcompr[];
 #define				enemyB_run_left_10__tiles__psgcompr_size 263
 
+extern const unsigned char	enemyB_run_rght_01__tiles__psgcompr[];
+#define				enemyB_run_rght_01__tiles__psgcompr_size 294
+
+extern const unsigned char	enemyB_run_rght_02__tiles__psgcompr[];
+#define				enemyB_run_rght_02__tiles__psgcompr_size 290
+
+extern const unsigned char	enemyB_run_rght_03__tiles__psgcompr[];
+#define				enemyB_run_rght_03__tiles__psgcompr_size 251
+
+extern const unsigned char	enemyB_run_rght_04__tiles__psgcompr[];
+#define				enemyB_run_rght_04__tiles__psgcompr_size 187
+
+extern const unsigned char	enemyB_run_rght_05__tiles__psgcompr[];
+#define				enemyB_run_rght_05__tiles__psgcompr_size 258
+
+extern const unsigned char	enemyB_run_rght_06__tiles__psgcompr[];
+#define				enemyB_run_rght_06__tiles__psgcompr_size 288
+
+extern const unsigned char	enemyB_run_rght_07__tiles__psgcompr[];
+#define				enemyB_run_rght_07__tiles__psgcompr_size 253
+
+extern const unsigned char	enemyB_run_rght_08__tiles__psgcompr[];
+#define				enemyB_run_rght_08__tiles__psgcompr_size 241
+
+extern const unsigned char	enemyB_run_rght_09__tiles__psgcompr[];
+#define				enemyB_run_rght_09__tiles__psgcompr_size 192
+
+extern const unsigned char	enemyB_run_rght_10__tiles__psgcompr[];
+#define				enemyB_run_rght_10__tiles__psgcompr_size 263
+
