@@ -35,16 +35,45 @@ bmp2tile.exe raw\Run_Rght_07.png -savetiles "enemyA_run_rght_07 (tiles).psgcompr
 bmp2tile.exe raw\Run_Rght_08.png -savetiles "enemyA_run_rght_08 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
 bmp2tile.exe raw\Run_Rght_09.png -savetiles "enemyA_run_rght_09 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
 bmp2tile.exe raw\Run_Rght_10.png -savetiles "enemyA_run_rght_10 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+cd ..
+
+REM MonsterB
+cd enemyB
+bmp2tile.exe raw\Idle.png -savetiles "enemyB_idle (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_01.png -savetiles "enemyB_run_left_01 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_02.png -savetiles "enemyB_run_left_02 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_03.png -savetiles "enemyB_run_left_03 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_04.png -savetiles "enemyB_run_left_04 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_05.png -savetiles "enemyB_run_left_05 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_06.png -savetiles "enemyB_run_left_06 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_07.png -savetiles "enemyB_run_left_07 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_08.png -savetiles "enemyB_run_left_08 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_09.png -savetiles "enemyB_run_left_09 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_10.png -savetiles "enemyB_run_left_10 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_01.png -savetiles "enemyB_run_left_01 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_02.png -savetiles "enemyB_run_left_02 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_03.png -savetiles "enemyB_run_left_03 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_04.png -savetiles "enemyB_run_left_04 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_05.png -savetiles "enemyB_run_left_05 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_06.png -savetiles "enemyB_run_left_06 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_07.png -savetiles "enemyB_run_left_07 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_08.png -savetiles "enemyB_run_left_08 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_09.png -savetiles "enemyB_run_left_09 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
+bmp2tile.exe raw\Run_Left_10.png -savetiles "enemyB_run_left_10 (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
 
 cd ..
-folder2c enemyA enemyA
 
+REM folder2C
+folder2c enemyA enemyA
+folder2c enemyB enemyB
 
 REM Palette
 folder2c master master
 
 
 REM build
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemyA.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemyB.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 master.c
 
 del *.asm > nul
