@@ -125,6 +125,20 @@ source\func_screen.rel ^
 sprites\master.rel ^
 gfx.rel
 
+REM sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
+REM -Wl-b_BANK2=0x8000 ^
+REM -Wl-b_BANK3=0x8000 ^
+REM -Wl-b_BANK4=0x8000 ^
+REM -Wl-b_BANK5=0x8000 ^
+REM ..\crt0\crt0_sms.rel main.rel ^
+REM ..\lib\SMSlib.lib ^
+REM ..\lib\PSGlib.rel ^
+REM banks\bank2.rel ^
+REM banks\bank3.rel ^
+REM banks\bank4.rel ^
+REM banks\bank5.rel ^
+REM gfx.rel
+
 REM echo Binary output
 ihx2sms output.ihx output.sms
 

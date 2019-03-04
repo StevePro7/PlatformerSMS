@@ -22,6 +22,3 @@ extern const unsigned char	EnemyD_Idle__tiles__psgcompr[];
 extern const unsigned char	Player_Idle__tiles__psgcompr[];
 #define				Player_Idle__tiles__psgcompr_size 302
 
-extern const unsigned char	Sprites__palette__bin[];
-#define				Sprites__palette__bin_size 16
-

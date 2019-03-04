@@ -3,6 +3,7 @@
 #include "global_manager.h"
 #include "enum_manager.h"
 #include "..\gfx.h"
+#include "..\sprites\master.h"
 
 #define BACK_TILES_OFFSET		0
 

@@ -1,16 +1,15 @@
 XL2
-H 9 areas A global symbols
+H 9 areas 9 global symbols
 M gfx
 O -mz80
 S .__.ABS. Def0000
-A _CODE size E41 flags 0 addr 0
+A _CODE size E31 flags 0 addr 0
 S _EnemyA_Idle__tiles__psgcompr Def085E
 S _EnemyB_Idle__tiles__psgcompr Def097A
 S _EnemyC_Idle__tiles__psgcompr Def0AB4
 S _EnemyD_Idle__tiles__psgcompr Def0BC5
 S _back_tiles__tilemap__bin Def0010
 S _back_tiles__palette__bin Def0000
-S _Sprites__palette__bin Def0E31
 S _Player_Idle__tiles__psgcompr Def0D03
 S _back_tiles__tiles__psgcompr Def0110
 A _DATA size 0 flags 0 addr 0
@@ -564,10 +563,4 @@ R 00 00 00 00
 T 1B 0E 40 C2 29 09 AB AB AA 28 AA F0 00 80 80 80
 R 00 00 00 00
 T 29 0E 80 20 F7 00 F7 00 80 01
-R 00 00 00 00
-T 31 0E
-R 00 00 00 00
-T 31 0E 00 01 01 05 15 05 06 15 1A 2A 1A 1B 2A 2F
-R 00 00 00 00
-T 3F 0E 3F 3F
 R 00 00 00 00
