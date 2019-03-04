@@ -10,7 +10,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK8 size 149B flags 0 addr 0
+A _BANK7 size 149B flags 0 addr 0
 S _enemyC_idle__tiles__psgcompr Def0000
 S _enemyC_run_left_01__tiles__psgcompr Def0111
 S _enemyC_run_left_10__tiles__psgcompr Def09C7

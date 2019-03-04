@@ -9,7 +9,6 @@ folder2c enemyB enemyB 6
 folder2c enemyC enemyC 7
 folder2c enemyD enemyD 7
 
-
 REM build
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 master.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player.c

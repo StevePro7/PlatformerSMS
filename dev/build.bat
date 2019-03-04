@@ -95,8 +95,6 @@ sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC0
 -Wl-b_BANK5=0x8000 ^
 -Wl-b_BANK6=0x8000 ^
 -Wl-b_BANK7=0x8000 ^
--Wl-b_BANK8=0x8000 ^
--Wl-b_BANK9=0x8000 ^
 ..\crt0\crt0_sms.rel main.rel ^
 ..\lib\SMSlib.lib ^
 ..\lib\PSGlib.rel ^
