@@ -4,7 +4,7 @@ M level_object
 O -mz80
 S .__.ABS. Def0000
 S _level0200_txt Ref0000
-S _level0301_txt Ref0000
+S _level0201_txt Ref0000
 A _CODE size 4 flags 0 addr 0
 S _levelbank Def0002
 S _levelsize Def0000
@@ -23,11 +23,11 @@ T 00 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
-T 00 00 CC CC
+T 00 00 D8 D8
 R 00 00 00 00
 T 02 00
 R 00 00 00 00
-T 02 00 02 03
+T 02 00 02 02
 R 00 00 00 00
 T 00 00
 R 00 00 07 00

@@ -40,6 +40,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	//unsigned char x, y, tile;
 	unsigned char row, col;
 	unsigned char tile;
+	unsigned char bob;
 	
 	//unsigned char idx, row, col;
 	unsigned int idx;
@@ -61,7 +62,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 			if( !( tile == CR || tile == LF ) )
 			{
 				//idx = y * COLS + x;
-				idx = row * COLS + col;
+				idx = row * MAX_COLS + col;
 				//level_map[ idx ] = tile;
 				//level_mat[ row ][ col ] = tile;
 
@@ -87,6 +88,8 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 			o++;
 		}
 	}
+
+	bob = 7;
 }
 
 
@@ -103,7 +106,6 @@ void engine_level_manager_draw_level()
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char row, col;
-
 	for( row = 0; row < MAX_ROWS; row++ )
 	{
 		for( col = 0; col < lo->draw_cols; col++ )
@@ -112,6 +114,42 @@ void engine_level_manager_draw_level()
 		}
 	}
 }
+/*
+void engine_level_manager_draw_levelA()
+{
+	struct_level_object *lo = &global_level_object;
+
+	//draw_tiles( 0, 0 );
+	//draw_tiles( 1, 2 );
+	unsigned char row, col;
+	col = 0;
+	for( row = 0; row < MAX_ROWS; row++ )
+	{
+		//for( col = 0; col < lo->draw_cols; col++ )
+		{
+			draw_tiles( 0, row );
+			draw_tiles( 1, row );
+			draw_tiles( 2, row );
+			draw_tiles( 3, row );
+
+			draw_tiles( 4, row );
+			draw_tiles( 5, row );
+			draw_tiles( 6, row );
+			draw_tiles( 7, row );
+
+			draw_tiles( 8, row );
+			draw_tiles( 9, row );
+			draw_tiles( 10, row );
+			draw_tiles( 11, row );
+
+			draw_tiles( 12, row );
+			draw_tiles( 13, row );
+			draw_tiles( 14, row );
+			draw_tiles( 15, row );
+		}
+	}
+}
+*/
 void engine_level_manager_draw_levelX()
 {
 	struct_level_object *lo = &global_level_object;
@@ -129,7 +167,7 @@ void engine_level_manager_draw_level_column( unsigned char column )
 	unsigned char x, y;
 
 	x = column;
-	for( y = 0; y < ROWS; y++ )
+	for( y = 0; y < MAX_ROWS; y++ )
 	{
 		draw_tiles( x, y );
 	}
