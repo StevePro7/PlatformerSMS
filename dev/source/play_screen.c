@@ -1,6 +1,7 @@
 #include "play_screen.h"
 #include "global_manager.h"
 #include "debug_manager.h"
+#include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
@@ -10,12 +11,15 @@
 
 void screen_play_screen_load()
 {
+	struct_hack_object *ho = &global_hack_object;
+	
 	/*unsigned char int_coll_type;
 	enum_coll_type coll_type;*/
 
 	//engine_debug_manager_draw_grid();		// TODO remove this!
 
-	engine_level_manager_load_index( 1 );
+	//engine_level_manager_load_index( 0 );
+	engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
 
 	//TODO refactor this so can lookup as unsigned char but cast back as enum

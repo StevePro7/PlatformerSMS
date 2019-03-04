@@ -1,3 +1,6 @@
+#ifndef __MAIN__
+#define __MAIN__
+
 #include <stdbool.h>
 //#include <stdio.h>
 #include <stdlib.h>
@@ -23,7 +26,7 @@
 //#include "source\_snd_manager.h"
 
 // BANKS
-#include "banks\bank2.h"
+//#include "banks\bank2.h"
 //#include "banks\bank3.h"
 //#include "banks\bank4.h"
 //#include "banks\bank5.h"
@@ -85,3 +88,5 @@
 //SMS_EMBED_SEGA_ROM_HEADER( 9999, 0 );
 //SMS_EMBED_SDSC_HEADER( 1, 0, 2017, 3, 17, "StevePro Studios", "Platformer Game", "TODO enter description here!" );
 //#endif
+
+#endif//__MAIN__
