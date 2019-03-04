@@ -150,6 +150,15 @@
     <ClCompile Include="sprites\master.c">
       <Filter>Source Files\sprites</Filter>
     </ClCompile>
+    <ClCompile Include="sprites\enemyB.c">
+      <Filter>Source Files\sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="sprites\enemyC.c">
+      <Filter>Source Files\sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="sprites\enemyD.c">
+      <Filter>Source Files\sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -264,6 +273,15 @@
       <Filter>Header Files\sprites</Filter>
     </ClInclude>
     <ClInclude Include="sprites\master.h">
+      <Filter>Header Files\sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="sprites\enemyB.h">
+      <Filter>Header Files\sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="sprites\enemyC.h">
+      <Filter>Header Files\sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="sprites\enemyD.h">
       <Filter>Header Files\sprites</Filter>
     </ClInclude>
   </ItemGroup>

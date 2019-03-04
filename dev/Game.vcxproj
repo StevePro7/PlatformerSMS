@@ -175,6 +175,9 @@
     <ClCompile Include="source\tile_manager.c" />
     <ClCompile Include="source\_sms_manager.c" />
     <ClCompile Include="sprites\enemyA.c" />
+    <ClCompile Include="sprites\enemyB.c" />
+    <ClCompile Include="sprites\enemyC.c" />
+    <ClCompile Include="sprites\enemyD.c" />
     <ClCompile Include="sprites\master.c" />
     <ClCompile Include="sprites\player.c" />
   </ItemGroup>
@@ -215,6 +218,9 @@
     <ClInclude Include="source\tile_manager.h" />
     <ClInclude Include="source\_sms_manager.h" />
     <ClInclude Include="sprites\enemyA.h" />
+    <ClInclude Include="sprites\enemyB.h" />
+    <ClInclude Include="sprites\enemyC.h" />
+    <ClInclude Include="sprites\enemyD.h" />
     <ClInclude Include="sprites\master.h" />
     <ClInclude Include="sprites\player.h" />
   </ItemGroup>

@@ -93,6 +93,10 @@ sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC0
 -Wl-b_BANK3=0x8000 ^
 -Wl-b_BANK4=0x8000 ^
 -Wl-b_BANK5=0x8000 ^
+-Wl-b_BANK6=0x8000 ^
+-Wl-b_BANK7=0x8000 ^
+-Wl-b_BANK8=0x8000 ^
+-Wl-b_BANK9=0x8000 ^
 ..\crt0\crt0_sms.rel main.rel ^
 ..\lib\SMSlib.lib ^
 ..\lib\PSGlib.rel ^
@@ -123,6 +127,11 @@ source\load_screen.rel ^
 source\play_screen.rel ^
 source\func_screen.rel ^
 sprites\master.rel ^
+sprites\player.rel ^
+sprites\enemyA.rel ^
+sprites\enemyB.rel ^
+sprites\enemyC.rel ^
+sprites\enemyD.rel ^
 gfx.rel
 
 REM echo Binary output
