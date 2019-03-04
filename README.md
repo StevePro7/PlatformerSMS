@@ -1,9 +1,21 @@
 # PlatformerSMS
 Placeholder repo for PlatformerSMS
 
-ATTEMPED
 PLATFORM
+EXPLORER
+Warner the Explorer
+https://yhoo.it/2HdDJfu
 
+04/03/2019
+Rough gestimate at the sprite tile loading
+Assume there are 256 available sprite tiles then could do the following:
+Player: Idle, RunLeft, RunRight, JumpLeft, JumpRight	= 5 * 12	= 60
+EnemyA: Idle, RunLeft, RunRight							= 3 * 12	= 36
+EnemyB: Idle, RunLeft, RunRight							= 3 * 12	= 36
+EnemyC: Idle, RunLeft, RunRight							= 3 * 12	= 36
+EnemyD: Idle, RunLeft, RunRight							= 3 * 12	= 36
+																	 204
+																	 
 03/03/2019
 VGMs
 Trivial Pursuit - 030 - Minuet in G Major
