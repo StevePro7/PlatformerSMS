@@ -159,6 +159,12 @@
     <ClCompile Include="sprites\enemyD.c">
       <Filter>Source Files\sprites</Filter>
     </ClCompile>
+    <ClCompile Include="source\anim_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\anim_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -283,6 +289,12 @@
     </ClInclude>
     <ClInclude Include="sprites\enemyD.h">
       <Filter>Header Files\sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="source\anim_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\anim_manager.h">
+      <Filter>Header Files\source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

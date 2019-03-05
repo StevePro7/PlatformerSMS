@@ -150,6 +150,8 @@
     <ClCompile Include="banks\bank5.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="source\anim_manager.c" />
+    <ClCompile Include="source\anim_object.c" />
     <ClCompile Include="source\common_manager.c" />
     <ClCompile Include="source\content_manager.c" />
     <ClCompile Include="source\debug_manager.c" />
@@ -189,6 +191,8 @@
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="source\anim_manager.h" />
+    <ClInclude Include="source\anim_object.h" />
     <ClInclude Include="source\common_manager.h" />
     <ClInclude Include="source\content_manager.h" />
     <ClInclude Include="source\debug_manager.h" />
