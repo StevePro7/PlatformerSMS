@@ -152,12 +152,22 @@ void engine_level_manager_load_levelX()
 	enum_tile_type tile_type;
 	unsigned char x;
 
-	for( x = 0; x < 32; x += 2 )
+	for( x = 2; x < 32; x += 2 )
 	{
 		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
-		engine_tile_manager_draw_tile( tile_type, x, 20 );
+		engine_tile_manager_draw_tile( tile_type, x, 22 );
 		//tile_type = rand() % MAX_BLOCK_TILES + 1;
 		//engine_tile_manager_draw_tile( tile_type, x, 22 );
+	}
+
+	for( x = 2; x < 18; x += 2 )
+	{
+		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
+		engine_tile_manager_draw_tile( tile_type, x, 4 );
+		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
+		engine_tile_manager_draw_tile( tile_type, x, 10 );
+		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
+		engine_tile_manager_draw_tile( tile_type, x, 16 );
 	}
 
 	//tile_type = rand() % MAX_BLOCK_TILES + 1;

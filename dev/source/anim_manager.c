@@ -29,6 +29,15 @@ void engine_anim_manager_enemyC_load( unsigned char index, unsigned int tile )
 	devkit_SMS_loadPSGaidencompressedTiles( data, tile );
 }
 
+void engine_anim_manager_enemyD_load( unsigned char index, unsigned int tile )
+{
+	const unsigned char *data = ( const unsigned char * ) enemyD_anim_data[ index ];
+	const unsigned char bank = ( const unsigned char ) enemyD_anim_bank[ index ];
+
+	devkit_SMS_mapROMBank( bank );
+	devkit_SMS_loadPSGaidencompressedTiles( data, tile );
+}
+
 void engine_anim_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 {
 	devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );

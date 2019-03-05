@@ -22,6 +22,8 @@
 #define TILE_WIDE				16
 #define TILE_HIGH				16
 
+#define MAX_PLAYER_ANIMS	3
+#define MAX_ENEMYX_ANIMS	21
 
 extern const unsigned int list_sprite_tile_offset[];
 extern const unsigned char *stageinitdata[];

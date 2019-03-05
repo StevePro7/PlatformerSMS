@@ -10,6 +10,9 @@ void engine_state_manager_load()
 	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
 
-	po->spotY = lo->player_spot / lo->draw_cols;
-	po->spotX = lo->player_spot % lo->draw_cols;
+	if( 0 != lo->draw_cols )
+	{
+		po->spotY = lo->player_spot / lo->draw_cols;
+		po->spotX = lo->player_spot % lo->draw_cols;
+	}
 }
