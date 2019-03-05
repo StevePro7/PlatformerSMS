@@ -4,11 +4,11 @@
 //extern const unsigned char *player_anim_data[];
 //extern const unsigned char player_anim_lbank[];
 
-extern const unsigned char *anemyA_anim_data[];
-extern const unsigned char anemyA_anim_bank[];
-//extern const unsigned char *anemyB_anim_data[];
-//extern const unsigned char anemyB_anim_bank[];
-extern const unsigned char *anemyC_anim_data[];
-extern const unsigned char anemyC_anim_bank[];
+extern const unsigned char *enemyA_anim_data[];
+extern const unsigned char enemyA_anim_bank[];
+extern const unsigned char *enemyB_anim_data[];
+extern const unsigned char enemyB_anim_bank[];
+extern const unsigned char *enemyC_anim_data[];
+extern const unsigned char enemyC_anim_bank[];
 
 #endif//_ANIM_OBJECT_H_

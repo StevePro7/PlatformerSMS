@@ -114,54 +114,7 @@ void engine_level_manager_draw_level()
 		}
 	}
 }
-/*
-void engine_level_manager_draw_levelA()
-{
-	struct_level_object *lo = &global_level_object;
 
-	//draw_tiles( 0, 0 );
-	//draw_tiles( 1, 2 );
-	unsigned char row, col;
-	col = 0;
-	for( row = 0; row < MAX_ROWS; row++ )
-	{
-		//for( col = 0; col < lo->draw_cols; col++ )
-		{
-			draw_tiles( 0, row );
-			draw_tiles( 1, row );
-			draw_tiles( 2, row );
-			draw_tiles( 3, row );
-
-			draw_tiles( 4, row );
-			draw_tiles( 5, row );
-			draw_tiles( 6, row );
-			draw_tiles( 7, row );
-
-			draw_tiles( 8, row );
-			draw_tiles( 9, row );
-			draw_tiles( 10, row );
-			draw_tiles( 11, row );
-
-			draw_tiles( 12, row );
-			draw_tiles( 13, row );
-			draw_tiles( 14, row );
-			draw_tiles( 15, row );
-		}
-	}
-}
-*/
-void engine_level_manager_draw_levelX()
-{
-	struct_level_object *lo = &global_level_object;
-	unsigned char x, y;
-	for( y = 0; y < MAX_ROWS; y++ )
-	{
-		for( x = 0; x < lo->draw_cols; x++ )
-		{
-			draw_tiles( x, y );
-		}
-	}
-}
 void engine_level_manager_draw_level_column( unsigned char column )
 {
 	unsigned char x, y;
@@ -202,7 +155,7 @@ void engine_level_manager_load_levelX()
 	for( x = 0; x < 32; x += 2 )
 	{
 		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
-		engine_tile_manager_draw_tile( tile_type, x, 4 );
+		engine_tile_manager_draw_tile( tile_type, x, 20 );
 		//tile_type = rand() % MAX_BLOCK_TILES + 1;
 		//engine_tile_manager_draw_tile( tile_type, x, 22 );
 	}
