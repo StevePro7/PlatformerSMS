@@ -161,6 +161,7 @@
     <ClCompile Include="source\game_manager.c" />
     <ClCompile Include="source\global_manager.c" />
     <ClCompile Include="source\hack_manager.c" />
+    <ClCompile Include="source\init_screen.c" />
     <ClCompile Include="source\input_manager.c" />
     <ClCompile Include="source\level_manager.c" />
     <ClCompile Include="source\level_object.c" />
@@ -205,6 +206,7 @@
     <ClInclude Include="source\global_manager.h" />
     <ClInclude Include="source\hack_manager.h" />
     <ClInclude Include="source\hack_object.h" />
+    <ClInclude Include="source\init_screen.h" />
     <ClInclude Include="source\input_manager.h" />
     <ClInclude Include="source\level_manager.h" />
     <ClInclude Include="source\level_object.h" />

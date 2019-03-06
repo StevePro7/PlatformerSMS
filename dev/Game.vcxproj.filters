@@ -165,6 +165,9 @@
     <ClCompile Include="source\anim_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
+    <ClCompile Include="source\init_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -295,6 +298,9 @@
     </ClInclude>
     <ClInclude Include="source\anim_manager.h">
       <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\init_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

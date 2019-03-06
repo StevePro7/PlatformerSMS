@@ -41,12 +41,12 @@ void screen_load_screen_update( unsigned char *screen_type )
 	const unsigned char x = 60;
 	unsigned char test1, test2, test3, test4;
 
-	engine_font_manager_draw_data( enemyA_index, 20, 11 );
-	engine_font_manager_draw_data( enemyB_index, 20, 12 );
-	engine_font_manager_draw_data( enemyC_index, 20, 13 );
-	engine_font_manager_draw_data( enemyD_index, 20, 14 );
+	//engine_font_manager_draw_data( enemyA_index, 20, 11 );
+	//engine_font_manager_draw_data( enemyB_index, 20, 12 );
+	//engine_font_manager_draw_data( enemyC_index, 20, 13 );
+	//engine_font_manager_draw_data( enemyD_index, 20, 14 );
 
-	test1 = engine_input_manager_hold_left();
+	test1 = engine_input_manager_move_left();
 	if (test1 )
 	{
 		enemyA_index++;
@@ -55,11 +55,11 @@ void screen_load_screen_update( unsigned char *screen_type )
 			enemyA_index = 0;
 		}
 
-		engine_font_manager_draw_data( enemyA_index, 20, 11 );
+		//engine_font_manager_draw_data( enemyA_index, 20, 11 );
 		engine_anim_manager_enemyA_load( enemyA_index, ENEMYA_TILE );
 	}
 
-	test2 = engine_input_manager_hold_right();
+	test2 = engine_input_manager_move_right();
 	if( test2 )
 	{
 		enemyB_index++;
@@ -68,11 +68,11 @@ void screen_load_screen_update( unsigned char *screen_type )
 			enemyB_index = 0;
 		}
 
-		engine_font_manager_draw_data( enemyB_index, 20, 12 );
+		//engine_font_manager_draw_data( enemyB_index, 20, 12 );
 		engine_anim_manager_enemyB_load( enemyB_index, ENEMYB_TILE );
 	}
 
-	test3 = engine_input_manager_hold_up();
+	test3 = engine_input_manager_move_up();
 	if( test3 )
 	{
 		enemyC_index++;
@@ -81,11 +81,11 @@ void screen_load_screen_update( unsigned char *screen_type )
 			enemyC_index = 0;
 		}
 
-		engine_font_manager_draw_data( enemyC_index, 20, 13 );
+		//engine_font_manager_draw_data( enemyC_index, 20, 13 );
 		engine_anim_manager_enemyC_load( enemyC_index, ENEMYC_TILE );
 	}
 
-	test4 = engine_input_manager_hold_down();
+	test4 = engine_input_manager_move_down();
 	if( test4 )
 	{
 		enemyD_index++;
@@ -94,7 +94,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 			enemyD_index = 0;
 		}
 
-		engine_font_manager_draw_data( enemyD_index, 20, 14 );
+		//engine_font_manager_draw_data( enemyD_index, 20, 14 );
 		engine_anim_manager_enemyD_load( enemyD_index, ENEMYD_TILE );
 	}
 

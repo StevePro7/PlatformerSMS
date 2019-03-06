@@ -5,10 +5,10 @@ typedef enum tag_enum_screen_type
 {
 	screen_type_none = 0,
 	screen_type_test = 1,
-	//screen_type_init = 2,
-	screen_type_load = 2,
-	screen_type_play = 3,
-	screen_type_func = 4,
+	screen_type_init = 2,
+	screen_type_load = 3,
+	screen_type_play = 4,
+	screen_type_func = 5,
 	screen_type_splash = 6,
 
 } enum_screen_type;
@@ -44,11 +44,11 @@ typedef enum tag_enum_coll_type
 
 typedef enum tag_enum_sprite_type
 {
-	sprite_type_player = 0,
-	sprite_type_enemyA = 1,
-	sprite_type_enemyB = 2,
-	sprite_type_enemyC = 3,
-	sprite_type_enemyD = 4,
+	sprite_type_enemyA = 0,
+	sprite_type_enemyB = 1,
+	sprite_type_enemyC = 2,
+	sprite_type_enemyD = 3,
+	sprite_type_player = 4,
 	sprite_type_unknown = 5,
 
 } enum_sprite_type;

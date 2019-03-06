@@ -6,6 +6,12 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+06/03/2019
+Can I use function pointer for animation for example
+draw[0] = draw_idle
+draw[1] = draw_left
+draw[2] = draw_rght
+
 05/03/2019
 Did animation sprite test this morning with ROM banking and seems that the min-max is 256-447
 i.e. for my 12x tile sprites [3x4] the max would be 448-12 = 436.

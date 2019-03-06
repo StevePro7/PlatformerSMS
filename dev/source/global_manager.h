@@ -3,8 +3,8 @@
 
 #define MAX_SCREEENS			7
 #define MAX_ENEMIES				6
-#define TILE_X_OFFSET			0
-//#define GAME_X_OFFSET			TILE_X_OFFSET * 8
+#define TILE_X_OFFSET			0							// TODO delete after confirm not required!
+//#define GAME_X_OFFSET			TILE_X_OFFSET * 8			// TODO delete
 
 //#define SPRITE_TILES_OFFSET		128
 #define SPRITE_TILES_OFFSET		256

@@ -4,6 +4,7 @@
 typedef struct tag_struct_enemy_object
 {
 	unsigned char sx, sy;
+	void( *draw )( void );
 
 } struct_enemy_object;
 

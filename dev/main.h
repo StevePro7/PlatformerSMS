@@ -60,7 +60,7 @@
 // SCREENS
 #include "source\none_screen.h"
 #include "source\test_screen.h"
-//#include "screen\init_screen.h"
+#include "source\init_screen.h"
 #include "source\load_screen.h"
 #include "source\play_screen.h"
 #include "source\func_screen.h"
