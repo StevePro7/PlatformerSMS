@@ -20,11 +20,12 @@
 #define ENEMYD_TILE		436//256 + 48
 
 static unsigned char enemyA_index, enemyB_index, enemyC_index, enemyD_index;
+static unsigned char counter;
 
 void screen_load_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
-
+	counter = 0;
 	//engine_debug_manager_draw_grid();		// TODO remove this!
 
 	engine_level_manager_load_index( 1 );
@@ -45,7 +46,19 @@ void screen_load_screen_load()
 void screen_load_screen_update( unsigned char *screen_type )
 {
 	const unsigned char x = 60;
+	unsigned char mod;
 	unsigned char test1, test2, test3, test4;
+
+	counter++;
+	if( counter > 40 )
+	{
+		counter = 0;
+	}
+
+	mod = counter % 4;
+
+	//engine_font_manager_draw_data( counter, 20, 11 );
+	//engine_font_manager_draw_data( mod, 20, 12 );
 
 	engine_player_manager_get_input();
 	engine_player_manager_apply_physics();
@@ -58,7 +71,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//engine_font_manager_draw_data( enemyD_index, 20, 14 );
 
 	//test1 = engine_input_manager_move_left();
-	test1 = true;
+	test1 = mod == 0;// true;
 	if (test1 )
 	{
 		enemyA_index++;
@@ -72,7 +85,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	}
 
 	//test2 = engine_input_manager_move_right();
-	test2 = true;
+	test2 = mod == 1;// true;
 	if( test2 )
 	{
 		enemyB_index++;
@@ -86,7 +99,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	}
 
 	//test3 = engine_input_manager_move_up();
-	test3 = true;
+	test3 = mod == 2;// true;
 	if( test3 )
 	{
 		enemyC_index++;
@@ -100,7 +113,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	}
 
 	//test4 = engine_input_manager_move_down();
-	test4 = true;
+	test4 = mod == 3;// true;
 	if( test4 )
 	{
 		enemyD_index++;
