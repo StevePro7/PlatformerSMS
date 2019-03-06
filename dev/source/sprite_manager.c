@@ -9,7 +9,9 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned char
 	const unsigned char tile = list_sprite_tile_offset[ sprite_type ];
 	//const int tile = 128 + 128 ;
 
-	devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );
+	devkit_SMS_addSprite_bulk( x, y, tile );
+
+	/*devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );
 	devkit_SMS_addSprite( x + 8, y + 0, tile + 1 );
 	devkit_SMS_addSprite( x + 16, y + 0, tile + 2 );
 
@@ -23,7 +25,7 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned char
 
 	devkit_SMS_addSprite( x + 0, y + 24, tile + 9 );
 	devkit_SMS_addSprite( x + 8, y + 24, tile + 10 );
-	devkit_SMS_addSprite( x + 16, y + 24, tile + 11 );
+	devkit_SMS_addSprite( x + 16, y + 24, tile + 11 );*/
 }
 
 void engine_sprite_manager_draw_player( unsigned char x, unsigned char y )

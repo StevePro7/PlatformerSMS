@@ -8,7 +8,7 @@
 #include "tester_manager.h"
 #include "render_manager.h"
 
-static void dynamic_memory_allocation()
+static void dynamic_memory_allocation()	
 {
 	/*
 	struct_level_object *lo = &global_level_object;
