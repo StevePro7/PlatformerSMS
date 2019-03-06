@@ -11,6 +11,10 @@ Can I use function pointer for animation for example
 draw[0] = draw_idle
 draw[1] = draw_left
 draw[2] = draw_rght
+Example	DuckSlayer
+void(*draw)(void *);
+void draw_actor_player(void *p)
+draw_actor_player
 
 05/03/2019
 Did animation sprite test this morning with ROM banking and seems that the min-max is 256-447
