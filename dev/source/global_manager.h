@@ -11,6 +11,8 @@
 #define SPRITE_TILES_NUMBER		12
 #define MAX_BLOCK_TILES			9
 
+#define PLAYER_TILE		256 + 0
+
 #define INVALID_INDEX			-1
 
 #define MAX_ROWS				12

@@ -2,6 +2,7 @@
 #include "global_manager.h"
 #include "font_manager.h"
 #include "sprite_manager.h"
+#include "anim_manager.h"
 #include "level_manager.h"
 #include "input_manager.h"
 //#include <math.h>
@@ -355,7 +356,8 @@ void engine_player_manager_draw()
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();
-		engine_sprite_manager_draw_player( po->drawX, po->drawY );
+		//engine_sprite_manager_draw_player( po->drawX, po->drawY );
+		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + 0 * SPRITE_TILES_NUMBER );		// TODO tidy up...!
 	}
 }
 
