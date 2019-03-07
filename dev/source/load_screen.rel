@@ -1,5 +1,5 @@
 XL2
-H 9 areas D global symbols
+H 9 areas E global symbols
 M load_screen
 O -mz80
 S _engine_player_manager_cleanup Ref0000
@@ -10,11 +10,12 @@ S _engine_anim_manager_draw Ref0000
 S _engine_player_manager_apply_physics Ref0000
 S _engine_player_manager_handle_collisions Ref0000
 S _engine_player_manager_get_input Ref0000
+S _engine_font_manager_draw_data Ref0000
 S _engine_player_manager_load Ref0000
 S _engine_level_manager_load_index Ref0000
 S _engine_anim_manager_player_load Ref0000
-A _CODE size 8A flags 0 addr 0
-S _screen_load_screen_update Def0058
+A _CODE size 82 flags 0 addr 0
+S _screen_load_screen_update Def0050
 S _screen_load_screen_load Def0000
 A _DATA size 5 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -47,34 +48,28 @@ R 00 00 01 00
 T 00 00
 R 00 00 00 00
 T 00 00 3B 21 04 00 36 00 3E 02 F5 33 CD 00 00 33
-R 00 00 00 00 00 04 01 00 02 0D 09 00
+R 00 00 00 00 00 04 01 00 02 0D 0A 00
 T 0E 00 CD 00 00 CD 00 00 CD 00 00 3A
-R 00 00 00 00 02 03 01 00 02 06 02 00 02 09 08 00
+R 00 00 00 00 02 03 01 00 02 06 02 00 02 09 09 00
 T 18 00 02 00 FD 21 00 00 FD 39 FD 77 00 FD 7E 00
 R 00 00 00 00 00 02 01 00
 T 26 00 32 01 00 21 00 00 39 7E 32 00 00 21 03 00
 R 00 00 00 00 00 03 01 00 00 0B 01 00 00 0E 01 00
-T 34 00 36 00 06 00 11 00 00
+T 34 00 36 00 21 01 01 E5 AF F5 33 CD 00 00 F1 33
+R 00 00 00 00 02 0C 0B 00
+T 42 00 21 0A 0A E5 26 00 E5 CD 00 00 F1 F1 33 C9
+R 00 00 00 00 02 0A 08 00
+T 50 00
 R 00 00 00 00
-T 3B 00
-R 00 00 00 00
-T 3B 00 21 00 01 19 C5 D5 E5 C5 33 CD 00 00 F1 33
-R 00 00 00 00 02 0C 0A 00
-T 49 00 D1 C1 21 0C 00 19 EB 04 78 D6 01 38 E5 33
-R 00 00 00 00
-T 57 00 C9
-R 00 00 00 00
-T 58 00
-R 00 00 00 00
-T 58 00 FD 21 04 00 FD 34 00 3E 28 FD 96 00 30 04
+T 50 00 FD 21 04 00 FD 34 00 3E 28 FD 96 00 30 04
 R 00 00 00 00 00 04 01 00
-T 66 00 FD 36 00 00
+T 5E 00 FD 36 00 00
 R 00 00 00 00
-T 6A 00
+T 62 00
 R 00 00 00 00
-T 6A 00 CD 00 00 CD 00 00 CD 00 00 CD
+T 62 00 CD 00 00 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 03 07 00 02 06 05 00 02 09 06 00
-T 74 00 00 00 21 00 01 E5 21 3C 00 E5 CD 00 00 F1
+T 6C 00 00 00 21 01 01 E5 21 3C 00 E5 CD 00 00 F1
 R 00 00 00 00 02 02 00 00 02 0D 04 00
-T 82 00 F1 C1 E1 E5 C5 36 03 C9
+T 7A 00 F1 C1 E1 E5 C5 36 03 C9
 R 00 00 00 00

@@ -26,7 +26,7 @@
 #define MAX_ENEMYX_ANIMS	21
 
 extern const unsigned int list_sprite_tile_offset[];
-extern const unsigned char *stageinitdata[];
+//extern const unsigned char *stageinitdata[];
 
 int myabs( int v );
 

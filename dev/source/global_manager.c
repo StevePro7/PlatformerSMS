@@ -11,14 +11,14 @@ const unsigned int list_sprite_tile_offset[] =
 };
 
 // TODO - am I going to use this?
-const unsigned char *stageinitdata[] =
-{
-	Player_Idle__tiles__psgcompr,
-	EnemyA_Idle__tiles__psgcompr,
-	EnemyB_Idle__tiles__psgcompr,
-	EnemyC_Idle__tiles__psgcompr,
-	EnemyD_Idle__tiles__psgcompr,
-};
+//const unsigned char *stageinitdata[] =
+//{
+//	Player_Idle__tiles__psgcompr,
+//	EnemyA_Idle__tiles__psgcompr,
+//	EnemyB_Idle__tiles__psgcompr,
+//	EnemyC_Idle__tiles__psgcompr,
+//	EnemyD_Idle__tiles__psgcompr,
+//};
 
 // https://stackoverflow.com/questions/9772348/get-absolute-value-without-using-abs-function-nor-if-statement
 int myabs( int v )

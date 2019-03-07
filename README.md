@@ -6,6 +6,20 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+07/03/2019
+Sprite tiles 
+I wanted to stress test this a bit more to confirm 256 sprite tiles and how to use them
+Reference:
+https://segaretro.org/Sega_Master_System/Technical_specifications
+Sprites: 16 colors (15 opaque, 1 transparent) per sprite, up to 256 tiles/patterns in VRAM used by sprites,[4] collision detection[22]
+
+First half
+
+Second half
+devkit_SMS_useFirstHalfTilesforSprites_False();
+Tiles 256-447
+There are 192 sprite tiles in the second half, that is 256 + 192 = 448
+
 06/03/2019
 Can I use function pointer for animation for example
 draw[0] = draw_idle
@@ -15,6 +29,9 @@ Example	DuckSlayer
 void(*draw)(void *);
 void draw_actor_player(void *p)
 draw_actor_player
+
+Spent the rest of this evening wrestling with the sprite tile limitations
+and when I constantly load sprite tiles during game play than this kills performance!
 
 05/03/2019
 Did animation sprite test this morning with ROM banking and seems that the min-max is 256-447
