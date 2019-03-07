@@ -2,6 +2,16 @@
 #include "anim_object.h"
 #include "_sms_manager.h"
 
+void engine_anim_manager_player_load( unsigned char index, unsigned int tile )
+{
+	const unsigned char *data = ( const unsigned char * ) player_anim_data[ index ];
+	//const unsigned char bank = ( const unsigned char ) player_anim_bank[ index ];
+
+	//devkit_SMS_mapROMBank( bank );
+	devkit_SMS_loadPSGaidencompressedTiles( data, tile );
+	//devkit_SMS_mapROMBank( 0 );
+}
+
 void engine_anim_manager_enemyA_load( unsigned char index, unsigned int tile )
 {
 	const unsigned char *data = ( const unsigned char * ) enemyA_anim_data[ index ];

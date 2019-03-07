@@ -13,11 +13,11 @@
 
 #define PLAYER_TILE		256
 //#define PLAYER_TILE		328
-//#define ENEMYA_TILE		292
+#define ENEMYA_TILE		292
 //#define ENEMYB_TILE		256 + 24
-//#define ENEMYB_TILE		328
-//#define ENEMYC_TILE		364//256 + 36
-//#define ENEMYD_TILE		436//256 + 48
+#define ENEMYB_TILE		328
+#define ENEMYC_TILE		364//256 + 36
+#define ENEMYD_TILE		436//256 + 48
 
 static unsigned char enemyA_index, enemyB_index, enemyC_index, enemyD_index;
 static unsigned char counter;
@@ -25,11 +25,10 @@ static unsigned char counter;
 void screen_load_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
-	unsigned char player_index;
 	counter = 0;
 	//engine_debug_manager_draw_grid();		// TODO remove this!
 
-	engine_level_manager_load_index( 2 );
+	engine_level_manager_load_index( 1 );
 	engine_level_manager_draw_level();
 	//engine_level_manager_load_levelX();
 
@@ -37,13 +36,6 @@ void screen_load_screen_load()
 	engine_player_manager_load();
 
 	enemyA_index = enemyB_index = enemyC_index, enemyD_index = 0;
-
-	for( player_index = 0; player_index < 1; player_index++ )
-	{
-		engine_anim_manager_player_load( player_index, PLAYER_TILE + player_index * SPRITE_TILES_NUMBER );
-	}
-	
-	//engine_anim_manager_player_load( 3, PLAYER_TILE + 0 * SPRITE_TILES_NUMBER );
 
 	//engine_anim_manager_enemyA_load( enemyA_index, ENEMYA_TILE );
 	//engine_anim_manager_enemyB_load( enemyB_index, ENEMYB_TILE );
@@ -55,7 +47,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 {
 	const unsigned char x = 60;
 	int mod;
-	//unsigned char test1, test2, test3, test4;
+	unsigned char test1, test2, test3, test4;
 
 	counter++;
 	if( counter > 40 )
@@ -78,7 +70,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//engine_font_manager_draw_data( enemyB_index, 20, 12 );
 	//engine_font_manager_draw_data( enemyC_index, 20, 13 );
 	//engine_font_manager_draw_data( enemyD_index, 20, 14 );
-	/*
+
 	//test1 = engine_input_manager_move_left();
 	test1 = mod == 0;// true;
 	if (test1 )
@@ -134,13 +126,13 @@ void screen_load_screen_update( unsigned char *screen_type )
 		//engine_font_manager_draw_data( enemyD_index, 20, 14 );
 		engine_anim_manager_enemyD_load( enemyD_index, ENEMYD_TILE );
 	}
-	*/
+	
 
-	engine_anim_manager_draw( x, 0, PLAYER_TILE );
+	//engine_anim_manager_draw( x, 0, ENEMYA_TILE );
 	//engine_anim_manager_draw( x + 16, 48, ENEMYB_TILE );
 	//engine_anim_manager_draw( x, 96, ENEMYC_TILE );
 	//engine_anim_manager_draw( x, 144, ENEMYD_TILE );
 
-	//engine_player_manager_draw();
+	engine_player_manager_draw();
 	*screen_type = screen_type_load;
 }
