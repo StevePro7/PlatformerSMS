@@ -11,6 +11,6 @@
 #define dateDay		27
 #define author		"StevePro Studios"
 #define name		"Platformer"
-#define descr		"his is a generic platformer game!"
+#define descr		"This is a generic platformer game!"
 
 #endif//_GAME_MANAGER_H_

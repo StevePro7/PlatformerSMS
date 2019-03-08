@@ -36,7 +36,7 @@
 //#include "engine\locale_manager.h"
 #include "source\enum_manager.h"
 #include "source\hack_manager.h"
-#include "source\common_manager.h"
+
 
 // OBJECTS
 //#include "object\enemy_object.h"
@@ -65,6 +65,7 @@
 #include "source\play_screen.h"
 #include "source\func_screen.h"
 //#include "screen\splash_screen.h"
+#include "source\screen_manager.h"
 
 // HACK_MANAGER
 //unsigned char hacker_debug;

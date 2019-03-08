@@ -10,7 +10,7 @@ void main(void)
 	// Global variables.
 	static bool global_pause;
 	//static unsigned char curr_screen_type;
-	//static unsigned char next_screen_type;
+	static unsigned char open_screen_type;
 
 	engine_asm_manager_clear_VRAM();
 	devkit_SMS_init();
@@ -25,12 +25,12 @@ void main(void)
 
 	//custom_initialize();
 	//curr_screen_type = screen_type_none;
-	//next_screen_type = screen_type_load;
-	//next_screen_type = screen_type_init;
-	//next_screen_type = screen_type_test;
-	//next_screen_type = screen_type_play;
+	//open_screen_type = screen_type_load;
+	open_screen_type = screen_type_init;
+	//open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_play;
 
-	engine_screen_manager_init();
+	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for (;;)
 	{
