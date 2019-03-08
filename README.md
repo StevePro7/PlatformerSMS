@@ -6,7 +6,20 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+08/03/2019
+Level budgets
+Decided for no scrolling on level.  Therefore, each level will be 16x12 tiles [of 16x16 tile]
+which means 216 bytes per level that is (16+2) * 12
+There is 16KB available per bank which means that there is availability for how many levels?
+
 07/03/2019
+Animation budget calculated: 192 tiles = 12x tiles per frame * 16x frames
+16x frames equals
+Player	1x idle + 5x anims	6
+EnemyX	1x idle + 5x anims	6
+EnemyN	1x idle * 3x 		3
+Total						15			1x spare
+
 Sprite tiles 
 I wanted to stress test this a bit more to confirm 256 sprite tiles and how to use them
 Reference:
