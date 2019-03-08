@@ -36,7 +36,7 @@
 //#include "engine\locale_manager.h"
 #include "source\enum_manager.h"
 #include "source\hack_manager.h"
-
+#include "source\common_manager.h"
 
 // OBJECTS
 //#include "object\enemy_object.h"

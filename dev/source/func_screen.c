@@ -44,7 +44,6 @@ void screen_func_screen_load()
 	//test = fabsf( data );
 	//test = myabs( data );
 	engine_font_manager_draw_data( posY, 10, 15);
-
 }
 
 void screen_func_screen_update( unsigned char *screen_type )
