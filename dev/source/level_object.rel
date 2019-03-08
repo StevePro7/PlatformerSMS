@@ -1,9 +1,8 @@
 XL2
-H 9 areas F global symbols
+H 9 areas E global symbols
 M level_object
 O -mz80
 S .__.ABS. Def0000
-S _level0200_txt Ref0000
 S _level0201_txt Ref0000
 S _level0301_txt Ref0000
 S _level0202_txt Ref0000
@@ -14,17 +13,17 @@ S _level0402_txt Ref0000
 S _level0502_txt Ref0000
 S _level0503_txt Ref0000
 S _level0504_txt Ref0000
-A _CODE size 16 flags 0 addr 0
-S _levelbank Def000B
+A _CODE size 14 flags 0 addr 0
+S _levelbank Def000A
 S _levelsize Def0000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 16 flags 0 addr 0
+A _INITIALIZED size 14 flags 0 addr 0
 S _leveldata Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 16 flags 0 addr 0
+A _INITIALIZER size 14 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
@@ -32,19 +31,19 @@ T 00 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
-T 00 00 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8
+T 00 00 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8
 R 00 00 00 00
-T 0B 00
+T 0A 00
 R 00 00 00 00
-T 0B 00 02 02 02 02 03 04 04 05 05 05 05
+T 0A 00 02 02 02 02 02 02 02 02 02 02
 R 00 00 00 00
 T 00 00
 R 00 00 07 00
 T 00 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 01 00 02 04 02 00 02 06 04 00
+R 00 00 07 00 02 02 01 00 02 04 03 00 02 06 05 00
 T 06 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 06 00 02 04 03 00 02 06 05 00
+R 00 00 07 00 02 02 02 00 02 04 04 00 02 06 07 00
 T 0C 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 08 00 02 04 07 00 02 06 09 00
-T 12 00 00 00 00 00
-R 00 00 07 00 02 02 0A 00 02 04 0B 00
+R 00 00 07 00 02 02 06 00 02 04 08 00 02 06 09 00
+T 12 00 00 00
+R 00 00 07 00 02 02 0A 00

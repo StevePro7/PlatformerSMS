@@ -135,12 +135,6 @@
     <ClCompile Include="source\state_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
-    <ClCompile Include="banks\bank4.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="banks\bank5.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
     <ClCompile Include="sprites\player.c">
       <Filter>Source Files\sprites</Filter>
     </ClCompile>
@@ -268,12 +262,6 @@
     </ClInclude>
     <ClInclude Include="source\load_screen.h">
       <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank4.h">
-      <Filter>Header Files\banks</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank5.h">
-      <Filter>Header Files\banks</Filter>
     </ClInclude>
     <ClInclude Include="sprites\enemyA.h">
       <Filter>Header Files\sprites</Filter>
