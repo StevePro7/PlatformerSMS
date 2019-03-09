@@ -357,7 +357,7 @@ void engine_player_manager_draw()
 	{
 		get_draw_position();
 		//engine_sprite_manager_draw_player( po->drawX, po->drawY );
-		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + 0 * SPRITE_TILES_NUMBER );		// TODO tidy up...!
+		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + 1 * SPRITE_TILES_NUMBER );		// TODO tidy up...!
 	}
 }
 
