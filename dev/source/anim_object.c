@@ -32,7 +32,7 @@ const unsigned char *player_anim_data[] =
 	player_run_rght_10__tiles__psgcompr,
 };
 /*
-const unsigned char player_anim_lbank[] =
+const unsigned char player_anim_bank[] =
 {
 	player_idle__tiles__psgcompr_bank,
 	player_run_left_01__tiles__psgcompr_bank,

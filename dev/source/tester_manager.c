@@ -59,7 +59,6 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 void engine_tester_manager_load()
 {
 	struct_player_object *po = &global_player_objectX;
-	//po->posnX = 8 * 16 + 24;	po->posnY = 32;		// TODO on the base stevepro
 	po->player_move_type = move_type_idle;
 	po->posnX = 24 + 5 * 16;	po->posnY = 32;
 	//po->posnX = 24 + 5 * 16;	po->posnY = 160;

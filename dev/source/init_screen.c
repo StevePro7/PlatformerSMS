@@ -22,11 +22,14 @@ void screen_init_screen_load()
 	engine_player_manager_load();
 
 	// Load animations.
-	engine_anim_manager_player_load_idle();
+	//engine_anim_manager_player_load_idle();
 
 	//engine_anim_manager_player_load_run( move_type_rght, half_type_prev );
 	//engine_anim_manager_player_load_run( move_type_rght, half_type_prev );
-	engine_anim_manager_player_load_run( move_type_rght, half_type_next );
+	//engine_anim_manager_player_load_run( move_type_rght, half_type_next );
+
+	//engine_anim_manager_enemyX_load_move_idle( sprite_type_enemyD );
+	engine_anim_manager_enemyX_load_move_run( sprite_type_enemyA, move_type_left, half_type_next );
 }
 
 void screen_init_screen_update( unsigned char *screen_type )
