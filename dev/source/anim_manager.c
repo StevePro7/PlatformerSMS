@@ -59,8 +59,6 @@ void engine_anim_manager_enemyD_load( unsigned char index, unsigned int tile )
 
 void engine_anim_manager_player_load_idle()
 {
-	//const unsigned char *data = ( const unsigned char * ) player_anim_data[ 0 ];
-	//devkit_SMS_loadPSGaidencompressedTiles( data, PLAYER_TILE );
 	engine_anim_manager_player_load( 0, PLAYER_TILE_IDLE );
 }
 void engine_anim_manager_player_load_run( unsigned char move_type, unsigned char half_type )
@@ -77,32 +75,6 @@ void engine_anim_manager_player_load_run( unsigned char move_type, unsigned char
 	}
 }
 
-void engine_anim_manager_player_load_run_left( unsigned char half_type )
-{
-	unsigned char index, loop, start;
-	unsigned int tile;
-
-	start = half_type * ANIMATE_MOVE_MAX + 1;
-	for( loop = 0; loop < ANIMATE_MOVE_MAX; loop++ )
-	{
-		index = start + loop;
-		tile = PLAYER_TILE_MOVE + loop * SPRITE_TILES_NUMBER;
-		engine_anim_manager_player_load( index, tile );
-	}
-}
-void engine_anim_manager_player_load_run_rght( unsigned char half_type )
-{
-	unsigned char index, loop, start;
-	unsigned int tile;
-
-	start = half_type * ANIMATE_MOVE_MAX + 1;
-	for( loop = 0; loop < ANIMATE_MOVE_MAX; loop++ )
-	{
-		index = start + loop;
-		tile = PLAYER_TILE_MOVE + loop * SPRITE_TILES_NUMBER;
-		engine_anim_manager_player_load( index, tile );
-	}
-}
 
 void engine_anim_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 {
