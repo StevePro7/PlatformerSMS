@@ -50,6 +50,7 @@ static unsigned char botXTileArray[ TILE_COLLISION ] = { 1, 2, 2, 2, 2, 2, 2, 2,
 #define halfHeightB			rectBHeight / 2
 
 // Private helper methods.
+static void setup_animation();
 static int do_jump( int inpVelocityY );
 static void get_coll_position();
 static void get_draw_position();
@@ -62,8 +63,9 @@ void engine_player_manager_load()
 
 	// Calculate player starting spot based on level.
 	int rectX, rectB;
-	//po->posnX = 0;	po->posnY = 0;
-	po->posnX = po->spotX;	po->posnY = po->spotY;
+	po->posnX = 0;	po->posnY = 0;
+	//po->posnX = po->spotX;
+	//po->posnY = po->spotY;
 	rectX = po->spotX * TILE_WIDE;
 	rectB = po->spotY * TILE_HIGH + TILE_HIGH;
 	po->posnX = rectX + TILE_WIDE / 2;
@@ -72,7 +74,7 @@ void engine_player_manager_load()
 	//po->player_move_type = move_type_idle;
 	po->player_curr_move_type = move_type_idle;
 	po->player_prev_move_type = move_type_idle;
-	//po->posnX = 24 + 4* 16;	po->posnY = 160;
+	//po->posnX = 24 + 4 * 16;	po->posnY = 160;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
@@ -90,6 +92,7 @@ void engine_player_manager_load()
 	po->coll_left = 0;	po->coll_rght = 0;	po->coll_topX = 0;	po->coll_botX = 0;
 	po->previousBottom = 0;
 	po->anim_index = 0;	po->anim_half = 0;
+	po->anim_frame = 0;//	po->anim_count = 50;
 }
 
 //void engine_player_manager_update()
@@ -109,22 +112,39 @@ void engine_player_manager_get_input()
 	unsigned char test1, test2;
 
 	test1 = engine_input_manager_move_left();
+	//test1 = engine_input_manager_hold_left();
 	if( test1 )
 	{
 		if( move_type_left != po->player_curr_move_type )
 		{
 			po->player_curr_move_type = move_type_left;
-			po->player_idxX = INVALID_INDEX;
+			setup_animation();
+			/*po->player_idxX = INVALID_INDEX;
+			po->anim_index = 1;
+			po->anim_frame = INVALID_INDEX;
+			po->anim_half = 0;
+			if( po->player_curr_move_type != po->player_prev_move_type)
+			{
+				engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
+			}*/
 		}
 	}
 
 	test2 = engine_input_manager_move_right();
+	//test2 = engine_input_manager_hold_right();
 	if( test2 )
 	{
 		if( move_type_rght != po->player_curr_move_type )
 		{
 			po->player_curr_move_type = move_type_rght;
-			po->player_idxX = INVALID_INDEX;
+			setup_animation();
+			/*po->player_idxX = INVALID_INDEX;
+			po->anim_index = 1;
+			po->anim_frame = INVALID_INDEX;
+			if( po->player_curr_move_type != po->player_prev_move_type )
+			{
+				engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
+			}*/
 		}
 	}
 
@@ -133,6 +153,24 @@ void engine_player_manager_get_input()
 	if( test1 || test2 )
 	{
 		po->player_idxX++;
+		//engine_font_manager_draw_data( po->anim_frame, 20, 8 );
+		po->anim_frame++;
+		//engine_font_manager_draw_data( po->anim_frame, 20, 9 );
+		
+		if( po->anim_frame >= po->anim_count )
+		{
+			po->anim_frame = 0;
+			po->anim_index++;
+			//engine_font_manager_draw_data( po->anim_frame, 20, 10 );
+
+			if( po->anim_index > 5 )
+			{
+				po->anim_index = 1;
+				po->anim_half = 1 - po->anim_half;
+				engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
+			}
+		}
+
 		if( po->player_idxX > MAX_VELOCITY_X - 1 )
 		{
 			po->player_idxX = MAX_VELOCITY_X - 1;
@@ -140,15 +178,16 @@ void engine_player_manager_get_input()
 
 		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
 		po->velX = ( po->player_curr_move_type - 1 ) * po->deltaX;
+		po->player_prev_move_type = po->player_curr_move_type;
 	}
 	else
 	{
 		po->player_curr_move_type = move_type_idle;
 		po->velX = 0;
 		po->anim_index = 0;
+		po->anim_half = 0;
+		po->anim_frame = 0;
 	}
-
-	po->player_prev_move_type = po->player_curr_move_type;
 }
 
 // TODO debug this method to ensure all calculations correct!
@@ -371,6 +410,20 @@ void engine_player_manager_draw()
 		get_draw_position();
 		//engine_sprite_manager_draw_player( po->drawX, po->drawY );
 		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER );		// TODO tidy up...!
+	}
+}
+
+// Private helper methods.
+static void setup_animation()
+{
+	struct_player_object *po = &global_player_object;
+	po->player_idxX = INVALID_INDEX;
+	po->anim_index = 1;
+	po->anim_frame = INVALID_INDEX;
+	po->anim_half = 0;
+	if( po->player_curr_move_type != po->player_prev_move_type )
+	{
+		engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
 	}
 }
 

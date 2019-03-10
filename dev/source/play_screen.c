@@ -33,7 +33,7 @@ void screen_play_screen_load()
 	engine_state_manager_load();
 	engine_anim_manager_player_load_idle();
 	engine_player_manager_load();
-	
+
 
 	// TODO put in the update method
 	//engine_player_manager_get_input();
