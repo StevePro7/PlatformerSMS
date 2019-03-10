@@ -72,11 +72,11 @@ void engine_anim_manager_player_load_run()
 
 	for( loop = 0; loop < ANIMATE_MOVE_MAX; loop++ )
 	{
-		index = 1 + loop;
+		index = ANIMATE_IDX_LEFT + loop;
 		tile = PLAYER_TILE_LEFT + loop * SPRITE_TILES_NUMBER;
-		//engine_anim_manager_player_load( index, tile );
+		engine_anim_manager_player_load( index, tile );
 
-		index = 11 + loop;
+		index = ANIMATE_IDX_RGHT + loop;
 		tile = PLAYER_TILE_RGHT + loop * SPRITE_TILES_NUMBER;
 		engine_anim_manager_player_load( index, tile );
 	}
