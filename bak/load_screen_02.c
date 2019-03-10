@@ -41,21 +41,21 @@ void screen_load_screen_load()
 
 	for( player_index = 0; player_index < 6; player_index++ )
 	{
-		//engine_anim_manager_player_load( player_index, PLAYER_TILE + player_index * SPRITE_TILES_NUMBER );
+		engine_anim_manager_player_load( player_index, PLAYER_TILE + player_index * SPRITE_TILES_NUMBER );
 	}
 
-	//engine_anim_manager_enemyA_load( 0, ENEMYA_TILE + 0 * SPRITE_TILES_NUMBER );
+	engine_anim_manager_enemyA_load( 0, ENEMYA_TILE + 0 * SPRITE_TILES_NUMBER );
 	for( enemyA_index = 1; enemyA_index < 6; enemyA_index++ )
 	{
-		//engine_anim_manager_enemyA_load( enemyA_index, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
+		engine_anim_manager_enemyA_load( enemyA_index, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
 		//engine_anim_manager_enemyB_load( enemyA_index, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
 		//engine_anim_manager_enemyC_load( enemyA_index, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
 		//engine_anim_manager_enemyD_load( enemyA_index, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
 	}
 
-	//engine_anim_manager_enemyB_load( enemyB_index + 0, ENEMYB_TILE + 0 * SPRITE_TILES_NUMBER );
-	//engine_anim_manager_enemyC_load( enemyC_index + 0, ENEMYC_TILE + 0 * SPRITE_TILES_NUMBER );
-	//engine_anim_manager_enemyD_load( enemyD_index + 0, ENEMYD_TILE + 0 * SPRITE_TILES_NUMBER );
+	engine_anim_manager_enemyB_load( enemyB_index + 0, ENEMYB_TILE + 0 * SPRITE_TILES_NUMBER );
+	engine_anim_manager_enemyC_load( enemyC_index + 0, ENEMYC_TILE + 0 * SPRITE_TILES_NUMBER );
+	engine_anim_manager_enemyD_load( enemyD_index + 0, ENEMYD_TILE + 0 * SPRITE_TILES_NUMBER );
 	//engine_anim_manager_enemyA_load( enemyA_index + 2, PLAYER_TILE + 13 * SPRITE_TILES_NUMBER );
 	//engine_anim_manager_enemyA_load( enemyA_index + 3, PLAYER_TILE + 14 * SPRITE_TILES_NUMBER );
 	//engine_anim_manager_enemyA_load( enemyA_index + 4, PLAYER_TILE + 15 * SPRITE_TILES_NUMBER );

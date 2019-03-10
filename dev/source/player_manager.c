@@ -18,8 +18,8 @@ struct_player_object global_player_object;
 
 #define MAX_VELOCITY_X	10
 #define MAX_VELOCITY_Y	17
-#define MIN_POSITION_X	22
-#define MAX_POSITION_X	250
+#define MIN_POSITION_X	24
+#define MAX_POSITION_X	248
 #define MAX_POSITION_Y	192
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
@@ -384,7 +384,7 @@ void engine_player_manager_draw()
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();
-		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER );		// TODO tidy up...!
+		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER );
 	}
 }
 

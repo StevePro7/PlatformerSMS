@@ -36,7 +36,7 @@ void screen_play_screen_load()
 	// Load animations.
 	engine_anim_manager_player_load_idle();
 	engine_anim_manager_player_load_run();
-
+	engine_anim_manager_enemyX_load_idle();
 
 	// TODO put in the update method
 	//engine_player_manager_get_input();
