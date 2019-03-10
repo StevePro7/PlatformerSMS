@@ -22,6 +22,7 @@ cd ..
 
 cd source
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _psg_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 debug_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
@@ -52,6 +53,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_scre
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
 cd ..
 
 REM echo Build main
@@ -102,9 +104,9 @@ source\_sms_manager.rel		source\global_manager.rel	source\debug_manager.rel	sour
 source\content_manager.rel	source\font_manager.rel		source\sprite_manager.rel	source\tile_manager.rel		source\level_manager.rel	source\anim_manager.rel ^
 source\input_manager.rel	source\player_manager.rel	source\state_manager.rel	source\render_manager.rel	source\scroll_manager.rel	source\tester_manager.rel ^
 source\none_screen.rel ^	source\test_screen.rel		source\init_screen.rel		source\load_screen.rel		source\play_screen.rel		source\func_screen.rel ^
-source\screen_manager.rel ^
+source\screen_manager.rel	source\audio_manager.rel ^
 sprites\master.rel			sprites\player.rel			sprites\enemyA.rel			sprites\enemyB.rel			sprites\enemyC.rel			sprites\enemyD.rel ^
-gfx.rel
+gfx.rel						psg.rel
 
 REM echo Binary output
 ihx2sms output.ihx output.sms
@@ -133,6 +135,6 @@ REM if exist "*.rel" del "*.rel" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-REM C:\SEGA\Fusion\fusion.exe output.sms
+C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

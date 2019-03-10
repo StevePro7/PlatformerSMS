@@ -69,14 +69,12 @@ void devkit_SMS_setTile( const unsigned char tile )
 	SMS_setTile( tile );
 }
 
-//void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned char tile )
-//{
-//	SMS_addSprite( x, y, tile );
-//}
+void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned char tile )
+{
+	SMS_addSprite( x, y, tile );
+}
 void devkit_SMS_addSprite_bulk( unsigned char x, unsigned char y, unsigned char tile )
 {
-	//SMS_addSprite( x, y, tile );
-
 	SMS_addSprite( x + 0, y + 0, tile + 0 );
 	SMS_addSprite( x + 8, y + 0, tile + 1 );
 	SMS_addSprite( x + 16, y + 0, tile + 2 );
@@ -108,25 +106,18 @@ void devkit_SMS_waitForVBlank()
 }
 void devkit_SMS_copySpritestoSAT()
 {
-	//SMS_copySpritestoSAT();
+	UNSAFE_SMS_copySpritestoSAT();
+}
+void devkit_UNSAFE_SMS_copySpritestoSAT()
+{
 	UNSAFE_SMS_copySpritestoSAT();
 }
 
+// input
 unsigned int devkit_SMS_getKeysStatus()
 {
 	return SMS_getKeysStatus();
 }
-
-// #defines
-unsigned char devkit_SPRITEMODE_NORMAL()
-{
-	return SPRITEMODE_NORMAL;
-}
-unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL()
-{
-	return VDPFEATURE_HIDEFIRSTCOL;
-}
-
 unsigned int devkit_PORT_A_KEY_UP()
 {
 	return PORT_A_KEY_UP;
@@ -152,6 +143,17 @@ unsigned int devkit_PORT_A_KEY_2()
 	return PORT_A_KEY_2;
 }
 
+// #defines
+unsigned char devkit_SPRITEMODE_NORMAL()
+{
+	return SPRITEMODE_NORMAL;
+}
+unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL()
+{
+	return VDPFEATURE_HIDEFIRSTCOL;
+}
+
+// Sega header.
 #ifdef _CONSOLE
 #else
 	SMS_EMBED_SEGA_ROM_HEADER( productCode, revision );

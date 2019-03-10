@@ -49,12 +49,15 @@
     <Filter Include="Source Files\sprites">
       <UniqueIdentifier>{95ffab5b-dd40-4bbe-af02-75768740f770}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\content">
+      <UniqueIdentifier>{a095ca78-d0fa-47cd-ac6d-306f4b7ea492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content">
+      <UniqueIdentifier>{d0a30c12-700a-4d99-a846-7ece3c7c7f31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gfx.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="banks\bank2.c">
@@ -162,12 +165,21 @@
     <ClCompile Include="source\screen_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="source\audio_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
+    <ClCompile Include="psg.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
+    <ClCompile Include="source\_psg_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="banks\bank2.h">
@@ -288,6 +300,18 @@
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="source\screen_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\audio_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx.h">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="psg.h">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="source\_psg_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>

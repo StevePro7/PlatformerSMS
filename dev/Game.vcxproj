@@ -148,8 +148,10 @@
     <ClCompile Include="banks\bank3.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="psg.c" />
     <ClCompile Include="source\anim_manager.c" />
     <ClCompile Include="source\anim_object.c" />
+    <ClCompile Include="source\audio_manager.c" />
     <ClCompile Include="source\screen_manager.c" />
     <ClCompile Include="source\content_manager.c" />
     <ClCompile Include="source\debug_manager.c" />
@@ -174,6 +176,7 @@
     <ClCompile Include="source\tester_manager.c" />
     <ClCompile Include="source\test_screen.c" />
     <ClCompile Include="source\tile_manager.c" />
+    <ClCompile Include="source\_psg_manager.c" />
     <ClCompile Include="source\_sms_manager.c" />
     <ClCompile Include="sprites\enemyA.c" />
     <ClCompile Include="sprites\enemyB.c" />
@@ -188,8 +191,10 @@
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="psg.h" />
     <ClInclude Include="source\anim_manager.h" />
     <ClInclude Include="source\anim_object.h" />
+    <ClInclude Include="source\audio_manager.h" />
     <ClInclude Include="source\screen_manager.h" />
     <ClInclude Include="source\content_manager.h" />
     <ClInclude Include="source\debug_manager.h" />
@@ -218,6 +223,7 @@
     <ClInclude Include="source\tester_manager.h" />
     <ClInclude Include="source\test_screen.h" />
     <ClInclude Include="source\tile_manager.h" />
+    <ClInclude Include="source\_psg_manager.h" />
     <ClInclude Include="source\_sms_manager.h" />
     <ClInclude Include="sprites\enemyA.h" />
     <ClInclude Include="sprites\enemyB.h" />

@@ -134,7 +134,6 @@ static void enemyB_load( unsigned char index, unsigned int tile )
 
 	devkit_SMS_mapROMBank( bank );
 	devkit_SMS_loadPSGaidencompressedTiles( data, tile );
-	//devkit_SMS_mapROMBank( 0 );
 }
 
 static void enemyC_load( unsigned char index, unsigned int tile )
@@ -144,7 +143,6 @@ static void enemyC_load( unsigned char index, unsigned int tile )
 
 	devkit_SMS_mapROMBank( bank );
 	devkit_SMS_loadPSGaidencompressedTiles( data, tile );
-	//devkit_SMS_mapROMBank( 0 );
 }
 
 static void enemyD_load( unsigned char index, unsigned int tile )
@@ -154,5 +152,4 @@ static void enemyD_load( unsigned char index, unsigned int tile )
 
 	devkit_SMS_mapROMBank( bank );
 	devkit_SMS_loadPSGaidencompressedTiles( data, tile );
-	//devkit_SMS_mapROMBank( 0 );
 }

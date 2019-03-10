@@ -19,25 +19,26 @@ void devkit_SMS_setSpritePaletteColor( const unsigned char entry, const unsigned
 void devkit_SMS_setNextTileatXY( unsigned char x, unsigned char y );
 void devkit_SMS_setTile( const unsigned char tile );
 
-//void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned char tile );
+void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned char tile );
 void devkit_SMS_addSprite_bulk( unsigned char x, unsigned char y, unsigned char tile );
 
 void devkit_SMS_initSprites();
 void devkit_SMS_finalizeSprites();
 void devkit_SMS_waitForVBlank();
 void devkit_SMS_copySpritestoSAT();
+void devkit_UNSAFE_SMS_copySpritestoSAT();
 
+// input
 unsigned int devkit_SMS_getKeysStatus();
-
-// #defines
-unsigned char devkit_SPRITEMODE_NORMAL();
-unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL();
-
 unsigned int devkit_PORT_A_KEY_UP();
 unsigned int devkit_PORT_A_KEY_DOWN();
 unsigned int devkit_PORT_A_KEY_LEFT();
 unsigned int devkit_PORT_A_KEY_RIGHT();
 unsigned int devkit_PORT_A_KEY_1();
 unsigned int devkit_PORT_A_KEY_2();
+
+// #defines
+unsigned char devkit_SPRITEMODE_NORMAL();
+unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL();
 
 #endif//_SMS_MANAGER_H_

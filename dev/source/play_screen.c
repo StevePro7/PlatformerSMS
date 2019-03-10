@@ -9,6 +9,7 @@
 #include "anim_manager.h"
 #include "player_manager.h"
 #include "state_manager.h"
+#include "audio_manager.h"
 
 void screen_play_screen_load()
 {
