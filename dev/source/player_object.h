@@ -6,8 +6,8 @@
 
 typedef struct tag_struct_player_object
 {
-	//enum_move_type player_move_type;
-	enum_move_type player_curr_move_type, player_prev_move_type;
+	enum_move_type player_move_type;
+	//enum_move_type player_curr_move_type, player_prev_move_type;
 	int spotX, spotY;
 	int posnX, posnY;
 	int drawX, drawY;
@@ -29,7 +29,7 @@ typedef struct tag_struct_player_object
 	signed char coll_left, coll_rght, coll_topX, coll_botX;
 	int previousBottom;
 	bool advUp, advDown;				// TODO get rid of this as was used for debugging!!
-	unsigned char anim_index, anim_start, anim_maxim, anim_half;
+	unsigned char anim_index, anim_start, anim_maxim;
 	signed char anim_frame, anim_count;
 
 } struct_player_object;

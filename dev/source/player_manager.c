@@ -64,16 +64,12 @@ void engine_player_manager_load()
 	// Calculate player starting spot based on level.
 	int rectX, rectB;
 	po->posnX = 0;	po->posnY = 0;
-	//po->posnX = po->spotX;
-	//po->posnY = po->spotY;
 	rectX = po->spotX * TILE_WIDE;
 	rectB = po->spotY * TILE_HIGH + TILE_HIGH;
 	po->posnX = rectX + TILE_WIDE / 2;
 	po->posnY = rectB;
 
-	//po->player_move_type = move_type_idle;
-	po->player_curr_move_type = move_type_idle;
-	po->player_prev_move_type = move_type_idle;
+	po->player_move_type = move_type_idle;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 160;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
@@ -91,7 +87,7 @@ void engine_player_manager_load()
 	po->coll_horz = 0;	po->coll_vert = 0;
 	po->coll_left = 0;	po->coll_rght = 0;	po->coll_topX = 0;	po->coll_botX = 0;
 	po->previousBottom = 0;
-	po->anim_index = 0;	po->anim_half = 0;
+	po->anim_index = 0;
 	po->anim_start = 0; po->anim_maxim = 0;
 	po->anim_frame = 0;//	po->anim_count = 50;
 }
@@ -116,20 +112,11 @@ void engine_player_manager_get_input()
 	//test1 = engine_input_manager_hold_left();
 	if( test1 )
 	{
-		if( move_type_left != po->player_curr_move_type )
+		if( move_type_left != po->player_move_type )
 		{
-			po->player_curr_move_type = move_type_left;
+			po->player_move_type = move_type_left;
 			po->anim_index = ANIMATE_IDX_LEFT;
-			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			setup_animation();
-			/*po->player_idxX = INVALID_INDEX;
-			po->anim_index = 1;
-			po->anim_frame = INVALID_INDEX;
-			po->anim_half = 0;
-			if( po->player_curr_move_type != po->player_prev_move_type)
-			{
-				engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
-			}*/
 		}
 	}
 
@@ -137,19 +124,11 @@ void engine_player_manager_get_input()
 	//test2 = engine_input_manager_hold_right();
 	if( test2 )
 	{
-		if( move_type_rght != po->player_curr_move_type )
+		if( move_type_rght != po->player_move_type )
 		{
-			po->player_curr_move_type = move_type_rght;
+			po->player_move_type = move_type_rght;
 			po->anim_index = ANIMATE_IDX_RGHT;
-			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			setup_animation();
-			/*po->player_idxX = INVALID_INDEX;
-			po->anim_index = 1;
-			po->anim_frame = INVALID_INDEX;
-			if( po->player_curr_move_type != po->player_prev_move_type )
-			{
-				engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
-			}*/
 		}
 	}
 
@@ -158,33 +137,16 @@ void engine_player_manager_get_input()
 	if( test1 || test2 )
 	{
 		po->player_idxX++;
-		engine_font_manager_draw_data( po->anim_index, 20, 8 );
 		po->anim_frame++;
-		engine_font_manager_draw_data( po->anim_index, 20, 9 );
-		
+
 		if( po->anim_frame >= po->anim_count )
 		{
-			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			po->anim_frame = 0;
 			po->anim_index++;
-			engine_font_manager_draw_data( po->anim_index, 20, 10 );
-			//engine_font_manager_draw_data( po->anim_frame, 20, 10 );
 
 			if( po->anim_index >= po->anim_maxim )
 			{
-				engine_font_manager_draw_data( po->anim_index, 20, 1 );
-				engine_font_manager_draw_data( po->anim_start, 20, 2 );
-				engine_font_manager_draw_data( po->anim_maxim, 20, 3 );
-
-
 				po->anim_index = po->anim_start;
-
-				engine_font_manager_draw_data( po->anim_index, 20, 4 );
-				engine_font_manager_draw_data( po->anim_start, 20, 5 );
-				engine_font_manager_draw_data( po->anim_maxim, 20, 6 );
-
-				po->anim_half = 1 - po->anim_half;
-				//engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
 			}
 		}
 
@@ -194,22 +156,17 @@ void engine_player_manager_get_input()
 		}
 
 		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
-		//po->velX = ( po->player_curr_move_type - 1 ) * po->deltaX;	// stevepro TODO uncomment!
-		po->player_prev_move_type = po->player_curr_move_type;
+		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
 	}
 	else
 	{
-		po->player_curr_move_type = move_type_idle;
+		po->player_move_type = move_type_idle;
 		po->velX = 0;
-		engine_font_manager_draw_data( po->anim_index, 20, 8 );
 		po->anim_index = 0;
-		engine_font_manager_draw_data( po->anim_index, 20, 9 );
-		po->anim_half = 0;
 		po->anim_frame = 0;
 	}
 }
 
-// TODO debug this method to ensure all calculations correct!
 void engine_player_manager_apply_physics()
 {
 	struct_player_object *po = &global_player_object;
@@ -427,7 +384,6 @@ void engine_player_manager_draw()
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();
-		//engine_sprite_manager_draw_player( po->drawX, po->drawY );
 		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER );		// TODO tidy up...!
 	}
 }
@@ -441,16 +397,6 @@ static void setup_animation()
 
 	po->anim_start = po->anim_index;
 	po->anim_maxim = po->anim_start + ANIMATE_MOVE_MAX;
-
-	engine_font_manager_draw_data( po->anim_index, 20, 15 );
-	engine_font_manager_draw_data( po->anim_start, 20, 16 );
-	engine_font_manager_draw_data( po->anim_maxim, 20, 17 );
-
-	po->anim_half = 0;
-	if( po->player_curr_move_type != po->player_prev_move_type )
-	{
-		//engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
-	}
 }
 
 static int do_jump( int inpVelocityY )
