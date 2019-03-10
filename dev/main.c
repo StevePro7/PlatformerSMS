@@ -23,8 +23,9 @@ void main(void)
 	custom_initialize();
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_init;
-	open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_play;
+	open_screen_type = screen_type_func;
 
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
@@ -38,6 +39,9 @@ void main(void)
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
 		devkit_SMS_copySpritestoSAT();
+
+		devkit_PSGFrame();
+		devkit_PSGSFXFrame();
 	}
 }
 

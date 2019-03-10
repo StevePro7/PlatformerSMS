@@ -1,5 +1,5 @@
 XL2
-H 9 areas 17 global symbols
+H 9 areas 19 global symbols
 M main
 O -mz80
 S _engine_input_manager_update Ref0000
@@ -7,6 +7,7 @@ S _engine_screen_manager_init Ref0000
 S _devkit_SMS_copySpritestoSAT Ref0000
 S _devkit_SMS_displayOn Ref0000
 S _devkit_SMS_init Ref0000
+S _devkit_PSGSFXFrame Ref0000
 S _engine_screen_manager_update Ref0000
 S _engine_content_manager_load_sprites Ref0000
 S _devkit_SMS_VDPturnOnFeature Ref0000
@@ -14,6 +15,7 @@ S _devkit_SMS_finalizeSprites Ref0000
 S _engine_hack_manager_init Ref0000
 S _engine_content_manager_load_back_tiles Ref0000
 S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref0000
+S _devkit_PSGFrame Ref0000
 S .__.ABS. Def0000
 S _devkit_SMS_setSpriteMode Ref0000
 S _devkit_SMS_useFirstHalfTilesforSprites_False Ref0000
@@ -22,9 +24,9 @@ S _devkit_SPRITEMODE_NORMAL Ref0000
 S _devkit_SMS_waitForVBlank Ref0000
 S _devkit_SMS_initSprites Ref0000
 S _engine_hack_manager_invert Ref0000
-A _CODE size 62 flags 0 addr 0
+A _CODE size 68 flags 0 addr 0
 S _main Def0016
-S _custom_initialize Def005C
+S _custom_initialize Def0062
 S _engine_asm_manager_clear_VRAM Def0000
 A _DATA size 1 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -49,22 +51,24 @@ R 00 00 00 00 00 0A 00 00
 T 16 00
 R 00 00 00 00
 T 16 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 00 03 00 00 02 06 04 00 02 09 0F 00
+R 00 00 00 00 00 03 00 00 02 06 04 00 02 09 11 00
 T 20 00 00 00 45 C5 33 CD 00 00 33 CD 00 00 CD
-R 00 00 00 00 02 02 10 00 02 08 0D 00 02 0C 0E 00
+R 00 00 00 00 02 02 12 00 02 08 0F 00 02 0C 10 00
 T 2D 00 00 00 E5 CD 00 00 F1 CD 00 00 CD
-R 00 00 00 00 02 02 0B 00 02 06 07 00 02 0A 06 00
-T 38 00 00 00 CD 5C 00 3E 01 F5 33 CD 00 00 33 CD
-R 00 00 00 00 02 02 0A 00 00 05 00 00 02 0C 01 00
+R 00 00 00 00 02 02 0C 00 02 06 08 00 02 0A 07 00
+T 38 00 00 00 CD 62 00 3E 05 F5 33 CD 00 00 33 CD
+R 00 00 00 00 02 02 0B 00 00 05 00 00 02 0C 01 00
 T 46 00 00 00
 R 00 00 00 00 02 02 03 00
 T 48 00
 R 00 00 00 00
 T 48 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 12 00 02 06 00 00 02 09 05 00
-T 52 00 00 00 CD 00 00 CD 00 00 18 EC
-R 00 00 00 00 02 02 08 00 02 05 11 00 02 08 02 00
-T 5C 00
+R 00 00 00 00 02 03 14 00 02 06 00 00 02 09 06 00
+T 52 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 02 09 00 02 05 13 00 02 08 02 00
+T 5B 00 00 00 CD 00 00 18 E6
+R 00 00 00 00 02 02 0D 00 02 05 05 00
+T 62 00
 R 00 00 00 00
-T 5C 00 CD 00 00 C3 00 00
-R 00 00 00 00 02 03 09 00 02 06 13 00
+T 62 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 03 0A 00 02 06 15 00

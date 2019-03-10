@@ -1,6 +1,6 @@
 XL2
 H 9 areas 22 global symbols
-M _psg_manager
+M _snd_manager
 O -mz80
 S _PSGSFXPlay Ref0000
 S _PSGRestoreVolumes Ref0000

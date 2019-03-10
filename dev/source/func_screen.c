@@ -1,8 +1,10 @@
 #include "func_screen.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-#include <math.h>
-#include <stdlib.h>
+#include "input_manager.h"
+#include "audio_manager.h"
+//#include <math.h>
+//#include <stdlib.h>
 
 static int myabs( int v )
 {
@@ -33,20 +35,45 @@ void screen_func_screen_load()
 //	unsigned char deltaY;
 
 	int velY = 0;
-	engine_font_manager_draw_data( posY, 10, 5 );
+	//engine_font_manager_draw_data( posY, 10, 5 );
 
-	engine_font_manager_draw_data( velocityY[0], 10, 10 );
-	engine_font_manager_draw_data( velY, 20, 10 );
+	//engine_font_manager_draw_data( velocityY[0], 10, 10 );
+	//engine_font_manager_draw_data( velY, 20, 10 );
 	velY = do_jump( velY );
-	engine_font_manager_draw_data( velY, 20, 12 );
+	//engine_font_manager_draw_data( velY, 20, 12 );
 
 	posY += velY;
 	//test = fabsf( data );
 	//test = myabs( data );
-	engine_font_manager_draw_data( posY, 10, 15);
+	//engine_font_manager_draw_data( posY, 10, 15);
 }
 
 void screen_func_screen_update( unsigned char *screen_type )
 {
+	unsigned char test;
+	test = engine_input_manager_hold_left();
+	if( test )
+	{
+		engine_font_manager_draw_text( "TEST", 15, 15 );
+		engine_audio_manager_start_music();
+	}
+
+	test = engine_input_manager_hold_right();
+	if( test )
+	{
+		engine_audio_manager_stop_music();
+	}
+
+	test = engine_input_manager_hold_up();
+	if( test )
+	{
+		engine_audio_manager_sound_wrong();
+	}
+	test = engine_input_manager_hold_down();
+	if( test )
+	{
+		engine_audio_manager_sound_right();
+	}
+
 	*screen_type = screen_type_func;
 }

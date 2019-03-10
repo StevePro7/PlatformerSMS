@@ -20,10 +20,11 @@
 //const float GroundDragFactor = 0.48f;
 //const float AirDragFactor = 0.58f;
 
-#include "gfx.h"
+//#include "psg.h"
+//#include "gfx.h"
 
 #include "source\_sms_manager.h"
-//#include "source\_snd_manager.h"
+#include "source\_snd_manager.h"
 
 // BANKS
 //#include "banks\bank2.h"

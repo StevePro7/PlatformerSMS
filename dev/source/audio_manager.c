@@ -1,5 +1,5 @@
 #include "audio_manager.h"
-#include "_psg_manager.h"
+#include "_snd_manager.h"
 #include "..\psg.h"
 
 #define MUSIC_PSG			music_psg
@@ -21,8 +21,8 @@ void engine_audio_manager_finish_music()
 {
 	//if( hacker_music )
 	{
-		devkit_PSGSetMusicVolumeAttenuation( 0 );
-		devkit_PSGPlayNoRepeat( ( unsigned char* ) FINISH_PSG );
+		//devkit_PSGSetMusicVolumeAttenuation( 0 );
+		//devkit_PSGPlayNoRepeat( ( unsigned char* ) FINISH_PSG );
 	}
 }
 
