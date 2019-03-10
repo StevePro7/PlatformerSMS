@@ -26,7 +26,7 @@ void screen_init_screen_load()
 	engine_player_manager_load();
 
 	// Load animations.
-	//engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_idle();
 
 	//engine_anim_manager_player_load_run( move_type_rght, half_type_prev );
 	//engine_anim_manager_player_load_run( move_type_rght, half_type_prev );

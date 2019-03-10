@@ -59,7 +59,9 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 void engine_tester_manager_load()
 {
 	struct_player_object *po = &global_player_objectX;
-	po->player_move_type = move_type_idle;
+	//po->player_move_type = move_type_idle;
+	po->player_curr_move_type = move_type_idle;
+	po->player_prev_move_type = move_type_idle;
 	po->posnX = 24 + 5 * 16;	po->posnY = 32;
 	//po->posnX = 24 + 5 * 16;	po->posnY = 160;
 	po->drawX = 0;	po->drawY = 0;
@@ -290,7 +292,9 @@ static void engine_tester_manager_cleanup()
 void engine_tester_manager_update()
 {
 	struct_player_object *po = &global_player_objectX;
-	po->player_move_type = move_type_idle;
+	//po->player_move_type = move_type_idle;
+	po->player_curr_move_type = move_type_idle;
+	po->player_prev_move_type = move_type_idle;
 	po->velX = 0;
 
 	po->advUp = false;	po->advDown = false;

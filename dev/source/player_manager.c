@@ -62,13 +62,16 @@ void engine_player_manager_load()
 
 	// Calculate player starting spot based on level.
 	int rectX, rectB;
-	po->posnX = 0;	po->posnY = 0;
+	//po->posnX = 0;	po->posnY = 0;
+	po->posnX = po->spotX;	po->posnY = po->spotY;
 	rectX = po->spotX * TILE_WIDE;
 	rectB = po->spotY * TILE_HIGH + TILE_HIGH;
 	po->posnX = rectX + TILE_WIDE / 2;
 	po->posnY = rectB;
 
-	po->player_move_type = move_type_idle;
+	//po->player_move_type = move_type_idle;
+	po->player_curr_move_type = move_type_idle;
+	po->player_prev_move_type = move_type_idle;
 	//po->posnX = 24 + 4* 16;	po->posnY = 160;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
@@ -84,17 +87,21 @@ void engine_player_manager_load()
 	po->wasJumping = false;
 	po->jumpFrame = 0;
 	po->coll_horz = 0;	po->coll_vert = 0;
+	po->coll_left = 0;	po->coll_rght = 0;	po->coll_topX = 0;	po->coll_botX = 0;
 	po->previousBottom = 0;
+	po->anim_index = 0;	po->anim_half = 0;
 }
 
-void engine_player_manager_update()
-{
-	struct_player_object *po = &global_player_object;
-	po->player_move_type = move_type_idle;
-	po->velX = 0;
-
-	engine_player_manager_get_input();
-}
+//void engine_player_manager_update()
+//{
+//	struct_player_object *po = &global_player_object;
+//	//po->player_move_type = move_type_idle;
+//	po->player_curr_move_type = move_type_idle;
+//	po->player_prev_move_type = move_type_idle;
+//	po->velX = 0;
+//
+//	engine_player_manager_get_input();
+//}
 
 void engine_player_manager_get_input()
 {
@@ -104,9 +111,9 @@ void engine_player_manager_get_input()
 	test1 = engine_input_manager_move_left();
 	if( test1 )
 	{
-		if( move_type_left != po->player_move_type )
+		if( move_type_left != po->player_curr_move_type )
 		{
-			po->player_move_type = move_type_left;
+			po->player_curr_move_type = move_type_left;
 			po->player_idxX = INVALID_INDEX;
 		}
 	}
@@ -114,9 +121,9 @@ void engine_player_manager_get_input()
 	test2 = engine_input_manager_move_right();
 	if( test2 )
 	{
-		if( move_type_rght != po->player_move_type )
+		if( move_type_rght != po->player_curr_move_type )
 		{
-			po->player_move_type = move_type_rght;
+			po->player_curr_move_type = move_type_rght;
 			po->player_idxX = INVALID_INDEX;
 		}
 	}
@@ -132,13 +139,16 @@ void engine_player_manager_get_input()
 		}
 
 		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
-		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
+		po->velX = ( po->player_curr_move_type - 1 ) * po->deltaX;
 	}
 	else
 	{
-		po->player_move_type = move_type_idle;
+		po->player_curr_move_type = move_type_idle;
 		po->velX = 0;
+		po->anim_index = 0;
 	}
+
+	po->player_prev_move_type = po->player_curr_move_type;
 }
 
 // TODO debug this method to ensure all calculations correct!
@@ -192,7 +202,7 @@ void engine_player_manager_apply_physics()
 	po->posnY += po->velY;
 	if( po->posnY >= MAX_POSITION_Y )
 	{
-		engine_font_manager_draw_text( "DEAD", 20, 20 );
+		engine_font_manager_draw_text( "DEAD", 20, 20 );		// TODO remove this!
 	}
 }
 
@@ -267,6 +277,10 @@ void engine_player_manager_handle_collisions()
 		po->coll_horz = leftTile;
 		po->coll_vert = topXTile;
 	}
+	po->coll_left = leftTile;
+	po->coll_rght = rghtTile;
+	po->coll_topX = topXTile;
+	po->coll_botX = botXTile;
 
 	// For each potentially colliding tile,
 	for( y = topXTile; y <= botXTile; ++y )
@@ -356,7 +370,7 @@ void engine_player_manager_draw()
 	{
 		get_draw_position();
 		//engine_sprite_manager_draw_player( po->drawX, po->drawY );
-		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + 0 * SPRITE_TILES_NUMBER );		// TODO tidy up...!
+		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER );		// TODO tidy up...!
 	}
 }
 

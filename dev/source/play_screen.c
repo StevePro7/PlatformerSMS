@@ -6,6 +6,7 @@
 #include "font_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
+#include "anim_manager.h"
 #include "player_manager.h"
 #include "state_manager.h"
 
@@ -18,8 +19,8 @@ void screen_play_screen_load()
 
 	//engine_debug_manager_draw_grid();		// TODO remove this!
 
-	//engine_level_manager_load_index( 0 );
-	engine_level_manager_load_index( ho->hacker_level );
+	engine_level_manager_load_index( 0 );
+	//engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
 
 	//TODO refactor this so can lookup as unsigned char but cast back as enum
@@ -28,8 +29,11 @@ void screen_play_screen_load()
 	//engine_font_manager_draw_data( coll_type, 9, 10 );
 
 	//engine_level_manager_load_levelX();
+	
 	engine_state_manager_load();
+	engine_anim_manager_player_load_idle();
 	engine_player_manager_load();
+	
 
 	// TODO put in the update method
 	//engine_player_manager_get_input();
