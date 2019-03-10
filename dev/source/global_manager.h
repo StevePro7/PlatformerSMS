@@ -24,6 +24,10 @@
 #define TILE_WIDE				16
 #define TILE_HIGH				16
 
+#define ANIMATE_MOVE_MAX		5
+#define ANIMATE_IDX_LEFT		1
+#define ANIMATE_IDX_RGHT		6
+
 #define MAX_PLAYER_ANIMS	3
 #define MAX_ENEMYX_ANIMS	21
 

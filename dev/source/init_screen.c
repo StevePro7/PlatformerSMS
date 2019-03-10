@@ -77,5 +77,5 @@ void screen_init_screen_update( unsigned char *screen_type )
 static void draw()
 {
 	//engine_anim_manager_enemyX_load_move_run( sprite_type_enemyA, move_type_rght, half );
-	engine_anim_manager_player_load_run( move_type_left, half );
+	//engine_anim_manager_player_load_run( move_type_left, half );
 }

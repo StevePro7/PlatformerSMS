@@ -4,11 +4,12 @@
 #include "enum_manager.h"
 #include "_sms_manager.h"
 
-#define ANIMATE_MOVE_MAX		5
+//#define ANIMATE_MOVE_MAX		5
 #define PLAYER_TILE_IDLE		256
-#define PLAYER_TILE_MOVE		256 + 1 * SPRITE_TILES_NUMBER
-#define ENEMYX_TILE_IDLE		328
-#define ENEMYX_TILE_MOVE		328 + 1 * SPRITE_TILES_NUMBER
+#define PLAYER_TILE_LEFT		256 + 1 * SPRITE_TILES_NUMBER
+#define PLAYER_TILE_RGHT		256 + 6 * SPRITE_TILES_NUMBER
+#define ENEMYX_TILE_IDLE		388
+#define ENEMYX_TILE_MOVE		388 + 1 * SPRITE_TILES_NUMBER
 
 void engine_anim_manager_player_load( unsigned char index, unsigned int tile )
 {
@@ -64,19 +65,35 @@ void engine_anim_manager_player_load_idle()
 {
 	engine_anim_manager_player_load( 0, PLAYER_TILE_IDLE );
 }
-void engine_anim_manager_player_load_run( unsigned char move_type, unsigned char half_type )
+void engine_anim_manager_player_load_run()
 {
-	unsigned char index, loop, start;
+	unsigned char index, loop;
 	unsigned int tile;
 
-	start = move_type * ANIMATE_MOVE_MAX + half_type * ANIMATE_MOVE_MAX + 1;
 	for( loop = 0; loop < ANIMATE_MOVE_MAX; loop++ )
 	{
-		index = start + loop;
-		tile = PLAYER_TILE_MOVE + loop * SPRITE_TILES_NUMBER;
+		index = 1 + loop;
+		tile = PLAYER_TILE_LEFT + loop * SPRITE_TILES_NUMBER;
+		//engine_anim_manager_player_load( index, tile );
+
+		index = 11 + loop;
+		tile = PLAYER_TILE_RGHT + loop * SPRITE_TILES_NUMBER;
 		engine_anim_manager_player_load( index, tile );
 	}
 }
+//void engine_anim_manager_player_load_run( unsigned char move_type, unsigned char half_type )
+//{
+//	unsigned char index, loop, start;
+//	unsigned int tile;
+//
+//	start = move_type * ANIMATE_MOVE_MAX + half_type * ANIMATE_MOVE_MAX + 1;
+//	for( loop = 0; loop < ANIMATE_MOVE_MAX; loop++ )
+//	{
+//		index = start + loop;
+//		tile = PLAYER_TILE_LEFT + loop * SPRITE_TILES_NUMBER;
+//		engine_anim_manager_player_load( index, tile );
+//	}
+//}
 void engine_anim_manager_enemyX_load_move_idle( unsigned char sprite_type )
 {
 	const unsigned char index = 0;

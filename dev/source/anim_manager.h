@@ -8,7 +8,8 @@ void engine_anim_manager_enemyC_load( unsigned char index, unsigned int tile );
 void engine_anim_manager_enemyD_load( unsigned char index, unsigned int tile );
 
 void engine_anim_manager_player_load_idle();
-void engine_anim_manager_player_load_run( unsigned char move_type, unsigned char half_type );
+void engine_anim_manager_player_load_run();
+//void engine_anim_manager_player_load_run( unsigned char move_type, unsigned char half_type );
 void engine_anim_manager_enemyX_load_move_idle( unsigned char sprite_type );
 void engine_anim_manager_enemyX_load_move_run( unsigned char sprite_type, unsigned char move_type, unsigned char half_type );
 //void engine_anim_manager_enemyX_load_move_run_left( unsigned char sprite_type, unsigned char half );

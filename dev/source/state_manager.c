@@ -15,6 +15,6 @@ void engine_state_manager_load()
 		po->spotY = lo->player_spot / lo->draw_cols;
 		po->spotX = lo->player_spot % lo->draw_cols;
 
-		po->anim_count = 5;
+		po->anim_count = 50;
 	}
 }

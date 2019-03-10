@@ -32,6 +32,7 @@ void screen_play_screen_load()
 	
 	engine_state_manager_load();
 	engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_run();
 	engine_player_manager_load();
 
 

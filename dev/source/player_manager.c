@@ -118,6 +118,8 @@ void engine_player_manager_get_input()
 		if( move_type_left != po->player_curr_move_type )
 		{
 			po->player_curr_move_type = move_type_left;
+			po->anim_index = ANIMATE_IDX_LEFT;
+			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			setup_animation();
 			/*po->player_idxX = INVALID_INDEX;
 			po->anim_index = 1;
@@ -137,6 +139,8 @@ void engine_player_manager_get_input()
 		if( move_type_rght != po->player_curr_move_type )
 		{
 			po->player_curr_move_type = move_type_rght;
+			po->anim_index = ANIMATE_IDX_RGHT;
+			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			setup_animation();
 			/*po->player_idxX = INVALID_INDEX;
 			po->anim_index = 1;
@@ -159,15 +163,17 @@ void engine_player_manager_get_input()
 		
 		if( po->anim_frame >= po->anim_count )
 		{
+			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			po->anim_frame = 0;
 			po->anim_index++;
+			engine_font_manager_draw_data( po->anim_index, 20, 10 );
 			//engine_font_manager_draw_data( po->anim_frame, 20, 10 );
 
-			if( po->anim_index > 5 )
+			if( po->anim_index > ANIMATE_MOVE_MAX )
 			{
 				po->anim_index = 1;
 				po->anim_half = 1 - po->anim_half;
-				engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
+				//engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
 			}
 		}
 
@@ -418,12 +424,11 @@ static void setup_animation()
 {
 	struct_player_object *po = &global_player_object;
 	po->player_idxX = INVALID_INDEX;
-	po->anim_index = 1;
 	po->anim_frame = INVALID_INDEX;
 	po->anim_half = 0;
 	if( po->player_curr_move_type != po->player_prev_move_type )
 	{
-		engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
+		//engine_anim_manager_player_load_run( po->player_curr_move_type, po->anim_half );
 	}
 }
 
