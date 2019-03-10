@@ -29,7 +29,7 @@ typedef struct tag_struct_player_object
 	signed char coll_left, coll_rght, coll_topX, coll_botX;
 	int previousBottom;
 	bool advUp, advDown;				// TODO get rid of this as was used for debugging!!
-	unsigned char anim_index, anim_half;
+	unsigned char anim_index, anim_start, anim_maxim, anim_half;
 	signed char anim_frame, anim_count;
 
 } struct_player_object;
