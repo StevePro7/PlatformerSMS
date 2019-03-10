@@ -9,7 +9,7 @@
 #include "anim_manager.h"
 #include "player_manager.h"
 #include "state_manager.h"
-//#include "audio_manager.h"
+#include "audio_manager.h"
 
 void screen_play_screen_load()
 {
@@ -43,6 +43,9 @@ void screen_play_screen_load()
 	//engine_player_manager_get_input();
 	//engine_player_manager_apply_physics();
 	//engine_player_manager_handle_collisions();
+
+	// TODO wire up different game play music...
+	//engine_audio_manager_start_music();
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
