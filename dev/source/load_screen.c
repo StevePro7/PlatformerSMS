@@ -184,11 +184,10 @@ void screen_load_screen_update( unsigned char *screen_type )
 		}*/
 	}
 	
-	engine_anim_manager_draw( x + 64, 64, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
-
-	engine_anim_manager_draw( x + 128, 0, ENEMYB_TILE + 0 * SPRITE_TILES_NUMBER );
-	engine_anim_manager_draw( x - 32, 128, ENEMYC_TILE + 0 * SPRITE_TILES_NUMBER );
-	engine_anim_manager_draw( 236-16, 48, ENEMYD_TILE + 0 * SPRITE_TILES_NUMBER );
+	//engine_anim_manager_draw( x + 64, 64, ENEMYA_TILE + enemyA_index * SPRITE_TILES_NUMBER );
+	//engine_anim_manager_draw( x + 128, 0, ENEMYB_TILE + 0 * SPRITE_TILES_NUMBER );
+	//engine_anim_manager_draw( x - 32, 128, ENEMYC_TILE + 0 * SPRITE_TILES_NUMBER );
+	//engine_anim_manager_draw( 236-16, 48, ENEMYD_TILE + 0 * SPRITE_TILES_NUMBER );
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_load;

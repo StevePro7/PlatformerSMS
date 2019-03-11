@@ -1,14 +1,14 @@
 #include "global_manager.h"
 #include "..\gfx.h"
 
-const unsigned int list_sprite_tile_offset[] =
-{
-	SPRITE_TILES_OFFSET + 0 * SPRITE_TILES_NUMBER,
-	SPRITE_TILES_OFFSET + 1 * SPRITE_TILES_NUMBER,
-	SPRITE_TILES_OFFSET + 2 * SPRITE_TILES_NUMBER,
-	SPRITE_TILES_OFFSET + 3 * SPRITE_TILES_NUMBER,
-	SPRITE_TILES_OFFSET + 4 * SPRITE_TILES_NUMBER,
-};
+//const unsigned int list_sprite_tile_offset[] =
+//{
+//	SPRITE_TILES_OFFSET + 0 * SPRITE_TILES_NUMBER,
+//	SPRITE_TILES_OFFSET + 1 * SPRITE_TILES_NUMBER,
+//	SPRITE_TILES_OFFSET + 2 * SPRITE_TILES_NUMBER,
+//	SPRITE_TILES_OFFSET + 3 * SPRITE_TILES_NUMBER,
+//	SPRITE_TILES_OFFSET + 4 * SPRITE_TILES_NUMBER,
+//};
 
 // TODO - am I going to use this?
 //const unsigned char *stageinitdata[] =

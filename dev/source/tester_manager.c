@@ -310,7 +310,7 @@ void engine_tester_manager_draw()
 {
 	struct_player_object *po = &global_player_objectX;
 	get_draw_position();
-	engine_sprite_manager_draw_player( po->drawX, po->drawY );
+	//engine_sprite_manager_draw_player( po->drawX, po->drawY );
 }
 
 

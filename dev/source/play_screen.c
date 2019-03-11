@@ -8,6 +8,7 @@
 #include "level_manager.h"
 #include "anim_manager.h"
 #include "player_manager.h"
+#include "enemy_manager.h"
 #include "state_manager.h"
 #include "audio_manager.h"
 
@@ -33,6 +34,8 @@ void screen_play_screen_load()
 	
 	engine_state_manager_load();
 	engine_player_manager_load();
+	engine_enemyX_manager_load();
+
 
 	// Load animations.
 	engine_anim_manager_player_load_idle();
@@ -54,7 +57,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_player_manager_apply_physics();
 	engine_player_manager_handle_collisions();
 	engine_player_manager_cleanup();
-
 	engine_player_manager_draw();
+
+	engine_enemyX_manager_draw();
 	*screen_type = screen_type_play;
 }

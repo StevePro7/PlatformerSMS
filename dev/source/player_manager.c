@@ -5,7 +5,6 @@
 #include "anim_manager.h"
 #include "level_manager.h"
 #include "input_manager.h"
-//#include <math.h>
 
 // IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE
@@ -381,10 +380,13 @@ void engine_player_manager_cleanup()
 void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
+	unsigned int tile;
+
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();
-		engine_anim_manager_draw( po->drawX, po->drawY, PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER );
+		tile = PLAYER_TILE + po->anim_index * SPRITE_TILES_NUMBER;
+		engine_sprite_manager_draw( po->drawX, po->drawY, tile );
 	}
 }
 

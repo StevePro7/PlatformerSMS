@@ -38,7 +38,8 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
 
 
@@ -103,7 +104,8 @@ banks\bank2.rel				banks\bank3.rel				banks\bank4.rel				banks\bank5.rel ^
 source\_sms_manager.rel		source\_snd_manager.rel ^
 source\global_manager.rel	source\debug_manager.rel	source\hack_manager.rel		source\level_object.rel		source\anim_object.rel ^
 source\content_manager.rel	source\font_manager.rel		source\sprite_manager.rel	source\tile_manager.rel		source\level_manager.rel	source\anim_manager.rel ^
-source\input_manager.rel	source\player_manager.rel	source\state_manager.rel	source\render_manager.rel	source\scroll_manager.rel	source\tester_manager.rel ^
+source\input_manager.rel	source\player_manager.rel	\player_manager.rel ^
+source\state_manager.rel	source\render_manager.rel	source\scroll_manager.rel	source\tester_manager.rel ^
 source\none_screen.rel ^	source\test_screen.rel		source\init_screen.rel		source\load_screen.rel		source\play_screen.rel		source\func_screen.rel ^
 source\screen_manager.rel	source\audio_manager.rel ^
 sprites\master.rel			sprites\player.rel			sprites\enemyA.rel			sprites\enemyB.rel			sprites\enemyC.rel			sprites\enemyD.rel ^
