@@ -69,6 +69,7 @@ void engine_player_manager_load()
 	po->posnY = rectB;
 
 	po->player_move_type = move_type_idle;
+	po->player_health_type = health_type_alive;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 160;
 	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
@@ -203,7 +204,6 @@ void engine_player_manager_apply_physics()
 	po->velY = do_jump( po->velY );
 
 	po->posnX += po->velX;
-	// TODO update this code
 	if( po->posnX <= MIN_POSITION_X )
 	{
 		po->posnX = MIN_POSITION_X;
@@ -216,7 +216,8 @@ void engine_player_manager_apply_physics()
 	po->posnY += po->velY;
 	if( po->posnY >= MAX_POSITION_Y )
 	{
-		engine_font_manager_draw_text( "DEAD", 20, 20 );		// TODO remove this!
+		// Player fell in pit!
+		po->player_health_type = health_type_death;
 	}
 }
 
