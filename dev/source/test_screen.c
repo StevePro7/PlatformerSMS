@@ -136,6 +136,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 	engine_player_manager_cleanup();
 	engine_player_manager_draw();
 
+	engine_enemyX_manager_draw();
+
+
 	//engine_tester_manager_update();
 	//engine_tester_manager_draw();
 
