@@ -134,9 +134,10 @@ void screen_test_screen_update( unsigned char *screen_type )
 	engine_player_manager_apply_physics();
 	engine_player_manager_handle_collisions();
 	engine_player_manager_cleanup();
-	engine_player_manager_draw();
 
+	// Draw enemies first!
 	engine_enemyX_manager_draw();
+	engine_player_manager_draw();
 
 
 	//engine_tester_manager_update();
