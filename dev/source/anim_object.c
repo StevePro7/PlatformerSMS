@@ -1,10 +1,6 @@
 #include "anim_object.h"
 
-#include "..\sprites\player.h"
-#include "..\sprites\enemyA.h"
-#include "..\sprites\enemyB.h"
-#include "..\sprites\enemyC.h"
-#include "..\sprites\enemyD.h"
+#include "..\banks\bank3.h"
 
 // Player
 const unsigned char *player_anim_data[] =
@@ -61,7 +57,7 @@ const unsigned char player_anim_bank[] =
 const unsigned char *enemyA_anim_data[] =
 {
 	enemyA_idle__tiles__psgcompr,
-	enemyA_run_left_01__tiles__psgcompr,
+	/*enemyA_run_left_01__tiles__psgcompr,
 	enemyA_run_left_02__tiles__psgcompr,
 	enemyA_run_left_03__tiles__psgcompr,
 	enemyA_run_left_04__tiles__psgcompr,
@@ -80,12 +76,12 @@ const unsigned char *enemyA_anim_data[] =
 	enemyA_run_rght_07__tiles__psgcompr,
 	enemyA_run_rght_08__tiles__psgcompr,
 	enemyA_run_rght_09__tiles__psgcompr,
-	enemyA_run_rght_10__tiles__psgcompr,
+	enemyA_run_rght_10__tiles__psgcompr,*/
 };
 const unsigned char enemyA_anim_bank[] =
 {
 	enemyA_idle__tiles__psgcompr_bank,
-	enemyA_run_left_01__tiles__psgcompr_bank,
+	/*enemyA_run_left_01__tiles__psgcompr_bank,
 	enemyA_run_left_02__tiles__psgcompr_bank,
 	enemyA_run_left_03__tiles__psgcompr_bank,
 	enemyA_run_left_04__tiles__psgcompr_bank,
@@ -104,14 +100,14 @@ const unsigned char enemyA_anim_bank[] =
 	enemyA_run_rght_07__tiles__psgcompr_bank,
 	enemyA_run_rght_08__tiles__psgcompr_bank,
 	enemyA_run_rght_09__tiles__psgcompr_bank,
-	enemyA_run_rght_10__tiles__psgcompr_bank,
+	enemyA_run_rght_10__tiles__psgcompr_bank,*/
 };
 
 // EnemyB
 const unsigned char *enemyB_anim_data[] =
 {
 	enemyB_idle__tiles__psgcompr,
-	enemyB_run_left_01__tiles__psgcompr,
+	/*enemyB_run_left_01__tiles__psgcompr,
 	enemyB_run_left_02__tiles__psgcompr,
 	enemyB_run_left_03__tiles__psgcompr,
 	enemyB_run_left_04__tiles__psgcompr,
@@ -130,12 +126,12 @@ const unsigned char *enemyB_anim_data[] =
 	enemyB_run_rght_07__tiles__psgcompr,
 	enemyB_run_rght_08__tiles__psgcompr,
 	enemyB_run_rght_09__tiles__psgcompr,
-	enemyB_run_rght_10__tiles__psgcompr,
+	enemyB_run_rght_10__tiles__psgcompr,*/
 };
 const unsigned char enemyB_anim_bank[] =
 {
 	enemyB_idle__tiles__psgcompr_bank,
-	enemyB_run_left_01__tiles__psgcompr_bank,
+	/*enemyB_run_left_01__tiles__psgcompr_bank,
 	enemyB_run_left_02__tiles__psgcompr_bank,
 	enemyB_run_left_03__tiles__psgcompr_bank,
 	enemyB_run_left_04__tiles__psgcompr_bank,
@@ -154,14 +150,14 @@ const unsigned char enemyB_anim_bank[] =
 	enemyB_run_rght_07__tiles__psgcompr_bank,
 	enemyB_run_rght_08__tiles__psgcompr_bank,
 	enemyB_run_rght_09__tiles__psgcompr_bank,
-	enemyB_run_rght_10__tiles__psgcompr_bank,
+	enemyB_run_rght_10__tiles__psgcompr_bank,*/
 };
 
 // EnemyC
 const unsigned char *enemyC_anim_data[] =
 {
 	enemyC_idle__tiles__psgcompr,
-	enemyC_run_left_01__tiles__psgcompr,
+	/*enemyC_run_left_01__tiles__psgcompr,
 	enemyC_run_left_02__tiles__psgcompr,
 	enemyC_run_left_03__tiles__psgcompr,
 	enemyC_run_left_04__tiles__psgcompr,
@@ -180,12 +176,12 @@ const unsigned char *enemyC_anim_data[] =
 	enemyC_run_rght_07__tiles__psgcompr,
 	enemyC_run_rght_08__tiles__psgcompr,
 	enemyC_run_rght_09__tiles__psgcompr,
-	enemyC_run_rght_10__tiles__psgcompr,
+	enemyC_run_rght_10__tiles__psgcompr,*/
 };
 const unsigned char enemyC_anim_bank[] =
 {
 	enemyC_idle__tiles__psgcompr_bank,
-	enemyC_run_left_01__tiles__psgcompr_bank,
+	/*enemyC_run_left_01__tiles__psgcompr_bank,
 	enemyC_run_left_02__tiles__psgcompr_bank,
 	enemyC_run_left_03__tiles__psgcompr_bank,
 	enemyC_run_left_04__tiles__psgcompr_bank,
@@ -204,14 +200,14 @@ const unsigned char enemyC_anim_bank[] =
 	enemyC_run_rght_07__tiles__psgcompr_bank,
 	enemyC_run_rght_08__tiles__psgcompr_bank,
 	enemyC_run_rght_09__tiles__psgcompr_bank,
-	enemyC_run_rght_10__tiles__psgcompr_bank,
+	enemyC_run_rght_10__tiles__psgcompr_bank,*/
 };
 
 // EnemyD
 const unsigned char *enemyD_anim_data[] =
 {
 	enemyD_idle__tiles__psgcompr,
-	enemyD_run_left_01__tiles__psgcompr,
+	/*enemyD_run_left_01__tiles__psgcompr,
 	enemyD_run_left_02__tiles__psgcompr,
 	enemyD_run_left_03__tiles__psgcompr,
 	enemyD_run_left_04__tiles__psgcompr,
@@ -230,12 +226,12 @@ const unsigned char *enemyD_anim_data[] =
 	enemyD_run_rght_07__tiles__psgcompr,
 	enemyD_run_rght_08__tiles__psgcompr,
 	enemyD_run_rght_09__tiles__psgcompr,
-	enemyD_run_rght_10__tiles__psgcompr,
+	enemyD_run_rght_10__tiles__psgcompr,*/
 };
 const unsigned char enemyD_anim_bank[] =
 {
 	enemyD_idle__tiles__psgcompr_bank,
-	enemyD_run_left_01__tiles__psgcompr_bank,
+	/*enemyD_run_left_01__tiles__psgcompr_bank,
 	enemyD_run_left_02__tiles__psgcompr_bank,
 	enemyD_run_left_03__tiles__psgcompr_bank,
 	enemyD_run_left_04__tiles__psgcompr_bank,
@@ -254,5 +250,5 @@ const unsigned char enemyD_anim_bank[] =
 	enemyD_run_rght_07__tiles__psgcompr_bank,
 	enemyD_run_rght_08__tiles__psgcompr_bank,
 	enemyD_run_rght_09__tiles__psgcompr_bank,
-	enemyD_run_rght_10__tiles__psgcompr_bank,
+	enemyD_run_rght_10__tiles__psgcompr_bank,*/
 };

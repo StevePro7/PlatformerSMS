@@ -1,24 +1,17 @@
 XL2
-H 9 areas 10 global symbols
+H 9 areas 9 global symbols
 M audio_manager
 O -mz80
-S _devkit_SFX_CHANNEL2 Ref0000
 S _devkit_PSGStop Ref0000
-S _sfx_right_psg Ref0000
 S .__.ABS. Def0000
 S _devkit_PSGSetMusicVolumeAttenuation Ref0000
-S _devkit_PSGPlayNoRepeat Ref0000
-S _sfx_wrong_psg Ref0000
-S _music_psg Ref0000
-S _devkit_PSGSFXPlay Ref0000
-S _sfx_cheat_psg Ref0000
-A _CODE size 44 flags 0 addr 0
-S _engine_audio_manager_sound_right Def0014
+A _CODE size F flags 0 addr 0
+S _engine_audio_manager_sound_right Def000C
 S _engine_audio_manager_start_music Def0000
-S _engine_audio_manager_sound_wrong Def0024
-S _engine_audio_manager_finish_music Def0010
-S _engine_audio_manager_stop_music Def0011
-S _engine_audio_manager_sound_cheat Def0034
+S _engine_audio_manager_sound_wrong Def000D
+S _engine_audio_manager_finish_music Def0008
+S _engine_audio_manager_stop_music Def0009
+S _engine_audio_manager_sound_cheat Def000E
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -29,33 +22,25 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 AF F5 33 CD 00 00 33 21 00 00 E5 CD 00 00
-R 00 00 00 00 02 06 04 00 02 0A 07 00 02 0E 05 00
-T 0E 00 F1 C9
+T 00 00 AF F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 06 02 00
+T 08 00
 R 00 00 00 00
-T 10 00
+T 08 00 C9
 R 00 00 00 00
-T 10 00 C9
+T 09 00
 R 00 00 00 00
-T 11 00
+T 09 00 C3 00 00
+R 00 00 00 00 02 03 00 00
+T 0C 00
 R 00 00 00 00
-T 11 00 C3 00 00
-R 00 00 00 00 02 03 01 00
-T 14 00
+T 0C 00 C9
 R 00 00 00 00
-T 14 00 CD 00 00 45 C5 33 21 00 00 E5 CD 00 00 F1
-R 00 00 00 00 02 03 00 00 02 09 02 00 02 0D 08 00
-T 22 00 33 C9
+T 0D 00
 R 00 00 00 00
-T 24 00
+T 0D 00 C9
 R 00 00 00 00
-T 24 00 CD 00 00 45 C5 33 21 00 00 E5 CD 00 00 F1
-R 00 00 00 00 02 03 00 00 02 09 06 00 02 0D 08 00
-T 32 00 33 C9
+T 0E 00
 R 00 00 00 00
-T 34 00
-R 00 00 00 00
-T 34 00 CD 00 00 45 C5 33 21 00 00 E5 CD 00 00 F1
-R 00 00 00 00 02 03 00 00 02 09 09 00 02 0D 08 00
-T 42 00 33 C9
+T 0E 00 C9
 R 00 00 00 00

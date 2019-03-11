@@ -43,12 +43,6 @@
     <Filter Include="Source Files\engine">
       <UniqueIdentifier>{bed91bba-6ee2-4948-b3e3-58ed5eb1b3ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\sprites">
-      <UniqueIdentifier>{10a4b954-cb1a-4a42-ad77-f448b1fb8bd0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\sprites">
-      <UniqueIdentifier>{95ffab5b-dd40-4bbe-af02-75768740f770}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\content">
       <UniqueIdentifier>{a095ca78-d0fa-47cd-ac6d-306f4b7ea492}</UniqueIdentifier>
     </Filter>
@@ -135,24 +129,6 @@
     <ClCompile Include="source\state_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
-    <ClCompile Include="sprites\player.c">
-      <Filter>Source Files\sprites</Filter>
-    </ClCompile>
-    <ClCompile Include="sprites\enemyA.c">
-      <Filter>Source Files\sprites</Filter>
-    </ClCompile>
-    <ClCompile Include="sprites\master.c">
-      <Filter>Source Files\sprites</Filter>
-    </ClCompile>
-    <ClCompile Include="sprites\enemyB.c">
-      <Filter>Source Files\sprites</Filter>
-    </ClCompile>
-    <ClCompile Include="sprites\enemyC.c">
-      <Filter>Source Files\sprites</Filter>
-    </ClCompile>
-    <ClCompile Include="sprites\enemyD.c">
-      <Filter>Source Files\sprites</Filter>
-    </ClCompile>
     <ClCompile Include="source\anim_object.c">
       <Filter>Source Files\object</Filter>
     </ClCompile>
@@ -168,17 +144,17 @@
     <ClCompile Include="source\audio_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="gfx.c">
-      <Filter>Source Files\content</Filter>
-    </ClCompile>
-    <ClCompile Include="psg.c">
-      <Filter>Source Files\content</Filter>
-    </ClCompile>
     <ClCompile Include="source\_snd_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="source\dead_screen.c">
       <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank4.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank5.c">
+      <Filter>Source Files\banks</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,24 +251,6 @@
     <ClInclude Include="source\load_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
-    <ClInclude Include="sprites\enemyA.h">
-      <Filter>Header Files\sprites</Filter>
-    </ClInclude>
-    <ClInclude Include="sprites\player.h">
-      <Filter>Header Files\sprites</Filter>
-    </ClInclude>
-    <ClInclude Include="sprites\master.h">
-      <Filter>Header Files\sprites</Filter>
-    </ClInclude>
-    <ClInclude Include="sprites\enemyB.h">
-      <Filter>Header Files\sprites</Filter>
-    </ClInclude>
-    <ClInclude Include="sprites\enemyC.h">
-      <Filter>Header Files\sprites</Filter>
-    </ClInclude>
-    <ClInclude Include="sprites\enemyD.h">
-      <Filter>Header Files\sprites</Filter>
-    </ClInclude>
     <ClInclude Include="source\anim_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
@@ -308,17 +266,17 @@
     <ClInclude Include="source\audio_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="gfx.h">
-      <Filter>Header Files\content</Filter>
-    </ClInclude>
-    <ClInclude Include="psg.h">
-      <Filter>Header Files\content</Filter>
-    </ClInclude>
     <ClInclude Include="source\_snd_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="source\dead_screen.h">
       <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank4.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank5.h">
+      <Filter>Header Files\banks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

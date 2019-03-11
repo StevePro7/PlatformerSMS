@@ -146,9 +146,9 @@
   <ItemGroup>
     <ClCompile Include="banks\bank2.c" />
     <ClCompile Include="banks\bank3.c" />
-    <ClCompile Include="gfx.c" />
+    <ClCompile Include="banks\bank4.c" />
+    <ClCompile Include="banks\bank5.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="psg.c" />
     <ClCompile Include="source\anim_manager.c" />
     <ClCompile Include="source\anim_object.c" />
     <ClCompile Include="source\audio_manager.c" />
@@ -179,20 +179,14 @@
     <ClCompile Include="source\tile_manager.c" />
     <ClCompile Include="source\_sms_manager.c" />
     <ClCompile Include="source\_snd_manager.c" />
-    <ClCompile Include="sprites\enemyA.c" />
-    <ClCompile Include="sprites\enemyB.c" />
-    <ClCompile Include="sprites\enemyC.c" />
-    <ClCompile Include="sprites\enemyD.c" />
-    <ClCompile Include="sprites\master.c" />
-    <ClCompile Include="sprites\player.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="banks\bank2.h" />
     <ClInclude Include="banks\bank3.h" />
+    <ClInclude Include="banks\bank4.h" />
+    <ClInclude Include="banks\bank5.h" />
     <ClInclude Include="engine\asm_manager.h" />
-    <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="psg.h" />
     <ClInclude Include="source\anim_manager.h" />
     <ClInclude Include="source\anim_object.h" />
     <ClInclude Include="source\audio_manager.h" />
@@ -227,12 +221,6 @@
     <ClInclude Include="source\tile_manager.h" />
     <ClInclude Include="source\_sms_manager.h" />
     <ClInclude Include="source\_snd_manager.h" />
-    <ClInclude Include="sprites\enemyA.h" />
-    <ClInclude Include="sprites\enemyB.h" />
-    <ClInclude Include="sprites\enemyC.h" />
-    <ClInclude Include="sprites\enemyD.h" />
-    <ClInclude Include="sprites\master.h" />
-    <ClInclude Include="sprites\player.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat" />
