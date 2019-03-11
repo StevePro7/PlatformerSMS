@@ -92,6 +92,7 @@ void screen_test_screen_load()
 	engine_state_manager_load();
 	engine_player_manager_load();
 	engine_enemyX_manager_load();
+
 	/*unsigned char x;
 	enum_tile_type tile_type;
 	for( x = 0; x < 32; x += 2 )
@@ -122,6 +123,9 @@ void screen_test_screen_load()
 
 	//engine_level_manager_draw_level();
 	//engine_tester_manager_load();
+
+	//engine_font_manager_draw_text( "SPLAT", 1, 1 );
+	//engine_font_manager_draw_data_ZERO( 100, 20, 1 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )

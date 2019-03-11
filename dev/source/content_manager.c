@@ -2,10 +2,8 @@
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
-//#include "..\banks\bank2.h"
 #include "..\banks\bank2.h"
 #include "..\gfx.h"
-//#include "..\sprites\master.h"
 
 #define BACK_TILES_OFFSET		0
 
