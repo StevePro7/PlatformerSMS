@@ -31,7 +31,7 @@ const unsigned char *player_anim_data[] =
 	//player_run_rght_09__tiles__psgcompr,
 	//player_run_rght_10__tiles__psgcompr,
 };
-
+/*
 const unsigned char player_anim_bank[] =
 {
 	player_idle__tiles__psgcompr_bank,
@@ -56,7 +56,7 @@ const unsigned char player_anim_bank[] =
 	//player_run_rght_09__tiles__psgcompr_bank,
 	//player_run_rght_10__tiles__psgcompr_bank,
 };
-
+*/
 // EnemyA
 const unsigned char *enemyA_anim_data[] =
 {
