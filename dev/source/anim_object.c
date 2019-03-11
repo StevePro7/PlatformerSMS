@@ -1,6 +1,6 @@
 #include "anim_object.h"
 
-#include "..\banks\bank3.h"
+#include "..\banks\bank2.h"
 
 // Player
 const unsigned char *player_anim_data[] =

@@ -54,9 +54,6 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="banks\bank2.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
     <ClCompile Include="source\global_manager.c">
       <Filter>Source Files\source</Filter>
     </ClCompile>
@@ -156,13 +153,16 @@
     <ClCompile Include="banks\bank5.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="banks\bank2.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank2.h">
-      <Filter>Header Files\banks</Filter>
     </ClInclude>
     <ClInclude Include="engine\asm_manager.h">
       <Filter>Header Files\engine</Filter>
@@ -277,6 +277,12 @@
     </ClInclude>
     <ClInclude Include="banks\bank5.h">
       <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank2.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx.h">
+      <Filter>Header Files\content</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

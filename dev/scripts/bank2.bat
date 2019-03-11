@@ -1,6 +1,7 @@
 REM bank2	Generic sprite tiles
 @echo off
 
+cd ..
 cd banks
 cd bank2
 
@@ -34,7 +35,6 @@ bmp2tile.exe raw\enemyC\Idle.png -savetiles "enemyC_idle (tiles).psgcompr" -nore
 bmp2tile.exe raw\enemyD\Idle.png -savetiles "enemyD_idle (tiles).psgcompr" -noremovedupes -planar -tileoffset 0 -exit
 
 cd ..
-
 folder2c bank2 bank2 2
 
 sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
@@ -44,3 +44,4 @@ del *.lst > nul
 del *.sym > nul
 
 cd ..
+cd scripts

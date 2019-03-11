@@ -1,6 +1,7 @@
 REM bank4	Levels half#1
 @echo off
 
+cd ..
 cd banks
 
 folder2c bank5 bank5 5
@@ -12,3 +13,4 @@ del *.lst > nul
 del *.sym > nul
 
 cd ..
+cd scripts
