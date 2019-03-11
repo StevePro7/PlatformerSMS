@@ -1,12 +1,16 @@
 #include "test_screen.h"
 #include "global_manager.h"
 #include "debug_manager.h"
+#include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
-#include "tester_manager.h"
-#include "render_manager.h"
+#include "anim_manager.h"
+#include "player_manager.h"
+#include "enemy_manager.h"
+#include "state_manager.h"
+#include "audio_manager.h"
 
 static void dynamic_memory_allocation()	
 {
@@ -76,6 +80,18 @@ static void dynamic_memory_allocation()
 }
 void screen_test_screen_load()
 {
+	// Load animations.
+	engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_run();
+	engine_anim_manager_enemyX_load_idle();
+
+	engine_level_manager_load_index( 0 );
+	//engine_level_manager_load_index( ho->hacker_level );
+	engine_level_manager_draw_level();
+
+	engine_state_manager_load();
+	engine_player_manager_load();
+	engine_enemyX_manager_load();
 	/*unsigned char x;
 	enum_tile_type tile_type;
 	for( x = 0; x < 32; x += 2 )
@@ -96,23 +112,28 @@ void screen_test_screen_load()
 
 	//engine_level_manager_load_levelX();
 
-	engine_debug_manager_draw_grid();		// TODO remove this!
+	//engine_debug_manager_draw_grid();		// TODO remove this!
 
-	engine_level_manager_init_level();
-	engine_level_manager_load_index( 0 );
+	//engine_level_manager_init_level();
+	//engine_level_manager_load_index( 0 );
 	//engine_level_manager_draw_level_column( 5 );
 	//engine_level_manager_draw_level_column_side( side_type_left, 6 );
 	//engine_level_manager_draw_level_column( 7 );
 
-	engine_level_manager_draw_level();
-	engine_tester_manager_load();
+	//engine_level_manager_draw_level();
+	//engine_tester_manager_load();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	engine_tester_manager_update();
-	
-	engine_tester_manager_draw();
+	engine_player_manager_get_input();
+	engine_player_manager_apply_physics();
+	engine_player_manager_handle_collisions();
+	engine_player_manager_cleanup();
+	engine_player_manager_draw();
+
+	//engine_tester_manager_update();
+	//engine_tester_manager_draw();
 
 	*screen_type = screen_type_test;
 }

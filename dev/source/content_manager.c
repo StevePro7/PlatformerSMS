@@ -12,6 +12,7 @@
 void engine_content_manager_load_back_tiles()
 {
 	// Back tiles.
+	devkit_SMS_mapROMBank( back_tiles__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( back_tiles__tiles__psgcompr, BACK_TILES_OFFSET );
 	devkit_SMS_loadBGPalette( ( void * ) back_tiles__palette__bin );
 }
@@ -32,5 +33,7 @@ void engine_content_manager_load_sprites()
 	//devkit_SMS_loadPSGaidencompressedTiles( EnemyB_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyB ] );
 	//devkit_SMS_loadPSGaidencompressedTiles( EnemyC_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyC ] );
 	//devkit_SMS_loadPSGaidencompressedTiles( EnemyD_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyD ] );
+
+	devkit_SMS_mapROMBank( sprites__palette__bin_bank );
 	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
 }

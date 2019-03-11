@@ -21,6 +21,12 @@ void screen_play_screen_load()
 
 	//engine_debug_manager_draw_grid();		// TODO remove this!
 
+	// Load animations.
+	engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_run();
+	engine_anim_manager_enemyX_load_idle();
+
+
 	engine_level_manager_load_index( 0 );
 	//engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
@@ -37,10 +43,7 @@ void screen_play_screen_load()
 	engine_enemyX_manager_load();
 
 
-	// Load animations.
-	engine_anim_manager_player_load_idle();
-	engine_anim_manager_player_load_run();
-	engine_anim_manager_enemyX_load_idle();
+	
 
 	// TODO put in the update method
 	//engine_player_manager_get_input();
