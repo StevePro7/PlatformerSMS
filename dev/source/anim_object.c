@@ -31,7 +31,7 @@ const unsigned char *player_anim_data[] =
 	//player_run_rght_09__tiles__psgcompr,
 	//player_run_rght_10__tiles__psgcompr,
 };
-/*
+
 const unsigned char player_anim_bank[] =
 {
 	player_idle__tiles__psgcompr_bank,
@@ -39,24 +39,24 @@ const unsigned char player_anim_bank[] =
 	player_run_left_02__tiles__psgcompr_bank,
 	player_run_left_03__tiles__psgcompr_bank,
 	player_run_left_04__tiles__psgcompr_bank,
-	player_run_left_05__tiles__psgcompr_bank,
-	player_run_left_06__tiles__psgcompr_bank,
-	player_run_left_07__tiles__psgcompr_bank,
-	player_run_left_08__tiles__psgcompr_bank,
-	player_run_left_09__tiles__psgcompr_bank,
-	player_run_left_10__tiles__psgcompr_bank,
+	//player_run_left_05__tiles__psgcompr_bank,
+	//player_run_left_06__tiles__psgcompr_bank,
+	//player_run_left_07__tiles__psgcompr_bank,
+	//player_run_left_08__tiles__psgcompr_bank,
+	//player_run_left_09__tiles__psgcompr_bank,
+	//player_run_left_10__tiles__psgcompr_bank,
 	player_run_rght_01__tiles__psgcompr_bank,
 	player_run_rght_02__tiles__psgcompr_bank,
 	player_run_rght_03__tiles__psgcompr_bank,
 	player_run_rght_04__tiles__psgcompr_bank,
 	player_run_rght_05__tiles__psgcompr_bank,
-	player_run_rght_06__tiles__psgcompr_bank,
-	player_run_rght_07__tiles__psgcompr_bank,
-	player_run_rght_08__tiles__psgcompr_bank,
-	player_run_rght_09__tiles__psgcompr_bank,
-	player_run_rght_10__tiles__psgcompr_bank,
+	//player_run_rght_06__tiles__psgcompr_bank,
+	//player_run_rght_07__tiles__psgcompr_bank,
+	//player_run_rght_08__tiles__psgcompr_bank,
+	//player_run_rght_09__tiles__psgcompr_bank,
+	//player_run_rght_10__tiles__psgcompr_bank,
 };
-*/
+
 // EnemyA
 const unsigned char *enemyA_anim_data[] =
 {

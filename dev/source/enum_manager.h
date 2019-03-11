@@ -8,8 +8,9 @@ typedef enum tag_enum_screen_type
 	screen_type_init = 2,
 	screen_type_load = 3,
 	screen_type_play = 4,
-	screen_type_func = 5,
-	screen_type_splash = 6,
+	screen_type_dead = 5,
+	screen_type_func = 6,
+	screen_type_splash = 7,
 
 } enum_screen_type;
 
@@ -74,5 +75,12 @@ typedef enum tag_enum_half_type
 	half_type_next = 1,
 
 } enum_half_type;
+
+typedef enum tag_enum_health_type
+{
+	health_type_alive = 0,
+	health_type_death = 1,
+
+} enum_health_type;
 
 #endif//_ENUM_MANAGER_H_
