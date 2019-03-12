@@ -19,7 +19,7 @@ struct_player_object global_player_object;
 #define MAX_VELOCITY_Y	17
 #define MIN_POSITION_X	24
 #define MAX_POSITION_X	248
-#define MAX_POSITION_Y	192
+#define MAX_POSITION_Y	192 + 2 * TILE_HIGH
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
 

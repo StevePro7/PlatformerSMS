@@ -6,6 +6,11 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+12/03/2019
+Hack ROM for invincibility.  If/when have pits then load the level as normal, calculate enemy horizontal range with impassable tiles
+But before complete, check if (invincible) then update any/all passsble pits files on bottom row with impassable but draw debug square
+This way enemy has range as before but player cannot fall thru pits to death.
+
 08/03/2019
 Level budgets
 Decided for no scrolling on level.  Therefore, each level will be 16x12 tiles [of 16x16 tile]

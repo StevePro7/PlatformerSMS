@@ -43,8 +43,6 @@ void screen_play_screen_load()
 	engine_enemyX_manager_load();
 
 
-	
-
 	// TODO put in the update method
 	//engine_player_manager_get_input();
 	//engine_player_manager_apply_physics();
