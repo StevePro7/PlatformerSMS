@@ -72,6 +72,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_player_manager_apply_physics();
 	engine_player_manager_handle_collisions();
 	engine_player_manager_cleanup();
+
+	// Draw enemies first!
+	engine_enemyX_manager_draw();
 	engine_player_manager_draw();
 
 	// TODO extract if no pits in level then only check if there is...
@@ -91,8 +94,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 			cell_top = lo->draw_cols *  ( po->coll_topX + 0 ) + po->coll_left;
 			cell_bot = lo->draw_cols *  ( po->coll_topX + 1 ) + po->coll_left;
 
-			engine_font_manager_draw_data( cell_top, 20, 18 );
-			engine_font_manager_draw_data( cell_bot, 20, 19 );
+			//engine_font_manager_draw_data( cell_top, 20, 18 );
+			//engine_font_manager_draw_data( cell_bot, 20, 19 );
 
 			// TODO must check cell top + bot for both yellow + red gems i.e. 4x checks
 			tile = lo->drawtiles_array[ cell_top ];
@@ -106,7 +109,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			}
 
 			tile = lo->drawtiles_array[ cell_bot ];
-			engine_font_manager_draw_data( tile, 20, 20 );
+			//engine_font_manager_draw_data( tile, 20, 20 );
 			if( tile_type_blankGap != tile )
 			{
 				if( tile_type_gemscore == tile )
@@ -125,11 +128,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	engine_font_manager_draw_data( po->coll_left, 20, 10 );
+	//engine_font_manager_draw_data( po->coll_left, 20, 10 );
 	//engine_font_manager_draw_data( po->coll_rght, 20, 11 );
-	engine_font_manager_draw_data( po->coll_topX, 20, 12 );
+	//engine_font_manager_draw_data( po->coll_topX, 20, 12 );
 	//engine_font_manager_draw_data( po->coll_botX, 20, 13 );
 
-	engine_enemyX_manager_draw();
 	*screen_type = screen_type_play;
 }

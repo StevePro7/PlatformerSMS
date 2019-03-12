@@ -4,6 +4,7 @@
 #include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "sprite_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
 #include "anim_manager.h"
@@ -85,7 +86,7 @@ void screen_test_screen_load()
 	engine_anim_manager_player_load_run();
 	engine_anim_manager_enemyX_load_idle();
 
-	engine_level_manager_load_index( 0 );
+	engine_level_manager_load_index( 1 );
 	//engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
 
@@ -137,6 +138,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw();
+	//engine_sprite_manager_draw( 96, 80, 424 );
+	//engine_sprite_manager_draw( 96, 128, 424 - 36 );
+
 	engine_player_manager_draw();
 
 

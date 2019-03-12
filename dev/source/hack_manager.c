@@ -15,10 +15,10 @@ void engine_hack_manager_init()
 	ho->hacker_level = 0;
 	ho->hacker_world = 0;
 	ho->hacker_round = 0;
-	ho->hacker_enemy = 4;			// TODO change this
+	ho->hacker_enemy = 0;
 
 	// TODO add invincibility AND unlimited lives i.e. can die but play forever
-
+	//ho->hacker_enemy = PEEK( HACKER_START + 0 );	// 0x0050		//
 
 #ifndef _CONSOLE
 
@@ -26,9 +26,11 @@ void engine_hack_manager_init()
 	ho->hacker_level = PEEK( HACKER_START + 0 );	// 0x0050		//
 	ho->hacker_world = PEEK( HACKER_START + 1 );	// 0x0051		//
 	ho->hacker_round = PEEK( HACKER_START + 2 );	// 0x0052		//
-	ho->hacker_enemy = PEEK( HACKER_START + 3 );	// 0x0053		//
+	ho->hacker_enemy = PEEK( HACKER_START + 0 );	// 0x0050		//
 
 #endif
+
+	ho->hacker_enemy = 3;			// TODO delete this
 
 }
 

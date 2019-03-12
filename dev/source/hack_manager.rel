@@ -3,9 +3,9 @@ H 9 areas 4 global symbols
 M hack_manager
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 37 flags 0 addr 0
+A _CODE size 38 flags 0 addr 0
 S _engine_hack_manager_init Def0000
-S _engine_hack_manager_invert Def0036
+S _engine_hack_manager_invert Def0037
 A _DATA size 5 flags 0 addr 0
 S _global_hack_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -21,15 +21,15 @@ T 00 00
 R 00 00 01 00
 T 00 00
 R 00 00 00 00
-T 00 00 21 00 00 36 00 21 01 00 36 00 11 02 00 AF
+T 00 00 21 00 00 36 00 21 01 00 36 00 21 02 00 36
 R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
-T 0E 00 12 01 03 00 AF 02 21 04 00 36 04 3A 4F 00
+T 0E 00 00 11 03 00 AF 12 01 04 00 AF 02 3A 4F 00
 R 00 00 00 00 00 04 01 00 00 09 01 00
-T 1C 00 32 00 00 3A 50 00 32 01 00 3A 51 00 12 3A
+T 1C 00 32 00 00 3A 50 00 32 01 00 3A 51 00 32
 R 00 00 00 00 00 03 01 00 00 09 01 00
-T 2A 00 52 00 02 21 53 00 4E 21 04 00 71 C9
-R 00 00 00 00 00 0A 01 00
-T 36 00
+T 29 00 02 00 3A 52 00 12 3A 50 00 02 3E 03 02 C9
+R 00 00 00 00 00 02 01 00
+T 37 00
 R 00 00 00 00
-T 36 00 C9
+T 37 00 C9
 R 00 00 00 00

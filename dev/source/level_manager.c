@@ -74,11 +74,6 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 					lo->exit_spotY = row;
 				}
 
-				if( tile_type_gemscore == tile_type )
-				{
-					engine_font_manager_draw_data( col, 20, 15 );
-					engine_font_manager_draw_data( row, 20, 16 );
-				}
 				//tiles_map[ idx ] = tile_type;
 				//tiles_mat[ row ][ col ] = tile_type;
 
@@ -194,7 +189,7 @@ void engine_level_manager_draw_blank( unsigned char x, unsigned char y )// unsig
 {
 	struct_level_object *lo = &global_level_object;
 	//lo->drawtiles_array[ idx ] = tile_type_blankGap;		// TODO blank out tile here
-	engine_tile_manager_draw_tile( tile_type_gridline, x * 2, y * 2 );
+	engine_tile_manager_draw_tile( tile_type_blankGap, x * 2, y * 2 );
 }
 
 void engine_level_manager_get_collision( unsigned char *coll_type, unsigned char x, unsigned char y )
