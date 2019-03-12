@@ -1,4 +1,4 @@
-# PlatformerSMS
+h# PlatformerSMS
 Placeholder repo for PlatformerSMS
 
 PLATFORM
@@ -10,6 +10,11 @@ https://yhoo.it/2HdDJfu
 Hack ROM for invincibility.  If/when have pits then load the level as normal, calculate enemy horizontal range with impassable tiles
 But before complete, check if (invincible) then update any/all passsble pits files on bottom row with impassable but draw debug square
 This way enemy has range as before but player cannot fall thru pits to death.
+
+Hacker options
+don't think that I would configure unlimited continues but just enforce easy=YES or hard=NO
+
+Also, should check on level load in play_screen if there no pits at all - if not then no need to check eash frame
 
 08/03/2019
 Level budgets

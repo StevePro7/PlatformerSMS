@@ -62,7 +62,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_player_manager_cleanup();
 	engine_player_manager_draw();
 
-	//engine_font_manager_draw_data( po->player_health_type, 5, 10 );
+	// TODO extract if no pits in level then only check if there is...
+	// could leave this in for the moment to stress test redundant check
 	// Check if fell into pit.
 	if( health_type_death == po->player_health_type )
 	{
