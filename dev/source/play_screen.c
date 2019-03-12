@@ -56,11 +56,21 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+
 	engine_player_manager_get_input();
 	engine_player_manager_apply_physics();
 	engine_player_manager_handle_collisions();
 	engine_player_manager_cleanup();
 	engine_player_manager_draw();
+
+	//engine_font_manager_draw_data( po->player_health_type, 5, 10 );
+	// Check if fell into pit.
+	if( health_type_death == po->player_health_type )
+	{
+		*screen_type = screen_type_dead;
+		return;
+	}
 
 	engine_enemyX_manager_draw();
 	*screen_type = screen_type_play;

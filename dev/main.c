@@ -23,9 +23,10 @@ void main(void)
 	custom_initialize();
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_init;
-	open_screen_type = screen_type_test;
-	//open_screen_type = screen_type_play;
+	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_func;
+	//open_screen_type = screen_type_dead;
+	open_screen_type = screen_type_play;
 
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
