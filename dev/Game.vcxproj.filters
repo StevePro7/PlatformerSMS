@@ -159,6 +159,9 @@
     <ClCompile Include="gfx.c">
       <Filter>Source Files\content</Filter>
     </ClCompile>
+    <ClCompile Include="source\memory_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -283,6 +286,9 @@
     </ClInclude>
     <ClInclude Include="gfx.h">
       <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="source\memory_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
