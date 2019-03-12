@@ -57,6 +57,11 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 		*tile_type = tile_type_gemscore;
 		return;
 	}
+	if( 'P' == tile )
+	{
+		*tile_type = tile_type_gempower;
+		return;
+	}
 
 	*tile_type = tile_type_blankGap;
 }
