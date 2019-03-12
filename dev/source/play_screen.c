@@ -15,11 +15,12 @@
 void screen_play_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
-	
+	struct_level_object *lo = &global_level_object;
+
 	/*unsigned char int_coll_type;
 	enum_coll_type coll_type;*/
 
-	//engine_debug_manager_draw_grid();		// TODO remove this!
+	engine_debug_manager_draw_grid();		// TODO remove this!
 
 	// Load animations.
 	engine_anim_manager_player_load_idle();
@@ -50,10 +51,19 @@ void screen_play_screen_load()
 
 	// TODO wire up different game play music...
 	//engine_audio_manager_start_music();
+
+	engine_font_manager_draw_text( "LEFT", 10, 10 );
+	engine_font_manager_draw_text( "RGHT", 10, 11 );
+	engine_font_manager_draw_text( "TOPX", 10, 12 );
+	engine_font_manager_draw_text( "BOTX", 10, 13 );
+
+	engine_font_manager_draw_data( lo->exit_spotX, 20, 18 );
+	engine_font_manager_draw_data( lo->exit_spotY, 20, 19 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
+	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
 
 	engine_player_manager_get_input();
@@ -70,6 +80,24 @@ void screen_play_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_dead;
 		return;
 	}
+
+	// Exit sign
+	if( po->isOnGround )
+	{
+		if( po->coll_left == po->coll_rght )
+		{
+			if( po->coll_left == lo->exit_spotX && po->coll_topX + 1 == lo->exit_spotY )
+			{
+				*screen_type = screen_type_pass;
+				return;
+			}
+		}
+	}
+
+	engine_font_manager_draw_data( po->coll_left, 20, 10 );
+	engine_font_manager_draw_data( po->coll_rght, 20, 11 );
+	engine_font_manager_draw_data( po->coll_topX, 20, 12 );
+	engine_font_manager_draw_data( po->coll_botX, 20, 13 );
 
 	engine_enemyX_manager_draw();
 	*screen_type = screen_type_play;

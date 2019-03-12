@@ -6,7 +6,6 @@
 void engine_enemyX_manager_load()
 {
 	struct_hack_object *ho = &global_hack_object;
-	engine_font_manager_draw_data( ho->hacker_enemy, 20, 1 );
 }
 
 void engine_enemyX_manager_draw()

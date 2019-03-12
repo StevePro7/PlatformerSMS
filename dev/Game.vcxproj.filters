@@ -162,6 +162,9 @@
     <ClCompile Include="source\memory_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="source\pass_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -289,6 +292,9 @@
     </ClInclude>
     <ClInclude Include="source\memory_manager.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pass_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ typedef struct tag_struct_level_object
 	unsigned int load_cols;
 	unsigned int draw_cols;
 	unsigned int player_spot;
+	signed char exit_spotX, exit_spotY;
 
 } struct_level_object;
 

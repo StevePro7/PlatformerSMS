@@ -68,6 +68,14 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 
 				engine_tile_manager_get_tile( &tile_type, tile );
 				lo->drawtiles_array[ idx ] = tile_type;
+				if( tile_type_exitgame == tile_type )
+				{
+					lo->exit_spotX = col;
+					lo->exit_spotY = row;
+
+					engine_font_manager_draw_data( lo->exit_spotX, 20, 15 );
+					engine_font_manager_draw_data( lo->exit_spotY, 20, 16 );
+				}
 				//tiles_map[ idx ] = tile_type;
 				//tiles_mat[ row ][ col ] = tile_type;
 
