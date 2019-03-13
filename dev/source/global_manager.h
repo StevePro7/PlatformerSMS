@@ -12,7 +12,7 @@
 #define SPRITE_TILES_NUMBER		12
 
 
-#define PLAYER_TILE		256 + 0
+#define PLAYER_TILE				256 + 0
 
 #define INVALID_INDEX			-1
 

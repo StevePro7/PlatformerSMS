@@ -3,11 +3,11 @@
 
 #include "enum_manager.h"
 
-//typedef struct tag_struct_enemy_common
-//{
-//	unsigned char max_enemies;
-//
-//} struct_enemy_common;
+typedef struct tag_struct_enemy_master
+{
+	unsigned char max_enemies;
+
+} struct_enemy_master;
 
 
 typedef struct tag_struct_enemy_object

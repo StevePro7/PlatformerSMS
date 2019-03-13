@@ -11,10 +11,11 @@ void engine_state_manager_load()
 {
 	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
+
+	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
 
-	//struct_enemy_common *ec = &global_enemy_common;
-	unsigned char idx, max_enemies;
+	unsigned char idx;
 
 	// This should never happen!
 	if( 0 == lo->draw_cols )
@@ -28,8 +29,8 @@ void engine_state_manager_load()
 	po->anim_count = 5;
 
 	// EnemyX setup.
-	max_enemies = lo->enemyCount;
-	for( idx = 0; idx < max_enemies; idx++ )
+	em->max_enemies = lo->enemyCount;
+	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
 		eo->sprite_type = lo->enemys_type[ idx ];
@@ -39,7 +40,7 @@ void engine_state_manager_load()
 
 		//engine_font_manager_draw_data( eo->sprite_type, 10, 12 );
 		//engine_font_manager_draw_data( eo->action_type, 10, 13 );
-		engine_font_manager_draw_data( eo->spotX, 10, 4 );
-		engine_font_manager_draw_data( eo->spotY, 10, 5 );
+		//engine_font_manager_draw_data( eo->spotX, 10, 4 );
+		//engine_font_manager_draw_data( eo->spotY, 10, 5 );
 	}
 }
