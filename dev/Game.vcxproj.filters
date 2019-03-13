@@ -168,6 +168,9 @@
     <ClCompile Include="source\over_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="source\delay_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -301,6 +304,12 @@
     </ClInclude>
     <ClInclude Include="source\over_screen.h">
       <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="source\delay_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\delay_object.h">
+      <Filter>Header Files\object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

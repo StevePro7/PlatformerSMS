@@ -1,0 +1,34 @@
+XL2
+H 9 areas 5 global symbols
+M delay_manager
+O -mz80
+S .__.ABS. Def0000
+A _CODE size E flags 0 addr 0
+S _engine_delay_manager_init Def0000
+S _engine_delay_manager_update Def000D
+S _engine_delay_manager_load Def000C
+A _DATA size 4 flags 0 addr 0
+S _global_delay_object Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 22 00 00 2E 00 22 02 00 C9
+R 00 00 00 00 00 06 01 00 00 0B 01 00
+T 0C 00
+R 00 00 00 00
+T 0C 00 C9
+R 00 00 00 00
+T 0D 00
+R 00 00 00 00
+T 0D 00 C9
+R 00 00 00 00
