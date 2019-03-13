@@ -7,6 +7,9 @@
 //struct_enemy_common global_enemy_common;
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
+#define DRAW_OFFSET_X	-4
+static void get_draw_position( unsigned char idx );
+
 void engine_enemyX_manager_init()
 {
 	struct_enemy_object *eo;
@@ -21,9 +24,33 @@ void engine_enemyX_manager_init()
 
 void engine_enemyX_manager_load()
 {
-	//struct_enemy_object *eo;
+	struct_enemy_object *eo;
+	eo = &global_enemy_objects[ 0 ];
+	engine_font_manager_draw_data( eo->spotX, 10, 14 );
+	engine_font_manager_draw_data( eo->spotY, 10, 15 );
+
 	//unsigned char idx;
 
+	// Calculate player starting spot based on level.
+	//int rectX, rectB;
+	//for( idx = 0; idx < MAX_ENEMIES; idx++ )
+	//{
+	//	eo = &global_enemy_objects[ idx ];
+
+	//	engine_font_manager_draw_data( eo->spotX, 10, 14 );
+	//	engine_font_manager_draw_data( eo->spotY, 10, 15 );
+	//	//engine_font_manager_draw_data( eo->drawX, 10, 6 );
+	//	//engine_font_manager_draw_data( eo->drawY, 10, 7 );
+
+	//	/*eo->posnX = 0;	eo->posnY = 0;
+	//	rectX = eo->spotX * TILE_WIDE;
+	//	rectB = eo->spotY * TILE_HIGH + TILE_HIGH;
+	//	eo->posnX = rectX + TILE_WIDE / 2;
+	//	eo->posnY = rectB;*/
+	//	//get_draw_position( idx );
+	//}
+
+	
 	//// Calculate enemyX starting spot based on level.
 	//int rectX, rectB;
 	//eo->posnX = 0;	eo->posnY = 0;
@@ -67,3 +94,14 @@ void engine_enemyX_manager_draw()
 // Global variable.
 //struct_enemy_object global_enemy_object;
 //struct_enemy_object global_enemy_object[ MAX_ENEMIES ];
+
+static void get_draw_position( unsigned char idx )
+{
+	struct_enemy_object *eo = &global_enemy_objects[ idx ];
+
+	int halfTileSizeX = TILE_WIDE / 2;
+	int twiceTileSizeY = 2 * TILE_HIGH;
+
+	eo->drawX = eo->posnX - halfTileSizeX + DRAW_OFFSET_X;
+	eo->drawY = eo->posnY - twiceTileSizeY;
+}

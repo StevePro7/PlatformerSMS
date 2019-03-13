@@ -38,7 +38,7 @@ void screen_play_screen_load()
 	//engine_font_manager_draw_data( coll_type, 9, 10 );
 
 	//engine_level_manager_load_levelX();
-	
+
 	engine_state_manager_load();
 	engine_player_manager_load();
 	engine_enemyX_manager_load();

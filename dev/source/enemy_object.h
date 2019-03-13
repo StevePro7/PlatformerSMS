@@ -14,8 +14,7 @@ typedef struct tag_struct_enemy_object
 {
 	enum_sprite_type sprite_type;
 	enum_action_type action_type;
-	unsigned char enemyX_botX;
-	unsigned char spotX, spotY;
+	unsigned char spotX, spotY;		// IMPORTANT enemy bottom = spotY and never changes
 	unsigned char posnX, posnY;
 	unsigned char drawX, drawY;
 	unsigned char velX;
