@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			8
+#define MAX_SCREEENS			9
 #define MAX_ENEMIES				6
 #define TILE_X_OFFSET			0							// TODO delete after confirm not required!
 //#define GAME_X_OFFSET			TILE_X_OFFSET * 8			// TODO delete

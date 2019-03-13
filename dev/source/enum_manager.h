@@ -10,8 +10,9 @@ typedef enum tag_enum_screen_type
 	screen_type_play = 4,
 	screen_type_pass = 5,
 	screen_type_dead = 6,
-	screen_type_func = 7,
-	screen_type_splash = 8,
+	screen_type_over = 7,
+	screen_type_func = 8,
+	screen_type_splash = 9,
 
 } enum_screen_type;
 
