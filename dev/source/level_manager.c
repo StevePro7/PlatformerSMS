@@ -87,6 +87,11 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 					load_entities( sprite_type, idx );
 				}
 
+				// Load enemy(s).
+				if( sprite_type_enemyA == sprite_type )
+				{
+				}
+
 				//lo->collision_matrix[ index ] = coll_type;
 				lo->collision_array[ idx ] = coll_type;
 			}

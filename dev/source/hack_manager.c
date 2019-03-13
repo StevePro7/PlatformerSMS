@@ -30,7 +30,7 @@ void engine_hack_manager_init()
 
 #endif
 
-	ho->hacker_enemy = 3;			// TODO delete this
+	ho->hacker_enemy = 4;			// TODO delete this
 
 }
 
