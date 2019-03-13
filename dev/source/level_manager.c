@@ -15,7 +15,8 @@ struct_level_object global_level_object;
 
 // Private helper methods.
 static void draw_tiles( unsigned char x, unsigned char y );
-static void load_entities( enum_sprite_type sprite_type, unsigned char index );
+static void setup_player( unsigned char index );
+static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row );
 
 void engine_level_manager_init_level()
 {
@@ -30,6 +31,14 @@ void engine_level_manager_init_level()
 			lo->collision_array[ idx ] = 0;
 		}
 	}
+
+	for( idx = 0; idx < MAX_ENEMIES; idx++ )
+	{
+		lo->enemys_spot[ idx ] = 0;
+		lo->enemys_type[ idx ] = sprite_type_unknown;
+		lo->enemys_botX[ idx ] = 0;
+		lo->enemys_action[ idx ] = action_type_chase;
+	}
 }
 
 void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size )
@@ -39,13 +48,14 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	//unsigned char x, y, tile;
 	unsigned char row, col;
 	unsigned char tile;
-	unsigned char bob;
+	unsigned char enemyCount;
 	
 	//unsigned char idx, row, col;
 	unsigned int idx;
 	enum_tile_type tile_type;
 	enum_coll_type coll_type;
 	enum_sprite_type sprite_type;
+	enemyCount = 0;
 
 	lo->load_cols = size / MAX_ROWS;
 	lo->draw_cols = lo->load_cols - CRlf;
@@ -83,12 +93,14 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 				engine_tile_manager_get_sprite( &sprite_type, tile );
 				if( sprite_type_unknown != sprite_type )
 				{
-					load_entities( sprite_type, idx );
-				}
-
-				// Load enemy(s).
-				if( sprite_type_enemyA == sprite_type )
-				{
+					if( sprite_type_player == sprite_type )
+					{
+						setup_player( idx );
+					}
+					else
+					{
+						setup_enemyX( sprite_type, idx, enemyCount++, tile, row );
+					}
 				}
 
 				//lo->collision_matrix[ index ] = coll_type;
@@ -99,7 +111,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 		}
 	}
 
-	bob = 7;
+	lo->enemyCount = enemyCount;
 }
 
 
@@ -219,11 +231,21 @@ static void draw_tiles( unsigned char x, unsigned char y )
 		engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
 	}
 }
-static void load_entities( enum_sprite_type sprite_type, unsigned char index )
+static void setup_player( unsigned char index )
 {
 	struct_level_object *lo = &global_level_object;
-	if( sprite_type_player == sprite_type )
+	lo->player_spot = index;
+}
+static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row )
+{
+	struct_level_object *lo = &global_level_object;
+	lo->enemys_spot[ enemy ] = index;
+	lo->enemys_type[ enemy ] = sprite_type;
+	lo->enemys_botX[ enemy ] = row;
+
+	lo->enemys_action[ enemy ] = action_type_chase;
+	if( 'a' == tile || 'b' == tile || 'c' == tile || 'd' == tile )
 	{
-		lo->player_spot = index;
+		lo->enemys_action[ enemy ] = action_type_guard;
 	}
 }

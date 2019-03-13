@@ -2,12 +2,14 @@
 #define _ENEMY_MANAGER_H_
 
 #include "enemy_object.h"
+#include "global_manager.h"
 
+void engine_enemyX_manager_init();
 void engine_enemyX_manager_load();
 void engine_enemyX_manager_draw();
 
 // Global variable.
-extern struct_enemy_object global_enemy_object;
-//extern struct_enemy_object global_enemy_object[ MAX_ENEMIES ];
+//extern struct_enemy_common global_enemy_common;
+extern struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
 #endif//_ENEMY_MANAGER_H_

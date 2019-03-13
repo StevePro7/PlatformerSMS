@@ -78,12 +78,12 @@ typedef enum tag_enum_move_type
 
 } enum_move_type;
 
-typedef enum tag_enum_half_type
-{
-	half_type_prev = 0,
-	half_type_next = 1,
-
-} enum_half_type;
+//typedef enum tag_enum_half_type
+//{
+//	half_type_prev = 0,
+//	half_type_next = 1,
+//
+//} enum_half_type;
 
 typedef enum tag_enum_health_type
 {
@@ -91,5 +91,12 @@ typedef enum tag_enum_health_type
 	health_type_death = 1,
 
 } enum_health_type;
+
+typedef enum tag_enum_action_type
+{
+	action_type_chase = 0,
+	action_type_guard = 1,
+
+} enum_action_type;
 
 #endif//_ENUM_MANAGER_H_

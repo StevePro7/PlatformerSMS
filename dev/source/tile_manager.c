@@ -89,22 +89,22 @@ void engine_tile_manager_get_sprite( enum_sprite_type *sprite_type, unsigned cha
 		*sprite_type = sprite_type_player;
 		return;
 	}
-	if( 'A' == tile )
+	if( 'A' == tile || 'a' == tile )
 	{
 		*sprite_type = sprite_type_enemyA;
 		return;
 	}
-	if( 'B' == tile )
+	if( 'B' == tile || 'b' == tile )
 	{
 		*sprite_type = sprite_type_enemyB;
 		return;
 	}
-	if( 'C' == tile )
+	if( 'C' == tile || 'c' == tile )
 	{
 		*sprite_type = sprite_type_enemyC;
 		return;
 	}
-	if( 'D' == tile )
+	if( 'D' == tile || 'd' == tile )
 	{
 		*sprite_type = sprite_type_enemyD;
 		return;

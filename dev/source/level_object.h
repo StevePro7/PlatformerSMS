@@ -11,8 +11,13 @@ typedef struct tag_struct_level_object
 	unsigned char drawtiles_array[ MAX_ROWS * MAX_COLS ];
 	unsigned int load_cols;
 	unsigned int draw_cols;
+	signed char exit_spotX, exit_spotY;		// Compatible with collX, collY
 	unsigned int player_spot;
-	signed char exit_spotX, exit_spotY;
+	unsigned int enemys_spot[ MAX_ENEMIES ];
+	unsigned char enemys_type[ MAX_ENEMIES ];
+	unsigned char enemys_botX[ MAX_ENEMIES ];
+	unsigned char enemys_action[ MAX_ENEMIES ];
+	unsigned char enemyCount;
 
 } struct_level_object;
 
