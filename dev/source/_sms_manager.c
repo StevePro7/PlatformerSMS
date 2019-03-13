@@ -1,5 +1,5 @@
 #include "_sms_manager.h"
-#include "game_manager.h"
+#include "info_manager.h"
 #include <stdbool.h>
 
 #ifdef _CONSOLE
