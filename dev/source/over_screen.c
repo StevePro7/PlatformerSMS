@@ -6,7 +6,7 @@
 
 void screen_over_screen_load()
 {
-	engine_font_manager_draw_text( "OVER!", 10, 9 );
+	engine_font_manager_draw_text( "OVER!!", 10, 9 );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )

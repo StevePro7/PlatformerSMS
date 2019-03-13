@@ -3,9 +3,6 @@
 
 #include "level_object.h"
 
-//#define COLS 15
-//#define ROWS 12
-
 void engine_level_manager_init_level();
 void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size );
 void engine_level_manager_load_index( const unsigned char index );
