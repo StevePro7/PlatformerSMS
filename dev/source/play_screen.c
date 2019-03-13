@@ -63,10 +63,23 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
 	unsigned int cell_top, cell_bot;
 	unsigned char tile;
+	unsigned int enemA_left, enemA_rght, enemA_topX, enemA_botX;
+	unsigned int enemB_left, enemB_rght, enemB_topX, enemB_botX;
+	unsigned int enemC_left, enemC_rght, enemC_topX, enemC_botX;
+	unsigned int enemD_left, enemD_rght, enemD_topX, enemD_botX;
+	signed char coll_topX;
+
+	enemA_left = enemB_left = enemC_left = enemD_left = 240;
+	enemA_rght = enemB_rght = enemC_rght = enemD_rght = 240;
+	enemA_topX = 0;  enemB_topX = 48;  enemC_topX = 96;  enemD_topX = 144;
+	enemA_botX = 32; enemB_botX = 80;  enemC_botX = 128; enemD_botX = 276;
+
+	coll_topX = po->coll_topX + 1;
 
 	engine_player_manager_get_input();
 	engine_player_manager_apply_physics();
@@ -124,6 +137,57 @@ void screen_play_screen_update( unsigned char *screen_type )
 			{
 				*screen_type = screen_type_pass;
 				return;
+			}
+		}
+	}
+
+	if( ho->hacker_enemy > 0 )
+	{
+		if( 1 == coll_topX || 4 == coll_topX || 7 == coll_topX || 10 == coll_topX )
+		{
+			if( ho->hacker_enemy > 0 )
+			{
+				if( 1 == coll_topX )
+				{
+					if( po->posnX >= enemA_left && po->posnX <= enemA_rght && po->posnY >= enemA_topX && po->posnY <= enemA_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+			if( ho->hacker_enemy > 1 )
+			{
+				if( 4 == coll_topX )
+				{
+					if( po->posnX >= enemB_left && po->posnX <= enemB_rght && po->posnY >= enemB_topX && po->posnY <= enemB_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+			if( ho->hacker_enemy > 2 )
+			{
+				if( 7 == coll_topX )
+				{
+					if( po->posnX >= enemC_left && po->posnX <= enemC_rght && po->posnY >= enemC_topX && po->posnY <= enemC_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+			if( ho->hacker_enemy > 3 )
+			{
+				if( 10 == coll_topX )
+				{
+					if( po->posnX >= enemD_left && po->posnX <= enemD_rght && po->posnY >= enemD_topX && po->posnY <= enemD_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
 			}
 		}
 	}
