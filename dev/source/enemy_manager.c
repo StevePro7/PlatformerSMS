@@ -9,6 +9,15 @@ struct_enemy_master global_enemy_master;
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
 #define DRAW_OFFSET_X	-4
+
+static unsigned int enemy_tiles[ MAX_ENEMIES ] =
+{
+	ENEMYX_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER,
+	ENEMYX_SPRITE_TILE + 1 * SPRITE_TILES_NUMBER,
+	ENEMYX_SPRITE_TILE + 2 * SPRITE_TILES_NUMBER,
+	ENEMYX_SPRITE_TILE + 3 * SPRITE_TILES_NUMBER
+};
+
 static void get_draw_position( unsigned char idx );
 
 void engine_enemyX_manager_init()
@@ -86,11 +95,17 @@ void engine_enemyX_manager_draw()
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
 	unsigned char idx;
-	unsigned int tile = 388;
+	unsigned int tile;
 
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
+		if( action_type_chase == eo->action_type )
+		{
+			get_draw_position( idx );
+		}
+
+		tile = enemy_tiles[ idx ];
 		engine_sprite_manager_draw( eo->drawX, eo->drawY, tile );
 	}
 

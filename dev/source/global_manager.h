@@ -8,12 +8,11 @@
 #define TILE_X_OFFSET			0							// TODO delete after confirm not required!
 //#define GAME_X_OFFSET			TILE_X_OFFSET * 8			// TODO delete
 //#define SPRITE_TILES_OFFSET		128
-#define SPRITE_TILES_OFFSET		256
+//#define SPRITE_TILES_OFFSET		256						// TODO delete as was used before but now dead code!
 #define SPRITE_TILES_NUMBER		12
 
-
-#define PLAYER_TILE				256 + 0
-
+#define PLAYER_SPRITE_TILE		256
+#define ENEMYX_SPRITE_TILE		388
 #define INVALID_INDEX			-1
 
 #define MAX_ROWS				12
