@@ -68,10 +68,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	unsigned int cell_top, cell_bot;
 	unsigned char tile;
-	unsigned int enemA_left, enemA_rght, enemA_topX, enemA_botX;
-	unsigned int enemB_left, enemB_rght, enemB_topX, enemB_botX;
-	unsigned int enemC_left, enemC_rght, enemC_topX, enemC_botX;
-	unsigned int enemD_left, enemD_rght, enemD_topX, enemD_botX;
+	int enemA_left, enemA_rght, enemA_topX, enemA_botX;
+	int enemB_left, enemB_rght, enemB_topX, enemB_botX;
+	int enemC_left, enemC_rght, enemC_topX, enemC_botX;
+	int enemD_left, enemD_rght, enemD_topX, enemD_botX;
 	signed char coll_topX;
 
 	enemA_left = enemB_left = enemC_left = enemD_left = 240;
