@@ -3,9 +3,11 @@
 #include "global_manager.h"
 #include "enum_manager.h"
 #include "..\banks\bank2.h"
+#include "..\banks\bank3.h"
 #include "..\gfx.h"
 
 #define BACK_TILES_OFFSET		0
+#define MISC_TILES_OFFSET		128
 
 void engine_content_manager_load_back_tiles()
 {
@@ -32,4 +34,11 @@ void engine_content_manager_load_sprites()
 	//devkit_SMS_loadPSGaidencompressedTiles( EnemyD_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyD ] );
 
 	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
+}
+
+void engine_content_manager_load_splash()
+{
+	devkit_SMS_mapROMBank( splash__tilemap__stmcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, MISC_TILES_OFFSET );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 0, splash__tilemap__stmcompr );
 }

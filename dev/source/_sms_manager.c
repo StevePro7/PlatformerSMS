@@ -46,6 +46,11 @@ void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom )
 {
 	SMS_loadPSGaidencompressedTiles( src, tilefrom );
 }
+void devkit_SMS_loadSTMcompressedTileMap( unsigned char x, unsigned char y, unsigned char *src )
+{
+	SMS_loadSTMcompressedTileMap( x, y, src );
+}
+
 void devkit_SMS_loadBGPalette( void *palette )
 {
 	SMS_loadBGPalette( palette );

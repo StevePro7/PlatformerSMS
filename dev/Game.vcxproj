@@ -178,6 +178,7 @@
     <ClCompile Include="source\play_screen.c" />
     <ClCompile Include="source\render_manager.c" />
     <ClCompile Include="source\scroll_manager.c" />
+    <ClCompile Include="source\splash_screen.c" />
     <ClCompile Include="source\sprite_manager.c" />
     <ClCompile Include="source\state_manager.c" />
     <ClCompile Include="source\tester_manager.c" />
@@ -228,6 +229,7 @@
     <ClInclude Include="source\play_screen.h" />
     <ClInclude Include="source\render_manager.h" />
     <ClInclude Include="source\scroll_manager.h" />
+    <ClInclude Include="source\splash_screen.h" />
     <ClInclude Include="source\sprite_manager.h" />
     <ClInclude Include="source\state_manager.h" />
     <ClInclude Include="source\tester_manager.h" />

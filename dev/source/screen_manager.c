@@ -12,6 +12,7 @@
 #include "dead_screen.h"
 #include "over_screen.h"
 #include "func_screen.h"
+#include "splash_screen.h"
 
 static void( *load_method[ MAX_SCREEENS ] )( );
 static void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
@@ -34,10 +35,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_dead ] = screen_dead_screen_load;
 	load_method[ screen_type_over ] = screen_over_screen_load;
 	load_method[ screen_type_func ] = screen_func_screen_load;
-	/*
-	load_method[ screen_type_load ] = screen_load_screen_load;
 	load_method[ screen_type_splash ] = screen_splash_screen_load;
-	*/
 
 	// Set update methods.
 	update_method[ screen_type_none ] = screen_none_screen_update;
@@ -49,10 +47,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_dead ] = screen_dead_screen_update;
 	update_method[ screen_type_over ] = screen_over_screen_update;
 	update_method[ screen_type_func ] = screen_func_screen_update;
-	/*
-	update_method[ screen_type_load ] = screen_load_screen_update;
 	update_method[ screen_type_splash ] = screen_splash_screen_update;
-	*/
 }
 
 void engine_screen_manager_update()

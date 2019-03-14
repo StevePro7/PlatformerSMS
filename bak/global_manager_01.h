@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			10
+#define MAX_SCREEENS			9
 #define MAX_ENEMIES				4
 #define MAX_BLOCK_TILES			9
 
@@ -26,7 +26,11 @@
 #define ANIMATE_IDX_LEFT		1
 #define ANIMATE_IDX_RGHT		6
 
-// Custom function.
+//#define COLS	15
+//#define ROWS	12
+//extern const unsigned int list_sprite_tile_offset[];
+//extern const unsigned char *stageinitdata[];
+
 int myabs( int v );
 
 #endif//_GLOBAL_MANAGER_H_
