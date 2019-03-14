@@ -1,12 +1,25 @@
 #include "title_screen.h"
 #include "_sms_manager.h"
+#include "global_manager.h"
 #include "enum_manager.h"
 #include "content_manager.h"
+#include "tile_manager.h"
+#include <stdlib.h>
 
 void screen_title_screen_load()
 {
+	unsigned char x, tile;
 	devkit_SMS_displayOff();
+
 	engine_content_manager_load_title();
+	for( x = 1; x <= SCREEN_TILE_WIDE; x += 2 )
+	{
+		tile = rand() % MAX_BLOCK_TILES + 1;
+		engine_tile_manager_draw_tile( tile, x, 0 );
+		tile = rand() % MAX_BLOCK_TILES + 1;
+		engine_tile_manager_draw_tile( tile, x, 22 );
+	}
+
 	devkit_SMS_displayOn();
 }
 
