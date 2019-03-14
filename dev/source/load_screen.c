@@ -3,7 +3,7 @@
 #include "hack_manager.h"
 #include "debug_manager.h"
 #include "enum_manager.h"
-//#include "font_manager.h"
+#include "font_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
 #include "anim_manager.h"
@@ -13,14 +13,17 @@
 #include "state_manager.h"
 #include "game_manager.h"
 
+static unsigned char invincible;
+
 void screen_load_screen_load()
 {
-	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
 	struct_level_object *lo = &global_level_object;
 
-	//engine_debug_manager_draw_grid();		// TODO remove this!
-
 	engine_game_manager_load();
+	invincible = go->invincible;
+
+	//engine_debug_manager_draw_grid();		// TODO remove this!
 
 	// Load animations.
 	engine_anim_manager_player_load_idle();
@@ -38,9 +41,6 @@ void screen_load_screen_load()
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
-	struct_game_object *go = &global_game_object;
-	struct_hack_object *ho = &global_hack_object;
-	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
@@ -58,14 +58,17 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 
 	// Collisions.
-	//engine_font_manager_draw_text( "TEST", 10, 4 );
+	//
 
 	// If invincible then ignore collisions.
-	if( go->invincible )
+	if( invincible )
 	{
 		*screen_type = screen_type_load;
 		return;
 	}
+
+	//engine_font_manager_draw_text( "TEST", 10, 4 );
+
 	// If jump above "ceiling" then cannot collide.
 	if( po->posnY < 0 )
 	{
@@ -80,7 +83,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 		if( ( signed char ) eo->spotY >= po->coll_topX && ( signed char ) eo->spotY <= po->coll_botX )
 		{
 			//engine_font_manager_draw_text( "DIFF", 10, 6 );
-			//coll_diff = myabs( po->posnX - eo->posnX );
+			coll_diff = myabs( po->posnX - eo->posnX );
 			if( coll_diff <= 12 )								// TODO replace hardcode value
 			{
 		//		engine_font_manager_draw_data( po->posnX, 10, 7 );
