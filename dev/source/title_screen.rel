@@ -9,7 +9,7 @@ S _devkit_SMS_displayOff Ref0000
 S _engine_content_manager_load_title Ref0000
 S _engine_tile_manager_draw_tile Ref0000
 S __modsint Ref0000
-A _CODE size 52 flags 0 addr 0
+A _CODE size 55 flags 0 addr 0
 S _screen_title_screen_update Def004B
 S _screen_title_screen_load Def0000
 A _DATA size 0 flags 0 addr 0
@@ -38,5 +38,5 @@ T 40 00 C1 04 04 78 D6 20 38 C0 C3 00 00
 R 00 00 00 00 02 0B 01 00
 T 4B 00
 R 00 00 00 00
-T 4B 00 C1 E1 E5 C5 36 0A C9
-R 00 00 00 00
+T 4B 00 CD 00 00 C1 E1 E5 C5 36 0A C9
+R 00 00 00 00 02 03 00 00
