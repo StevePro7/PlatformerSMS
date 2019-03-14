@@ -18,9 +18,11 @@
 #define MAX_ROWS				12
 #define MAX_COLS				16
 
-
 #define TILE_WIDE				16
 #define TILE_HIGH				16
+
+#define SCREEN_TILE_WIDE		32
+#define SCREEN_TILE_HIGH		24
 
 #define ANIMATE_MOVE_MAX		5
 #define ANIMATE_IDX_LEFT		1

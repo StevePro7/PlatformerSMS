@@ -12,7 +12,7 @@ void screen_title_screen_load()
 	devkit_SMS_displayOff();
 
 	engine_content_manager_load_title();
-	for( x = 1; x <= SCREEN_TILE_WIDE; x += 2 )
+	for( x = 2; x < SCREEN_TILE_WIDE; x += 2 )
 	{
 		tile = rand() % MAX_BLOCK_TILES + 1;
 		engine_tile_manager_draw_tile( tile, x, 0 );

@@ -7,6 +7,9 @@ Warner the Explorer
 https://yhoo.it/2HdDJfu
 
 14/03/2019
+Wonderboy level select cheat
+
+
 Add new screen checklist
 Create *_screen.h and *_screen.c file
 Copy stub methods from existing screen

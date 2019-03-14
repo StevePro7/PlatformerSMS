@@ -38,20 +38,20 @@ void engine_content_manager_load_sprites()
 
 void engine_content_manager_load_splash()
 {
-	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );
+	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );\
 	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, MISC_TILES_OFFSET );
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
 }
 
 void engine_content_manager_load_title()
 {
-	
+	// TODO confirm which is the final title - I believe Title6 is more theme aligned...
 	devkit_SMS_mapROMBank( title6__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( title6__tiles__psgcompr, MISC_TILES_OFFSET );
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title6__tilemap__stmcompr );
-	/*
-	devkit_SMS_mapROMBank( title8__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( title8__tiles__psgcompr, MISC_TILES_OFFSET );
-	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title8__tilemap__stmcompr );
-	*/
+
+	//devkit_SMS_mapROMBank( title8__tiles__psgcompr_bank );
+	//devkit_SMS_loadPSGaidencompressedTiles( title8__tiles__psgcompr, MISC_TILES_OFFSET );
+	//devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title8__tilemap__stmcompr );
+	
 }
