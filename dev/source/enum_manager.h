@@ -13,6 +13,7 @@ typedef enum tag_enum_screen_type
 	screen_type_over = 7,
 	screen_type_func = 8,
 	screen_type_splash = 9,
+	screen_type_title = 10,
 
 } enum_screen_type;
 

@@ -6,6 +6,8 @@ cd banks
 cd bank3
 
 bmp2tile.exe raw\splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 128 -savetilemap "splash (tilemap).stmcompr" -exit
+bmp2tile.exe raw\title6.png -savetiles "title6 (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 128 -savetilemap "title6 (tilemap).stmcompr" -exit
+bmp2tile.exe raw\title6.png -savetiles "title8 (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 128 -savetilemap "title8 (tilemap).stmcompr" -exit
 
 cd ..
 folder2c bank3 bank3 3

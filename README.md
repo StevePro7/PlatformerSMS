@@ -6,6 +6,26 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+14/03/2019
+Add new screen checklist
+Create *_screen.h and *_screen.c file
+Copy stub methods from existing screen
+Rename stub methods accordingly
+Update header guard names and file reference names
+Include whatever header files are necessary
+Update the enum_manager by add new screen type
+Update global_manager by increase no. screens
+Update screen_manager by include new screen header file
+Update screen_manager by adding new load + update function pointers to existing arrays
+Update build.bat by adding sdcc -c for *_screen.c AND *_screen.rel
+DON'T FORGET to update the build.bat to include screen_manager.c and any other dependencies
+Take screen for test drive in main.c
+
+14/03/2019
+Title tiles loaded start 128 and finish 342	bmp2tile says 221 tiles for both
+If round up to nearest 16x tiles then next block would be 352 [22*16] which would leave 96 tiles left for title "sprites" [tiles]
+96x tiles / 12 tiles per entity = 8x entities maximum which would be plenty here...
+
 12/03/2019
 Hack ROM for invincibility.  If/when have pits then load the level as normal, calculate enemy horizontal range with impassable tiles
 But before complete, check if (invincible) then update any/all passsble pits files on bottom row with impassable but draw debug square
