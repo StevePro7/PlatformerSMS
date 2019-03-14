@@ -24,6 +24,8 @@
 #define SCREEN_TILE_WIDE		32
 #define SCREEN_TILE_HIGH		24
 
+#define NUMBER_LIVES			4
+
 #define ANIMATE_MOVE_MAX		5
 #define ANIMATE_IDX_LEFT		1
 #define ANIMATE_IDX_RGHT		6

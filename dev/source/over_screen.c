@@ -34,7 +34,7 @@ void screen_over_screen_load()
 	engine_player_manager_load();
 	engine_enemyX_manager_load();
 
-	//engine_font_manager_draw_text( "TESTING", 10, 9 );
+	engine_font_manager_draw_text( "OVER", 10, 9 );
 
 	//lo->enemyX_spot[ 0 ];
 	//engine_font_manager_draw_data( lo->enemyX_spot[ 0 ], 10, 10 );
