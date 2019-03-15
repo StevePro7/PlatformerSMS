@@ -1,4 +1,4 @@
-h# PlatformerSMS
+# PlatformerSMS
 Placeholder repo for PlatformerSMS
 
 PLATFORM
@@ -7,6 +7,8 @@ Warner the Explorer
 https://yhoo.it/2HdDJfu
 
 15/03/2019
+IMPORTANT
+Must check collision detection btwn player and enemy(s) if player below enemy and jump thru platform to hit enemy - can die
 $ currently optional platform
 Easy	visible
 Hard	hidden
