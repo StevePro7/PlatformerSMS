@@ -41,7 +41,7 @@ void engine_level_manager_init_level()
 	}
 }
 
-void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size, unsigned char invincible )
+void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty )
 {
 	struct_level_object *lo = &global_level_object;
 	const unsigned char *o = level;
@@ -137,13 +137,13 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 }
 
 
-void engine_level_manager_load_index( const unsigned char index, unsigned char invincible )
+void engine_level_manager_load_index( const unsigned char index, unsigned char invincible, unsigned char difficulty )
 {
 	const unsigned char *level = leveldata[ index ];
 	const unsigned char bank = levelbank[ index ];
 	const unsigned char size = levelsize[ index ];
 
-	engine_level_manager_load_level( level, bank, size, invincible );
+	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
 }
 
 void engine_level_manager_draw_level()

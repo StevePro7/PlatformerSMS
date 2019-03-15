@@ -39,21 +39,22 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 game_manager.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 game_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 render_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scroll_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tester_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
@@ -115,7 +116,7 @@ source\global_manager.rel	source\debug_manager.rel	source\hack_manager.rel		sour
 source\content_manager.rel	source\font_manager.rel		source\delay_manager.rel ^
 source\sprite_manager.rel	source\tile_manager.rel		source\level_manager.rel	source\anim_manager.rel ^
 source\input_manager.rel	source\player_manager.rel	source\enemy_manager.rel ^
-source\state_manager.rel	source\render_manager.rel	source\scroll_manager.rel	source\tester_manager.rel ^
+source\state_manager.rel	source\stats_manager.rel	source\render_manager.rel	source\scroll_manager.rel	source\tester_manager.rel ^
 source\none_screen.rel ^	source\test_screen.rel		source\init_screen.rel		source\load_screen.rel		source\play_screen.rel ^
 source\pass_screen.rel		source\dead_screen.rel      source\over_screen.rel      source\func_screen.rel      source\splash_screen.rel ^
 source\title_screen.rel ^

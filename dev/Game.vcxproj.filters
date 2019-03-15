@@ -180,6 +180,9 @@
     <ClCompile Include="source\title_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="source\stats_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -331,6 +334,12 @@
     </ClInclude>
     <ClInclude Include="source\title_screen.h">
       <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stats_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stats_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

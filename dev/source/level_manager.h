@@ -4,8 +4,8 @@
 #include "level_object.h"
 
 void engine_level_manager_init_level();
-void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size, unsigned char invincible );
-void engine_level_manager_load_index( const unsigned char index, unsigned char invincible );
+void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty );
+void engine_level_manager_load_index( const unsigned char index, unsigned char invincible, unsigned char difficulty );
 void engine_level_manager_draw_level();
 void engine_level_manager_draw_level_column( unsigned char column );
 void engine_level_manager_draw_level_column_side( unsigned side_type, unsigned char column );

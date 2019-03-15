@@ -26,7 +26,7 @@ void screen_over_screen_load()
 	engine_enemyX_manager_init();
 
 	engine_level_manager_init_level();
-	engine_level_manager_load_index( 0, false );
+	engine_level_manager_load_index( 0, false, 0 );
 	//engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
 

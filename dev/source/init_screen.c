@@ -19,7 +19,7 @@ static void draw();
 void screen_init_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	engine_level_manager_load_index( 4, false );
+	engine_level_manager_load_index( 4, false, 0 );
 	engine_level_manager_draw_level();
 	//engine_level_manager_load_levelX();
 

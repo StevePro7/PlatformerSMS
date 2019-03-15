@@ -11,17 +11,28 @@
 #include "enemy_manager.h"
 #include "input_manager.h"
 #include "state_manager.h"
+#include "stats_manager.h"
 #include "game_manager.h"
 
 static unsigned char invincible;
+static unsigned char collision;
 
 void screen_load_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	struct_level_object *lo = &global_level_object;
+	struct_stats_object *so = &global_stats_object;
+	enum_diff_type difficulty;
 
+	engine_stats_manager_init();
+	engine_game_manager_init();
 	engine_game_manager_load();
 	invincible = go->invincible;
+
+	difficulty = go->difficulty;
+	collision = so->collision_offsets[ difficulty ];
+
+	
 
 	//engine_debug_manager_draw_grid();		// TODO remove this!
 
@@ -31,12 +42,15 @@ void screen_load_screen_load()
 	engine_anim_manager_enemyX_load_idle();
 
 	engine_level_manager_init_level();
-	engine_level_manager_load_index( 0, invincible );
+	engine_level_manager_load_index( 0, invincible, difficulty );
 	engine_level_manager_draw_level();
 
 	engine_state_manager_load();
 	engine_player_manager_load();
 	engine_enemyX_manager_load();
+
+
+	engine_font_manager_draw_data( collision, 10, 10 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
@@ -92,7 +106,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 		{
 			//engine_font_manager_draw_text( "DIFF", 10, 6 );
 			coll_diff = myabs( po->posnX - eo->posnX );
-			if( coll_diff <= 12 )								// TODO replace hardcode value
+			if( coll_diff <= collision )
 			{
 		//		engine_font_manager_draw_data( po->posnX, 10, 7 );
 		//		engine_font_manager_draw_data( eo->posnX, 10, 8 );
