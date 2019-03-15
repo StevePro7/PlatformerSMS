@@ -42,7 +42,7 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 		*tile_type = rand() % MAX_BLOCK_TILES + 1;
 		return;
 	}
-	if( '-' == tile )
+	if( '@' == tile || '-' == tile )
 	{
 		*tile_type = tile_type_platform;
 		return;
