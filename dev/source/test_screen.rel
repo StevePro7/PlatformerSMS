@@ -17,9 +17,9 @@ S _engine_anim_manager_player_load_run Ref0000
 S _engine_player_manager_load Ref0000
 S _engine_anim_manager_player_load_idle Ref0000
 S _engine_level_manager_load_index Ref0000
-A _CODE size 37 flags 0 addr 0
+A _CODE size 3C flags 0 addr 0
 S _screen_test_screen_load Def0001
-S _screen_test_screen_update Def001E
+S _screen_test_screen_update Def0023
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -34,17 +34,17 @@ T 00 00 C9
 R 00 00 00 00
 T 01 00
 R 00 00 00 00
-T 01 00 CD 00 00 CD 00 00 CD 00 00 3E 01 F5 33 CD
+T 01 00 CD 00 00 CD 00 00 CD 00 00 21 00 00 E5 3E
 R 00 00 00 00 02 03 0D 00 02 06 0B 00 02 09 07 00
-T 0F 00 00 00 33 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 02 0E 00 02 06 02 00 02 09 03 00
-T 19 00 00 00 C3 00 00
-R 00 00 00 00 02 02 0C 00 02 05 06 00
-T 1E 00
+T 0F 00 01 F5 33 CD 00 00 F1 33 CD 00 00 CD 00 00
+R 00 00 00 00 02 06 0E 00 02 0B 02 00 02 0E 03 00
+T 1D 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 03 0C 00 02 06 06 00
+T 23 00
 R 00 00 00 00
-T 1E 00 CD 00 00 CD 00 00 CD 00 00 CD
+T 23 00 CD 00 00 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 03 09 00 02 06 05 00 02 09 08 00
-T 28 00 00 00 CD 00 00 CD 00 00 C1 E1 E5 C5 36 01
+T 2D 00 00 00 CD 00 00 CD 00 00 C1 E1 E5 C5 36 01
 R 00 00 00 00 02 02 00 00 02 05 0A 00 02 08 01 00
-T 36 00 C9
+T 3B 00 C9
 R 00 00 00 00
