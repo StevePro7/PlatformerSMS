@@ -73,7 +73,7 @@ void engine_tile_manager_get_collision( enum_coll_type *coll_type, unsigned char
 		*coll_type = coll_type_impassable;
 		return;
 	}
-	if( '-' == tile )
+	if( '@' == tile || '-' == tile )
 	{
 		*coll_type = coll_type_platform;
 		return;

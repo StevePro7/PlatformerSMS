@@ -86,7 +86,7 @@ void screen_test_screen_load()
 	engine_anim_manager_player_load_run();
 	engine_anim_manager_enemyX_load_idle();
 
-	engine_level_manager_load_index( 1 );
+	engine_level_manager_load_index( 1, false );
 	//engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
 

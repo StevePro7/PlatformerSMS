@@ -115,7 +115,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	if( invincible )
 	{
 		row = MAX_ROWS - 1;
-		for( col = 0; col < lo->load_cols; col++ )
+		for( col = 1; col < lo->draw_cols; col++ )
 		{
 			idx = row * MAX_COLS + col;
 
@@ -124,12 +124,11 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 
 			if( tile_type_blankGap == tile_type )
 			{
-				lo->drawtiles_array[ idx ] = tile_type_gridline;
+				//lo->drawtiles_array[ idx ] = tile_type_gridline;
 			}
-
 			if( coll_type_passable == coll_type )
 			{
-				lo->collision_array[ idx ] = coll_type_passable;
+				lo->collision_array[ idx ] = coll_type_impassable;
 			}
 		}
 	}

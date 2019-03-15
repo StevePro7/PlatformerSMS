@@ -31,7 +31,7 @@ void screen_load_screen_load()
 	engine_anim_manager_enemyX_load_idle();
 
 	engine_level_manager_init_level();
-	engine_level_manager_load_index( 0 );
+	engine_level_manager_load_index( 0, invincible );
 	engine_level_manager_draw_level();
 
 	engine_state_manager_load();
