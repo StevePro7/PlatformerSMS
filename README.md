@@ -6,9 +6,14 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+15/03/2019
+$ currently optional platform
+Easy	visible
+Hard	hidden
+I believe that platform is better than block tile as can jump thru them non blocking
+
 14/03/2019
 Wonderboy level select cheat
-
 
 Add new screen checklist
 Create *_screen.h and *_screen.c file

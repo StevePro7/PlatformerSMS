@@ -75,7 +75,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 				//level_map[ idx ] = tile;
 				//level_mat[ row ][ col ] = tile;
 
-				engine_tile_manager_get_tile( &tile_type, tile );
+				engine_tile_manager_get_tile( &tile_type, tile, difficulty );
 				lo->drawtiles_array[ idx ] = tile_type;
 				if( tile_type_exitgame == tile_type )
 				{
@@ -86,7 +86,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 				//tiles_map[ idx ] = tile_type;
 				//tiles_mat[ row ][ col ] = tile_type;
 
-				engine_tile_manager_get_collision( &coll_type, tile );
+				engine_tile_manager_get_collision( &coll_type, tile, difficulty );
 				//crash_map[ idx ] = coll_type;
 				//crash_mat[ row ][ col ] = coll_type;
 

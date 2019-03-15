@@ -1,7 +1,8 @@
 #include "tile_manager.h"
 #include "_sms_manager.h"
 #include "global_manager.h"
-#include "level_object.h"
+#include "enum_manager.h"
+//#include "level_object.h"
 #include "..\gfx.h"
 #include <stdlib.h>
 
@@ -35,7 +36,7 @@ void engine_tile_manager_draw_tile_side( enum_side_type side_type, unsigned char
 	}
 }
 
-void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile )
+void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile, unsigned char difficulty )
 {
 	if( '#' == tile )
 	{
@@ -44,6 +45,18 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 	}
 	if( '@' == tile || '-' == tile )
 	{
+		*tile_type = tile_type_platform;
+		return;
+	}
+	if( '$' == tile )
+	{
+		// $ Optional platform:
+		if( diff_type_hard == difficulty )
+		{
+			*tile_type = tile_type_blankGap;
+			return;
+		}
+
 		*tile_type = tile_type_platform;
 		return;
 	}
@@ -66,7 +79,7 @@ void engine_tile_manager_get_tile( enum_tile_type *tile_type, unsigned char tile
 	*tile_type = tile_type_blankGap;
 }
 
-void engine_tile_manager_get_collision( enum_coll_type *coll_type, unsigned char tile )
+void engine_tile_manager_get_collision( enum_coll_type *coll_type, unsigned char tile, unsigned char difficulty )
 {
 	if( '#' == tile )
 	{
@@ -75,6 +88,18 @@ void engine_tile_manager_get_collision( enum_coll_type *coll_type, unsigned char
 	}
 	if( '@' == tile || '-' == tile )
 	{
+		*coll_type = coll_type_platform;
+		return;
+	}
+	if( '$' == tile )
+	{
+		// $ diff=Easy visible other diff=Hard hidden.
+		if( diff_type_hard == difficulty )
+		{
+			*coll_type = coll_type_passable;
+			return;
+		}
+
 		*coll_type = coll_type_platform;
 		return;
 	}
