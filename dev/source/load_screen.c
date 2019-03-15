@@ -56,9 +56,17 @@ void screen_load_screen_update( unsigned char *screen_type )
 	engine_enemyX_manager_draw();
 	engine_player_manager_draw();
 
+	// TODO extract if no pits in level then only check if there is...
+	// could leave this in for the moment to stress test redundant check
+	// Check if fell into pit.
+	if( health_type_death == po->player_health_type )
+	{
+		*screen_type = screen_type_dead;
+		return;
+	}
+
 
 	// Collisions.
-	//
 
 	// If invincible then ignore collisions.
 	if( invincible )

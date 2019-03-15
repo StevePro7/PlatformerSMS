@@ -69,7 +69,7 @@ void engine_enemyX_manager_draw()
 			get_draw_position( idx );
 		}
 
-		tile = enemy_tiles[ idx ];
+		tile = enemy_tiles[ eo->sprite_type ];
 		engine_sprite_manager_draw( eo->drawX, eo->drawY, tile );
 	}
 }
