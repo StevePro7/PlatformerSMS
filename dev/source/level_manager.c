@@ -41,7 +41,7 @@ void engine_level_manager_init_level()
 	}
 }
 
-void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size )
+void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size, unsigned char invincible )
 {
 	struct_level_object *lo = &global_level_object;
 	const unsigned char *o = level;
@@ -111,17 +111,40 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 		}
 	}
 
+	// If player is invincible then "replace" any pits.
+	if( invincible )
+	{
+		row = MAX_ROWS - 1;
+		for( col = 0; col < lo->load_cols; col++ )
+		{
+			idx = row * MAX_COLS + col;
+
+			tile_type = lo->drawtiles_array[ idx ];
+			coll_type = lo->collision_array[ idx ];
+
+			if( tile_type_blankGap == tile_type )
+			{
+				lo->drawtiles_array[ idx ] = tile_type_gridline;
+			}
+
+			if( coll_type_passable == coll_type )
+			{
+				lo->collision_array[ idx ] = coll_type_passable;
+			}
+		}
+	}
+
 	lo->enemyCount = enemyCount;
 }
 
 
-void engine_level_manager_load_index( const unsigned char index )
+void engine_level_manager_load_index( const unsigned char index, unsigned char invincible )
 {
 	const unsigned char *level = leveldata[ index ];
 	const unsigned char bank = levelbank[ index ];
 	const unsigned char size = levelsize[ index ];
 
-	engine_level_manager_load_level( level, bank, size );
+	engine_level_manager_load_level( level, bank, size, invincible );
 }
 
 void engine_level_manager_draw_level()

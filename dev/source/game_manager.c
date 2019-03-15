@@ -9,6 +9,6 @@ void engine_game_manager_load()
 {
 	struct_game_object *go = &global_game_object;
 
-	go->invincible = false;
+	go->invincible = true;
 	go->number_lives = NUMBER_LIVES;
 }
