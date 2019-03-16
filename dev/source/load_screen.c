@@ -50,7 +50,7 @@ void screen_load_screen_load()
 	engine_enemyX_manager_load();
 
 
-	engine_font_manager_draw_data( collision, 10, 10 );
+	//engine_font_manager_draw_data( collision, 10, 10 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )

@@ -33,8 +33,19 @@ void engine_state_manager_load()
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
+
+
+		eo->spotY = lo->enemys_spotY[ idx ];
+		eo->spotX = lo->enemys_spotX[ idx ];
+		eo->spotY = lo->enemys_spot[ idx ] / lo->draw_cols;
+		eo->spotX = lo->enemys_spot[ idx ] % lo->draw_cols;
+
+
 		eo->sprite_type = lo->enemys_type[ idx ];
 		eo->action_type = lo->enemys_action[ idx ];
+
+		eo->spotY = lo->enemys_spotY[ idx ];
+		eo->spotX = lo->enemys_spotX[ idx ];
 		eo->spotY = lo->enemys_spot[ idx ] / lo->draw_cols;
 		eo->spotX = lo->enemys_spot[ idx ] % lo->draw_cols;
 

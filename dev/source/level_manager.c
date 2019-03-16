@@ -16,7 +16,7 @@ struct_level_object global_level_object;
 // Private helper methods.
 static void draw_tiles( unsigned char x, unsigned char y );
 static void setup_player( unsigned char index );
-static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row );
+static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col );
 
 void engine_level_manager_init_level()
 {
@@ -35,9 +35,13 @@ void engine_level_manager_init_level()
 	for( idx = 0; idx < MAX_ENEMIES; idx++ )
 	{
 		lo->enemys_spot[ idx ] = 0;
+		lo->enemys_spotX[ idx ] = 0;
+		lo->enemys_spotY[ idx ] = 0;
 		lo->enemys_type[ idx ] = sprite_type_unknown;
-		lo->enemys_botX[ idx ] = 0;
-		lo->enemys_action[ idx ] = action_type_chase;
+		//lo->enemys_botX[ idx ] = 0;
+		lo->enemys_minX[ idx ] = 0;
+		lo->enemys_maxX[ idx ] = 0;
+		lo->enemys_action[ idx ] = action_type_guard;
 	}
 }
 
@@ -46,7 +50,8 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	struct_level_object *lo = &global_level_object;
 	const unsigned char *o = level;
 	//unsigned char x, y, tile;
-	unsigned char row, col;
+	unsigned char row, col, cnt;
+	unsigned char minX, maxX, tmpX;
 	unsigned char tile;
 	unsigned char enemyCount;
 	
@@ -99,7 +104,7 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 					}
 					else
 					{
-						setup_enemyX( sprite_type, idx, enemyCount++, tile, row );
+						setup_enemyX( sprite_type, idx, enemyCount++, tile, row, col );
 					}
 				}
 
@@ -109,6 +114,84 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 
 			o++;
 		}
+	}
+
+	// Calculate the min + max X co-ordinates per enemy.
+	lo->enemyCount = enemyCount;
+	for( cnt = 0; cnt < enemyCount; cnt++ )
+	{
+		if( action_type_guard == lo->enemys_action[ cnt ] )
+		{
+			continue;
+		}
+
+		// Get the row under the enemy.
+		col = lo->enemys_spotX[ cnt ];
+		minX = maxX = col;
+
+		tmpX = col;				// MinX
+		if( tmpX > 1 )
+		{
+			while( 1 )
+			{
+				tmpX--;
+				if( tmpX < 1 )
+				{
+					break;
+				}
+				// Algorithm: check this row.
+				row = lo->enemys_spotY[ cnt ];
+				idx = row * MAX_COLS + tmpX;
+				coll_type = lo->collision_array[ idx ];
+				if( coll_type_impassable == coll_type )
+				{
+					break;
+				}
+				// Algorithm: check next row.
+				row = lo->enemys_spotY[ cnt ] + 1;
+				idx = row * MAX_COLS + tmpX;
+				coll_type = lo->collision_array[ idx ];
+				if( coll_type_passable == coll_type )
+				{
+					break;
+				}
+
+				minX = tmpX;
+			}
+		}
+
+		tmpX = col;				// MaxX
+		if( tmpX < lo->draw_cols - 1 )
+		{
+			while( 1 )
+			{
+				tmpX++;
+				if( tmpX > lo->draw_cols - 1 )
+				{
+					break;
+				}
+				// Algorithm: check this row.
+				row = lo->enemys_spotY[ cnt ];
+				idx = row * MAX_COLS + tmpX;
+				coll_type = lo->collision_array[ idx ];
+				if( coll_type_impassable == coll_type )
+				{
+					break;
+				}
+				// Algorithm: check next row.
+				row = lo->enemys_spotY[ cnt ] + 1;
+				idx = row * MAX_COLS + tmpX;
+				coll_type = lo->collision_array[ idx ];
+				if( coll_type_passable == coll_type )
+				{
+					break;
+				}
+
+				maxX = tmpX;
+			}
+		}
+		lo->enemys_minX[ cnt ] = minX;
+		lo->enemys_maxX[ cnt ] = maxX;
 	}
 
 	// If player is invincible then "replace" any pits.
@@ -132,8 +215,6 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 			}
 		}
 	}
-
-	lo->enemyCount = enemyCount;
 }
 
 
@@ -258,12 +339,13 @@ static void setup_player( unsigned char index )
 	struct_level_object *lo = &global_level_object;
 	lo->player_spot = index;
 }
-static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row )
+static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col )
 {
 	struct_level_object *lo = &global_level_object;
 	lo->enemys_spot[ enemy ] = index;
 	lo->enemys_type[ enemy ] = sprite_type;
-	lo->enemys_botX[ enemy ] = row;
+	lo->enemys_spotY[ enemy ] = row;
+	lo->enemys_spotX[ enemy ] = col;
 
 	lo->enemys_action[ enemy ] = action_type_chase;
 	if( 'a' == tile || 'b' == tile || 'c' == tile || 'd' == tile )
