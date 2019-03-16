@@ -29,6 +29,9 @@
 #define ENEMYS_COLL_EASY		8
 #define ENEMYS_COLL_HARD		12
 
+#define MIN_POSITION_X			24
+#define MAX_POSITION_X			248
+
 #define ANIMATE_MOVE_MAX		5
 #define ANIMATE_IDX_LEFT		1
 #define ANIMATE_IDX_RGHT		6

@@ -1,6 +1,6 @@
 #include "player_manager.h"
 #include "global_manager.h"
-#include "font_manager.h"
+//#include "font_manager.h"
 #include "sprite_manager.h"
 #include "anim_manager.h"
 #include "level_manager.h"
@@ -17,8 +17,7 @@ struct_player_object global_player_object;
 
 #define MAX_VELOCITY_X	10
 #define MAX_VELOCITY_Y	17
-#define MIN_POSITION_X	24
-#define MAX_POSITION_X	248
+
 #define MAX_POSITION_Y	192 + 2 * TILE_HIGH
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
