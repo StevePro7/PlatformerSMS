@@ -3,7 +3,7 @@
 
 typedef struct tag_struct_delay_object
 {
-	unsigned int delay_delta;
+	unsigned int delay_delay;
 	unsigned int delay_timer;
 
 } struct_delay_object;
