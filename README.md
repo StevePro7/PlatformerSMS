@@ -6,6 +6,18 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+17/03/2019
+Algorithm for centered text:
+get total value of text width (if odd number then add 1)
+subtract width from 30, halve then add 2
+e.g.
+PRESS START = 11x chars [12x chars]
+30-12 = 18 / 2 = 9 + 2 = 11X posnY
+
+TODO
+Title screen want to check for cheat mode => god_mode
+Static screens must add sound effects [wrapped with audio manager hack ]
+
 15/03/2019
 IMPORTANT
 Must check collision detection btwn player and enemy(s) if player below enemy and jump thru platform to hit enemy - can die

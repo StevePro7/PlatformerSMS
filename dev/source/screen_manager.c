@@ -1,6 +1,7 @@
 #include "screen_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
+#include "game_manager.h"
 
 // Screens
 #include "none_screen.h"
@@ -69,6 +70,9 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_beat ] = screen_beat_screen_update;
 	update_method[ screen_type_test ] = screen_test_screen_update;
 	update_method[ screen_type_func ] = screen_func_screen_update;
+
+	// Initialize.
+	engine_game_manager_init();
 }
 
 void engine_screen_manager_update()

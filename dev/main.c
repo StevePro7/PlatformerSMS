@@ -27,11 +27,11 @@ void main(void)
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_title;
-	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_play;
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_cont;
-	//open_screen_type = screen_type_diff;
+	open_screen_type = screen_type_diff;
 
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();

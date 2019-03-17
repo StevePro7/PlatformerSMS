@@ -32,6 +32,7 @@ void screen_title_screen_load()
 		engine_tile_manager_draw_tile( tile, x, 22 );
 	}
 
+	engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, TEXT_Y );
 	engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
 
 	//engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, 16 );
