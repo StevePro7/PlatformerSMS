@@ -13,7 +13,7 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int 
 
 void engine_sprite_manager_draw_guard( unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = guardA_idle__tilemap__bin;
+	const unsigned char *pnt = guardD_idle__tilemap__bin;
 	devkit_SMS_mapROMBank( guardA_idle__tilemap__bin_bank );
 
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );

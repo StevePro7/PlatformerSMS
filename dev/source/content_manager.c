@@ -60,6 +60,8 @@ void engine_content_manager_load_enemies()
 {
 	// Enemy tiles.
 	devkit_SMS_mapROMBank( guardA_idle__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( guardA_idle__tiles__psgcompr, MISC_TILES_OFFSET );
-	//devkit_SMS_loadPSGaidencompressedTiles( back_tiles__tiles__psgcompr, MISC_TILES_OFFSET + 0 * SPRITE_TILES_NUMBER );
+	devkit_SMS_loadPSGaidencompressedTiles( guardA_idle__tiles__psgcompr, MISC_TILES_OFFSET + 0 * SPRITE_TILES_NUMBER );
+	devkit_SMS_loadPSGaidencompressedTiles( guardB_idle__tiles__psgcompr, MISC_TILES_OFFSET + 1 * SPRITE_TILES_NUMBER );
+	devkit_SMS_loadPSGaidencompressedTiles( guardC_idle__tiles__psgcompr, MISC_TILES_OFFSET + 2 * SPRITE_TILES_NUMBER );
+	devkit_SMS_loadPSGaidencompressedTiles( guardD_idle__tiles__psgcompr, MISC_TILES_OFFSET + 3 * SPRITE_TILES_NUMBER );
 }
