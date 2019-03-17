@@ -18,6 +18,12 @@ TODO
 Title screen want to check for cheat mode => god_mode
 Static screens must add sound effects [wrapped with audio manager hack ]
 
+TODO
+Do I want to change font manager to accept const for everything?
+What prompted this was the stats_manager count_text; normally this would be const *array
+but the current font_manager causes different const qualifier warning to display
+
+
 15/03/2019
 IMPORTANT
 Must check collision detection btwn player and enemy(s) if player below enemy and jump thru platform to hit enemy - can die

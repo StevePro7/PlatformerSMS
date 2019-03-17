@@ -1,6 +1,7 @@
 #include "hack_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 
 #define PEEK( addr)			(* ( unsigned char *)( addr ) )
 #define POKE( addr, data )	(* ( unsigned char *)( addr ) = ( data ) )
@@ -42,13 +43,28 @@ void engine_hack_manager_invert()
 	{
 		ho->hacker_difficulty = diff_type_easy;
 	}
-	if( ho->hacker_world > MAX_WORLDS )
+
+	if( 0 != ho->hacker_world )
 	{
-		ho->hacker_world = MAX_WORLDS;
+		if( ho->hacker_world > MAX_WORLDS )
+		{
+			ho->hacker_world = MAX_WORLDS;
+		}
+
+		// Zero-based index.
+		ho->hacker_world -= 1;
+
 	}
-	if( ho->hacker_round > MAX_ROUNDS )
+
+	if( 0 != ho->hacker_round )
 	{
-		ho->hacker_round = MAX_ROUNDS;
+		if( ho->hacker_round > MAX_ROUNDS )
+		{
+			ho->hacker_round = MAX_ROUNDS;
+		}
+
+		// Zero-based index.
+		ho->hacker_round -= 1;
 	}
 
 	// TODO - IMPORTANT - remove all code here used during testing!!

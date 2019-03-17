@@ -15,7 +15,7 @@
 #define ENEMYX_SPRITE_TILE		388
 #define INVALID_INDEX			-1
 
-#define MAX_WORLDS				1
+#define MAX_WORLDS				4
 #define MAX_ROUNDS				10
 
 #define MAX_ROWS				12

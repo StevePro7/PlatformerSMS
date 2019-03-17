@@ -19,6 +19,8 @@ void engine_state_manager_init()
 
 	// Setup hacked variables.
 	go->difficulty = ho->hacker_difficulty;
+	go->world_no = ho->hacker_world;
+	go->round_no = ho->hacker_round;
 }
 
 void engine_state_manager_load()
