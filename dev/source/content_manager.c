@@ -55,3 +55,11 @@ void engine_content_manager_load_title()
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title8__tilemap__stmcompr );
 	
 }
+
+void engine_content_manager_load_enemies()
+{
+	// Enemy tiles.
+	devkit_SMS_mapROMBank( guardA_idle__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( guardA_idle__tiles__psgcompr, MISC_TILES_OFFSET );
+	//devkit_SMS_loadPSGaidencompressedTiles( back_tiles__tiles__psgcompr, MISC_TILES_OFFSET + 0 * SPRITE_TILES_NUMBER );
+}
