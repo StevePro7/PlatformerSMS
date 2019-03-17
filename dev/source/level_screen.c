@@ -42,7 +42,62 @@ void screen_level_screen_update( unsigned char *screen_type )
 	unsigned char test[ 6 ] = { 0, 0, 0, 0, 0, 0 };
 
 	test[ 0 ] = engine_input_manager_hold_left();
+	if( test[ 0 ] )
+	{
+		if( 0 == cursor )
+		{
+			if( 0 == go->world_no )
+			{
+				go->world_no = MAX_WORLDS - 1;
+			}
+			else
+			{
+				go->world_no--;
+			}
+		}
+		else if( 1 == cursor )
+		{
+			if( 0 == go->round_no )
+			{
+				go->round_no = MAX_ROUNDS - 1;
+			}
+			else
+			{
+				go->round_no--;
+			}
+		}
+
+		display_options();
+	}
+
 	test[ 1 ] = engine_input_manager_hold_right();
+	if( test[ 1 ] )
+	{
+		if( 0 == cursor )
+		{
+			if( MAX_WORLDS - 1 == go->world_no )
+			{
+				go->world_no = 0;
+			}
+			else
+			{
+				go->world_no++;
+			}
+		}
+		else if( 1 == cursor )
+		{
+			if( MAX_ROUNDS - 1 == go->round_no )
+			{
+				go->round_no = 0;
+			}
+			else
+			{
+				go->round_no++;
+			}
+		}
+
+		display_options();
+	}
 
 	test[ 2 ] = engine_input_manager_hold_up();
 	test[ 3 ] = engine_input_manager_hold_down();
