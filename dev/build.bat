@@ -124,10 +124,26 @@ source\content_manager.rel	source\font_manager.rel		source\delay_manager.rel ^
 source\sprite_manager.rel	source\tile_manager.rel		source\level_manager.rel	source\anim_manager.rel ^
 source\input_manager.rel	source\player_manager.rel	source\enemy_manager.rel ^
 source\state_manager.rel	source\stats_manager.rel	source\render_manager.rel	source\scroll_manager.rel	source\tester_manager.rel ^
-source\none_screen.rel ^	source\test_screen.rel		source\init_screen.rel		source\load_screen.rel		source\play_screen.rel ^
-source\pass_screen.rel		source\dead_screen.rel      source\over_screen.rel      source\func_screen.rel      source\splash_screen.rel ^
+source\audio_manager.rel ^
+source\game_manager.rel ^
+source\none_screen.rel ^
+source\splash_screen.rel ^
+source\intro_screen.rel ^
 source\title_screen.rel ^
-source\screen_manager.rel	source\audio_manager.rel    source\game_manager.rel ^
+source\diff_screen.rel ^
+source\level_screen.rel ^
+source\init_screen.rel ^
+source\load_screen.rel ^
+source\play_screen.rel ^
+source\reset_screen.rel ^
+source\pass_screen.rel ^
+source\dead_screen.rel ^
+source\cont_screen.rel ^
+source\over_screen.rel ^
+source\beat_screen.rel ^
+source\test_screen.rel ^
+source\func_screen.rel ^
+source\screen_manager.rel ^
 gfx.rel
 
 REM echo Binary output
