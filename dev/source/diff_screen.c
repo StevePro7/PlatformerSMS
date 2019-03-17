@@ -21,7 +21,7 @@ static void display_cursor();
 void screen_diff_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	unsigned char x, tile;
+	/*unsigned char x, tile;
 
 	engine_content_manager_load_title();
 	for( x = 2; x < SCREEN_TILE_WIDE; x += 2 )
@@ -30,7 +30,7 @@ void screen_diff_screen_load()
 		engine_tile_manager_draw_tile( tile, x, 0 );
 		tile = rand() % MAX_BLOCK_TILES + 1;
 		engine_tile_manager_draw_tile( tile, x, 22 );
-	}
+	}*/
 
 	engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, TEXT_Y );
 	engine_font_manager_draw_text( LOCALE_SELECT_DIFF, TEXT_X, TEXT_Y );

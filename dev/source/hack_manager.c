@@ -41,4 +41,7 @@ void engine_hack_manager_invert()
 	{
 		ho->hacker_difficulty = diff_type_easy;
 	}
+
+	// TODO - IMPORTANT - remove all code here used during testing!!
+	ho->hacker_difficulty = diff_type_hard;
 }

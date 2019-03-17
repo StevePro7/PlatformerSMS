@@ -1,7 +1,6 @@
 #include "screen_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
-#include "game_manager.h"
 
 // Screens
 #include "none_screen.h"
