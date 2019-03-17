@@ -4,16 +4,22 @@
 typedef enum tag_enum_screen_type
 {
 	screen_type_none = 0,
-	screen_type_test = 1,
-	screen_type_init = 2,
-	screen_type_load = 3,
-	screen_type_play = 4,
-	screen_type_pass = 5,
-	screen_type_dead = 6,
-	screen_type_over = 7,
-	screen_type_func = 8,
-	screen_type_splash = 9,
-	screen_type_title = 10,
+	screen_type_splash = 1,
+	screen_type_intro = 2,
+	screen_type_title = 3,
+	screen_type_diff = 4,
+	screen_type_level = 5,
+	screen_type_init = 6,
+	screen_type_load = 7,
+	screen_type_play = 8,
+	screen_type_reset = 9,
+	screen_type_pass = 10,
+	screen_type_dead = 11,
+	screen_type_cont = 12,
+	screen_type_over = 13,
+	screen_type_beat = 14,
+	screen_type_test = 15,
+	screen_type_func = 16,
 
 } enum_screen_type;
 
