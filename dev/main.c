@@ -1,8 +1,5 @@
 #include "main.h"
 
-// Global functions.
-void custom_initialize();
-
 void main(void)
 {
 	// Global variables.
@@ -20,7 +17,6 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 	engine_content_manager_load_sprites();
 
-	custom_initialize();
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_test;
@@ -33,7 +29,9 @@ void main(void)
 	//open_screen_type = screen_type_cont;
 	open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_intro;
+	//open_screen_type = screen_type_reset;
 
+	engine_state_manager_init();
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for (;;)
@@ -51,11 +49,3 @@ void main(void)
 		devkit_PSGSFXFrame();
 	}
 }
-
-void custom_initialize()
-{
-	// Initialize hack manager.
-	engine_hack_manager_init();
-	engine_hack_manager_invert();
-}
-

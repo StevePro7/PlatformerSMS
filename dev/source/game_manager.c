@@ -13,7 +13,6 @@ void engine_game_manager_init()
 
 	//go->invincible = false;
 	go->difficulty = diff_type_easy;
-	//go->difficulty = diff_type_hard;
 	go->world_no = 0;
 	go->round_no = 0;
 	go->number_lives = NUMBER_LIVES;
