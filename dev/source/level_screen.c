@@ -3,6 +3,7 @@
 #include "locale_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "text_manager.h"
 #include "input_manager.h"
 #include "stats_manager.h"
 #include "game_manager.h"
@@ -20,34 +21,49 @@ static unsigned char cursor;
 static unsigned char cursorY[ 2 ] = { OPT1_Y, OPT2_Y };
 static void display_options();
 
+void screen_level_screen_init()
+{
+	cursor = 0;
+}
+
 void screen_level_screen_load()
 {
-	unsigned char cnt;
-	unsigned char x, tile;
-	engine_content_manager_load_title();
-	for( x = 2; x < SCREEN_TILE_WIDE; x += 2 )
-	{
-		tile = rand() % MAX_BLOCK_TILES + 1;
-		engine_tile_manager_draw_tile( tile, x, 0 );
-		tile = rand() % MAX_BLOCK_TILES + 1;
-		engine_tile_manager_draw_tile( tile, x, 22 );
-	}
-
-	for( cnt = 0; cnt < 3; cnt++ )
-	{
-		engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, TEXT_Y + cnt );
-	}
-
+	engine_text_manager_cleat_three();
 	engine_font_manager_draw_text( LOCALE_SELECT_LEVEL, TEXT_X + 0, TEXT_Y + 0 );
 	engine_font_manager_draw_text( LOCALE_SELECT_WORLD, TEXT_X + 1, TEXT_Y + 1 );
 	engine_font_manager_draw_text( LOCALE_SELECT_ROUND, TEXT_X + 1, TEXT_Y + 2 );
 
-	cursor = 1;
 	display_options();
 }
 
 void screen_level_screen_update( unsigned char *screen_type )
 {
+	struct_game_object *go = &global_game_object;
+	unsigned char test[ 6 ] = { 0, 0, 0, 0, 0, 0 };
+
+	test[ 0 ] = engine_input_manager_hold_left();
+	test[ 1 ] = engine_input_manager_hold_right();
+
+	test[ 2 ] = engine_input_manager_hold_up();
+	test[ 3 ] = engine_input_manager_hold_down();
+	if( test[ 2 ] || test[ 3 ] )
+	{
+		cursor = 1 - cursor;
+		display_options();
+	}
+
+	test[ 4 ] = engine_input_manager_hold_fire1();
+	if( test[4] )
+	{
+		*screen_type = screen_type_init;
+		return;
+	}
+	test[ 5 ] = engine_input_manager_hold_fire2();
+	if( test[ 5 ] )
+	{
+		*screen_type = screen_type_diff;
+		return;
+	}
 
 	*screen_type = screen_type_level;
 }

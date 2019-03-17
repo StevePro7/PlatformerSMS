@@ -38,12 +38,14 @@ void engine_hack_manager_init()
 void engine_hack_manager_invert()
 {
 	struct_hack_object *ho = &global_hack_object;
-	
+
+	// Difficulty.
 	if( ho->hacker_difficulty > diff_type_hard )
 	{
 		ho->hacker_difficulty = diff_type_easy;
 	}
 
+	// World.
 	if( 0 != ho->hacker_world )
 	{
 		if( ho->hacker_world > MAX_WORLDS )
@@ -53,9 +55,9 @@ void engine_hack_manager_invert()
 
 		// Zero-based index.
 		ho->hacker_world -= 1;
-
 	}
 
+	// Round.
 	if( 0 != ho->hacker_round )
 	{
 		if( ho->hacker_round > MAX_ROUNDS )

@@ -4,6 +4,7 @@
 #include "locale_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "text_manager.h"
 #include "content_manager.h"
 #include "delay_manager.h"
 #include "input_manager.h"
@@ -31,7 +32,7 @@ void screen_title_screen_load()
 		engine_tile_manager_draw_tile( tile, x, 22 );
 	}
 
-	engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, TEXT_Y );
+	engine_text_manager_cleat_three();
 	engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
 
 	engine_font_manager_draw_text( LOCALE_BUILD_VERSION, 28, 21 );

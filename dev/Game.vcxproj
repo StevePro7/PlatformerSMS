@@ -190,6 +190,7 @@
     <ClCompile Include="source\stats_manager.c" />
     <ClCompile Include="source\tester_manager.c" />
     <ClCompile Include="source\test_screen.c" />
+    <ClCompile Include="source\text_manager.c" />
     <ClCompile Include="source\tile_manager.c" />
     <ClCompile Include="source\title_screen.c" />
     <ClCompile Include="source\_sms_manager.c" />
@@ -251,6 +252,7 @@
     <ClInclude Include="source\stats_object.h" />
     <ClInclude Include="source\tester_manager.h" />
     <ClInclude Include="source\test_screen.h" />
+    <ClInclude Include="source\text_manager.h" />
     <ClInclude Include="source\tile_manager.h" />
     <ClInclude Include="source\title_screen.h" />
     <ClInclude Include="source\_sms_manager.h" />
