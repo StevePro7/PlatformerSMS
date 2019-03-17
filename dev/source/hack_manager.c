@@ -1,4 +1,5 @@
 #include "hack_manager.h"
+#include "global_manager.h"
 #include "enum_manager.h"
 
 #define PEEK( addr)			(* ( unsigned char *)( addr ) )
@@ -41,7 +42,15 @@ void engine_hack_manager_invert()
 	{
 		ho->hacker_difficulty = diff_type_easy;
 	}
+	if( ho->hacker_world > MAX_WORLDS )
+	{
+		ho->hacker_world = MAX_WORLDS;
+	}
+	if( ho->hacker_round > MAX_ROUNDS )
+	{
+		ho->hacker_round = MAX_ROUNDS;
+	}
 
 	// TODO - IMPORTANT - remove all code here used during testing!!
-	ho->hacker_difficulty = diff_type_hard;
+	//ho->hacker_difficulty = diff_type_hard;
 }

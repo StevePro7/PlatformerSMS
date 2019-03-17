@@ -1,24 +1,79 @@
 XL2
-H 9 areas 3 global symbols
+H 9 areas 4 global symbols
 M stats_manager
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 9 flags 0 addr 0
+A _CODE size 27 flags 0 addr 0
 S _engine_stats_manager_init Def0000
 A _DATA size 2 flags 0 addr 0
 S _global_stats_object Def0000
-A _INITIALIZED size 0 flags 0 addr 0
+A _INITIALIZED size 14 flags 0 addr 0
+S _count_text Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size 14 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 01 00
 T 00 00
 R 00 00 01 00
 T 00 00
+R 00 00 02 00
+T 00 00
+R 00 00 02 00
+T 00 00
 R 00 00 00 00
 T 00 00 21 00 00 36 08 23 36 0C C9
 R 00 00 00 00 00 03 01 00
+T 09 00
+R 00 00 00 00
+T 09 00 30 31 00
+R 00 00 00 00
+T 0C 00
+R 00 00 00 00
+T 0C 00 30 32 00
+R 00 00 00 00
+T 0F 00
+R 00 00 00 00
+T 0F 00 30 33 00
+R 00 00 00 00
+T 12 00
+R 00 00 00 00
+T 12 00 30 34 00
+R 00 00 00 00
+T 15 00
+R 00 00 00 00
+T 15 00 30 35 00
+R 00 00 00 00
+T 18 00
+R 00 00 00 00
+T 18 00 30 36 00
+R 00 00 00 00
+T 1B 00
+R 00 00 00 00
+T 1B 00 30 37 00
+R 00 00 00 00
+T 1E 00
+R 00 00 00 00
+T 1E 00 30 38 00
+R 00 00 00 00
+T 21 00
+R 00 00 00 00
+T 21 00 30 39 00
+R 00 00 00 00
+T 24 00
+R 00 00 00 00
+T 24 00 31 30 00
+R 00 00 00 00
+T 00 00
+R 00 00 07 00
+T 00 00 09 00 0C 00 0F 00
+R 00 00 07 00 00 02 00 00 00 04 00 00 00 06 00 00
+T 06 00 12 00 15 00 18 00
+R 00 00 07 00 00 02 00 00 00 04 00 00 00 06 00 00
+T 0C 00 1B 00 1E 00 21 00
+R 00 00 07 00 00 02 00 00 00 04 00 00 00 06 00 00
+T 12 00 24 00
+R 00 00 07 00 00 02 00 00
