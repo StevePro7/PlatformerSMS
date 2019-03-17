@@ -4,9 +4,18 @@
 #include "enum_manager.h"
 //#include "level_object.h"
 #include "..\gfx.h"
+#include "..\banks\bank3.h"
 #include <stdlib.h>
 
 #define BASE_TILE_OFFSET	64
+
+static const unsigned char *guard_tiles[ MAX_ENEMIES ] =
+{
+	guardA_idle__tilemap__bin,
+	guardB_idle__tilemap__bin,
+	guardC_idle__tilemap__bin,
+	guardD_idle__tilemap__bin,
+};
 
 void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsigned char y )
 {
@@ -17,6 +26,28 @@ void engine_tile_manager_draw_tile( unsigned char index, unsigned char x, unsign
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + index + 1 );
 	devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + index + 16 );
 	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + index + 17 );
+}
+
+void engine_tile_manager_draw_guard( unsigned char x, unsigned char y, unsigned char type )
+{
+	const unsigned char *pnt = guard_tiles[ type ];
+	devkit_SMS_mapROMBank( guardA_idle__tilemap__bin_bank );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );		devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 0 );		devkit_SMS_setTile( *pnt + 1 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 0 );		devkit_SMS_setTile( *pnt + 2 );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 1 );		devkit_SMS_setTile( *pnt + 3 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 );		devkit_SMS_setTile( *pnt + 4 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 1 );		devkit_SMS_setTile( *pnt + 5 );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 2 );		devkit_SMS_setTile( *pnt + 6 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 2 );		devkit_SMS_setTile( *pnt + 7 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 2 );		devkit_SMS_setTile( *pnt + 8 );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 3 );		devkit_SMS_setTile( *pnt + 9 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 3 );		devkit_SMS_setTile( *pnt + 10 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 3 );		devkit_SMS_setTile( *pnt + 11 );
 }
 
 void engine_tile_manager_draw_tile_side( enum_side_type side_type, unsigned char index, unsigned char x, unsigned char y )

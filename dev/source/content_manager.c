@@ -53,7 +53,6 @@ void engine_content_manager_load_title()
 	devkit_SMS_mapROMBank( title8__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( title8__tiles__psgcompr, MISC_TILES_OFFSET );
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title8__tilemap__stmcompr );
-	
 }
 
 void engine_content_manager_load_enemies()
