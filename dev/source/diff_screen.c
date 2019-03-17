@@ -45,7 +45,7 @@ void screen_diff_screen_load()
 void screen_diff_screen_update( unsigned char *screen_type )
 {
 	struct_game_object *go = &global_game_object;
-	unsigned char test1, test2;
+	unsigned char test1, test2, test3;
 
 	test1 = engine_input_manager_hold_left();
 	test2 = engine_input_manager_hold_right();
@@ -53,6 +53,13 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	{
 		go->difficulty = 1 - go->difficulty;
 		display_cursor();
+	}
+
+	test3 = engine_input_manager_hold_fire1();
+	if( test3 )
+	{
+		*screen_type = screen_type_intro;
+		return;
 	}
 
 	*screen_type = screen_type_diff;
