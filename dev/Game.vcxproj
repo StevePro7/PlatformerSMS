@@ -216,6 +216,7 @@
     <ClInclude Include="source\info_manager.h" />
     <ClInclude Include="source\intro_screen.h" />
     <ClInclude Include="source\level_screen.h" />
+    <ClInclude Include="source\locale_manager.h" />
     <ClInclude Include="source\memory_manager.h" />
     <ClInclude Include="source\over_screen.h" />
     <ClInclude Include="source\pass_screen.h" />

@@ -1,0 +1,11 @@
+#ifndef _LOCALE_MANAGER_H_
+#define _LOCALE_MANAGER_H_
+
+#define LOCALE_BUILD_VERSION		"V1.0"
+
+#define LOCALE_BLANK_WIDTH		"                              "
+//#define LOCALE_BLANK_WIDTH		"123456789012345678901234567890"
+
+#define LOCALE_PRESS_START		"PRESS START"
+
+#endif//_LOCALE_MANAGER_H_

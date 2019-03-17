@@ -377,6 +377,9 @@
     <ClInclude Include="source\beat_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="source\locale_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">

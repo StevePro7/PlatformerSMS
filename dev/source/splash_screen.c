@@ -3,6 +3,7 @@
 #include "enum_manager.h"
 #include "content_manager.h"
 #include "delay_manager.h"
+#include "input_manager.h"
 
 #define SPLASH_DELAY		150
 
@@ -17,6 +18,17 @@ void screen_splash_screen_load()
 
 void screen_splash_screen_update( unsigned char *screen_type )
 {
-	engine_delay_manager_update();
+	unsigned char delay;
+	unsigned char input;
+
+	delay = engine_delay_manager_update();
+	input = engine_input_manager_hold_fire1();
+
+	if( delay || input )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_splash;
 }
