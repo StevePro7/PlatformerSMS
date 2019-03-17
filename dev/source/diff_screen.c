@@ -10,7 +10,7 @@
 #include "game_manager.h"
 #include <stdlib.h>
 
-#define TEXT_X				8
+#define TEXT_X				9
 #define TEXT_Y				18
 #define OPT1_X				TEXT_X + 0
 #define OPT2_X				TEXT_X + 11
@@ -58,7 +58,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	test3 = engine_input_manager_hold_fire1();
 	if( test3 )
 	{
-		*screen_type = screen_type_intro;
+		*screen_type = screen_type_level;
 		return;
 	}
 
