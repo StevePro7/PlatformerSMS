@@ -26,20 +26,20 @@ typedef struct tag_struct_level_object
 
 } struct_level_object;
 
-extern const unsigned char *world01data[];
-extern const unsigned char *world02data[];
-extern const unsigned char *world03data[];
-extern const unsigned char *world04data[];
+extern const unsigned char *levelAAdata[];
+//extern const unsigned char *levelBBdata[];
+//extern const unsigned char *world03data[];
+//extern const unsigned char *world04data[];
 
-extern const unsigned char world01size[];
-extern const unsigned char world02size[];
-extern const unsigned char world03size[];
-extern const unsigned char world04size[];
+extern const unsigned char levelAAsize[];
+//extern const unsigned char levelBBsize[];
+//extern const unsigned char world03size[];
+//extern const unsigned char world04size[];
 
-extern const unsigned char world01bank[];
-extern const unsigned char world02bank[];
-extern const unsigned char world03bank[];
-extern const unsigned char world04bank[];
+extern const unsigned char levelAAbank[];
+//extern const unsigned char levelBBbank[];
+//extern const unsigned char world03bank[];
+//extern const unsigned char world04bank[];
 
 /*
 extern const unsigned char *leveldata[];

@@ -219,38 +219,51 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 
 void engine_level_manager_load_steve( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
 {
-	const unsigned char *level;
+	/*const unsigned char *level;
 	unsigned char bank;
-	unsigned char size;
+	unsigned char size;*/
 
 	unsigned char index = world * MAX_ROUNDS + round;
 
-	if( 0 == world )
-	{
-		level = world01data[ index ];
-		bank = world01bank[ index ];
-		size = world01size[ index ];
-	}
-	else if( 1 == world )
-	{
-		level = world02data[ index ];
-		bank = world02bank[ index ]; 
-		size = world02size[ index ];
-	}
-	else if( 2 == world )
-	{
-		level = world03data[ index ];
-		bank = world03bank[ index ];
-		size = world03size[ index ];
-	}
-	else
-	{
-		level = world04data[ index ];
-		bank = world04bank[ index ];
-		size = world04size[ index ];
-	}
+	//if( 0 == world )
+	//{
+		const unsigned char *level = levelAAdata[ index ];
+		const unsigned char bank = levelAAbank[ index ];
+		const unsigned char size = levelAAsize[ index ];
+		engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+	//}
+	////else //if( 1 == world )
+	//{
+	//	const unsigned char *level = world01data[ index ];
+	//	const unsigned char bank = world01bank[ index ];
+	//	const unsigned char size = world01size[ index ];
+	//	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
 
-	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+	//	///*level = world02data[ index ];
+	//	//bank = world02bank[ index ];
+	//	//size = world02size[ index ];*/
+
+	//	engine_font_manager_draw_text( "SPLAT", 10, 19 );
+	//	//engine_font_manager_draw_data( world, 20, 20 );
+	//	//engine_font_manager_draw_data( bank, 20, 21 );
+	//	//engine_font_manager_draw_data( size, 20, 22 );
+	//}
+	//else //if( 2 == world )
+	//{
+	//	level = world03data[ index ];
+	//	bank = world03bank[ index ];
+	//	size = world03size[ index ];
+	//}
+	//else
+	//{
+	//	level = world04data[ index ];
+	//	bank = world04bank[ index ];
+	//	size = world04size[ index ];
+	//}*/
+
+	//engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+
+	
 }
 
 /*

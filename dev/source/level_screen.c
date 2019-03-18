@@ -23,7 +23,7 @@ static void display_options();
 
 void screen_level_screen_init()
 {
-	cursor = 1;
+	cursor = 0;
 }
 
 void screen_level_screen_load()
