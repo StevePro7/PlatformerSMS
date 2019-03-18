@@ -217,7 +217,6 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 	}
 }
 
-
 void engine_level_manager_load_steve( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
 {
 	const unsigned char *level;
@@ -250,6 +249,7 @@ void engine_level_manager_load_steve( const unsigned char world, const unsigned 
 		bank = world04bank[ index ];
 		size = world04size[ index ];
 	}
+
 	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
 }
 
