@@ -22,13 +22,13 @@ void main(void)
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_level;
-	//open_screen_type = screen_type_init;
+	open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_play;
 	//open_screen_type = screen_type_cont;
 	//open_screen_type = screen_type_beat;
-	open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_test;
 
 	engine_state_manager_init();
 	engine_screen_manager_init( open_screen_type );

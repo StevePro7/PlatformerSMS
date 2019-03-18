@@ -218,6 +218,42 @@ void engine_level_manager_load_level( const unsigned char *level, const unsigned
 }
 
 
+void engine_level_manager_load_steve( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
+{
+	const unsigned char *level;
+	unsigned char bank;
+	unsigned char size;
+
+	unsigned char index = world * MAX_ROUNDS + round;
+
+	if( 0 == world )
+	{
+		level = world01data[ index ];
+		bank = world01bank[ index ];
+		size = world01size[ index ];
+	}
+	else if( 1 == world )
+	{
+		level = world02data[ index ];
+		bank = world02bank[ index ]; 
+		size = world02size[ index ];
+	}
+	else if( 2 == world )
+	{
+		level = world03data[ index ];
+		bank = world03bank[ index ];
+		size = world03size[ index ];
+	}
+	else
+	{
+		level = world04data[ index ];
+		bank = world04bank[ index ];
+		size = world04size[ index ];
+	}
+	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+}
+
+/*
 void engine_level_manager_load_index( const unsigned char index, unsigned char invincible, unsigned char difficulty )
 {
 	const unsigned char *level = leveldata[ index ];
@@ -226,7 +262,7 @@ void engine_level_manager_load_index( const unsigned char index, unsigned char i
 
 	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
 }
-
+*/
 void engine_level_manager_draw_level()
 {
 	struct_level_object *lo = &global_level_object;

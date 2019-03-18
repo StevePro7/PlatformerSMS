@@ -1,33 +1,84 @@
 XL2
-H 9 areas E global symbols
+H 9 areas 35 global symbols
 M level_object
 O -mz80
+S _level0406_txt Ref0000
+S _level0307_txt Ref0000
+S _level0208_txt Ref0000
+S _level0109_txt Ref0000
+S _level0407_txt Ref0000
+S _level0308_txt Ref0000
+S _level0209_txt Ref0000
+S _level0408_txt Ref0000
+S _level0309_txt Ref0000
+S _level0409_txt Ref0000
 S .__.ABS. Def0000
+S _level0110_txt Ref0000
+S _level0101_txt Ref0000
+S _level0210_txt Ref0000
 S _level0201_txt Ref0000
+S _level0102_txt Ref0000
+S _level0310_txt Ref0000
 S _level0301_txt Ref0000
 S _level0202_txt Ref0000
+S _level0103_txt Ref0000
+S _level0410_txt Ref0000
 S _level0401_txt Ref0000
+S _level0302_txt Ref0000
 S _level0203_txt Ref0000
-S _level0501_txt Ref0000
+S _level0104_txt Ref0000
 S _level0402_txt Ref0000
-S _level0502_txt Ref0000
-S _level0503_txt Ref0000
-S _level0504_txt Ref0000
-A _CODE size 14 flags 0 addr 0
-S _levelbank Def000A
-S _levelsize Def0000
+S _level0303_txt Ref0000
+S _level0204_txt Ref0000
+S _level0105_txt Ref0000
+S _level0403_txt Ref0000
+S _level0304_txt Ref0000
+S _level0205_txt Ref0000
+S _level0106_txt Ref0000
+S _level0404_txt Ref0000
+S _level0305_txt Ref0000
+S _level0206_txt Ref0000
+S _level0107_txt Ref0000
+S _level0405_txt Ref0000
+S _level0306_txt Ref0000
+S _level0207_txt Ref0000
+S _level0108_txt Ref0000
+A _CODE size 50 flags 0 addr 0
+S _world01bank Def0028
+S _world02bank Def0032
+S _world03bank Def003C
+S _world04bank Def0046
+S _world01size Def0000
+S _world02size Def000A
+S _world03size Def0014
+S _world04size Def001E
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 14 flags 0 addr 0
-S _leveldata Def0000
+A _INITIALIZED size 50 flags 0 addr 0
+S _world01data Def0000
+S _world02data Def0014
+S _world03data Def0028
+S _world04data Def003C
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 14 flags 0 addr 0
+A _INITIALIZER size 50 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
 T 00 00
+R 00 00 02 00
+T 14 00
+R 00 00 02 00
+T 14 00
+R 00 00 02 00
+T 28 00
+R 00 00 02 00
+T 28 00
+R 00 00 02 00
+T 3C 00
+R 00 00 02 00
+T 3C 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
@@ -35,15 +86,69 @@ T 00 00 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8
 R 00 00 00 00
 T 0A 00
 R 00 00 00 00
-T 0A 00 04 04 04 04 04 04 04 04 04 04
+T 0A 00 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8
+R 00 00 00 00
+T 14 00
+R 00 00 00 00
+T 14 00 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8
+R 00 00 00 00
+T 1E 00
+R 00 00 00 00
+T 1E 00 D8 D8 D8 D8 D8 D8 D8 D8 D8 D8
+R 00 00 00 00
+T 28 00
+R 00 00 00 00
+T 28 00 04 04 04 04 04 04 04 04 04 04
+R 00 00 00 00
+T 32 00
+R 00 00 00 00
+T 32 00 04 04 04 04 04 04 04 04 04 04
+R 00 00 00 00
+T 3C 00
+R 00 00 00 00
+T 3C 00 04 04 04 04 04 04 04 04 04 04
+R 00 00 00 00
+T 46 00
+R 00 00 00 00
+T 46 00 04 04 04 04 04 04 04 04 04 04
 R 00 00 00 00
 T 00 00
 R 00 00 07 00
 T 00 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 01 00 02 04 03 00 02 06 05 00
+R 00 00 07 00 02 02 0C 00 02 04 0F 00 02 06 13 00
 T 06 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 02 00 02 04 04 00 02 06 07 00
+R 00 00 07 00 02 02 18 00 02 04 1C 00 02 06 20 00
 T 0C 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 06 00 02 04 08 00 02 06 09 00
+R 00 00 07 00 02 02 24 00 02 04 28 00 02 06 03 00
 T 12 00 00 00
-R 00 00 07 00 02 02 0A 00
+R 00 00 07 00 02 02 0B 00
+T 14 00
+R 00 00 07 00
+T 14 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 0E 00 02 04 12 00 02 06 17 00
+T 1A 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 1B 00 02 04 1F 00 02 06 23 00
+T 20 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 27 00 02 04 02 00 02 06 06 00
+T 26 00 00 00
+R 00 00 07 00 02 02 0D 00
+T 28 00
+R 00 00 07 00
+T 28 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 11 00 02 04 16 00 02 06 1A 00
+T 2E 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 1E 00 02 04 22 00 02 06 26 00
+T 34 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 01 00 02 04 05 00 02 06 08 00
+T 3A 00 00 00
+R 00 00 07 00 02 02 10 00
+T 3C 00
+R 00 00 07 00
+T 3C 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 15 00 02 04 19 00 02 06 1D 00
+T 42 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 21 00 02 04 25 00 02 06 00 00
+T 48 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 04 00 02 04 07 00 02 06 09 00
+T 4E 00 00 00
+R 00 00 07 00 02 02 14 00
