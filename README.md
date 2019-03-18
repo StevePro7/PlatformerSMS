@@ -6,6 +6,15 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+18/03/2019
+Test2015_07_soundFX
+E:\Steven\INSTALLATIONSEGA\sdcc2
+OK / Advance			right.psg
+Cheat, PowerUp			cheat.psg
+Reset level / game		wrong.psg
+Gem collect yellow		jump.psg
+
+
 17/03/2019
 Algorithm for centered text:
 get total value of text width (if odd number then add 1)
@@ -120,11 +129,14 @@ EnemyD: Idle, RunLeft, RunRight							= 3 * 12	= 36
 																	 
 03/03/2019
 VGMs
+Lemmings	NOT the tunes - where did I get these from?
+Success		celebrate
+Failure		die
 Trivial Pursuit - 030 - Minuet in G Major
 D:\Steven\Personal\_Platformer\VGMs\TrivialPursuit-SMS
 
-Fanfare4
-Fanfare7
+Fanfare4	GameOver
+Fanfare7	LevelStart?
 D:\Steven\Personal\_Platformer\VGMs\ZanGear-GG
 
 GameOver
