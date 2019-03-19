@@ -35,7 +35,7 @@ void engine_stats_manager_init()
 	so->enemys_velX[ sprite_type_enemyD ][ 3 ] = 3;
 
 
-	so->enemys_wait[ sprite_type_enemyA ][ 0 ] = 10;
+	so->enemys_wait[ sprite_type_enemyA ][ 0 ] = 255;
 	so->enemys_wait[ sprite_type_enemyA ][ 1 ] = 10;
 	so->enemys_wait[ sprite_type_enemyA ][ 2 ] = 10;
 	so->enemys_wait[ sprite_type_enemyA ][ 3 ] = 10;

@@ -178,6 +178,7 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 				maxX = tmpX;
 			}
 		}
+
 		lo->enemys_minX[ cnt ] = minX;
 		lo->enemys_maxX[ cnt ] = maxX;
 	}

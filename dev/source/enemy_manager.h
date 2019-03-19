@@ -5,7 +5,7 @@
 #include "global_manager.h"
 
 #define MAX_ENEMY_VELX	8
-#define MAX_ENEMY_WAIT	20
+#define MAX_ENEMY_WAIT	255
 
 // Global variables.
 extern struct_enemy_master global_enemy_master;

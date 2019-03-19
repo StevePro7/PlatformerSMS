@@ -37,7 +37,7 @@ void engine_enemyX_manager_init()
 		eo->sprite_type = sprite_type_unknown;
 		eo->action_type = action_type_unknown;
 		eo->curr_move_type = move_type_idle;
-		eo->prev_move_type = move_type_idle;
+		eo->next_move_type = move_type_idle;
 		eo->spotX = 0;	eo->spotY = 0;
 		eo->drawX = 0;	eo->drawY = 0;
 		eo->minX = 0;	eo->maxX = 0;
@@ -93,6 +93,7 @@ void engine_enemyX_manager_update()
 {
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
+	signed char deltaX;
 
 	if( 0 == em->max_enemies )
 	{
@@ -106,12 +107,31 @@ void engine_enemyX_manager_update()
 		if( eo->loop >= eo->wait )
 		{
 			eo->loop = 0;
-			eo->curr_move_type = eo->prev_move_type;
+			eo->curr_move_type = eo->next_move_type;
 		}
 	}
 	else
 	{
+		deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+		eo->posnX += deltaX;
 
+		// Wait at boundary as necessary.
+		if( move_type_left == eo->curr_move_type )
+		{
+			if( eo->posnX <= eo->leftX )
+			{
+				eo->curr_move_type = move_type_idle;
+				eo->next_move_type = move_type_rght;
+			}
+		}
+		else if( move_type_rght == eo->curr_move_type )
+		{
+			if( eo->posnX >= eo->rghtX )
+			{
+				eo->curr_move_type = move_type_idle;
+				eo->next_move_type = move_type_left;
+			}
+		}
 	}
 }
 

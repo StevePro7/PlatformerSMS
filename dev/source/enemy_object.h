@@ -15,15 +15,14 @@ typedef struct tag_struct_enemy_object
 	enum_sprite_type sprite_type;
 	enum_action_type action_type;
 	enum_move_type curr_move_type;
-	enum_move_type prev_move_type;
+	enum_move_type next_move_type;
 	unsigned char spotX, spotY;		// IMPORTANT enemy bottom = spotY and never changes
 	unsigned char posnX, posnY;
 	unsigned char drawX, drawY;
 	unsigned char leftX, rghtX;
 	unsigned char minX, maxX;
 	unsigned char velX;
-	unsigned char wait;
-	unsigned char loop;
+	unsigned int wait, loop;
 	void( *update )( void );
 
 } struct_enemy_object;
