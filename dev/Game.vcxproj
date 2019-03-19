@@ -164,6 +164,7 @@
     <ClCompile Include="source\memory_manager.c" />
     <ClCompile Include="source\over_screen.c" />
     <ClCompile Include="source\pass_screen.c" />
+    <ClCompile Include="source\ready_screen.c" />
     <ClCompile Include="source\reset_screen.c" />
     <ClCompile Include="source\screen_manager.c" />
     <ClCompile Include="source\content_manager.c" />
@@ -221,6 +222,7 @@
     <ClInclude Include="source\memory_manager.h" />
     <ClInclude Include="source\over_screen.h" />
     <ClInclude Include="source\pass_screen.h" />
+    <ClInclude Include="source\ready_screen.h" />
     <ClInclude Include="source\reset_screen.h" />
     <ClInclude Include="source\screen_manager.h" />
     <ClInclude Include="source\content_manager.h" />

@@ -27,6 +27,6 @@ void screen_init_screen_update( unsigned char *screen_type )
 		return;
 	}*/
 
-	*screen_type = screen_type_init;
+	*screen_type = screen_type_load;
 	//*screen_type = screen_type_level;
 }
