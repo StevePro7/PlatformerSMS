@@ -158,3 +158,43 @@ extern const unsigned char	level0410_txt[];
 #define				level0410_txt_size 216
 #define				level0410_txt_bank 4
 
+extern const unsigned char	level0501_txt[];
+#define				level0501_txt_size 216
+#define				level0501_txt_bank 4
+
+extern const unsigned char	level0502_txt[];
+#define				level0502_txt_size 216
+#define				level0502_txt_bank 4
+
+extern const unsigned char	level0503_txt[];
+#define				level0503_txt_size 216
+#define				level0503_txt_bank 4
+
+extern const unsigned char	level0504_txt[];
+#define				level0504_txt_size 216
+#define				level0504_txt_bank 4
+
+extern const unsigned char	level0505_txt[];
+#define				level0505_txt_size 216
+#define				level0505_txt_bank 4
+
+extern const unsigned char	level0506_txt[];
+#define				level0506_txt_size 216
+#define				level0506_txt_bank 4
+
+extern const unsigned char	level0507_txt[];
+#define				level0507_txt_size 216
+#define				level0507_txt_bank 4
+
+extern const unsigned char	level0508_txt[];
+#define				level0508_txt_size 216
+#define				level0508_txt_bank 4
+
+extern const unsigned char	level0509_txt[];
+#define				level0509_txt_size 216
+#define				level0509_txt_bank 4
+
+extern const unsigned char	level0510_txt[];
+#define				level0510_txt_size 216
+#define				level0510_txt_bank 4
+
