@@ -78,7 +78,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 				else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
 				{
 					// Enable immunability = temp invincible to enemy/guard but can still fall down pits...
-					engine_font_manager_draw_text( "GEM POWER", 10, 0 );
 				}
 			}
 		}
@@ -107,7 +106,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	// Collisions.
+	// Enemy + guard collisions.
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
@@ -149,7 +148,7 @@ static unsigned char ground_collision()
 	{
 		if( tile_type_gemscore == tile || tile_type_gempower == tile )
 		{
-			lo->drawtiles_array[ cell_bot ] = tile_type_blankGap;
+			lo->drawtiles_array[ cell_top ] = tile_type_blankGap;
 			engine_level_manager_draw_blank( po->coll_left, po->coll_topX );
 		}
 		if( tile_type_gemscore == tile )
@@ -183,89 +182,3 @@ static unsigned char ground_collision()
 
 	return evt;
 }
-
-/*
-void screen_play_screen_updateX( unsigned char *screen_type )
-{
-	struct_hack_object *ho = &global_hack_object;
-	struct_level_object *lo = &global_level_object;
-	struct_player_object *po = &global_player_object;
-	unsigned int cell_top, cell_bot;
-	unsigned char tile;
-	int enemA_left, enemA_rght, enemA_topX, enemA_botX;
-	int enemB_left, enemB_rght, enemB_topX, enemB_botX;
-	int enemC_left, enemC_rght, enemC_topX, enemC_botX;
-	int enemD_left, enemD_rght, enemD_topX, enemD_botX;
-	signed char coll_topX;
-
-	enemA_left = enemB_left = enemC_left = enemD_left = 240;
-	enemA_rght = enemB_rght = enemC_rght = enemD_rght = 240;
-	enemA_topX = 0;  enemB_topX = 48;  enemC_topX = 96;  enemD_topX = 144;
-	enemA_botX = 32; enemB_botX = 80;  enemC_botX = 128; enemD_botX = 276;
-
-	coll_topX = po->coll_topX + 1;
-
-	engine_player_manager_get_input();
-	engine_player_manager_apply_physics();
-	engine_player_manager_handle_collisions();
-	engine_player_manager_cleanup();
-
-	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_draw();
-
-	// TODO extract if no pits in level then only check if there is...
-	// could leave this in for the moment to stress test redundant check
-	// Check if fell into pit.
-	if( health_type_death == po->player_health_type )
-	{
-		*screen_type = screen_type_dead;
-		return;
-	}
-
-	// Collision detection while player on ground.
-	if( po->isOnGround )
-	{
-		if( po->coll_left == po->coll_rght )
-		{
-			cell_top = lo->draw_cols *  ( po->coll_topX + 0 ) + po->coll_left;
-			cell_bot = lo->draw_cols *  ( po->coll_topX + 1 ) + po->coll_left;
-
-			//engine_font_manager_draw_data( cell_top, 20, 18 );
-			//engine_font_manager_draw_data( cell_bot, 20, 19 );
-
-			// TODO must check cell top + bot for both yellow + red gems i.e. 4x checks
-			tile = lo->drawtiles_array[ cell_top ];
-			if( tile_type_blankGap != tile )
-			{
-				if( tile_type_gempower == tile )
-				{
-					lo->drawtiles_array[ cell_bot ] = tile_type_blankGap;
-					engine_level_manager_draw_blank( po->coll_left, po->coll_topX );
-				}
-			}
-
-			tile = lo->drawtiles_array[ cell_bot ];
-			//engine_font_manager_draw_data( tile, 20, 20 );
-			if( tile_type_blankGap != tile )
-			{
-				if( tile_type_gemscore == tile )
-				{
-					lo->drawtiles_array[ cell_bot ] = tile_type_blankGap;
-					engine_level_manager_draw_blank( po->coll_left, po->coll_topX + 1 );
-				}
-			}
-
-			// Exit sign.
-			if( po->coll_left == lo->exit_spotX && po->coll_topX + 1 == lo->exit_spotY )
-			{
-				*screen_type = screen_type_pass;
-				return;
-			}
-		}
-	}
-
-	*screen_type = screen_type_play;
-}
-*/
-
