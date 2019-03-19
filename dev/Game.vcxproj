@@ -154,6 +154,7 @@
     <ClCompile Include="source\anim_object.c" />
     <ClCompile Include="source\audio_manager.c" />
     <ClCompile Include="source\beat_screen.c" />
+    <ClCompile Include="source\begin_screen.c" />
     <ClCompile Include="source\cont_screen.c" />
     <ClCompile Include="source\dead_screen.c" />
     <ClCompile Include="source\delay_manager.c" />
@@ -209,6 +210,7 @@
     <ClInclude Include="source\anim_object.h" />
     <ClInclude Include="source\audio_manager.h" />
     <ClInclude Include="source\beat_screen.h" />
+    <ClInclude Include="source\begin_screen.h" />
     <ClInclude Include="source\cont_screen.h" />
     <ClInclude Include="source\dead_screen.h" />
     <ClInclude Include="source\delay_manager.h" />

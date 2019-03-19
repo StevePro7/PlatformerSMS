@@ -207,6 +207,9 @@
     <ClCompile Include="source\ready_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="source\begin_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -390,6 +393,9 @@
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="source\ready_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="source\begin_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
