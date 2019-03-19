@@ -24,6 +24,7 @@ static void get_guard_draw_position( unsigned char idx );
 
 void engine_enemyX_manager_init()
 {
+	// TODO complete initialization!
 	struct_enemy_object *eo;
 	unsigned char idx;
 	for( idx = 0; idx < MAX_ENEMIES; idx++ )
@@ -40,7 +41,7 @@ void engine_enemyX_manager_load()
 	struct_enemy_object *eo;
 	unsigned char idx;
 
-	// Calculate enemys starting spot based on level.
+	// Calculate enemy starting spot based on level.
 	int rectX, rectB;
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{

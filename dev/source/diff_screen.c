@@ -28,20 +28,27 @@ void screen_diff_screen_load()
 void screen_diff_screen_update( unsigned char *screen_type )
 {
 	struct_game_object *go = &global_game_object;
-	unsigned char test1, test2, test3;
+	unsigned char test[ 4 ] = { 0, 0, 0, 0 };
 
-	test1 = engine_input_manager_hold_left();
-	test2 = engine_input_manager_hold_right();
-	if( test1 || test2 )
+	test[ 0 ] = engine_input_manager_hold_left();
+	test[ 1 ] = engine_input_manager_hold_right();
+	if( test[ 0 ] || test[ 1 ] )
 	{
 		go->difficulty = 1 - go->difficulty;
 		display_cursor();
 	}
 
-	test3 = engine_input_manager_hold_fire1();
-	if( test3 )
+	test[ 2 ] = engine_input_manager_hold_fire1();
+	if( test[ 2 ] )
 	{
 		*screen_type = screen_type_level;
+		return;
+	}
+	test[ 3 ] = engine_input_manager_hold_fire2();
+	if( test[ 3 ] )
+	{
+		// TODO insert launch screen before title screen!
+		//*screen_type = screen_type_title;
 		return;
 	}
 

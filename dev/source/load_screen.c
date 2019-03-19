@@ -1,4 +1,5 @@
 #include "load_screen.h"
+#include "_sms_manager.h"
 #include "global_manager.h"
 #include "hack_manager.h"
 #include "enum_manager.h"
@@ -13,26 +14,27 @@
 #include "stats_manager.h"
 #include "game_manager.h"
 
-static unsigned char invincible;
-static unsigned char collision;
+//static unsigned char invincible;
+//static unsigned char collision;
 
 void screen_load_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	struct_level_object *lo = &global_level_object;
-	struct_stats_object *so = &global_stats_object;
-	enum_diff_type difficulty;
 
-
-	invincible = go->invincible;
-	difficulty = go->difficulty;
-	collision = so->collision_offsets[ difficulty ];
-
+	//struct_level_object *lo = &global_level_object;
+	//struct_stats_object *so = &global_stats_object;
+	//enum_diff_type difficulty;
+	//invincible = go->invincible;
+	//difficulty = go->difficulty;
+	//collision = so->collision_offsets[ difficulty ];
 
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
+
+	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
+	devkit_SMS_displayOn();
 
 	engine_state_manager_load();
 	engine_enemyX_manager_load();
