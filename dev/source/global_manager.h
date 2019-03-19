@@ -10,6 +10,7 @@
 //#define SPRITE_TILES_OFFSET		128
 //#define SPRITE_TILES_OFFSET		256						// TODO delete as was used before but now dead code!
 #define SPRITE_TILES_NUMBER		12
+#define GUARDS_TILES_NUMBER		8
 
 #define PLAYER_SPRITE_TILE		256
 #define ENEMYX_SPRITE_TILE		388
