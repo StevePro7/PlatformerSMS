@@ -19,7 +19,8 @@ static unsigned int enemy_tiles[ MAX_ENEMIES ] =
 	ENEMYX_SPRITE_TILE + 3 * SPRITE_TILES_NUMBER
 };
 
-static void get_draw_position( unsigned char idx );
+static void get_enemy_draw_position( unsigned char idx );
+static void get_guard_draw_position( unsigned char idx );
 
 void engine_enemyX_manager_init()
 {
@@ -51,7 +52,14 @@ void engine_enemyX_manager_load()
 		eo->posnX = rectX + TILE_WIDE / 2;
 		eo->posnY = rectB;
 
-		get_draw_position( idx );
+		if( action_type_chase == eo->action_type )
+		{
+			get_enemy_draw_position( idx );
+		}
+		else if( action_type_guard == eo->action_type )
+		{
+			get_guard_draw_position( idx );
+		}
 	}
 }
 
@@ -70,7 +78,7 @@ void engine_enemyX_manager_draw_enemys()
 			continue;
 		}
 
-		get_draw_position( idx );
+		get_enemy_draw_position( idx );
 		tile = enemy_tiles[ eo->sprite_type ];
 		engine_sprite_manager_draw( eo->drawX, eo->drawY, tile );
 	}
@@ -94,7 +102,7 @@ void engine_enemyX_manager_draw_guards()
 	}
 }
 
-static void get_draw_position( unsigned char idx )
+static void get_enemy_draw_position( unsigned char idx )
 {
 	struct_enemy_object *eo = &global_enemy_objects[ idx ];
 
@@ -103,4 +111,13 @@ static void get_draw_position( unsigned char idx )
 
 	eo->drawX = eo->posnX - halfTileSizeX + DRAW_OFFSET_X;
 	eo->drawY = eo->posnY - twiceTileSizeY;
+}
+
+static void get_guard_draw_position( unsigned char idx )
+{
+	struct_enemy_object *eo = &global_enemy_objects[ idx ];
+
+	// Block 16x16 = 2 * 8x8.
+	eo->drawX = eo->spotX * 2;
+	eo->drawY = ( eo->spotY - 1 ) * 2;
 }

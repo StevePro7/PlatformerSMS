@@ -35,7 +35,7 @@ void screen_load_screen_load()
 	engine_level_manager_draw_level();
 
 	engine_state_manager_load();
-	//engine_player_manager_load();		// done in the ready screen
+	engine_player_manager_load();		// done in the ready screen
 	engine_enemyX_manager_load();
 
 	engine_enemyX_manager_draw_guards();
