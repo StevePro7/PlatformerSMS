@@ -1,6 +1,5 @@
 #include "play_screen.h"
 #include "global_manager.h"
-#include "debug_manager.h"
 #include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
@@ -9,61 +8,94 @@
 #include "anim_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
+#include "input_manager.h"
 #include "state_manager.h"
-#include "audio_manager.h"
+#include "stats_manager.h"
 #include "game_manager.h"
+
+// Cache values for entire class.
+static unsigned char invincible;
+static unsigned char collision;
+//static unsigned char pitstokill;		// TODO - calculate this bool on load level
 
 void screen_play_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	struct_hack_object *ho = &global_hack_object;
-	struct_level_object *lo = &global_level_object;
+	struct_stats_object *so = &global_stats_object;
 
-	/*unsigned char int_coll_type;
-	enum_coll_type coll_type;*/
-
-	//engine_debug_manager_draw_grid();		// TODO remove this!
-
-	// Load animations.
-	engine_anim_manager_player_load_idle();
-	engine_anim_manager_player_load_run();
-	engine_anim_manager_enemyX_load_idle();
-
-	engine_level_manager_init_level();
-//	engine_level_manager_load_index( 0, go->invincible, 0 );		//stevepro
-	//engine_level_manager_load_index( ho->hacker_level );
-	engine_level_manager_draw_level();
-
-	//TODO refactor this so can lookup as unsigned char but cast back as enum
-	//engine_level_manager_get_collision( &int_coll_type, 9, 5 );
-	//coll_type = ( enum_coll_type ) int_coll_type;
-	//engine_font_manager_draw_data( coll_type, 9, 10 );
-
-	//engine_level_manager_load_levelX();
-
-	engine_state_manager_load();
-	engine_player_manager_load();
-	engine_enemyX_manager_load();
-
-
-	// TODO put in the update method
-	//engine_player_manager_get_input();
-	//engine_player_manager_apply_physics();
-	//engine_player_manager_handle_collisions();
-
-	// TODO wire up different game play music...
-	//engine_audio_manager_start_music();
-
-	//engine_font_manager_draw_text( "LEFT", 10, 10 );
-	//engine_font_manager_draw_text( "RGHT", 10, 11 );
-	//engine_font_manager_draw_text( "TOPX", 10, 12 );
-	//engine_font_manager_draw_text( "BOTX", 10, 13 );
-
-	//engine_font_manager_draw_data( lo->exit_spotX, 20, 18 );
-	//engine_font_manager_draw_data( lo->exit_spotY, 20, 19 );
+	//struct_hack_object *ho = &global_hack_object;
+	//struct_level_object *lo = &global_level_object;
+	enum_diff_type difficulty;
+	invincible = go->invincible;
+	difficulty = go->difficulty;
+	collision = so->collision_offsets[ difficulty ];
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
+{
+	struct_player_object *po = &global_player_object;
+	struct_enemy_master *em = &global_enemy_master;
+	struct_enemy_object *eo;
+	unsigned char idx;
+	int coll_diff;
+
+	// Check reset first.
+	engine_player_manager_get_input();
+	engine_player_manager_apply_physics();
+	engine_player_manager_handle_collisions();
+	engine_player_manager_cleanup();
+
+	// Draw enemies first!
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
+
+	// Gems + power up.
+
+
+	// If invincible then ignore collisions and pits.
+	if( invincible )
+	{
+		*screen_type = screen_type_play;
+		return;
+	}
+
+	// If jump above "ceiling" then cannot collide with anything
+	if( po->posnY < 0 )
+	{
+		engine_font_manager_draw_text( "HIGH", 20, 10 );
+		*screen_type = screen_type_play;
+		return;
+	}
+
+	// TODO extract if no pits in level then only check if there is...
+	// could leave this in for the moment to stress test redundant check
+	// Check if fell into pit.
+	if( health_type_death == po->player_health_type )
+	{
+		*screen_type = screen_type_dead;
+		return;
+	}
+
+	// Collisions.
+	for( idx = 0; idx < em->max_enemies; idx++ )
+	{
+		eo = &global_enemy_objects[ idx ];
+		if( ( signed char ) eo->spotY >= po->coll_topX && ( signed char ) eo->spotY <= po->coll_botX )
+		{
+			coll_diff = myabs( po->posnX - eo->posnX );
+			if( coll_diff <= collision )
+			{
+				*screen_type = screen_type_dead;
+				return;
+			}
+		}
+	}
+
+	*screen_type = screen_type_play;
+}
+
+/*
+void screen_play_screen_updateX( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
 	struct_level_object *lo = &global_level_object;
@@ -143,7 +175,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 	}
 
-
-	
 	*screen_type = screen_type_play;
 }
+*/

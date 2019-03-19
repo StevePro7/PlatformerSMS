@@ -3,8 +3,9 @@
 
 typedef struct tag_struct_hack_object
 {
-	unsigned char hack_debug;
+	//unsigned char hack_debug;
 	unsigned char hack_invincible;
+	unsigned char hack_localcheat;
 	unsigned char hack_difficulty;
 	unsigned char hack_world;
 	unsigned char hack_round;

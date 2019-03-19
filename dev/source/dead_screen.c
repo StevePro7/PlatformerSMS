@@ -16,8 +16,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{
-		//*screen_type = screen_type_play;
-		*screen_type = screen_type_load;
+		*screen_type = screen_type_ready;
 		return;
 	}
 

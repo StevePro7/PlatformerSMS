@@ -5,6 +5,9 @@
 
 void screen_cont_screen_load()
 {
+	// Clear middle section
+	// CONTINUE GAME?
+	// >>YES    >>NO
 	engine_font_manager_draw_text( "CONT SCREEN", 10, 10 );
 	engine_delay_manager_load( 100 );
 }
@@ -20,5 +23,9 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	// if input_manager( fire1 ) then
+	// Clear middle section
+	// Draw level mid section
+	// goto Ready screen
 	*screen_type = screen_type_cont;
 }

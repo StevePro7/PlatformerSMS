@@ -14,19 +14,9 @@
 #include "stats_manager.h"
 #include "game_manager.h"
 
-//static unsigned char invincible;
-//static unsigned char collision;
-
 void screen_load_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-
-	//struct_level_object *lo = &global_level_object;
-	//struct_stats_object *so = &global_stats_object;
-	//enum_diff_type difficulty;
-	//invincible = go->invincible;
-	//difficulty = go->difficulty;
-	//collision = so->collision_offsets[ difficulty ];
 
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
@@ -38,9 +28,6 @@ void screen_load_screen_load()
 
 	engine_state_manager_load();
 	engine_enemyX_manager_load();
-
-	//engine_player_manager_load();			// done in the ready screen
-	//engine_enemyX_manager_draw_guards();	// done in the ready screen
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
