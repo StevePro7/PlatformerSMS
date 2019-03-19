@@ -6,6 +6,16 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+19/03/2019
+Timed Build.bat script suddenly gave the following warning / errors:
+https://stackoverflow.com/questions/34760066/unbalanced-parenthesis-batch-file
+Unbalanced parenthesis.
+Unbalanced parenthesis.
+Missing operand.
+
+Therefore, modified for one towards the bottom making tweaks and combine text from first
+
+
 18/03/2019
 Test2015_07_soundFX
 E:\Steven\INSTALLATIONSEGA\sdcc2
