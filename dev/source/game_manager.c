@@ -11,15 +11,14 @@ void engine_game_manager_init()
 {
 	struct_game_object *go = &global_game_object;
 
-	//go->invincible = false;
+	go->invincible = false;
 	go->difficulty = diff_type_easy;
 	go->world_no = 0;
 	go->round_no = 0;
 }
 
-void engine_game_manager_load()
-{
-	struct_game_object *go = &global_game_object;
-
-	go->invincible = true;
-}
+//void engine_game_manager_load()
+//{
+//	struct_game_object *go = &global_game_object;
+//	go->invincible = true;
+//}

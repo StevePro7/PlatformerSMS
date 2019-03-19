@@ -10,7 +10,7 @@ void screen_reset_screen_load()
 	struct_game_object *go = &global_game_object;
 
 	engine_font_manager_draw_text( "RESET SCREEN", 10, 0 );
-	engine_font_manager_draw_data( ho->hacker_difficulty, 20, 20 );
+	engine_font_manager_draw_data( ho->hack_difficulty, 20, 20 );
 	engine_font_manager_draw_data( go->difficulty, 20, 21 );
 }
 

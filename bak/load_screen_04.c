@@ -1,6 +1,7 @@
 #include "load_screen.h"
 #include "global_manager.h"
 #include "hack_manager.h"
+#include "debug_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
@@ -23,12 +24,20 @@ void screen_load_screen_load()
 	struct_stats_object *so = &global_stats_object;
 	enum_diff_type difficulty;
 
-
+	engine_game_manager_load();
 	invincible = go->invincible;
+
 	difficulty = go->difficulty;
 	collision = so->collision_offsets[ difficulty ];
 
+	
 
+	//engine_debug_manager_draw_grid();		// TODO remove this!
+
+	// Load animations.
+	engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_run();
+	engine_anim_manager_enemyX_load_idle();
 
 	engine_level_manager_init_level();
 	//engine_level_manager_load_index( 0, invincible, difficulty );		//stevepro

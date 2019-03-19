@@ -7,7 +7,6 @@ typedef struct tag_struct_game_object
 {
 	unsigned char invincible;
 	unsigned char difficulty;
-	//unsigned char number_lives;
 	unsigned char world_no;
 	unsigned char round_no;
 

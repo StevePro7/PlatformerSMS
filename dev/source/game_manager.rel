@@ -1,12 +1,11 @@
 XL2
-H 9 areas 4 global symbols
+H 9 areas 3 global symbols
 M game_manager
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 1F flags 0 addr 0
-S _engine_game_manager_load Def0015
+A _CODE size 17 flags 0 addr 0
 S _engine_game_manager_init Def0000
-A _DATA size 5 flags 0 addr 0
+A _DATA size 4 flags 0 addr 0
 S _global_game_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -21,11 +20,7 @@ T 00 00
 R 00 00 01 00
 T 00 00
 R 00 00 00 00
-T 00 00 21 01 00 36 00 21 03 00 36 00 21 04 00 36
+T 00 00 01 00 00 AF 02 21 01 00 36 00 21 02 00 36
 R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
-T 0E 00 00 21 02 00 36 04 C9
-R 00 00 00 00 00 04 01 00
-T 15 00
+T 0E 00 00 03 03 03 60 69 36 00 C9
 R 00 00 00 00
-T 15 00 21 00 00 36 01 23 23 36 04 C9
-R 00 00 00 00 00 03 01 00

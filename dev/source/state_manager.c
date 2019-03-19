@@ -3,6 +3,7 @@
 #include "level_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
+#include "stats_manager.h"
 #include "game_manager.h"
 
 void engine_state_manager_init()
@@ -14,13 +15,15 @@ void engine_state_manager_init()
 	engine_hack_manager_init();
 	engine_hack_manager_invert();
 
+	// Initialize other managers.
+	engine_stats_manager_init();
 	engine_game_manager_init();
 
 
 	// Setup hacked variables.
-	go->difficulty = ho->hacker_difficulty;
-	go->world_no = ho->hacker_world;
-	go->round_no = ho->hacker_round;
+	go->difficulty = ho->hack_difficulty;
+	go->world_no = ho->hack_world;
+	go->round_no = ho->hack_round;
 }
 
 void engine_state_manager_load()

@@ -143,7 +143,61 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	if( ho->hacker_enemy > 0 )
+	{
+		if( 1 == coll_topX || 4 == coll_topX || 7 == coll_topX || 10 == coll_topX )
+		{
+			if( ho->hacker_enemy > 0 )
+			{
+				if( 1 == coll_topX )
+				{
+					if( po->posnX >= enemA_left && po->posnX <= enemA_rght && po->posnY >= enemA_topX && po->posnY <= enemA_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+			if( ho->hacker_enemy > 1 )
+			{
+				if( 4 == coll_topX )
+				{
+					if( po->posnX >= enemB_left && po->posnX <= enemB_rght && po->posnY >= enemB_topX && po->posnY <= enemB_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+			if( ho->hacker_enemy > 2 )
+			{
+				if( 7 == coll_topX )
+				{
+					if( po->posnX >= enemC_left && po->posnX <= enemC_rght && po->posnY >= enemC_topX && po->posnY <= enemC_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+			if( ho->hacker_enemy > 3 )
+			{
+				if( 10 == coll_topX )
+				{
+					if( po->posnX >= enemD_left && po->posnX <= enemD_rght && po->posnY >= enemD_topX && po->posnY <= enemD_botX )
+					{
+						*screen_type = screen_type_over;
+						return;
+					}
+				}
+			}
+		}
+	}
 
-	
+	//engine_font_manager_draw_data( po->coll_left, 20, 10 );
+	//engine_font_manager_draw_data( po->coll_rght, 20, 11 );
+	//engine_font_manager_draw_data( po->coll_topX, 20, 12 );
+	//engine_font_manager_draw_data( po->coll_botX, 20, 13 );
+
 	*screen_type = screen_type_play;
 }
