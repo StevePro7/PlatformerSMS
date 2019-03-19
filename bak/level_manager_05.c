@@ -14,7 +14,6 @@ struct_level_object global_level_object;
 #define LF		'\n'			// 0x0a
 
 // Private helper methods.
-static void load_level( const unsigned char *data, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty );
 static void draw_tiles( unsigned char x, unsigned char y );
 static void setup_player( unsigned char index );
 static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col );
@@ -30,7 +29,6 @@ void engine_level_manager_init_level()
 		{
 			idx = row * MAX_COLS + col;
 			lo->collision_array[ idx ] = 0;
-			lo->drawtiles_array[ idx ] = 0;
 		}
 	}
 
@@ -40,22 +38,24 @@ void engine_level_manager_init_level()
 		lo->enemys_spotX[ idx ] = 0;
 		lo->enemys_spotY[ idx ] = 0;
 		lo->enemys_type[ idx ] = sprite_type_unknown;
+		//lo->enemys_botX[ idx ] = 0;
 		lo->enemys_minX[ idx ] = 0;
 		lo->enemys_maxX[ idx ] = 0;
 		lo->enemys_action[ idx ] = action_type_guard;
 	}
 }
 
-void load_level( const unsigned char *data, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty )
+void engine_level_manager_load_level( const unsigned char *level, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty )
 {
 	struct_level_object *lo = &global_level_object;
-
-	const unsigned char *o = data;
+	const unsigned char *o = level;
+	//unsigned char x, y, tile;
 	unsigned char row, col, cnt;
 	unsigned char minX, maxX, tmpX;
 	unsigned char tile;
 	unsigned char enemyCount;
 	
+	//unsigned char idx, row, col;
 	unsigned int idx;
 	enum_tile_type tile_type;
 	enum_coll_type coll_type;
@@ -68,12 +68,17 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 	devkit_SMS_mapROMBank( bank );
 	for( row = 0; row < MAX_ROWS; row++ )
 	{
+		//y = row;
 		for( col = 0; col < lo->load_cols; col++ )
 		{
+			//x = col;
 			tile = *o;
 			if( !( tile == CR || tile == LF ) )
 			{
+				//idx = y * COLS + x;
 				idx = row * MAX_COLS + col;
+				//level_map[ idx ] = tile;
+				//level_mat[ row ][ col ] = tile;
 
 				engine_tile_manager_get_tile( &tile_type, tile, difficulty );
 				lo->drawtiles_array[ idx ] = tile_type;
@@ -83,7 +88,12 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 					lo->exit_spotY = row;
 				}
 
+				//tiles_map[ idx ] = tile_type;
+				//tiles_mat[ row ][ col ] = tile_type;
+
 				engine_tile_manager_get_collision( &coll_type, tile, difficulty );
+				//crash_map[ idx ] = coll_type;
+				//crash_mat[ row ][ col ] = coll_type;
 
 				engine_tile_manager_get_sprite( &sprite_type, tile );
 				if( sprite_type_unknown != sprite_type )
@@ -98,6 +108,7 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 					}
 				}
 
+				//lo->collision_matrix[ index ] = coll_type;
 				lo->collision_array[ idx ] = coll_type;
 			}
 
@@ -206,16 +217,20 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 	}
 }
 
-void engine_level_manager_load_level( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
+void engine_level_manager_load_steve( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
 {
+	/*const unsigned char *level;
+	unsigned char bank;
+	unsigned char size;*/
+
 	unsigned char index = world * MAX_ROUNDS + round;
-	//unsigned char halve = MAX_WORLDS / 2;
+
 	//if( 0 == world )
 	//{
-		const unsigned char *data = levelAAdata[ index ];
+		const unsigned char *level = levelAAdata[ index ];
 		const unsigned char bank = levelAAbank[ index ];
 		const unsigned char size = levelAAsize[ index ];
-		load_level( data, bank, size, invincible, difficulty );
+		engine_level_manager_load_level( level, bank, size, invincible, difficulty );
 	//}
 	////else //if( 1 == world )
 	//{
@@ -223,8 +238,44 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 	//	const unsigned char bank = world01bank[ index ];
 	//	const unsigned char size = world01size[ index ];
 	//	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+
+	//	///*level = world02data[ index ];
+	//	//bank = world02bank[ index ];
+	//	//size = world02size[ index ];*/
+
+	//	engine_font_manager_draw_text( "SPLAT", 10, 19 );
+	//	//engine_font_manager_draw_data( world, 20, 20 );
+	//	//engine_font_manager_draw_data( bank, 20, 21 );
+	//	//engine_font_manager_draw_data( size, 20, 22 );
+	//}
+	//else //if( 2 == world )
+	//{
+	//	level = world03data[ index ];
+	//	bank = world03bank[ index ];
+	//	size = world03size[ index ];
+	//}
+	//else
+	//{
+	//	level = world04data[ index ];
+	//	bank = world04bank[ index ];
+	//	size = world04size[ index ];
+	//}*/
+
+	//engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+
+	
 }
 
+/*
+void engine_level_manager_load_index( const unsigned char index, unsigned char invincible, unsigned char difficulty )
+{
+	const unsigned char *level = leveldata[ index ];
+	const unsigned char bank = levelbank[ index ];
+	const unsigned char size = levelsize[ index ];
+
+	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+}
+*/
 void engine_level_manager_draw_level()
 {
 	struct_level_object *lo = &global_level_object;

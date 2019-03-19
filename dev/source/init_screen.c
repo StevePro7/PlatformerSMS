@@ -12,19 +12,12 @@
 void screen_init_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	unsigned char line;
 	unsigned char level;
-
-	for( line = 0; line < 24; line++ )
-	{
-		engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, line );
-	}
 
 	level = go->world_no * MAX_ROUNDS + go->round_no + 1;
 
 	engine_level_manager_init_level();
-	//engine_level_manager_load_index( level, go->invincible, go->difficulty );
-	engine_level_manager_load_steve( go->world_no, go->round_no, go->invincible, go->difficulty );
+	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
 
 	//engine_level_manager_load_index( ho->hacker_level );
 	engine_level_manager_draw_level();
@@ -37,7 +30,6 @@ void screen_init_screen_load()
 void screen_init_screen_update( unsigned char *screen_type )
 {
 	unsigned char test;
-	unsigned char line;
 
 	test = engine_input_manager_hold_fire2();
 	if( !test )
@@ -46,10 +38,7 @@ void screen_init_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	for( line = 0; line < 24; line++ )
-	{
-		engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, line );
-	}
+	
 	
 	*screen_type = screen_type_level;
 }
