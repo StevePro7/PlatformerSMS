@@ -17,7 +17,7 @@ struct_level_object global_level_object;
 static void load_level( const unsigned char *data, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty );
 static void draw_tiles( unsigned char x, unsigned char y );
 static void setup_player( unsigned char index );
-static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col );
+static void setup_enemyX( enum_sprite_type sprite_type, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col );
 
 void engine_level_manager_init_level()
 {
@@ -36,13 +36,13 @@ void engine_level_manager_init_level()
 
 	for( idx = 0; idx < MAX_ENEMIES; idx++ )
 	{
-		lo->enemys_spot[ idx ] = 0;
+		//lo->enemys_spot[ idx ] = 0;
 		lo->enemys_spotX[ idx ] = 0;
 		lo->enemys_spotY[ idx ] = 0;
 		lo->enemys_type[ idx ] = sprite_type_unknown;
 		lo->enemys_minX[ idx ] = 0;
 		lo->enemys_maxX[ idx ] = 0;
-		lo->enemys_action[ idx ] = action_type_guard;
+		lo->enemys_action[ idx ] = action_type_unknown;
 	}
 }
 
@@ -94,7 +94,7 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 					}
 					else
 					{
-						setup_enemyX( sprite_type, idx, enemyCount++, tile, row, col );
+						setup_enemyX( sprite_type, enemyCount++, tile, row, col );
 					}
 				}
 
@@ -335,10 +335,10 @@ static void setup_player( unsigned char index )
 	struct_level_object *lo = &global_level_object;
 	lo->player_spot = index;
 }
-static void setup_enemyX( enum_sprite_type sprite_type, unsigned char index, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col )
+static void setup_enemyX( enum_sprite_type sprite_type, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col )
 {
 	struct_level_object *lo = &global_level_object;
-	lo->enemys_spot[ enemy ] = index;
+	//lo->enemys_spot[ enemy ] = index;
 	lo->enemys_type[ enemy ] = sprite_type;
 	lo->enemys_spotY[ enemy ] = row;
 	lo->enemys_spotX[ enemy ] = col;

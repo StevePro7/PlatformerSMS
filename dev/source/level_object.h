@@ -11,7 +11,7 @@ typedef struct tag_struct_level_object
 	unsigned int draw_cols;
 	signed char exit_spotX, exit_spotY;		// Compatible with collX, collY
 	unsigned int player_spot;
-	unsigned int enemys_spot[ MAX_ENEMIES ];
+	//unsigned int enemys_spot[ MAX_ENEMIES ];
 	unsigned int enemys_spotX[ MAX_ENEMIES ];
 	unsigned int enemys_spotY[ MAX_ENEMIES ];
 	unsigned char enemys_type[ MAX_ENEMIES ];

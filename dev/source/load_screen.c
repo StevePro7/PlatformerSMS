@@ -29,7 +29,7 @@ void screen_load_screen_load()
 	collision = so->collision_offsets[ difficulty ];
 
 
-
+	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
 	engine_level_manager_draw_level();

@@ -1,7 +1,6 @@
 #include "game_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
-#include "font_manager.h"
 #include <stdbool.h>
 
 // Global variable.
@@ -16,9 +15,3 @@ void engine_game_manager_init()
 	go->world_no = 0;
 	go->round_no = 0;
 }
-
-//void engine_game_manager_load()
-//{
-//	struct_game_object *go = &global_game_object;
-//	go->invincible = true;
-//}

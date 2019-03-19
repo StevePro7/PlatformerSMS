@@ -65,7 +65,7 @@ void engine_enemyX_manager_draw_enemys()
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
-		if( action_type_guard != eo->action_type )
+		if( action_type_chase != eo->action_type )
 		{
 			continue;
 		}
@@ -85,7 +85,7 @@ void engine_enemyX_manager_draw_guards()
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
-		if( action_type_chase != eo->action_type )
+		if( action_type_guard != eo->action_type )
 		{
 			continue;
 		}

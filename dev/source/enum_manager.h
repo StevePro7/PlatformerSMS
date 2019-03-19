@@ -104,6 +104,7 @@ typedef enum tag_enum_action_type
 {
 	action_type_chase = 0,
 	action_type_guard = 1,
+	action_type_unknown = 2,
 
 } enum_action_type;
 
