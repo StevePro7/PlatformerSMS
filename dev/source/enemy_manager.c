@@ -93,6 +93,7 @@ void engine_enemyX_manager_update()
 {
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
+	unsigned char idx;
 	signed char deltaX;
 
 	if( 0 == em->max_enemies )
@@ -100,39 +101,51 @@ void engine_enemyX_manager_update()
 		return;
 	}
 
-	eo = &global_enemy_objects[ 0 ];
-	if( move_type_idle == eo->curr_move_type )
+	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
-		eo->loop++;
-		if( eo->loop >= eo->wait )
-		{
-			eo->loop = 0;
-			eo->curr_move_type = eo->next_move_type;
-		}
-	}
-	else
-	{
-		deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
-		eo->posnX += deltaX;
+		eo = &global_enemy_objects[ idx ];
 
-		// Wait at boundary as necessary.
-		if( move_type_left == eo->curr_move_type )
+		// Guards do not move!
+		if( action_type_guard == eo->action_type )
 		{
-			if( eo->posnX <= eo->leftX )
+			continue;
+		}
+
+
+		if( move_type_idle == eo->curr_move_type )
+		{
+			eo->loop++;
+			if( eo->loop >= eo->wait )
 			{
-				eo->curr_move_type = move_type_idle;
-				eo->next_move_type = move_type_rght;
+				eo->loop = 0;
+				eo->curr_move_type = eo->next_move_type;
 			}
 		}
-		else if( move_type_rght == eo->curr_move_type )
+		else
 		{
-			if( eo->posnX >= eo->rghtX )
+			deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+			eo->posnX += deltaX;
+
+			// Wait at boundary as necessary.
+			if( move_type_left == eo->curr_move_type )
 			{
-				eo->curr_move_type = move_type_idle;
-				eo->next_move_type = move_type_left;
+				if( eo->posnX <= eo->leftX )
+				{
+					eo->curr_move_type = move_type_idle;
+					eo->next_move_type = move_type_rght;
+				}
+			}
+			else if( move_type_rght == eo->curr_move_type )
+			{
+				if( eo->posnX >= eo->rghtX )
+				{
+					eo->curr_move_type = move_type_idle;
+					eo->next_move_type = move_type_left;
+				}
 			}
 		}
 	}
+
 }
 
 void engine_enemyX_manager_draw_enemys()

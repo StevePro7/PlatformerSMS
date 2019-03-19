@@ -51,6 +51,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_player_manager_cleanup();
 
 	// Enemy(s) movement.
+	engine_enemyX_manager_update();
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();

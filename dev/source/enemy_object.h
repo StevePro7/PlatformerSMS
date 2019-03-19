@@ -22,7 +22,7 @@ typedef struct tag_struct_enemy_object
 	unsigned char leftX, rghtX;
 	unsigned char minX, maxX;
 	unsigned char velX;
-	unsigned int wait, loop;
+	unsigned char wait, loop;
 	void( *update )( void );
 
 } struct_enemy_object;

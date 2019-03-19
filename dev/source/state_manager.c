@@ -61,6 +61,13 @@ void engine_state_manager_load()
 		eo->action_type = lo->enemys_action[ idx ];
 		eo->spotY = lo->enemys_spotY[ idx ];
 		eo->spotX = lo->enemys_spotX[ idx ];
+
+		// Don't set movement data for guards.
+		if( action_type_guard == eo->action_type )
+		{
+			continue;
+		}
+
 		eo->minX = lo->enemys_minX[ idx ];
 		eo->maxX = lo->enemys_maxX[ idx ];
 

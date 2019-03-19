@@ -16,6 +16,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{
+		engine_font_manager_draw_text( "     ", 6, 9 );
 		*screen_type = screen_type_ready;
 		return;
 	}

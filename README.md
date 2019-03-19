@@ -10,6 +10,9 @@ https://yhoo.it/2HdDJfu
 TODO
 Do I want to split out the ready screen as dead goes here but also cont screen?
 
+TODO
+If player jump too high and land on enemy or guard then "force" posnY down so player is visible
+
 Timed Build.bat script suddenly gave the following warning / errors:
 https://stackoverflow.com/questions/34760066/unbalanced-parenthesis-batch-file
 Unbalanced parenthesis.
