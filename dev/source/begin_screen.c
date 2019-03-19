@@ -47,11 +47,9 @@ void screen_begin_screen_load()
 
 	// Reset player irrespective of new level or new life.
 	engine_player_manager_load();
-
 	engine_enemyX_manager_draw_guards();
 
-	engine_font_manager_draw_text( "PAUSE", 10, 0 );
-
+	engine_font_manager_draw_text( "PAUSE", 20, 0 );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )

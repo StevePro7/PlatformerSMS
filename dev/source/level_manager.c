@@ -36,7 +36,6 @@ void engine_level_manager_init_level()
 
 	for( idx = 0; idx < MAX_ENEMIES; idx++ )
 	{
-		//lo->enemys_spot[ idx ] = 0;
 		lo->enemys_spotX[ idx ] = 0;
 		lo->enemys_spotY[ idx ] = 0;
 		lo->enemys_type[ idx ] = sprite_type_unknown;

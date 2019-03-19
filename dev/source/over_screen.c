@@ -15,31 +15,6 @@
 
 void screen_over_screen_load()
 {
-	//struct_hack_object *ho = &global_hack_object;
-	//struct_level_object *lo = &global_level_object;
-
-	//// Load animations.
-	//engine_anim_manager_player_load_idle();
-	//engine_anim_manager_player_load_run();
-	//engine_anim_manager_enemyX_load_idle();
-
-	//engine_enemyX_manager_init();
-
-	//engine_level_manager_init_level();
-	////engine_level_manager_load_index( 0, false, 0 );		//stevepro
-	////engine_level_manager_load_index( ho->hacker_level );
-	//engine_level_manager_draw_level();
-
-	//engine_state_manager_load();
-	//engine_player_manager_load();
-	//engine_enemyX_manager_load();
-
-	//engine_font_manager_draw_text( "OVER", 10, 9 );
-
-	//lo->enemyX_spot[ 0 ];
-	//engine_font_manager_draw_data( lo->enemyX_spot[ 0 ], 10, 10 );
-	//lo->enemys_spot[ 0 ] = 2;
-	//engine_font_manager_draw_data( lo->enemyX_spot[ 0 ], 10, 11 );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )

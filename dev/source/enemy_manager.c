@@ -1,9 +1,11 @@
 #include "enemy_manager.h"
 #include "global_manager.h"
 #include "hack_manager.h"
+#include "enum_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
 #include "sprite_manager.h"
+#include <stdlib.h>
 
 // Global variables.
 struct_enemy_master global_enemy_master;
@@ -24,14 +26,19 @@ static void get_guard_draw_position( unsigned char idx );
 
 void engine_enemyX_manager_init()
 {
-	// TODO complete initialization!
 	struct_enemy_object *eo;
 	unsigned char idx;
 	for( idx = 0; idx < MAX_ENEMIES; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
-		eo->spotX = 0;
-		eo->spotY = 0;
+		eo->sprite_type = sprite_type_unknown;
+		eo->action_type = action_type_unknown;
+		eo->curr_move_type = move_type_idle;
+		eo->prev_move_type = move_type_idle;
+		eo->spotX = 0;	eo->spotY = 0;
+		eo->drawX = 0;	eo->drawY = 0;
+		eo->minX = 0;	eo->maxX = 0;
+		eo->velX = 0;	eo->wait = 0;
 	}
 }
 
@@ -40,6 +47,7 @@ void engine_enemyX_manager_load()
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
 	unsigned char idx;
+	unsigned char num;
 
 	// Calculate enemy starting spot based on level.
 	int rectX, rectB;
@@ -52,6 +60,10 @@ void engine_enemyX_manager_load()
 		rectB = eo->spotY * TILE_HIGH + TILE_HIGH;
 		eo->posnX = rectX + TILE_WIDE / 2;
 		eo->posnY = rectB;
+
+		// Randomize start direction.
+		num = rand() % 2;
+		eo->curr_move_type = num * 2;
 
 		if( action_type_chase == eo->action_type )
 		{

@@ -69,8 +69,6 @@ void engine_player_manager_load()
 
 	po->player_move_type = move_type_idle;
 	po->player_health_type = health_type_alive;
-	//po->posnX = 24 + 4 * 16;	po->posnY = 160;
-	//po->posnX = 24 + 4 * 16;	po->posnY = 32;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;

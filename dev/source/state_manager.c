@@ -55,23 +55,9 @@ void engine_state_manager_load()
 	{
 		eo = &global_enemy_objects[ idx ];
 
-		eo->spotY = lo->enemys_spotY[ idx ];
-		eo->spotX = lo->enemys_spotX[ idx ];
-		//eo->spotY = lo->enemys_spot[ idx ] / lo->draw_cols;
-		//eo->spotX = lo->enemys_spot[ idx ] % lo->draw_cols;
-
-
 		eo->sprite_type = lo->enemys_type[ idx ];
 		eo->action_type = lo->enemys_action[ idx ];
-
-		//eo->spotY = lo->enemys_spotY[ idx ];
-		//eo->spotX = lo->enemys_spotX[ idx ];
-		//eo->spotY = lo->enemys_spot[ idx ] / lo->draw_cols;
-		//eo->spotX = lo->enemys_spot[ idx ] % lo->draw_cols;
-
-		//engine_font_manager_draw_data( eo->sprite_type, 10, 12 );
-		//engine_font_manager_draw_data( eo->action_type, 10, 13 );
-		//engine_font_manager_draw_data( eo->spotX, 10, 4 );
-		//engine_font_manager_draw_data( eo->spotY, 10, 5 );
+		eo->spotY = lo->enemys_spotY[ idx ];
+		eo->spotX = lo->enemys_spotX[ idx ];
 	}
 }
