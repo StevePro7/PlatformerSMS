@@ -2,9 +2,9 @@
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
+#include "enum_manager.h"
 #include "content_manager.h"
 #include "anim_manager.h"
-#include "enum_manager.h"
 #include "text_manager.h"
 
 void screen_init_screen_load()

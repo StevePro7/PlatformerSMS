@@ -8,7 +8,7 @@ https://yhoo.it/2HdDJfu
 
 19/03/2019
 TODO
-Do I want to split out the ready screen as dead goes here but also cont screen
+Do I want to split out the ready screen as dead goes here but also cont screen?
 
 Timed Build.bat script suddenly gave the following warning / errors:
 https://stackoverflow.com/questions/34760066/unbalanced-parenthesis-batch-file

@@ -28,5 +28,4 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	engine_player_manager_draw();
 
 	*screen_type = screen_type_play;
-	//*screen_type = screen_type_over;
 }

@@ -78,6 +78,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 				else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
 				{
 					// Enable immunability = temp invincible to enemy/guard but can still fall down pits...
+					engine_font_manager_draw_text( "POWER", 10, 10 );		// TODO implement code
 				}
 			}
 		}
