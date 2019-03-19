@@ -51,16 +51,24 @@ void screen_begin_screen_load()
 	engine_player_manager_load();
 	engine_enemyX_manager_draw_guards();
 
-	engine_font_manager_draw_text( "PAUSE", 10, 0 );
-	engine_font_manager_draw_data( em->max_enemies, 10, 1 );
+	engine_font_manager_draw_text( "PAUSE", 20, 0 );
+	engine_font_manager_draw_data( em->max_enemies, 20, 1 );
 
 	eo = &global_enemy_objects[ 0 ];
-	engine_font_manager_draw_data( eo->velX, 10, 2 );
-	engine_font_manager_draw_data( eo->wait, 10, 3 );
+	engine_font_manager_draw_data( eo->velX, 20, 2 );
+	engine_font_manager_draw_data( eo->wait, 20, 3 );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
+	unsigned char test;
+	test = engine_input_manager_hold_fire2();
+
+	if( test )
+	{
+		engine_enemyX_manager_update();
+	}
+
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();

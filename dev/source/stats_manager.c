@@ -19,20 +19,20 @@ void engine_stats_manager_init()
 	so->enemys_velX[ sprite_type_enemyA ][ 2 ] = 3;
 	so->enemys_velX[ sprite_type_enemyA ][ 3 ] = 4;
 
-	so->enemys_velX[ sprite_type_enemyB ][ 0 ] = 11;
-	so->enemys_velX[ sprite_type_enemyB ][ 1 ] = 22;
-	so->enemys_velX[ sprite_type_enemyB ][ 2 ] = 33;
-	so->enemys_velX[ sprite_type_enemyB ][ 3 ] = 44;
+	so->enemys_velX[ sprite_type_enemyB ][ 0 ] = 5;
+	so->enemys_velX[ sprite_type_enemyB ][ 1 ] = 5;
+	so->enemys_velX[ sprite_type_enemyB ][ 2 ] = 5;
+	so->enemys_velX[ sprite_type_enemyB ][ 3 ] = 5;
 
 	so->enemys_velX[ sprite_type_enemyC ][ 0 ] = 4;
 	so->enemys_velX[ sprite_type_enemyC ][ 1 ] = 5;
 	so->enemys_velX[ sprite_type_enemyC ][ 2 ] = 6;
 	so->enemys_velX[ sprite_type_enemyC ][ 3 ] = 7;
 
-	so->enemys_velX[ sprite_type_enemyD ][ 0 ] = 14;
-	so->enemys_velX[ sprite_type_enemyD ][ 1 ] = 15;
-	so->enemys_velX[ sprite_type_enemyD ][ 2 ] = 16;
-	so->enemys_velX[ sprite_type_enemyD ][ 3 ] = 17;
+	so->enemys_velX[ sprite_type_enemyD ][ 0 ] = 2;
+	so->enemys_velX[ sprite_type_enemyD ][ 1 ] = 3;
+	so->enemys_velX[ sprite_type_enemyD ][ 2 ] = 2;
+	so->enemys_velX[ sprite_type_enemyD ][ 3 ] = 3;
 
 
 	so->enemys_wait[ sprite_type_enemyA ][ 0 ] = 10;

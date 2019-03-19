@@ -337,7 +337,7 @@ static void setup_player( unsigned char index )
 static void setup_enemyX( enum_sprite_type sprite_type, unsigned char enemy, unsigned char tile, unsigned char row, unsigned char col )
 {
 	struct_level_object *lo = &global_level_object;
-	//lo->enemys_spot[ enemy ] = index;
+
 	lo->enemys_type[ enemy ] = sprite_type;
 	lo->enemys_spotY[ enemy ] = row;
 	lo->enemys_spotX[ enemy ] = col;

@@ -19,9 +19,11 @@ typedef struct tag_struct_enemy_object
 	unsigned char spotX, spotY;		// IMPORTANT enemy bottom = spotY and never changes
 	unsigned char posnX, posnY;
 	unsigned char drawX, drawY;
+	unsigned char leftX, rghtX;
 	unsigned char minX, maxX;
 	unsigned char velX;
 	unsigned char wait;
+	unsigned char loop;
 	void( *update )( void );
 
 } struct_enemy_object;

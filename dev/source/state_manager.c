@@ -61,7 +61,25 @@ void engine_state_manager_load()
 		eo->action_type = lo->enemys_action[ idx ];
 		eo->spotY = lo->enemys_spotY[ idx ];
 		eo->spotX = lo->enemys_spotX[ idx ];
+		eo->minX = lo->enemys_minX[ idx ];
+		eo->maxX = lo->enemys_maxX[ idx ];
+
 		eo->velX = so->enemys_velX[ eo->sprite_type ][ go->world_no ];
+		eo->velX += go->difficulty;
+		if( eo->velX > MAX_ENEMY_VELX )
+		{
+			eo->velX = MAX_ENEMY_VELX;
+		}
+
 		eo->wait = so->enemys_wait[ eo->sprite_type ][ go->world_no ];
+		if( 0 != eo->wait )
+		{
+			eo->wait -= go->difficulty;
+			if( eo->wait > MAX_ENEMY_WAIT )
+			{
+				eo->wait = MAX_ENEMY_WAIT;
+			}
+		}
 	}
+
 }

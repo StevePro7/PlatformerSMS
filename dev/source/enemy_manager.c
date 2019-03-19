@@ -12,6 +12,8 @@
 struct_enemy_master global_enemy_master;
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
+
+
 #define DRAW_OFFSET_X	-4
 
 static unsigned int enemy_tiles[ MAX_ENEMIES ] =
@@ -39,7 +41,7 @@ void engine_enemyX_manager_init()
 		eo->spotX = 0;	eo->spotY = 0;
 		eo->drawX = 0;	eo->drawY = 0;
 		eo->minX = 0;	eo->maxX = 0;
-		eo->velX = 0;	eo->wait = 0;
+		eo->velX = 0;	eo->wait = 0;	eo->loop = 0;
 	}
 }
 
@@ -48,19 +50,29 @@ void engine_enemyX_manager_load()
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
 	unsigned char idx;
+	unsigned char hlf;
 	unsigned char num;
 
 	// Calculate enemy starting spot based on level.
 	int rectX, rectB;
+	hlf = TILE_WIDE / 2;
+
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
 
-		eo->posnX = 0;	eo->posnY = 0;
+		// Position.
 		rectX = eo->spotX * TILE_WIDE;
 		rectB = eo->spotY * TILE_HIGH + TILE_HIGH;
-		eo->posnX = rectX + TILE_WIDE / 2;
+		eo->posnX = rectX + hlf;
 		eo->posnY = rectB;
+
+		// Bounds.
+		rectX = eo->minX * TILE_WIDE;
+		eo->leftX = rectX + hlf;
+
+		rectX = eo->maxX * TILE_WIDE;
+		eo->rghtX = rectX + hlf;
 
 		// Randomize start direction.
 		num = rand() % 2;
@@ -74,6 +86,32 @@ void engine_enemyX_manager_load()
 		{
 			get_guard_draw_position( idx );
 		}
+	}
+}
+
+void engine_enemyX_manager_update()
+{
+	struct_enemy_master *em = &global_enemy_master;
+	struct_enemy_object *eo;
+
+	if( 0 == em->max_enemies )
+	{
+		return;
+	}
+
+	eo = &global_enemy_objects[ 0 ];
+	if( move_type_idle == eo->curr_move_type )
+	{
+		eo->loop++;
+		if( eo->loop >= eo->wait )
+		{
+			eo->loop = 0;
+			eo->curr_move_type = eo->prev_move_type;
+		}
+	}
+	else
+	{
+
 	}
 }
 
