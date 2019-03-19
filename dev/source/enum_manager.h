@@ -109,4 +109,15 @@ typedef enum tag_enum_action_type
 
 } enum_action_type;
 
+typedef enum tag_enum_event_type
+{
+	event_type_none = 0,
+	event_type_exit = 1,
+	event_type_gemscorehi = 2,
+	event_type_gempowerhi = 3,
+	event_type_gemscorelo = 4,
+	event_type_gempowerlo = 5,
+
+} enum_event_type;
+
 #endif//_ENUM_MANAGER_H_
