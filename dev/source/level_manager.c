@@ -304,8 +304,6 @@ void engine_level_manager_load_levelX()
 
 void engine_level_manager_draw_blank( unsigned char x, unsigned char y )// unsigned int index);
 {
-	struct_level_object *lo = &global_level_object;
-	//lo->drawtiles_array[ idx ] = tile_type_blankGap;		// TODO blank out tile here
 	engine_tile_manager_draw_tile( tile_type_blankGap, x * 2, y * 2 );
 }
 
@@ -327,10 +325,10 @@ static void draw_tiles( unsigned char x, unsigned char y )
 	idx = y * lo->draw_cols + x;
 	tile = lo->drawtiles_array[ idx ];
 
-	if( tile_type_blankGap != tile )
-	{
+	//if( tile_type_blankGap != tile )
+	//{
 		engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
-	}
+	//}
 }
 static void setup_player( unsigned char index )
 {

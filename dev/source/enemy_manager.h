@@ -11,6 +11,7 @@ extern struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 // Methods.
 void engine_enemyX_manager_init();
 void engine_enemyX_manager_load();
-void engine_enemyX_manager_draw();
+void engine_enemyX_manager_draw_enemys();
+void engine_enemyX_manager_draw_guards();
 
 #endif//_ENEMY_MANAGER_H_

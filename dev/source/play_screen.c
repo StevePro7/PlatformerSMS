@@ -89,7 +89,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_player_manager_cleanup();
 
 	// Draw enemies first!
-	engine_enemyX_manager_draw();
+	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
 
 	// TODO extract if no pits in level then only check if there is...

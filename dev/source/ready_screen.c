@@ -1,19 +1,21 @@
 #include "ready_screen.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-#include "stats_manager.h"
+#include "player_manager.h"
+#include "enemy_manager.h"
 
 void screen_ready_screen_load()
 {
-	struct_stats_object *so = &global_stats_object;
-
 	engine_font_manager_draw_text( "READY", 10, 10 );
 
-	engine_font_manager_draw_data( so->collision_offsets[ 0 ], 10, 12 );
-	engine_font_manager_draw_data( so->collision_offsets[ 1 ], 10, 14 );
+	// Reset player irrespective of new level or new life.
+	engine_player_manager_load();
+
+	engine_enemyX_manager_draw_guards();
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )
 {
+	engine_enemyX_manager_draw_enemys();
 	*screen_type = screen_type_ready;
 }

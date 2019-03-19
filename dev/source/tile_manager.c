@@ -2,7 +2,6 @@
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
-//#include "level_object.h"
 #include "..\gfx.h"
 #include "..\banks\bank3.h"
 #include <stdlib.h>

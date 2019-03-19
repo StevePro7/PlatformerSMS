@@ -10,8 +10,8 @@
 #include "diff_screen.h"
 #include "level_screen.h"
 #include "init_screen.h"
-#include "ready_screen.h"
 #include "load_screen.h"
+#include "ready_screen.h"
 #include "play_screen.h"
 #include "reset_screen.h"
 #include "pass_screen.h"
@@ -41,8 +41,8 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_diff ] = screen_diff_screen_load;
 	load_method[ screen_type_level ] = screen_level_screen_load;
 	load_method[ screen_type_init ] = screen_init_screen_load;
-	load_method[ screen_type_ready ] = screen_ready_screen_load;
 	load_method[ screen_type_load ] = screen_load_screen_load;
+	load_method[ screen_type_ready ] = screen_ready_screen_load;
 	load_method[ screen_type_play ] = screen_play_screen_load;
 	load_method[ screen_type_reset ] = screen_reset_screen_load;
 	load_method[ screen_type_pass ] = screen_pass_screen_load;
@@ -61,8 +61,8 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_diff ] = screen_diff_screen_update;
 	update_method[ screen_type_level ] = screen_level_screen_update;
 	update_method[ screen_type_init ] = screen_init_screen_update;
-	update_method[ screen_type_ready ] = screen_ready_screen_update;
 	update_method[ screen_type_load ] = screen_load_screen_update;
+	update_method[ screen_type_ready ] = screen_ready_screen_update;
 	update_method[ screen_type_play ] = screen_play_screen_update;
 	update_method[ screen_type_reset ] = screen_reset_screen_update;
 	update_method[ screen_type_pass ] = screen_pass_screen_update;

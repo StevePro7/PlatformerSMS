@@ -2,6 +2,7 @@
 #include "global_manager.h"
 #include "hack_manager.h"
 #include "font_manager.h"
+#include "tile_manager.h"
 #include "sprite_manager.h"
 
 // Global variables.
@@ -54,7 +55,7 @@ void engine_enemyX_manager_load()
 	}
 }
 
-void engine_enemyX_manager_draw()
+void engine_enemyX_manager_draw_enemys()
 {
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
@@ -64,13 +65,32 @@ void engine_enemyX_manager_draw()
 	for( idx = 0; idx < em->max_enemies; idx++ )
 	{
 		eo = &global_enemy_objects[ idx ];
-		if( action_type_chase == eo->action_type )
+		if( action_type_guard != eo->action_type )
 		{
-			get_draw_position( idx );
+			continue;
 		}
 
+		get_draw_position( idx );
 		tile = enemy_tiles[ eo->sprite_type ];
 		engine_sprite_manager_draw( eo->drawX, eo->drawY, tile );
+	}
+}
+
+void engine_enemyX_manager_draw_guards()
+{
+	struct_enemy_master *em = &global_enemy_master;
+	struct_enemy_object *eo;
+	unsigned char idx;
+
+	for( idx = 0; idx < em->max_enemies; idx++ )
+	{
+		eo = &global_enemy_objects[ idx ];
+		if( action_type_chase != eo->action_type )
+		{
+			continue;
+		}
+
+		engine_tile_manager_draw_guard( eo->drawX, eo->drawY, eo->sprite_type );
 	}
 }
 

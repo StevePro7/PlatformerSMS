@@ -53,7 +53,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	}*/
 
 	// Draw enemies first!
-	engine_enemyX_manager_draw();
+	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
 
 	*screen_type = screen_type_over;

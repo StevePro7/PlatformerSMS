@@ -31,19 +31,21 @@ void screen_load_screen_load()
 
 
 	engine_level_manager_init_level();
-	//engine_level_manager_load_index( 0, invincible, difficulty );		//stevepro
+	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
 	engine_level_manager_draw_level();
 
 	engine_state_manager_load();
-	engine_player_manager_load();
+	//engine_player_manager_load();		// done in the ready screen
 	engine_enemyX_manager_load();
 
+	engine_enemyX_manager_draw_guards();
 
 	//engine_font_manager_draw_data( collision, 10, 10 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
+	/*
 	struct_player_object *po = &global_player_object;
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
@@ -108,6 +110,6 @@ void screen_load_screen_update( unsigned char *screen_type )
 		//engine_font_manager_draw_data( po->coll_topX, 10, 8 );
 
 	}
-
+	*/
 	*screen_type = screen_type_load;
 }
