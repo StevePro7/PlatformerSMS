@@ -3,8 +3,8 @@
 
 #define LOCALE_BUILD_VERSION		"V1.0"
 
-#define LOCALE_BLANK_WIDTH		"                              "
-//#define LOCALE_BLANK_WIDTH		"123456789012345678901234567890"
+  #define LOCALE_BLANK_WIDTH		"                                "
+//#define LOCALE_BLANK_WIDTH		"12345678901234567890123456789012"
 
 #define LOCALE_SELECT_ARROW		">>"
 #define LOCALE_SELECT_BLANK		"  "

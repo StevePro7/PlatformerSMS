@@ -35,12 +35,10 @@ void screen_load_screen_load()
 	engine_level_manager_draw_level();
 
 	engine_state_manager_load();
-	engine_player_manager_load();		// done in the ready screen
 	engine_enemyX_manager_load();
 
-	engine_enemyX_manager_draw_guards();
-
-	//engine_font_manager_draw_data( collision, 10, 10 );
+	//engine_player_manager_load();			// done in the ready screen
+	//engine_enemyX_manager_draw_guards();	// done in the ready screen
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
@@ -58,7 +56,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	engine_player_manager_cleanup();
 
 	// Draw enemies first!
-	engine_enemyX_manager_draw();
+	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
 
 	// TODO extract if no pits in level then only check if there is...
@@ -111,5 +109,6 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 	}
 	*/
-	*screen_type = screen_type_load;
+
+	*screen_type = screen_type_ready;
 }

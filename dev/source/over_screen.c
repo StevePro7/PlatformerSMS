@@ -15,24 +15,24 @@
 
 void screen_over_screen_load()
 {
-	struct_hack_object *ho = &global_hack_object;
-	struct_level_object *lo = &global_level_object;
+	//struct_hack_object *ho = &global_hack_object;
+	//struct_level_object *lo = &global_level_object;
 
-	// Load animations.
-	engine_anim_manager_player_load_idle();
-	engine_anim_manager_player_load_run();
-	engine_anim_manager_enemyX_load_idle();
+	//// Load animations.
+	//engine_anim_manager_player_load_idle();
+	//engine_anim_manager_player_load_run();
+	//engine_anim_manager_enemyX_load_idle();
 
-	engine_enemyX_manager_init();
+	//engine_enemyX_manager_init();
 
-	engine_level_manager_init_level();
-	//engine_level_manager_load_index( 0, false, 0 );		//stevepro
-	//engine_level_manager_load_index( ho->hacker_level );
-	engine_level_manager_draw_level();
+	//engine_level_manager_init_level();
+	////engine_level_manager_load_index( 0, false, 0 );		//stevepro
+	////engine_level_manager_load_index( ho->hacker_level );
+	//engine_level_manager_draw_level();
 
-	engine_state_manager_load();
-	engine_player_manager_load();
-	engine_enemyX_manager_load();
+	//engine_state_manager_load();
+	//engine_player_manager_load();
+	//engine_enemyX_manager_load();
 
 	engine_font_manager_draw_text( "OVER", 10, 9 );
 
@@ -44,13 +44,13 @@ void screen_over_screen_load()
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
-	/*unsigned char test;
+	unsigned char test;
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{
-		*screen_type = screen_type_play;
+		*screen_type = screen_type_title;
 		return;
-	}*/
+	}
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();

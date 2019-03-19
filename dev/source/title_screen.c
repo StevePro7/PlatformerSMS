@@ -50,7 +50,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		flash = 1 - flash;
 		if( flash )
 		{
-			engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 2, TEXT_Y );
+			engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 0, TEXT_Y );
 		}
 		else
 		{
