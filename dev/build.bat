@@ -40,10 +40,10 @@ rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_manager.c
 
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 game_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
@@ -166,6 +166,6 @@ REM if exist "*.rel" del "*.rel" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-rem C:\SEGA\Fusion\fusion.exe output.sms
+C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+rem java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

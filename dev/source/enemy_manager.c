@@ -3,8 +3,9 @@
 #include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-#include "tile_manager.h"
 #include "sprite_manager.h"
+#include "tile_manager.h"
+#include "stats_manager.h"
 #include <stdlib.h>
 
 // Global variables.

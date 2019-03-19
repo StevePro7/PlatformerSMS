@@ -18,6 +18,8 @@
 void screen_begin_screen_load()
 {
 	struct_game_object *go = &global_game_object;
+	struct_enemy_master *em = &global_enemy_master;
+	struct_enemy_object *eo;
 
 	devkit_SMS_displayOff();
 	engine_text_manager_cleat_all();
@@ -49,7 +51,12 @@ void screen_begin_screen_load()
 	engine_player_manager_load();
 	engine_enemyX_manager_draw_guards();
 
-	engine_font_manager_draw_text( "PAUSE", 20, 0 );
+	engine_font_manager_draw_text( "PAUSE", 10, 0 );
+	engine_font_manager_draw_data( em->max_enemies, 10, 1 );
+
+	eo = &global_enemy_objects[ 0 ];
+	engine_font_manager_draw_data( eo->velX, 10, 2 );
+	engine_font_manager_draw_data( eo->wait, 10, 3 );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )

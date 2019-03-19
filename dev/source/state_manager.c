@@ -30,8 +30,10 @@ void engine_state_manager_init()
 
 void engine_state_manager_load()
 {
+	struct_game_object *go = &global_game_object;
 	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
+	struct_stats_object *so = &global_stats_object;
 
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
@@ -59,5 +61,7 @@ void engine_state_manager_load()
 		eo->action_type = lo->enemys_action[ idx ];
 		eo->spotY = lo->enemys_spotY[ idx ];
 		eo->spotX = lo->enemys_spotX[ idx ];
+		eo->velX = so->enemys_velX[ eo->sprite_type ][ go->world_no ];
+		eo->wait = so->enemys_wait[ eo->sprite_type ][ go->world_no ];
 	}
 }
