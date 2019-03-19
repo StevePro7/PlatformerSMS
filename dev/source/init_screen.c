@@ -1,44 +1,32 @@
 #include "init_screen.h"
 #include "global_manager.h"
-#include "locale_manager.h"
-#include "hack_manager.h"
-#include "debug_manager.h"
+#include "content_manager.h"
+#include "anim_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-#include "level_manager.h"
-#include "input_manager.h"
-#include "game_manager.h"
 
 void screen_init_screen_load()
 {
-	struct_game_object *go = &global_game_object;
-	unsigned char level;
+	// Load game content.
+	engine_content_manager_load_guards();
 
-	level = go->world_no * MAX_ROUNDS + go->round_no + 1;
-
-	engine_level_manager_init_level();
-	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
-
-	//engine_level_manager_load_index( ho->hacker_level );
-	engine_level_manager_draw_level();
-
-	engine_font_manager_draw_data( go->world_no + 1, 10, 10 );
-	engine_font_manager_draw_data( go->round_no + 1, 10, 11 );
-	engine_font_manager_draw_data( level, 10, 12 );
+	// Load sprite animations.
+	engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_run();
+	engine_anim_manager_enemyX_load_idle();
 }
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
-	unsigned char test;
+	//unsigned char test;
 
-	test = engine_input_manager_hold_fire2();
+	/*test = engine_input_manager_hold_fire2();
 	if( !test )
 	{
 		*screen_type = screen_type_init;
 		return;
-	}
+	}*/
 
-	
-	
-	*screen_type = screen_type_level;
+	*screen_type = screen_type_init;
+	//*screen_type = screen_type_level;
 }

@@ -15,7 +15,6 @@ void engine_game_manager_init()
 	go->difficulty = diff_type_easy;
 	go->world_no = 0;
 	go->round_no = 0;
-	go->number_lives = NUMBER_LIVES;
 }
 
 void engine_game_manager_load()
@@ -23,5 +22,4 @@ void engine_game_manager_load()
 	struct_game_object *go = &global_game_object;
 
 	go->invincible = true;
-	go->number_lives = NUMBER_LIVES;
 }

@@ -12,7 +12,7 @@ void screen_test_screen_load()
 	x = 4;
 	y = 10;
 	engine_font_manager_draw_text( "TEST SCREEN!!", 10, 0 );
-	engine_content_manager_load_enemies();
+	engine_content_manager_load_guards();
 
 	engine_tile_manager_draw_guard( x, y, sprite_type_enemyA );
 	engine_tile_manager_draw_guard( 12, y, sprite_type_enemyB );

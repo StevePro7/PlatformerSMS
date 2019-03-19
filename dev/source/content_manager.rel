@@ -20,11 +20,11 @@ S _guardD_idle__tiles__psgcompr Ref0000
 S _devkit_SMS_loadSpritePalette Ref0000
 S _devkit_SMS_mapROMBank Ref0000
 A _CODE size 9F flags 0 addr 0
+S _engine_content_manager_load_guards Def0065
 S _engine_content_manager_load_sprites Def0016
 S _engine_content_manager_load_splash Def001F
 S _engine_content_manager_load_back_tiles Def0000
 S _engine_content_manager_load_title Def0042
-S _engine_content_manager_load_enemies Def0065
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

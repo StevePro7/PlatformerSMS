@@ -2,10 +2,10 @@ XL2
 H 9 areas 6 global symbols
 M test_screen
 O -mz80
+S _engine_content_manager_load_guards Ref0000
 S _engine_font_manager_draw_text Ref0000
 S _engine_tile_manager_draw_guard Ref0000
 S .__.ABS. Def0000
-S _engine_content_manager_load_enemies Ref0000
 A _CODE size 57 flags 0 addr 0
 S _screen_test_screen_load Def0000
 S _screen_test_screen_update Def0050
@@ -20,15 +20,15 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 21 0A 00 E5 21 42 00 E5 CD 00 00 F1 F1 CD
-R 00 00 00 00 00 07 00 00 02 0B 00 00
+R 00 00 00 00 00 07 00 00 02 0B 01 00
 T 0E 00 00 00 21 0A 00 E5 3E 04 F5 33 CD 00 00 33
-R 00 00 00 00 02 02 03 00 02 0D 01 00
+R 00 00 00 00 02 02 00 00 02 0D 02 00
 T 1C 00 21 0A 01 E3 3E 0C F5 33 CD 00 00 33 21
-R 00 00 00 00 02 0B 01 00
+R 00 00 00 00 02 0B 02 00
 T 29 00 0A 02 E3 3E 14 F5 33 CD 00 00 33 21 0A 03
-R 00 00 00 00 02 0A 01 00
+R 00 00 00 00 02 0A 02 00
 T 37 00 E3 3E 1C F5 33 CD 00 00 F1 33 C9
-R 00 00 00 00 02 08 01 00
+R 00 00 00 00 02 08 02 00
 T 42 00
 R 00 00 00 00
 T 42 00 54 45 53 54 20 53 43 52 45 45 4E 21 21 00

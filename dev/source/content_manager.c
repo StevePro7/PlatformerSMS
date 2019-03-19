@@ -55,7 +55,7 @@ void engine_content_manager_load_title()
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title8__tilemap__stmcompr );
 }
 
-void engine_content_manager_load_enemies()
+void engine_content_manager_load_guards()
 {
 	// Enemy tiles.
 	devkit_SMS_mapROMBank( guardA_idle__tiles__psgcompr_bank );
