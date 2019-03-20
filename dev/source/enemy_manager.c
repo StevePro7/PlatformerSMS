@@ -137,9 +137,6 @@ void engine_enemyX_manager_update()
 
 			if( eo->walkFlag )
 			{
-				deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
-				eo->posnX += deltaX;
-
 				// Wait at boundary as necessary.
 				if( move_type_left == eo->curr_move_type )
 				{
@@ -157,8 +154,32 @@ void engine_enemyX_manager_update()
 						eo->next_move_type = move_type_left;
 					}
 				}
+
+				// Only move after above check if not idle.
+				if( move_type_idle != eo->curr_move_type )
+				{
+					deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+					eo->posnX += deltaX;
+				}
+				else
+				{
+					eo->walkTimer = 0;
+					eo->walkFlag = 0;
+				}
 			}
 		}
+
+
+		/*if( 0 != eo->walkCount )
+		{
+			eo->walkTimer++;
+			if( eo->walkTimer >= eo->walkCount )
+			{
+				eo->walkTimer = 0;
+				eo->walkFlag = 1 - eo->walkFlag;
+			}
+		}*/
+
 	}
 
 }

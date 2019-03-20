@@ -64,7 +64,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	unsigned char test;
 	test = engine_input_manager_hold_fire2();
 
-	if( test )
+	//if( test )
 	{
 		//engine_font_manager_draw_text( "SPLAT", 20, 12 );
 		engine_enemyX_manager_update();
