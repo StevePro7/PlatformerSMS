@@ -79,13 +79,21 @@ void engine_state_manager_load()
 		}
 
 		eo->wait = so->enemys_wait[ eo->sprite_type ][ go->world_no ];
+		if( eo->wait > MAX_ENEMY_WAIT )
+		{
+			eo->wait = MAX_ENEMY_WAIT;
+		}
 		if( 0 != eo->wait )
 		{
 			eo->wait -= go->difficulty;
-			if( eo->wait > MAX_ENEMY_WAIT )
-			{
-				eo->wait = MAX_ENEMY_WAIT;
-			}
+			
+		}
+
+		// If walk count zero then always walk i.e. enemy does not stutter.
+		eo->walkCount = so->enemys_walk[ eo->sprite_type ][ go->world_no ];
+		if( 0 == eo->walkCount )
+		{
+			eo->walkFlag = 1;
 		}
 	}
 

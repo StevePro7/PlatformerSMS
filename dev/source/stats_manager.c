@@ -14,6 +14,7 @@ void engine_stats_manager_init()
 	so->collision_offsets[ diff_type_easy ] = ENEMYS_COLL_EASY;
 	so->collision_offsets[ diff_type_hard ] = ENEMYS_COLL_HARD;
 
+	// Enemy velX.
 	so->enemys_velX[ sprite_type_enemyA ][ 0 ] = 1;
 	so->enemys_velX[ sprite_type_enemyA ][ 1 ] = 2;
 	so->enemys_velX[ sprite_type_enemyA ][ 2 ] = 3;
@@ -34,8 +35,8 @@ void engine_stats_manager_init()
 	so->enemys_velX[ sprite_type_enemyD ][ 2 ] = 2;
 	so->enemys_velX[ sprite_type_enemyD ][ 3 ] = 3;
 
-
-	so->enemys_wait[ sprite_type_enemyA ][ 0 ] = 250;
+	// Enemy wait.
+	so->enemys_wait[ sprite_type_enemyA ][ 0 ] = 20;
 	so->enemys_wait[ sprite_type_enemyA ][ 1 ] = 10;
 	so->enemys_wait[ sprite_type_enemyA ][ 2 ] = 10;
 	so->enemys_wait[ sprite_type_enemyA ][ 3 ] = 10;
@@ -54,6 +55,27 @@ void engine_stats_manager_init()
 	so->enemys_wait[ sprite_type_enemyD ][ 1 ] = 10;
 	so->enemys_wait[ sprite_type_enemyD ][ 2 ] = 10;
 	so->enemys_wait[ sprite_type_enemyD ][ 3 ] = 10;
+
+	// Enemy walk.
+	so->enemys_walk[ sprite_type_enemyA ][ 0 ] = 4;
+	so->enemys_walk[ sprite_type_enemyA ][ 1 ] = 0;
+	so->enemys_walk[ sprite_type_enemyA ][ 2 ] = 10;
+	so->enemys_walk[ sprite_type_enemyA ][ 3 ] = 10;
+
+	so->enemys_walk[ sprite_type_enemyB ][ 0 ] = 10;
+	so->enemys_walk[ sprite_type_enemyB ][ 1 ] = 10;
+	so->enemys_walk[ sprite_type_enemyB ][ 2 ] = 10;
+	so->enemys_walk[ sprite_type_enemyB ][ 3 ] = 10;
+
+	so->enemys_walk[ sprite_type_enemyC ][ 0 ] = 10;
+	so->enemys_walk[ sprite_type_enemyC ][ 1 ] = 10;
+	so->enemys_walk[ sprite_type_enemyC ][ 2 ] = 10;
+	so->enemys_walk[ sprite_type_enemyC ][ 3 ] = 10;
+
+	so->enemys_walk[ sprite_type_enemyD ][ 0 ] = 10;
+	so->enemys_walk[ sprite_type_enemyD ][ 1 ] = 10;
+	so->enemys_walk[ sprite_type_enemyD ][ 2 ] = 10;
+	so->enemys_walk[ sprite_type_enemyD ][ 3 ] = 10;
 }
 
 unsigned char *count_text[] =

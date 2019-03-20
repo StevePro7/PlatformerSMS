@@ -41,6 +41,9 @@ void engine_enemyX_manager_init()
 		eo->drawX = 0;	eo->drawY = 0;
 		eo->minX = 0;	eo->maxX = 0;
 		eo->velX = 0;	eo->wait = 0;	eo->loop = 0;
+		eo->walkCount = 0;
+		eo->walkTimer = 0;
+		eo->walkFlag = 0;
 	}
 }
 
@@ -122,24 +125,37 @@ void engine_enemyX_manager_update()
 		}
 		else
 		{
-			deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
-			eo->posnX += deltaX;
-
-			// Wait at boundary as necessary.
-			if( move_type_left == eo->curr_move_type )
+			if( 0 != eo->walkCount )
 			{
-				if( eo->posnX <= eo->leftX )
+				eo->walkTimer++;
+				if( eo->walkTimer >= eo->walkCount )
 				{
-					eo->curr_move_type = move_type_idle;
-					eo->next_move_type = move_type_rght;
+					eo->walkTimer = 0;
+					eo->walkFlag = 1 - eo->walkFlag;
 				}
 			}
-			else if( move_type_rght == eo->curr_move_type )
+
+			if( eo->walkFlag )
 			{
-				if( eo->posnX >= eo->rghtX )
+				deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+				eo->posnX += deltaX;
+
+				// Wait at boundary as necessary.
+				if( move_type_left == eo->curr_move_type )
 				{
-					eo->curr_move_type = move_type_idle;
-					eo->next_move_type = move_type_left;
+					if( eo->posnX <= eo->leftX )
+					{
+						eo->curr_move_type = move_type_idle;
+						eo->next_move_type = move_type_rght;
+					}
+				}
+				else if( move_type_rght == eo->curr_move_type )
+				{
+					if( eo->posnX >= eo->rghtX )
+					{
+						eo->curr_move_type = move_type_idle;
+						eo->next_move_type = move_type_left;
+					}
 				}
 			}
 		}
@@ -164,7 +180,7 @@ void engine_enemyX_manager_draw_enemys()
 
 		get_enemy_draw_position( idx );
 		tile = enemy_tiles[ eo->sprite_type ];
-		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );		// TODO rename!!
+		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );
 	}
 }
 
