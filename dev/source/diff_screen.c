@@ -47,8 +47,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	test[ 3 ] = engine_input_manager_hold_fire2();
 	if( test[ 3 ] )
 	{
-		// TODO insert launch screen before title screen!
-		//*screen_type = screen_type_title;
+		*screen_type = screen_type_title;
 		return;
 	}
 
