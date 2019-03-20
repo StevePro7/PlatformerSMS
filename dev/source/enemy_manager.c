@@ -165,8 +165,18 @@ void engine_enemyX_manager_update()
 				// Only move after above check if not idle.
 				if( move_type_idle != eo->curr_move_type )
 				{
-					deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
-					eo->walkDelta += myabs( deltaX );
+					deltaX = 0;
+					if( move_type_left == eo->curr_move_type )
+					{
+						deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+						eo->walkDelta -=  deltaX;
+					}
+					else if( move_type_rght == eo->curr_move_type )
+					{
+						deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+						eo->walkDelta += deltaX;
+					}
+
 					if( eo->walkDelta > eo->walkPixel )
 					{
 						eo->walkDelta = 0;

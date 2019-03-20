@@ -32,7 +32,7 @@ typedef struct tag_struct_enemy_object
 	// walkPause is the amount of delay between tile walk
 	// In theory this could be zero for continuous walking
 	unsigned char walkPixel;
-	unsigned char walkDelta;
+	signed char walkDelta;
 	//unsigned char walkTiles;
 	unsigned char walkPause;
 
