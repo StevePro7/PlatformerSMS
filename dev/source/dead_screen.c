@@ -1,13 +1,22 @@
 #include "dead_screen.h"
+#include "global_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "input_manager.h"
 
+#define DECAPITATE	20
+
 void screen_dead_screen_load()
 {
-	engine_font_manager_draw_text( "DEAD!", 6, 9 );
+	struct_player_object *po = &global_player_object;
+
+	// If player jumps through ceiling and dies then ouch!
+	if( po->posnY < 2 * TILE_HIGH )
+	{
+		po->posnY = DECAPITATE;
+	}
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )
@@ -16,7 +25,6 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{
-		engine_font_manager_draw_text( "     ", 6, 9 );
 		*screen_type = screen_type_ready;
 		return;
 	}
@@ -24,5 +32,6 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
+
 	*screen_type = screen_type_dead;
 }
