@@ -4,7 +4,6 @@ REM gfx		Commonly used gfx	not banked
 cd ..
 folder2c ..\psg psg
 
-cd dev
 sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 
 del *.asm > nul
