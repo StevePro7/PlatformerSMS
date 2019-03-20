@@ -166,6 +166,10 @@ void engine_enemyX_manager_update()
 				if( move_type_idle != eo->curr_move_type )
 				{
 					deltaX = 0;
+					/*
+					deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
+					eo->walkDelta += myabs( deltaX );
+					*/
 					if( move_type_left == eo->curr_move_type )
 					{
 						deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
