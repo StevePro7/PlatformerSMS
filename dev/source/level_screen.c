@@ -23,7 +23,8 @@ static void display_options();
 
 void screen_level_screen_init()
 {
-	cursor = 0;
+	// Default select level.
+	cursor = 1;
 }
 
 void screen_level_screen_load()

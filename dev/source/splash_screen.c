@@ -26,7 +26,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 
 	if( delay || input )
 	{
-		*screen_type = screen_type_title;
+		*screen_type = screen_type_begin;
 		return;
 	}
 
