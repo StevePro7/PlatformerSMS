@@ -22,10 +22,6 @@ void screen_load_screen_load()
 	engine_level_manager_init_level();
 
 	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
-	/*engine_level_manager_load_level( 0, 0, go->invincible, go->difficulty );
-	engine_level_manager_load_level( 3, 9, go->invincible, go->difficulty );
-	engine_level_manager_load_level( 4, 0, go->invincible, go->difficulty );
-	engine_level_manager_load_level( 7, 9, go->invincible, go->difficulty );*/
 
 	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
