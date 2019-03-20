@@ -41,9 +41,13 @@ void engine_enemyX_manager_init()
 		eo->drawX = 0;	eo->drawY = 0;
 		eo->minX = 0;	eo->maxX = 0;
 		eo->velX = 0;	eo->wait = 0;	eo->loop = 0;
-		eo->walkCount = 0;
+
+		//eo->walkCount = 0;
 		eo->walkTimer = 0;
 		eo->walkFlag = 0;
+		eo->walkPixel = 0;
+		eo->walkPause = 0;
+		eo->walkDelta = 0;
 	}
 }
 
@@ -125,13 +129,16 @@ void engine_enemyX_manager_update()
 		}
 		else
 		{
-			if( 0 != eo->walkCount )
+			if( !eo->walkFlag )
 			{
-				eo->walkTimer++;
-				if( eo->walkTimer >= eo->walkCount )
+				if( 0 != eo->walkPause )
 				{
-					eo->walkTimer = 0;
-					eo->walkFlag = 1 - eo->walkFlag;
+					eo->walkTimer++;
+					if( eo->walkTimer >= eo->walkPause )
+					{
+						eo->walkTimer = 0;
+						eo->walkFlag = 1 - eo->walkFlag;
+					}
 				}
 			}
 
@@ -159,14 +166,29 @@ void engine_enemyX_manager_update()
 				if( move_type_idle != eo->curr_move_type )
 				{
 					deltaX = ( eo->curr_move_type - 1 ) * eo->velX;
-					eo->posnX += deltaX;
+					eo->walkDelta += myabs( deltaX );
+					if( eo->walkDelta > eo->walkPixel )
+					{
+						eo->walkDelta = 0;
+						eo->walkTimer = 0;
+
+						// If walk count zero then do not reset walk flag!
+						if( 0 != eo->walkPause )
+						{
+							eo->walkFlag = 0;
+						}
+					}
+					else
+					{
+						eo->posnX += deltaX;
+					}
 				}
 				else
 				{
 					eo->walkTimer = 0;
 
 					// If walk count zero then do not reset walk flag!
-					if( 0 != eo->walkCount )
+					if( 0 != eo->walkPause )
 					{
 						eo->walkFlag = 0;
 					}

@@ -23,7 +23,7 @@ typedef struct tag_struct_enemy_object
 	unsigned char minX, maxX;
 	unsigned char velX;
 	unsigned char wait, loop;
-	unsigned char walkCount;
+	//unsigned char walkCount;
 	unsigned char walkTimer;
 	unsigned char walkFlag;
 
@@ -31,8 +31,10 @@ typedef struct tag_struct_enemy_object
 	// this is the number of tiles enemy walks each time
 	// walkPause is the amount of delay between tile walk
 	// In theory this could be zero for continuous walking
+	unsigned char walkPixel;
+	unsigned char walkDelta;
 	//unsigned char walkTiles;
-	//unsigned char walkPause;
+	unsigned char walkPause;
 
 	//void( *update )( void );
 

@@ -10,6 +10,14 @@ https://yhoo.it/2HdDJfu
 Enemy movement : if velX = 3 [max] then make tile width divisible by 3 ie 3, 6, 9, 12 contiguous tiles wide
 This guarantees that enemy will not have to fill in tiny "blanks" towards the end.  Obv 1+2+4 will work OK but 4 is too "fast"
 
+Therefore, mental note: if I do want flexibility of having velX=3 for an enemy at any time then
+it is up to me to "remember" to have enemy platform width divisible by 3 regardless of difficulty level ie no optional platforms here!
+
+SUMMARY enemy movement
+Want flexibility of enemy velX=1,2,3 at any stage irrespective of difficulty level i.e. don't velX += difficulty
+Instead make the difficulty harder by reducing the delay / pause between block moves and idle wait interval
+NB: could modify this logic for "Eddie" i.e. velX += difficulty as pause between blocks = 0
+
 19/03/2019
 TODO
 Do I want to split out the ready screen as dead goes here but also cont screen?
