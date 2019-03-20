@@ -6,6 +6,10 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+20/03/2019
+Enemy movement : if velX = 3 [max] then make tile width divisible by 3 ie 3, 6, 9, 12 contiguous tiles wide
+This guarantees that enemy will not have to fill in tiny "blanks" towards the end.  Obv 1+2+4 will work OK but 4 is too "fast"
+
 19/03/2019
 TODO
 Do I want to split out the ready screen as dead goes here but also cont screen?

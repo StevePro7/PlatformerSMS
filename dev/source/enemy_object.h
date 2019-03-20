@@ -23,8 +23,17 @@ typedef struct tag_struct_enemy_object
 	unsigned char minX, maxX;
 	unsigned char velX;
 	unsigned char wait, loop;
-	unsigned char walkCount, walkTimer;
+	unsigned char walkCount;
+	unsigned char walkTimer;
 	unsigned char walkFlag;
+
+	// TODO I'd like to replace walkCount with walkTiles
+	// this is the number of tiles enemy walks each time
+	// walkPause is the amount of delay between tile walk
+	// In theory this could be zero for continuous walking
+	//unsigned char walkTiles;
+	//unsigned char walkPause;
+
 	//void( *update )( void );
 
 } struct_enemy_object;

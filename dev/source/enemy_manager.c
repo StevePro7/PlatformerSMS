@@ -164,22 +164,15 @@ void engine_enemyX_manager_update()
 				else
 				{
 					eo->walkTimer = 0;
-					eo->walkFlag = 0;
+
+					// If walk count zero then do not reset walk flag!
+					if( 0 != eo->walkCount )
+					{
+						eo->walkFlag = 0;
+					}
 				}
 			}
 		}
-
-
-		/*if( 0 != eo->walkCount )
-		{
-			eo->walkTimer++;
-			if( eo->walkTimer >= eo->walkCount )
-			{
-				eo->walkTimer = 0;
-				eo->walkFlag = 1 - eo->walkFlag;
-			}
-		}*/
-
 	}
 
 }
