@@ -208,21 +208,37 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 
 void engine_level_manager_load_level( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
 {
-	unsigned char index = world * MAX_ROUNDS + round;
-	//unsigned char halve = MAX_WORLDS / 2;
-	//if( 0 == world )
-	//{
+	unsigned char halve;
+	unsigned char level;
+	unsigned char index;
+
+	halve = MAX_WORLDS / 2 * MAX_ROUNDS;
+	level = world * MAX_ROUNDS + round;
+	index = 0;
+
+	if( level >= halve )
+	{
+		index = level - halve;
+	}
+	else
+	{
+		index = level;
+	}
+
+	if( level < halve )
+	{
 		const unsigned char *data = levelAAdata[ index ];
 		const unsigned char bank = levelAAbank[ index ];
 		const unsigned char size = levelAAsize[ index ];
 		load_level( data, bank, size, invincible, difficulty );
-	//}
-	////else //if( 1 == world )
-	//{
-	//	const unsigned char *level = world01data[ index ];
-	//	const unsigned char bank = world01bank[ index ];
-	//	const unsigned char size = world01size[ index ];
-	//	engine_level_manager_load_level( level, bank, size, invincible, difficulty );
+	}
+	else
+	{
+		const unsigned char *data = levelBBdata[ index ];
+		const unsigned char bank = levelBBbank[ index ];
+		const unsigned char size = levelBBsize[ index ];
+		load_level( data, bank, size, invincible, difficulty );
+	}
 }
 
 void engine_level_manager_draw_level()
