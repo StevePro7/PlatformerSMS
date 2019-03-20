@@ -13,15 +13,14 @@ struct_enemy_master global_enemy_master;
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
 
-
-#define DRAW_OFFSET_X	-4
+#define DRAW_OFFSET_X	0
 
 static unsigned int enemy_tiles[ MAX_ENEMIES ] =
 {
-	ENEMYX_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER,
-	ENEMYX_SPRITE_TILE + 1 * SPRITE_TILES_NUMBER,
-	ENEMYX_SPRITE_TILE + 2 * SPRITE_TILES_NUMBER,
-	ENEMYX_SPRITE_TILE + 3 * SPRITE_TILES_NUMBER
+	ENEMYX_SPRITE_TILE + 0 * GUARDS_TILES_NUMBER,
+	ENEMYX_SPRITE_TILE + 1 * GUARDS_TILES_NUMBER,
+	ENEMYX_SPRITE_TILE + 2 * GUARDS_TILES_NUMBER,
+	ENEMYX_SPRITE_TILE + 3 * GUARDS_TILES_NUMBER
 };
 
 static void get_enemy_draw_position( unsigned char idx );
@@ -165,7 +164,7 @@ void engine_enemyX_manager_draw_enemys()
 
 		get_enemy_draw_position( idx );
 		tile = enemy_tiles[ eo->sprite_type ];
-		engine_sprite_manager_draw( eo->drawX, eo->drawY, tile );
+		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );		// TODO rename!!
 	}
 }
 

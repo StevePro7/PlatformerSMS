@@ -1,4 +1,4 @@
-#include "beat_screen.h"
+#include "begin_screen.h"
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
@@ -29,7 +29,7 @@ void screen_begin_screen_load()
 
 	// Load sprite animations.
 	engine_anim_manager_player_load_idle();
-	engine_anim_manager_player_load_run();
+	engine_anim_manager_player_load_move();
 	engine_anim_manager_enemyX_load_idle();
 
 	devkit_SMS_displayOn();

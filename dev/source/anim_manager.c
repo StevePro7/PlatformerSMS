@@ -20,7 +20,8 @@ void engine_anim_manager_player_load_idle()
 {
 	player_load( 0, PLAYER_TILE_IDLE );
 }
-void engine_anim_manager_player_load_run()
+
+void engine_anim_manager_player_load_move()
 {
 	unsigned char index, loop;
 	unsigned int tile;
@@ -39,10 +40,10 @@ void engine_anim_manager_player_load_run()
 
 void engine_anim_manager_enemyX_load_idle()
 {
-	enemyA_load( 0, ENEMYX_TILE_IDLE + 0 * SPRITE_TILES_NUMBER );
-	enemyB_load( 0, ENEMYX_TILE_IDLE + 1 * SPRITE_TILES_NUMBER );
-	enemyC_load( 0, ENEMYX_TILE_IDLE + 2 * SPRITE_TILES_NUMBER );
-	enemyD_load( 0, ENEMYX_TILE_IDLE + 3 * SPRITE_TILES_NUMBER );
+	enemyA_load( 0, ENEMYX_TILE_IDLE + 0 * GUARDS_TILES_NUMBER );
+	enemyB_load( 0, ENEMYX_TILE_IDLE + 1 * GUARDS_TILES_NUMBER );
+	enemyC_load( 0, ENEMYX_TILE_IDLE + 2 * GUARDS_TILES_NUMBER );
+	enemyD_load( 0, ENEMYX_TILE_IDLE + 3 * GUARDS_TILES_NUMBER );
 }
 
 

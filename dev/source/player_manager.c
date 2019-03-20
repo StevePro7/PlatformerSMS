@@ -384,7 +384,7 @@ void engine_player_manager_draw()
 	{
 		get_draw_position();
 		tile = PLAYER_SPRITE_TILE + po->anim_index * SPRITE_TILES_NUMBER;
-		engine_sprite_manager_draw( po->drawX, po->drawY, tile );
+		engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 	}
 }
 

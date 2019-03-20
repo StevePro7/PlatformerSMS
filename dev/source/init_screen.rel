@@ -4,10 +4,10 @@ M init_screen
 O -mz80
 S _devkit_SMS_displayOn Ref0000
 S _engine_content_manager_load_guards Ref0000
+S _engine_anim_manager_player_load_move Ref0000
 S .__.ABS. Def0000
 S _engine_anim_manager_enemyX_load_idle Ref0000
 S _devkit_SMS_displayOff Ref0000
-S _engine_anim_manager_player_load_run Ref0000
 S _engine_text_manager_cleat_all Ref0000
 S _engine_anim_manager_player_load_idle Ref0000
 A _CODE size 1C flags 0 addr 0
@@ -24,9 +24,9 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 04 00 02 06 06 00 02 09 01 00
+R 00 00 00 00 02 03 05 00 02 06 06 00 02 09 01 00
 T 0A 00 00 00 CD 00 00 CD 00 00 C3
-R 00 00 00 00 02 02 07 00 02 05 05 00 02 08 03 00
+R 00 00 00 00 02 02 07 00 02 05 02 00 02 08 04 00
 T 13 00 00 00
 R 00 00 00 00 02 02 00 00
 T 15 00

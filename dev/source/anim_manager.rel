@@ -16,8 +16,8 @@ S _enemyB_anim_bank Ref0000
 S _enemyC_anim_bank Ref0000
 S _devkit_SMS_mapROMBank Ref0000
 A _CODE size 18D flags 0 addr 0
+S _engine_anim_manager_player_load_move Def000D
 S _engine_anim_manager_enemyX_load_idle Def004C
-S _engine_anim_manager_player_load_run Def000D
 S _engine_anim_manager_player_load_idle Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -49,11 +49,11 @@ T 46 00 79 D6 05 38 C4 C9
 R 00 00 00 00
 T 4C 00
 R 00 00 00 00
-T 4C 00 21 84 01 E5 AF F5 33 CD B1 00 33 21 90 01
+T 4C 00 21 84 01 E5 AF F5 33 CD B1 00 33 21 8C 01
 R 00 00 00 00 00 0A 00 00
-T 5A 00 E3 AF F5 33 CD E8 00 33 21 9C 01 E3 AF F5
+T 5A 00 E3 AF F5 33 CD E8 00 33 21 94 01 E3 AF F5
 R 00 00 00 00 00 07 00 00
-T 68 00 33 CD 1F 01 33 21 A8 01 E3 AF F5 33 CD
+T 68 00 33 CD 1F 01 33 21 9C 01 E3 AF F5 33 CD
 R 00 00 00 00 00 04 00 00
 T 75 00 56 01 F1 33 C9
 R 00 00 00 00 00 02 00 00
