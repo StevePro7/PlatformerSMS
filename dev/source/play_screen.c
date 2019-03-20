@@ -47,6 +47,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{
+		// TODO - revert this only for testing!!
 		*screen_type = screen_type_level;
 		return;
 	}

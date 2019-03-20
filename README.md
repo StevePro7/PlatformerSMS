@@ -7,6 +7,8 @@ Warner the Explorer
 https://yhoo.it/2HdDJfu
 
 20/03/2019
+IMPORTANT	TODO
+Currently, I have the play screen check for Fire2 to hardcode go back to level select screen for testing!!
 
 UPDATE
 Backed out the changes outlined below because it caused to much data to be stored and configured
