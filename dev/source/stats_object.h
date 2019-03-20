@@ -12,7 +12,6 @@ typedef struct tag_struct_stats_object
 	unsigned char enemys_velX[ MAX_ENEMIES ][ MAX_WORLDS ];
 	unsigned char enemys_wait[ MAX_ENEMIES ][ MAX_WORLDS ];
 	unsigned char enemys_walk[ MAX_ENEMIES ][ MAX_WORLDS ];
-	unsigned char enemys_stop[ MAX_ENEMIES ][ MAX_WORLDS ];
 
 } struct_stats_object;
 

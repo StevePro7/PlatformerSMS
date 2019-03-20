@@ -7,6 +7,18 @@ Warner the Explorer
 https://yhoo.it/2HdDJfu
 
 20/03/2019
+
+UPDATE
+Backed out the changes outlined below because it caused to much data to be stored and configured
+Plus the additional calculations required Abs() all of which impacted on performance
+Therefore, will go with the simpler version...!
+
+Stress testing
+Max 2x enemys
+Max 2x guards where the 2x guards are on the same plane causes noticeable lag "occasionally"
+But 4x guards on one plane if fine OR 3x guards on one plane plus 1x enemy seems OK too
+Cool thing now is that I can have 2x enemys on the same plane!
+
 Enemy movement : if velX = 3 [max] then make tile width divisible by 3 ie 3, 6, 9, 12 contiguous tiles wide
 This guarantees that enemy will not have to fill in tiny "blanks" towards the end.  Obv 1+2+4 will work OK but 4 is too "fast"
 
