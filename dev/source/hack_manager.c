@@ -13,24 +13,24 @@ struct_hack_object global_hack_object;
 void engine_hack_manager_init()
 {
 	struct_hack_object *ho = &global_hack_object;
-	//ho->hack_debug = 0;
-	ho->hack_invincible = 0;
+
 	ho->hack_localcheat = 0;
+	ho->hack_invincible = 0;
 	ho->hack_difficulty = 0;
 	ho->hack_world = 0;
 	ho->hack_round = 0;
-
-	// TODO add invincibility AND unlimited lives i.e. can die but play forever
-	//ho->hacker_enemy = PEEK( HACKER_START + 0 );	// 0x0050		//
+	ho->hack_music = 0;
+	ho->hack_sound = 0;
 
 #ifndef _CONSOLE
 
-	//ho->hack_debug = PEEK( HACKER_START - 1 );		// 0x004F		// 0=debug on otherwise off.
-	ho->hack_invincible = PEEK( HACKER_START + 0 );		// 0x0050		//
-	ho->hack_difficulty = PEEK( HACKER_START + 1 );		// 0x0050		//
 //	ho->hack_localcheat = PEEK( HACKER_START - 1 );		// 0x004F		//
-	ho->hack_world = PEEK( HACKER_START + 2 );			// 0x0051		//
-	ho->hack_round = PEEK( HACKER_START + 3 );			// 0x0052		//
+	ho->hack_invincible = PEEK( HACKER_START + 0 );		// 0x0050		//
+	ho->hack_difficulty = PEEK( HACKER_START + 1 );		// 0x0051		//
+	ho->hack_world = PEEK( HACKER_START + 2 );			// 0x0052		//
+	ho->hack_round = PEEK( HACKER_START + 3 );			// 0x0053		//
+	ho->hack_music = PEEK( HACKER_START + 4 );			// 0x0054		// 0=music on otherwise off.
+	ho->hack_sound = PEEK( HACKER_START + 5 );			// 0x0055		// 0=sound on otherwise off.
 
 #endif
 
@@ -70,6 +70,11 @@ void engine_hack_manager_invert()
 		// Zero-based index.
 		ho->hack_round -= 1;
 	}
+
+	// PSG settings.
+	ho->hack_music = !ho->hack_music;
+	ho->hack_sound = !ho->hack_sound;
+
 
 	// TODO - IMPORTANT - remove all code here used during testing!!
 	ho->hack_invincible = 0;

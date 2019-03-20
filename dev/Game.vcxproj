@@ -150,6 +150,7 @@
     <ClCompile Include="banks\bank5.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="psg.c" />
     <ClCompile Include="source\anim_manager.c" />
     <ClCompile Include="source\anim_object.c" />
     <ClCompile Include="source\audio_manager.c" />
@@ -206,6 +207,7 @@
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="psg.h" />
     <ClInclude Include="source\anim_manager.h" />
     <ClInclude Include="source\anim_object.h" />
     <ClInclude Include="source\audio_manager.h" />

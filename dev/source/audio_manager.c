@@ -1,12 +1,19 @@
 #include "audio_manager.h"
 #include "_snd_manager.h"
-//#include "..\psg.h"
+#include "hack_manager.h"
+#include "..\psg.h"
 
 //#define MUSIC_PSG			music_psg
-//#define FINISH_PSG			finish_psg
-//#define SOUND1_PSG			sfx_right_psg
-//#define SOUND2_PSG			sfx_wrong_psg
-//#define SOUND3_PSG			sfx_cheat_psg
+
+#define sfx_accept_psg			sfx_accept_psg
+#define sfx_death_psg			sfx_death_psg
+#define sfx_gem_psg				sfx_gem_psg
+#define sfx_level_psg			sfx_level_psg
+#define sfx_power_psg			sfx_power_psg
+#define sfx_reset_psg			sfx_reset_psg
+
+// Private helper function.
+static void play_sound( unsigned char *sfx );
 
 void engine_audio_manager_start_music()
 {
@@ -34,27 +41,38 @@ void engine_audio_manager_stop_music()
 	}
 }
 
-void engine_audio_manager_sound_right()
+void engine_audio_manager_sound_accept()
 {
-	//if( hacker_sound )
-	{
-		//devkit_PSGSFXPlay( ( unsigned char* ) SOUND1_PSG, devkit_SFX_CHANNEL2() );
-	}
+	play_sound( ( unsigned char* ) sfx_accept_psg );
+}
+void engine_audio_manager_sound_death()
+{
+	play_sound( ( unsigned char* ) sfx_death_psg );
+}
+void engine_audio_manager_sound_gem()
+{
+	play_sound( ( unsigned char* ) sfx_gem_psg );
+}
+void engine_audio_manager_sound_level()
+{
+	play_sound( ( unsigned char* ) sfx_level_psg );
+}
+void engine_audio_manager_sound_power()
+{
+	play_sound( ( unsigned char* ) sfx_power_psg );
+}
+void engine_audio_manager_sound_reset()
+{
+	play_sound( ( unsigned char* ) sfx_reset_psg );
 }
 
-void engine_audio_manager_sound_wrong()
+static void play_sound( unsigned char *sfx )
 {
-	//if( hacker_sound )
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_sound )
 	{
-		//devkit_PSGSFXPlay( ( unsigned char* ) SOUND2_PSG, devkit_SFX_CHANNEL2() );
+		return;
 	}
-}
 
-void engine_audio_manager_sound_cheat()
-{
-	//if( hacker_sound )
-	{
-		//devkit_PSGSFXPlay( ( unsigned char* ) SOUND3_PSG, devkit_SFX_CHANNEL2() );
-	}
+	devkit_PSGSFXPlay( sfx, devkit_SFX_CHANNEL2() );
 }
-

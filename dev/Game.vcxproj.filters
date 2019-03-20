@@ -210,6 +210,9 @@
     <ClCompile Include="source\begin_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="psg.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -397,6 +400,9 @@
     </ClInclude>
     <ClInclude Include="source\begin_screen.h">
       <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="psg.h">
+      <Filter>Header Files\content</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

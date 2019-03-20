@@ -1,4 +1,5 @@
 #include "func_screen.h"
+#include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
@@ -28,6 +29,8 @@ static int do_jump( int inpVelocityY )
 
 void screen_func_screen_load()
 {
+	struct_hack_object *ho = &global_hack_object;
+
 	//float data = -5;
 	//float test = 0;
 
@@ -45,7 +48,8 @@ void screen_func_screen_load()
 	posY += velY;
 	//test = fabsf( data );
 	//test = myabs( data );
-	//engine_font_manager_draw_data( posY, 10, 15);
+
+	engine_font_manager_draw_data( ho->hack_sound, 10, 15);
 }
 
 void screen_func_screen_update( unsigned char *screen_type )
@@ -54,25 +58,37 @@ void screen_func_screen_update( unsigned char *screen_type )
 	test = engine_input_manager_hold_left();
 	if( test )
 	{
-		engine_font_manager_draw_text( "TEST", 15, 15 );
-		engine_audio_manager_start_music();
+		engine_audio_manager_sound_accept();
 	}
 
 	test = engine_input_manager_hold_right();
 	if( test )
 	{
-		engine_audio_manager_stop_music();
+		engine_audio_manager_sound_death();
 	}
 
 	test = engine_input_manager_hold_up();
 	if( test )
 	{
-		engine_audio_manager_sound_wrong();
+		engine_audio_manager_sound_gem();
 	}
+
 	test = engine_input_manager_hold_down();
 	if( test )
 	{
-		engine_audio_manager_sound_right();
+		engine_audio_manager_sound_level();
+	}
+
+	test = engine_input_manager_hold_fire1();
+	if( test )
+	{
+		engine_audio_manager_sound_power();
+	}
+
+	test = engine_input_manager_hold_fire2();
+	if( test )
+	{
+		engine_audio_manager_sound_reset();
 	}
 
 	*screen_type = screen_type_func;
