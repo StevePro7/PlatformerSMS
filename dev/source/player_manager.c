@@ -1,9 +1,8 @@
 #include "player_manager.h"
 #include "global_manager.h"
-//#include "font_manager.h"
 #include "sprite_manager.h"
-#include "anim_manager.h"
 #include "level_manager.h"
+#include "anim_manager.h"
 #include "input_manager.h"
 
 // IMPORTANT disable compiler warning 110

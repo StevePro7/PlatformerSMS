@@ -1,4 +1,4 @@
-#include "tile_manager.h"
+#include "text_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
 #include "enum_manager.h"
