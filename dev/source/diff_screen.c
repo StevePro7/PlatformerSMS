@@ -17,7 +17,7 @@ static void display_cursor();
 
 void screen_diff_screen_load()
 {
-	engine_text_manager_cleat_three();
+	engine_text_manager_clear_three();
 	engine_font_manager_draw_text( LOCALE_SELECT_DIFF, TEXT_X, TEXT_Y );
 	engine_font_manager_draw_text( LOCALE_DIFF_EASY, TEXT_X + 2, TEXT_Y + 1 );
 	engine_font_manager_draw_text( LOCALE_DIFF_HARD, TEXT_X + 13, TEXT_Y + 1 );

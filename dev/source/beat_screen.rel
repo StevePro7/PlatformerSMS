@@ -19,7 +19,7 @@ S _engine_enemyX_manager_load Ref0000
 S _engine_anim_manager_enemyX_load_idle Ref0000
 S _devkit_SMS_displayOff Ref0000
 S _engine_input_manager_move_fire2 Ref0000
-S _engine_text_manager_cleat_all Ref0000
+S _engine_text_manager_clear_all Ref0000
 S _engine_enemyX_manager_init Ref0000
 S _engine_player_manager_load Ref0000
 S _engine_anim_manager_player_load_idle Ref0000

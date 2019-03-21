@@ -8,7 +8,7 @@ S _engine_anim_manager_player_load_move Ref0000
 S .__.ABS. Def0000
 S _engine_anim_manager_enemyX_load_idle Ref0000
 S _devkit_SMS_displayOff Ref0000
-S _engine_text_manager_cleat_all Ref0000
+S _engine_text_manager_clear_all Ref0000
 S _engine_anim_manager_player_load_idle Ref0000
 A _CODE size 1C flags 0 addr 0
 S _screen_init_screen_load Def0000

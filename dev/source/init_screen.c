@@ -10,7 +10,7 @@
 void screen_init_screen_load()
 {
 	devkit_SMS_displayOff();
-	engine_text_manager_cleat_all();
+	engine_text_manager_clear_all();
 
 	// Load game content.
 	engine_content_manager_load_guards();

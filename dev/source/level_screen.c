@@ -29,7 +29,7 @@ void screen_level_screen_init()
 
 void screen_level_screen_load()
 {
-	engine_text_manager_cleat_three();
+	engine_text_manager_clear_three();
 	engine_font_manager_draw_text( LOCALE_SELECT_LEVEL, TEXT_X + 0, TEXT_Y + 0 );
 	engine_font_manager_draw_text( LOCALE_SELECT_WORLD, TEXT_X + 1, TEXT_Y + 1 );
 	engine_font_manager_draw_text( LOCALE_SELECT_ROUND, TEXT_X + 1, TEXT_Y + 2 );

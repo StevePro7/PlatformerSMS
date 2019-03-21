@@ -15,17 +15,19 @@
 #include "game_manager.h"
 #include "state_manager.h"
 
+#define TEXT_X				10
+
 void screen_beat_screen_load()
 {
-	//engine_font_manager_draw_text( LOCALE_BEAT_MESSAGE1, 9, 19 );
-	//engine_font_manager_draw_text( LOCALE_BEAT_MESSAGE2, 9, 20 );
+	//engine_font_manager_draw_text( LOCALE_BEAT_MESSAGE1, TEXT_X, 19 );
+	//engine_font_manager_draw_text( LOCALE_BEAT_MESSAGE2, TEXT_X, 20 );
 
 	struct_game_object *go = &global_game_object;
 	//struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
 
 	devkit_SMS_displayOff();
-	engine_text_manager_cleat_all();
+	engine_text_manager_clear_all();
 
 	// Load game content.
 	engine_content_manager_load_guards();
