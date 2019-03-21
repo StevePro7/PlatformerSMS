@@ -108,17 +108,11 @@
     <ClCompile Include="source\scroll_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="source\render_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
     <ClCompile Include="source\tile_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="source\debug_manager.c">
       <Filter>Source Files\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\tester_manager.c">
-      <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="source\load_screen.c">
       <Filter>Source Files\screen</Filter>
@@ -213,6 +207,12 @@
     <ClCompile Include="psg.c">
       <Filter>Source Files\content</Filter>
     </ClCompile>
+    <ClCompile Include="source\memo_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\score_manager.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -275,9 +275,6 @@
     <ClInclude Include="source\font_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="source\render_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
     <ClInclude Include="source\game_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
@@ -295,9 +292,6 @@
     </ClInclude>
     <ClInclude Include="source\debug_manager.h">
       <Filter>Header Files\source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\tester_manager.h">
-      <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="source\state_manager.h">
       <Filter>Header Files\source</Filter>
@@ -403,6 +397,15 @@
     </ClInclude>
     <ClInclude Include="psg.h">
       <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="source\score_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\memo_manager.h">
+      <Filter>Header Files\source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\score_object.h">
+      <Filter>Header Files\object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
