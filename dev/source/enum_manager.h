@@ -53,6 +53,15 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
+typedef enum tag_enum_tiny_type
+{
+	tile_type_blockA = 108,
+	tile_type_blockB = 109,
+	tile_type_blockC = 124,
+	tile_type_heart = 125,
+
+} enum_tiny_type;
+
 typedef enum tag_enum_coll_type
 {
 	coll_type_passable = 0,

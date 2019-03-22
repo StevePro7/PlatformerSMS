@@ -22,12 +22,22 @@ void screen_intro_screen_load()
 		engine_tile_manager_draw_tile( tile, x, 22 );
 	}
 
-	//engine_font_manager_draw_text( LOCALE_BUILD_VERSION, 28, 21 );
+	engine_tile_manager_draw_small( 10, 18, tile_type_blockA );
+	engine_tile_manager_draw_small( 14, 18, tile_type_blockB );
+	engine_tile_manager_draw_small( 18, 19, tile_type_blockC );
+	engine_tile_manager_draw_small( 22, 19, tile_type_heart );
 
-	//engine_font_manager_draw_text( LOCALE_SELECT_DIFF, 9, 17 );
-	//engine_font_manager_draw_text( LOCALE_PRESS_START, 11, 18 );
 	//engine_font_manager_draw_text( LOCALE_BEAT_MESSAGE1, 10, 19 );
 	//engine_font_manager_draw_text( LOCALE_BEAT_MESSAGE2, 10, 20 );
+	//engine_font_manager_draw_text( LOCALE_GAME_MESSAGE1, 15, 18 );
+	//engine_font_manager_draw_text( LOCALE_GAME_MESSAGE2, 15, 19 );
+
+	//engine_font_manager_draw_text( LOCALE_CONT_MESSAGE, 10, 18 );
+	//engine_font_manager_draw_text( LOCALE_SELECT_ARROW, 10, 19 );
+	//engine_font_manager_draw_text( LOCALE_CONT_YES, 12, 19 );
+	//engine_font_manager_draw_text( LOCALE_SELECT_ARROW, 19, 19 );
+	//engine_font_manager_draw_text( LOCALE_CONT_NO, 21, 19 );
+
 
 	devkit_SMS_displayOn();
 }
