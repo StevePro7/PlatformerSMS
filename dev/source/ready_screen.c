@@ -2,6 +2,7 @@
 #include "_sms_manager.h"
 #include "enum_manager.h"
 #include "player_manager.h"
+#include "level_manager.h"
 #include "enemy_manager.h"
 //#include "audio_manager.h"
 
@@ -10,6 +11,7 @@ void screen_ready_screen_load()
 	// Reset player irrespective of new level or new life.
 	engine_player_manager_load();
 
+	engine_level_manager_draw_section();
 	engine_enemyX_manager_draw_guards();
 
 	// TODO draw middle section of level again

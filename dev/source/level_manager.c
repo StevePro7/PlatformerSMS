@@ -259,6 +259,19 @@ void engine_level_manager_draw_level()
 	}
 }
 
+void engine_level_manager_draw_section()
+{
+	struct_level_object *lo = &global_level_object;
+	unsigned char row, col;
+	for( row = 5; row < 7; row++ )
+	{
+		for( col = 0; col < lo->draw_cols; col++ )
+		{
+			draw_tiles( col, row );
+		}
+	}
+}
+
 void engine_level_manager_draw_level_column( unsigned char column )
 {
 	unsigned char x, y;

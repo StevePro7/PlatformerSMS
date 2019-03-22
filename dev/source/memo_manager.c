@@ -54,6 +54,16 @@ void engine_memo_manager_draw( unsigned char left, unsigned char wide )
 	//}
 }
 
+void engine_memo_manager_draw_level( const unsigned char world, const unsigned char round )
+{
+	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, 12, 10 );
+	engine_font_manager_draw_text( LOCALE_SELECT_WORLD, 12, 11 );
+	engine_font_manager_draw_text( count_text[ world ], 19, 11 );
+
+	engine_font_manager_draw_text( LOCALE_SELECT_ROUND, 12, 12 );
+	engine_font_manager_draw_text( count_text[ round ], 19, 12 );
+	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, 12, 13 );
+}
 
 static unsigned char get_tile()
 {

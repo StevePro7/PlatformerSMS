@@ -46,6 +46,9 @@
 #define ANIMATE_IDX_LEFT		1
 #define ANIMATE_IDX_RGHT		6
 
+// Global values.
+extern unsigned char *count_text[];
+
 // Custom function.
 int myabs( int v );
 

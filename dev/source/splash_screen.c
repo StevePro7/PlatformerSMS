@@ -5,11 +5,11 @@
 #include "delay_manager.h"
 #include "input_manager.h"
 
-#define SPLASH_DELAY		150
+#define SPLASH_SCREEN_DELAY		150
 
 void screen_splash_screen_load()
 {
-	engine_delay_manager_load( SPLASH_DELAY );
+	engine_delay_manager_load( SPLASH_SCREEN_DELAY );
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_splash();
