@@ -23,7 +23,7 @@ static unsigned char get_tile();
 
 void engine_memo_manager_init()
 {
-	border = 0;
+	border = 1;
 }
 
 void engine_memo_manager_draw( unsigned char left, unsigned char wide )

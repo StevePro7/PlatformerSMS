@@ -34,7 +34,7 @@ void engine_stats_manager_init()
 	so->enemys_velX[ sprite_type_enemyB ][ 7 ] = 1;
 
 	so->enemys_velX[ sprite_type_enemyC ][ 0 ] = 3;
-	so->enemys_velX[ sprite_type_enemyC ][ 1 ] = 3;
+	so->enemys_velX[ sprite_type_enemyC ][ 1 ] = 1;
 	so->enemys_velX[ sprite_type_enemyC ][ 2 ] = 3;
 	so->enemys_velX[ sprite_type_enemyC ][ 3 ] = 3;
 	so->enemys_velX[ sprite_type_enemyC ][ 4 ] = 1;
@@ -110,7 +110,7 @@ void engine_stats_manager_init()
 	so->enemys_walk[ sprite_type_enemyB ][ 7 ] = 0;*/
 
 	so->enemys_walk[ sprite_type_enemyC ][ 0 ] = 10;
-	so->enemys_walk[ sprite_type_enemyC ][ 1 ] = 10;
+	so->enemys_walk[ sprite_type_enemyC ][ 1 ] = 16;
 	so->enemys_walk[ sprite_type_enemyC ][ 2 ] = 10;
 	so->enemys_walk[ sprite_type_enemyC ][ 3 ] = 10;
 	so->enemys_walk[ sprite_type_enemyC ][ 4 ] = 0;
