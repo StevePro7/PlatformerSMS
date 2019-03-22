@@ -8,7 +8,7 @@ struct_stats_object global_stats_object;
 void engine_stats_manager_init()
 {
 	struct_stats_object *so = &global_stats_object;
-	//unsigned idx;
+	unsigned idx;
 
 	// Collision offsets.
 	so->collision_offsets[ diff_type_easy ] = ENEMYS_COLL_EASY;
@@ -100,14 +100,14 @@ void engine_stats_manager_init()
 	so->enemys_walk[ sprite_type_enemyA ][ 6 ] = 0;
 	so->enemys_walk[ sprite_type_enemyA ][ 7 ] = 0;
 
-	so->enemys_walk[ sprite_type_enemyB ][ 0 ] = 32;
+	/*so->enemys_walk[ sprite_type_enemyB ][ 0 ] = 32;
 	so->enemys_walk[ sprite_type_enemyB ][ 1 ] = 10;
 	so->enemys_walk[ sprite_type_enemyB ][ 2 ] = 10;
 	so->enemys_walk[ sprite_type_enemyB ][ 3 ] = 10;
 	so->enemys_walk[ sprite_type_enemyB ][ 4 ] = 0;
 	so->enemys_walk[ sprite_type_enemyB ][ 5 ] = 0;
 	so->enemys_walk[ sprite_type_enemyB ][ 6 ] = 0;
-	so->enemys_walk[ sprite_type_enemyB ][ 7 ] = 0;
+	so->enemys_walk[ sprite_type_enemyB ][ 7 ] = 0;*/
 
 	so->enemys_walk[ sprite_type_enemyC ][ 0 ] = 10;
 	so->enemys_walk[ sprite_type_enemyC ][ 1 ] = 10;
@@ -118,14 +118,20 @@ void engine_stats_manager_init()
 	so->enemys_walk[ sprite_type_enemyC ][ 6 ] = 0;
 	so->enemys_walk[ sprite_type_enemyC ][ 7 ] = 0;
 
-	so->enemys_walk[ sprite_type_enemyD ][ 0 ] = 10;
+	/*so->enemys_walk[ sprite_type_enemyD ][ 0 ] = 10;
 	so->enemys_walk[ sprite_type_enemyD ][ 1 ] = 10;
 	so->enemys_walk[ sprite_type_enemyD ][ 2 ] = 10;
 	so->enemys_walk[ sprite_type_enemyD ][ 3 ] = 10;
 	so->enemys_walk[ sprite_type_enemyD ][ 4 ] = 0;
 	so->enemys_walk[ sprite_type_enemyD ][ 5 ] = 0;
 	so->enemys_walk[ sprite_type_enemyD ][ 6 ] = 0;
-	so->enemys_walk[ sprite_type_enemyD ][ 7 ] = 0;
+	so->enemys_walk[ sprite_type_enemyD ][ 7 ] = 0;*/
+
+	for( idx = 0; idx < MAX_STATUS; idx++ )
+	{
+		so->enemys_walk[ sprite_type_enemyB ][ idx ] = 0;
+		so->enemys_walk[ sprite_type_enemyD ][ idx ] = 0;
+	}
 }
 
 unsigned char *count_text[] =

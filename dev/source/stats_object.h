@@ -9,9 +9,9 @@ typedef struct tag_struct_stats_object
 	// 2x difficulty types: Easy + Hard.
 	unsigned char collision_offsets[ 2 ];
 
-	unsigned char enemys_velX[ MAX_ENEMIES ][ MAX_WORLDS ];
-	unsigned char enemys_wait[ MAX_ENEMIES ][ MAX_WORLDS ];
-	unsigned char enemys_walk[ MAX_ENEMIES ][ MAX_WORLDS ];
+	unsigned char enemys_velX[ MAX_ENEMIES ][ MAX_STATUS ];
+	unsigned char enemys_wait[ MAX_ENEMIES ][ MAX_STATUS ];
+	unsigned char enemys_walk[ MAX_ENEMIES ][ MAX_STATUS ];
 
 } struct_stats_object;
 

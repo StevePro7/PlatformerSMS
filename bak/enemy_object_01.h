@@ -9,11 +9,6 @@ typedef struct tag_struct_enemy_master
 
 } struct_enemy_master;
 
-// Enemies:
-// EnemyA	Dave	move: discrete
-// EnemyB	Alex	move: continuous
-// EnemyC	Mike	move: discrete
-// EnemyD	Eddie	move: continuous
 
 typedef struct tag_struct_enemy_object
 {
@@ -31,6 +26,16 @@ typedef struct tag_struct_enemy_object
 	unsigned char walkCount;
 	unsigned char walkTimer;
 	unsigned char walkFlag;
+
+	// TODO I'd like to replace walkCount with walkTiles
+	// this is the number of tiles enemy walks each time
+	// walkPause is the amount of delay between tile walk
+	// In theory this could be zero for continuous walking
+	//unsigned char walkPixel;
+	//unsigned char walkTiles;
+	//unsigned char walkPause;
+
+	//void( *update )( void );
 
 } struct_enemy_object;
 
