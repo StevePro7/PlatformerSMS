@@ -23,6 +23,8 @@ void engine_memo_manager_draw( unsigned char left, unsigned char wide )
 {
 	unsigned char max, x, y;
 	max = MEMO_HIGH - 1;
+	//max = MEMO_HIGH - 2;
+	
 	for( x = 0; x < wide; x++)
 	{
 		engine_tile_manager_draw_small( left + x, MEMO_Y + 0, get_tile() );
@@ -39,6 +41,17 @@ void engine_memo_manager_draw( unsigned char left, unsigned char wide )
 			engine_font_manager_draw_text( LOCALE_SELECT_SPACE, left + x, MEMO_Y + y );
 		}
 	}
+
+	//for( x = 0; x < wide / 2; x += 2 )
+	//{
+	//	tile = rand() % MAX_BLOCK_TILES + 1;
+	//	engine_tile_manager_draw_tile( tile, left + x, MEMO_Y + 0 );
+	//	tile = rand() % MAX_BLOCK_TILES + 1;
+	//	engine_tile_manager_draw_tile( tile, left + x, MEMO_Y + max );
+
+	//	//engine_tile_manager_draw_small( left + x, MEMO_Y + 0, get_tile() );
+	//	//engine_tile_manager_draw_small( left + x, MEMO_Y + max, get_tile() );
+	//}
 }
 
 

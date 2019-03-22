@@ -63,6 +63,7 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 
 	lo->load_cols = size / MAX_ROWS;
 	lo->draw_cols = lo->load_cols - CRlf;
+	lo->gem_total = 0;
 
 	devkit_SMS_mapROMBank( bank );
 	for( row = 0; row < MAX_ROWS; row++ )
@@ -80,6 +81,10 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 				{
 					lo->exit_spotX = col;
 					lo->exit_spotY = row;
+				}
+				if( tile_type_gemscore == tile_type )
+				{
+					lo->gem_total++;
 				}
 
 				engine_tile_manager_get_collision( &coll_type, tile, difficulty );

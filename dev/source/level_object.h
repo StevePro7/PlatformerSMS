@@ -10,6 +10,7 @@ typedef struct tag_struct_level_object
 	unsigned int load_cols;
 	unsigned int draw_cols;
 	signed char exit_spotX, exit_spotY;		// Compatible with collX, collY
+	unsigned char gem_total;
 	unsigned int player_spot;
 	unsigned int enemys_spotX[ MAX_ENEMIES ];
 	unsigned int enemys_spotY[ MAX_ENEMIES ];
