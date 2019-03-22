@@ -14,6 +14,7 @@ void engine_hack_manager_init()
 {
 	struct_hack_object *ho = &global_hack_object;
 
+	ho->hack_delayspeed = 0;
 	ho->hack_localcheat = 0;
 	ho->hack_invincible = 0;
 	ho->hack_difficulty = 0;
@@ -24,6 +25,7 @@ void engine_hack_manager_init()
 
 #ifndef _CONSOLE
 
+	ho->hack_delayspeed = PEEK( HACKER_START - 1 );		// 0x004F		//
 //	ho->hack_localcheat = PEEK( HACKER_START - 1 );		// 0x004F		//
 	ho->hack_invincible = PEEK( HACKER_START + 0 );		// 0x0050		//
 	ho->hack_difficulty = PEEK( HACKER_START + 1 );		// 0x0051		//
@@ -39,6 +41,7 @@ void engine_hack_manager_init()
 void engine_hack_manager_invert()
 {
 	struct_hack_object *ho = &global_hack_object;
+	ho->hack_delayspeed = !ho->hack_delayspeed;
 	ho->hack_localcheat = 0;
 
 	// Difficulty.
@@ -77,6 +80,7 @@ void engine_hack_manager_invert()
 
 
 	// TODO - IMPORTANT - remove all code here used during testing!!
+	//ho->hack_delayspeed = 0;
 	ho->hack_invincible = 0;
 	//ho->hack_difficulty = diff_type_hard;
 	ho->hack_world = 1;

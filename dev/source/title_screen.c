@@ -2,6 +2,7 @@
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
+#include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "text_manager.h"
@@ -28,20 +29,24 @@ void screen_title_screen_load()
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char delay;
 	unsigned char input;
 
-	delay = engine_delay_manager_update();
-	if( delay )
+	if( ho->hack_delayspeed )
 	{
-		flash = 1 - flash;
-		if( flash )
+		delay = engine_delay_manager_update();
+		if( delay )
 		{
-			engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 0, TEXT_Y );
-		}
-		else
-		{
-			engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
+			flash = 1 - flash;
+			if( flash )
+			{
+				engine_font_manager_draw_text( LOCALE_BLANK_WIDTH, 0, TEXT_Y );
+			}
+			else
+			{
+				engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
+			}
 		}
 	}
 

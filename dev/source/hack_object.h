@@ -3,6 +3,7 @@
 
 typedef struct tag_struct_hack_object
 {
+	unsigned char hack_delayspeed;
 	unsigned char hack_localcheat;
 	unsigned char hack_invincible;
 	unsigned char hack_difficulty;
