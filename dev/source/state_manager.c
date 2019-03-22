@@ -1,5 +1,6 @@
 #include "state_manager.h"
 #include "hack_manager.h"
+#include "memo_manager.h"
 #include "level_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
@@ -16,6 +17,7 @@ void engine_state_manager_init()
 	engine_hack_manager_invert();
 
 	// Initialize other managers.
+	engine_memo_manager_init();
 	engine_stats_manager_init();
 	engine_game_manager_init();
 

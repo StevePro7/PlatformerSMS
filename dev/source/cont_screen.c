@@ -19,9 +19,9 @@ void screen_cont_screen_load()
 	engine_memo_manager_draw( 8, 18 );		// cont
 	engine_font_manager_draw_text( LOCALE_CONT_MESSAGE, 10, MEMO_TEXT_TOP );
 	engine_font_manager_draw_text( LOCALE_SELECT_ARROW, 10, MEMO_TEXT_BOT );
-	engine_font_manager_draw_text( LOCALE_CONT_YES, 12, MEMO_TEXT_BOT );
+	//engine_font_manager_draw_text( LOCALE_CONT_YES, 12, MEMO_TEXT_BOT );
 	//engine_font_manager_draw_text( LOCALE_SELECT_ARROW, 19, MEMO_TEXT_BOT );
-	engine_font_manager_draw_text( LOCALE_CONT_NO, 21, MEMO_TEXT_BOT );
+	//engine_font_manager_draw_text( LOCALE_CONT_NO, 21, MEMO_TEXT_BOT );
 }
 
 void screen_cont_screen_update( unsigned char *screen_type )

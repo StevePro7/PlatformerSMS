@@ -263,7 +263,7 @@ void engine_level_manager_draw_section()
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char row, col;
-	for( row = 5; row < 7; row++ )
+	for( row = 4; row < 8; row++ )
 	{
 		for( col = 0; col < lo->draw_cols; col++ )
 		{
