@@ -42,11 +42,11 @@ void engine_tile_manager_draw_guard( unsigned char x, unsigned char y, unsigned 
 	devkit_SMS_setNextTileatXY( x + 1, y + 3 );		devkit_SMS_setTile( *pnt + 7 );
 }
 
-void engine_tile_manager_draw_small( unsigned char x, unsigned char y, unsigned char type )
+void engine_tile_manager_draw_small( unsigned char x, unsigned char y, unsigned char tile )
 {
 	const unsigned char *pnt = back_tiles__tilemap__bin;
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );
-	devkit_SMS_setTile( *pnt + type );
+	devkit_SMS_setTile( *pnt + tile );
 }
 
 void engine_tile_manager_draw_tile_side( unsigned char side_type, unsigned char index, unsigned char x, unsigned char y )

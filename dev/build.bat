@@ -34,10 +34,10 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 text_manager.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
@@ -111,8 +111,8 @@ banks\bank4.rel ^
 banks\bank5.rel ^
 source\_sms_manager.rel		source\_snd_manager.rel ^
 source\global_manager.rel	source\debug_manager.rel	source\hack_manager.rel		source\level_object.rel		source\anim_object.rel ^
-source\content_manager.rel	source\font_manager.rel		source\text_manager.rel	    source\memo_manager.rel     source\delay_manager.rel ^
-source\sprite_manager.rel	source\tile_manager.rel		source\level_manager.rel	source\anim_manager.rel ^
+source\content_manager.rel	source\font_manager.rel		source\text_manager.rel	    source\delay_manager.rel ^
+source\sprite_manager.rel	source\tile_manager.rel		source\memo_manager.rel     source\level_manager.rel	source\anim_manager.rel ^
 source\input_manager.rel	source\player_manager.rel	source\enemy_manager.rel    source\score_manager.rel ^
 source\state_manager.rel	source\stats_manager.rel	source\scroll_manager.rel ^
 source\audio_manager.rel ^
@@ -167,6 +167,6 @@ REM if exist "*.rel" del "*.rel" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-rem C:\SEGA\Fusion\fusion.exe output.sms
+C:\SEGA\Fusion\fusion.exe output.sms
 REM C:\SEGA\Meka\mekaw.exe output.sms
-java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+REM java -jar C:\SEGA\Emulicious\emulicious.jar output.sms

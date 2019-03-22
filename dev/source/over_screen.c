@@ -1,24 +1,21 @@
 #include "over_screen.h"
 #include "global_manager.h"
-#include "debug_manager.h"
-#include "hack_manager.h"
+#include "locale_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "sprite_manager.h"
 #include "tile_manager.h"
-#include "level_manager.h"
-#include "anim_manager.h"
+#include "memo_manager.h"
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
-#include "state_manager.h"
 #include "audio_manager.h"
 
 void screen_over_screen_load()
 {
-	engine_anim_manager_enemyX_load_idle();
-
-	engine_font_manager_draw_text( "OVER", 10, 0 );
+	engine_memo_manager_draw( 12, 10 );
+	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE1, 15, 11 );
+	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE2, 15, 12 );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )

@@ -4,6 +4,7 @@
 #define MAX_SCREEENS			19
 #define MAX_ENEMIES				4
 #define MAX_BLOCK_TILES			9
+#define MAX_SMALL_TILES			3
 
 #define TILE_X_OFFSET			0							// TODO delete after confirm not required!
 //#define GAME_X_OFFSET			TILE_X_OFFSET * 8			// TODO delete
