@@ -1,6 +1,7 @@
 #include "ready_screen.h"
 #include "_sms_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "player_manager.h"
 #include "level_manager.h"
 #include "enemy_manager.h"
@@ -14,11 +15,7 @@ void screen_ready_screen_load()
 	engine_level_manager_draw_section();
 	engine_enemyX_manager_draw_guards();
 
-	// TODO draw middle section of level again
-	// because may be over written with CONTINEUE
-	// Also, re-draw the hearts for lives on LHS
-
-
+	// TODO re-draw the hearts for lives on LHS
 	// TODO wire up different game play music...
 	//engine_audio_manager_start_music();
 }

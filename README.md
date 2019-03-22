@@ -6,6 +6,12 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+22/03/2019
+TODO
+void engine_player_manager_draw_idle()
+Only draw sprites if not covered by center box - need to calculate X + Y positions
+
+
 20/03/2019
 IMPORTANT	TODO
 Currently, I have the play screen check for Fire2 to hardcode go back to level select screen for testing!!
