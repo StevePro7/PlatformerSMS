@@ -13,9 +13,12 @@
 
 void screen_over_screen_load()
 {
-	engine_memo_manager_draw( 12, 10 );
-	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE1, 15, 11 );
-	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE2, 15, 12 );
+	unsigned char left, wide;
+	left = 12;
+	wide = 10;
+	engine_memo_manager_draw( left, wide );
+	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE1, 15, MEMO_TEXT_TOP );
+	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE2, 15, MEMO_TEXT_BOT );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
