@@ -20,7 +20,7 @@ void engine_game_manager_init()
 void engine_game_manager_draw()
 {
 	struct_game_object *go = &global_game_object;
+	engine_font_manager_draw_text( diff_text[ go->difficulty ], SCREEN_TILE_LEFT, 0 );
 	engine_font_manager_draw_text( count_text[ go->world_no ], 2, GAME_DATA_TOP );
 	engine_font_manager_draw_text( count_text[ go->round_no ], 2, GAME_DATA_BOT );
-	engine_font_manager_draw_text( diff_text[ go->difficulty ], 28, GAME_DATA_BOT );
 }

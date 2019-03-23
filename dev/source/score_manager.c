@@ -1,5 +1,6 @@
 #include "score_manager.h"
 #include "global_manager.h"
+#include "locale_manager.h"
 #include "font_manager.h"
 #include "tile_manager.h"
 
@@ -53,16 +54,23 @@ void engine_score_manager_update_lives( signed char delta )
 	}
 }
 
-void engine_score_manager_draw_heart()
-{
-	engine_tile_manager_draw_small( 30, GAME_DATA_TOP, tile_type_heart );
-}
+//void engine_score_manager_draw_heart()
+//{
+//	//engine_tile_manager_draw_small( 30, GAME_DATA_TOP, tile_type_heart );
+//	//engine_tile_manager_draw_tile( tile_type_gempower, 28, GAME_DATA_TOP );
+//}
 
 void engine_score_manager_draw_lives()
 {
 	struct_score_object *so = &global_score_object;
 	unsigned char index = so->num_lives;
-	engine_font_manager_draw_text( lives_text[ index ], 31, GAME_DATA_TOP );
+
+	// Must draw the lives text first and power gem tile over top!
+	engine_font_manager_draw_text( "0", 31, GAME_DATA_TOP );
+	//engine_font_manager_draw_data( so->num_lives, 31, GAME_DATA_BOT );
+	engine_tile_manager_draw_tile( tile_type_gempower, 29, GAME_DATA_TOP );
+
+	engine_font_manager_draw_text( lives_text[ index ], 31, GAME_DATA_BOT );
 }
 
 void engine_score_manager_draw_score( unsigned char x, unsigned char y )
