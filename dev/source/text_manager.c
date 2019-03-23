@@ -39,3 +39,8 @@ void engine_text_manager_cheat_write()
 	engine_font_manager_draw_text( LOCALE_PRESS_CHEAT, SCREEN_TILE_LEFT, CHEAT_Y + 0 );
 	engine_font_manager_draw_text( LOCALE_PRESS_MODES, SCREEN_TILE_LEFT, CHEAT_Y + 1 );
 }
+
+void engine_text_manager_write_gems()
+{
+	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 28, 0 );
+}
