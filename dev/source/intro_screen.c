@@ -32,7 +32,7 @@ void screen_intro_screen_load()
 
 	//engine_memo_manager_draw( 12, 10 );		// over
 	//engine_memo_manager_draw( 8, 19 );		// beat
-	engine_memo_manager_draw( 8, 18 );		// cont
+	//engine_memo_manager_draw( 8, 18 );		// cont
 
 
 	/*engine_tile_manager_draw_small( 10, 18, tile_type_blockA );
