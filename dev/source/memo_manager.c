@@ -24,7 +24,7 @@ static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char
 
 void engine_memo_manager_init()
 {
-	border = 1;
+	border = 0;
 }
 
 void engine_memo_manager_draw_level( const unsigned char world, const unsigned char round )

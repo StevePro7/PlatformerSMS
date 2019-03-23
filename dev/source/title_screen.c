@@ -12,7 +12,7 @@
 #include "tile_manager.h"
 #include <stdlib.h>
 
-#define FLASH_DELAY			50
+#define TITLE_FLASH_DELAY	50
 #define TEXT_X				12
 #define TEXT_Y				18
 
@@ -20,7 +20,7 @@ static unsigned char flash;
 
 void screen_title_screen_load()
 {
-	engine_delay_manager_load( FLASH_DELAY );
+	engine_delay_manager_load( TITLE_FLASH_DELAY );
 
 	engine_text_manager_clear_three();
 	engine_text_manager_cheat_blank();
