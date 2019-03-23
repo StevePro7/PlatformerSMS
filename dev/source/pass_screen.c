@@ -3,20 +3,32 @@
 #include "font_manager.h"
 #include "memo_manager.h"
 #include "delay_manager.h"
+#include "level_manager.h"
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "score_manager.h"
 #include "game_manager.h"
 
-#define PASS_SCREEN_DELAY	20
+#define PASS_SCREEN_DELAY	120
 
-static enum_pass_type pass_type;
+static unsigned char gem_level;
 
 void screen_pass_screen_load()
 {
+	struct_level_object *lo = &global_level_object;
+	struct_score_object *so = &global_score_object;
 	unsigned char perfect = 0;
-	pass_type = pass_type_prev;
+
+	// Check if player collected all available gems.
+	gem_level = so->gem_level;
+	if( 0 != lo->gem_level )
+	{
+		if( gem_level == lo->gem_level )
+		{
+			perfect = 1;
+		}
+	}
 
 	engine_delay_manager_load( PASS_SCREEN_DELAY );
 	engine_memo_manager_draw_pass( perfect );
@@ -24,7 +36,6 @@ void screen_pass_screen_load()
 
 void screen_pass_screen_update( unsigned char *screen_type )
 {
-	struct_score_object *so = &global_score_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char delay;
 	unsigned char input;
@@ -56,7 +67,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		}
 
 		// Don't navigate to gems screen until collected at least one gem.
-		if( 0 == so->gem_total )
+		if( 0 == gem_level )
 		{
 			*screen_type = screen_type_load;
 			return;

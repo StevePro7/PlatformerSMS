@@ -131,11 +131,4 @@ typedef enum tag_enum_event_type
 
 } enum_event_type;
 
-typedef enum tag_enum_pass_type
-{
-	pass_type_prev = 0,
-	pass_type_next = 1,
-
-} enum_pass_type;
-
 #endif//_ENUM_MANAGER_H_

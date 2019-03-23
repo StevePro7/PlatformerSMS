@@ -63,7 +63,7 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 
 	lo->load_cols = size / MAX_ROWS;
 	lo->draw_cols = lo->load_cols - CRlf;
-	lo->gem_total = 0;
+	lo->gem_level = 0;
 
 	devkit_SMS_mapROMBank( bank );
 	for( row = 0; row < MAX_ROWS; row++ )
@@ -84,7 +84,7 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 				}
 				if( tile_type_gemscore == tile_type )
 				{
-					lo->gem_total++;
+					lo->gem_level++;
 				}
 
 				engine_tile_manager_get_collision( &coll_type, tile, difficulty );
@@ -303,40 +303,7 @@ void engine_level_manager_draw_level_column_side( unsigned side_type, unsigned c
 	}
 }
 
-//TODO delete this method
-void engine_level_manager_load_levelX()
-{
-	enum_tile_type tile_type;
-	unsigned char x;
-
-	for( x = 2; x < 32; x += 2 )
-	{
-		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
-		engine_tile_manager_draw_tile( tile_type, x, 22 );
-		//tile_type = rand() % MAX_BLOCK_TILES + 1;
-		//engine_tile_manager_draw_tile( tile_type, x, 22 );
-	}
-
-	for( x = 2; x < 18; x += 2 )
-	{
-		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
-		engine_tile_manager_draw_tile( tile_type, x, 4 );
-		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
-		engine_tile_manager_draw_tile( tile_type, x, 10 );
-		tile_type = rand() % MAX_BLOCK_TILES + 1;				// rand() <stdlib.h>
-		engine_tile_manager_draw_tile( tile_type, x, 16 );
-	}
-
-	//tile_type = rand() % MAX_BLOCK_TILES + 1;
-	//engine_tile_manager_draw_tile( tile_type, 14, 12 );	engine_tile_manager_draw_tile( tile_type, 14, 14 );
-	//tile_type = rand() % MAX_BLOCK_TILES + 1;
-	//engine_tile_manager_draw_tile( tile_type, 14, 18 );	engine_tile_manager_draw_tile( tile_type, 14, 16 );
-
-	//tile_type = rand() % MAX_BLOCK_TILES + 1;
-	//engine_tile_manager_draw_tile( tile_type, 12, 14 );
-}
-
-void engine_level_manager_draw_blank( unsigned char x, unsigned char y )// unsigned int index);
+void engine_level_manager_draw_blank( unsigned char x, unsigned char y )
 {
 	engine_tile_manager_draw_tile( tile_type_blankGap, x * 2, y * 2 );
 }

@@ -2,8 +2,8 @@ XL2
 H 9 areas B global symbols
 M cont_screen
 O -mz80
-S _engine_score_manager_reset Ref0000
 S _engine_enemyX_manager_hide_enemys Ref0000
+S _engine_score_manager_reset_lives Ref0000
 S _engine_font_manager_draw_text Ref0000
 S _engine_input_manager_hold_fire1 Ref0000
 S .__.ABS. Def0000
@@ -43,7 +43,7 @@ R 00 00 00 00
 T 27 00 19 DD 75 FE DD 74 FF 36 00 6B 62 23 23 23
 R 00 00 00 00
 T 35 00 36 00 C5 D5 21 0B 00 E5 2E 03 E5 CD 00 00
-R 00 00 00 00 02 0E 01 00
+R 00 00 00 00 02 0E 00 00
 T 43 00 F1 F1 21 0B 00 E5 2E 03 E5 CD 00 00 F1 F1
 R 00 00 00 00 02 0C 07 00
 T 51 00 CD 00 00 7D D1 C1 12 C5 D5 CD 00 00 7D D1
@@ -61,7 +61,7 @@ R 00 00 00 00 02 03 03 00
 T 81 00 DD 56 05 79 B7 28 15 3A 00 00 B7 20 0A D5
 R 00 00 00 00 00 0A 01 00
 T 8F 00 CD 00 00 D1 3E 08 12 18 08
-R 00 00 00 00 02 03 00 00
+R 00 00 00 00 02 03 01 00
 T 98 00
 R 00 00 00 00
 T 98 00 3E 10 12 18 03

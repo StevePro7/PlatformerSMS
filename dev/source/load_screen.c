@@ -36,6 +36,9 @@ void screen_load_screen_load()
 	engine_score_manager_draw_heart();
 	engine_score_manager_draw_lives();
 	devkit_SMS_displayOn();
+
+	// Reset gem count at each level.
+	engine_score_manager_reset_gems();
 }
 
 void screen_load_screen_update( unsigned char *screen_type )

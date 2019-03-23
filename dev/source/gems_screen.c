@@ -1,5 +1,6 @@
 #include "gems_screen.h"
 #include "enum_manager.h"
+#include "tile_manager.h"
 #include "memo_manager.h"
 #include "delay_manager.h"
 #include "input_manager.h"
@@ -8,14 +9,14 @@
 #include "score_manager.h"
 #include "game_manager.h"
 
-#define GEMS_SCREEN_DELAY		500
+#define GEMS_SCREEN_DELAY		150
 
 void screen_gems_screen_load()
 {
-//	struct_game_object *go = &global_game_object;
-
 	engine_delay_manager_load( GEMS_SCREEN_DELAY );
 	engine_memo_manager_draw_gems();
+
+	engine_tile_manager_draw_tile( tile_type_gemscore, 13, 11 );
 	engine_score_manager_draw_score( 20, 12 );
 }
 

@@ -50,7 +50,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	{
 		if( 0 == cursor )
 		{
-			engine_score_manager_reset();
+			engine_score_manager_reset_lives();
 			*screen_type = screen_type_ready;
 			return;
 		}

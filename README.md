@@ -11,7 +11,11 @@ Polish
 cont => ready want delay as can hold fire1 and jump when re-play
 
 Do I want one generic memo box one size?
-
+x   GAME   x
+x COMPLETE x
+x CONTINUE?x
+x >YES >NO x
+x>>YES >>NOx
 
 23/03/2019
 TODO
