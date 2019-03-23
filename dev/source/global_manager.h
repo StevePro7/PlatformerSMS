@@ -34,7 +34,8 @@
 #define SCREEN_TILE_HIGH		24
 #define SCREEN_TILE_LEFT		2
 
-#define NUMBER_LIVES			4
+#define NUMBER_LIVES			3//4
+#define MAMNUM_LIVES			9
 
 #define ENEMYS_COLL_EASY		8
 #define ENEMYS_COLL_HARD		12
@@ -52,6 +53,7 @@
 
 // Global values.
 extern unsigned char *count_text[];
+extern unsigned char *lives_text[];
 
 // Custom function.
 int myabs( int v );

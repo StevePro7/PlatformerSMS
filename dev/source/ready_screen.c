@@ -13,13 +13,8 @@ void screen_ready_screen_load()
 	// Reset player irrespective of new level or new life.
 	engine_player_manager_load();
 
-	//devkit_SMS_displayOff();
-	
-
 	engine_level_manager_draw_section();
 	engine_enemyX_manager_draw_guards();
-
-	//devkit_SMS_displayOn();
 
 	// TODO re-draw the hearts for lives on LHS
 	// TODO wire up different game play music...

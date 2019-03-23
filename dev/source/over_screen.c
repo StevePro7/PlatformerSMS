@@ -35,10 +35,5 @@ void screen_over_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	// Draw enemies first!
-	//engine_sprite_manager_draw_enemyX( 160, 80, 388 + 3 * GUARDS_TILES_NUMBER );
-	//engine_enemyX_manager_draw_enemys();
-	//engine_player_manager_draw();
-
 	*screen_type = screen_type_over;
 }

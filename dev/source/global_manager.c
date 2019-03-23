@@ -15,6 +15,20 @@ unsigned char *count_text[] =
 	"10",
 };
 
+unsigned char *lives_text[] =
+{
+	"0",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+};
+
 // Custom function.
 // https://stackoverflow.com/questions/9772348/get-absolute-value-without-using-abs-function-nor-if-statement
 int myabs( int v )

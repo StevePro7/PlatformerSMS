@@ -7,6 +7,7 @@
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
+#include "score_manager.h"
 #include "state_manager.h"
 #include "game_manager.h"
 
@@ -29,6 +30,8 @@ void screen_load_screen_load()
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_level( go->world_no, go->round_no );
+	engine_score_manager_draw_heart();
+	engine_score_manager_draw_lives();
 	devkit_SMS_displayOn();
 }
 
