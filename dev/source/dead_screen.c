@@ -25,6 +25,7 @@ void screen_dead_screen_load()
 
 void screen_dead_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
 	unsigned char test;
 
 	const unsigned char leftX = 4;
@@ -39,7 +40,12 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 	// Draw enemies first!
 	engine_enemyX_manager_hide_enemys( leftX, rghtX );
-	engine_player_manager_hide( leftX, rghtX );
+
+	// Don't draw if player in pit
+	if( po->posnY >= 0 )
+	{
+		engine_player_manager_hide( leftX, rghtX );
+	}
 
 	*screen_type = screen_type_dead;
 }

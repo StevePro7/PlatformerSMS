@@ -27,6 +27,9 @@
 #define TILE_WIDE				16
 #define TILE_HIGH				16
 
+#define SCREEN_SIZE_WIDE		256
+#define SCREEN_SIZE_HIGH		192
+
 #define SCREEN_TILE_WIDE		32
 #define SCREEN_TILE_HIGH		24
 #define SCREEN_TILE_LEFT		2
@@ -38,6 +41,7 @@
 
 #define MIN_POSITION_X			24
 #define MAX_POSITION_X			248
+#define MAX_POSITION_Y			SCREEN_SIZE_HIGH + 2 * TILE_HIGH
 
 #define MEMO_SPRITE_TOP			32
 #define MEMO_SPRITE_BOT			128

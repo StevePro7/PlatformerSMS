@@ -83,10 +83,10 @@ void engine_hack_manager_invert()
 
 
 	// TODO - IMPORTANT - remove all code here used during testing!!
-	//ho->hack_delayspeed = 0;
+	ho->hack_delayspeed = 0;
 	ho->hack_invincible = 0;
 	//ho->hack_difficulty = diff_type_hard;
-	ho->hack_world = 7;
-	ho->hack_round = 9;
+	ho->hack_world = 0;
+	ho->hack_round = 4;
 	ho->hack_mover = 0;
 }

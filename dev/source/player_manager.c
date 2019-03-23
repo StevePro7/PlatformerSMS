@@ -17,7 +17,6 @@ struct_player_object global_player_object;
 #define MAX_VELOCITY_X	10
 #define MAX_VELOCITY_Y	17
 
-#define MAX_POSITION_Y	192 + 2 * TILE_HIGH
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
 
@@ -379,9 +378,7 @@ void engine_player_manager_draw()
 	struct_player_object *po = &global_player_object;
 	unsigned int tile;
 
-	// TODO - offload to the dead screen
-	// Why? because this checks if fell in pit then don't draw
-	// But if fell in pit then would be dead and do check there!
+	// If Player jumps though "ceiling" then don't draw!
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();

@@ -40,17 +40,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_enemy_object *eo;
 	unsigned char idx;
 	unsigned char evt;
-	unsigned char test;
 	int coll_diff;
 
-	// Check reset first.
-	test = engine_input_manager_hold_fire2();
-	if( test )
-	{
-		// TODO - revert this only for testing!!
-		*screen_type = screen_type_level;
-		return;
-	}
+	// TODO Check reset first.
 
 	// Player movement.
 	engine_player_manager_get_input();
@@ -79,16 +71,15 @@ void screen_play_screen_update( unsigned char *screen_type )
 					*screen_type = screen_type_pass;
 					return;
 				}
-				else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
-				{
+				//else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
+				//{
 					// TODO
 					// Increase gems - score_manager + sound effect.
-				}
-				else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
-				{
+				//}
+				//else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
+				//{
 					// Enable immunability = temp invincible to enemy/guard but can still fall down pits...
-					engine_font_manager_draw_text( "POWER", 10, 10 );		// TODO implement code
-				}
+				//}
 			}
 		}
 	}
