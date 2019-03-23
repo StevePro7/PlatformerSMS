@@ -39,7 +39,7 @@ void engine_memo_manager_draw_level( const unsigned char world, const unsigned c
 
 void engine_memo_manager_draw_pass( unsigned char perfect )
 {
-	unsigned char x = 13;
+	unsigned char x = 12;
 	unsigned char wide = 12;
 
 	if( perfect )
@@ -54,14 +54,14 @@ void engine_memo_manager_draw_pass( unsigned char perfect )
 }
 void engine_memo_manager_draw_gems()
 {
-	unsigned char x = 12;
+	unsigned char x = 11;
 	unsigned char wide = 14;
 	draw_memo( LOCALE_BLANK_SIZE12, LOCALE_PASS_COLLECT, LOCALE_BLANK_SIZE12, x, wide );
 }
 
 void engine_memo_manager_draw_dead()
 {
-	unsigned char x = 13;
+	unsigned char x = 12;
 	unsigned char wide = 12;
 	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_DEAD_MESSAGE1, LOCALE_DEAD_MESSAGE2, x, wide );
 }
@@ -70,19 +70,19 @@ void engine_memo_manager_draw_cont()
 {
 	unsigned char x = 9;
 	unsigned char wide = 18;
-	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_CONT_MESSAGE, LOCALE_CONT_YESORNO, x, wide );
+	draw_memo( LOCALE_BLANK_SIZE16, LOCALE_CONT_MESSAGE, LOCALE_CONT_YESORNO, x, wide );
 }
 
 void engine_memo_manager_draw_over()
 {
-	unsigned char x = 15;
+	unsigned char x = 14;
 	unsigned char wide = 8;
 	draw_memo( LOCALE_BLANK_SIZE8, LOCALE_GAME_MESSAGE1, LOCALE_GAME_MESSAGE2, x, wide );
 }
 
 void engine_memo_manager_draw_beat()
 {
-	unsigned char x = 10;
+	unsigned char x = 9;
 	unsigned char wide = 19;
 	draw_memo( LOCALE_BLANK_SIZE17, LOCALE_BEAT_MESSAGE1, LOCALE_BEAT_MESSAGE2, x, wide );
 }

@@ -32,6 +32,7 @@ void engine_state_manager_init()
 
 void engine_state_manager_load()
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_game_object *go = &global_game_object;
 	struct_level_object *lo = &global_level_object;
 	struct_player_object *po = &global_player_object;
@@ -73,7 +74,12 @@ void engine_state_manager_load()
 		eo->minX = lo->enemys_minX[ idx ];
 		eo->maxX = lo->enemys_maxX[ idx ];
 
-		eo->velX = so->enemys_velX[ eo->sprite_type ][ go->world_no ];
+		// Cheat to disable enemy movement.
+		if( ho->hack_mover )
+		{
+			eo->velX = so->enemys_velX[ eo->sprite_type ][ go->world_no ];
+		}
+
 		//eo->velX += go->difficulty;
 		if( eo->velX > MAX_ENEMY_VELX )
 		{

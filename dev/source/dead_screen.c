@@ -2,6 +2,7 @@
 #include "global_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "memo_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "input_manager.h"
@@ -17,6 +18,9 @@ void screen_dead_screen_load()
 	{
 		po->posnY = DECAPITATE;
 	}
+
+	//engine_font_manager_draw_text( "OUCH", 15, 0 );
+	engine_memo_manager_draw_dead();
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )

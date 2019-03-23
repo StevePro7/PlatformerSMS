@@ -22,6 +22,7 @@ void engine_hack_manager_init()
 	ho->hack_round = 0;
 	ho->hack_music = 0;
 	ho->hack_sound = 0;
+	ho->hack_mover = 0;
 
 #ifndef _CONSOLE
 
@@ -33,6 +34,7 @@ void engine_hack_manager_init()
 	ho->hack_round = PEEK( HACKER_START + 3 );			// 0x0053		//
 	ho->hack_music = PEEK( HACKER_START + 4 );			// 0x0054		// 0=music on otherwise off.
 	ho->hack_sound = PEEK( HACKER_START + 5 );			// 0x0055		// 0=sound on otherwise off.
+	ho->hack_mover = PEEK( HACKER_START + 6 );			// 0x0056		// 0=sound on otherwise off.
 
 #endif
 
@@ -74,15 +76,17 @@ void engine_hack_manager_invert()
 		ho->hack_round -= 1;
 	}
 
-	// PSG settings.
+	// Invert default values.
 	ho->hack_music = !ho->hack_music;
 	ho->hack_sound = !ho->hack_sound;
+	ho->hack_mover = !ho->hack_mover;
 
 
 	// TODO - IMPORTANT - remove all code here used during testing!!
-	//ho->hack_delayspeed = 0;
+	ho->hack_delayspeed = 0;
 	ho->hack_invincible = 0;
 	//ho->hack_difficulty = diff_type_hard;
 	ho->hack_world = 1;
 	ho->hack_round = 1;
+	ho->hack_mover = 0;
 }

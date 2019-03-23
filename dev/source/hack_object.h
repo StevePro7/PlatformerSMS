@@ -11,6 +11,7 @@ typedef struct tag_struct_hack_object
 	unsigned char hack_round;
 	unsigned char hack_music;
 	unsigned char hack_sound;
+	unsigned char hack_mover;
 
 } struct_hack_object;
 
