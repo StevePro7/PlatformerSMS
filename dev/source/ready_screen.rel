@@ -1,15 +1,16 @@
 XL2
-H 9 areas 8 global symbols
+H 9 areas 9 global symbols
 M ready_screen
 O -mz80
 S _engine_player_manager_draw Ref0000
 S _engine_enemyX_manager_draw_guards Ref0000
+S _engine_score_manager_draw_lives Ref0000
 S .__.ABS. Def0000
 S _engine_enemyX_manager_draw_enemys Ref0000
 S _engine_level_manager_draw_section Ref0000
 S _engine_player_manager_load Ref0000
-A _CODE size 16 flags 0 addr 0
-S _screen_ready_screen_update Def0009
+A _CODE size 19 flags 0 addr 0
+S _screen_ready_screen_update Def000C
 S _screen_ready_screen_load Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -21,9 +22,11 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 C3 00 00
-R 00 00 00 00 02 03 05 00 02 06 04 00 02 09 01 00
-T 09 00
+T 00 00 CD 00 00 CD 00 00 CD 00 00 C3
+R 00 00 00 00 02 03 06 00 02 06 05 00 02 09 01 00
+T 0A 00 00 00
+R 00 00 00 00 02 02 02 00
+T 0C 00
 R 00 00 00 00
-T 09 00 CD 00 00 CD 00 00 C1 E1 E5 C5 36 0A C9
-R 00 00 00 00 02 03 03 00 02 06 00 00
+T 0C 00 CD 00 00 CD 00 00 C1 E1 E5 C5 36 0A C9
+R 00 00 00 00 02 03 04 00 02 06 00 00

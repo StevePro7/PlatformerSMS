@@ -6,6 +6,7 @@
 #include "level_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
+#include "score_manager.h"
 //#include "audio_manager.h"
 
 void screen_ready_screen_load()
@@ -15,6 +16,7 @@ void screen_ready_screen_load()
 
 	engine_level_manager_draw_section();
 	engine_enemyX_manager_draw_guards();
+	engine_score_manager_draw_lives();
 
 	// TODO re-draw the hearts for lives on LHS
 	// TODO wire up different game play music...

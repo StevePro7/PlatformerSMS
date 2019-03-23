@@ -7,6 +7,10 @@ Warner the Explorer
 https://yhoo.it/2HdDJfu
 
 23/03/2019
+Polish
+cont => ready want delay as can hold fire1 and jump when re-play
+
+23/03/2019
 TODO
 check the sprite edge case drawing on the 3x screens:
 over / cont / beat
