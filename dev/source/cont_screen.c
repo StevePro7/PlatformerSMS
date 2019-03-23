@@ -25,8 +25,10 @@ void screen_cont_screen_load()
 
 	//engine_memo_manager_draw_cont();
 	//engine_memo_manager_draw_level(3,4);
-	engine_memo_manager_draw_over();
+	//engine_memo_manager_draw_over();
 	//engine_memo_manager_draw_dead();
+	//engine_memo_manager_draw_pass(0);
+	engine_memo_manager_draw_gems();
 }
 
 void screen_cont_screen_update( unsigned char *screen_type )

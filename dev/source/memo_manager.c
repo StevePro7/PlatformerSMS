@@ -90,32 +90,33 @@ void engine_memo_manager_draw_level( const unsigned char world, const unsigned c
 //	wipe_memo( LOCALE_BLANK_SIZE10 );
 //}
 
-void engine_memo_manager_draw_pass()
+void engine_memo_manager_draw_pass( unsigned char perfect )
 {
+	unsigned char x = 13;
+	unsigned char wide = 12;
 
+	if( perfect )
+	{
+		draw_memo( LOCALE_BLANK_SIZE10, LOCALE_PASS_MESSAGE1, LOCALE_PASS_MESSAGE3, x, wide );
+	}
+	else
+	{
+		draw_memo( LOCALE_BLANK_SIZE10, LOCALE_PASS_MESSAGE1, LOCALE_PASS_MESSAGE2, x, wide );
+	}
+	
 }
 void engine_memo_manager_draw_gems()
 {
+	unsigned char x = 12;
+	unsigned char wide = 14;
+	draw_memo( LOCALE_BLANK_SIZE12, LOCALE_PASS_COLLECT, LOCALE_BLANK_SIZE12, x, wide );
 }
 
 void engine_memo_manager_draw_dead()
 {
 	unsigned char x = 13;
-	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_DEAD_MESSAGE1, LOCALE_DEAD_MESSAGE2, x, 12 );
-	/*
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, x, 10 );
-	engine_font_manager_draw_text( LOCALE_DEAD_MESSAGE1, x, 11 );
-	engine_font_manager_draw_text( LOCALE_DEAD_MESSAGE2, x, 12 );
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, x, 13 );
-
-	if( !border )
-	{
-		return;
-	}
-
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, x, 9 );
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, x, 14 );
-	engine_memo_manager_draw( x - 1, 12 );*/
+	unsigned char wide = 12;
+	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_DEAD_MESSAGE1, LOCALE_DEAD_MESSAGE2, x, wide );
 }
 
 void engine_memo_manager_draw_cont()
@@ -123,19 +124,6 @@ void engine_memo_manager_draw_cont()
 	unsigned char x = 9;
 	unsigned char wide = 18;
 	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_CONT_MESSAGE, LOCALE_CONT_YESORNO, x, wide );
-	/*engine_font_manager_draw_text( LOCALE_BLANK_SIZE16, x, 10 );
-	engine_font_manager_draw_text( LOCALE_CONT_MESSAGE, x, 11 );
-	engine_font_manager_draw_text( LOCALE_CONT_YESORNO, x, 12 );
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE16, x, 13 );
-
-	if( !border )
-	{
-		return;
-	}
-
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE16, x, 9 );
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE16, x, 14 );
-	engine_memo_manager_draw( x - 1, 18 );*/
 }
 
 void engine_memo_manager_draw_over()
@@ -143,19 +131,6 @@ void engine_memo_manager_draw_over()
 	unsigned char x = 15;
 	unsigned char wide = 8;
 	draw_memo( LOCALE_BLANK_SIZE8, LOCALE_GAME_MESSAGE1, LOCALE_GAME_MESSAGE2, x, wide );
-	/*engine_font_manager_draw_text( LOCALE_BLANK_SIZE8, x, 10 );
-	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE1, x, 11 );
-	engine_font_manager_draw_text( LOCALE_GAME_MESSAGE2, x, 12 );
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE8, x, 13 );
-
-	if( !border )
-	{
-		return;
-	}
-
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE8, x, 9 );
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE8, x, 14 );
-	engine_memo_manager_draw( x - 1, 8 );*/
 }
 
 static unsigned char get_tile()
@@ -197,6 +172,8 @@ static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char
 	engine_font_manager_draw_text( blank, x, 14 );
 	draw_tile( left, wide );
 }
+
+// TODO delete
 /*
 static void wipe_memo( unsigned char *text )
 {
@@ -212,4 +189,3 @@ static void wipe_memo( unsigned char *text )
 	engine_font_manager_draw_text( text, 12, 13 );
 }
 */
-
