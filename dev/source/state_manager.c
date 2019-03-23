@@ -17,7 +17,7 @@ void engine_state_manager_init()
 	engine_hack_manager_invert();
 
 	// Initialize other managers.
-	engine_memo_manager_init();
+	engine_memo_manager_init( ho->hack_lines );
 	engine_stats_manager_init();
 	engine_game_manager_init();
 
@@ -75,7 +75,7 @@ void engine_state_manager_load()
 		eo->maxX = lo->enemys_maxX[ idx ];
 
 		// Cheat to disable enemy movement.
-		if( ho->hack_mover )
+		if( ho->hack_enemy )
 		{
 			eo->velX = so->enemys_velX[ eo->sprite_type ][ go->world_no ];
 		}

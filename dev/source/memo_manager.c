@@ -22,9 +22,9 @@ static unsigned char get_tile();
 static void draw_tile( unsigned char left, unsigned char wide );
 static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char *text2, unsigned char x, unsigned char wide );
 
-void engine_memo_manager_init()
+void engine_memo_manager_init( unsigned char lines )
 {
-	border = 0;
+	border = lines;
 }
 
 void engine_memo_manager_draw_level( const unsigned char world, const unsigned char round )

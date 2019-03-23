@@ -8,7 +8,7 @@
 #include "enemy_manager.h"
 #include "game_manager.h"
 
-#define PASS_SCREEN_DELAY	50
+#define PASS_SCREEN_DELAY	100
 
 static enum_pass_type pass_type;
 

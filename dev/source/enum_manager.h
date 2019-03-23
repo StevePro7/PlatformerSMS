@@ -16,12 +16,13 @@ typedef enum tag_enum_screen_type
 	screen_type_play = 10,
 	screen_type_reset = 11,
 	screen_type_pass = 12,
-	screen_type_dead = 13,
-	screen_type_cont = 14,
-	screen_type_over = 15,
-	screen_type_beat = 16,
-	screen_type_test = 17,
-	screen_type_func = 18,
+	screen_type_gems = 13,
+	screen_type_dead = 14,
+	screen_type_cont = 15,
+	screen_type_over = 16,
+	screen_type_beat = 17,
+	screen_type_test = 18,
+	screen_type_func = 19,
 
 } enum_screen_type;
 

@@ -10,6 +10,9 @@ https://yhoo.it/2HdDJfu
 Polish
 cont => ready want delay as can hold fire1 and jump when re-play
 
+Do I want one generic memo box one size?
+
+
 23/03/2019
 TODO
 check the sprite edge case drawing on the 3x screens:

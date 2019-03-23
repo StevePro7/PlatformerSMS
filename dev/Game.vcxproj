@@ -160,6 +160,7 @@
     <ClCompile Include="source\dead_screen.c" />
     <ClCompile Include="source\delay_manager.c" />
     <ClCompile Include="source\diff_screen.c" />
+    <ClCompile Include="source\gems_screen.c" />
     <ClCompile Include="source\info_manager.c" />
     <ClCompile Include="source\intro_screen.c" />
     <ClCompile Include="source\level_screen.c" />
@@ -219,6 +220,7 @@
     <ClInclude Include="source\delay_object.h" />
     <ClInclude Include="source\diff_screen.h" />
     <ClInclude Include="source\game_object.h" />
+    <ClInclude Include="source\gems_screen.h" />
     <ClInclude Include="source\info_manager.h" />
     <ClInclude Include="source\intro_screen.h" />
     <ClInclude Include="source\level_screen.h" />

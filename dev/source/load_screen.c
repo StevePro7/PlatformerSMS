@@ -30,6 +30,9 @@ void screen_load_screen_load()
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_level( go->world_no, go->round_no );
+
+	// Display game stats.
+	engine_game_manager_draw();
 	engine_score_manager_draw_heart();
 	engine_score_manager_draw_lives();
 	devkit_SMS_displayOn();
@@ -37,6 +40,7 @@ void screen_load_screen_load()
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
+	unsigned char test[ 2 ] = { 0, 0 };
 	unsigned char delay;
 
 	const unsigned char leftX = 4;
@@ -47,8 +51,13 @@ void screen_load_screen_update( unsigned char *screen_type )
 	engine_enemyX_manager_hide_enemys( leftX , rghtX );
 	engine_player_manager_hide( leftX, rghtX );
 
+
+	// Prompt to move to enter level quicker...
+	test[ 0 ] = engine_input_manager_hold_left();
+	test[ 1 ] = engine_input_manager_hold_right();
+
 	delay = engine_delay_manager_update();
-	if( delay )
+	if( test[ 0 ] || test[ 1 ] || delay )
 	{
 		*screen_type = screen_type_ready;
 		return;
