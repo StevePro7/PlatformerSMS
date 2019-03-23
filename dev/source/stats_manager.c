@@ -92,7 +92,7 @@ void engine_stats_manager_init()
 
 	// Enemy walk - if 0 then continuous walk.
 	so->enemys_walk[ sprite_type_enemyA ][ 0 ] = 0;
-	so->enemys_walk[ sprite_type_enemyA ][ 1 ] = 10;
+	so->enemys_walk[ sprite_type_enemyA ][ 1 ] = 16;
 	so->enemys_walk[ sprite_type_enemyA ][ 2 ] = 10;
 	so->enemys_walk[ sprite_type_enemyA ][ 3 ] = 10;
 	so->enemys_walk[ sprite_type_enemyA ][ 4 ] = 0;
