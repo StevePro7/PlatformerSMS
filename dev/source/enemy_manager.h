@@ -4,8 +4,9 @@
 #include "enemy_object.h"
 #include "global_manager.h"
 
-#define MAX_ENEMY_VELX	4
-#define MAX_ENEMY_WAIT	128
+#define MAX_ENEMY_VELX		4
+#define MAX_ENEMY_WAIT		250
+#define MAX_ENEMY_WALK		128
 
 // Global variables.
 extern struct_enemy_master global_enemy_master;

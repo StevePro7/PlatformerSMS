@@ -7,7 +7,7 @@
 // Global variable.
 struct_game_object global_game_object;
 
-static unsigned char *diff_text[ 2 ] = { 	LOCALE_DIFF_EASY, LOCALE_DIFF_HARD };
+static unsigned char *diff_text[ 2 ] = { LOCALE_DIFF_EASY, LOCALE_DIFF_HARD };
 
 void engine_game_manager_init()
 {

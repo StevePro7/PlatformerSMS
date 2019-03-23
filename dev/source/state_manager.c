@@ -98,6 +98,10 @@ void engine_state_manager_load()
 
 		// If walk count zero then always walk i.e. enemy does not stutter.
 		eo->walkCount = so->enemys_walk[ eo->sprite_type ][ go->world_no ];
+		if( eo->wait > MAX_ENEMY_WALK )
+		{
+			eo->wait = MAX_ENEMY_WALK;
+		}
 		if( 0 == eo->walkCount )
 		{
 			eo->walkFlag = 1;
