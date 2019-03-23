@@ -400,7 +400,7 @@ void engine_player_manager_hide( int leftX, int rghtX )
 
 	// Don't draw if sprite "collides" with memo box.
 	size = po->drawX - DRAW_OFFSET_X;
-	if( ( size >= ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
+	if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
 		( po->drawY > MEMO_SPRITE_TOP && po->drawY < MEMO_SPRITE_BOT ) )
 	{
 		return;

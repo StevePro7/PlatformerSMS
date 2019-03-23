@@ -16,7 +16,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	//unsigned char test = engine_delay_manager_update();
 	//engine_font_manager_draw_data( test, 10, 15 );
 	const unsigned char leftX = 3;
-	const unsigned char rghtX = 12;
+	const unsigned char rghtX = 11;
 
 	// Draw enemies first!
 	engine_enemyX_manager_hide_enemys( leftX, rghtX );

@@ -221,7 +221,7 @@ void engine_enemyX_manager_hide_enemys( int leftX, int rghtX )
 		if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
 			( eo->drawY > MEMO_SPRITE_TOP && eo->drawY < MEMO_SPRITE_BOT ) )
 		{
-			return;
+			continue;
 		}
 
 		tile = enemy_tiles[ eo->sprite_type ];
