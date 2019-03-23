@@ -298,7 +298,7 @@ void engine_level_manager_draw_level_column_side( unsigned side_type, unsigned c
 
 		if( tile_type_blankGap != tile )
 		{
-			engine_tile_manager_draw_tile_side( side_type, tile, x * 2 + TILE_X_OFFSET, y * 2 );
+			engine_tile_manager_draw_tile_side( side_type, tile, x * 2, y * 2 );
 		}
 	}
 }
@@ -328,7 +328,7 @@ static void draw_tiles( unsigned char x, unsigned char y )
 
 	//if( tile_type_blankGap != tile )
 	//{
-		engine_tile_manager_draw_tile( tile, x * 2 + TILE_X_OFFSET, y * 2 );
+		engine_tile_manager_draw_tile( tile, x * 2, y * 2 );
 	//}
 }
 static void setup_player( unsigned char index )

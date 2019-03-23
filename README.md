@@ -17,6 +17,9 @@ x CONTINUE?x
 x >YES >NO x
 x>>YES >>NOx
 
+Test, if free man, never greater than max [currenty=9]
+
+
 23/03/2019
 TODO
 check the sprite edge case drawing on the 3x screens:

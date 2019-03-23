@@ -6,10 +6,6 @@
 #define MAX_BLOCK_TILES			9
 #define MAX_SMALL_TILES			3
 
-#define TILE_X_OFFSET			0							// TODO delete after confirm not required!
-//#define GAME_X_OFFSET			TILE_X_OFFSET * 8			// TODO delete
-//#define SPRITE_TILES_OFFSET		128
-//#define SPRITE_TILES_OFFSET		256						// TODO delete as was used before but now dead code!
 #define SPRITE_TILES_NUMBER		12
 #define GUARDS_TILES_NUMBER		8
 
@@ -34,7 +30,8 @@
 #define SCREEN_TILE_HIGH		24
 #define SCREEN_TILE_LEFT		2
 
-#define NUMBER_LIVES			2
+// Easy:4 and Hard:3
+#define NUMBER_LIVES			4
 #define MAMNUM_LIVES			9
 
 #define ENEMYS_COLL_EASY		8
@@ -44,7 +41,7 @@
 #define MAX_POSITION_X			248
 #define MAX_POSITION_Y			SCREEN_SIZE_HIGH + 2 * TILE_HIGH
 
-#define MAX_GEMS_COLLECT		50000
+#define MAX_GEMS_COLLECT		10000
 #define MEMO_SPRITE_TOP			32
 #define MEMO_SPRITE_BOT			128
 
