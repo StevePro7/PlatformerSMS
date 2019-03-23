@@ -33,7 +33,7 @@ void screen_load_screen_load()
 
 	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
-	engine_enemyX_manager_draw_guards();							// TODO override this method to draw outside "memo" box
+	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_level( go->world_no, go->round_no );
 	devkit_SMS_displayOn();
 }
@@ -42,15 +42,18 @@ void screen_load_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
 
+	const unsigned char leftX = 4;
+	const unsigned char rghtX = 11;
+
 	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();							// TODO override this method to draw outside "memo" box
-	//engine_player_manager_draw();									// TODO override this method to draw outside "memo" box
-	engine_player_manager_hide( 4, 11 );
+	engine_enemyX_manager_hide_enemys( leftX , rghtX );
+	engine_player_manager_hide( leftX, rghtX );
+
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
 		*screen_type = screen_type_ready;
-		//return;
+		return;
 	}
 
 	*screen_type = screen_type_load;
