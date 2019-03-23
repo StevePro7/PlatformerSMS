@@ -6,6 +6,7 @@
 #include "enemy_manager.h"
 #include "stats_manager.h"
 #include "game_manager.h"
+#include <stdlib.h>
 
 void engine_state_manager_init()
 {
@@ -42,6 +43,7 @@ void engine_state_manager_load()
 	struct_enemy_object *eo;
 
 	unsigned char idx;
+	unsigned char num;
 
 	// This should never happen!
 	if( 0 == lo->draw_cols )
@@ -87,25 +89,45 @@ void engine_state_manager_load()
 		}
 
 		eo->wait = so->enemys_wait[ eo->sprite_type ][ go->world_no ];
+		if( eo->wait < MIN_ENEMY_WAIT )
+		{
+			eo->wait = MIN_ENEMY_WAIT;
+		}
 		if( eo->wait > MAX_ENEMY_WAIT )
 		{
 			eo->wait = MAX_ENEMY_WAIT;
 		}
-		if( 0 != eo->wait )
+		// Difficulty Hard waits 25x frames less!
+		if( diff_type_hard == go->difficulty )
 		{
-			eo->wait -= go->difficulty;
+			eo->wait -= MIN_ENEMY_WAIT;
 		}
+
 
 		// If walk count zero then always walk i.e. enemy does not stutter.
 		eo->walkCount = so->enemys_walk[ eo->sprite_type ][ go->world_no ];
-		if( eo->wait > MAX_ENEMY_WALK )
+		if( eo->walkCount > MAX_ENEMY_WALK )
 		{
-			eo->wait = MAX_ENEMY_WALK;
+			eo->walkCount = MAX_ENEMY_WALK;
 		}
 		if( 0 == eo->walkCount )
 		{
 			eo->walkFlag = 1;
 		}
+
+		// Finally if EnemyB or EnemyD and difficulty Hard then *maybe* double velocity...
+		if( sprite_type_enemyB == eo->sprite_type || sprite_type_enemyD == eo->sprite_type )
+		{
+			if( diff_type_hard == go->difficulty )
+			{
+				num = rand() % 2;
+				if( 0 == num )
+				{
+					eo->velX += go->difficulty;
+				}
+			}
+		}
+
 	}
 
 }

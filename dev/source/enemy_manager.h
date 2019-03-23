@@ -5,6 +5,7 @@
 #include "global_manager.h"
 
 #define MAX_ENEMY_VELX		4
+#define MIN_ENEMY_WAIT		25
 #define MAX_ENEMY_WAIT		250
 #define MAX_ENEMY_WALK		128
 

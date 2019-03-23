@@ -24,14 +24,14 @@ void engine_stats_manager_init()
 	so->enemys_velX[ sprite_type_enemyA ][ 6 ] = 2;
 	so->enemys_velX[ sprite_type_enemyA ][ 7 ] = 2;
 
-	so->enemys_velX[ sprite_type_enemyB ][ 0 ] = 1;
+	/*so->enemys_velX[ sprite_type_enemyB ][ 0 ] = 1;
 	so->enemys_velX[ sprite_type_enemyB ][ 1 ] = 2;
 	so->enemys_velX[ sprite_type_enemyB ][ 2 ] = 2;
 	so->enemys_velX[ sprite_type_enemyB ][ 3 ] = 2;
 	so->enemys_velX[ sprite_type_enemyB ][ 4 ] = 1;
 	so->enemys_velX[ sprite_type_enemyB ][ 5 ] = 1;
 	so->enemys_velX[ sprite_type_enemyB ][ 6 ] = 1;
-	so->enemys_velX[ sprite_type_enemyB ][ 7 ] = 1;
+	so->enemys_velX[ sprite_type_enemyB ][ 7 ] = 1;*/
 
 	so->enemys_velX[ sprite_type_enemyC ][ 0 ] = 1;
 	so->enemys_velX[ sprite_type_enemyC ][ 1 ] = 1;
@@ -42,14 +42,14 @@ void engine_stats_manager_init()
 	so->enemys_velX[ sprite_type_enemyC ][ 6 ] = 1;
 	so->enemys_velX[ sprite_type_enemyC ][ 7 ] = 2;
 
-	so->enemys_velX[ sprite_type_enemyD ][ 0 ] = 2;
+	/*so->enemys_velX[ sprite_type_enemyD ][ 0 ] = 2;
 	so->enemys_velX[ sprite_type_enemyD ][ 1 ] = 3;
 	so->enemys_velX[ sprite_type_enemyD ][ 2 ] = 2;
 	so->enemys_velX[ sprite_type_enemyD ][ 3 ] = 3;
 	so->enemys_velX[ sprite_type_enemyD ][ 4 ] = 1;
 	so->enemys_velX[ sprite_type_enemyD ][ 5 ] = 1;
 	so->enemys_velX[ sprite_type_enemyD ][ 6 ] = 1;
-	so->enemys_velX[ sprite_type_enemyD ][ 7 ] = 1;
+	so->enemys_velX[ sprite_type_enemyD ][ 7 ] = 1;*/
 
 
 	// Enemy wait.
@@ -62,8 +62,8 @@ void engine_stats_manager_init()
 	so->enemys_wait[ sprite_type_enemyA ][ 6 ] = 125;
 	so->enemys_wait[ sprite_type_enemyA ][ 7 ] = 125;
 
-	so->enemys_wait[ sprite_type_enemyB ][ 0 ] = 20;
-	so->enemys_wait[ sprite_type_enemyB ][ 1 ] = 10;
+	so->enemys_wait[ sprite_type_enemyB ][ 0 ] = 50;
+	so->enemys_wait[ sprite_type_enemyB ][ 1 ] = 100;
 	so->enemys_wait[ sprite_type_enemyB ][ 2 ] = 10;
 	so->enemys_wait[ sprite_type_enemyB ][ 3 ] = 10;
 	so->enemys_wait[ sprite_type_enemyB ][ 4 ] = 15;
@@ -80,8 +80,8 @@ void engine_stats_manager_init()
 	so->enemys_wait[ sprite_type_enemyC ][ 6 ] = 100;
 	so->enemys_wait[ sprite_type_enemyC ][ 7 ] = 100;
 
-	so->enemys_wait[ sprite_type_enemyD ][ 0 ] = 10;
-	so->enemys_wait[ sprite_type_enemyD ][ 1 ] = 10;
+	so->enemys_wait[ sprite_type_enemyD ][ 0 ] = 50;
+	so->enemys_wait[ sprite_type_enemyD ][ 1 ] = 25;
 	so->enemys_wait[ sprite_type_enemyD ][ 2 ] = 10;
 	so->enemys_wait[ sprite_type_enemyD ][ 3 ] = 10;
 	so->enemys_wait[ sprite_type_enemyD ][ 4 ] = 15;
@@ -109,8 +109,13 @@ void engine_stats_manager_init()
 	so->enemys_walk[ sprite_type_enemyC ][ 6 ] = 16;
 	so->enemys_walk[ sprite_type_enemyC ][ 7 ] = 8;
 
+
+	// EnemyB and EnemyD have similar properties.
 	for( idx = 0; idx < MAX_STATUS; idx++ )
 	{
+		so->enemys_velX[ sprite_type_enemyB ][ idx ] = 1;
+		so->enemys_velX[ sprite_type_enemyD ][ idx ] = 2;
+
 		so->enemys_walk[ sprite_type_enemyB ][ idx ] = 0;
 		so->enemys_walk[ sprite_type_enemyD ][ idx ] = 0;
 	}
