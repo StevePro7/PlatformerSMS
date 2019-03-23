@@ -28,7 +28,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	unsigned char test;
 
 	const unsigned char leftX = 4;
-	const unsigned char rghtX = 11;
+	const unsigned char rghtX = 10;
 
 	test = engine_input_manager_hold_fire2();
 	if( test )

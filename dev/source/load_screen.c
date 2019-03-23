@@ -1,19 +1,13 @@
 #include "load_screen.h"
 #include "_sms_manager.h"
-//#include "global_manager.h"
-//#include "hack_manager.h"
 #include "enum_manager.h"
-//#include "font_manager.h"
-//#include "tile_manager.h"
 #include "memo_manager.h"
 #include "level_manager.h"
-//#include "anim_manager.h"
 #include "delay_manager.h"
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "state_manager.h"
-//#include "stats_manager.h"
 #include "game_manager.h"
 
 #define LOAD_SCREEN_DELAY		100
@@ -34,13 +28,7 @@ void screen_load_screen_load()
 	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
-
-
-	//engine_memo_manager_draw_level( go->world_no, go->round_no );
-
-	engine_memo_manager_draw_beat();
-
-
+	engine_memo_manager_draw_level( go->world_no, go->round_no );
 	devkit_SMS_displayOn();
 }
 
@@ -48,13 +36,8 @@ void screen_load_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
 
-	//const unsigned char leftX = 4;
-	//const unsigned char rghtX = 11;
-
-
-	const unsigned char leftX = 3;
-	const unsigned char rghtX = 13;
-
+	const unsigned char leftX = 4;
+	const unsigned char rghtX = 11;
 
 
 	// Draw enemies first!
@@ -65,7 +48,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	if( delay )
 	{
 		*screen_type = screen_type_ready;
-		//return;
+		return;
 	}
 
 	*screen_type = screen_type_load;

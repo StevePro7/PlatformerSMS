@@ -218,7 +218,7 @@ void engine_enemyX_manager_hide_enemys( int leftX, int rghtX )
 
 		// Don't draw if sprite "collides" with memo box.
 		size = eo->drawX - DRAW_OFFSET_X;
-		if( ( size >= ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
+		if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
 			( eo->drawY > MEMO_SPRITE_TOP && eo->drawY < MEMO_SPRITE_BOT ) )
 		{
 			return;
