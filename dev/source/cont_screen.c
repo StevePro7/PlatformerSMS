@@ -45,8 +45,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		display_cursor();
 	}
 
-	//test[ 2 ] = engine_input_manager_hold_fire1();
-	test[ 2 ] = engine_input_manager_move_fire1();
+	test[ 2 ] = engine_input_manager_hold_fire1();
 	if( test[ 2 ] )
 	{
 		if( 0 == cursor )

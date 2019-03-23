@@ -6,19 +6,27 @@
 #include "sprite_manager.h"
 #include "tile_manager.h"
 #include "memo_manager.h"
+#include "delay_manager.h"
 #include "input_manager.h"
+#include "level_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "audio_manager.h"
 
+#define OVER_SCREEN_DELAY		150
+
 void screen_over_screen_load()
 {
+	engine_delay_manager_load( OVER_SCREEN_DELAY );
+	engine_level_manager_draw_section();
+	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_over();
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
-	unsigned char test;
+	unsigned char delay;
+	unsigned char input;
 
 	const unsigned char leftX = 5;
 	const unsigned char rghtX = 10;
@@ -27,11 +35,12 @@ void screen_over_screen_update( unsigned char *screen_type )
 	engine_enemyX_manager_hide_enemys( leftX, rghtX );
 	engine_player_manager_hide( leftX, rghtX );
 
+	delay = engine_delay_manager_update();
+	input = engine_input_manager_hold_fire1();
 
-	test = engine_input_manager_hold_fire2();
-	if( test )
+	if( delay || input )
 	{
-		//*screen_type = screen_type_title;
+		*screen_type = screen_type_begin;
 		return;
 	}
 

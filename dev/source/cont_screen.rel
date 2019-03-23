@@ -5,9 +5,9 @@ O -mz80
 S _engine_score_manager_reset Ref0000
 S _engine_enemyX_manager_hide_enemys Ref0000
 S _engine_font_manager_draw_text Ref0000
+S _engine_input_manager_hold_fire1 Ref0000
 S .__.ABS. Def0000
 S _engine_input_manager_hold_right Ref0000
-S _engine_input_manager_move_fire1 Ref0000
 S _engine_input_manager_hold_left Ref0000
 S _engine_player_manager_hide Ref0000
 S _engine_memo_manager_draw_cont Ref0000
@@ -47,7 +47,7 @@ R 00 00 00 00 02 0E 01 00
 T 43 00 F1 F1 21 0B 00 E5 2E 03 E5 CD 00 00 F1 F1
 R 00 00 00 00 02 0C 07 00
 T 51 00 CD 00 00 7D D1 C1 12 C5 D5 CD 00 00 7D D1
-R 00 00 00 00 02 03 06 00 02 0C 04 00
+R 00 00 00 00 02 03 06 00 02 0C 05 00
 T 5F 00 C1 02 1A B7 20 04 0A B7 28 0A
 R 00 00 00 00
 T 69 00
@@ -57,7 +57,7 @@ R 00 00 00 00 00 03 01 00 00 0A 00 00
 T 73 00
 R 00 00 00 00
 T 73 00 CD 00 00 4D DD 6E FE DD 66 FF 71 DD 5E 04
-R 00 00 00 00 02 03 05 00
+R 00 00 00 00 02 03 03 00
 T 81 00 DD 56 05 79 B7 28 15 3A 00 00 B7 20 0A D5
 R 00 00 00 00 00 0A 01 00
 T 8F 00 CD 00 00 D1 3E 08 12 18 08
