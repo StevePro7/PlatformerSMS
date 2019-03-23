@@ -80,6 +80,13 @@ void engine_memo_manager_draw_over()
 	draw_memo( LOCALE_BLANK_SIZE8, LOCALE_GAME_MESSAGE1, LOCALE_GAME_MESSAGE2, x, wide );
 }
 
+void engine_memo_manager_draw_beat()
+{
+	unsigned char x = 10;
+	unsigned char wide = 19;
+	draw_memo( LOCALE_BLANK_SIZE17, LOCALE_BEAT_MESSAGE1, LOCALE_BEAT_MESSAGE2, x, wide );
+}
+
 static unsigned char get_tile()
 {
 	unsigned char idx = rand() % MAX_SMALL_TILES;
