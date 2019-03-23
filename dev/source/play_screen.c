@@ -11,6 +11,7 @@
 #include "input_manager.h"
 #include "state_manager.h"
 #include "stats_manager.h"
+#include "score_manager.h"
 #include "game_manager.h"
 
 // Cache values for entire class.
@@ -71,11 +72,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 					*screen_type = screen_type_pass;
 					return;
 				}
-				//else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
-				//{
-					// TODO
-					// Increase gems - score_manager + sound effect.
-				//}
+				else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
+				{
+					engine_score_manager_update_gems();
+				}
 				//else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
 				//{
 					// Enable immunability = temp invincible to enemy/guard but can still fall down pits...

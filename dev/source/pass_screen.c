@@ -6,9 +6,10 @@
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
+#include "score_manager.h"
 #include "game_manager.h"
 
-#define PASS_SCREEN_DELAY	100
+#define PASS_SCREEN_DELAY	20
 
 static enum_pass_type pass_type;
 
@@ -19,13 +20,11 @@ void screen_pass_screen_load()
 
 	engine_delay_manager_load( PASS_SCREEN_DELAY );
 	engine_memo_manager_draw_pass( perfect );
-
-	// Part #2
-	//engine_memo_manager_draw_gems();
 }
 
 void screen_pass_screen_update( unsigned char *screen_type )
 {
+	struct_score_object *so = &global_score_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char delay;
 	unsigned char input;
@@ -56,10 +55,19 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			}
 		}
 
-		*screen_type = screen_type_load;
-		return;
+		// Don't navigate to gems screen until collected at least one gem.
+		if( 0 == so->gem_total )
+		{
+			*screen_type = screen_type_load;
+			return;
+		}
+		else
+		{
+			*screen_type = screen_type_gems;
+			return;
+		}
+		
 	}
 
-	
 	*screen_type = screen_type_pass;
 }

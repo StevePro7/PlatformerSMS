@@ -23,6 +23,13 @@ void engine_score_manager_reset()
 	so->num_lives = so->tot_lives;
 }
 
+void engine_score_manager_update_gems()
+{
+	struct_score_object *so = &global_score_object;
+	so->gem_level++;
+	so->gem_total++;
+}
+
 void engine_score_manager_update_lives( signed char delta )
 {
 	struct_score_object *so = &global_score_object;
@@ -43,4 +50,10 @@ void engine_score_manager_draw_lives()
 	struct_score_object *so = &global_score_object;
 	unsigned char index = so->num_lives;
 	engine_font_manager_draw_text( lives_text[ index ], 31, 23 );
+}
+
+void engine_score_manager_draw_score( unsigned char x, unsigned char y )
+{
+	struct_score_object *so = &global_score_object;
+	engine_font_manager_draw_data( so->gem_total, x, y );
 }
