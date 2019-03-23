@@ -58,7 +58,7 @@ void engine_memo_manager_draw_gems()
 	unsigned char wide = 12;
 	//draw_memo( LOCALE_BLANK_SIZE10, LOCALE_GEMS_TEXT, LOCALE_BLANK_SIZE10, x, wide );
 	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_BLANK_SIZE10, LOCALE_BLANK_SIZE10, x, wide );
-	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 10, 12 );
+	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 17, 11 );
 }
 
 void engine_memo_manager_draw_dead()
