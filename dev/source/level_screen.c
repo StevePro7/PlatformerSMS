@@ -1,22 +1,26 @@
 #include "level_screen.h"
 #include "global_manager.h"
 #include "locale_manager.h"
+#include "content_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "text_manager.h"
+#include "tile_manager.h"
+#include "delay_manager.h"
 #include "input_manager.h"
 #include "stats_manager.h"
 #include "game_manager.h"
-#include "content_manager.h"
-#include "tile_manager.h"
+#include "audio_manager.h"
 #include <stdlib.h>
 
+#define LEVEL_SCREEN_DELAY		50
 #define TEXT_X				11
 #define TEXT_Y				18
 #define OPT1_X				TEXT_X + 7
 #define OPT1_Y				TEXT_Y + 1
 #define OPT2_Y				TEXT_Y + 2
 
+static unsigned char stage;
 static unsigned char cursor;
 static unsigned char cursorY[ 2 ] = { OPT1_Y, OPT2_Y };
 static void display_options();
@@ -29,18 +33,38 @@ void screen_level_screen_init()
 
 void screen_level_screen_load()
 {
+	engine_delay_manager_load( LEVEL_SCREEN_DELAY );
+
 	engine_text_manager_clear_three();
 	engine_font_manager_draw_text( LOCALE_SELECT_LEVEL, TEXT_X + 0, TEXT_Y + 0 );
 	engine_font_manager_draw_text( LOCALE_SELECT_WORLD, TEXT_X + 0, TEXT_Y + 1 );
 	engine_font_manager_draw_text( LOCALE_SELECT_ROUND, TEXT_X + 0, TEXT_Y + 2 );
 
 	display_options();
+	stage = event_stage_start;
 }
 
 void screen_level_screen_update( unsigned char *screen_type )
 {
 	struct_game_object *go = &global_game_object;
 	unsigned char test[ 6 ] = { 0, 0, 0, 0, 0, 0 };
+	unsigned char delay;
+
+	if( event_stage_pause == stage )
+	{
+		delay = engine_delay_manager_update();
+		if( delay )
+		{
+			*screen_type = screen_type_init;
+			return;
+		}
+		else
+		{
+			engine_font_manager_draw_text( LOCALE_SELECT_ARROW, OPT1_X, cursorY[ cursor ] );
+			*screen_type = screen_type_level;
+			return;
+		}
+	}
 
 	test[ 0 ] = engine_input_manager_hold_left();
 	if( test[ 0 ] )
@@ -111,7 +135,11 @@ void screen_level_screen_update( unsigned char *screen_type )
 	test[ 4 ] = engine_input_manager_hold_fire1();
 	if( test[4] )
 	{
-		*screen_type = screen_type_init;
+		engine_font_manager_draw_text( LOCALE_SELECT_BLANK, OPT1_X, OPT1_Y );
+		engine_font_manager_draw_text( LOCALE_SELECT_BLANK, OPT1_X, OPT2_Y );
+
+		engine_audio_manager_sound_accept();
+		stage = event_stage_pause;
 		return;
 	}
 	test[ 5 ] = engine_input_manager_hold_fire2();

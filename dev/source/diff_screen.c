@@ -5,6 +5,7 @@
 #include "font_manager.h"
 #include "text_manager.h"
 #include "input_manager.h"
+#include "audio_manager.h"
 #include "game_manager.h"
 
 #define TEXT_X				9
@@ -41,6 +42,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	test[ 2 ] = engine_input_manager_hold_fire1();
 	if( test[ 2 ] )
 	{
+		engine_audio_manager_sound_accept();
 		*screen_type = screen_type_level;
 		return;
 	}

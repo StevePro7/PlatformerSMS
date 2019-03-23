@@ -90,6 +90,7 @@ void engine_hack_manager_invert()
 	ho->hack_difficulty = diff_type_hard;
 	//ho->hack_enemy = 0;
 	ho->hack_lines = 1;
+	//ho->hack_sound = 0;
 
 	ho->hack_world = 0;
 	ho->hack_round = 2;

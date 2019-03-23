@@ -6,10 +6,11 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "text_manager.h"
-#include "content_manager.h"
+//#include "content_manager.h"
 #include "delay_manager.h"
-#include "input_manager.h"
 #include "tile_manager.h"
+#include "input_manager.h"
+#include "audio_manager.h"
 #include <stdlib.h>
 
 #define TITLE_FLASH_DELAY	50
@@ -53,6 +54,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
+		engine_audio_manager_sound_accept();
 		*screen_type = screen_type_diff;
 		return;
 	}
