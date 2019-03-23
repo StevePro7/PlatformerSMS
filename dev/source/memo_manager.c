@@ -112,17 +112,17 @@ static void draw_tile( unsigned char left, unsigned char wide )
 static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char *text2, unsigned char x, unsigned char wide )
 {
 	unsigned char left = x - 1;
-	engine_font_manager_draw_text( blank, x, 10 );
-	engine_font_manager_draw_text( text1, x, 11 );
-	engine_font_manager_draw_text( text2, x, 12 );
-	engine_font_manager_draw_text( blank, x, 13 );
+	engine_font_manager_draw_text( blank, x, MEMO_Y + 1 );
+	engine_font_manager_draw_text( text1, x, MEMO_Y + 2 );
+	engine_font_manager_draw_text( text2, x, MEMO_Y + 3 );
+	engine_font_manager_draw_text( blank, x, MEMO_Y + 4 );
 
 	if( !border )
 	{
 		return;
 	}
 
-	engine_font_manager_draw_text( blank, x, 9 );
-	engine_font_manager_draw_text( blank, x, 14 );
+	//engine_font_manager_draw_text( blank, x, 9 );
+	//engine_font_manager_draw_text( blank, x, 14 );
 	draw_tile( left, wide );
 }

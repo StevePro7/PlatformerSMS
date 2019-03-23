@@ -16,6 +16,7 @@ void engine_enemyX_manager_init();
 void engine_enemyX_manager_load();
 void engine_enemyX_manager_update();
 void engine_enemyX_manager_draw_enemys();
+void engine_enemyX_manager_hide_enemys( int leftX, int rghtX );
 void engine_enemyX_manager_draw_guards();
 
 #endif//_ENEMY_MANAGER_H_

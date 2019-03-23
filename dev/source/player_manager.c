@@ -379,12 +379,35 @@ void engine_player_manager_draw()
 	struct_player_object *po = &global_player_object;
 	unsigned int tile;
 
+	// TODO - offload to the dead screen
+	// Why? because this checks if fell in pit then don't draw
+	// But if fell in pit then would be dead and do check there!
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();
 		tile = PLAYER_SPRITE_TILE + po->anim_index * SPRITE_TILES_NUMBER;
 		engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 	}
+}
+
+void engine_player_manager_hide( int leftX, int rghtX )
+{
+	struct_player_object *po = &global_player_object;
+
+	unsigned int tile;
+	int size;
+	get_draw_position();
+
+	// Don't draw if sprite "collides" with memo box.
+	size = po->drawX - DRAW_OFFSET_X;
+	if( ( size >= ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
+		( po->drawY > MEMO_SPRITE_TOP && po->drawY < MEMO_SPRITE_BOT ) )
+	{
+		return;
+	}
+
+	tile = PLAYER_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER;
+	engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 }
 
 // Private helper methods.

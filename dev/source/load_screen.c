@@ -44,13 +44,13 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();							// TODO override this method to draw outside "memo" box
-	engine_player_manager_draw();									// TODO override this method to draw outside "memo" box
-
+	//engine_player_manager_draw();									// TODO override this method to draw outside "memo" box
+	engine_player_manager_hide( 4, 11 );
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
 		*screen_type = screen_type_ready;
-		return;
+		//return;
 	}
 
 	*screen_type = screen_type_load;

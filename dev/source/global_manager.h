@@ -39,8 +39,8 @@
 #define MIN_POSITION_X			24
 #define MAX_POSITION_X			248
 
-#define MEMO_TEXT_TOP			11
-#define MEMO_TEXT_BOT			12
+#define MEMO_SPRITE_TOP			32
+#define MEMO_SPRITE_BOT			128
 
 #define ANIMATE_MOVE_MAX		5
 #define ANIMATE_IDX_LEFT		1
