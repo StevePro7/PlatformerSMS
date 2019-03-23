@@ -8,9 +8,9 @@
 #include "memo_manager.h"
 #include "level_manager.h"
 //#include "anim_manager.h"
-#include "player_manager.h"
 #include "delay_manager.h"
 #include "input_manager.h"
+#include "player_manager.h"
 #include "enemy_manager.h"
 #include "state_manager.h"
 //#include "stats_manager.h"
@@ -34,7 +34,13 @@ void screen_load_screen_load()
 	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
-	engine_memo_manager_draw_level( go->world_no, go->round_no );
+
+
+	//engine_memo_manager_draw_level( go->world_no, go->round_no );
+
+	engine_memo_manager_draw_beat();
+
+
 	devkit_SMS_displayOn();
 }
 
@@ -42,8 +48,14 @@ void screen_load_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
 
-	const unsigned char leftX = 4;
-	const unsigned char rghtX = 11;
+	//const unsigned char leftX = 4;
+	//const unsigned char rghtX = 11;
+
+
+	const unsigned char leftX = 3;
+	const unsigned char rghtX = 13;
+
+
 
 	// Draw enemies first!
 	engine_enemyX_manager_hide_enemys( leftX , rghtX );
@@ -53,7 +65,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	if( delay )
 	{
 		*screen_type = screen_type_ready;
-		return;
+		//return;
 	}
 
 	*screen_type = screen_type_load;

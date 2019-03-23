@@ -3,9 +3,10 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "memo_manager.h"
+#include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
-#include "input_manager.h"
+
 
 #define DECAPITATE	20
 
@@ -19,13 +20,16 @@ void screen_dead_screen_load()
 		po->posnY = DECAPITATE;
 	}
 
-	//engine_font_manager_draw_text( "OUCH", 15, 0 );
 	engine_memo_manager_draw_dead();
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )
 {
 	unsigned char test;
+
+	const unsigned char leftX = 4;
+	const unsigned char rghtX = 11;
+
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{
@@ -34,8 +38,8 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	}
 
 	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_draw();
+	engine_enemyX_manager_hide_enemys( leftX, rghtX );
+	engine_player_manager_hide( leftX, rghtX );
 
 	*screen_type = screen_type_dead;
 }

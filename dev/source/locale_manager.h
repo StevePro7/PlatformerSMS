@@ -6,7 +6,7 @@
 #define LOCALE_BLANK_WIDTH		"                                "
 #define LOCALE_BLANK_SIZE8		"      "
 #define LOCALE_BLANK_SIZE10		"          "
-#define LOCALE_BLANK_SIZE12		"            "
+//#define LOCALE_BLANK_SIZE12		"            "
 #define LOCALE_BLANK_SIZE16		"                "
 #define LOCALE_BLANK_SIZE17		"                 "
 
@@ -27,7 +27,7 @@
 #define LOCALE_SELECT_WORLD		" WORLD    "
 #define LOCALE_SELECT_ROUND		" ROUND    "
 
-#define LOCALE_PASS_COLLECT		"    COLLECT "
+#define LOCALE_PASS_COLLECT		"    SCORE "
 
 #define LOCALE_PASS_MESSAGE1	" LEVEL IS "
 #define LOCALE_PASS_MESSAGE2	" COMPLETE "

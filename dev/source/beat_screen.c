@@ -1,12 +1,10 @@
 #include "beat_screen.h"
 #include "_sms_manager.h"
-//#include "global_manager.h"
-//#include "locale_manager.h"
 #include "enum_manager.h"
-//#include "font_manager.h"
 #include "text_manager.h"
-//#include "tile_manager.h"
 #include "memo_manager.h"
+#include "player_manager.h"
+#include "enemy_manager.h"
 #include <stdlib.h>
 
 void screen_beat_screen_load()
@@ -19,5 +17,12 @@ void screen_beat_screen_load()
 
 void screen_beat_screen_update( unsigned char *screen_type )
 {
+	const unsigned char leftX = 3;
+	const unsigned char rghtX = 13;
+
+	// Draw enemies first!
+	engine_enemyX_manager_hide_enemys( leftX, rghtX );
+	engine_player_manager_hide( leftX, rghtX );
+
 	*screen_type = screen_type_beat;
 }

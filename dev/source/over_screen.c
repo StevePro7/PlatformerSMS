@@ -19,6 +19,15 @@ void screen_over_screen_load()
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	unsigned char test;
+
+	const unsigned char leftX = 5;
+	const unsigned char rghtX = 10;
+
+	// Draw enemies first!
+	engine_enemyX_manager_hide_enemys( leftX, rghtX );
+	engine_player_manager_hide( leftX, rghtX );
+
+
 	test = engine_input_manager_hold_fire2();
 	if( test )
 	{

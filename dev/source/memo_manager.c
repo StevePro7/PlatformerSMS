@@ -54,9 +54,9 @@ void engine_memo_manager_draw_pass( unsigned char perfect )
 }
 void engine_memo_manager_draw_gems()
 {
-	unsigned char x = 11;
-	unsigned char wide = 14;
-	draw_memo( LOCALE_BLANK_SIZE12, LOCALE_PASS_COLLECT, LOCALE_BLANK_SIZE12, x, wide );
+	unsigned char x = 12;
+	unsigned char wide = 12;
+	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_PASS_COLLECT, LOCALE_BLANK_SIZE10, x, wide );
 }
 
 void engine_memo_manager_draw_dead()

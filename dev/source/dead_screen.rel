@@ -2,13 +2,13 @@ XL2
 H 9 areas 8 global symbols
 M dead_screen
 O -mz80
-S _engine_player_manager_draw Ref0000
+S _engine_enemyX_manager_hide_enemys Ref0000
 S _global_player_object Ref0000
 S _engine_memo_manager_draw_dead Ref0000
 S _engine_input_manager_hold_fire2 Ref0000
 S .__.ABS. Def0000
-S _engine_enemyX_manager_draw_enemys Ref0000
-A _CODE size 34 flags 0 addr 0
+S _engine_player_manager_hide Ref0000
+A _CODE size 48 flags 0 addr 0
 S _screen_dead_screen_update Def001A
 S _screen_dead_screen_load Def0000
 A _DATA size 0 flags 0 addr 0
@@ -33,5 +33,9 @@ T 28 00 C9
 R 00 00 00 00
 T 29 00
 R 00 00 00 00
-T 29 00 E5 CD 00 00 CD 00 00 E1 36 0D C9
-R 00 00 00 00 02 04 05 00 02 07 00 00
+T 29 00 E5 01 0B 00 C5 01 04 00 C5 CD 00 00 F1 F1
+R 00 00 00 00 02 0C 00 00
+T 37 00 01 0B 00 C5 01 04 00 C5 CD 00 00 F1 F1 E1
+R 00 00 00 00 02 0B 05 00
+T 45 00 36 0D C9
+R 00 00 00 00
