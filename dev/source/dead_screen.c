@@ -41,6 +41,5 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	engine_enemyX_manager_hide_enemys( leftX, rghtX );
 	engine_player_manager_hide( leftX, rghtX );
 
-	//*screen_type = screen_type_dead;
-	*screen_type = screen_type_beat;
+	*screen_type = screen_type_dead;
 }
