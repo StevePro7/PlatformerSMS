@@ -5,9 +5,12 @@
 #include "text_manager.h"
 #include "anim_manager.h"
 #include "score_manager.h"
+#include "game_manager.h"
 
 void screen_init_screen_load()
 {
+	struct_game_object *go = &global_game_object;
+
 	devkit_SMS_displayOff();
 	engine_text_manager_clear_all();
 
@@ -21,7 +24,7 @@ void screen_init_screen_load()
 	devkit_SMS_displayOn();
 
 	// Reset all score data.
-	engine_score_manager_init();
+	engine_score_manager_init( go->difficulty );
 }
 
 void screen_init_screen_update( unsigned char *screen_type )

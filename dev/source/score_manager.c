@@ -6,19 +6,21 @@
 // Global variable.
 struct_score_object global_score_object;
 
-void engine_score_manager_init()
+void engine_score_manager_init( unsigned char difficulty )
 {
 	struct_score_object *so = &global_score_object;
-	so->num_lives = NUMBER_LIVES;
+	so->tot_lives = NUMBER_LIVES - difficulty;
 	so->gem_delta = 0;
 	so->gem_level = 0;
 	so->gem_total = 0;
+
+	engine_score_manager_reset();
 }
 
 void engine_score_manager_reset()
 {
 	struct_score_object *so = &global_score_object;
-	so->num_lives = NUMBER_LIVES;
+	so->num_lives = so->tot_lives;
 }
 
 void engine_score_manager_update_lives( signed char delta )

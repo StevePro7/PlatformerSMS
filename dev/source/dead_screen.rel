@@ -12,7 +12,7 @@ S _global_score_object Ref0000
 S _engine_score_manager_update_lives Ref0000
 S _engine_player_manager_hide Ref0000
 S _engine_delay_manager_load Ref0000
-A _CODE size 83 flags 0 addr 0
+A _CODE size 85 flags 0 addr 0
 S _screen_dead_screen_update Def002A
 S _screen_dead_screen_load Def0000
 A _DATA size 0 flags 0 addr 0
@@ -49,21 +49,21 @@ T 57 00
 R 00 00 00 00
 T 57 00 CD 00 00 4D C5 CD 00 00 C1 DD 5E 04 DD 56
 R 00 00 00 00 02 03 05 00 02 08 03 00
-T 65 00 05 79 B7 20 03 B5 28 10
+T 65 00 05 79 B7 20 03 B5 28 12
 R 00 00 00 00
 T 6D 00
 R 00 00 00 00
-T 6D 00 3A 00 00 B7 20 05 3E 0F 12 18 08
+T 6D 00 21 00 00 23 7E B7 20 05 3E 0E 12 18 08
 R 00 00 00 00 02 03 06 00
-T 78 00
+T 7A 00
 R 00 00 00 00
-T 78 00 3E 08 12 18 03
+T 7A 00 3E 08 12 18 03
 R 00 00 00 00
-T 7D 00
+T 7F 00
 R 00 00 00 00
-T 7D 00 3E 0D 12
+T 7F 00 3E 0D 12
 R 00 00 00 00
-T 80 00
+T 82 00
 R 00 00 00 00
-T 80 00 DD E1 C9
+T 82 00 DD E1 C9
 R 00 00 00 00

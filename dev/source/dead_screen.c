@@ -54,7 +54,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	{
 		if( so->num_lives <= 0 )
 		{
-			*screen_type = screen_type_over;
+			*screen_type = screen_type_cont;
 			return;
 		}
 
