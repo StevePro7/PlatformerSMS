@@ -2,6 +2,7 @@
 #define _MEMO_MANAGER_H_
 
 void engine_memo_manager_init( unsigned char lines );
+void engine_memo_manager_draw_title();
 void engine_memo_manager_draw_level( const unsigned char world, const unsigned char round );
 void engine_memo_manager_draw_pass( unsigned char perfect );
 void engine_memo_manager_draw_gems();

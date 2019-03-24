@@ -3,6 +3,7 @@
 #include "locale_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "memo_manager.h"
 #include "input_manager.h"
 #include "audio_manager.h"
 
@@ -17,7 +18,12 @@ void screen_test_screen_load()
 		engine_font_manager_draw_data( d, 25, y );
 	}*/
 
-	engine_font_manager_draw_text( "TEST SCREEN", 10, 0 );
+	//engine_font_manager_draw_text( "TEST SCREENX", 10, 0 );
+
+	//engine_memo_manager_draw_dead();
+	//engine_memo_manager_draw_over();
+	//engine_memo_manager_draw_level( 0, 0 );
+	engine_memo_manager_draw_beat();
 
 	//engine_content_manager_load_guards();
 	//engine_tile_manager_draw_guard( x, y, sprite_type_enemyA );
