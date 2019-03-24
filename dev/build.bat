@@ -21,6 +21,10 @@ REM echo Build psg
 REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 
 
+cd engine
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
+cd ..
+
 cd source
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
@@ -31,7 +35,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_mana
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_object.c
 
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 text_manager.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
@@ -43,7 +47,7 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_manager.c
+rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_manager.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_manager.c
 
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
@@ -108,6 +112,7 @@ banks\bank2.rel ^
 banks\bank3.rel ^
 banks\bank4.rel ^
 banks\bank5.rel ^
+engine\asm_manager.rel ^
 source\_sms_manager.rel		source\_snd_manager.rel ^
 source\global_manager.rel	source\debug_manager.rel	source\hack_manager.rel		source\level_object.rel		source\anim_object.rel ^
 source\content_manager.rel	source\font_manager.rel		source\text_manager.rel	    source\delay_manager.rel ^
@@ -151,6 +156,11 @@ REM smsexamine.exe output.sms
 REM cd ..\dev
 
 REM https://www.askingbox.com/question/batch-script-delete-file-if-it-exists
+cd engine
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
 cd source
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul

@@ -54,7 +54,7 @@
 //#include "engine\enemy_manager.h"
 //#include "engine\player_manager.h"
 //#include "source\scroll_manager.h"
-//#include "engine\asm_manager.h"
+#include "engine\asm_manager.h"
 #include "source\state_manager.h"
 
 //#include "source\render_manager.h"

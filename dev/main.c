@@ -6,7 +6,7 @@ void main(void)
 	static bool global_pause;
 	unsigned char open_screen_type;
 
-	//engine_asm_manager_clear_VRAM();
+	engine_asm_manager_clear_VRAM();
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 
@@ -14,12 +14,12 @@ void main(void)
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	//engine_content_manager_load_back_tiles();
-	//engine_content_manager_load_sprites();
+	engine_content_manager_load_back_tiles();
+	engine_content_manager_load_sprites();
 
-	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_begin;
+	//open_screen_type = screen_type_begin;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_level;

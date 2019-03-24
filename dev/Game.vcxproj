@@ -148,6 +148,7 @@
     <ClCompile Include="banks\bank3.c" />
     <ClCompile Include="banks\bank4.c" />
     <ClCompile Include="banks\bank5.c" />
+    <ClCompile Include="engine\asm_manager.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="psg.c" />

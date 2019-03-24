@@ -14,15 +14,13 @@ void screen_begin_screen_load()
 {
 	unsigned char x, tile;
 
+	// Unload VRAM each begin to remove any unwanted graphics glitches...!
 	devkit_SMS_displayOff();
-
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_back_tiles();
 	engine_content_manager_load_sprites();
 
-	engine_text_manager_clear_all();
 	engine_content_manager_load_title();
-
 	for( x = 2; x < SCREEN_TILE_WIDE; x += 2 )
 	{
 		tile = rand() % MAX_BLOCK_TILES + 1;
