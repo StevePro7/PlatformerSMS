@@ -197,7 +197,7 @@ void engine_enemyX_manager_draw_enemys()
 		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );
 	}
 }
-
+/*
 void engine_enemyX_manager_hide_enemys( int leftX, int rghtX )
 {
 	struct_enemy_master *em = &global_enemy_master;
@@ -228,6 +228,7 @@ void engine_enemyX_manager_hide_enemys( int leftX, int rghtX )
 		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );
 	}
 }
+*/
 void engine_enemyX_manager_draw_guards()
 {
 	struct_enemy_master *em = &global_enemy_master;

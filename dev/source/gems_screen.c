@@ -16,8 +16,8 @@ void screen_gems_screen_load()
 	engine_delay_manager_load( GEMS_SCREEN_DELAY );
 	engine_memo_manager_draw_gems();
 
-	engine_tile_manager_draw_tile( tile_type_gemscore, 13, 11 );
-	engine_score_manager_draw_score( 20, 12 );
+	engine_tile_manager_draw_tile( tile_type_gemscore, 13, 21 );
+	engine_score_manager_draw_score( 20, 22 );
 }
 
 void screen_gems_screen_update( unsigned char *screen_type )

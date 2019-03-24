@@ -263,9 +263,10 @@ void engine_level_manager_draw_section()
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char row, col;
-	for( row = 4; row < 8; row++ )
+	for( row = 8; row < 12; row++ )
 	{
-		for( col = 0; col < lo->draw_cols; col++ )
+		//for( col = 1; col < lo->draw_cols - 1; col++ )
+		for( col = 2; col < lo->draw_cols; col++ )
 		{
 			draw_tiles( col, row );
 		}

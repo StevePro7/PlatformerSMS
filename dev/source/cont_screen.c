@@ -9,10 +9,10 @@
 #include "enemy_manager.h"
 #include "score_manager.h"
 
-#define TEXT_X				10
-#define TEXT_Y				11
+#define TEXT_X				12
+#define TEXT_Y				21
 #define OPT1_X				TEXT_X + 0
-#define OPT2_X				TEXT_X + 9
+#define OPT2_X				TEXT_X + 6
 
 static unsigned char cursor;
 static unsigned char cursorX[ 2 ] = { OPT1_X, OPT2_X };

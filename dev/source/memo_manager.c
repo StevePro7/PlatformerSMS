@@ -18,6 +18,7 @@ static unsigned char small_tiles[ MAX_SMALL_TILES ] =
 };
 
 static unsigned char border;
+static unsigned char index;
 static unsigned char get_tile();
 static void draw_tile( unsigned char left, unsigned char topY, unsigned char wide );
 static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char *text2, unsigned char x, unsigned char y, unsigned char wide );
@@ -25,6 +26,7 @@ static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char
 void engine_memo_manager_init( unsigned char lines )
 {
 	border = lines;
+	index = 0;
 }
 
 void engine_memo_manager_draw_title()
@@ -89,7 +91,7 @@ void engine_memo_manager_draw_cont()
 	//unsigned char x = 9;
 	//unsigned char y = 0;
 	//unsigned char wide = 18;
-	draw_memo( LOCALE_BLANK_SIZE16, LOCALE_CONT_MESSAGE, LOCALE_CONT_YESORNO, x, y, wide );
+	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_CONT_MESSAGE, LOCALE_CONT_YESORNO, x, y, wide );
 }
 
 void engine_memo_manager_draw_over()
@@ -114,8 +116,14 @@ void engine_memo_manager_draw_beat()
 
 static unsigned char get_tile()
 {
-	unsigned char idx = rand() % MAX_SMALL_TILES;
-	return small_tiles[ idx ];
+	//unsigned char idx = rand() % MAX_SMALL_TILES;
+	index++;
+	if( index >= 3 )
+	{
+		index = 0;
+	}
+
+	return small_tiles[ index ];
 }
 static void draw_tile( unsigned char left, unsigned char topY, unsigned char wide )
 {
@@ -138,6 +146,7 @@ static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char
 {
 	unsigned char left = x - 1;
 	unsigned char topY = y + 0;
+	index = 0;
 	engine_font_manager_draw_text( blank, x, y + 1 );
 	engine_font_manager_draw_text( text1, x, y + 1 );
 	engine_font_manager_draw_text( text2, x, y + 2 );
