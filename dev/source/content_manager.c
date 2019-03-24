@@ -33,12 +33,13 @@ void engine_content_manager_load_sprites()
 	//devkit_SMS_loadPSGaidencompressedTiles( EnemyC_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyC ] );
 	//devkit_SMS_loadPSGaidencompressedTiles( EnemyD_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyD ] );
 
+	devkit_SMS_mapROMBank( sprites__palette__bin_bank );
 	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
 }
 
 void engine_content_manager_load_splash()
 {
-	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );\
+	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, MISC_TILES_OFFSET );
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
 }
