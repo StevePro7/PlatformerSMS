@@ -18,8 +18,8 @@
 void screen_over_screen_load()
 {
 	engine_delay_manager_load( OVER_SCREEN_DELAY );
-	engine_level_manager_draw_section();
-	engine_enemyX_manager_draw_guards();
+	//engine_level_manager_draw_section();
+//	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_over();
 }
 

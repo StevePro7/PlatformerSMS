@@ -15,7 +15,7 @@ void screen_ready_screen_load()
 	engine_player_manager_load();
 
 	engine_level_manager_draw_section();
-	engine_enemyX_manager_draw_guards();
+//	engine_enemyX_manager_draw_guards();
 	engine_score_manager_draw_lives();
 
 	// TODO re-draw the hearts for lives on LHS
