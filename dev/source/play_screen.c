@@ -75,7 +75,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 				else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
 				{
 					engine_score_manager_update_gems();
-					engine_score_manager_draw_score( 31, 1 );
+					engine_score_manager_draw_score( 31, 2 );
 				}
 				//else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
 				//{

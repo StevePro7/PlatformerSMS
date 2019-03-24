@@ -36,7 +36,7 @@ void screen_load_screen_load()
 	// Display game stats.
 	engine_game_manager_draw();
 	engine_text_manager_write_gems();
-	engine_score_manager_draw_score( 31, 1 );
+	engine_score_manager_draw_score( 31, 2 );
 	//engine_score_manager_draw_heart();
 	engine_score_manager_draw_lives();
 	devkit_SMS_displayOn();

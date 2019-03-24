@@ -42,5 +42,5 @@ void engine_text_manager_cheat_write()
 
 void engine_text_manager_write_gems()
 {
-	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 28, 0 );
+	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 28, 1 );
 }

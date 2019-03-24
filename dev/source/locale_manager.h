@@ -27,6 +27,7 @@
 #define LOCALE_SELECT_WORLD		" WORLD    "
 #define LOCALE_SELECT_ROUND		" ROUND    "
 
+#define LOCALE_DIFF_TEXT		"DIFF"
 #define LOCALE_GEMS_TEXT		"GEMS"
 //#define LOCALE_PASS_COLLECT		"    SCORE "
 
