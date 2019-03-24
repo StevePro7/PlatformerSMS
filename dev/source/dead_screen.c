@@ -8,14 +8,16 @@
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "score_manager.h"
+#include "audio_manager.h"
 
-#define DEAD_SCREEN_DELAY		150
+#define DEAD_SCREEN_DELAY		200
 #define DEAD_DECAPITATE			20
 
 void screen_dead_screen_load()
 {
 	struct_player_object *po = &global_player_object;
 
+	engine_audio_manager_sound_death();
 	engine_delay_manager_load( DEAD_SCREEN_DELAY );
 
 	// If player jumps through ceiling and dies then ouch!

@@ -12,6 +12,7 @@
 #include "state_manager.h"
 #include "stats_manager.h"
 #include "score_manager.h"
+#include "audio_manager.h"
 #include "game_manager.h"
 
 // Cache values for entire class.
@@ -74,6 +75,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 				}
 				else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
 				{
+					engine_audio_manager_sound_gem();
 					engine_score_manager_update_gems();
 					engine_score_manager_draw_score( 31, 2 );
 				}
