@@ -266,7 +266,7 @@ void engine_level_manager_draw_section()
 	for( row = 10; row < 12; row++ )
 	{
 		//for( col = 1; col < lo->draw_cols - 1; col++ )
-		for( col = 6; col < 12; col++ )
+		for( col = 5; col < 12; col++ )
 		{
 			draw_tiles( col, row );
 		}

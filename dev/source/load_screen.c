@@ -1,6 +1,8 @@
 #include "load_screen.h"
 #include "_sms_manager.h"
+#include "locale_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "text_manager.h"
 #include "memo_manager.h"
 #include "level_manager.h"
@@ -39,6 +41,9 @@ void screen_load_screen_load()
 	engine_score_manager_draw_score( 31, 2 );
 	//engine_score_manager_draw_heart();
 	engine_score_manager_draw_lives();
+
+	//engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE, 2, 0 );
+
 	devkit_SMS_displayOn();
 
 	// Reset gem count at each level.
