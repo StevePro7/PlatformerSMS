@@ -14,6 +14,6 @@ void engine_player_manager_apply_physics();
 void engine_player_manager_handle_collisions();
 void engine_player_manager_cleanup();
 void engine_player_manager_draw();
-void engine_player_manager_hide( int leftX, int rghtX );
+//void engine_player_manager_hide( int leftX, int rghtX );
 
 #endif//_PLAYER_MANAGER_H_

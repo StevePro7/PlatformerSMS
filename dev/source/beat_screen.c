@@ -20,12 +20,14 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 
-	const unsigned char leftX = 3;
-	const unsigned char rghtX = 12;
+	//const unsigned char leftX = 3;
+	//const unsigned char rghtX = 12;
 
 	// Draw enemies first!
-	engine_enemyX_manager_hide_enemys( leftX, rghtX );
-	engine_player_manager_hide( leftX, rghtX );
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
+	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
+	//engine_player_manager_hide( leftX, rghtX );
 
 	delay = engine_delay_manager_update();
 	input = engine_input_manager_hold_fire1();

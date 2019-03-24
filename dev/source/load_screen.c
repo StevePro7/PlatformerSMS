@@ -30,6 +30,7 @@ void screen_load_screen_load()
 	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
+	engine_memo_manager_draw_title();
 	engine_memo_manager_draw_level( go->world_no, go->round_no );
 
 	// Display game stats.
@@ -49,13 +50,14 @@ void screen_load_screen_update( unsigned char *screen_type )
 	unsigned char test[ 2 ] = { 0, 0 };
 	unsigned char delay;
 
-	const unsigned char leftX = 4;
-	const unsigned char rghtX = 11;
-
+	//const unsigned char leftX = 4;
+	//const unsigned char rghtX = 11;
 
 	// Draw enemies first!
-	engine_enemyX_manager_hide_enemys( leftX , rghtX );
-	engine_player_manager_hide( leftX, rghtX );
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
+	//engine_enemyX_manager_hide_enemys( leftX , rghtX );
+	//engine_player_manager_hide( leftX, rghtX );
 
 
 	// Prompt to move to enter level quicker...

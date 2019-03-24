@@ -387,6 +387,7 @@ void engine_player_manager_draw()
 	}
 }
 
+/*
 void engine_player_manager_hide( int leftX, int rghtX )
 {
 	struct_player_object *po = &global_player_object;
@@ -406,6 +407,7 @@ void engine_player_manager_hide( int leftX, int rghtX )
 	tile = PLAYER_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER;
 	engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 }
+*/
 
 // Private helper methods.
 static void setup_animation()

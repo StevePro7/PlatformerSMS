@@ -29,12 +29,14 @@ void screen_cont_screen_update( unsigned char *screen_type )
 {
 	unsigned char test[ 4 ] = { 0, 0, 0, 0 };
 
-	const unsigned char leftX = 3;
-	const unsigned char rghtX = 11;
+	//const unsigned char leftX = 3;
+	//const unsigned char rghtX = 11;
 
 	// Draw enemies first!
-	engine_enemyX_manager_hide_enemys( leftX, rghtX );
-	engine_player_manager_hide( leftX, rghtX );
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
+	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
+	//engine_player_manager_hide( leftX, rghtX );
 
 
 	test[ 0 ] = engine_input_manager_hold_left();
