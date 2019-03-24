@@ -170,6 +170,7 @@
     <ClCompile Include="source\over_screen.c" />
     <ClCompile Include="source\pass_screen.c" />
     <ClCompile Include="source\ready_screen.c" />
+    <ClCompile Include="source\reset_manager.c" />
     <ClCompile Include="source\reset_screen.c" />
     <ClCompile Include="source\score_manager.c" />
     <ClCompile Include="source\screen_manager.c" />
@@ -231,6 +232,8 @@
     <ClInclude Include="source\over_screen.h" />
     <ClInclude Include="source\pass_screen.h" />
     <ClInclude Include="source\ready_screen.h" />
+    <ClInclude Include="source\reset_manager.h" />
+    <ClInclude Include="source\reset_object.h" />
     <ClInclude Include="source\reset_screen.h" />
     <ClInclude Include="source\score_manager.h" />
     <ClInclude Include="source\score_object.h" />

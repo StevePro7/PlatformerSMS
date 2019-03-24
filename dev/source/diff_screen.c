@@ -8,6 +8,7 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 
+//#define LEVEL_SCREEN_DELAY		50
 #define TEXT_X				9
 #define TEXT_Y				18
 #define OPT1_X				TEXT_X + 0
