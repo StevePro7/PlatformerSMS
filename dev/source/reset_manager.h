@@ -7,7 +7,7 @@
 extern struct_reset_object global_reset_object;
 
 // Methods.
-void engine_reset_manager_load( unsigned char frame, unsigned char screen );
+void engine_reset_manager_load( unsigned char frame );
 void engine_reset_manager_reset();
 unsigned char engine_reset_manager_update();
 

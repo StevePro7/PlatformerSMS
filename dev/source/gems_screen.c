@@ -12,7 +12,7 @@
 #include "game_manager.h"
 
 #define GEMS_SCREEN_DELAY1		150
-#define GEMS_SCREEN_DELAY2		50
+#define GEMS_SCREEN_DELAY2		75
 
 static unsigned char stage;
 
@@ -24,7 +24,7 @@ void screen_gems_screen_load()
 	engine_tile_manager_draw_tile( tile_type_gemscore, 13, 21 );
 	engine_score_manager_draw_score( 20, 22 );
 
-	engine_reset_manager_load( 50, screen_type_begin );
+	engine_reset_manager_load( GEMS_SCREEN_DELAY2 );
 	stage = 0;
 }
 

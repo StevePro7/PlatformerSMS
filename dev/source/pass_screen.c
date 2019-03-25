@@ -13,7 +13,7 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 
-#define PASS_SCREEN_DELAY	50
+#define PASS_SCREEN_DELAY	250
 
 static unsigned char gem_level;
 
@@ -26,7 +26,7 @@ void screen_pass_screen_load()
 
 	if( ho->hack_delayspeed)
 	{
-		//engine_audio_manager_sound_level();
+		engine_audio_manager_sound_level();
 	}
 
 	// Check if player collected all available gems.
