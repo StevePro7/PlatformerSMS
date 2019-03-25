@@ -6,6 +6,35 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+25/03/2019
+C:\stevepro\roms\SegaStuff\SMSpower\MusicTOOLS
+
+Trivial Pursuit - 014 - Hen Wlad Fy Nhadau.vgm
+Trivial Pursuit - 015 - Hymn to Liberty.vgm
+Trivial Pursuit - 016 - Allahu Akbar.vgm				MAYBE
+Trivial Pursuit - 017 - Nunarput Utoqqarsuanngoravit	MAYBE
+Trivial Pursuit - 018 - Lofsongur
+Trivial Pursuit - 026 - The Rain In Spain				maybe
+Trivial Pursuit - 027 - Scarborough Fair
+Trivial Pursuit - 201 - Scarborough Fair
+Trivial Pursuit - 028 - Piano Sonata No. 14 in C Sharp Minor (Moonlight Sonata)		TOO long?
+Trivial Pursuit - 036 - Grande Valse Villageoise (The Garland Waltz)
+Trivial Pursuit - 044 - (Unknown)
+Trivial Pursuit - 047 - La Primavera (Spring)
+Trivial Pursuit - 054 - March of the Volunteers
+Trivial Pursuit - 057 - Maria
+Trivial Pursuit - 062 - (Unknown)
+
+Trivial Pursuit - 190 - Minuet In G Major (Unused)
+Trivial Pursuit - 243 - We Three Kings (Unused)
+Trivial Pursuit - 257 - Herz und Mund und Tat und Leben, BWV 147 (Jesu, Joy of Man's Desiring)
+Trivial Pursuit - 247 - Greensleeves
+Trivial Pursuit - 229 - Tradition
+Trivial Pursuit - 237 - Antioch
+Trivial Pursuit - 221 - 9th Symphony, Movement IV (Ode to Joy)
+C:\stevepro\Personal\_Platformer\VGMs\TrivialPursuit-SMS
+
+
 23/03/2019
 Polish
 cont => ready want delay as can hold fire1 and jump when re-play
