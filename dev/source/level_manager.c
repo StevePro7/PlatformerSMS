@@ -86,6 +86,13 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 				{
 					lo->gem_level++;
 				}
+				if( tile_type_gempower == tile_type )
+				{
+					if( invincible )
+					{
+						lo->drawtiles_array[ idx ] = tile_type_blankGap;
+					}
+				}
 
 				engine_tile_manager_get_collision( &coll_type, tile, difficulty );
 
