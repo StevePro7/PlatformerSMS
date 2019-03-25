@@ -63,6 +63,13 @@ void engine_memo_manager_draw_level( const unsigned char world, const unsigned c
 	engine_font_manager_draw_text( count_text[ round ], x + 7, y + 2 );
 }
 
+void engine_memo_manager_draw_reset()
+{
+	unsigned char x = 12;
+	unsigned char y = 20;
+	unsigned char wide = 12;
+	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_RESET_MESSAGE1, LOCALE_RESET_MESSAGE2, x, y, wide );
+}
 void engine_memo_manager_draw_pass( unsigned char perfect )
 {
 	unsigned char x = 12;

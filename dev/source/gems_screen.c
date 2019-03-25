@@ -25,7 +25,7 @@ void screen_gems_screen_load()
 	engine_score_manager_draw_score( 20, 22 );
 
 	engine_reset_manager_load( GEMS_SCREEN_DELAY2 );
-	stage = 0;
+	stage = event_stage_start;
 }
 
 void screen_gems_screen_update( unsigned char *screen_type )
@@ -34,7 +34,7 @@ void screen_gems_screen_update( unsigned char *screen_type )
 	unsigned char input;  
 	unsigned char check;
 
-	if( 1 == stage )
+	if( event_stage_pause == stage )
 	{
 		delay = engine_delay_manager_update();
 		if( delay )
@@ -60,7 +60,7 @@ void screen_gems_screen_update( unsigned char *screen_type )
 		{
 			engine_audio_manager_sound_reset();
 			engine_delay_manager_load( GEMS_SCREEN_DELAY2 );
-			stage = 1;
+			stage = event_stage_pause;
 			//*screen_type = screen_type_begin;
 			return;
 		}
