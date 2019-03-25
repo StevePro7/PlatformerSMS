@@ -4,16 +4,20 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "memo_manager.h"
+#include "delay_manager.h"
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "score_manager.h"
+#include "audio_manager.h"
 
+#define CONT_SCREEN_DELAY	50
 #define TEXT_X				12
 #define TEXT_Y				21
 #define OPT1_X				TEXT_X + 0
 #define OPT2_X				TEXT_X + 6
 
+static unsigned char stage;
 static unsigned char cursor;
 static unsigned char cursorX[ 2 ] = { OPT1_X, OPT2_X };
 static void display_cursor();
@@ -23,12 +27,13 @@ void screen_cont_screen_load()
 	engine_memo_manager_draw_cont();
 	cursor = 0;
 	display_cursor();
+	stage = event_stage_start;
 }
 
 void screen_cont_screen_update( unsigned char *screen_type )
 {
 	unsigned char test[ 4 ] = { 0, 0, 0, 0 };
-
+	unsigned char delay;
 	//const unsigned char leftX = 3;
 	//const unsigned char rghtX = 11;
 
@@ -38,6 +43,29 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
 	//engine_player_manager_hide( leftX, rghtX );
 
+	if( event_stage_pause == stage )
+	{
+		delay = engine_delay_manager_update();
+		if( delay )
+		{
+			if( 0 == cursor )
+			{
+				engine_score_manager_reset_lives();
+				*screen_type = screen_type_ready;
+				return;
+			}
+			else
+			{
+				*screen_type = screen_type_over;
+				return;
+			}
+		}
+		else
+		{
+			*screen_type = screen_type_cont;
+			return;
+		}
+	}
 
 	test[ 0 ] = engine_input_manager_hold_left();
 	test[ 1 ] = engine_input_manager_hold_right();
@@ -50,7 +78,11 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	test[ 2 ] = engine_input_manager_hold_fire1();
 	if( test[ 2 ] )
 	{
-		if( 0 == cursor )
+		engine_audio_manager_sound_accept();
+		stage = event_stage_pause;
+		return;
+
+		/*if( 0 == cursor )
 		{
 			engine_score_manager_reset_lives();
 			*screen_type = screen_type_ready;
@@ -60,7 +92,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		{
 			*screen_type = screen_type_over;
 			return;
-		}
+		}*/
 	}
 
 	// if input_manager( fire1 ) then

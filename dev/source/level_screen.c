@@ -13,7 +13,7 @@
 #include "audio_manager.h"
 #include <stdlib.h>
 
-#define LEVEL_SCREEN_DELAY		50
+#define LEVEL_SCREEN_DELAY	50
 #define TEXT_X				11
 #define TEXT_Y				18
 #define OPT1_X				TEXT_X + 7

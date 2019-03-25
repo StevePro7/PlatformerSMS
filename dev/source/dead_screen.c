@@ -35,7 +35,8 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_score_object *so = &global_score_object;
 	unsigned char delay;
-	unsigned char input;
+	//unsigned char input;
+	unsigned char test1, test2;
 
 	//const unsigned char leftX = 4;
 	//const unsigned char rghtX = 10;
@@ -52,9 +53,12 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	}
 
 	delay = engine_delay_manager_update();
-	input = engine_input_manager_hold_fire1();
+	//input = engine_input_manager_hold_fire1();
+	test1 = engine_input_manager_hold_left();
+	test2 = engine_input_manager_hold_right();
 
-	if( delay || input )
+	//if( delay || input )
+	if( delay || test1 || test2 )
 	{
 		if( so->num_lives <= 0 )
 		{
