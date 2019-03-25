@@ -109,6 +109,19 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 		}
 	}
 
+	// Hardcode 2x bottom game data steps as passable.
+	row = MAX_ROWS - 1;
+	col = 1;
+	idx = row * lo->draw_cols + col;
+	lo->drawtiles_array[ idx ] = tile_type_blankGap;
+	lo->collision_array[ idx ] = coll_type_passable;
+
+	col = 15;
+	idx = row * lo->draw_cols + col;
+	lo->drawtiles_array[ idx ] = tile_type_blankGap;
+	lo->collision_array[ idx ] = coll_type_passable;
+
+
 	// Calculate the min + max X co-ordinates per enemy.
 	lo->enemyCount = enemyCount;
 	for( cnt = 0; cnt < enemyCount; cnt++ )
