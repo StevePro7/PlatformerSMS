@@ -23,7 +23,8 @@ static unsigned char invincible;
 static unsigned char collision;
 //static unsigned char pitstokill;		// TODO - calculate this bool on load level
 
-// Private helper method.
+// Private helper methods.
+static void increase_lives();
 static unsigned char ground_collision();
 
 void screen_play_screen_load()
@@ -42,6 +43,7 @@ void screen_play_screen_load()
 void screen_play_screen_update( unsigned char *screen_type )
 {
 	struct_level_object *lo = &global_level_object;
+	struct_score_object *so = &global_score_object;
 	struct_player_object *po = &global_player_object;
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
@@ -99,14 +101,22 @@ void screen_play_screen_update( unsigned char *screen_type )
 				}
 				else if( event_type_gemscorehi == evt || event_type_gemscorelo == evt )
 				{
-					engine_audio_manager_sound_gem();
 					engine_score_manager_update_gems();
 					engine_score_manager_draw_score( 31, 2 );
+
+					if( 0 == so->gem_total % MAX_GEMS_FREEMAN )
+					{
+						increase_lives();
+					}
+					else
+					{
+						engine_audio_manager_sound_gem();
+					}
 				}
-				//else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
-				//{
-					// Enable immunability = temp invincible to enemy/guard but can still fall down pits...
-				//}
+				else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
+				{
+					increase_lives();
+				}
 			}
 		}
 	}
@@ -150,6 +160,23 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = screen_type_play;
+}
+
+static void increase_lives()
+{
+	struct_score_object *so = &global_score_object;
+
+	if( invincible )
+	{
+		return;
+	}
+
+	if( so->num_lives < MAMNUM_LIVES )
+	{
+		engine_score_manager_update_lives( 1 );
+		engine_score_manager_draw_lives();
+		//engine_audio_manager_sound_power();
+	}
 }
 
 static unsigned char ground_collision()
