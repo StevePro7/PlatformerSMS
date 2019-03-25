@@ -1,5 +1,6 @@
 #include "dead_screen.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "memo_manager.h"
@@ -15,9 +16,14 @@
 
 void screen_dead_screen_load()
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_player_object *po = &global_player_object;
 
-	engine_audio_manager_sound_death();
+	if( ho->hack_delayspeed )
+	{
+		engine_audio_manager_sound_death();
+	}
+
 	engine_delay_manager_load( DEAD_SCREEN_DELAY );
 
 	// If player jumps through ceiling and dies then ouch!
@@ -36,7 +42,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_score_object *so = &global_score_object;
 	unsigned char delay;
 	//unsigned char input;
-	unsigned char test1, test2;
+	//unsigned char test1, test2;
 
 	//const unsigned char leftX = 4;
 	//const unsigned char rghtX = 10;
@@ -54,11 +60,12 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 	delay = engine_delay_manager_update();
 	//input = engine_input_manager_hold_fire1();
-	test1 = engine_input_manager_hold_left();
-	test2 = engine_input_manager_hold_right();
+	//test1 = engine_input_manager_hold_left();
+	//test2 = engine_input_manager_hold_right();
 
 	//if( delay || input )
-	if( delay || test1 || test2 )
+	//if( delay || test1 || test2 )
+	if( delay )
 	{
 		if( so->num_lives <= 0 )
 		{

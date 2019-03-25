@@ -14,7 +14,7 @@
 #include "state_manager.h"
 #include "game_manager.h"
 
-#define LOAD_SCREEN_DELAY		100
+#define LOAD_SCREEN_DELAY		150
 
 void screen_load_screen_load()
 {

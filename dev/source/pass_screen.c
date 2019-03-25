@@ -1,6 +1,6 @@
 #include "pass_screen.h"
 #include "_snd_manager.h"
-#include "hack_manager.h"
+//#include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "memo_manager.h"
@@ -19,15 +19,15 @@ static unsigned char gem_level;
 
 void screen_pass_screen_load()
 {
-	struct_hack_object *ho = &global_hack_object;
+	//struct_hack_object *ho = &global_hack_object;
 	struct_level_object *lo = &global_level_object;
 	struct_score_object *so = &global_score_object;
 	unsigned char perfect = 0;
 
-	if( ho->hack_delayspeed)
-	{
+	//if( ho->hack_delayspeed)
+	//{
 		engine_audio_manager_sound_level();
-	}
+	//}
 
 	// Check if player collected all available gems.
 	gem_level = so->gem_level;
