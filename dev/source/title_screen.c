@@ -6,11 +6,11 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "text_manager.h"
-//#include "content_manager.h"
 #include "delay_manager.h"
 #include "tile_manager.h"
 #include "input_manager.h"
 #include "audio_manager.h"
+#include "game_manager.h"
 #include <stdlib.h>
 
 #define TITLE_FLASH_DELAY	50
@@ -18,19 +18,32 @@
 #define TEXT_Y				18
 
 static unsigned char flash;
+static unsigned char local_cheat;
+static unsigned char cheat_count;
 
 void screen_title_screen_load()
 {
+	struct_hack_object *ho = &global_hack_object;
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
 
 	engine_text_manager_clear_three();
 	engine_text_manager_cheat_blank();
 	engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
+
+	local_cheat = 0;
+	cheat_count = 0;
+
+	if( ho->hack_invincible )
+	{
+		engine_text_manager_cheat_write();
+		//engine_audio_manager_sound_power();
+	}
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char delay;
 	unsigned char input;
 
@@ -57,6 +70,21 @@ void screen_title_screen_update( unsigned char *screen_type )
 		engine_audio_manager_sound_accept();
 		*screen_type = screen_type_diff;
 		return;
+	}
+
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		if( !ho->hack_invincible && !local_cheat )
+		{
+			cheat_count++;
+			if( cheat_count >= LOCAL_CHEAT_TOTAL )
+			{
+				engine_text_manager_cheat_write();
+				engine_audio_manager_sound_power();
+				go->localcheat = 1;
+			}
+		}
 	}
 
 	rand();

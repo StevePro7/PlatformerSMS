@@ -21,7 +21,6 @@
 // Cache values for entire class.
 static unsigned char invincible;
 static unsigned char collision;
-//static unsigned char pitstokill;		// TODO - calculate this bool on load level
 
 // Private helper methods.
 static void increase_lives();
@@ -31,9 +30,9 @@ void screen_play_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	struct_stats_object *so = &global_stats_object;
-
 	enum_diff_type difficulty;
-	invincible = go->invincible;
+
+	invincible = go->invincible || go->localcheat;
 	difficulty = go->difficulty;
 	collision = so->collision_offsets[ difficulty ];
 

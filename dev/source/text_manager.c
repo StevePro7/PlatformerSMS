@@ -27,17 +27,20 @@ void engine_text_manager_clear_three()
 
 void engine_text_manager_cheat_blank()
 {
-	unsigned char x;
+	/*unsigned char x;
 	for( x = 0; x <= 4; x += 2 )
 	{
 		engine_font_manager_draw_text( LOCALE_SELECT_BLANK, SCREEN_TILE_LEFT + x, CHEAT_Y + 0 );
 		engine_font_manager_draw_text( LOCALE_SELECT_BLANK, SCREEN_TILE_LEFT + x, CHEAT_Y + 1 );
-	}
+	}*/
+
+	engine_font_manager_draw_text( "      ", SCREEN_TILE_LEFT, CHEAT_Y + 1 );
 }
 void engine_text_manager_cheat_write()
 {
-	engine_font_manager_draw_text( LOCALE_PRESS_CHEAT, SCREEN_TILE_LEFT, CHEAT_Y + 0 );
-	engine_font_manager_draw_text( LOCALE_PRESS_MODES, SCREEN_TILE_LEFT, CHEAT_Y + 1 );
+	engine_font_manager_draw_text( LOCALE_PRESS_CHEAT, SCREEN_TILE_LEFT, CHEAT_Y + 1 );
+	//engine_font_manager_draw_text( LOCALE_PRESS_CHEAT, SCREEN_TILE_LEFT, CHEAT_Y + 0 );
+	//engine_font_manager_draw_text( LOCALE_PRESS_MODES, SCREEN_TILE_LEFT, CHEAT_Y + 1 );
 }
 
 void engine_text_manager_write_gems()
