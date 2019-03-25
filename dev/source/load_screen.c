@@ -19,12 +19,14 @@
 void screen_load_screen_load()
 {
 	struct_game_object *go = &global_game_object;
+	unsigned char invincible;
 
 	engine_delay_manager_load( LOAD_SCREEN_DELAY );
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 
-	engine_level_manager_load_level( go->world_no, go->round_no, go->invincible, go->difficulty );
+	invincible = go->invincible || go->localcheat;
+	engine_level_manager_load_level( go->world_no, go->round_no, invincible, go->difficulty );
 	engine_state_manager_load();
 	engine_player_manager_load();
 	engine_enemyX_manager_load();

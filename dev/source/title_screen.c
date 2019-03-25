@@ -18,7 +18,6 @@
 #define TEXT_Y				18
 
 static unsigned char flash;
-static unsigned char local_cheat;
 static unsigned char cheat_count;
 
 void screen_title_screen_load()
@@ -30,9 +29,7 @@ void screen_title_screen_load()
 	engine_text_manager_cheat_blank();
 	engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
 
-	local_cheat = 0;
 	cheat_count = 0;
-
 	if( ho->hack_invincible )
 	{
 		engine_text_manager_cheat_write();
@@ -75,7 +72,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_fire2();
 	if( input )
 	{
-		if( !ho->hack_invincible && !local_cheat )
+		if( !ho->hack_invincible && !go->localcheat )
 		{
 			cheat_count++;
 			if( cheat_count >= LOCAL_CHEAT_TOTAL )
