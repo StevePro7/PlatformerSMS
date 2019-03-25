@@ -3,8 +3,9 @@
 
 typedef struct tag_struct_reset_object
 {
-	unsigned int delay_delay;
-	unsigned int delay_timer;
+	unsigned char reset_frame;
+	unsigned char reset_timer;
+	unsigned char reset_screen;
 
 } struct_reset_object;
 
