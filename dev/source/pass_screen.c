@@ -55,6 +55,10 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	//const unsigned char leftX = 4;
 	//const unsigned char rghtX = 11;
 
+	// Draw enemies first!
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_hide();
+
 	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
 	//engine_player_manager_hide( leftX, rghtX );
 
@@ -91,9 +95,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		//}
 	}
 
-	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_hide();
+	
 
 	*screen_type = screen_type_pass;
 }

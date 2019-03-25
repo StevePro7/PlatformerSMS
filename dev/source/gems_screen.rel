@@ -2,13 +2,13 @@ XL2
 H 9 areas B global symbols
 M gems_screen
 O -mz80
-S _engine_player_manager_draw Ref0000
 S _engine_score_manager_draw_score Ref0000
 S _engine_input_manager_hold_fire1 Ref0000
 S .__.ABS. Def0000
 S _engine_delay_manager_update Ref0000
 S _engine_enemyX_manager_draw_enemys Ref0000
 S _engine_memo_manager_draw_gems Ref0000
+S _engine_player_manager_hide Ref0000
 S _engine_tile_manager_draw_tile Ref0000
 S _engine_delay_manager_load Ref0000
 A _CODE size 43 flags 0 addr 0
@@ -25,15 +25,15 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 21 96 00 E5 CD 00 00 F1 CD 00 00 21 0D 15
-R 00 00 00 00 02 07 08 00 02 0B 06 00
+R 00 00 00 00 02 07 08 00 02 0B 05 00
 T 0E 00 E5 3E 0C F5 33 CD 00 00 33 21 14 16 E3 CD
 R 00 00 00 00 02 08 07 00
 T 1C 00 00 00 F1 C9
-R 00 00 00 00 02 02 01 00
+R 00 00 00 00 02 02 00 00
 T 20 00
 R 00 00 00 00
 T 20 00 CD 00 00 4D C5 CD 00 00 C1 45 D1 E1 E5 D5
-R 00 00 00 00 02 03 04 00 02 08 02 00
+R 00 00 00 00 02 03 03 00 02 08 01 00
 T 2E 00 79 B7 20 03 B0 28 03
 R 00 00 00 00
 T 35 00
@@ -43,4 +43,4 @@ R 00 00 00 00
 T 38 00
 R 00 00 00 00
 T 38 00 E5 CD 00 00 CD 00 00 E1 36 0D C9
-R 00 00 00 00 02 04 05 00 02 07 00 00
+R 00 00 00 00 02 04 04 00 02 07 06 00
