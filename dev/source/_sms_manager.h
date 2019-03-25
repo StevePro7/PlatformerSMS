@@ -31,6 +31,9 @@ void devkit_SMS_waitForVBlank();
 void devkit_SMS_copySpritestoSAT();
 void devkit_UNSAFE_SMS_copySpritestoSAT();
 
+unsigned char devkit_SMS_queryPauseRequested();
+void devkit_SMS_resetPauseRequest();
+
 // input
 unsigned int devkit_SMS_getKeysStatus();
 unsigned int devkit_PORT_A_KEY_UP();

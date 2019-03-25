@@ -39,6 +39,25 @@ void main(void)
 	devkit_SMS_displayOn();
 	for (;;)
 	{
+		if( devkit_SMS_queryPauseRequested() )
+		{
+			devkit_SMS_resetPauseRequest();
+			global_pause = !global_pause;
+			if( global_pause )
+			{
+				devkit_PSGSilenceChannels();
+			}
+			else
+			{
+				devkit_PSGRestoreVolumes();
+			}
+		}
+
+		if( global_pause )
+		{
+			continue;
+		}
+
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 

@@ -132,6 +132,15 @@ void devkit_UNSAFE_SMS_copySpritestoSAT()
 	UNSAFE_SMS_copySpritestoSAT();
 }
 
+unsigned char devkit_SMS_queryPauseRequested()
+{
+	return SMS_queryPauseRequested();
+}
+void devkit_SMS_resetPauseRequest()
+{
+	SMS_resetPauseRequest();
+}
+
 // input
 unsigned int devkit_SMS_getKeysStatus()
 {
