@@ -28,9 +28,6 @@ void screen_gems_screen_update( unsigned char *screen_type )
 	//const unsigned char leftX = 4;
 	//const unsigned char rghtX = 11;
 
-	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_draw();
 	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
 	//engine_player_manager_hide( leftX, rghtX );
 
@@ -42,6 +39,10 @@ void screen_gems_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_load;
 		return;
 	}
+
+	// Draw enemies first!
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
 
 	*screen_type = screen_type_gems;
 }

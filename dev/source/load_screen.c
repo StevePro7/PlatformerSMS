@@ -61,6 +61,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
+
 	//engine_enemyX_manager_hide_enemys( leftX , rghtX );
 	//engine_player_manager_hide( leftX, rghtX );
 

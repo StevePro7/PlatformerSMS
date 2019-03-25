@@ -10,7 +10,7 @@
 #include "score_manager.h"
 #include "audio_manager.h"
 
-#define DEAD_SCREEN_DELAY		200
+#define DEAD_SCREEN_DELAY		150
 #define DEAD_DECAPITATE			20
 
 void screen_dead_screen_load()

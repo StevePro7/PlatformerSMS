@@ -387,27 +387,28 @@ void engine_player_manager_draw()
 	}
 }
 
-/*
-void engine_player_manager_hide( int leftX, int rghtX )
+
+//void engine_player_manager_hide( int leftX, int rghtX )
+void engine_player_manager_hide()
 {
 	struct_player_object *po = &global_player_object;
 
 	unsigned int tile;
-	int size;
+	//int size;
 	get_draw_position();
 
 	// Don't draw if sprite "collides" with memo box.
-	size = po->drawX - DRAW_OFFSET_X;
-	if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
-		( po->drawY > MEMO_SPRITE_TOP && po->drawY < MEMO_SPRITE_BOT ) )
-	{
-		return;
-	}
+	//size = po->drawX - DRAW_OFFSET_X;
+	//if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
+	//	( po->drawY > MEMO_SPRITE_TOP && po->drawY < MEMO_SPRITE_BOT ) )
+	//{
+	//	return;
+	//}
 
 	tile = PLAYER_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER;
 	engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 }
-*/
+
 
 // Private helper methods.
 static void setup_animation()

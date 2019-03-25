@@ -11,7 +11,7 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 
-#define PASS_SCREEN_DELAY	250
+#define PASS_SCREEN_DELAY	120
 
 static unsigned char gem_level;
 
@@ -39,24 +39,23 @@ void screen_pass_screen_load()
 
 void screen_pass_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	struct_score_object *so = &global_score_object;
 	struct_game_object *go = &global_game_object;
+
 	unsigned char delay;
-	//unsigned char input;
+	unsigned char input;
 
 	//const unsigned char leftX = 4;
 	//const unsigned char rghtX = 11;
-
-	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_draw();
 
 	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
 	//engine_player_manager_hide( leftX, rghtX );
 
 	delay = engine_delay_manager_update();
-	//input = engine_input_manager_hold_fire1();
+	input = engine_input_manager_hold_fire1();
 
-	if( delay )//|| input )
+	if( delay || input )
 	{
 		go->round_no++;
 		if( go->round_no >= MAX_ROUNDS )
@@ -73,18 +72,22 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		}
 
 		// Don't navigate to gems screen until collected at least one gem.
-		if( 0 == gem_level )
-		{
+		//if( 0 == so->gem_total )
+		//{
 			*screen_type = screen_type_load;
 			return;
-		}
-		else
-		{
-			*screen_type = screen_type_gems;
-			return;
-		}
-		
+		//}
+		//else
+		//{
+		//	*screen_type = screen_type_gems;
+		//	return;
+		//}
 	}
+
+	// Draw enemies first!
+	engine_enemyX_manager_draw_enemys();
+	//engine_player_manager_draw();
+	engine_player_manager_hide();
 
 	*screen_type = screen_type_pass;
 }
