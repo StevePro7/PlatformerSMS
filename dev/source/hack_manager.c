@@ -93,5 +93,5 @@ void engine_hack_manager_invert()
 	//ho->hack_sound = 0;
 
 	ho->hack_world = 4;
-	ho->hack_round = 2;
+	ho->hack_round = 3;
 }

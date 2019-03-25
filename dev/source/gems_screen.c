@@ -11,30 +11,44 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 
-#define GEMS_SCREEN_DELAY		150
+#define GEMS_SCREEN_DELAY1		150
+#define GEMS_SCREEN_DELAY2		50
+
+static unsigned char stage;
 
 void screen_gems_screen_load()
 {
-	engine_delay_manager_load( GEMS_SCREEN_DELAY );
+	engine_delay_manager_load( GEMS_SCREEN_DELAY1 );
 	engine_memo_manager_draw_gems();
 
 	engine_tile_manager_draw_tile( tile_type_gemscore, 13, 21 );
 	engine_score_manager_draw_score( 20, 22 );
 
 	engine_reset_manager_load( 50, screen_type_begin );
+	stage = 0;
 }
 
 void screen_gems_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
-	unsigned char input;
+	unsigned char input;  
 	unsigned char check;
 
-	//const unsigned char leftX = 4;
-	//const unsigned char rghtX = 11;
+	if( 1 == stage )
+	{
+		delay = engine_delay_manager_update();
+		if( delay )
+		{
+			*screen_type = screen_type_begin;
+			return;
+		}
+		else
+		{
+			*screen_type = screen_type_gems;
+			return;
+		}
+	}
 
-	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
-	//engine_player_manager_hide( leftX, rghtX );
 
 	delay = engine_delay_manager_update();
 	input = engine_input_manager_move_fire2();
@@ -45,7 +59,9 @@ void screen_gems_screen_update( unsigned char *screen_type )
 		if( check )
 		{
 			engine_audio_manager_sound_reset();
-			*screen_type = screen_type_load;
+			engine_delay_manager_load( GEMS_SCREEN_DELAY2 );
+			stage = 1;
+			//*screen_type = screen_type_begin;
 			return;
 		}
 	}
