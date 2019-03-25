@@ -66,7 +66,7 @@ void engine_player_manager_load()
 	po->posnY = rectB;
 
 	po->player_move_type = move_type_idle;
-	po->player_health_type = health_type_alive;
+	//po->player_health_type = health_type_alive;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;
@@ -208,12 +208,8 @@ void engine_player_manager_apply_physics()
 		po->posnX = MAX_POSITION_X;
 	}
 
+	// Check if player fell in pit deferred to caller.
 	po->posnY += po->velY;
-	if( po->posnY >= MAX_POSITION_Y )
-	{
-		// Player fell in pit!
-		po->player_health_type = health_type_death;
-	}
 }
 
 void engine_player_manager_handle_collisions()

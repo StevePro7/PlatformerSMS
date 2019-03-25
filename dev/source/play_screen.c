@@ -68,7 +68,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_player_manager_draw();
 
 
-	// Check reset first.
+	// Check reset next.
 	input = engine_input_manager_move_fire2();
 	if( input )
 	{
@@ -135,10 +135,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	// TODO extract if no pits in level then only check if there is...
-	// could leave this in for the moment to stress test redundant check
 	// Check if fell into pit.
-	if( health_type_death == po->player_health_type )
+	if( po->posnY >= MAX_POSITION_Y )
 	{
 		*screen_type = screen_type_dead;
 		return;

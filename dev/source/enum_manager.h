@@ -104,12 +104,12 @@ typedef enum tag_enum_move_type
 //
 //} enum_half_type;
 
-typedef enum tag_enum_health_type
-{
-	health_type_alive = 0,
-	health_type_death = 1,
-
-} enum_health_type;
+//typedef enum tag_enum_health_type
+//{
+//	health_type_alive = 0,
+//	health_type_death = 1,
+//
+//} enum_health_type;
 
 typedef enum tag_enum_action_type
 {

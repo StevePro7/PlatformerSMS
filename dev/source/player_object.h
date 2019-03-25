@@ -7,7 +7,7 @@
 typedef struct tag_struct_player_object
 {
 	enum_move_type player_move_type;
-	enum_health_type player_health_type;
+	//enum_health_type player_health_type;
 	//enum_move_type player_curr_move_type, player_prev_move_type;
 	int spotX, spotY;
 	int posnX, posnY;
