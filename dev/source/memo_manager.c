@@ -31,25 +31,16 @@ void engine_memo_manager_init( unsigned char lines )
 
 void engine_memo_manager_draw_title()
 {
-	/*unsigned char x = 12;
-	unsigned char y = 0;
-	unsigned char wide = 12;
-	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_TITLE_MESSAGE1, LOCALE_TITLE_MESSAGE2, x, y, wide );*/
-
 	unsigned char x;
-	//unsigned char y = 0;
-	//unsigned char wide = 12;
-	//draw_memo( LOCALE_BLANK_SIZE10, LOCALE_TITLE_MESSAGE1, LOCALE_TITLE_MESSAGE2, x, y, wide );
-
 	for( x = 2; x < 32; x++ )
 	{
-		engine_tile_manager_draw_small( x, 0, get_tile() );
+		//engine_tile_manager_draw_small( x, 0, get_tile() );
 	}
 
-	engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE1, 6, 0 );
-	engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE2, 18, 0 );
-	//engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE1, 7, 0 );
-	//engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE2, 19, 0 );
+	//engine_font_manager_draw_text( "====  PLATFORM  EXPLORER  ====", 2, 0 );
+	engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE1, 13, 0 );
+	engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE2, 13, 1 );
+
 }
 
 void engine_memo_manager_draw_level( const unsigned char world, const unsigned char round )
