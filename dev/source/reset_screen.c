@@ -1,20 +1,34 @@
 #include "reset_screen.h"
+#include "delay_manager.h"
 #include "enum_manager.h"
-#include "hack_manager.h"
-#include "font_manager.h"
-#include "game_manager.h"
+#include "player_manager.h"
+#include "enemy_manager.h"
+#include "audio_manager.h"
+
+#define RESET_SCREEN_DELAY		75
 
 void screen_reset_screen_load()
 {
-	struct_hack_object *ho = &global_hack_object;
-	struct_game_object *go = &global_game_object;
-
-	engine_font_manager_draw_text( "RESET SCREEN", 10, 0 );
-	engine_font_manager_draw_data( ho->hack_difficulty, 20, 20 );
-	engine_font_manager_draw_data( go->difficulty, 20, 21 );
+	engine_audio_manager_sound_reset();
+	engine_delay_manager_load( RESET_SCREEN_DELAY );
 }
 
 void screen_reset_screen_update( unsigned char *screen_type )
 {
+	unsigned char delay;
+
+	engine_enemyX_manager_draw_enemys();	
+
+	delay = engine_delay_manager_update();
+	if( delay )
+	{
+		*screen_type = screen_type_ready;
+		return;
+	}
+
+	// Draw enemies first!
+
+//	engine_player_manager_draw();
+
 	*screen_type = screen_type_reset;
 }

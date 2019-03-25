@@ -3,6 +3,7 @@
 #include "hack_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "reset_manager.h"
 #include "tile_manager.h"
 #include "level_manager.h"
 #include "anim_manager.h"
@@ -14,6 +15,8 @@
 #include "score_manager.h"
 #include "audio_manager.h"
 #include "game_manager.h"
+
+#define PLAY_SCREEN_DELAY		75
 
 // Cache values for entire class.
 static unsigned char invincible;
@@ -32,6 +35,8 @@ void screen_play_screen_load()
 	invincible = go->invincible;
 	difficulty = go->difficulty;
 	collision = so->collision_offsets[ difficulty ];
+
+	engine_reset_manager_load( PLAY_SCREEN_DELAY );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -40,11 +45,12 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
+	unsigned char input;
+	unsigned char check;
 	unsigned char idx;
 	unsigned char evt;
 	int coll_diff;
 
-	// TODO Check reset first.
 
 	// Player movement.
 	engine_player_manager_get_input();
@@ -58,6 +64,24 @@ void screen_play_screen_update( unsigned char *screen_type )
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
+
+
+	// Check reset first.
+	input = engine_input_manager_move_fire2();
+	if( input )
+	{
+		check = engine_reset_manager_update();
+		if( check )
+		{
+			*screen_type = screen_type_reset;
+			return;
+		}
+	}
+	else
+	{
+		engine_reset_manager_reset();
+	}
+
 
 	// Collision detection while player on ground.
 	if( po->isOnGround )
