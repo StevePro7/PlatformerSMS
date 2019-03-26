@@ -1,11 +1,10 @@
 #include "player_manager.h"
 #include "global_manager.h"
-#include "font_manager.h"
 #include "sprite_manager.h"
 #include "level_manager.h"
 #include "anim_manager.h"
 #include "input_manager.h"
-
+#include <math.h>
 // IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE
 #else
@@ -54,29 +53,6 @@ static void get_draw_position();
 static void get_common_position( int posX, int posY, signed char offsetX );
 static void process_collision( int rectALeft, int rectATop, int rectBLeft, int rectBTop );
 
-static int minDistanceX, negMinDistanceX;
-static int minDistanceY, negMinDistanceY;
-
-void engine_player_manager_test()
-{
-	engine_font_manager_draw_data( halfWidthA, 20, 1 );
-	engine_font_manager_draw_data( halfHeightA, 20, 2 );
-	engine_font_manager_draw_data( halfWidthB, 20, 3 );
-	engine_font_manager_draw_data( halfHeightB, 20, 4 );
-
-	engine_font_manager_draw_data( minDistanceX, 20, 5 );
-	engine_font_manager_draw_data( minDistanceY, 20, 6 );
-	engine_font_manager_draw_data( negMinDistanceX, 20, 7 );
-	engine_font_manager_draw_data( negMinDistanceY, 20, 8 );
-}
-
-void engine_player_manager_init()
-{
-	minDistanceX = halfWidthA + halfWidthB;
-	minDistanceY = halfHeightA + halfHeightB;
-	negMinDistanceX = -1 * minDistanceX;
-	negMinDistanceY = -1 * minDistanceY;
-}
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
@@ -330,10 +306,12 @@ void engine_player_manager_handle_collisions()
 				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
 				if( 0 != po->depthX || 0 != po->depthY )
 				{
+					//absDepthX = fabsf( po->depthX );
+					//absDepthY = fabsf( po->depthY );
 					//absDepthX = fabsf( ( float ) po->depthX );
 					//absDepthY = fabsf( ( float ) po->depthY );
-					absDepthX = myabs( po->depthX );
-					absDepthY = myabs( po->depthY );
+					//absDepthX = myabs( po->depthX );
+					//absDepthY = myabs( po->depthY );
 
 
 					// Resolve the collision along the shallow axis.
@@ -522,9 +500,9 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	int centerAX, centerAY;
 	int centerBX, centerBY;
 	int distanceX, distanceY;
-	//int minDistanceX, minDistanceY;
+	int minDistanceX, minDistanceY;
 	//float fDistanceX, fDistanceY;
-	//int fDistanceX, fDistanceY;
+	int fDistanceX, fDistanceY;
 
 	// Calculate half sizes.	DONE
 
@@ -538,51 +516,23 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	distanceX = centerAX - centerBX;
 	distanceY = centerAY - centerBY;
 
-	// Pre-calculated on init.
-	//minDistanceX = halfWidthA + halfWidthB;
-	//minDistanceY = halfHeightA + halfHeightB;
+	minDistanceX = halfWidthA + halfWidthB;
+	minDistanceY = halfHeightA + halfHeightB;
 
 	po->depthX = 0;
 	po->depthY = 0;
 
-	// Attempt to NOT use abs() function!
-	if( distanceX > 0 )
-	{
-		if( distanceX >= minDistanceX )
-		{
-			return;
-		}
-	}
-	else if( distanceX < 0 )
-	{
-		if( distanceX <= negMinDistanceX )
-		{
-			return;
-		}
-	}
-	if( distanceY > 0 )
-	{
-		if( distanceY >= minDistanceY )
-		{
-			return;
-		}
-	}
-	else if( distanceY < 0 )
-	{
-		if( distanceY <= negMinDistanceY )
-		{
-			return;
-		}
-	}
-
 	// If we are not intersecting at all, return (0, 0).
-	//fDistanceX = myabs( distanceX );
-	//fDistanceY = myabs( distanceY );
-	//IMPORTANT no need to check if depthX == 0 or depthY == 0 because this test would always fail anyway!
-	//if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
-	//{
-	//	return;
-	//}
+	//fDistanceX = fabsf( ( float ) distanceX );
+	//fDistanceY = fabsf( ( float ) distanceY );
+
+	fDistanceX = myabs( distanceX );
+	fDistanceY = myabs( distanceY );
+
+	if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
+	{
+		return;
+	}
 
 	// Calculate and return intersection depths.
 	po->depthX = distanceX > 0 ? minDistanceX - distanceX : -minDistanceX - distanceX;

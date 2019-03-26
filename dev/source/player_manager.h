@@ -7,6 +7,9 @@
 extern struct_player_object global_player_object;
 
 // Methods.
+void engine_player_manager_test();
+
+void engine_player_manager_init();
 void engine_player_manager_load();
 //void engine_player_manager_update();		// TODO refactor private methods into this public method
 void engine_player_manager_get_input();
