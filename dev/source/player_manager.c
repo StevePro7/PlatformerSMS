@@ -332,39 +332,88 @@ void engine_player_manager_handle_collisions()
 				{
 					//absDepthX = fabsf( ( float ) po->depthX );
 					//absDepthY = fabsf( ( float ) po->depthY );
-					absDepthX = myabs( po->depthX );
-					absDepthY = myabs( po->depthY );
+
+					//absDepthX = myabs( po->depthX );
+					//absDepthY = myabs( po->depthY );
+					absDepthX = po->depthX;
+					absDepthY = po->depthY;
+
+					// Ensure both using same sign.
+					if( absDepthX < 0 && absDepthY >= 0 )
+					{
+						absDepthX *= -1;
+					}
+					if( absDepthY < 0 && absDepthX >= 0 )
+					{
+						absDepthY *= -1;
+					}
 
 
 					// Resolve the collision along the shallow axis.
-					if( absDepthY < absDepthX || coll_type_platform == coll_type )
+					if( absDepthY < 0 && absDepthX < 0 )
 					{
-						// If we crossed the top of a tile, we are on the ground.
-						if( po->previousBottom <= tileBoundsTopX )
+						if( absDepthX < absDepthY || coll_type_platform == coll_type )
 						{
-							po->isOnGround = true;
-						}
+							// If we crossed the top of a tile, we are on the ground.
+							if( po->previousBottom <= tileBoundsTopX )
+							{
+								po->isOnGround = true;
+							}
 
-						// Ignore platforms, unless we are on the ground.
-						if( coll_type_impassable == coll_type || po->isOnGround )
+							// Ignore platforms, unless we are on the ground.
+							if( coll_type_impassable == coll_type || po->isOnGround )
+							{
+								// Resolve the collision along the Y axis.
+								po->posnY = po->posnY + po->depthY;
+
+								// Perform further collisions with the new bounds.
+								boundsLeft = po->posnX - halfBoundsWidth;
+								boundsTopX = po->posnY - localBoundsHeight;
+							}
+						}
+						else if( coll_type_impassable == coll_type ) // Ignore platforms.
 						{
-							// Resolve the collision along the Y axis.
-							po->posnY = po->posnY + po->depthY;
+							// Resolve the collision along the X axis.
+							po->posnX = po->posnX + po->depthX;
 
 							// Perform further collisions with the new bounds.
 							boundsLeft = po->posnX - halfBoundsWidth;
 							boundsTopX = po->posnY - localBoundsHeight;
 						}
 					}
-					else if( coll_type_impassable == coll_type ) // Ignore platforms.
+					else if( absDepthY >= 0 && absDepthX >= 0 )
 					{
-						// Resolve the collision along the X axis.
-						po->posnX = po->posnX + po->depthX;
+						if( absDepthY < absDepthX || coll_type_platform == coll_type )
+						{
+							// If we crossed the top of a tile, we are on the ground.
+							if( po->previousBottom <= tileBoundsTopX )
+							{
+								po->isOnGround = true;
+							}
 
-						// Perform further collisions with the new bounds.
-						boundsLeft = po->posnX - halfBoundsWidth;
-						boundsTopX = po->posnY - localBoundsHeight;
+							// Ignore platforms, unless we are on the ground.
+							if( coll_type_impassable == coll_type || po->isOnGround )
+							{
+								// Resolve the collision along the Y axis.
+								po->posnY = po->posnY + po->depthY;
+
+								// Perform further collisions with the new bounds.
+								boundsLeft = po->posnX - halfBoundsWidth;
+								boundsTopX = po->posnY - localBoundsHeight;
+							}
+						}
+						else if( coll_type_impassable == coll_type ) // Ignore platforms.
+						{
+							// Resolve the collision along the X axis.
+							po->posnX = po->posnX + po->depthX;
+
+							// Perform further collisions with the new bounds.
+							boundsLeft = po->posnX - halfBoundsWidth;
+							boundsTopX = po->posnY - localBoundsHeight;
+						}
 					}
+
+
 				}
 			}
 		}
@@ -538,7 +587,7 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	distanceX = centerAX - centerBX;
 	distanceY = centerAY - centerBY;
 
-	// Pre-calculated on init.
+	// Pre-calc'd on init.
 	//minDistanceX = halfWidthA + halfWidthB;
 	//minDistanceY = halfHeightA + halfHeightB;
 
