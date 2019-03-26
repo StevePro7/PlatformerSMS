@@ -9,7 +9,7 @@ void screen_func_screen_load()
 {
 	engine_font_manager_draw_text("TEST PLAYER MANAGER", 3, 0);
 
-	engine_player_manager_test();
+	//engine_player_manager_test();
 }
 
 void screen_func_screen_update( unsigned char *screen_type )

@@ -57,18 +57,18 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 static int minDistanceX, negMinDistanceX;
 static int minDistanceY, negMinDistanceY;
 
-void engine_player_manager_test()
-{
-	engine_font_manager_draw_data( halfWidthA, 20, 1 );
-	engine_font_manager_draw_data( halfHeightA, 20, 2 );
-	engine_font_manager_draw_data( halfWidthB, 20, 3 );
-	engine_font_manager_draw_data( halfHeightB, 20, 4 );
-
-	engine_font_manager_draw_data( minDistanceX, 20, 5 );
-	engine_font_manager_draw_data( minDistanceY, 20, 6 );
-	engine_font_manager_draw_data( negMinDistanceX, 20, 7 );
-	engine_font_manager_draw_data( negMinDistanceY, 20, 8 );
-}
+//void engine_player_manager_test()
+//{
+//	engine_font_manager_draw_data( halfWidthA, 20, 1 );
+//	engine_font_manager_draw_data( halfHeightA, 20, 2 );
+//	engine_font_manager_draw_data( halfWidthB, 20, 3 );
+//	engine_font_manager_draw_data( halfHeightB, 20, 4 );
+//
+//	engine_font_manager_draw_data( minDistanceX, 20, 5 );
+//	engine_font_manager_draw_data( minDistanceY, 20, 6 );
+//	engine_font_manager_draw_data( negMinDistanceX, 20, 7 );
+//	engine_font_manager_draw_data( negMinDistanceY, 20, 8 );
+//}
 
 void engine_player_manager_init()
 {

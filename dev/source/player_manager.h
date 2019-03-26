@@ -7,7 +7,7 @@
 extern struct_player_object global_player_object;
 
 // Methods.
-void engine_player_manager_test();
+//void engine_player_manager_test();
 
 void engine_player_manager_init();
 void engine_player_manager_load();

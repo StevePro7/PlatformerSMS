@@ -148,7 +148,17 @@ void screen_play_screen_update( unsigned char *screen_type )
 		eo = &global_enemy_objects[ idx ];
 		if( ( signed char ) eo->spotY >= po->coll_topX && ( signed char ) eo->spotY <= po->coll_botX )
 		{
-			coll_diff = myabs( po->posnX - eo->posnX );
+			// Test for collision with player.
+			coll_diff = 0;
+			if( po->posnX > eo->posnX )
+			{
+				coll_diff = po->posnX - eo->posnX;
+			}
+			else
+			{
+				coll_diff = eo->posnX - po->posnX;
+			}
+			//coll_diff = myabs( po->posnX - eo->posnX );
 			if( coll_diff <= collision )
 			{
 				*screen_type = screen_type_dead;
