@@ -17,6 +17,7 @@
 
 void screen_over_screen_load()
 {
+	engine_audio_manager_music_beat();
 	engine_delay_manager_load( OVER_SCREEN_DELAY );
 	//engine_level_manager_draw_section();
 //	engine_enemyX_manager_draw_guards();
@@ -42,6 +43,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 
 	if( delay || input )
 	{
+		//engine_audio_manager_music_stop();
 		*screen_type = screen_type_begin;
 		return;
 	}

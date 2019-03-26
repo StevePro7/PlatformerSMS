@@ -1,8 +1,8 @@
 #include "anim_manager.h"
 #include "anim_object.h"
+#include "_sms_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
-#include "_sms_manager.h"
 
 #define PLAYER_TILE_IDLE		256
 #define PLAYER_TILE_LEFT		256 + 1 * SPRITE_TILES_NUMBER

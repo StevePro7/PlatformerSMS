@@ -148,6 +148,8 @@
     <ClCompile Include="banks\bank3.c" />
     <ClCompile Include="banks\bank4.c" />
     <ClCompile Include="banks\bank5.c" />
+    <ClCompile Include="banks\bank6.c" />
+    <ClCompile Include="banks\bank7.c" />
     <ClCompile Include="engine\asm_manager.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
@@ -155,6 +157,7 @@
     <ClCompile Include="source\anim_manager.c" />
     <ClCompile Include="source\anim_object.c" />
     <ClCompile Include="source\audio_manager.c" />
+    <ClCompile Include="source\audio_object.c" />
     <ClCompile Include="source\beat_screen.c" />
     <ClCompile Include="source\begin_screen.c" />
     <ClCompile Include="source\cont_screen.c" />
@@ -207,6 +210,8 @@
     <ClInclude Include="banks\bank3.h" />
     <ClInclude Include="banks\bank4.h" />
     <ClInclude Include="banks\bank5.h" />
+    <ClInclude Include="banks\bank6.h" />
+    <ClInclude Include="banks\bank7.h" />
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
@@ -214,6 +219,7 @@
     <ClInclude Include="source\anim_manager.h" />
     <ClInclude Include="source\anim_object.h" />
     <ClInclude Include="source\audio_manager.h" />
+    <ClInclude Include="source\audio_object.h" />
     <ClInclude Include="source\beat_screen.h" />
     <ClInclude Include="source\begin_screen.h" />
     <ClInclude Include="source\cont_screen.h" />
