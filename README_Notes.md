@@ -97,6 +97,12 @@ Previous Sega-based retro games published include "3D City" available here:
 - Android	
 - PC		
 
+iOS https://apple.co/2BE6LSj
+Android https://goo.gl/j3QG5G
+Windows https://bit.ly/2TzV30O			Windows Store
+itch.io https://bit.ly/2S5wkBz
+
+
 Previous Sega-based retro games published include "Candy Kid" available here:
 - iOS		http://apple.co/1QcidUk
 - Android	http://goo.gl/5rWsYO
