@@ -12,6 +12,7 @@
 
 void screen_beat_screen_load()
 {
+	engine_audio_manager_music_stop();
 	engine_audio_manager_music_beat();
 	engine_delay_manager_load( BEAT_SCREEN_DELAY );
 	engine_memo_manager_draw_beat();

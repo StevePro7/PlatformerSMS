@@ -12,6 +12,7 @@ static unsigned char stage;
 
 void screen_reset_screen_load()
 {
+	engine_audio_manager_music_stop();
 	engine_audio_manager_sound_reset();
 	engine_delay_manager_load( RESET_SCREEN_DELAY );
 	engine_memo_manager_draw_reset();

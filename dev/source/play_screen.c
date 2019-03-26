@@ -74,6 +74,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		check = engine_reset_manager_update();
 		if( check )
 		{
+			engine_audio_manager_music_stop();
 			*screen_type = screen_type_reset;
 			return;
 		}

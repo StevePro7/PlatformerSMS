@@ -19,6 +19,7 @@ void screen_dead_screen_load()
 	struct_hack_object *ho = &global_hack_object;
 	struct_player_object *po = &global_player_object;
 
+	engine_audio_manager_music_stop();
 	if( ho->hack_delayspeed )
 	{
 		engine_audio_manager_sound_death();

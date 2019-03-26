@@ -24,6 +24,7 @@ void screen_pass_screen_load()
 	struct_score_object *so = &global_score_object;
 	unsigned char perfect = 0;
 
+	engine_audio_manager_music_stop();
 	if( ho->hack_delayspeed)
 	{
 		engine_audio_manager_sound_level();

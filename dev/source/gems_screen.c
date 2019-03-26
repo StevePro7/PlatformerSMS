@@ -18,6 +18,7 @@ static unsigned char stage;
 
 void screen_gems_screen_load()
 {
+	engine_audio_manager_music_stop();
 	engine_delay_manager_load( GEMS_SCREEN_DELAY1 );
 	engine_memo_manager_draw_gems();
 
