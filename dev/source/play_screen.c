@@ -108,10 +108,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 					{
 						increase_lives();
 					}
-					else
-					{
-						engine_audio_manager_sound_gem();
-					}
+					//else
+					//{
+					//	TODO can get sound effect on channel2AND3 sounds better?
+					//	engine_audio_manager_sound_gem();
+					//}
 				}
 				else if( event_type_gempowerhi == evt || event_type_gempowerlo == evt )
 				{
