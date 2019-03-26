@@ -19,6 +19,10 @@ static void play_music( unsigned char *mus, unsigned char bank );
 static void play_music_norepeat( unsigned char *mus, unsigned char bank );
 static void play_sound( unsigned char *sfx );
 
+void engine_audio_manager_music_game( unsigned char index )
+{
+	play_music( ( unsigned char* ) game_audio_data[ index ], game_audio_bank[ index ] );
+}
 void engine_audio_manager_music_beat()
 {
 	play_music_norepeat( ( unsigned char* ) beat_audio_data[ 0 ], beat_audio_bank[ 0 ] );
@@ -27,16 +31,10 @@ void engine_audio_manager_music_over()
 {
 	play_music_norepeat( ( unsigned char* ) over_audio_data[ 0 ], over_audio_bank[ 0 ] );
 }
-
-void engine_audio_manager_finish_music()
+void engine_audio_manager_music_resume()
 {
-	//if( hacker_music )
-	{
-		//devkit_PSGSetMusicVolumeAttenuation( 0 );
-		//devkit_PSGPlayNoRepeat( ( unsigned char* ) FINISH_PSG );
-	}
+	devkit_PSGResume();
 }
-
 void engine_audio_manager_music_stop()
 {
 	devkit_PSGStop();

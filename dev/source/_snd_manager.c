@@ -22,6 +22,10 @@ void devkit_PSGStop( void )
 {
 	PSGStop();
 }
+void devkit_PSGResume( void )
+{
+	PSGResume();
+}
 unsigned char devkit_PSGGetStatus( void )
 {
 	return PSGGetStatus();

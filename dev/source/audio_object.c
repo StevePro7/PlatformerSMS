@@ -3,6 +3,20 @@
 #include "..\banks\bank6.h"
 #include "..\banks\bank7.h"
 
+// Game
+const unsigned char *game_audio_data[] = 
+{
+	mus_game01_psg,
+	mus_test_psg,
+};
+
+const unsigned char game_audio_bank[] =
+{
+	mus_game01_psg_bank,
+	mus_test_psg_bank,
+};
+
+
 // Beat
 const unsigned char *beat_audio_data[] = 
 {

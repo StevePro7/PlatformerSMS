@@ -5,6 +5,7 @@ void devkit_PSGPlay( void *song );
 void devkit_PSGCancelLoop( void );
 void devkit_PSGPlayNoRepeat( void *song );
 void devkit_PSGStop( void );
+void devkit_PSGResume( void );
 unsigned char PSGGetStatus( void );
 void devkit_PSGSetMusicVolumeAttenuation( unsigned char attenuation );
 
