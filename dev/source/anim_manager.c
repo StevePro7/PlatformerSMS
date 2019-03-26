@@ -4,9 +4,12 @@
 #include "global_manager.h"
 #include "enum_manager.h"
 
+// TODO clean up as duplicate in global_manager.c
 #define PLAYER_TILE_IDLE		256
 #define PLAYER_TILE_LEFT		256 + 1 * SPRITE_TILES_NUMBER
 #define PLAYER_TILE_RGHT		256 + 6 * SPRITE_TILES_NUMBER
+#define TESTER_TILE_IDLE		352
+#define TESTER_TILE_RGHT		352 + 1 * SPRITE_TILES_NUMBER
 #define ENEMYX_TILE_IDLE		388
 
 // Private helper methods.
@@ -34,6 +37,20 @@ void engine_anim_manager_player_load_move()
 
 		index = ANIMATE_IDX_RGHT + loop;
 		tile = PLAYER_TILE_RGHT + loop * SPRITE_TILES_NUMBER;
+		player_load( index, tile );
+	}
+}
+
+void engine_anim_manager_tester_load_anim()
+{
+	unsigned char index, loop;
+	unsigned int tile;
+	player_load( 0, TESTER_TILE_IDLE );
+
+	for( loop = 0; loop < ANIMATE_MOVE_MAX; loop++ )
+	{
+		index = ANIMATE_IDX_RGHT + loop;
+		tile = TESTER_TILE_RGHT + loop * SPRITE_TILES_NUMBER;
 		player_load( index, tile );
 	}
 }
