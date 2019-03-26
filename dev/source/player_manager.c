@@ -4,7 +4,7 @@
 #include "level_manager.h"
 #include "anim_manager.h"
 #include "input_manager.h"
-
+#include <math.h>
 // IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE
 #else
@@ -306,10 +306,12 @@ void engine_player_manager_handle_collisions()
 				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
 				if( 0 != po->depthX || 0 != po->depthY )
 				{
+					//absDepthX = fabsf( po->depthX );
+					//absDepthY = fabsf( po->depthY );
 					//absDepthX = fabsf( ( float ) po->depthX );
 					//absDepthY = fabsf( ( float ) po->depthY );
-					absDepthX = myabs( po->depthX );
-					absDepthY = myabs( po->depthY );
+					//absDepthX = myabs( po->depthX );
+					//absDepthY = myabs( po->depthY );
 
 
 					// Resolve the collision along the shallow axis.
