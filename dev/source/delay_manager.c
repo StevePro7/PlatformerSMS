@@ -1,6 +1,6 @@
 #include "delay_manager.h"
 #include "hack_manager.h"
-
+#include "font_manager.h"
 // Global variable.
 struct_delay_object global_delay_object;
 

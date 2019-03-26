@@ -15,7 +15,7 @@
 #include "..\engine\asm_manager.h"
 #include <stdlib.h>
 
-#define INTRO_SCREEN_DELAY		150
+#define INTRO_SCREEN_DELAY		3500
 #define INTRO_WRITER_TIMER		50
 #define LEFT					7
 #define HIGH					17
@@ -115,8 +115,8 @@ static void draw_sprite( unsigned char x, unsigned char y, unsigned frame )
 static void update_text()
 {
 	//engine_font_manager_draw_data( stage, 20, 2 );
-	engine_font_manager_draw_data( stage, 20, 3 );
-	engine_font_manager_draw_data( pause, 20, 4 );
+	//engine_font_manager_draw_data( stage, 20, 3 );
+	//engine_font_manager_draw_data( pause, 20, 4 );
 
 	if( 0 == first )
 	{
@@ -141,7 +141,7 @@ static void update_text()
 			else if( 2 == pause )
 			{
 				engine_font_manager_draw_text( "COLLECT THE GEMS &", LEFT, HIGH + 2 );
-				engine_font_manager_draw_text( "ESCAPE TO THE EXIT", LEFT, HIGH + 3 );
+				engine_font_manager_draw_text( "HURRY TO THE EXIT!", LEFT, HIGH + 3 );
 			}
 			pause++;
 			if( pause >= 3 )
