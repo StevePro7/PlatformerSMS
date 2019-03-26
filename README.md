@@ -7,6 +7,22 @@ Warner the Explorer
 https://yhoo.it/2HdDJfu
 
 26/03/2019
+Music summary:
+Ninja Gaiden (GG) - 01 - Main Theme						mus_game04.psg
+D:\Steven\Personal\_Platformer\VGMs\NinjaGaiden-GG
+renamed mus_game04 to mus_game02 for sequential
+
+Ninja Gaiden - 03 - Story								mus_game01.psg
+Ninja Gaiden - 02 - Title Screen						mus_game01.psg	ORGiginally but sounds like mus_game03 so swapped
+Ninja Gaiden - 10 - The Land of Enemy					mus_game03.psg
+D:\Steven\Personal\_Platformer\VGMs\NinjaGaiden-SMS		
+
+TOO LARGE
+//Ninja Gaiden (GG) - 02 - Assault						mus_game05
+//Ninja Gaiden (GG) - 03 - Smuggling					mus_game06
+//Ninja Gaiden - 11 - Raid								mus_game02.psg
+
+26/03/2019
 Big optimization today: took out the myabs() function and replaced with custom logic
 to determine which sign to check and noticed a massive improved noticeable more on 60FPS NTSC
 However, there is still an issue when there are too many platform blocks so use sparingly!
