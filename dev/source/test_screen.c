@@ -27,7 +27,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( test[ 0 ] )
 	{
 		engine_font_manager_draw_text( "PRESS START", 10, 1 );
-		engine_audio_manager_music_game( 0 );
+		//engine_audio_manager_music_game( 0 );
+		engine_audio_manager_music_title();
 	}
 	test[ 1 ] = engine_input_manager_hold_right();
 	if( test[ 1 ] )

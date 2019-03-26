@@ -2,8 +2,10 @@
 
 #include "..\banks\bank6.h"
 #include "..\banks\bank7.h"
+#include "..\banks\bank8.h"
+#include "..\banks\bank9.h"
 
-// Game
+// Game.
 const unsigned char *game_audio_data[] = 
 {
 	mus_game01_psg,
@@ -16,8 +18,17 @@ const unsigned char game_audio_bank[] =
 	mus_test_psg_bank,
 };
 
+// Title.
+const unsigned char *title_audio_data[] =
+{
+	mus_title_psg,
+};
+const unsigned char title_audio_bank[] =
+{
+	mus_title_psg_bank,
+};
 
-// Beat
+// Beat.
 const unsigned char *beat_audio_data[] = 
 {
 	mus_beat_psg
@@ -27,7 +38,7 @@ const unsigned char beat_audio_bank[] =
 	mus_beat_psg_bank
 };
 
-// Over
+// Over.
 const unsigned char *over_audio_data[] =
 {
 	mus_over_psg,

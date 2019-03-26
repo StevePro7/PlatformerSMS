@@ -21,14 +21,19 @@ void engine_audio_manager_music_game( unsigned char index )
 {
 	play_music( ( unsigned char* ) game_audio_data[ index ], game_audio_bank[ index ] );
 }
-void engine_audio_manager_music_beat()
+void engine_audio_manager_music_title()
 {
-	play_music_norepeat( ( unsigned char* ) beat_audio_data[ 0 ], beat_audio_bank[ 0 ] );
+	play_music_norepeat( ( unsigned char* ) title_audio_data[ 0 ], title_audio_bank[ 0 ] );
 }
 void engine_audio_manager_music_over()
 {
 	play_music_norepeat( ( unsigned char* ) over_audio_data[ 0 ], over_audio_bank[ 0 ] );
 }
+void engine_audio_manager_music_beat()
+{
+	play_music_norepeat( ( unsigned char* ) beat_audio_data[ 0 ], beat_audio_bank[ 0 ] );
+}
+
 void engine_audio_manager_music_resume()
 {
 	devkit_PSGResume();
