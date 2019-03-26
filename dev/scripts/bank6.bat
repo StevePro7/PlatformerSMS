@@ -1,4 +1,4 @@
-REM bank4	Levels half#1
+REM bank6
 @echo off
 
 cd ..

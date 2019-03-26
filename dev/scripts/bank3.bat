@@ -1,4 +1,4 @@
-REM bank3	Generic sprite tiles
+REM bank3
 @echo off
 
 cd ..
