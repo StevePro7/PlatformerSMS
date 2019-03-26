@@ -35,14 +35,10 @@ void screen_cont_screen_update( unsigned char *screen_type )
 {
 	unsigned char test[ 4 ] = { 0, 0, 0, 0 };
 	unsigned char delay;
-	//const unsigned char leftX = 3;
-	//const unsigned char rghtX = 11;
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
-	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
-	//engine_player_manager_hide( leftX, rghtX );
 
 	if( event_stage_pause == stage )
 	{
