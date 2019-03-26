@@ -15,7 +15,11 @@
 // Private helper function.
 static void play_sound( unsigned char *sfx );
 
-void engine_audio_manager_start_music()
+void engine_audio_manager_music_beat()
+{
+
+}
+void engine_audio_manager_music_over()
 {
 	//if( hacker_music )
 	{
@@ -33,12 +37,9 @@ void engine_audio_manager_finish_music()
 	}
 }
 
-void engine_audio_manager_stop_music()
+void engine_audio_manager_music_stop()
 {
-	//if( hacker_music )
-	{
-		devkit_PSGStop();
-	}
+	devkit_PSGStop();
 }
 
 void engine_audio_manager_sound_accept()

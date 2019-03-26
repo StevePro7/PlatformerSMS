@@ -13,7 +13,7 @@
 #include "enemy_manager.h"
 #include "audio_manager.h"
 
-#define OVER_SCREEN_DELAY		150
+#define OVER_SCREEN_DELAY		500
 
 void screen_over_screen_load()
 {
