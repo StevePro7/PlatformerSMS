@@ -19,7 +19,8 @@ static void play_sound( unsigned char *sfx );
 
 void engine_audio_manager_music_game( unsigned char index )
 {
-	play_music( ( unsigned char* ) game_audio_data[ index ], game_audio_bank[ index ] );
+	//play_music( ( unsigned char* ) game_audio_data[ index ], game_audio_bank[ index ] );
+	play_music_norepeat( ( unsigned char* ) game_audio_data[ index ], game_audio_bank[ index ] );
 }
 void engine_audio_manager_music_title()
 {
