@@ -158,7 +158,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			{
 				coll_diff = eo->posnX - po->posnX;
 			}
-			//coll_diff = myabs( po->posnX - eo->posnX );
+
 			if( coll_diff <= collision )
 			{
 				*screen_type = screen_type_dead;

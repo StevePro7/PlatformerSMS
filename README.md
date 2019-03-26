@@ -6,6 +6,13 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+26/03/2019
+Big optimization today: took out the myabs() function and replaced with custom logic
+to determine which sign to check and noticed a massive improved noticeable more on 60FPS NTSC
+However, there is still an issue when there are too many platform blocks so use sparingly!
+Ditto applies to optional platform blocks
+Finally, if having any issue with level not rendering correctly then ensure full re-build!
+
 25/03/2019
 C:\stevepro\roms\SegaStuff\SMSpower\MusicTOOLS
 

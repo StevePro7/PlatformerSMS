@@ -57,19 +57,6 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 static int minDistanceX, negMinDistanceX;
 static int minDistanceY, negMinDistanceY;
 
-//void engine_player_manager_test()
-//{
-//	engine_font_manager_draw_data( halfWidthA, 20, 1 );
-//	engine_font_manager_draw_data( halfHeightA, 20, 2 );
-//	engine_font_manager_draw_data( halfWidthB, 20, 3 );
-//	engine_font_manager_draw_data( halfHeightB, 20, 4 );
-//
-//	engine_font_manager_draw_data( minDistanceX, 20, 5 );
-//	engine_font_manager_draw_data( minDistanceY, 20, 6 );
-//	engine_font_manager_draw_data( negMinDistanceX, 20, 7 );
-//	engine_font_manager_draw_data( negMinDistanceY, 20, 8 );
-//}
-
 void engine_player_manager_init()
 {
 	minDistanceX = halfWidthA + halfWidthB;
@@ -332,9 +319,6 @@ void engine_player_manager_handle_collisions()
 				{
 					//absDepthX = fabsf( ( float ) po->depthX );
 					//absDepthY = fabsf( ( float ) po->depthY );
-
-					//absDepthX = myabs( po->depthX );
-					//absDepthY = myabs( po->depthY );
 					absDepthX = po->depthX;
 					absDepthY = po->depthY;
 
@@ -625,8 +609,8 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	}
 
 	// If we are not intersecting at all, return (0, 0).
-	//fDistanceX = myabs( distanceX );
-	//fDistanceY = myabs( distanceY );
+	//fDistanceX = fabsf( distanceX );
+	//fDistanceY = fabsf( distanceY );
 	//IMPORTANT no need to check if depthX == 0 or depthY == 0 because this test would always fail anyway!
 	//if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
 	//{

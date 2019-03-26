@@ -59,7 +59,4 @@
 extern unsigned char *count_text[];
 extern unsigned char *lives_text[];
 
-// Custom function.
-//int myabs( int v );
-
 #endif//_GLOBAL_MANAGER_H_
