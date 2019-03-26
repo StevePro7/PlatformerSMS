@@ -124,7 +124,13 @@ static void update_text()
 		engine_audio_manager_music_title();
 		engine_font_manager_draw_text( "WELCOME HERO!", LEFT, HIGH );
 	}
-	else
+	else if( 1 == first )
+	{
+		first = 2;
+		engine_font_manager_draw_text( LOCALE_BLANK_SIZE18, LEFT, HIGH + 2 );
+		engine_font_manager_draw_text( LOCALE_BLANK_SIZE18, LEFT, HIGH + 3 );
+	}
+	else if (2 == first )
 	{
 		if( 0 == stage )
 		{
@@ -143,6 +149,7 @@ static void update_text()
 				engine_font_manager_draw_text( "COLLECT THE GEMS &", LEFT, HIGH + 2 );
 				engine_font_manager_draw_text( "HURRY TO THE EXIT!", LEFT, HIGH + 3 );
 			}
+
 			pause++;
 			if( pause >= 3 )
 			{
