@@ -9,6 +9,7 @@
 //#define LOCALE_BLANK_SIZE12		"            "
 #define LOCALE_BLANK_SIZE16		"                "
 #define LOCALE_BLANK_SIZE17		"                 "
+#define LOCALE_BLANK_SIZE18		"                  "
 
 #define LOCALE_SELECT_ARROW		">>"
 #define LOCALE_SELECT_BLANK		"  "
