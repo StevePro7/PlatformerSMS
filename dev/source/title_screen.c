@@ -23,6 +23,7 @@ static unsigned char cheat_count;
 void screen_title_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
 
 	engine_text_manager_clear_three();
@@ -30,6 +31,7 @@ void screen_title_screen_load()
 	engine_font_manager_draw_text( LOCALE_PRESS_START, TEXT_X, TEXT_Y );
 
 	cheat_count = 0;
+	go->localcheat = 0;
 	if( ho->hack_invincible )
 	{
 		engine_text_manager_cheat_write();
