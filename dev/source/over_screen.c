@@ -32,6 +32,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
+	
 
 	delay = engine_delay_manager_update();
 	//input = engine_input_manager_hold_fire1();

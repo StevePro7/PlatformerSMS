@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "audio_manager.h"
 
-#define BEAT_SCREEN_DELAY	50
+#define BEAT_SCREEN_DELAY	900
 
 void screen_beat_screen_load()
 {
@@ -24,7 +24,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_draw();
+	engine_player_manager_hide();
 
 	delay = engine_delay_manager_update();
 //	input = engine_input_manager_hold_fire1();

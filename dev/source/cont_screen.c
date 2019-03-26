@@ -78,24 +78,8 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		engine_audio_manager_sound_accept();
 		stage = event_stage_pause;
 		return;
-
-		/*if( 0 == cursor )
-		{
-			engine_score_manager_reset_lives();
-			*screen_type = screen_type_ready;
-			return;
-		}
-		else
-		{
-			*screen_type = screen_type_over;
-			return;
-		}*/
 	}
 
-	// if input_manager( fire1 ) then
-	// Clear middle section
-	// Draw level mid section
-	// goto Ready screen
 	*screen_type = screen_type_cont;
 }
 
