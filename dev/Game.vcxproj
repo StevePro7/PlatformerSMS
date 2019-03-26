@@ -150,6 +150,8 @@
     <ClCompile Include="banks\bank5.c" />
     <ClCompile Include="banks\bank6.c" />
     <ClCompile Include="banks\bank7.c" />
+    <ClCompile Include="banks\bank8.c" />
+    <ClCompile Include="banks\bank9.c" />
     <ClCompile Include="engine\asm_manager.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
@@ -212,6 +214,8 @@
     <ClInclude Include="banks\bank5.h" />
     <ClInclude Include="banks\bank6.h" />
     <ClInclude Include="banks\bank7.h" />
+    <ClInclude Include="banks\bank8.h" />
+    <ClInclude Include="banks\bank9.h" />
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />

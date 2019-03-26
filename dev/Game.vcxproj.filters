@@ -231,6 +231,12 @@
     <ClCompile Include="banks\bank7.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="banks\bank8.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank9.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -441,6 +447,12 @@
       <Filter>Header Files\banks</Filter>
     </ClInclude>
     <ClInclude Include="banks\bank7.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank8.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank9.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
   </ItemGroup>

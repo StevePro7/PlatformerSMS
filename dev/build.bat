@@ -100,6 +100,8 @@ sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC0
 -Wl-b_BANK5=0x8000 ^
 -Wl-b_BANK6=0x8000 ^
 -Wl-b_BANK7=0x8000 ^
+-Wl-b_BANK8=0x8000 ^
+-Wl-b_BANK9=0x8000 ^
 ..\crt0\crt0_sms.rel main.rel ^
 ..\lib\SMSlib.lib ^
 ..\lib\PSGlib.rel ^
@@ -109,6 +111,8 @@ banks\bank4.rel ^
 banks\bank5.rel ^
 banks\bank6.rel ^
 banks\bank7.rel ^
+banks\bank8.rel ^
+banks\bank9.rel ^
 engine\asm_manager.rel ^
 source\_sms_manager.rel		source\_snd_manager.rel ^
 source\global_manager.rel	source\debug_manager.rel	source\hack_manager.rel ^
