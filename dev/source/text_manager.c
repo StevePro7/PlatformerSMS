@@ -47,3 +47,21 @@ void engine_text_manager_write_gems()
 {
 	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 28, 1 );
 }
+
+void engine_text_manager_write_info( unsigned char round )
+{
+	unsigned char x, y = 5;
+	x = 22;
+	y = 4;
+	if( 9 == round )
+	{
+		engine_font_manager_draw_text( "HINT: HOLD FIRE2 TO RESET", 2, y + 0 );
+		//engine_font_manager_draw_text( "HINT:", 2, y + 0 );
+		//engine_font_manager_draw_text( "HOLD FIRE2 TO RESET", 2, y + 1 );
+		//engine_font_manager_draw_text( "HINT: HOLD", x, y + 0 );
+		//engine_font_manager_draw_text( "HOLD", x, y + 1 );
+		//engine_font_manager_draw_text( "FIRE2 WILL ", x, y + 1);
+		//engine_font_manager_draw_text( "WILL", x, y + 3);
+		//engine_font_manager_draw_text( "RESET", x, y + 2 );
+	}
+}
