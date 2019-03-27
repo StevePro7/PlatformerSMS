@@ -15,7 +15,7 @@
 #include "..\engine\asm_manager.h"
 #include <stdlib.h>
 
-#define INTRO_SCREEN_DELAY		3500
+#define INTRO_SCREEN_DELAY		3600
 #define INTRO_WRITER_TIMER		50
 #define LEFT					7
 #define HIGH					17
@@ -156,7 +156,7 @@ static void update_text()
 			}
 			else if( 4 == pause )
 			{
-				engine_font_manager_draw_text( "HERE PORTED TO THE", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "THUS PORTED TO THE", LEFT, HIGH + 2 );
 				engine_font_manager_draw_text( "SEGA MASTER SYSTEM", LEFT, HIGH + 3 );
 			}
 			else if( 5 == pause )
@@ -177,7 +177,7 @@ static void update_text()
 			else if( 8 == pause )
 			{
 				engine_font_manager_draw_text( "THANKS ALSO OUT TO", LEFT, HIGH + 2 );
-				engine_font_manager_draw_text( "ERUIZ00, HAROLDOOP", LEFT, HIGH + 3 );
+				engine_font_manager_draw_text( "ERUIZ00+ HAROLDOOP", LEFT, HIGH + 3 );
 			}
 			else if( 9 == pause )
 			{
