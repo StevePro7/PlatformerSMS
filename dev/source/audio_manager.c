@@ -5,6 +5,12 @@
 #include "hack_manager.h"
 #include "..\psg.h"
 
+// IMPORTANT disable compiler warning 110
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 196
+#endif
+
 #define sfx_accept_psg			sfx_accept_psg
 #define sfx_death_psg			sfx_death_psg
 #define sfx_gem_psg				sfx_gem_psg

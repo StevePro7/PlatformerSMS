@@ -14,6 +14,7 @@
 #include "state_manager.h"
 #include "audio_manager.h"
 #include "game_manager.h"
+#include <stdlib.h>
 
 #define LOAD_SCREEN_DELAY		150
 
@@ -48,13 +49,13 @@ void screen_load_screen_load()
 
 	// Reset gem count at each level.
 	engine_score_manager_reset_gems();
-	//engine_audio_manager_music_game( 0 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
 	unsigned char test[ 2 ] = { 0, 0 };
 	unsigned char delay;
+	unsigned char index;
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
@@ -67,8 +68,8 @@ void screen_load_screen_update( unsigned char *screen_type )
 	delay = engine_delay_manager_update();
 	if( test[ 0 ] || test[ 1 ] || delay )
 	{
-		//engine_font_manager_draw_text( "LOAD", 20, 2 );
-		engine_audio_manager_music_game( 0 );
+		index = rand() % MAMNUM_TUNES;
+		engine_audio_manager_music_game( index );
 		*screen_type = screen_type_ready;
 		return;
 	}

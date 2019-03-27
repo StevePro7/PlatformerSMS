@@ -34,6 +34,7 @@
 // Easy:4 and Hard:3
 #define NUMBER_LIVES			4
 #define MAMNUM_LIVES			9
+#define MAMNUM_TUNES			3
 
 #define ENEMYS_COLL_EASY		8
 #define ENEMYS_COLL_HARD		12
