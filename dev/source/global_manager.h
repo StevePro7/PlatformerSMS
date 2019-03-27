@@ -14,8 +14,8 @@
 #define ENEMYX_SPRITE_TILE		388
 #define INVALID_INDEX			-1
 
-#define MAX_STATUS				8
-#define MAX_WORLDS				8	//4
+//#define MAX_STATUS				8
+#define MAX_WORLDS				2	//4		/8
 #define MAX_ROUNDS				10
 
 #define MAX_ROWS				12

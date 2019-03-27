@@ -13,6 +13,26 @@ Intro length
 3x3
 4x1
 
+DON'T FORGET to back out the changes used during level testing:
+search for stevepro\Personal\_Platformer\VGMs\TrivialPursuit-SMS
+
+SHA
+7f8bdcec22811a53e61cd40dd84c27e5eb79bee9
+
+ScoreManager
+HackManager
+
+Refine the following levels:
+0309
+C:\Github\StevePro7\PlatformerSMS\bak\banks07\bank4
+
+BUG
+0207
+..#####....$###.
+..#####.F..$###.
+F = fail to fall thru pit - not sure why this is different
+
+
 26/03/2019
 Music summary:
 Ninja Gaiden (GG) - 01 - Main Theme						mus_game04.psg
