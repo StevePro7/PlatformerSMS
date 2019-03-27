@@ -182,7 +182,7 @@ static void update_text()
 			else if( 9 == pause )
 			{
 				engine_font_manager_draw_text( "NOW GOOD LUCK HERO", LEFT, HIGH + 2 );
-				engine_font_manager_draw_text( "ADVENTURE AWAITS..!", LEFT, HIGH + 3 );
+				engine_font_manager_draw_text( "ADVENTURE AWAITS.!", LEFT, HIGH + 3 );
 			}
 			pause++;
 			if( pause >= 10 )
