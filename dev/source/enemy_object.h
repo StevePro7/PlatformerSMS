@@ -23,6 +23,7 @@ typedef struct tag_struct_enemy_object
 	enum_move_type next_move_type;
 	unsigned char spotX, spotY;
 	unsigned char posnX, posnY;
+	unsigned char startX;
 	unsigned char drawX, drawY;
 	unsigned char leftX, rghtX;
 	unsigned char minX, maxX;

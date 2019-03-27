@@ -32,6 +32,7 @@ typedef struct tag_struct_player_object
 	bool advUp, advDown;				// TODO get rid of this as was used for debugging!!
 	unsigned char anim_index, anim_start, anim_maxim;
 	signed char anim_frame, anim_count;
+	signed char kill_idx;
 
 } struct_player_object;
 

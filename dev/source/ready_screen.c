@@ -17,9 +17,24 @@
 
 void screen_ready_screen_load()
 {
+	struct_player_object *po = &global_player_object;
+	struct_enemy_master *em = &global_enemy_master;
+	struct_enemy_object *eo;
+
 	engine_delay_manager_load( READY_SCREEN_DELAY );
 
+	// If player killed by enemy then reset enemy killer.
+	if( INVALID_INDEX != po->kill_idx )
+	{
+		eo = &global_enemy_objects[ po->kill_idx ];
+		if( action_type_chase == eo->action_type )
+		{
+			eo->posnX = eo->startX;
+		}
+	}
+
 	// Reset player irrespective of new level or new life.
+	// Reset killer index unconditionally on player load.
 	engine_player_manager_load();
 
 	engine_level_manager_draw_section();

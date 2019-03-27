@@ -96,6 +96,7 @@ void engine_player_manager_load()
 	po->anim_index = 0;
 	po->anim_start = 0; po->anim_maxim = 0;
 	po->anim_frame = 0;//	po->anim_count = 50;
+	po->kill_idx = INVALID_INDEX;
 }
 
 //void engine_player_manager_update()

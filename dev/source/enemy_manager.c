@@ -68,6 +68,7 @@ void engine_enemyX_manager_load()
 		rectB = eo->spotY * TILE_HIGH + TILE_HIGH;
 		eo->posnX = rectX + hlf;
 		eo->posnY = rectB;
+		eo->startX = eo->posnX;
 
 		// Bounds.
 		rectX = eo->minX * TILE_WIDE;

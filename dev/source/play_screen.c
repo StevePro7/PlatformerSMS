@@ -162,6 +162,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 			if( coll_diff <= collision )
 			{
+				po->kill_idx = idx;
 				*screen_type = screen_type_dead;
 				return;
 			}
