@@ -23,9 +23,9 @@ static unsigned char get_tile();
 static void draw_tile( unsigned char left, unsigned char topY, unsigned char wide );
 static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char *text2, unsigned char x, unsigned char y, unsigned char wide );
 
-void engine_memo_manager_init( unsigned char lines )
+void engine_memo_manager_init()
 {
-	border = lines;
+	border = 1;
 	index = 0;
 }
 

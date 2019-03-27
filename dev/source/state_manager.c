@@ -18,7 +18,7 @@ void engine_state_manager_init()
 	engine_hack_manager_invert();
 
 	// Initialize other managers.
-	engine_memo_manager_init( ho->hack_lines );
+	engine_memo_manager_init();
 	engine_player_manager_init();
 	engine_stats_manager_init();
 	engine_game_manager_init();

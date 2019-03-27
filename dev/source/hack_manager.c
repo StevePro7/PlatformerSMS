@@ -23,19 +23,17 @@ void engine_hack_manager_init()
 	ho->hack_music = 0;
 	ho->hack_sound = 0;
 	ho->hack_enemy = 0;
-	ho->hack_lines = 0;
 
 #ifndef _CONSOLE
 
-	ho->hack_delayspeed = PEEK( HACKER_START - 1 );		// 0x004F		//
-	ho->hack_invincible = PEEK( HACKER_START + 0 );		// 0x0050		//
-	ho->hack_difficulty = PEEK( HACKER_START + 1 );		// 0x0051		//
-	ho->hack_world = PEEK( HACKER_START + 2 );			// 0x0052		//
-	ho->hack_round = PEEK( HACKER_START + 3 );			// 0x0053		//
-	ho->hack_music = PEEK( HACKER_START + 4 );			// 0x0054		// 0=music on otherwise off.
-	ho->hack_sound = PEEK( HACKER_START + 5 );			// 0x0055		// 0=sound on otherwise off.
-	ho->hack_enemy = PEEK( HACKER_START + 6 );			// 0x0056		//
-	ho->hack_lines = PEEK( HACKER_START + 7 );			// 0x0057		//
+	ho->hack_delayspeed = PEEK( HACKER_START - 1 );		// 0x004F		// Used during dev disables screen delays.
+	ho->hack_invincible = PEEK( HACKER_START + 0 );		// 0x0050		// Non-zero value enables auto invincible.
+	ho->hack_difficulty = PEEK( HACKER_START + 1 );		// 0x0051		// Set value to 1=Hard otherwise use Easy.
+	ho->hack_world = PEEK( HACKER_START + 2 );			// 0x0052		// Set start world no to zero-based value.
+	ho->hack_round = PEEK( HACKER_START + 3 );			// 0x0053		// Set start round no to zero-based value.
+	ho->hack_music = PEEK( HACKER_START + 4 );			// 0x0054		// Set 0=music to play otherwise disabled.
+	ho->hack_sound = PEEK( HACKER_START + 5 );			// 0x0055		// Set 0=sound to play otherwise disabled.
+	ho->hack_enemy = PEEK( HACKER_START + 6 );			// 0x0056		// Set value non-zero to disable movement.
 
 #endif
 
@@ -88,7 +86,6 @@ void engine_hack_manager_invert()
 
 	//ho->hack_difficulty = diff_type_hard;
 	//ho->hack_enemy = 0;
-	ho->hack_lines = 1;
 	//ho->hack_sound = 0;
 	//ho->hack_music = 0;
 
