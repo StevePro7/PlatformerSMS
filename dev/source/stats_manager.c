@@ -93,7 +93,7 @@ void engine_stats_manager_init()
 
 
 	// EnemyB and EnemyD have similar properties.
-	for( idx = 0; idx < MAX_STATUS; idx++ )
+	for( idx = 0; idx < TOT_WORLDS; idx++ )
 	{
 		so->enemys_velX[ sprite_type_enemyB ][ idx ] = 1;
 		so->enemys_velX[ sprite_type_enemyD ][ idx ] = 2;

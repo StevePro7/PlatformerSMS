@@ -237,7 +237,7 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 	unsigned char level;
 	unsigned char index;
 
-	halve = MAX_WORLDS / 2 * MAX_ROUNDS;
+	halve = TOT_WORLDS / 2 * MAX_ROUNDS;
 	level = world * MAX_ROUNDS + round;
 	index = 0;
 

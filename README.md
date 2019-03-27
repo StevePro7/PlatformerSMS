@@ -31,7 +31,7 @@ BUG
 ..#####....$###.
 ..#####.F..$###.
 F = fail to fall thru pit - not sure why this is different
-
+0208	=>	0305
 
 26/03/2019
 Music summary:
