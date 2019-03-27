@@ -12,7 +12,7 @@ void engine_score_manager_init( unsigned char difficulty )
 {
 	struct_score_object *so = &global_score_object;
 	so->tot_lives = NUMBER_LIVES - difficulty;
-	//so->tot_lives = 1;		// TODO delete
+	so->tot_lives = 1;		// TODO delet		stevepro
 	//so->gem_delta = 0;
 	//so->gem_level = 0;
 	so->gem_total = 0;

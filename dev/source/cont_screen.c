@@ -27,7 +27,8 @@ void screen_cont_screen_load()
 	engine_audio_manager_music_stop();
 	engine_delay_manager_load( CONT_SCREEN_DELAY );
 	engine_memo_manager_draw_cont();
-	cursor = 0;
+	//cursor = 0;
+	cursor = 1;		// stevepro		TODO delete
 	display_cursor();
 	stage = event_stage_start;
 }

@@ -6,6 +6,13 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+27/03/2019
+Intro length
+1x3
+2x3
+3x3
+4x1
+
 26/03/2019
 Music summary:
 Ninja Gaiden (GG) - 01 - Main Theme						mus_game04.psg
