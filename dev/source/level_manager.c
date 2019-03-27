@@ -334,6 +334,13 @@ void engine_level_manager_get_collision( unsigned char *coll_type, unsigned char
 	struct_level_object *lo = &global_level_object;
 	unsigned int idx;
 
+	// If player greater than max rows then must have fallen in pit i.e. passable.
+	if( y >= MAX_ROWS )
+	{
+		*coll_type = coll_type_passable;
+		return;
+	}
+
 	idx = y * lo->draw_cols + x;
 	*coll_type = lo->collision_array[ idx ];
 }
