@@ -67,7 +67,7 @@ extern const unsigned char	level0207_txt[];
 #define				level0207_txt_bank 4
 
 extern const unsigned char	level0208_txt[];
-#define				level0208_txt_size 217
+#define				level0208_txt_size 216
 #define				level0208_txt_bank 4
 
 extern const unsigned char	level0209_txt[];
