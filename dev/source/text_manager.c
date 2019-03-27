@@ -57,14 +57,11 @@ void engine_text_manager_write_info( unsigned char round )
 	if( 0 == round )
 	{
 		engine_font_manager_draw_text( "WELCOME HERO!", 6, 7 );
-		engine_font_manager_draw_text( "HURRY TO THE EXIT!", 6, 8 );
-		engine_font_manager_draw_text( "EXIT", 23, 16 );
+		engine_font_manager_draw_text( "HURRY TO THE EXIT", 6, 8 );
+		engine_font_manager_draw_text( "EXIT", 23, 15 );
 	}
 	else if( 1 == round )
 	{
-		//engine_font_manager_draw_text( "JUMP ON BLOCKS", 2, 11 );
-		//engine_font_manager_draw_text( "WALK THROUGH PLATFORMS", 2, y + 1 );
-
 		engine_font_manager_draw_text( "JUMP ON", 3, 9 );
 		engine_font_manager_draw_text( "BLOCKS:", 3, 10 );
 
@@ -102,7 +99,7 @@ void engine_text_manager_write_info( unsigned char round )
 	else if( 8 == round )
 	{
 		//engine_font_manager_draw_text( "ENEMY EDDIE", 2, y + 0 );
-		engine_font_manager_draw_text( "GUARDS: THEY NEVER MOVE", 2, y + 1 );
+		engine_font_manager_draw_text( "GUARDS: THEY NEVER MOVE!", 2, y + 1 );
 	}
 	if( 9 == round )
 	{
