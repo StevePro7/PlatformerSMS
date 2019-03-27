@@ -84,11 +84,11 @@ void engine_hack_manager_invert()
 	//ho->hack_delayspeed = 0;
 	ho->hack_invincible = 0;
 
-	//ho->hack_difficulty = diff_type_hard;
+	ho->hack_difficulty = diff_type_hard;
 	//ho->hack_enemy = 0;
 	//ho->hack_sound = 0;
 	//ho->hack_music = 0;
 
 	ho->hack_world = 1;
-	ho->hack_round = 6;
+	ho->hack_round = 7;
 }
