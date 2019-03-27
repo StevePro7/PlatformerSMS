@@ -149,9 +149,43 @@ static void update_text()
 				engine_font_manager_draw_text( "COLLECT THE GEMS &", LEFT, HIGH + 2 );
 				engine_font_manager_draw_text( "HURRY TO THE EXIT!", LEFT, HIGH + 3 );
 			}
-
+			else if( 3 == pause )
+			{
+				engine_font_manager_draw_text( "BASED OFF PLATFORM", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "STARTER KIT BY XNA", LEFT, HIGH + 3 );
+			}
+			else if( 4 == pause )
+			{
+				engine_font_manager_draw_text( "HERE PORTED TO THE", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "SEGA MASTER SYSTEM", LEFT, HIGH + 3 );
+			}
+			else if( 5 == pause )
+			{
+				engine_font_manager_draw_text( "ALL PROGRAMMING BY", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "STEVEPRO USING THE", LEFT, HIGH + 3 );
+			}
+			else if( 6 == pause )
+			{
+				engine_font_manager_draw_text( "DEVKITSMS BUILT BY", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "SVERX. THANKS MAN!", LEFT, HIGH + 3 );
+			}
+			else if( 7 == pause )
+			{
+				engine_font_manager_draw_text( "BIG THANKS GOES TO", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "ALL @ SMSPOWER.ORG", LEFT, HIGH + 3 );
+			}
+			else if( 8 == pause )
+			{
+				engine_font_manager_draw_text( "THANKS ALSO OUT TO", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "ERUIZ00, HAROLDOOP", LEFT, HIGH + 3 );
+			}
+			else if( 9 == pause )
+			{
+				engine_font_manager_draw_text( "NOW GOOD LUCK HERO", LEFT, HIGH + 2 );
+				engine_font_manager_draw_text( "ADVENTURE AWAITS..!", LEFT, HIGH + 3 );
+			}
 			pause++;
-			if( pause >= 3 )
+			if( pause >= 10 )
 			{
 				pause = 0;
 			}

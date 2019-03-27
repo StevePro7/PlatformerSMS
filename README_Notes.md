@@ -50,6 +50,10 @@ Alternatively on the Title screen whenyou're prompted to "Press Start"
 Press button 2 five times and you will have answers to current quiz!
 
 ###### CREDITS
+eruiz00
+haroldoop
+sverx
+
 Extra special thanks to: sverx for devkitSMS https://github.com/sverx/devkitSMS
 <br />
 Plus shout out to eruiz00 as I used some programming tricks from "Astro Force"
@@ -66,7 +70,7 @@ Also, I "borrowed" sound effects from Baluba Balok http://bit.ly/2nnSQJG
 Note: game complete screen has the "Flicky" game over music from SMS Power!
 <br />
 <br />
-Reference to original Platformer starter kit from Microsoft can be found here:
+//Reference to original Platformer starter kit from Microsoft can be found here:
 <br />
 https://www.absurdtrivia.com/trivia/the-simpsons
 
