@@ -22,97 +22,97 @@ static void load_screen();
 
 void screen_view_screen_load()
 {
-	//struct_game_object *go = &global_game_object;
+	struct_game_object *go = &global_game_object;
 
-	////devkit_SMS_displayOff();
-	//engine_text_manager_clear_all();
+	//devkit_SMS_displayOff();
+	engine_text_manager_clear_all();
 
-	//// Load game content.
-	//engine_content_manager_load_guards();
+	// Load game content.
+	engine_content_manager_load_guards();
 
-	//// Load sprite animations.
-	//engine_anim_manager_player_load_idle();
-	//engine_anim_manager_player_load_move();
-	//engine_anim_manager_enemyX_load_idle();
-	////devkit_SMS_displayOn();
+	// Load sprite animations.
+	engine_anim_manager_player_load_idle();
+	engine_anim_manager_player_load_move();
+	engine_anim_manager_enemyX_load_idle();
+	//devkit_SMS_displayOn();
 
-	//// Reset all score data.
-	//engine_score_manager_init( go->difficulty );
-	//load_screen();
+	// Reset all score data.
+	engine_score_manager_init( go->difficulty );
+	load_screen();
 }
 
 void screen_view_screen_update( unsigned char *screen_type )
 {
-	//struct_game_object *go = &global_game_object;
-	//unsigned char test[ 6 ] = { 0,0,0,0,0,0 };
-	////unsigned char status;
+	struct_game_object *go = &global_game_object;
+	unsigned char test[ 6 ] = { 0,0,0,0,0,0 };
+	//unsigned char status;
 
-	//// Draw enemies first!
-	//engine_enemyX_manager_draw_enemys();
-	//engine_player_manager_draw();
+	// Draw enemies first!
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
 
-	//test[ 0 ] = engine_input_manager_hold_left();
-	//if( test[ 0 ] )
-	//{
-	//	if( 0 == go->round_no )
-	//	{
-	//		go->round_no = MAX_ROUNDS - 1;
-	//	}
-	//	else
-	//	{
-	//		go->round_no--;
-	//	}
-	//	load_screen();
-	//}
+	test[ 0 ] = engine_input_manager_hold_left();
+	if( test[ 0 ] )
+	{
+		if( 0 == go->round_no )
+		{
+			go->round_no = MAX_ROUNDS - 1;
+		}
+		else
+		{
+			go->round_no--;
+		}
+		load_screen();
+	}
 
-	//test[ 1 ] = engine_input_manager_hold_right();
-	//if( test[ 1 ] )
-	//{
-	//	if( MAX_ROUNDS - 1 == go->round_no )
-	//	{
-	//		go->round_no = 0;
-	//	}
-	//	else
-	//	{
-	//		go->round_no++;
-	//	}
-	//	load_screen();
-	//}
+	test[ 1 ] = engine_input_manager_hold_right();
+	if( test[ 1 ] )
+	{
+		if( MAX_ROUNDS - 1 == go->round_no )
+		{
+			go->round_no = 0;
+		}
+		else
+		{
+			go->round_no++;
+		}
+		load_screen();
+	}
 
-	//test[ 2 ] = engine_input_manager_hold_down();
-	//if( test[ 2 ] )
-	//{
-	//	if( 0 == go->world_no )
-	//	{
-	//		go->world_no = MAX_WORLDS - 1;
-	//	}
-	//	else
-	//	{
-	//		go->world_no--;
-	//	}
-	//	load_screen();
-	//}
+	test[ 2 ] = engine_input_manager_hold_down();
+	if( test[ 2 ] )
+	{
+		if( 0 == go->world_no )
+		{
+			go->world_no = MAX_WORLDS - 1;
+		}
+		else
+		{
+			go->world_no--;
+		}
+		load_screen();
+	}
 
-	//test[ 3 ] = engine_input_manager_hold_up();
-	//if( test[ 3 ] )
-	//{
-	//	if( MAX_WORLDS - 1 == go->world_no )
-	//	{
-	//		go->world_no = 0;
-	//	}
-	//	else
-	//	{
-	//		go->world_no++;
-	//	}
-	//	load_screen();
-	//}
+	test[ 3 ] = engine_input_manager_hold_up();
+	if( test[ 3 ] )
+	{
+		if( MAX_WORLDS - 1 == go->world_no )
+		{
+			go->world_no = 0;
+		}
+		else
+		{
+			go->world_no++;
+		}
+		load_screen();
+	}
 
-	//test[ 4 ] = engine_input_manager_hold_fire1();
-	//if( test[ 4 ] )
-	//{
-	//	go->difficulty = 1 - go->difficulty;
-	//	load_screen();
-	//}
+	test[ 4 ] = engine_input_manager_hold_fire1();
+	if( test[ 4 ] )
+	{
+		go->difficulty = 1 - go->difficulty;
+		load_screen();
+	}
 
 	*screen_type = screen_type_view;
 }
