@@ -21,7 +21,7 @@ S _engine_tile_manager_draw_tile Ref0000
 S __modsint Ref0000
 S _engine_delay_manager_load Ref0000
 S _engine_sprite_manager_draw_player Ref0000
-A _CODE size 469 flags 0 addr 0
+A _CODE size 468 flags 0 addr 0
 S _screen_intro_screen_load Def0000
 S _screen_intro_screen_update Def0095
 A _DATA size 4 flags 0 addr 0
@@ -348,5 +348,5 @@ T 55 04
 R 00 00 00 00
 T 55 04 41 44 56 45 4E 54 55 52 45 20 41 57 41 49
 R 00 00 00 00
-T 63 04 54 53 2E 2E 21 00
+T 63 04 54 53 2E 21 00
 R 00 00 00 00
