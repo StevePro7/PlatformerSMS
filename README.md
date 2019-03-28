@@ -6,6 +6,25 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+28/03/2019
+TODO
+01.
+PlayScreen check if down() also then move back to BeginScreen
+otherwise reset player as because
+
+02.
+Shorten Gem screen delay + test
+
+03.
+mklink to banks folder and write code to check bank4 + bank5 duplicates
+
+04.
+Rename ViewScreen to SelectScreen.  Wire up 3x fire2 on DiffScreen to navigate there
+Wire up fire2 to pop back.  Leave the other input the same
+
+05.
+Sound effects test
+
 27/03/2019
 Intro length
 1x3
