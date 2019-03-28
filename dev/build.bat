@@ -65,8 +65,9 @@ rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 view_screen.c
 rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
@@ -125,6 +126,7 @@ source\none_screen.rel		source\splash_screen.rel	source\intro_screen.rel		source
 source\diff_screen.rel		source\level_screen.rel		source\init_screen.rel		source\ready_screen.rel		source\load_screen.rel ^
 source\play_screen.rel		source\reset_screen.rel		source\pass_screen.rel		source\gems_screen.rel		source\dead_screen.rel ^
 source\cont_screen.rel		source\over_screen.rel		source\beat_screen.rel		source\test_screen.rel		source\func_screen.rel ^
+source\view_screen.rel ^
 source\screen_manager.rel ^
 gfx.rel ^
 psg.rel

@@ -237,6 +237,9 @@
     <ClCompile Include="banks\bank9.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="source\view_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -454,6 +457,9 @@
     </ClInclude>
     <ClInclude Include="banks\bank9.h">
       <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="source\view_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

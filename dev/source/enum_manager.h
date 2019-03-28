@@ -23,6 +23,7 @@ typedef enum tag_enum_screen_type
 	screen_type_beat = 17,
 	screen_type_test = 18,
 	screen_type_func = 19,
+	screen_type_view = 20,
 
 } enum_screen_type;
 
