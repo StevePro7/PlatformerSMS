@@ -24,7 +24,7 @@ void screen_view_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 
-	//devkit_SMS_displayOff();
+	devkit_SMS_displayOff();
 	engine_text_manager_clear_all();
 
 	// Load game content.
@@ -34,7 +34,7 @@ void screen_view_screen_load()
 	engine_anim_manager_player_load_idle();
 	engine_anim_manager_player_load_move();
 	engine_anim_manager_enemyX_load_idle();
-	//devkit_SMS_displayOn();
+	devkit_SMS_displayOn();
 
 	// Reset all score data.
 	engine_score_manager_init( go->difficulty );
@@ -44,12 +44,7 @@ void screen_view_screen_load()
 void screen_view_screen_update( unsigned char *screen_type )
 {
 	struct_game_object *go = &global_game_object;
-	unsigned char test[ 6 ] = { 0,0,0,0,0,0 };
-	//unsigned char status;
-
-	// Draw enemies first!
-	engine_enemyX_manager_draw_enemys();
-	engine_player_manager_draw();
+	unsigned char test[ 6 ] = { 0, 0, 0, 0, 0, 0 };
 
 	test[ 0 ] = engine_input_manager_hold_left();
 	if( test[ 0 ] )
@@ -114,6 +109,17 @@ void screen_view_screen_update( unsigned char *screen_type )
 		load_screen();
 	}
 
+	test[ 5 ] = engine_input_manager_hold_fire2();
+	if( test[ 5 ] )
+	{
+		*screen_type = screen_type_begin;
+		return;
+	}
+
+	// Draw enemies first!
+	engine_enemyX_manager_draw_enemys();
+	engine_player_manager_draw();
+
 	*screen_type = screen_type_view;
 }
 
@@ -123,7 +129,6 @@ static void load_screen()
 	unsigned char invincible;
 
 	engine_audio_manager_music_stop();
-	//engine_delay_manager_load( LOAD_SCREEN_DELAY );
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 
@@ -133,7 +138,7 @@ static void load_screen()
 	engine_player_manager_load();
 	engine_enemyX_manager_load();
 
-	//devkit_SMS_displayOff();
+	devkit_SMS_displayOff();
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_title();
@@ -149,8 +154,9 @@ static void load_screen()
 	{
 		engine_text_manager_write_info( go->round_no );
 	}
+	engine_font_manager_draw_text( LOCALE_SELECT_TEXT, SCREEN_TILE_LEFT, 0 );
 	engine_level_manager_draw_section();
-	//devkit_SMS_displayOn();
+	devkit_SMS_displayOn();
 
 	// Reset gem count at each level.
 	engine_score_manager_reset_gems();

@@ -35,7 +35,6 @@ void screen_title_screen_load()
 	if( ho->hack_invincible )
 	{
 		engine_text_manager_cheat_write();
-		//engine_audio_manager_sound_power();
 	}
 }
 
