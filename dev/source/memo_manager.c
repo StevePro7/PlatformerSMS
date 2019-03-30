@@ -101,9 +101,6 @@ void engine_memo_manager_draw_cont()
 	unsigned char y = 20;
 	unsigned char wide = 12;
 
-	//unsigned char x = 9;
-	//unsigned char y = 0;
-	//unsigned char wide = 18;
 	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_CONT_MESSAGE, LOCALE_CONT_YESORNO, x, y, wide );
 }
 
@@ -113,9 +110,6 @@ void engine_memo_manager_draw_over()
 	unsigned char y = 20;
 	unsigned char wide = 12;
 
-	//unsigned char x = 14;
-	//unsigned char y = 0;
-	//unsigned char wide = 8;
 	draw_memo( LOCALE_BLANK_SIZE8, LOCALE_GAME_MESSAGE1, LOCALE_GAME_MESSAGE2, x, y, wide );
 }
 

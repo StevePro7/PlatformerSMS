@@ -85,12 +85,10 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	draw_sprite( x, y, frame );
 
 	count++;
-	//if( 0 == count % INTRO_WRITER_TIMER )
 	if( count > INTRO_WRITER_TIMER )
 	{
 		count = 0;
 		update_text();
-		
 	}
 
 	delay = engine_delay_manager_update();
@@ -114,10 +112,6 @@ static void draw_sprite( unsigned char x, unsigned char y, unsigned frame )
 
 static void update_text()
 {
-	//engine_font_manager_draw_data( stage, 20, 2 );
-	//engine_font_manager_draw_data( stage, 20, 3 );
-	//engine_font_manager_draw_data( pause, 20, 4 );
-
 	if( 0 == first )
 	{
 		first = 1;

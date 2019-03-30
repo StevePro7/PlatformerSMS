@@ -1,0 +1,67 @@
+Developer diary
+30/03/2019
+
+Sat, 30/03
+Make reset screen more generic so can reset player during level OR quit game during play
+Reduce Gem screen delay
+Integrate view screen so more polished and can be used if cheat
+
+
+Fri, 29/03
+Confirmation so no code today!
+Did play test with Glenn
+
+Thu, 28/03
+Day
+Add Select screen but standalong - it works OK
+
+Evening
+Write quick duplicate program to detect idential level screens
+Think about how could integrate view screen
+
+Deadline
+Wed, 27/03
+Morning
+Bug!  Fail to fall thru pit at various "holes" as was reading tile[] but next level
+
+Evening 
+YouTube video straight after work
+Finalize screens and final build for upload
+Bug just before shipping as enemy must reset if kills player and player on start spot
+Sent thru email but no auto response
+
+
+Tue, 26/03		DAY OFF
+Morning
+Big optimization today: took out the myabs() function and replaced with custom logic
+to determine which sign to check and noticed a massive improved noticeable more on 60FPS NTSC
+However, there is still an issue when there are too many platform blocks so use sparingly!
+Ditto applies to optional platform blocks
+Finally, if having any issue with level not rendering correctly then ensure full re-build!
+
+Afternoon
+Integrate music but stop-start during play
+Trial out Resume() method but realized old version of PSG library so had to upgrade PSG library
+Fortunately there were no side effects
+
+Evening
+Finalize music compilation Ninja Garden
+
+
+Mon, 25/03
+Morning
+Implement sprite flash change "fixed" from late last night
+Afternoon
+Music compilation	Trivial Pursuit
+Make all documentation notes prepared
+
+
+Sun, 24/03
+Morning
+Big change!
+RE-architect clear VRAM + content load esp. transition from begin screen to init screen
+Before doing this there were graphics artefacts on screen when going from game over back to begin
+Evening
+Sprite flash when transition between levels
+i.e. finish level X and load level X+1 player sprite would "flash"
+so had to workraound this issue by not drawing sprite last frame of transitioning screen
