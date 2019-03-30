@@ -15,7 +15,7 @@ otherwise reset player as because
 02.
 Shorten Gem screen delay + test
 
-03.
+03.	DONE
 mklink to banks folder and write code to check bank4 + bank5 duplicates
 
 04.

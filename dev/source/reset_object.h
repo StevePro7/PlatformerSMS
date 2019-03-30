@@ -5,6 +5,7 @@ typedef struct tag_struct_reset_object
 {
 	unsigned char reset_frame;
 	unsigned char reset_timer;
+	unsigned char reset_screen;
 
 } struct_reset_object;
 

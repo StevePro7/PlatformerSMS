@@ -11,7 +11,7 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 
-#define GEMS_SCREEN_DELAY1		150
+#define GEMS_SCREEN_DELAY1		75
 #define GEMS_SCREEN_DELAY2		75
 
 static unsigned char stage;
@@ -31,24 +31,30 @@ void screen_gems_screen_load()
 
 void screen_gems_screen_update( unsigned char *screen_type )
 {
+	struct_reset_object *ro = &global_reset_object;
 	unsigned char delay;
 	unsigned char input;  
 	unsigned char check;
 
-	if( event_stage_pause == stage )
-	{
-		delay = engine_delay_manager_update();
-		if( delay )
-		{
-			*screen_type = screen_type_begin;
-			return;
-		}
-		else
-		{
-			*screen_type = screen_type_gems;
-			return;
-		}
-	}
+	//if( event_stage_pause == stage )
+	//{
+	//	delay = engine_delay_manager_update();
+	//	ro->reset_screen = screen_type_begin;
+	//	*screen_type = screen_type_reset;
+	//	return;
+	//	/**screen_type = delay ? screen_type_begin : screen_type_gems;
+	//	return;*/
+	//	/*if( delay )
+	//	{
+	//		*screen_type = screen_type_begin;
+	//		return;
+	//	}
+	//	else
+	//	{
+	//		*screen_type = screen_type_gems;
+	//		return;
+	//	}*/
+	//}
 
 
 	delay = engine_delay_manager_update();
@@ -60,10 +66,13 @@ void screen_gems_screen_update( unsigned char *screen_type )
 		if( check )
 		{
 			engine_audio_manager_sound_reset();
-			engine_delay_manager_load( GEMS_SCREEN_DELAY2 );
-			stage = event_stage_pause;
-			//*screen_type = screen_type_begin;
+			ro->reset_screen = screen_type_begin;
+			*screen_type = screen_type_reset;
 			return;
+			//engine_delay_manager_load( GEMS_SCREEN_DELAY2 );
+			//stage = event_stage_pause;
+			////*screen_type = screen_type_begin;
+			//return;
 		}
 	}
 	else

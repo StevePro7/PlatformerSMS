@@ -41,8 +41,10 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
+	struct_reset_object *ro = &global_reset_object;
 	struct_level_object *lo = &global_level_object;
 	struct_score_object *so = &global_score_object;
+	
 	struct_player_object *po = &global_player_object;
 	struct_enemy_master *em = &global_enemy_master;
 	struct_enemy_object *eo;
@@ -75,6 +77,16 @@ void screen_play_screen_update( unsigned char *screen_type )
 		if( check )
 		{
 			engine_audio_manager_music_stop();
+			input = engine_input_manager_move_down();
+			if( input )
+			{
+				ro->reset_screen = screen_type_begin;
+			}
+			else
+			{
+				ro->reset_screen = screen_type_ready;
+			}
+
 			*screen_type = screen_type_reset;
 			return;
 		}
