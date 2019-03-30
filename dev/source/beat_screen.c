@@ -5,8 +5,8 @@
 #include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
-#include <stdlib.h>
 #include "audio_manager.h"
+#include <stdlib.h>
 
 #define BEAT_SCREEN_DELAY	900
 
@@ -21,7 +21,6 @@ void screen_beat_screen_load()
 void screen_beat_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
-	//unsigned char input;
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
@@ -33,6 +32,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	//if( delay || input )
 	if( delay )
 	{
+		engine_audio_manager_music_stop();
 		*screen_type = screen_type_begin;
 		return;
 	}

@@ -26,6 +26,7 @@ void screen_view_screen_load()
 
 	devkit_SMS_displayOff();
 	engine_text_manager_clear_all();
+	engine_audio_manager_music_stop();
 
 	// Load game content.
 	engine_content_manager_load_guards();
@@ -128,7 +129,7 @@ static void load_screen()
 	struct_game_object *go = &global_game_object;
 	unsigned char invincible;
 
-	engine_audio_manager_music_stop();
+	
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 
