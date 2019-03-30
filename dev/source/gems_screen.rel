@@ -2,9 +2,9 @@ XL2
 H 9 areas 11 global symbols
 M gems_screen
 O -mz80
+S _engine_score_manager_draw_score_at Ref0000
 S _engine_audio_manager_sound_reset Ref0000
 S _engine_reset_manager_load Ref0000
-S _engine_score_manager_draw_score Ref0000
 S _engine_reset_manager_reset Ref0000
 S .__.ABS. Def0000
 S _engine_delay_manager_update Ref0000
@@ -39,7 +39,7 @@ R 00 00 00 00 02 03 07 00 02 0A 0E 00 02 0E 0B 00
 T 0E 00 21 0D 15 E5 3E 0C F5 33 CD 00 00 33 21
 R 00 00 00 00 02 0B 0D 00
 T 1B 00 14 16 E3 CD 00 00 26 4B E3 33 CD 00 00 33
-R 00 00 00 00 02 06 02 00 02 0D 01 00
+R 00 00 00 00 02 06 00 00 02 0D 02 00
 T 29 00 21 00 00 36 00 C9
 R 00 00 00 00 00 03 01 00
 T 2F 00
@@ -51,7 +51,7 @@ R 00 00 00 00 02 03 09 00
 T 4B 00 05 DD 77 FF 7A B7 28 17 D5 CD 00 00 D1 7D
 R 00 00 00 00 02 0C 0A 00
 T 59 00 B7 28 13 CD 00 00 21 02 00 36 03 E1 E5 36
-R 00 00 00 00 02 06 00 00 02 09 08 00
+R 00 00 00 00 02 06 01 00 02 09 08 00
 T 67 00 0C 18 19
 R 00 00 00 00
 T 6A 00

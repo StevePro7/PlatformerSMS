@@ -78,7 +78,11 @@ void engine_score_manager_draw_lives()
 //	engine_font_manager_draw_text( lives_text[ index ], 31, GAME_DATA_BOT );
 //}
 
-void engine_score_manager_draw_score( unsigned char x, unsigned char y )
+void engine_score_manager_draw_score()
+{
+	engine_score_manager_draw_score_at( 31, 2 );
+}
+void engine_score_manager_draw_score_at( unsigned char x, unsigned char y )
 {
 	struct_score_object *so = &global_score_object;
 	engine_font_manager_draw_data( so->gem_total, x, y );

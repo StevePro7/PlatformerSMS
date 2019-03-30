@@ -23,7 +23,7 @@ void screen_gems_screen_load()
 	engine_memo_manager_draw_gems();
 
 	engine_tile_manager_draw_tile( tile_type_gemscore, 13, 21 );
-	engine_score_manager_draw_score( 20, 22 );
+	engine_score_manager_draw_score_at( 20, 22 );
 
 	engine_reset_manager_load( GEMS_SCREEN_DELAY2 );
 	stage = event_stage_start;
