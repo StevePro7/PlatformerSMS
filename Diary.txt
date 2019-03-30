@@ -61,6 +61,10 @@ Morning
 Big change!
 RE-architect clear VRAM + content load esp. transition from begin screen to init screen
 Before doing this there were graphics artefacts on screen when going from game over back to begin
+
+This task included re-factoring the asm_manager implementation code into its own *.c file
+I was meaning to do this but was now forced upon me...
+
 Evening
 Sprite flash when transition between levels
 i.e. finish level X and load level X+1 player sprite would "flash"

@@ -105,9 +105,6 @@
     <ClCompile Include="source\sprite_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="source\scroll_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
     <ClCompile Include="source\tile_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
@@ -306,9 +303,6 @@
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="source\_sms_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="source\scroll_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="source\enum_manager.h">

@@ -123,7 +123,7 @@ void engine_tile_manager_get_collision( enum_coll_type *coll_type, unsigned char
 	}
 	if( '$' == tile )
 	{
-		// $ diff=Easy visible other diff=Hard hidden.
+		// $ diff=Easy visible otherwise diff=Hard hidden.
 		if( diff_type_hard == difficulty )
 		{
 			*coll_type = coll_type_passable;

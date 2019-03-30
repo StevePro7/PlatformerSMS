@@ -195,9 +195,9 @@ static void increase_lives()
 
 	if( so->num_lives < MAMNUM_LIVES )
 	{
+		engine_audio_manager_sound_power();
 		engine_score_manager_update_lives( 1 );
 		engine_score_manager_draw_lives();
-		//engine_audio_manager_sound_power();
 	}
 }
 

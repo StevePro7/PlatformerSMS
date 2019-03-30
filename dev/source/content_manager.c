@@ -19,20 +19,6 @@ void engine_content_manager_load_back_tiles()
 void engine_content_manager_load_sprites()
 {
 	// Sprites.
-	/*unsigned char index;
-	unsigned char count = 16;
-	unsigned char offset = 8;
-	for( index = 0; index < count; index++ )
-	{
-		devkit_SMS_loadPSGaidencompressedTiles( Player_Idle__tiles__psgcompr, index * offset + SPRITE_TILES_OFFSET );
-	}*/
-
-	//devkit_SMS_loadPSGaidencompressedTiles( Player_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_player ] );
-	//devkit_SMS_loadPSGaidencompressedTiles( EnemyA_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyA ] );
-	//devkit_SMS_loadPSGaidencompressedTiles( EnemyB_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyB ] );
-	//devkit_SMS_loadPSGaidencompressedTiles( EnemyC_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyC ] );
-	//devkit_SMS_loadPSGaidencompressedTiles( EnemyD_Idle__tiles__psgcompr, list_sprite_tile_offset[ sprite_type_enemyD ] );
-
 	devkit_SMS_mapROMBank( sprites__palette__bin_bank );
 	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
 }
@@ -46,7 +32,7 @@ void engine_content_manager_load_splash()
 
 void engine_content_manager_load_title()
 {
-	// TODO confirm which is the final title - I believe Title6 is more theme aligned...
+	// Uncomment these lines for title6 instead of title8.
 	//devkit_SMS_mapROMBank( title6__tiles__psgcompr_bank );
 	//devkit_SMS_loadPSGaidencompressedTiles( title6__tiles__psgcompr, MISC_TILES_OFFSET );
 	//devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title6__tilemap__stmcompr );

@@ -60,7 +60,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			//engine_font_manager_draw_text( LOCALE_SELECT_ARROW, OPT1_X, cursorY[ cursor ] );
 			*screen_type = screen_type_level;
 			return;
 		}
@@ -135,9 +134,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 	test[ 4 ] = engine_input_manager_hold_fire1();
 	if( test[4] )
 	{
-		//engine_font_manager_draw_text( LOCALE_SELECT_BLANK, OPT1_X, OPT1_Y );
-		//engine_font_manager_draw_text( LOCALE_SELECT_BLANK, OPT1_X, OPT2_Y );
-
 		engine_audio_manager_sound_accept();
 		stage = event_stage_pause;
 		return;
