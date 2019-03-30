@@ -15,14 +15,18 @@
 // Global variable.
 struct_player_object global_player_object;
 
-#define MAX_VELOCITY_X	10
+//#define MAX_VELOCITY_X	10
+#define MAX_VELOCITY_X	15
 #define MAX_VELOCITY_Y	17
 
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
 
-static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
-static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3 };
+// Good
+//static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
+//static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3 };
+static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
+static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 
 static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
 static signed char gravityZZ[ MAX_VELOCITY_Y ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
@@ -149,7 +153,14 @@ void engine_player_manager_get_input()
 		if( po->anim_frame >= po->anim_count )
 		{
 			po->anim_frame = 0;
-			po->anim_index++;
+			if( 0 == po->anim_index )
+			{
+				po->anim_index = po->anim_start;
+			}
+			else
+			{
+				po->anim_index++;
+			}
 
 			if( po->anim_index >= po->anim_maxim )
 			{
@@ -163,6 +174,10 @@ void engine_player_manager_get_input()
 		}
 
 		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
+		if( 0 == po->deltaX )
+		{
+			po->anim_index = 0;
+		}
 		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
 	}
 	else
