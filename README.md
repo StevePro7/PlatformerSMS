@@ -8,17 +8,17 @@ https://yhoo.it/2HdDJfu
 
 28/03/2019
 TODO
-01.
+01.	DONE
 PlayScreen check if down() also then move back to BeginScreen
 otherwise reset player as because
 
-02.
+02.	DONE
 Shorten Gem screen delay + test
 
 03.	DONE
 mklink to banks folder and write code to check bank4 + bank5 duplicates
 
-04.
+04.	DONE
 Rename ViewScreen to SelectScreen.  Wire up 3x fire2 on DiffScreen to navigate there
 Wire up fire2 to pop back.  Leave the other input the same
 

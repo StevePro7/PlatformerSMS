@@ -52,6 +52,7 @@
 #define GAME_DATA_BOT			23
 
 #define LOCAL_CHEAT_TOTAL		5
+#define LOCAL_SELECT_TOTAL		3
 
 #define ANIMATE_MOVE_MAX		5
 #define ANIMATE_IDX_LEFT		1

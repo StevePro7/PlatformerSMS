@@ -20,7 +20,7 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	unsigned char test[ 4 ] = { 0,0,0,0 };
+	unsigned char test[ 4 ] = { 0, 0, 0, 0 };
 	unsigned char status;
 
 	test[ 0 ] = engine_input_manager_hold_left();

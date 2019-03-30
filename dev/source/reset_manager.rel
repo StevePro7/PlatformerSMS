@@ -7,7 +7,7 @@ A _CODE size 31 flags 0 addr 0
 S _engine_reset_manager_load Def0000
 S _engine_reset_manager_reset Def0010
 S _engine_reset_manager_update Def0016
-A _DATA size 2 flags 0 addr 0
+A _DATA size 3 flags 0 addr 0
 S _global_reset_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
