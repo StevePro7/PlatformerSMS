@@ -128,7 +128,7 @@ static void update_text()
 	{
 		if( 0 == stage )
 		{
-			if( 0 == pause )
+			/*if( 0 == pause )
 			{
 				engine_font_manager_draw_text( "CONQUER ALL LEVELS", LEFT, HIGH + 2 );
 				engine_font_manager_draw_text( "OF PLATFROM ACTION", LEFT, HIGH + 3 );
@@ -177,7 +177,7 @@ static void update_text()
 			{
 				engine_font_manager_draw_text( "NOW GOOD LUCK HERO", LEFT, HIGH + 2 );
 				engine_font_manager_draw_text( "ADVENTURE AWAITS.!", LEFT, HIGH + 3 );
-			}
+			}*/
 			pause++;
 			if( pause >= 10 )
 			{
