@@ -25,5 +25,5 @@ unsigned char *intro_textBot[] =
 	"SVERX. THANKS MAN!",
 	"ALL @ SMSPOWER.ORG",
 	"ERUIZ00+ HAROLDOOP",
-	"ADVENTURE AWAITS.!"
+	"ADVENTURE AWAITS..!"
 };

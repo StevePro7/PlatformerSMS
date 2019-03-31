@@ -1,4 +1,5 @@
 #include "intro_screen.h"
+#include "intro_object.h"
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
@@ -128,6 +129,9 @@ static void update_text()
 	{
 		if( 0 == stage )
 		{
+			engine_font_manager_draw_text( intro_textTop[ pause ], LEFT, HIGH + 2 );
+			engine_font_manager_draw_text( intro_textBot[ pause ], LEFT, HIGH + 3 );
+
 			/*if( 0 == pause )
 			{
 				engine_font_manager_draw_text( "CONQUER ALL LEVELS", LEFT, HIGH + 2 );
