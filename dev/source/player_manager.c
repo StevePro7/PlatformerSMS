@@ -25,7 +25,7 @@ struct_player_object global_player_object;
 // Good
 //static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
 //static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3 };
-static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
+static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
 static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 
 static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };

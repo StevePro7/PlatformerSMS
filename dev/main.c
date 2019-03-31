@@ -19,9 +19,9 @@ void main(void)
 
 	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_begin;
+	//open_screen_type = screen_type_begin;
 	//open_screen_type = screen_type_diff;
-	//open_screen_type = screen_type_init;
+	open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_view;
 
 	engine_state_manager_init();
