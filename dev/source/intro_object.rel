@@ -3,7 +3,7 @@ H 9 areas 3 global symbols
 M intro_object
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 17C flags 0 addr 0
+A _CODE size 17D flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 28 flags 0 addr 0
 S _intro_textBot Def0014
@@ -140,7 +140,7 @@ T 69 01
 R 00 00 00 00
 T 69 01 41 44 56 45 4E 54 55 52 45 20 41 57 41 49
 R 00 00 00 00
-T 77 01 54 53 2E 21 00
+T 77 01 54 53 2E 2E 21 00
 R 00 00 00 00
 T 00 00
 R 00 00 07 00
