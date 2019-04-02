@@ -51,16 +51,12 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	struct_game_object *go = &global_game_object;
 
 	unsigned char delay;
-	//unsigned char input;
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_hide();
 
 	delay = engine_delay_manager_update();
-	//input = engine_input_manager_hold_fire1();
-
-	//if( delay || input )
 	if( delay )
 	{
 		go->round_no++;
@@ -77,21 +73,9 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			}
 		}
 
-		// Change: unconditionally navigate to gem screen!
-		// Don't navigate to gems screen until collected at least one gem.
-		//if( 0 == so->gem_total )
-		//{
-		//	*screen_type = screen_type_load;
-		//	return;
-		//}
-		//else
-		//{
-			*screen_type = screen_type_gems;
-			return;
-		//}
+		*screen_type = screen_type_gems;
+		return;
 	}
-
-	
 
 	*screen_type = screen_type_pass;
 }

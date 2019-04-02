@@ -16,7 +16,7 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 #include "state_manager.h"
-#include <stdlib.h>
+//#include <stdlib.h>
 
 static void load_screen();
 

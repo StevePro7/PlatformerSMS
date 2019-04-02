@@ -2,11 +2,9 @@
 #include "enum_manager.h"
 #include "memo_manager.h"
 #include "delay_manager.h"
-#include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "audio_manager.h"
-#include <stdlib.h>
 
 #define BEAT_SCREEN_DELAY	900
 
@@ -27,9 +25,6 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	engine_player_manager_hide();
 
 	delay = engine_delay_manager_update();
-//	input = engine_input_manager_hold_fire1();
-
-	//if( delay || input )
 	if( delay )
 	{
 		engine_audio_manager_music_stop();

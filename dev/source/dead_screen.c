@@ -2,10 +2,8 @@
 #include "global_manager.h"
 #include "hack_manager.h"
 #include "enum_manager.h"
-#include "font_manager.h"
 #include "memo_manager.h"
 #include "delay_manager.h"
-#include "input_manager.h"
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "score_manager.h"
@@ -42,30 +40,17 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_score_object *so = &global_score_object;
 	unsigned char delay;
-	//unsigned char input;
-	//unsigned char test1, test2;
-
-	//const unsigned char leftX = 4;
-	//const unsigned char rghtX = 10;
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
-	//engine_enemyX_manager_hide_enemys( leftX, rghtX );
 
 	// Don't draw if player in pit.
 	if( po->posnY >= 0 )
 	{
 		engine_player_manager_draw();
-		//engine_player_manager_hide( leftX, rghtX );
 	}
 
 	delay = engine_delay_manager_update();
-	//input = engine_input_manager_hold_fire1();
-	//test1 = engine_input_manager_hold_left();
-	//test2 = engine_input_manager_hold_right();
-
-	//if( delay || input )
-	//if( delay || test1 || test2 )
 	if( delay )
 	{
 		if( so->num_lives <= 0 )

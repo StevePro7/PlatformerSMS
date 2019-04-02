@@ -75,6 +75,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	{
 		index = rand() % MAMNUM_TUNES;
 		engine_audio_manager_music_game( index );
+
 		*screen_type = screen_type_ready;
 		return;
 	}

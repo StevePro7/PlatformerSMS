@@ -141,7 +141,7 @@ void devkit_SMS_resetPauseRequest()
 	SMS_resetPauseRequest();
 }
 
-// input
+// Input.
 unsigned int devkit_SMS_getKeysStatus()
 {
 	return SMS_getKeysStatus();

@@ -9,9 +9,8 @@
 #include "delay_manager.h"
 #include "input_manager.h"
 #include "stats_manager.h"
-#include "game_manager.h"
 #include "audio_manager.h"
-#include <stdlib.h>
+#include "game_manager.h"
 
 #define LEVEL_SCREEN_DELAY	50
 #define TEXT_X				11

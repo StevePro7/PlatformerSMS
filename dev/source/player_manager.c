@@ -83,6 +83,7 @@ void engine_player_manager_init()
 	negMinDistanceX = -1 * minDistanceX;
 	negMinDistanceY = -1 * minDistanceY;
 }
+
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
@@ -96,7 +97,6 @@ void engine_player_manager_load()
 	po->posnY = rectB;
 
 	po->player_move_type = move_type_idle;
-	//po->player_health_type = health_type_alive;
 	po->drawX = 0;	po->drawY = 0;
 	po->collX = 0;	po->collX = 0;
 	po->prevX = 0;	po->prevX = 0;
@@ -114,20 +114,9 @@ void engine_player_manager_load()
 	po->previousBottom = 0;
 	po->anim_index = 0;
 	po->anim_start = 0; po->anim_maxim = 0;
-	po->anim_frame = 0;//	po->anim_count = 50;
+	po->anim_frame = 0;
 	po->kill_idx = INVALID_INDEX;
 }
-
-//void engine_player_manager_update()
-//{
-//	struct_player_object *po = &global_player_object;
-//	//po->player_move_type = move_type_idle;
-//	po->player_curr_move_type = move_type_idle;
-//	po->player_prev_move_type = move_type_idle;
-//	po->velX = 0;
-//
-//	engine_player_manager_get_input();
-//}
 
 void engine_player_manager_get_input()
 {
@@ -199,18 +188,6 @@ void engine_player_manager_apply_physics()
 	po->prevX = po->posnX;
 	po->prevY = po->posnY;
 
-	/*if( move_type_idle != po->player_move_type )
-	{
-		po->player_idxX++;
-		if( po->player_idxX > MAX_VELOCITY_X - 1 )
-		{
-			po->player_idxX = MAX_VELOCITY_X - 1;
-		}
-
-		po->deltaX = po->isOnGround ? velocityXgnd[ po->player_idxX ] : velocityXair[ po->player_idxX ];
-		po->velX = ( po->player_move_type - 1 ) * po->deltaX;
-	}*/
-
 	if( !po->isOnGround )
 	{
 		po->player_grav++;
@@ -257,7 +234,6 @@ void engine_player_manager_handle_collisions()
 	unsigned char x, y;
 
 	int idxX, idxY;	//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
-	//unsigned char idxX, idxY;		// TODO ensure that will NOT overflow i.e. >= 256 if btwn 8 and 15*16+8 then should be OK
 	signed char quoX, remX;
 	signed char quoY, remY;
 
@@ -337,8 +313,6 @@ void engine_player_manager_handle_collisions()
 				process_collision( boundsLeft, boundsTopX, tileBoundsLeft, tileBoundsTopX );
 				if( 0 != po->depthX || 0 != po->depthY )
 				{
-					//absDepthX = fabsf( ( float ) po->depthX );
-					//absDepthY = fabsf( ( float ) po->depthY );
 					absDepthX = po->depthX;
 					absDepthY = po->depthY;
 
@@ -461,24 +435,14 @@ void engine_player_manager_draw()
 }
 
 
-//void engine_player_manager_hide( int leftX, int rghtX )
 void engine_player_manager_hide()
 {
 	struct_player_object *po = &global_player_object;
-
 	unsigned int tile;
-	//int size;
+
 	get_draw_position();
-
-	// Don't draw if sprite "collides" with memo box.
-	//size = po->drawX - DRAW_OFFSET_X;
-	//if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
-	//	( po->drawY > MEMO_SPRITE_TOP && po->drawY < MEMO_SPRITE_BOT ) )
-	//{
-	//	return;
-	//}
-
 	tile = PLAYER_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER;
+
 	engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 }
 

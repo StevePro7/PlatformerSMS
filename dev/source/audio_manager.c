@@ -18,7 +18,7 @@
 #define sfx_power_psg			sfx_power_psg
 #define sfx_reset_psg			sfx_reset_psg
 
-// Private helper function.
+// Private helper functions.
 static void play_music( unsigned char *mus, unsigned char bank );
 static void play_music_norepeat( unsigned char *mus, unsigned char bank );
 static void play_sound( unsigned char *sfx );

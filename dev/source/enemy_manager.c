@@ -12,7 +12,6 @@
 struct_enemy_master global_enemy_master;
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
-
 #define DRAW_OFFSET_X	0
 
 static unsigned int enemy_tiles[ MAX_ENEMIES ] =
@@ -114,7 +113,6 @@ void engine_enemyX_manager_update()
 			continue;
 		}
 
-
 		if( move_type_idle == eo->curr_move_type )
 		{
 			eo->loop++;
@@ -198,38 +196,7 @@ void engine_enemyX_manager_draw_enemys()
 		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );
 	}
 }
-/*
-void engine_enemyX_manager_hide_enemys( int leftX, int rghtX )
-{
-	struct_enemy_master *em = &global_enemy_master;
-	struct_enemy_object *eo;
-	unsigned char idx;
-	unsigned int tile;
-	int size;
 
-	for( idx = 0; idx < em->max_enemies; idx++ )
-	{
-		eo = &global_enemy_objects[ idx ];
-		if( action_type_chase != eo->action_type )
-		{
-			continue;
-		}
-
-		get_enemy_draw_position( idx );
-
-		// Don't draw if sprite "collides" with memo box.
-		size = eo->drawX - DRAW_OFFSET_X;
-		if( ( size > ( ( leftX + 1 ) * TILE_WIDE ) && size < ( ( rghtX + 1 ) * TILE_WIDE ) ) &&
-			( eo->drawY > MEMO_SPRITE_TOP && eo->drawY < MEMO_SPRITE_BOT ) )
-		{
-			continue;
-		}
-
-		tile = enemy_tiles[ eo->sprite_type ];
-		engine_sprite_manager_draw_enemyX( eo->drawX, eo->drawY, tile );
-	}
-}
-*/
 void engine_enemyX_manager_draw_guards()
 {
 	struct_enemy_master *em = &global_enemy_master;
@@ -263,7 +230,7 @@ static void get_guard_draw_position( unsigned char idx )
 {
 	struct_enemy_object *eo = &global_enemy_objects[ idx ];
 
-	// Block 16x16 = 2 * 8x8.
+	// Block 16x16 = 2 * 8x08.
 	eo->drawX = eo->spotX * 2;
 	eo->drawY = ( eo->spotY - 1 ) * 2;
 }

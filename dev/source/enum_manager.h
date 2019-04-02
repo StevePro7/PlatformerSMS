@@ -24,7 +24,6 @@ typedef enum tag_enum_screen_type
 	screen_type_beat = 18,
 	screen_type_test = 19,
 	screen_type_func = 20,
-	
 
 } enum_screen_type;
 
@@ -99,20 +98,6 @@ typedef enum tag_enum_move_type
 
 } enum_move_type;
 
-//typedef enum tag_enum_half_type
-//{
-//	half_type_prev = 0,
-//	half_type_next = 1,
-//
-//} enum_half_type;
-
-//typedef enum tag_enum_health_type
-//{
-//	health_type_alive = 0,
-//	health_type_death = 1,
-//
-//} enum_health_type;
-
 typedef enum tag_enum_action_type
 {
 	action_type_chase = 0,
@@ -139,6 +124,5 @@ typedef enum tag_enum_stage_type
 	event_stage_pause = 1,
 
 } enum_stage_type;
-
 
 #endif//_ENUM_MANAGER_H_

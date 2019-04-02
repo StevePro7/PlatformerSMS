@@ -12,7 +12,6 @@ const unsigned char *game_audio_data[] =
 	mus_game02_psg,
 	mus_game03_psg,
 };
-
 const unsigned char game_audio_bank[] =
 {
 	mus_game01_psg_bank,

@@ -19,25 +19,18 @@ void screen_over_screen_load()
 {
 	engine_audio_manager_music_over();
 	engine_delay_manager_load( OVER_SCREEN_DELAY );
-	//engine_level_manager_draw_section();
-//	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_over();
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	unsigned char delay;
-	//unsigned char input;
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();
 	engine_player_manager_draw();
-	
 
 	delay = engine_delay_manager_update();
-	//input = engine_input_manager_hold_fire1();
-
-	//if( delay || input )
 	if( delay )
 	{
 		engine_audio_manager_music_stop();

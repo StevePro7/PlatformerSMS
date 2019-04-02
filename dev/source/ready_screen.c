@@ -13,7 +13,6 @@
 #include "audio_manager.h"
 
 #define READY_SCREEN_DELAY		75
-//static unsigned char status;
 
 void screen_ready_screen_load()
 {
@@ -38,24 +37,7 @@ void screen_ready_screen_load()
 	engine_player_manager_load();
 
 	engine_level_manager_draw_section();
-//	engine_enemyX_manager_draw_guards();
 	engine_score_manager_draw_lives();
-
-	// TODO re-draw the hearts for lives on LHS
-	// TODO wire up different game play music...
-	//engine_audio_manager_start_music();
-	//engine_audio_manager_music_game( 0 );
-
-	//status = PSGGetStatus();
-	//engine_font_manager_draw_data( status, 20, 2 );
-	/*if( 0 == status )
-	{
-		engine_audio_manager_music_game( 0 );
-	}
-
-	engine_audio_manager_music_resume();*/
-
-	//engine_font_manager_draw_text( "READY", 20, 3 );
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )
@@ -74,20 +56,7 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	delay = engine_delay_manager_update();
 	if( test[ 0 ] || test[ 1 ] || delay )
 	{
-		// If navigate from load screen then play music.
-		//if( 0 == status )
-		//{
-		//	engine_audio_manager_music_game( 0 );
-		//}
-		//else
-		//{
-		//	// Otherwise navigate from dead, cont, reset and resume...
-		//	engine_audio_manager_music_resume();
-		//}
-		
-
 		engine_audio_manager_music_resume();
-
 		*screen_type = screen_type_play;
 		return;
 	}

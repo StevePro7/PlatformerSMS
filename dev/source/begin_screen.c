@@ -21,8 +21,6 @@ void screen_begin_screen_load()
 
 	engine_content_manager_load_back_tiles();
 	engine_content_manager_load_sprites();
-
-	//engine_text_manager_clear_all();
 	engine_content_manager_load_title();
 
 	for( x = 2; x < SCREEN_TILE_WIDE; x += 2 )

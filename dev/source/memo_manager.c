@@ -31,13 +31,6 @@ void engine_memo_manager_init()
 
 void engine_memo_manager_draw_title()
 {
-	unsigned char x;
-	for( x = 2; x < 32; x++ )
-	{
-		//engine_tile_manager_draw_small( x, 0, get_tile() );
-	}
-
-	//engine_font_manager_draw_text( "====  PLATFORM  EXPLORER  ====", 2, 0 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE1, 13, 0 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MESSAGE2, 13, 1 );
 
@@ -82,7 +75,7 @@ void engine_memo_manager_draw_gems()
 	unsigned char x = 12;
 	unsigned char y = 20;
 	unsigned char wide = 12;
-	//draw_memo( LOCALE_BLANK_SIZE10, LOCALE_GEMS_TEXT, LOCALE_BLANK_SIZE10, x, wide );
+
 	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_BLANK_SIZE10, LOCALE_BLANK_SIZE10, x, y, wide );
 	engine_font_manager_draw_text( LOCALE_GEMS_TEXT, 17, y + 1 );
 }
@@ -123,7 +116,6 @@ void engine_memo_manager_draw_beat()
 
 static unsigned char get_tile()
 {
-	//unsigned char idx = rand() % MAX_SMALL_TILES;
 	index++;
 	if( index >= 3 )
 	{
@@ -154,17 +146,15 @@ static void draw_memo( unsigned char *blank, unsigned char *text1, unsigned char
 	unsigned char left = x - 1;
 	unsigned char topY = y + 0;
 	index = 0;
+
 	engine_font_manager_draw_text( blank, x, y + 1 );
 	engine_font_manager_draw_text( text1, x, y + 1 );
 	engine_font_manager_draw_text( text2, x, y + 2 );
-	//engine_font_manager_draw_text( blank, x, MEMO_Y + 4 );
 
 	if( !border )
 	{
 		return;
 	}
 
-	//engine_font_manager_draw_text( blank, x, 9 );
-	//engine_font_manager_draw_text( blank, x, 14 );
 	draw_tile( left, topY, wide );
 }

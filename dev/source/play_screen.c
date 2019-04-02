@@ -122,7 +122,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 					}
 					//else
 					//{
-					//	TODO can get sound effect on channel2AND3 sounds better?
+					//	Disabled for now as gems can be close together and "mash" sound FX.
 					//	engine_audio_manager_sound_gem();
 					//}
 				}

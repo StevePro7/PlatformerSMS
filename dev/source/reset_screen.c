@@ -45,7 +45,6 @@ void screen_reset_screen_update( unsigned char *screen_type )
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
-		//*screen_type = screen_type_ready;
 		stage = event_stage_pause;
 		engine_delay_manager_load( RESET_SCREEN_PAUSE );
 		return;
