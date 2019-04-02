@@ -103,7 +103,7 @@ void engine_memo_manager_draw_over()
 	unsigned char y = 20;
 	unsigned char wide = 12;
 
-	draw_memo( LOCALE_BLANK_SIZE8, LOCALE_GAME_MESSAGE1, LOCALE_GAME_MESSAGE2, x, y, wide );
+	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_GAME_MESSAGE1, LOCALE_GAME_MESSAGE2, x, y, wide );
 }
 
 void engine_memo_manager_draw_beat()

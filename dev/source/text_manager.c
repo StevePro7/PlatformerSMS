@@ -28,7 +28,7 @@ void engine_text_manager_clear_three()
 
 void engine_text_manager_cheat_blank()
 {
-	engine_font_manager_draw_text( LOCALE_BLANK_SIZE8, SCREEN_TILE_LEFT, CHEAT_Y + 1 );
+	engine_font_manager_draw_text( LOCALE_BLANK_SIZE10, SCREEN_TILE_LEFT, CHEAT_Y + 1 );
 }
 void engine_text_manager_cheat_write()
 {
