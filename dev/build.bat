@@ -13,68 +13,67 @@ REM gfx.bat
 REM psg.bat
 
 cd engine
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
 cd ..
 
 cd source
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 debug_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 debug_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
 
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_object.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_object.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_object.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_object.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro_object.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tutorial_object.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tutorial_object.c
 
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 text_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 text_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 delay_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 player_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 game_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
 
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 game_manager.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
-
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 begin_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 diff_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 view_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gems_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
-rem sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 begin_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 diff_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 view_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gems_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 func_screen.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
 REM echo Build main
-sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Calculate the difference in cSeconds
@@ -117,17 +116,54 @@ banks\bank7.rel ^
 banks\bank8.rel ^
 banks\bank9.rel ^
 engine\asm_manager.rel ^
-source\_sms_manager.rel		source\_snd_manager.rel ^
-source\global_manager.rel	source\debug_manager.rel	source\hack_manager.rel ^
-source\level_object.rel		source\anim_object.rel		source\audio_object.rel		source\intro_object.rel		source\tutorial_object.rel ^
-source\content_manager.rel	source\font_manager.rel		source\text_manager.rel	    source\delay_manager.rel	source\reset_manager.rel ^
-source\sprite_manager.rel	source\tile_manager.rel		source\memo_manager.rel     source\level_manager.rel	source\anim_manager.rel ^
-source\input_manager.rel	source\player_manager.rel	source\enemy_manager.rel    source\score_manager.rel ^
-source\state_manager.rel	source\stats_manager.rel	source\audio_manager.rel	source\game_manager.rel ^
-source\none_screen.rel		source\splash_screen.rel	source\intro_screen.rel		source\begin_screen.rel		source\title_screen.rel ^
-source\diff_screen.rel		source\level_screen.rel		source\init_screen.rel		source\ready_screen.rel		source\load_screen.rel ^
-source\play_screen.rel		source\reset_screen.rel		source\pass_screen.rel		source\gems_screen.rel		source\dead_screen.rel ^
-source\cont_screen.rel		source\over_screen.rel		source\beat_screen.rel		source\test_screen.rel		source\func_screen.rel ^
+source\_sms_manager.rel ^
+source\_snd_manager.rel ^
+source\global_manager.rel ^
+source\debug_manager.rel ^
+source\hack_manager.rel ^
+source\level_object.rel ^
+source\anim_object.rel ^
+source\audio_object.rel ^
+source\intro_object.rel ^
+source\tutorial_object.rel ^
+source\content_manager.rel ^
+source\font_manager.rel ^
+source\text_manager.rel ^
+source\delay_manager.rel ^
+source\reset_manager.rel ^
+source\sprite_manager.rel ^
+source\tile_manager.rel ^
+source\memo_manager.rel ^
+source\level_manager.rel ^
+source\anim_manager.rel ^
+source\input_manager.rel ^
+source\player_manager.rel ^
+source\enemy_manager.rel ^
+source\score_manager.rel ^
+source\state_manager.rel ^
+source\stats_manager.rel ^
+source\audio_manager.rel ^
+source\game_manager.rel ^
+source\none_screen.rel ^
+source\splash_screen.rel ^
+source\intro_screen.rel ^
+source\begin_screen.rel ^
+source\title_screen.rel ^
+source\diff_screen.rel ^
+source\level_screen.rel ^
+source\init_screen.rel ^
+source\ready_screen.rel ^
+source\load_screen.rel ^
+source\play_screen.rel ^
+source\reset_screen.rel ^
+source\pass_screen.rel ^
+source\gems_screen.rel ^
+source\dead_screen.rel ^
+source\cont_screen.rel ^
+source\over_screen.rel ^
+source\beat_screen.rel ^
+source\test_screen.rel ^
+source\func_screen.rel ^
 source\view_screen.rel ^
 source\screen_manager.rel ^
 gfx.rel ^
