@@ -6,6 +6,9 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+02/04/2019
+hack_enemy=1 ROM hack disables movement but this doesn't work for 0401... weird?
+
 28/03/2019
 TODO
 01.	DONE
