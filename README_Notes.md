@@ -23,8 +23,8 @@ There is capacity for 80-100 levels.  Please let me know if you'd like to design
 - Compiler		sdcc 3.6
 - Languages:	C / Z80
 - Visual Studio 2015
-- Graphics:		BMP2Tile / GIMP2 / paint.net
-- Music:		VGM2PSG
+- Graphics:		BMP2Tile 0.43 / GIMP2 / paint.net
+- Music:		Mod2Psg2 / VGM2PSG
 - Assembler:	WLA-DX
 - Emulators:	Emulicious / Fusion / Meka
 
@@ -43,8 +43,14 @@ Download and dump PlatformExplorer.sms into Hex Editor, e.g. HxD, and modify the
 - 0x0055	Sound Off	Set 0=sound to play otherwise disabled.
 - 0x0056	Enemy move	Set value non-zero to disable movement.
 
-###### CHEAT
+###### CHEATS
 Press button 2 five times on Start screen and you'll be invincible each game this is actioned.
+<br />
+Press button 2 three times while holding down on Difficulty screen to navigate to select screen.
+<br />
+Press and hold button 2 during game play to reset player to original start spot in the level.
+<br />
+Press and hold button 2 while holding down to secretly quit out game back to the Start screen.
 
 ###### CREDITS
 Extra special thanks to: sverx for devkitSMS https://github.com/sverx/devkitSMS
