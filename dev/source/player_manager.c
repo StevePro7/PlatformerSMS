@@ -16,8 +16,8 @@
 struct_player_object global_player_object;
 
 #define MAX_VELOCITY_X	10
-//#define MAX_VELOCITY_X	15
-#define MAX_VELOCITY_Y	17
+//#define MAX_VELOCITY_X	15		// ORG
+#define MAX_VELOCITY_Y	17			// NEW
 
 #define TILE_COLLISION	16
 #define DRAW_OFFSET_X	-4
@@ -26,24 +26,15 @@ struct_player_object global_player_object;
 //static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
 //static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3 };
 
+//static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
+//static signed char gravityZZ[ MAX_VELOCITY_Y ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+
+
 // NEW
 static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 1, 1, 1, 2, 2, 2, 2, 2, 2, 2 };
 static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 2, 2, 3, 3, 3, 3, 3, 3 };
 
-// BIG
-//static unsigned char velocityXgnd[ MAX_VELOCITY_X ] = { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3 };
-//static unsigned char velocityXair[ MAX_VELOCITY_X ] = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
-
-// ORG
-  
-//static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -9, -7, -6, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
-//static signed char gravityZZ[ MAX_VELOCITY_Y ] = { 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
-
-//static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
-//static signed char gravityZZ[ MAX_VELOCITY_Y ] = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
-
-//static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -2, -2, -2, -1, -1, -1, -1, -1, -1, -1 };
-static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -3, -2, -2, -2, -1, -1, -1, -1 };			// 17x = 64
+static signed char velocityY[ MAX_VELOCITY_Y ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -3, -2, -2, -2, -1, -1, -1, -1 };
 static signed char gravityZZ[ MAX_VELOCITY_Y ] = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
 static unsigned char leftTileArray[ TILE_COLLISION ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 };
@@ -124,7 +115,6 @@ void engine_player_manager_get_input()
 	unsigned char test1, test2;
 
 	test1 = engine_input_manager_move_left();
-	//test1 = engine_input_manager_hold_left();
 	if( test1 )
 	{
 		if( move_type_left != po->player_move_type )
@@ -136,7 +126,6 @@ void engine_player_manager_get_input()
 	}
 
 	test2 = engine_input_manager_move_right();
-	//test2 = engine_input_manager_hold_right();
 	if( test2 )
 	{
 		if( move_type_rght != po->player_move_type )
@@ -539,9 +528,6 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	int centerAX, centerAY;
 	int centerBX, centerBY;
 	int distanceX, distanceY;
-	//int minDistanceX, minDistanceY;
-	//float fDistanceX, fDistanceY;
-	//int fDistanceX, fDistanceY;
 
 	// Calculate half sizes.	DONE
 
@@ -554,10 +540,6 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 	// Calculate current and minimum-non-intersecting distances between centers.
 	distanceX = centerAX - centerBX;
 	distanceY = centerAY - centerBY;
-
-	// Pre-calc'd on init.
-	//minDistanceX = halfWidthA + halfWidthB;
-	//minDistanceY = halfHeightA + halfHeightB;
 
 	po->depthX = 0;
 	po->depthY = 0;
@@ -591,15 +573,6 @@ static void process_collision( int rectALeft, int rectATop, int rectBLeft, int r
 			return;
 		}
 	}
-
-	// If we are not intersecting at all, return (0, 0).
-	//fDistanceX = fabsf( distanceX );
-	//fDistanceY = fabsf( distanceY );
-	//IMPORTANT no need to check if depthX == 0 or depthY == 0 because this test would always fail anyway!
-	//if( fDistanceX >= minDistanceX || fDistanceY >= minDistanceY )
-	//{
-	//	return;
-	//}
 
 	// Calculate and return intersection depths.
 	po->depthX = distanceX > 0 ? minDistanceX - distanceX : -minDistanceX - distanceX;

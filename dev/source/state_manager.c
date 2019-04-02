@@ -82,7 +82,6 @@ void engine_state_manager_load()
 			eo->velX = so->enemys_velX[ eo->sprite_type ][ go->world_no ];
 		}
 
-		//eo->velX += go->difficulty;
 		if( eo->velX > MAX_ENEMY_VELX )
 		{
 			eo->velX = MAX_ENEMY_VELX;

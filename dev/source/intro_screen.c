@@ -18,8 +18,10 @@
 
 #define INTRO_SCREEN_DELAY		3600
 #define INTRO_WRITER_TIMER		50
-#define LEFT					7
-#define HIGH					17
+#define INTRO_LEFT				7
+#define INTRO_HIGH				17
+#define PAUSE_COUNT				10
+#define STAGE_COUNT				7
 
 static void draw_sprite( unsigned char x, unsigned char y, unsigned frame );
 static void update_text();
@@ -107,30 +109,30 @@ static void update_text()
 	{
 		first = 1;
 		engine_audio_manager_music_title();
-		engine_font_manager_draw_text( "WELCOME HERO!", LEFT, HIGH );
+		engine_font_manager_draw_text( "WELCOME HERO!", INTRO_LEFT, INTRO_HIGH );
 	}
 	else if( 1 == first )
 	{
 		first = 2;
-		engine_font_manager_draw_text( LOCALE_BLANK_SIZE18, LEFT, HIGH + 2 );
-		engine_font_manager_draw_text( LOCALE_BLANK_SIZE18, LEFT, HIGH + 3 );
+		engine_font_manager_draw_text( LOCALE_BLANK_SIZE18, INTRO_LEFT, INTRO_HIGH + 2 );
+		engine_font_manager_draw_text( LOCALE_BLANK_SIZE18, INTRO_LEFT, INTRO_HIGH + 3 );
 	}
 	else if (2 == first )
 	{
 		if( 0 == stage )
 		{
-			engine_font_manager_draw_text( intro_textTop[ pause ], LEFT, HIGH + 2 );
-			engine_font_manager_draw_text( intro_textBot[ pause ], LEFT, HIGH + 3 );
+			engine_font_manager_draw_text( intro_textTop[ pause ], INTRO_LEFT, INTRO_HIGH + 2 );
+			engine_font_manager_draw_text( intro_textBot[ pause ], INTRO_LEFT, INTRO_HIGH + 3 );
 
 			pause++;
-			if( pause >= 10 )
+			if( pause >= PAUSE_COUNT )
 			{
 				pause = 0;
 			}
 		}
 
 		stage++;
-		if( stage >= 7 )
+		if( stage >= STAGE_COUNT )
 		{
 			stage = 0;
 		}

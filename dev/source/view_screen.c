@@ -16,7 +16,6 @@
 #include "audio_manager.h"
 #include "game_manager.h"
 #include "state_manager.h"
-//#include <stdlib.h>
 
 static void load_screen();
 
@@ -129,7 +128,6 @@ static void load_screen()
 	struct_game_object *go = &global_game_object;
 	unsigned char invincible;
 
-	
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 

@@ -7,7 +7,6 @@
 typedef struct tag_struct_player_object
 {
 	enum_move_type player_move_type;
-	//enum_move_type player_curr_move_type, player_prev_move_type;
 	int spotX, spotY;
 	int posnX, posnY;
 	int drawX, drawY;
@@ -15,7 +14,6 @@ typedef struct tag_struct_player_object
 	int prevX, prevY;
 	int commX, commY;
 	int velX, velY;
-	//unsigned char deltaX, deltaY;		// WRONG! - messes things up and creates 245 NOT 65525
 	signed char deltaX, deltaY;
 	signed char player_idxX;
 	signed char player_idxY;

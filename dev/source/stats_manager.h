@@ -8,6 +8,4 @@ extern struct_stats_object global_stats_object;
 
 void engine_stats_manager_init();
 
-//extern unsigned char *count_text[];
-
 #endif//_STATS_MANAGER_H_
