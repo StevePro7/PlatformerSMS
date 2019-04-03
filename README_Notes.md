@@ -42,7 +42,7 @@ Download and dump PlatformExplorer.sms into Hex Editor, e.g. HxD, and modify the
 - 0x004F	DelaySpeed	Used during dev disables screen delays.
 - 0x0050	Invincible	Non-zero value enables auto invincible.
 - 0x0051	Difficulty	Set value to 1=Hard otherwise use Easy.
-- 0x0052	Game Speed	Set value to 0=Fast otherwise use Slow.
+- 0x0052	Game Speed	Set value to 1=Slow otherwise use Fast.
 - 0x0053	World No.	Set start world no to zero-based value.
 - 0x0054	Round No.	Set start round no to zero-based value.
 - 0x0055	Music Off	Set 0=music to play otherwise disabled.

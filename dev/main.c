@@ -17,10 +17,10 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 	engine_content_manager_load_sprites();
 
-	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_begin;
-	open_screen_type = screen_type_init;
+	//open_screen_type = screen_type_init;
 
 	engine_state_manager_init();
 	engine_screen_manager_init( open_screen_type );

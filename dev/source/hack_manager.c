@@ -30,7 +30,7 @@ void engine_hack_manager_init()
 	ho->hack_delayspeed = PEEK( HACKER_START - 1 );		// 0x004F		// Used during dev disables screen delays.
 	ho->hack_invincible = PEEK( HACKER_START + 0 );		// 0x0050		// Non-zero value enables auto invincible.
 	ho->hack_difficulty = PEEK( HACKER_START + 1 );		// 0x0051		// Set value to 1=Hard otherwise use Easy.
-	ho->hack_game_speed = PEEK( HACKER_START + 2 );		// 0x0052		// Set value to 0=Fast otherwise use Slow.
+	ho->hack_game_speed = PEEK( HACKER_START + 2 );		// 0x0052		// Set value to 1=Slow otherwise use Fast.
 	ho->hack_world = PEEK( HACKER_START + 3 );			// 0x0053		// Set start world no to zero-based value.
 	ho->hack_round = PEEK( HACKER_START + 4 );			// 0x0054		// Set start round no to zero-based value.
 	ho->hack_music = PEEK( HACKER_START + 5 );			// 0x0055		// Set 0=music to play otherwise disabled.
@@ -91,8 +91,8 @@ void engine_hack_manager_invert()
 
 
 	// TODO - IMPORTANT - remove all code here used during testing!!
-	ho->hack_delayspeed = 0;
-	ho->hack_invincible = 1;
+	//ho->hack_delayspeed = 0;
+	//ho->hack_invincible = 1;
 
 	//ho->hack_difficulty = diff_type_hard;
 	//ho->hack_game_speed = pace_type_slow;
@@ -101,8 +101,8 @@ void engine_hack_manager_invert()
 	//ho->hack_music = 0;
 
 
-	ho->hack_world = 0;
-	ho->hack_round = 0;
+	//ho->hack_world = 0;
+	//ho->hack_round = 0;
 
 
 	//ho->hack_world--;
