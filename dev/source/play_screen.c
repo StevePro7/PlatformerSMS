@@ -20,6 +20,7 @@
 
 // Cache values for entire class.
 static unsigned char invincible;
+static unsigned char game_speed;
 static unsigned char collision;
 
 // Private helper methods.
@@ -34,6 +35,7 @@ void screen_play_screen_load()
 
 	invincible = go->invincible || go->localcheat;
 	difficulty = go->difficulty;
+	game_speed = go->game_speed;
 	collision = so->collision_offsets[ difficulty ];
 
 	engine_reset_manager_load( PLAY_SCREEN_DELAY );
@@ -41,6 +43,7 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
+	struct_game_object *go = &global_game_object;
 	struct_reset_object *ro = &global_reset_object;
 	struct_level_object *lo = &global_level_object;
 	struct_score_object *so = &global_score_object;
@@ -54,15 +57,22 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char evt;
 	int coll_diff;
 
+	if( go->game_speed )
+	{
+		// Player movement.
+		engine_player_manager_get_input();
+		engine_player_manager_apply_physics();
+		engine_player_manager_handle_collisions();
+		engine_player_manager_cleanup();
 
-	// Player movement.
-	engine_player_manager_get_input();
-	engine_player_manager_apply_physics();
-	engine_player_manager_handle_collisions();
-	engine_player_manager_cleanup();
+		// Enemy(s) movement.
+		engine_enemyX_manager_update();
+	}
 
-	// Enemy(s) movement.
-	engine_enemyX_manager_update();
+	if( pace_type_slow == go->game_speed )
+	{
+		game_speed == 1 - game_speed;
+	}
 
 	// Draw enemies first!
 	engine_enemyX_manager_draw_enemys();

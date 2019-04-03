@@ -34,6 +34,13 @@ typedef enum tag_enum_diff_type
 
 } enum_diff_type;
 
+typedef enum tag_enum_pace_type
+{
+	pace_type_slow = 0,
+	pace_type_fast = 1,
+
+} enum_pace_type;
+
 typedef enum tag_enum_tile_type
 {
 	tile_type_blankGap = 0,

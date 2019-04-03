@@ -11,11 +11,17 @@
 void screen_test_screen_load()
 {
 	unsigned char status;
+	status = 2;
+
 	engine_font_manager_draw_text( "TEST SCREEN", 10, 0 );
 
-	status = PSGGetStatus();
+//	status = PSGGetStatus();
 	engine_font_manager_draw_text( "STATUS", 10, 5 );
 	engine_font_manager_draw_data( status, 10, 6 );
+
+	status = !status;
+	engine_font_manager_draw_text( "STATUS", 10, 8 );
+	engine_font_manager_draw_data( status, 10, 9 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )

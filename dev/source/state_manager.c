@@ -27,6 +27,7 @@ void engine_state_manager_init()
 	// Setup hacked variables.
 	go->invincible = ho->hack_invincible;
 	go->difficulty = ho->hack_difficulty;
+	go->game_speed = ho->hack_game_speed;
 	go->world_no = ho->hack_world;
 	go->round_no = ho->hack_round;
 }
