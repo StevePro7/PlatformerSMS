@@ -17,10 +17,12 @@
 #include "game_manager.h"
 
 #define PLAY_SCREEN_DELAY		75
+#define LOOP_SPEED_FORCE		1
 
 // Cache values for entire class.
 static unsigned char invincible;
 static unsigned char game_speed;
+static unsigned char loop_speed;
 static unsigned char collision;
 
 // Private helper methods.
@@ -36,6 +38,7 @@ void screen_play_screen_load()
 	invincible = go->invincible || go->localcheat;
 	difficulty = go->difficulty;
 	game_speed = go->game_speed;
+	loop_speed = LOOP_SPEED_FORCE;
 	collision = so->collision_offsets[ difficulty ];
 
 	engine_reset_manager_load( PLAY_SCREEN_DELAY );
@@ -43,7 +46,6 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
-	struct_game_object *go = &global_game_object;
 	struct_reset_object *ro = &global_reset_object;
 	struct_level_object *lo = &global_level_object;
 	struct_score_object *so = &global_score_object;
@@ -57,7 +59,14 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char evt;
 	int coll_diff;
 
-	if( go->game_speed )
+	// If player slow then can override on-the-fly.
+	input = engine_input_manager_move_up();
+	if( input )
+	{
+		loop_speed = LOOP_SPEED_FORCE;
+	}
+
+	if( loop_speed )
 	{
 		// Player movement.
 		engine_player_manager_get_input();
@@ -69,9 +78,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 		engine_enemyX_manager_update();
 	}
 
-	if( pace_type_slow == go->game_speed )
+	if( pace_type_slow == game_speed )
 	{
-		game_speed == 1 - game_speed;
+		loop_speed = 1 - loop_speed;
 	}
 
 	// Draw enemies first!
