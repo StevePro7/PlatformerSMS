@@ -94,7 +94,7 @@ void engine_hack_manager_invert()
 	//ho->hack_invincible = 1;
 
 	ho->hack_difficulty = diff_type_hard;
-	ho->hack_game_speed = pace_type_slow;
+	//ho->hack_game_speed = pace_type_slow;
 	//ho->hack_enemy = 0;
 	//ho->hack_sound = 0;
 	//ho->hack_music = 0;

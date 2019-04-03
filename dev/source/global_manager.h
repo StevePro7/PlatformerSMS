@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			21
+#define MAX_SCREEENS			22
 #define MAX_ENEMIES				4
 #define MAX_BLOCK_TILES			9
 #define MAX_SMALL_TILES			3

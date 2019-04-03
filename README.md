@@ -6,9 +6,12 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+Level0402 is similar to other level - find out which one and ensure can jump back up by exit sign
+Level0410 needs to be finished
+
 02/04/2019
 hack_enemy=1 ROM hack disables movement but this doesn't work for 0401... weird?
-
+SORTED
 28/03/2019
 TODO
 01.	DONE

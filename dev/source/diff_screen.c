@@ -45,7 +45,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	if( test[ 2 ] )
 	{
 		engine_audio_manager_sound_accept();
-		*screen_type = screen_type_level;
+		*screen_type = screen_type_pace;
 		return;
 	}
 
