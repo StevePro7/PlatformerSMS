@@ -243,6 +243,9 @@
     <ClCompile Include="source\tutorial_object.c">
       <Filter>Source Files\object</Filter>
     </ClCompile>
+    <ClCompile Include="source\pace_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -466,6 +469,9 @@
     </ClInclude>
     <ClInclude Include="source\tutorial_object.h">
       <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pace_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
