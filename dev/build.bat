@@ -201,6 +201,6 @@ REM if exist "*.rel" del "*.rel" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-C:\SEGA\Fusion\fusion.exe output.sms
+rem C:\SEGA\Fusion\fusion.exe output.sms
 rem C:\SEGA\Meka\mekaw.exe output.sms
-rem java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
+java -jar C:\SEGA\Emulicious\emulicious.jar output.sms
