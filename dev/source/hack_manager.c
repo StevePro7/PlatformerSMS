@@ -99,9 +99,6 @@ void engine_hack_manager_invert()
 	//ho->hack_sound = 0;
 	//ho->hack_music = 0;
 
-	ho->hack_world = 2;
-	ho->hack_round = 7;
-
-	ho->hack_world = 2;
-	ho->hack_round = 3;
+	ho->hack_world = 3;
+	ho->hack_round = 1;
 }
