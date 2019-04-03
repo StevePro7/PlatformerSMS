@@ -140,7 +140,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 	test[ 5 ] = engine_input_manager_hold_fire2();
 	if( test[ 5 ] )
 	{
-		*screen_type = screen_type_diff;
+		*screen_type = screen_type_pace;
 		return;
 	}
 
