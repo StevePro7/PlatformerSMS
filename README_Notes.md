@@ -14,7 +14,12 @@ Move left and right and fire1 to jump.  Hold fire2 to reset player during play.
 Easy or hard difficulty.  Avoid all enemies + guards and watch out for the pits!
 <br />
 <br />
-Due to time constraints, there are currently only 20x levels.  More levels are coming soon...!
+After feedback from the community, you can now choose game speed Slow [motion] or Fast.
+<br />
+Slow can intermittently go Fast if you move joystick up while running during game play.
+<br />
+<br />
+Due to time constraints, there were previously only 20x levels.  This has now increased to 40x!
 <br />
 There is capacity for 80-100 levels.  Please let me know if you'd like to design some levels :)
 
@@ -37,11 +42,12 @@ Download and dump PlatformExplorer.sms into Hex Editor, e.g. HxD, and modify the
 - 0x004F	DelaySpeed	Used during dev disables screen delays.
 - 0x0050	Invincible	Non-zero value enables auto invincible.
 - 0x0051	Difficulty	Set value to 1=Hard otherwise use Easy.
-- 0x0052	World No.	Set start world no to zero-based value.
-- 0x0053	Round No.	Set start round no to zero-based value.
-- 0x0054	Music Off	Set 0=music to play otherwise disabled.
-- 0x0055	Sound Off	Set 0=sound to play otherwise disabled.
-- 0x0056	Enemy move	Set value non-zero to disable movement.
+- 0x0052	Game Speed	Set value to 0=Fast otherwise use Slow.
+- 0x0053	World No.	Set start world no to zero-based value.
+- 0x0054	Round No.	Set start round no to zero-based value.
+- 0x0055	Music Off	Set 0=music to play otherwise disabled.
+- 0x0056	Sound Off	Set 0=sound to play otherwise disabled.
+- 0x0057	Enemy move	Set value non-zero to disable movement.
 
 ###### CHEATS
 Press button 2 five times on Start screen and you'll be invincible each game this is actioned.
