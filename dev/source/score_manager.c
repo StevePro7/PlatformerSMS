@@ -44,7 +44,7 @@ void engine_score_manager_update_gems()
 void engine_score_manager_update_lives( signed char delta )
 {
 	struct_score_object *so = &global_score_object;
-	if( so->num_lives > 0 && so->num_lives < MAMNUM_LIVES )
+	if( so->num_lives > 0 && so->num_lives <= MAMNUM_LIVES )
 	{
 		so->num_lives += delta;
 		engine_score_manager_draw_lives();
