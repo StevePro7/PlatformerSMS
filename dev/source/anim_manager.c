@@ -4,13 +4,12 @@
 #include "global_manager.h"
 #include "enum_manager.h"
 
-// TODO clean up as duplicate in global_manager.c
-#define PLAYER_TILE_IDLE		256
-#define PLAYER_TILE_LEFT		256 + 1 * SPRITE_TILES_NUMBER
-#define PLAYER_TILE_RGHT		256 + 6 * SPRITE_TILES_NUMBER
-#define TESTER_TILE_IDLE		352
-#define TESTER_TILE_RGHT		352 + 1 * SPRITE_TILES_NUMBER
-#define ENEMYX_TILE_IDLE		388
+#define PLAYER_TILE_IDLE		PLAYER_SPRITE_TILE
+#define PLAYER_TILE_LEFT		PLAYER_SPRITE_TILE + 1 * SPRITE_TILES_NUMBER
+#define PLAYER_TILE_RGHT		PLAYER_SPRITE_TILE + 6 * SPRITE_TILES_NUMBER
+#define TESTER_TILE_IDLE		TESTER_SPRITE_TILE
+#define TESTER_TILE_RGHT		TESTER_SPRITE_TILE + 1 * SPRITE_TILES_NUMBER
+#define ENEMYX_TILE_IDLE		ENEMYX_SPRITE_TILE
 
 // Private helper methods.
 static void player_load( unsigned char index, unsigned int tile );
