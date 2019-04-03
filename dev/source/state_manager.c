@@ -115,14 +115,17 @@ void engine_state_manager_load()
 		}
 
 		// Finally if EnemyB or EnemyD and difficulty Hard then *maybe* double velocity...
-		if( sprite_type_enemyB == eo->sprite_type || sprite_type_enemyD == eo->sprite_type )
+		if( ho->hack_enemy )
 		{
-			if( diff_type_hard == go->difficulty )
+			if( sprite_type_enemyB == eo->sprite_type || sprite_type_enemyD == eo->sprite_type )
 			{
-				num = rand() % 2;
-				if( 0 == num )
+				if( diff_type_hard == go->difficulty )
 				{
-					eo->velX += go->difficulty;
+					num = rand() % 2;
+					if( 0 == num )
+					{
+						eo->velX += go->difficulty;
+					}
 				}
 			}
 		}
