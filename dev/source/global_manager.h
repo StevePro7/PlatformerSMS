@@ -16,7 +16,7 @@
 #define INVALID_INDEX			-1
 
 #define TOT_WORLDS				8
-#define MAX_WORLDS				8	//4		/8
+#define MAX_WORLDS				4		//8 - capacity
 #define MAX_ROUNDS				10
 
 #define MAX_ROWS				12
