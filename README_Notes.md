@@ -49,7 +49,7 @@ Download and dump PlatformExplorer.sms into Hex Editor, e.g. HxD, and modify the
 - 0x0057	Enemy move	Set value non-zero to disable movement.
 
 ###### BONUSES
-Player will receive  free man for every 20x gems collected during game.
+Player will receive free man for every 20x gems collected during game.
 <br />
 Player will also receive bonus 5x gems on collecting all gems in level.
 
@@ -58,7 +58,7 @@ Press button 2 five times on Start screen and you'll be invincible each game thi
 <br />
 Press button 2 three times while holding down on Difficulty screen to navigate to select screen.
 <br />
-Press and hold button 2 during game play to reset player to original start spot in the level.
+Press and hold button 2 during game play to reset player to original starting spot in the level.
 <br />
 Press and hold button 2 while holding down to secretly quit out game back to the Start screen.
 
@@ -74,7 +74,8 @@ As always, thanks goes to:
 Maxim, Martin, Ville Helin, Steve Snake, Bock + Calindro
 
 ###### SOCIAL MEDIA
-- You Tube https://youtu.be/gvIsqWOdm2g
+- You Tube https://www.youtube.com/watch?v=gvIsqWOdm2g
+- You Tube https://www.youtube.com/watch?v=RPIeLNv6JGA
 
 ###### OUTSTANDING
 Some extra sound effects could be cool plus more animations e.g. when you pass each level.
