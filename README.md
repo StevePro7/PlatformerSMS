@@ -6,6 +6,13 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+04/04/2019
+TODO
+Add 5x additional gems when Level is Perfect?
+Mention that every 20x gems you get a free man
+
+
+03/04/2019
 Level0402 is similar to other level - find out which one and ensure can jump back up by exit sign
 Level0410 needs to be finished
 
