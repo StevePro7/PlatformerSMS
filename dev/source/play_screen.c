@@ -137,6 +137,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 					if( 0 == so->gem_total % MAX_GEMS_FREEMAN )
 					{
+						so->gem_count = 0;
 						increase_lives();
 					}
 					//else

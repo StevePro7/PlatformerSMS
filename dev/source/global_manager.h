@@ -46,6 +46,7 @@
 
 #define MAX_GEMS_COLLECT		9999
 #define MAX_GEMS_FREEMAN		20
+#define MAX_GEMS_BONUSES		5
 #define MEMO_SPRITE_TOP			32
 #define MEMO_SPRITE_BOT			128
 

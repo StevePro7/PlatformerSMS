@@ -11,6 +11,7 @@ void engine_score_manager_init( unsigned char difficulty )
 {
 	struct_score_object *so = &global_score_object;
 	so->tot_lives = NUMBER_LIVES - difficulty;
+	so->gem_count = 0;
 	so->gem_total = 0;
 
 	engine_score_manager_reset_gems();
@@ -32,8 +33,21 @@ void engine_score_manager_reset_lives()
 void engine_score_manager_update_gems()
 {
 	struct_score_object *so = &global_score_object;
+	so->gem_count++;
 	so->gem_level++;
 	so->gem_total++;
+
+	if( so->gem_total > MAX_GEMS_COLLECT )
+	{
+		so->gem_total = MAX_GEMS_COLLECT;
+	}
+}
+
+void engine_score_manager_bonus_gems()
+{
+	struct_score_object *so = &global_score_object;
+	so->gem_count += MAX_GEMS_BONUSES;
+	so->gem_total += MAX_GEMS_BONUSES;
 
 	if( so->gem_total > MAX_GEMS_COLLECT )
 	{

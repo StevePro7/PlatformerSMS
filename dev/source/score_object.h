@@ -5,6 +5,7 @@ typedef struct tag_struct_score_object
 {
 	unsigned char tot_lives;
 	unsigned char num_lives;
+	unsigned char gem_count;
 	unsigned char gem_level;
 	unsigned int gem_total;
 

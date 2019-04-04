@@ -16,13 +16,16 @@
 #define PASS_SCREEN_DELAY	250
 
 static unsigned char gem_level;
+static void increase_lives();
 
 void screen_pass_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
 	struct_level_object *lo = &global_level_object;
 	struct_score_object *so = &global_score_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char perfect = 0;
+	unsigned char invincible;
 
 	engine_audio_manager_music_stop();
 	if( ho->hack_delayspeed)
@@ -42,6 +45,20 @@ void screen_pass_screen_load()
 
 	engine_delay_manager_load( PASS_SCREEN_DELAY );
 	engine_memo_manager_draw_pass( perfect );
+
+	if( perfect )
+	{
+		invincible = go->invincible || go->localcheat;
+		if( !invincible )
+		{
+			engine_score_manager_bonus_gems();
+			if( so->gem_count >= MAX_GEMS_FREEMAN )
+			{
+				so->gem_count -= MAX_GEMS_FREEMAN;
+				increase_lives();
+			}
+		}
+	}
 }
 
 void screen_pass_screen_update( unsigned char *screen_type )
@@ -78,4 +95,15 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = screen_type_pass;
+}
+
+static void increase_lives()
+{
+	struct_score_object *so = &global_score_object;
+	if( so->num_lives < MAMNUM_LIVES )
+	{
+		engine_audio_manager_sound_power();
+		engine_score_manager_update_lives( 1 );
+		engine_score_manager_draw_lives();
+	}
 }
