@@ -48,6 +48,11 @@ Download and dump PlatformExplorer.sms into Hex Editor, e.g. HxD, and modify the
 - 0x0056	Sound Off	Set 0=sound to play otherwise disabled.
 - 0x0057	Enemy move	Set value non-zero to disable movement.
 
+###### BONUSES
+Player will receive  free man for every 20x gems collected during game.
+<br />
+Player will also receive bonus 5x gems on collecting all gems in level.
+
 ###### CHEATS
 Press button 2 five times on Start screen and you'll be invincible each game this is actioned.
 <br />
