@@ -52,6 +52,8 @@ void screen_pass_screen_load()
 		if( !invincible )
 		{
 			engine_score_manager_bonus_gems();
+			engine_score_manager_draw_score();
+
 			if( so->gem_count >= MAX_GEMS_FREEMAN )
 			{
 				so->gem_count -= MAX_GEMS_FREEMAN;
