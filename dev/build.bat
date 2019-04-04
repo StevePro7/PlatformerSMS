@@ -1,4 +1,4 @@
-rem @echo off
+REM @echo off
 
 REM https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
 :: Calculate the start timestamp
