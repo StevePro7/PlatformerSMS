@@ -49,27 +49,31 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	test[ 3 ] = engine_input_manager_move_down();
-	if( test[ 3 ] )
+	// Only check navigate to view screen if new game!
+	if( 0 == go->tutorial )
 	{
-		test[ 4 ] = engine_input_manager_hold_fire2();
-		if( test[ 4 ] )
+		test[ 3 ] = engine_input_manager_move_down();
+		if( test[ 3 ] )
 		{
-			select_count++;
-			if( select_count >= LOCAL_SELECT_TOTAL )
+			test[ 4 ] = engine_input_manager_hold_fire2();
+			if( test[ 4 ] )
 			{
-				*screen_type = screen_type_view;
-				return;
+				select_count++;
+				if( select_count >= LOCAL_SELECT_TOTAL )
+				{
+					*screen_type = screen_type_view;
+					return;
+				}
 			}
-		}
 
-		return;
+			return;
+		}
 	}
 
 	test[ 4 ] = engine_input_manager_hold_fire2();
 	if( test[ 4 ] )
 	{
-		*screen_type = screen_type_title;
+		*screen_type = screen_type_entry;
 		return;
 	}
 

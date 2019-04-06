@@ -37,7 +37,7 @@ void screen_title_screen_load()
 		engine_text_manager_cheat_write();
 	}
 
-	engine_font_manager_draw_data( go->tutorial, SCREEN_TILE_LEFT, 19 );
+	engine_font_manager_draw_data( go->tutorial, 10, 19 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -68,7 +68,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_audio_manager_sound_accept();
-		*screen_type = screen_type_diff;
+		*screen_type = screen_type_entry;
 		return;
 	}
 
