@@ -12,5 +12,5 @@ void screen_baby_screen_load()
 
 void screen_baby_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_beat;
+	*screen_type = screen_type_baby;
 }
