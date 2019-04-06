@@ -1,7 +1,51 @@
 #include "level_object.h"
 
+#include "..\banks\bank3.h"
 #include "..\banks\bank4.h"
 #include "..\banks\bank5.h"
+
+const unsigned char *tutorialdata[] =
+{
+	tutorial0_txt,
+	tutorial1_txt,
+	tutorial2_txt,
+	tutorial3_txt,
+	tutorial4_txt,
+	tutorial5_txt,
+	tutorial6_txt,
+	tutorial7_txt,
+	tutorial8_txt,
+	tutorial9_txt,
+};
+
+const unsigned char tutorialsize[] =
+{
+	tutorial0_txt_bank,
+	tutorial1_txt_bank,
+	tutorial2_txt_bank,
+	tutorial3_txt_bank,
+	tutorial4_txt_bank,
+	tutorial5_txt_bank,
+	tutorial6_txt_bank,
+	tutorial7_txt_bank,
+	tutorial8_txt_bank,
+	tutorial9_txt_bank,
+};
+
+const unsigned char tutorialbank[] =
+{
+	tutorial0_txt_size,
+	tutorial1_txt_size,
+	tutorial2_txt_size,
+	tutorial3_txt_size,
+	tutorial4_txt_size,
+	tutorial5_txt_size,
+	tutorial6_txt_size,
+	tutorial7_txt_size,
+	tutorial8_txt_size,
+	tutorial9_txt_size,
+};
+
 
 const unsigned char *levelAAdata[] =
 {
@@ -134,6 +178,7 @@ const unsigned char levelAAbank[] =
 	level0409_txt_bank,
 	level0410_txt_bank,
 };
+
 
 const unsigned char *levelBBdata[] =
 {

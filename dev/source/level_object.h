@@ -22,13 +22,16 @@ typedef struct tag_struct_level_object
 
 } struct_level_object;
 
+extern const unsigned char *tutorialdata[];
+extern const unsigned char tutorialsize[];
+extern const unsigned char tutorialbank[];
+
 extern const unsigned char *levelAAdata[];
-extern const unsigned char *levelBBdata[];
-
 extern const unsigned char levelAAsize[];
-extern const unsigned char levelBBsize[];
-
 extern const unsigned char levelAAbank[];
+
+extern const unsigned char *levelBBdata[];
+extern const unsigned char levelBBsize[];
 extern const unsigned char levelBBbank[];
 
 #endif//_LEVEL_OBJECT_H_

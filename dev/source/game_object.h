@@ -7,6 +7,7 @@ typedef struct tag_struct_game_object
 	unsigned char localcheat;
 	unsigned char difficulty;
 	unsigned char game_speed;
+	unsigned char tutorial;
 	unsigned char world_no;
 	unsigned char round_no;
 

@@ -13,6 +13,7 @@ void engine_game_manager_init()
 {
 	struct_game_object *go = &global_game_object;
 	go->invincible = 0;
+	go->tutorial = 1;
 	go->world_no = 0;
 	go->round_no = 0;
 }
