@@ -15,11 +15,6 @@ static unsigned char stage;
 
 void screen_reset_screen_load()
 {
-	struct_game_object *go = &global_game_object;
-
-	// Reset tutorial unconditionally.
-	//go->tutorial = 0;
-
 	engine_audio_manager_music_stop();
 	engine_audio_manager_sound_reset();
 	engine_delay_manager_load( RESET_SCREEN_DELAY );
@@ -30,14 +25,23 @@ void screen_reset_screen_load()
 void screen_reset_screen_update( unsigned char *screen_type )
 {
 	struct_reset_object *ro = &global_reset_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char delay;
-	engine_enemyX_manager_draw_enemys();
 
+	engine_enemyX_manager_draw_enemys();
 	if( event_stage_pause == stage )
 	{
 		delay = engine_delay_manager_update();
 		if( delay )
 		{
+			if( screen_type_begin ==  ro->reset_screen )
+			{
+				if( 1 == go->tutorial )
+				{
+					go->tutorial = 0;
+				}
+			}
+
 			*screen_type = ro->reset_screen;
 			return;
 		}
