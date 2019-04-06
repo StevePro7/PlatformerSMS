@@ -85,8 +85,15 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		if( go->round_no >= MAX_ROUNDS )
 		{
 			go->round_no = 0;
-			go->world_no++;
+			if( 1 == go->tutorial )
+			{
+				go->tutorial = 0;
+				go->world_no = 0;
+				*screen_type = screen_type_begin;
+				return;
+			}
 
+			go->world_no++;
 			if( go->world_no >= MAX_WORLDS )
 			{
 				go->world_no = 0;
