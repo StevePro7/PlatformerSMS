@@ -54,3 +54,43 @@ extern const unsigned char	title8__tiles__psgcompr[];
 #define				title8__tiles__psgcompr_size 4557
 #define				title8__tiles__psgcompr_bank 3
 
+extern const unsigned char	tutorial0_txt[];
+#define				tutorial0_txt_size 216
+#define				tutorial0_txt_bank 3
+
+extern const unsigned char	tutorial1_txt[];
+#define				tutorial1_txt_size 216
+#define				tutorial1_txt_bank 3
+
+extern const unsigned char	tutorial2_txt[];
+#define				tutorial2_txt_size 216
+#define				tutorial2_txt_bank 3
+
+extern const unsigned char	tutorial3_txt[];
+#define				tutorial3_txt_size 216
+#define				tutorial3_txt_bank 3
+
+extern const unsigned char	tutorial4_txt[];
+#define				tutorial4_txt_size 216
+#define				tutorial4_txt_bank 3
+
+extern const unsigned char	tutorial5_txt[];
+#define				tutorial5_txt_size 216
+#define				tutorial5_txt_bank 3
+
+extern const unsigned char	tutorial6_txt[];
+#define				tutorial6_txt_size 216
+#define				tutorial6_txt_bank 3
+
+extern const unsigned char	tutorial7_txt[];
+#define				tutorial7_txt_size 216
+#define				tutorial7_txt_bank 3
+
+extern const unsigned char	tutorial8_txt[];
+#define				tutorial8_txt_size 216
+#define				tutorial8_txt_bank 3
+
+extern const unsigned char	tutorial9_txt[];
+#define				tutorial9_txt_size 216
+#define				tutorial9_txt_bank 3
+

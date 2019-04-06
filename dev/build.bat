@@ -74,7 +74,7 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 scree
 cd ..
 
 REM echo Build main
-REM sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Calculate the difference in cSeconds
@@ -176,7 +176,7 @@ ihx2sms output.ihx output.sms
 
 REM copy output.sms
 copy output.sms ..
-copy output.sms ..\PlatformExplorer-2.0.sms
+REM copy output.sms ..\PlatformExplorer-2.0.sms
 REM copy output.sms ..\asm
 REM cd ..\asm
 REM smsexamine.exe output.sms
