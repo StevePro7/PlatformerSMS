@@ -12,11 +12,17 @@
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "audio_manager.h"
+#include "game_manager.h"
 
 #define OVER_SCREEN_DELAY		250
 
 void screen_over_screen_load()
 {
+	struct_game_object *go = &global_game_object;
+
+	// Reset tutorial unconditionally.
+	go->tutorial = 0;
+
 	engine_audio_manager_music_over();
 	engine_delay_manager_load( OVER_SCREEN_DELAY );
 	engine_memo_manager_draw_over();

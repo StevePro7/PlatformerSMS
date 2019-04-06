@@ -6,6 +6,7 @@
 #include "player_manager.h"
 #include "enemy_manager.h"
 #include "audio_manager.h"
+#include "game_manager.h"
 
 #define RESET_SCREEN_DELAY		75
 #define RESET_SCREEN_PAUSE		25
@@ -14,6 +15,11 @@ static unsigned char stage;
 
 void screen_reset_screen_load()
 {
+	struct_game_object *go = &global_game_object;
+
+	// Reset tutorial unconditionally.
+	//go->tutorial = 0;
+
 	engine_audio_manager_music_stop();
 	engine_audio_manager_sound_reset();
 	engine_delay_manager_load( RESET_SCREEN_DELAY );

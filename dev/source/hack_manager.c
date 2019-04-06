@@ -102,9 +102,9 @@ void engine_hack_manager_invert()
 
 
 	//ho->hack_world = 1;
-	//ho->hack_round = 1;
+	ho->hack_round = 10;
 
 
 	//ho->hack_world--;
-	//ho->hack_round--;
+	ho->hack_round--;
 }

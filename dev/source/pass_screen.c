@@ -27,6 +27,9 @@ void screen_pass_screen_load()
 	unsigned char perfect = 0;
 	unsigned char invincible;
 
+	// Reset tutorial unconditionally.
+	//go->tutorial = 0;
+
 	engine_audio_manager_music_stop();
 	if( ho->hack_delayspeed)
 	{
