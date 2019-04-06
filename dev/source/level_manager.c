@@ -231,11 +231,20 @@ void load_level( const unsigned char *data, const unsigned char bank, const unsi
 	}
 }
 
-void engine_level_manager_load_level( const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
+void engine_level_manager_load_level( const unsigned char tutorial, const unsigned char world, const unsigned char round, unsigned char invincible, unsigned char difficulty )
 {
 	unsigned char halve;
 	unsigned char level;
 	unsigned char index;
+
+	if( tutorial )
+	{
+		const unsigned char *data = tutorialdata[ round ];
+		const unsigned char bank = tutorialbank[ round ];
+		const unsigned char size = tutorialsize[ round ];
+		load_level( data, bank, size, invincible, difficulty );
+		return;
+	}
 
 	halve = TOT_WORLDS / 2 * MAX_ROUNDS;
 	level = world * MAX_ROUNDS + round;

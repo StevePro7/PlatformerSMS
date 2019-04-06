@@ -6,6 +6,17 @@ EXPLORER
 Warner the Explorer
 https://yhoo.it/2HdDJfu
 
+06/04/2019
+Tutorial integration
+Start -> Baby -> Diff -> Pace -> Level
+Now on Baby screen would do screen select check iff tutorial = 0
+
+Need to set tutorial=1 on start / init but when go at least once thru tutorial [no matter how far thru] tutorial = 0
+Can always select again from baby screen as necc.
+
+Need to design 10x more levels - probably easy / mid diff screens - troll previous screens for ideas...!
+
+
 04/04/2019
 TODO
 Add 5x additional gems when Level is Perfect?

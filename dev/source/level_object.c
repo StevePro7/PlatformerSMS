@@ -20,20 +20,6 @@ const unsigned char *tutorialdata[] =
 
 const unsigned char tutorialsize[] =
 {
-	tutorial0_txt_bank,
-	tutorial1_txt_bank,
-	tutorial2_txt_bank,
-	tutorial3_txt_bank,
-	tutorial4_txt_bank,
-	tutorial5_txt_bank,
-	tutorial6_txt_bank,
-	tutorial7_txt_bank,
-	tutorial8_txt_bank,
-	tutorial9_txt_bank,
-};
-
-const unsigned char tutorialbank[] =
-{
 	tutorial0_txt_size,
 	tutorial1_txt_size,
 	tutorial2_txt_size,
@@ -44,6 +30,20 @@ const unsigned char tutorialbank[] =
 	tutorial7_txt_size,
 	tutorial8_txt_size,
 	tutorial9_txt_size,
+};
+
+const unsigned char tutorialbank[] =
+{
+	tutorial0_txt_bank,
+	tutorial1_txt_bank,
+	tutorial2_txt_bank,
+	tutorial3_txt_bank,
+	tutorial4_txt_bank,
+	tutorial5_txt_bank,
+	tutorial6_txt_bank,
+	tutorial7_txt_bank,
+	tutorial8_txt_bank,
+	tutorial9_txt_bank,
 };
 
 

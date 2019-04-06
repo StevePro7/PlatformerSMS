@@ -127,12 +127,13 @@ static void load_screen()
 {
 	struct_game_object *go = &global_game_object;
 	unsigned char invincible;
+	unsigned char tutorial = 0;
 
 	engine_enemyX_manager_init();
 	engine_level_manager_init_level();
 
 	invincible = go->invincible || go->localcheat;
-	engine_level_manager_load_level( go->world_no, go->round_no, invincible, go->difficulty );
+	engine_level_manager_load_level( tutorial, go->world_no, go->round_no, invincible, go->difficulty );
 	engine_state_manager_load();
 	engine_player_manager_load();
 	engine_enemyX_manager_load();
