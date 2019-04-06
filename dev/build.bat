@@ -54,16 +54,16 @@ REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 begin_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 entry_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 diff_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 diff_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pace_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 view_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 view_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_screen.c
-REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gems_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
 REM sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c

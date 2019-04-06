@@ -150,7 +150,7 @@ static void load_screen()
 	engine_score_manager_draw_score();
 	engine_score_manager_draw_lives();
 
-	if( 1 == go->tutorial )
+	if( go->tutorial )
 	{
 		engine_text_manager_write_info( go->round_no );
 	}

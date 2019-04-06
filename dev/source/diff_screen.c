@@ -50,7 +50,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	}
 
 	// Only check navigate to view screen if new game!
-	if( 0 == go->tutorial )
+	if( !go->tutorial )
 	{
 		test[ 3 ] = engine_input_manager_move_down();
 		if( test[ 3 ] )

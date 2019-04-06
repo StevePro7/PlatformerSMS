@@ -26,18 +26,25 @@ static void display_options();
 
 void screen_level_screen_init()
 {
-	// Default select level.
+	// Default select round.
 	cursor = 1;
 }
 
 void screen_level_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	engine_delay_manager_load( LEVEL_SCREEN_DELAY );
 
 	engine_text_manager_clear_three();
 	engine_font_manager_draw_text( LOCALE_SELECT_LEVEL, TEXT_X + 0, TEXT_Y + 0 );
 	engine_font_manager_draw_text( LOCALE_SELECT_WORLD, TEXT_X + 0, TEXT_Y + 1 );
 	engine_font_manager_draw_text( LOCALE_SELECT_ROUND, TEXT_X + 0, TEXT_Y + 2 );
+
+	// Select round only if tutorial entry.
+	if( go->tutorial )
+	{
+		cursor = 1;
+	}
 
 	display_options();
 	stage = event_stage_start;
@@ -122,12 +129,15 @@ void screen_level_screen_update( unsigned char *screen_type )
 		display_options();
 	}
 
-	test[ 2 ] = engine_input_manager_hold_up();
-	test[ 3 ] = engine_input_manager_hold_down();
-	if( test[ 2 ] || test[ 3 ] )
+	if( !go->tutorial )
 	{
-		cursor = 1 - cursor;
-		display_options();
+		test[ 2 ] = engine_input_manager_hold_up();
+		test[ 3 ] = engine_input_manager_hold_down();
+		if( test[ 2 ] || test[ 3 ] )
+		{
+			cursor = 1 - cursor;
+			display_options();
+		}
 	}
 
 	test[ 4 ] = engine_input_manager_hold_fire1();
@@ -155,6 +165,14 @@ static void display_options()
 	engine_font_manager_draw_text( LOCALE_SELECT_BLANK, OPT1_X, OPT2_Y );
 	engine_font_manager_draw_text( LOCALE_SELECT_ARROW, OPT1_X, cursorY[ cursor ] );
 
-	engine_font_manager_draw_text( count_text[ go->world_no ], OPT1_X + 2, OPT1_Y );
+	if( go->tutorial )
+	{
+		engine_font_manager_draw_text( LOCALE_TUTORIAL_NO, OPT1_X + 2, OPT1_Y );
+	}
+	else
+	{
+		engine_font_manager_draw_text( count_text[ go->world_no ], OPT1_X + 2, OPT1_Y );
+	}
+
 	engine_font_manager_draw_text( count_text[ go->round_no ], OPT1_X + 2, OPT2_Y );
 }

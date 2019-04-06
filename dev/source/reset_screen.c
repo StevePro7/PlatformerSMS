@@ -36,7 +36,7 @@ void screen_reset_screen_update( unsigned char *screen_type )
 		{
 			if( screen_type_begin ==  ro->reset_screen )
 			{
-				if( 1 == go->tutorial )
+				if( go->tutorial )
 				{
 					go->tutorial = 0;
 				}
