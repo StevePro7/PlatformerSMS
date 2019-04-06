@@ -142,7 +142,7 @@ static void load_screen()
 	engine_level_manager_draw_level();
 	engine_enemyX_manager_draw_guards();
 	engine_memo_manager_draw_title();
-	engine_memo_manager_draw_level( go->world_no, go->round_no );
+	engine_memo_manager_draw_level( tutorial, go->world_no, go->round_no );
 
 	// Display game stats.
 	engine_game_manager_draw();
@@ -150,7 +150,7 @@ static void load_screen()
 	engine_score_manager_draw_score();
 	engine_score_manager_draw_lives();
 
-	if( 0 == go->world_no )
+	if( 1 == go->tutorial )
 	{
 		engine_text_manager_write_info( go->round_no );
 	}

@@ -15,7 +15,11 @@ Need to set tutorial=1 on start / init but when go at least once thru tutorial [
 Can always select again from baby screen as necc.
 
 Need to design 10x more levels - probably easy / mid diff screens - troll previous screens for ideas...!
-
+check all possible screens:
+Pass
+Reset
+Cont
+Over
 
 04/04/2019
 TODO

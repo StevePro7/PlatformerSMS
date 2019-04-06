@@ -14,6 +14,11 @@ void engine_game_manager_init()
 	struct_game_object *go = &global_game_object;
 	go->invincible = 0;
 	go->tutorial = 1;
+
+	// TODO remove this - only used for testing.
+	//go->tutorial = 0;
+	// TODO remove this - only used for testing.
+
 	go->world_no = 0;
 	go->round_no = 0;
 }
@@ -22,6 +27,15 @@ void engine_game_manager_draw()
 {
 	struct_game_object *go = &global_game_object;
 	engine_font_manager_draw_text( diff_text[ go->difficulty ], SCREEN_TILE_LEFT, 1 );
-	engine_font_manager_draw_text( count_text[ go->world_no ], 2, GAME_DATA_TOP );
+
+	if( go->tutorial )
+	{
+		engine_font_manager_draw_text( LOCALE_TUTORIAL_NO, 2, GAME_DATA_TOP );
+	}
+	else
+	{
+		engine_font_manager_draw_text( count_text[ go->world_no ], 2, GAME_DATA_TOP );
+	}
+
 	engine_font_manager_draw_text( count_text[ go->round_no ], 2, GAME_DATA_BOT );
 }

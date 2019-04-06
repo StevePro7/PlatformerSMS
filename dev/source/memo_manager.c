@@ -36,14 +36,22 @@ void engine_memo_manager_draw_title()
 
 }
 
-void engine_memo_manager_draw_level( const unsigned char world, const unsigned char round )
+void engine_memo_manager_draw_level( const unsigned char tutorial,  const unsigned char world, const unsigned char round )
 {
 	unsigned char x = 12;
 	unsigned char y = 20;
 	unsigned char wide = 12;
 	draw_memo( LOCALE_BLANK_SIZE10, LOCALE_SELECT_WORLD, LOCALE_SELECT_ROUND, x, y, wide );
 
-	engine_font_manager_draw_text( count_text[ world ], x + 7, y + 1 );
+	if( tutorial )
+	{
+		engine_font_manager_draw_text( LOCALE_TUTORIAL_NO, x + 7, y + 1 );
+	}
+	else
+	{
+		engine_font_manager_draw_text( count_text[ world ], x + 7, y + 1 );
+	}
+
 	engine_font_manager_draw_text( count_text[ round ], x + 7, y + 2 );
 }
 
