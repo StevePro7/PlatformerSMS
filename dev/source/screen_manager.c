@@ -8,7 +8,7 @@
 #include "intro_screen.h"
 #include "begin_screen.h"
 #include "title_screen.h"
-#include "baby_screen.h"
+#include "entry_screen.h"
 #include "diff_screen.h"
 #include "pace_screen.h"
 #include "level_screen.h"
@@ -44,7 +44,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_intro ] = screen_intro_screen_load;
 	load_method[ screen_type_begin ] = screen_begin_screen_load;
 	load_method[ screen_type_title ] = screen_title_screen_load;
-	load_method[ screen_type_baby ] = screen_baby_screen_load;
+	load_method[ screen_type_entry ] = screen_entry_screen_load;
 	load_method[ screen_type_diff ] = screen_diff_screen_load;
 	load_method[ screen_type_pace ] = screen_pace_screen_load;
 	load_method[ screen_type_level ] = screen_level_screen_load;
@@ -69,7 +69,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_intro ] = screen_intro_screen_update;
 	update_method[ screen_type_begin ] = screen_begin_screen_update;
 	update_method[ screen_type_title ] = screen_title_screen_update;
-	update_method[ screen_type_baby ] = screen_baby_screen_update;
+	update_method[ screen_type_entry ] = screen_entry_screen_update;
 	update_method[ screen_type_diff ] = screen_diff_screen_update;
 	update_method[ screen_type_pace ] = screen_pace_screen_update;
 	update_method[ screen_type_level ] = screen_level_screen_update;

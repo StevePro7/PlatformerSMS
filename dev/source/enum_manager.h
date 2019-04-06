@@ -8,7 +8,7 @@ typedef enum tag_enum_screen_type
 	screen_type_intro = 2,
 	screen_type_begin = 3,
 	screen_type_title = 4,
-	screen_type_baby = 5,
+	screen_type_entry = 5,
 	screen_type_diff = 6,
 	screen_type_pace = 7,
 	screen_type_level = 8,
