@@ -87,23 +87,4 @@ void engine_hack_manager_invert()
 	ho->hack_music = !ho->hack_music;
 	ho->hack_sound = !ho->hack_sound;
 	ho->hack_enemy = !ho->hack_enemy;
-
-
-
-	// TODO - IMPORTANT - remove all code here used during testing!!
-	//ho->hack_delayspeed = 0;
-	//ho->hack_invincible = 1;
-
-	//ho->hack_difficulty = diff_type_hard;
-	//ho->hack_game_speed = pace_type_slow;
-	//ho->hack_enemy = 0;
-	//ho->hack_sound = 0;
-	//ho->hack_music = 0;
-
-
-	ho->hack_world = 4;
-	ho->hack_round = 10;
-
-	ho->hack_world--;
-	ho->hack_round--;
 }

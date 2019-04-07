@@ -14,11 +14,6 @@ void engine_game_manager_init()
 	struct_game_object *go = &global_game_object;
 	go->invincible = 0;
 	go->tutorial = 1;
-
-	// TODO remove this - only used for testing.
-	go->tutorial = 0;
-	// TODO remove this - only used for testing.
-
 	go->world_no = 0;
 	go->round_no = 0;
 }
