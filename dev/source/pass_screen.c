@@ -27,11 +27,8 @@ void screen_pass_screen_load()
 	unsigned char perfect = 0;
 	unsigned char invincible;
 
-	// Reset tutorial unconditionally.
-	//go->tutorial = 0;
-
 	engine_audio_manager_music_stop();
-	if( ho->hack_delayspeed)
+	if( ho->hack_delayspeed )
 	{
 		engine_audio_manager_sound_level();
 	}
@@ -114,7 +111,9 @@ static void increase_lives()
 	struct_score_object *so = &global_score_object;
 	if( so->num_lives < MAMNUM_LIVES )
 	{
-		engine_audio_manager_sound_power();
+		// Don't play sound effect as overrides music!
+		//engine_audio_manager_sound_power();
+
 		engine_score_manager_update_lives( 1 );
 		engine_score_manager_draw_lives();
 	}
