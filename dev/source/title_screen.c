@@ -36,8 +36,6 @@ void screen_title_screen_load()
 	{
 		engine_text_manager_cheat_write();
 	}
-
-	engine_font_manager_draw_data( go->tutorial, 10, 19 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
