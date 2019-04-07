@@ -16,7 +16,7 @@ void engine_game_manager_init()
 	go->tutorial = 1;
 
 	// TODO remove this - only used for testing.
-	go->tutorial = 0;
+	//go->tutorial = 0;
 	// TODO remove this - only used for testing.
 
 	go->world_no = 0;
