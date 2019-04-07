@@ -1,4 +1,4 @@
-REM bank7
+REM bank9
 @echo off
 
 cd ..

@@ -1,4 +1,4 @@
-REM @echo off
+ @echo off
 
 REM https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
 :: Calculate the start timestamp
@@ -22,13 +22,11 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_mana
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 debug_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
-
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 anim_object.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_object.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro_object.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tutorial_object.c
-
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 text_manager.c
@@ -47,7 +45,6 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 stats_man
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 game_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
-
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
@@ -106,6 +103,12 @@ sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC0
 -Wl-b_BANK7=0x8000 ^
 -Wl-b_BANK8=0x8000 ^
 -Wl-b_BANK9=0x8000 ^
+-Wl-b_BANK10=0x8000 ^
+-Wl-b_BANK11=0x8000 ^
+-Wl-b_BANK12=0x8000 ^
+-Wl-b_BANK13=0x8000 ^
+-Wl-b_BANK14=0x8000 ^
+-Wl-b_BANK15=0x8000 ^
 ..\crt0\crt0_sms.rel main.rel ^
 ..\lib\SMSlib.lib ^
 ..\lib\PSGlib.rel ^
@@ -117,6 +120,12 @@ banks\bank6.rel ^
 banks\bank7.rel ^
 banks\bank8.rel ^
 banks\bank9.rel ^
+banks\bank10.rel ^
+banks\bank11.rel ^
+banks\bank12.rel ^
+banks\bank13.rel ^
+banks\bank14.rel ^
+banks\bank15.rel ^
 engine\asm_manager.rel ^
 source\_sms_manager.rel ^
 source\_snd_manager.rel ^
