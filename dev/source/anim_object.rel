@@ -1,0 +1,120 @@
+XL3
+H 9 areas 29 global symbols
+M anim_object
+O -mz80
+S _player_run_rght_05__tiles__psgcompr Ref000000
+S _enemyA_idle__tiles__psgcompr Ref000000
+S _enemyB_idle__tiles__psgcompr Ref000000
+S _enemyC_idle__tiles__psgcompr Ref000000
+S _enemyD_idle__tiles__psgcompr Ref000000
+S .__.ABS. Def000000
+S _player_idle__tiles__psgcompr Ref000000
+S _player_run_left_01__tiles__psgcompr Ref000000
+S _player_run_left_02__tiles__psgcompr Ref000000
+S _player_run_left_03__tiles__psgcompr Ref000000
+S _player_run_left_04__tiles__psgcompr Ref000000
+S _player_run_left_05__tiles__psgcompr Ref000000
+S _player_run_rght_01__tiles__psgcompr Ref000000
+S _player_run_rght_02__tiles__psgcompr Ref000000
+S _player_run_rght_03__tiles__psgcompr Ref000000
+S _player_run_rght_04__tiles__psgcompr Ref000000
+A _CODE size E flags 0 addr 0
+S G$enemyA_anim_bank$0_0$0 Def00000A
+S _enemyD_anim_bank Def00000D
+S G$enemyB_anim_bank$0_0$0 Def00000B
+S G$enemyC_anim_bank$0_0$0 Def00000C
+S G$enemyD_anim_bank$0_0$0 Def00000D
+S _player_anim_bank Def000000
+S G$player_anim_bank$0_0$0 Def000000
+S _enemyA_anim_bank Def00000A
+S _enemyB_anim_bank Def00000B
+S _enemyC_anim_bank Def00000C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 1E flags 0 addr 0
+S G$enemyC_anim_data$0_0$0 Def00001A
+S G$enemyD_anim_data$0_0$0 Def00001C
+S _player_anim_data Def000000
+S G$player_anim_data$0_0$0 Def000000
+S _enemyA_anim_data Def000016
+S _enemyB_anim_data Def000018
+S _enemyC_anim_data Def00001A
+S G$enemyA_anim_data$0_0$0 Def000016
+S _enemyD_anim_data Def00001C
+S G$enemyB_anim_data$0_0$0 Def000018
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 1E flags 0 addr 0
+S Fanim_object$__xinit_enemyA_anim_data$0_0$0 Def000016
+S Fanim_object$__xinit_enemyB_anim_data$0_0$0 Def000018
+S Fanim_object$__xinit_enemyC_anim_data$0_0$0 Def00001A
+S Fanim_object$__xinit_enemyD_anim_data$0_0$0 Def00001C
+S Fanim_object$__xinit_player_anim_data$0_0$0 Def000000
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 16 00 00
+R 00 00 02 00
+T 16 00 00
+R 00 00 02 00
+T 18 00 00
+R 00 00 02 00
+T 18 00 00
+R 00 00 02 00
+T 1A 00 00
+R 00 00 02 00
+T 1A 00 00
+R 00 00 02 00
+T 1C 00 00
+R 00 00 02 00
+T 1C 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 02 02 02 02 02 02 02 02 02 02
+R 00 00 00 00
+T 0A 00 00
+R 00 00 00 00
+T 0A 00 00 02
+R 00 00 00 00
+T 0B 00 00
+R 00 00 00 00
+T 0B 00 00 02
+R 00 00 00 00
+T 0C 00 00
+R 00 00 00 00
+T 0C 00 00 02
+R 00 00 00 00
+T 0D 00 00
+R 00 00 00 00
+T 0D 00 00 02
+R 00 00 00 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 06 00 02 05 07 00 02 07 08 00
+T 06 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 09 00 02 05 0A 00 02 07 0B 00
+T 0C 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 0C 00 02 05 0D 00 02 07 0E 00
+T 12 00 00 00 00 00 00
+R 00 00 07 00 02 03 0F 00 02 05 00 00
+T 16 00 00
+R 00 00 07 00
+T 16 00 00 00 00
+R 00 00 07 00 02 03 01 00
+T 18 00 00
+R 00 00 07 00
+T 18 00 00 00 00
+R 00 00 07 00 02 03 02 00
+T 1A 00 00
+R 00 00 07 00
+T 1A 00 00 00 00
+R 00 00 07 00 02 03 03 00
+T 1C 00 00
+R 00 00 07 00
+T 1C 00 00 00 00
+R 00 00 07 00 02 03 04 00

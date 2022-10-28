@@ -1,0 +1,181 @@
+;!FILE gems_screen.asm
+XL3
+H 9 areas 7D global symbols
+M gems_screen
+O -mz80
+S _engine_score_manager_draw_score_at Ref000000
+S _engine_audio_manager_sound_reset Ref000000
+S _engine_reset_manager_load Ref000000
+S _engine_reset_manager_reset Ref000000
+S .__.ABS. Def000000
+S _engine_delay_manager_update Ref000000
+S _engine_enemyX_manager_draw_enemys Ref000000
+S _engine_audio_manager_music_stop Ref000000
+S _global_reset_object Ref000000
+S _engine_input_manager_move_fire2 Ref000000
+S _engine_reset_manager_update Ref000000
+S _engine_memo_manager_draw_gems Ref000000
+S _engine_player_manager_hide Ref000000
+S _engine_tile_manager_draw_tile Ref000000
+S _engine_delay_manager_load Ref000000
+A _CODE size 89 flags 0 addr 0
+S A$gems_screen$93 Def000019
+S C$gems_screen.c$70$1_0$19 Def000088
+S C$gems_screen.c$48$3_0$21 Def000060
+S C$gems_screen.c$34$1_0$19 Def000039
+S C$gems_screen.c$19$0_0$17 Def000000
+S A$gems_screen$94 Def00001A
+S A$gems_screen$76 Def000003
+S C$gems_screen.c$28$1_0$17 Def000022
+S A$gems_screen$77 Def000006
+S C$gems_screen.c$29$1_0$17 Def00002A
+S A$gems_screen$87 Def00000E
+S A$gems_screen$78 Def000007
+S A$gems_screen$88 Def000011
+S A$gems_screen$79 Def00000A
+S A$gems_screen$98 Def00001B
+S A$gems_screen$89 Def000012
+S C$gems_screen.c$66$1_0$19 Def00007A
+S C$gems_screen.c$39$1_0$19 Def000039
+S A$gems_screen$99 Def00001E
+S C$gems_screen.c$67$1_0$19 Def00007D
+S C$gems_screen.c$59$1_0$19 Def000070
+S C$gems_screen.c$69$1_0$19 Def000080
+S _screen_gems_screen_load Def000000
+S XG$screen_gems_screen_load$0$0 Def00002F
+S G$screen_gems_screen_update$0$0 Def000030
+S A$gems_screen$100 Def00001F
+S A$gems_screen$200 Def00006C
+S A$gems_screen$201 Def00006F
+S A$gems_screen$121 Def00002F
+S A$gems_screen$112 Def00002A
+S A$gems_screen$212 Def000074
+S A$gems_screen$131 Def000030
+S A$gems_screen$113 Def00002C
+S A$gems_screen$104 Def000022
+S A$gems_screen$231 Def000080
+S A$gems_screen$213 Def000075
+S A$gems_screen$150 Def000043
+S A$gems_screen$141 Def000039
+S A$gems_screen$132 Def000032
+S A$gems_screen$105 Def000024
+S A$gems_screen$232 Def000081
+S A$gems_screen$223 Def00007A
+S A$gems_screen$214 Def000076
+S A$gems_screen$142 Def00003C
+S A$gems_screen$133 Def000036
+S A$gems_screen$106 Def000025
+S _screen_gems_screen_update Def000030
+S A$gems_screen$233 Def000082
+S A$gems_screen$206 Def000070
+S A$gems_screen$170 Def000059
+S A$gems_screen$161 Def000050
+S A$gems_screen$134 Def000038
+S A$gems_screen$107 Def000026
+S A$gems_screen$207 Def000071
+S A$gems_screen$162 Def000051
+S A$gems_screen$108 Def000029
+S A$gems_screen$244 Def000088
+S A$gems_screen$208 Def000072
+S A$gems_screen$190 Def000067
+S A$gems_screen$163 Def000052
+S A$gems_screen$154 Def000044
+S A$gems_screen$227 Def00007D
+S A$gems_screen$218 Def000078
+S A$gems_screen$155 Def000047
+S A$gems_screen$146 Def00003D
+S A$gems_screen$183 Def000060
+S A$gems_screen$174 Def00005A
+S A$gems_screen$156 Def00004A
+S A$gems_screen$147 Def00003E
+S A$gems_screen$238 Def000084
+S A$gems_screen$184 Def000063
+S A$gems_screen$175 Def00005B
+S A$gems_screen$157 Def00004D
+S A$gems_screen$148 Def000041
+S A$gems_screen$239 Def000086
+S A$gems_screen$194 Def000069
+S A$gems_screen$167 Def000054
+S A$gems_screen$149 Def000042
+S A$gems_screen$168 Def000055
+S A$gems_screen$169 Def000058
+S A$gems_screen$188 Def000065
+S A$gems_screen$179 Def00005D
+S A$gems_screen$189 Def000066
+S A$gems_screen$199 Def00006B
+S XG$screen_gems_screen_update$0$0 Def000088
+S C$gems_screen.c$50$3_0$21 Def000065
+S C$gems_screen.c$51$3_0$21 Def000069
+S C$gems_screen.c$44$2_0$20 Def000054
+S C$gems_screen.c$30$1_0$17 Def00002F
+S C$gems_screen.c$21$1_0$17 Def000000
+S C$gems_screen.c$45$2_0$20 Def00005A
+S C$gems_screen.c$22$1_0$17 Def000003
+S C$gems_screen.c$61$2_0$23 Def000074
+S C$gems_screen.c$23$1_0$17 Def00000B
+S G$screen_gems_screen_load$0$0 Def000000
+S A$gems_screen$90 Def000014
+S A$gems_screen$72 Def000000
+S C$gems_screen.c$62$2_0$23 Def000078
+S C$gems_screen.c$40$1_0$19 Def00003D
+S A$gems_screen$91 Def000015
+S C$gems_screen.c$50$1_0$19 Def000044
+S C$gems_screen.c$32$1_0$19 Def000030
+S C$gems_screen.c$25$1_0$17 Def00000E
+S A$gems_screen$92 Def000016
+S A$gems_screen$83 Def00000B
+S C$gems_screen.c$56$2_0$22 Def00006B
+S C$gems_screen.c$47$3_0$21 Def00005D
+S C$gems_screen.c$42$1_0$19 Def000050
+S C$gems_screen.c$26$1_0$17 Def00001B
+A _DATA size 1 flags 0 addr 0
+S Fgems_screen$stage$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 21 4B 00 E5 CD 00 00 F1 CD
+R 00 00 00 00 02 04 07 00 02 0B 0E 00
+T 0C 00 00 00 00 11 0D 15 D5 3E 0C F5 33 CD 00 00
+R 00 00 00 00 02 03 0B 00 02 0E 0D 00
+T 19 00 00 F1 33 11 14 16 D5 CD 00 00 26 4B E3 33
+R 00 00 00 00 02 0A 00 00
+T 26 00 00 CD 00 00 33 3E 00 32 00 00 C9
+R 00 00 00 00 02 04 02 00 00 0A 01 00
+T 30 00 00
+R 00 00 00 00
+T 30 00 00 DD E5 DD 21 00 00 DD 39 F5 CD 00 00 5D
+R 00 00 00 00 02 0D 05 00
+T 3D 00 00 D5 CD 00 00 7D D1 57 DD 7E 04 DD 77 FE
+R 00 00 00 00 02 05 09 00
+T 4A 00 00 DD 7E 05 DD 77 FF 7A B7 28 17 D5 CD
+R 00 00 00 00
+T 56 00 00 00 00 7D D1 B7 28 13 CD 00 00 21 02 00
+R 00 00 00 00 02 03 0A 00 02 0B 01 00 02 0E 08 00
+T 63 00 00 36 03 E1 E5 36 0E 18 19
+R 00 00 00 00
+T 6B 00 00
+R 00 00 00 00
+T 6B 00 00 D5 CD 00 00 D1
+R 00 00 00 00 02 05 03 00
+T 70 00 00
+R 00 00 00 00
+T 70 00 00 7B B7 28 06 E1 E5 36 0C 18 0A
+R 00 00 00 00
+T 7A 00 00
+R 00 00 00 00
+T 7A 00 00 CD 00 00 CD 00 00 E1 E5 36 10
+R 00 00 00 00 02 04 06 00 02 07 0C 00
+T 84 00 00
+R 00 00 00 00
+T 84 00 00 DD F9 DD E1 C9
+R 00 00 00 00

@@ -1,0 +1,96 @@
+;!FILE reset_manager.asm
+XL3
+H 9 areas 3A global symbols
+M reset_manager
+O -mz80
+S .__.ABS. Def000000
+A _CODE size 31 flags 0 addr 0
+S A$reset_manager$145 Def00002D
+S A$reset_manager$136 Def000029
+S A$reset_manager$146 Def00002E
+S A$reset_manager$129 Def00001E
+S G$engine_reset_manager_load$0$0 Def000000
+S A$reset_manager$159 Def000030
+S C$reset_manager.c$30$2_0$10 Def00002D
+S G$engine_reset_manager_reset$0$0 Def000010
+S A$reset_manager$64 Def000000
+S _engine_reset_manager_load Def000000
+S A$reset_manager$65 Def000003
+S A$reset_manager$66 Def000007
+S A$reset_manager$67 Def000009
+S _engine_reset_manager_reset Def000010
+S A$reset_manager$95 Def000010
+S A$reset_manager$68 Def00000C
+S A$reset_manager$96 Def000013
+S A$reset_manager$79 Def00000D
+S C$reset_manager.c$10$1_0$7 Def000000
+S C$reset_manager.c$11$1_0$7 Def000000
+S C$reset_manager.c$12$1_0$7 Def00000D
+S XG$engine_reset_manager_load$0$0 Def00000D
+S C$reset_manager.c$13$1_0$7 Def00000D
+S C$reset_manager.c$21$1_0$9 Def000016
+S C$reset_manager.c$23$1_0$9 Def000016
+S XG$engine_reset_manager_reset$0$0 Def000015
+S C$reset_manager.c$15$1_0$8 Def000010
+S C$reset_manager.c$33$1_0$9 Def00002F
+S C$reset_manager.c$34$1_0$9 Def000030
+S C$reset_manager.c$17$1_0$8 Def000010
+S C$reset_manager.c$26$1_0$9 Def000016
+S C$reset_manager.c$18$1_0$8 Def000010
+S C$reset_manager.c$27$1_0$9 Def00001E
+S C$reset_manager.c$19$1_0$8 Def000015
+S C$reset_manager.c$28$1_0$9 Def00002A
+S G$engine_reset_manager_update$0$0 Def000016
+S C$reset_manager.c$8$0_0$7 Def000000
+S _engine_reset_manager_update Def000016
+S A$reset_manager$120 Def000016
+S A$reset_manager$130 Def000021
+S A$reset_manager$121 Def000019
+S A$reset_manager$140 Def00002A
+S A$reset_manager$131 Def000022
+S A$reset_manager$122 Def00001A
+S A$reset_manager$104 Def000015
+S A$reset_manager$141 Def00002B
+S A$reset_manager$132 Def000023
+S A$reset_manager$123 Def00001B
+S A$reset_manager$151 Def00002F
+S A$reset_manager$133 Def000024
+S A$reset_manager$124 Def00001C
+S A$reset_manager$134 Def000026
+S A$reset_manager$125 Def00001D
+S A$reset_manager$135 Def000027
+S XG$engine_reset_manager_update$0$0 Def000030
+A _DATA size 3 flags 0 addr 0
+S _global_reset_object Def000000
+S G$global_reset_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 00 00 FD 21 02 00 FD 39 FD 7E 00 77
+R 00 00 00 00 00 04 01 00
+T 0D 00 00 C3 10 00
+R 00 00 00 00 00 04 00 00
+T 10 00 00
+R 00 00 00 00
+T 10 00 00 21 01 00 36 00 C9
+R 00 00 00 00 00 04 01 00
+T 16 00 00
+R 00 00 00 00
+T 16 00 00 01 01 00 0A 5F 1C 7B 02 21 00 00 6E 7B
+R 00 00 00 00 00 04 01 00 00 0C 01 00
+T 23 00 00 95 3E 00 17 EE 01 5F B7 28 02 AF 02
+R 00 00 00 00
+T 2F 00 00
+R 00 00 00 00
+T 2F 00 00 6B C9
+R 00 00 00 00

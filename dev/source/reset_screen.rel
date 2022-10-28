@@ -1,0 +1,181 @@
+;!FILE reset_screen.asm
+XL3
+H 9 areas 73 global symbols
+M reset_screen
+O -mz80
+S _engine_player_manager_draw Ref000000
+S _engine_audio_manager_sound_reset Ref000000
+S .__.ABS. Def000000
+S _global_game_object Ref000000
+S _engine_delay_manager_update Ref000000
+S _engine_enemyX_manager_draw_enemys Ref000000
+S _engine_audio_manager_music_stop Ref000000
+S _global_reset_object Ref000000
+S _engine_memo_manager_draw_reset Ref000000
+S _engine_delay_manager_load Ref000000
+A _CODE size 89 flags 0 addr 0
+S C$reset_screen.c$21$1_0$7 Def00000E
+S C$reset_screen.c$22$1_0$7 Def000011
+S C$reset_screen.c$23$1_0$7 Def000016
+S C$reset_screen.c$31$1_0$9 Def00001F
+S C$reset_screen.c$16$0_0$7 Def000000
+S C$reset_screen.c$32$1_0$9 Def000022
+S C$reset_screen.c$25$1_0$9 Def000017
+S C$reset_screen.c$18$1_0$7 Def000000
+S C$reset_screen.c$19$1_0$7 Def000003
+S C$reset_screen.c$27$1_0$9 Def00001F
+S C$reset_screen.c$28$1_0$9 Def00001F
+S C$reset_screen.c$47$1_0$9 Def00002B
+S C$reset_screen.c$75$1_0$9 Def00007E
+S C$reset_screen.c$66$1_0$9 Def00006F
+S C$reset_screen.c$57$1_0$9 Def000059
+S XG$screen_reset_screen_load$0$0 Def000016
+S C$reset_screen.c$76$1_0$9 Def000088
+S C$reset_screen.c$58$1_0$9 Def00005D
+S G$screen_reset_screen_update$0$0 Def000017
+S A$reset_screen$200 Def000060
+S A$reset_screen$201 Def000063
+S A$reset_screen$120 Def000022
+S A$reset_screen$130 Def00002B
+S A$reset_screen$121 Def000025
+S A$reset_screen$212 Def00006D
+S A$reset_screen$131 Def00002E
+S A$reset_screen$122 Def000026
+S A$reset_screen$104 Def000017
+S A$reset_screen$150 Def000041
+S A$reset_screen$141 Def000035
+S A$reset_screen$105 Def000019
+S A$reset_screen$241 Def000086
+S A$reset_screen$223 Def000076
+S A$reset_screen$205 Def000065
+S A$reset_screen$160 Def000049
+S A$reset_screen$151 Def000042
+S A$reset_screen$142 Def000038
+S A$reset_screen$106 Def00001D
+S _screen_reset_screen_update Def000017
+S A$reset_screen$224 Def000079
+S A$reset_screen$206 Def000068
+S A$reset_screen$170 Def000050
+S A$reset_screen$143 Def000039
+S A$reset_screen$116 Def00001F
+S A$reset_screen$234 Def00007E
+S A$reset_screen$207 Def000069
+S A$reset_screen$180 Def000054
+S A$reset_screen$171 Def000051
+S A$reset_screen$144 Def00003B
+S A$reset_screen$135 Def000031
+S A$reset_screen$126 Def000028
+S A$reset_screen$235 Def000081
+S A$reset_screen$217 Def00006F
+S A$reset_screen$208 Def00006C
+S A$reset_screen$190 Def000059
+S A$reset_screen$181 Def000056
+S A$reset_screen$136 Def000032
+S A$reset_screen$236 Def000084
+S A$reset_screen$218 Def000072
+S A$reset_screen$191 Def00005C
+S A$reset_screen$164 Def00004B
+S A$reset_screen$155 Def000044
+S A$reset_screen$137 Def000033
+S A$reset_screen$246 Def000088
+S A$reset_screen$219 Def000074
+S A$reset_screen$165 Def00004E
+S A$reset_screen$229 Def00007B
+S A$reset_screen$175 Def000052
+S A$reset_screen$148 Def00003D
+S A$reset_screen$185 Def000057
+S A$reset_screen$149 Def000040
+S A$reset_screen$195 Def00005D
+S A$reset_screen$159 Def000046
+S A$reset_screen$196 Def00005E
+S XG$screen_reset_screen_update$0$0 Def000088
+S C$reset_screen.c$34$2_0$10 Def000028
+S C$reset_screen.c$35$2_0$10 Def000031
+S A$reset_screen$70 Def000003
+S C$reset_screen.c$60$2_0$15 Def000060
+S C$reset_screen.c$41$5_0$13 Def000044
+S G$screen_reset_screen_load$0$0 Def000000
+S A$reset_screen$81 Def00000E
+S C$reset_screen.c$61$2_0$15 Def000065
+S C$reset_screen.c$52$3_0$14 Def000054
+S C$reset_screen.c$42$5_0$13 Def000046
+S C$reset_screen.c$37$3_0$11 Def000035
+S C$reset_screen.c$62$2_0$15 Def00006D
+S C$reset_screen.c$53$3_0$14 Def000057
+S C$reset_screen.c$47$3_0$11 Def000050
+S C$reset_screen.c$43$5_0$13 Def00004B
+S A$reset_screen$74 Def000006
+S C$reset_screen.c$48$3_0$11 Def000052
+S A$reset_screen$75 Def000009
+S A$reset_screen$66 Def000000
+S A$reset_screen$94 Def000016
+S A$reset_screen$85 Def000011
+S A$reset_screen$76 Def00000A
+S C$reset_screen.c$72$2_0$17 Def00007B
+S C$reset_screen.c$39$4_0$12 Def00003D
+S A$reset_screen$86 Def000013
+S A$reset_screen$77 Def00000D
+S C$reset_screen.c$68$2_0$16 Def000076
+S C$reset_screen.c$20$1_0$7 Def000006
+S _screen_reset_screen_load Def000000
+A _DATA size 1 flags 0 addr 0
+S Freset_screen$stage$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 21 4B 00 E5 CD 00 00
+R 00 00 00 00 02 04 06 00 02 07 01 00 02 0E 09 00
+T 0D 00 00 F1 CD 00 00 3E 00 32 00 00 C9
+R 00 00 00 00 02 05 08 00 00 0A 01 00
+T 17 00 00
+R 00 00 00 00
+T 17 00 00 DD E5 DD 21 00 00 DD 39 CD 00 00 3A
+R 00 00 00 00 02 0C 05 00
+T 23 00 00 00 00 3D 20 31 CD 00 00 DD 4E 04 DD 46
+R 00 00 00 00 00 03 01 00 02 09 04 00
+T 30 00 00 05 7D B7 28 1F 11 02 00 1A D6 03 20 13
+R 00 00 00 00 02 09 07 00
+T 3D 00 00 21 04 00 7E B7 28 0C 36 00 21 05 00 36
+R 00 00 00 00 02 04 03 00 02 0D 03 00
+T 4A 00 00 00 21 06 00 36 00
+R 00 00 00 00 02 05 03 00
+T 50 00 00
+R 00 00 00 00
+T 50 00 00 1A 02 18 32
+R 00 00 00 00
+T 54 00 00
+R 00 00 00 00
+T 54 00 00 3E 0E 02 18 2D
+R 00 00 00 00
+T 59 00 00
+R 00 00 00 00
+T 59 00 00 CD 00 00 7D B7 28 0F 21 00 00 36 01 21
+R 00 00 00 00 02 04 04 00 00 0B 01 00
+T 66 00 00 19 00 E5 CD 00 00 F1 18 17
+R 00 00 00 00 02 07 09 00
+T 6F 00 00
+R 00 00 00 00
+T 6F 00 00 3A 02 00 D6 03 20 05 CD 00 00 18 03
+R 00 00 00 00 02 04 07 00 02 0B 05 00
+T 7B 00 00
+R 00 00 00 00
+T 7B 00 00 CD 00 00
+R 00 00 00 00 02 04 00 00
+T 7E 00 00
+R 00 00 00 00
+T 7E 00 00 DD 6E 04 DD 66 05 36 0E
+R 00 00 00 00
+T 86 00 00
+R 00 00 00 00
+T 86 00 00 DD E1 C9
+R 00 00 00 00

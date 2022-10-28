@@ -1,0 +1,15 @@
+M:reset_manager
+F:G$engine_reset_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lreset_manager.engine_reset_manager_load$frame$1_0$6({1}SC:U),B,1,4
+S:Lreset_manager.engine_reset_manager_load$ro$1_0$7({2}DG,STtag_struct_reset_object:S),R,0,0,[]
+F:G$engine_reset_manager_reset$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lreset_manager.engine_reset_manager_reset$ro$1_0$8({2}DG,STtag_struct_reset_object:S),R,0,0,[]
+F:G$engine_reset_manager_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
+S:Lreset_manager.engine_reset_manager_update$ro$1_0$9({2}DG,STtag_struct_reset_object:S),R,0,0,[]
+S:Lreset_manager.engine_reset_manager_update$test$1_0$9({1}SC:U),R,0,0,[e]
+T:Freset_manager$tag_struct_reset_object[({0}S:S$reset_frame$0_0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0_0$0({1}SC:U),Z,0,0)({2}S:S$reset_screen$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_reset_object$0_0$0({3}STtag_struct_reset_object:S),E,0,0
+S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data_ZERO$0_0$0({2}DF,SV:S),C,0,0

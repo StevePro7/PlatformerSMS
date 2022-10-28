@@ -1,0 +1,15 @@
+M:audio_object
+S:G$game_audio_data$0_0$0({6}DA3d,DG,SC:U),E,0,0
+S:G$title_audio_data$0_0$0({2}DA1d,DG,SC:U),E,0,0
+S:G$beat_audio_data$0_0$0({2}DA1d,DG,SC:U),E,0,0
+S:G$over_audio_data$0_0$0({2}DA1d,DG,SC:U),E,0,0
+S:G$mus_beat_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mus_over_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mus_title_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mus_game01_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mus_game02_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mus_game03_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$game_audio_bank$0_0$0({3}DA3d,SC:U),D,0,0
+S:G$title_audio_bank$0_0$0({1}DA1d,SC:U),D,0,0
+S:G$beat_audio_bank$0_0$0({1}DA1d,SC:U),D,0,0
+S:G$over_audio_bank$0_0$0({1}DA1d,SC:U),D,0,0

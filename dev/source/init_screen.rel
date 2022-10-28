@@ -1,0 +1,75 @@
+;!FILE init_screen.asm
+XL3
+H 9 areas 31 global symbols
+M init_screen
+O -mz80
+S _devkit_SMS_displayOn Ref000000
+S _engine_content_manager_load_guards Ref000000
+S _engine_anim_manager_player_load_move Ref000000
+S _engine_score_manager_init Ref000000
+S .__.ABS. Def000000
+S _global_game_object Ref000000
+S _engine_anim_manager_enemyX_load_idle Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_text_manager_clear_all Ref000000
+S _engine_anim_manager_player_load_idle Ref000000
+A _CODE size 26 flags 0 addr 0
+S C$init_screen.c$33$1_0$21 Def000025
+S C$init_screen.c$10$0_0$19 Def000000
+S A$init_screen$71 Def000003
+S C$init_screen.c$21$1_0$19 Def000009
+S C$init_screen.c$12$1_0$19 Def000000
+S G$screen_init_screen_load$0$0 Def000000
+S C$init_screen.c$22$1_0$19 Def00000C
+S A$init_screen$91 Def000012
+S C$init_screen.c$23$1_0$19 Def00000F
+S C$init_screen.c$14$1_0$19 Def000000
+S A$init_screen$83 Def00000C
+S C$init_screen.c$24$1_0$19 Def000012
+S C$init_screen.c$15$1_0$19 Def000003
+S A$init_screen$75 Def000006
+S A$init_screen$67 Def000000
+S A$init_screen$95 Def000015
+S C$init_screen.c$27$1_0$19 Def000015
+S C$init_screen.c$18$1_0$19 Def000006
+S A$init_screen$96 Def000018
+S A$init_screen$87 Def00000F
+S C$init_screen.c$28$1_0$19 Def00001E
+S A$init_screen$97 Def000019
+S A$init_screen$79 Def000009
+S A$init_screen$98 Def00001A
+S A$init_screen$99 Def00001D
+S _screen_init_screen_load Def000000
+S XG$screen_init_screen_load$0$0 Def00001E
+S G$screen_init_screen_update$0$0 Def00001F
+S A$init_screen$120 Def00001F
+S A$init_screen$121 Def000020
+S A$init_screen$122 Def000021
+S A$init_screen$132 Def000025
+S A$init_screen$123 Def000022
+S A$init_screen$124 Def000023
+S _screen_init_screen_update Def00001F
+S A$init_screen$107 Def00001E
+S C$init_screen.c$30$1_0$21 Def00001F
+S XG$screen_init_screen_update$0$0 Def000025
+S C$init_screen.c$32$1_0$21 Def00001F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 07 00 02 07 08 00 02 0A 01 00
+T 0A 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 09 00 02 06 02 00 02 09 06 00
+T 13 00 00 00 00 3A 02 00 F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 03 00 00 02 06 05 00 02 0B 03 00
+T 1F 00 00
+R 00 00 00 00
+T 1F 00 00 C1 E1 E5 C5 36 0C C9
+R 00 00 00 00

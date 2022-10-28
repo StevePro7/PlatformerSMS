@@ -1,0 +1,77 @@
+;!FILE sprite_manager.asm
+XL3
+H 9 areas 2F global symbols
+M sprite_manager
+O -mz80
+S .__.ABS. Def000000
+S _devkit_SMS_addSprite_bulk12 Ref000000
+S _devkit_SMS_addSprite_bulk8 Ref000000
+A _CODE size 3A flags 0 addr 0
+S A$sprite_manager$60 Def000006
+S A$sprite_manager$70 Def000017
+S A$sprite_manager$61 Def000009
+S C$sprite_manager.c$11$1_0$19 Def00001D
+S A$sprite_manager$80 Def00001C
+S A$sprite_manager$71 Def00001A
+S A$sprite_manager$62 Def00000A
+S C$sprite_manager.c$12$1_0$19 Def000039
+S A$sprite_manager$72 Def00001B
+S A$sprite_manager$63 Def00000B
+S A$sprite_manager$64 Def00000E
+S A$sprite_manager$65 Def000010
+S A$sprite_manager$93 Def00001D
+S A$sprite_manager$66 Def000011
+S A$sprite_manager$94 Def000021
+S A$sprite_manager$67 Def000012
+S A$sprite_manager$58 Def000000
+S A$sprite_manager$95 Def000023
+S A$sprite_manager$68 Def000015
+S A$sprite_manager$59 Def000004
+S A$sprite_manager$96 Def000026
+S A$sprite_manager$69 Def000016
+S A$sprite_manager$97 Def000027
+S XG$engine_sprite_manager_draw_player$0$0 Def00001C
+S A$sprite_manager$98 Def000028
+S A$sprite_manager$99 Def00002B
+S C$sprite_manager.c$4$0_0$17 Def000000
+S C$sprite_manager.c$6$1_0$17 Def000000
+S C$sprite_manager.c$7$1_0$17 Def00001C
+S C$sprite_manager.c$9$1_0$19 Def00001D
+S G$engine_sprite_manager_draw_enemyX$0$0 Def00001D
+S _engine_sprite_manager_draw_enemyX Def00001D
+S A$sprite_manager$100 Def00002D
+S A$sprite_manager$101 Def00002E
+S A$sprite_manager$102 Def00002F
+S A$sprite_manager$103 Def000032
+S A$sprite_manager$104 Def000033
+S A$sprite_manager$105 Def000034
+S A$sprite_manager$115 Def000039
+S A$sprite_manager$106 Def000037
+S A$sprite_manager$107 Def000038
+S G$engine_sprite_manager_draw_player$0$0 Def000000
+S XG$engine_sprite_manager_draw_enemyX$0$0 Def000039
+S _engine_sprite_manager_draw_player Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 FD 21 04 00 FD 39 FD 7E 00 F5 33 FD 7E
+R 00 00 00 00
+T 0D 00 00 FF FD 2B F5 33 FD 7E FF F5 33 CD 00 00
+R 00 00 00 00 02 0E 01 00
+T 1A 00 00 F1 33 C9
+R 00 00 00 00
+T 1D 00 00
+R 00 00 00 00
+T 1D 00 00 FD 21 04 00 FD 39 FD 7E 00 F5 33 FD 7E
+R 00 00 00 00
+T 2A 00 00 FF FD 2B F5 33 FD 7E FF F5 33 CD 00 00
+R 00 00 00 00 02 0E 02 00
+T 37 00 00 F1 33 C9
+R 00 00 00 00

@@ -1,0 +1,274 @@
+;!FILE score_manager.asm
+XL3
+H 9 areas C6 global symbols
+M score_manager
+O -mz80
+S _engine_font_manager_draw_text Ref000000
+S .__.ABS. Def000000
+S _lives_text Ref000000
+S _engine_font_manager_draw_data Ref000000
+S _engine_tile_manager_draw_tile Ref000000
+A _CODE size CD flags 0 addr 0
+S A$score_manager$395 Def0000B9
+S A$score_manager$368 Def0000B0
+S A$score_manager$287 Def00007F
+S A$score_manager$278 Def000076
+S A$score_manager$179 Def000034
+S A$score_manager$396 Def0000BD
+S A$score_manager$378 Def0000B5
+S A$score_manager$369 Def0000B1
+S A$score_manager$288 Def000080
+S A$score_manager$279 Def000078
+S A$score_manager$198 Def000046
+S C$score_manager.c$10$0_0$16 Def000000
+S A$score_manager$397 Def0000BF
+S A$score_manager$199 Def000049
+S C$score_manager.c$50$1_0$21 Def000054
+S G$engine_score_manager_reset_lives$0$0 Def000022
+S A$score_manager$398 Def0000C2
+S A$score_manager$299 Def000081
+S XG$engine_score_manager_update_gems$0$0 Def00004C
+S C$score_manager.c$42$2_0$20 Def000046
+S A$score_manager$399 Def0000C5
+S C$score_manager.c$52$1_0$21 Def000061
+S C$score_manager.c$12$1_0$16 Def000000
+S C$score_manager.c$21$1_0$17 Def00001C
+S C$score_manager.c$13$1_0$16 Def000000
+S G$engine_score_manager_draw_score$0$0 Def0000AD
+S C$score_manager.c$60$1_0$24 Def00006F
+S C$score_manager.c$30$1_0$18 Def000022
+S C$score_manager.c$14$1_0$16 Def00000B
+S _engine_score_manager_draw_score_at Def0000B6
+S C$score_manager.c$61$1_0$24 Def00006F
+S C$score_manager.c$46$1_0$21 Def00004D
+S C$score_manager.c$31$1_0$18 Def000029
+S C$score_manager.c$23$1_0$17 Def00001C
+S C$score_manager.c$15$1_0$16 Def000010
+S C$score_manager.c$56$1_0$21 Def00006E
+S C$score_manager.c$54$2_0$22 Def000068
+S C$score_manager.c$40$1_0$19 Def00003F
+S C$score_manager.c$24$1_0$17 Def00001C
+S A$score_manager$82 Def00000B
+S A$score_manager$73 Def000000
+S C$score_manager.c$70$1_0$26 Def000084
+S C$score_manager.c$48$1_0$21 Def00004D
+S C$score_manager.c$25$1_0$17 Def000021
+S C$score_manager.c$17$1_0$16 Def000016
+S A$score_manager$92 Def000016
+S A$score_manager$83 Def00000E
+S A$score_manager$74 Def000003
+S C$score_manager.c$71$1_0$26 Def000084
+S C$score_manager.c$49$1_0$21 Def00004D
+S C$score_manager.c$33$1_0$19 Def00002A
+S C$score_manager.c$18$1_0$16 Def000019
+S A$score_manager$75 Def000004
+S C$score_manager.c$80$1_0$27 Def0000B5
+S C$score_manager.c$63$2_0$25 Def00007A
+S G$engine_score_manager_reset_gems$0$0 Def00001C
+S C$score_manager.c$19$1_0$16 Def000019
+S A$score_manager$76 Def000005
+S C$score_manager.c$73$1_0$26 Def000088
+S C$score_manager.c$66$1_0$24 Def000081
+S C$score_manager.c$64$2_0$25 Def000081
+S C$score_manager.c$44$1_0$19 Def00004C
+S C$score_manager.c$35$1_0$19 Def00002A
+S C$score_manager.c$27$1_0$18 Def000022
+S A$score_manager$77 Def000007
+S C$score_manager.c$74$1_0$26 Def000097
+S G$engine_score_manager_draw_lives$0$0 Def000084
+S C$score_manager.c$58$1_0$24 Def00006F
+S C$score_manager.c$36$1_0$19 Def00002A
+S A$score_manager$87 Def000010
+S A$score_manager$78 Def000008
+S C$score_manager.c$81$1_0$29 Def0000B6
+S C$score_manager.c$75$1_0$26 Def0000AC
+S C$score_manager.c$37$1_0$19 Def000030
+S C$score_manager.c$29$1_0$18 Def000022
+S _engine_score_manager_reset_lives Def000022
+S A$score_manager$88 Def000013
+S G$engine_score_manager_bonus_gems$0$0 Def00004D
+S C$score_manager.c$38$1_0$19 Def000036
+S C$score_manager.c$83$1_0$29 Def0000B6
+S C$score_manager.c$68$1_0$26 Def000084
+S C$score_manager.c$84$1_0$29 Def0000B6
+S C$score_manager.c$77$1_0$27 Def0000AD
+S G$engine_score_manager_init$0$0 Def000000
+S XG$engine_score_manager_draw_score_at$0$0 Def0000CC
+S C$score_manager.c$85$1_0$29 Def0000CC
+S _engine_score_manager_draw_score Def0000AD
+S C$score_manager.c$79$1_0$27 Def0000AD
+S _engine_score_manager_reset_gems Def00001C
+S _engine_score_manager_draw_lives Def000084
+S XG$engine_score_manager_reset_lives$0$0 Def000029
+S _engine_score_manager_bonus_gems Def00004D
+S _engine_score_manager_init Def000000
+S XG$engine_score_manager_draw_score$0$0 Def0000B5
+S G$engine_score_manager_update_lives$0$0 Def00006F
+S XG$engine_score_manager_reset_gems$0$0 Def000021
+S XG$engine_score_manager_draw_lives$0$0 Def0000AC
+S XG$engine_score_manager_bonus_gems$0$0 Def00006E
+S XG$engine_score_manager_init$0$0 Def000019
+S G$engine_score_manager_update_gems$0$0 Def00002A
+S _engine_score_manager_update_lives Def00006F
+S A$score_manager$120 Def00001F
+S A$score_manager$400 Def0000C6
+S A$score_manager$103 Def000019
+S A$score_manager$401 Def0000C7
+S A$score_manager$320 Def000088
+S A$score_manager$230 Def000054
+S A$score_manager$411 Def0000CC
+S A$score_manager$402 Def0000CA
+S A$score_manager$321 Def000089
+S A$score_manager$240 Def000061
+S A$score_manager$231 Def000058
+S A$score_manager$403 Def0000CB
+S A$score_manager$340 Def0000A1
+S A$score_manager$322 Def00008C
+S A$score_manager$241 Def000063
+S A$score_manager$232 Def000059
+S A$score_manager$223 Def00004D
+S A$score_manager$341 Def0000A2
+S A$score_manager$323 Def00008D
+S A$score_manager$242 Def000064
+S A$score_manager$233 Def00005A
+S A$score_manager$224 Def000050
+S A$score_manager$170 Def00002A
+S _engine_score_manager_update_gems Def00002A
+S A$score_manager$342 Def0000A5
+S A$score_manager$333 Def000097
+S A$score_manager$324 Def00008F
+S A$score_manager$315 Def000084
+S A$score_manager$243 Def000066
+S A$score_manager$234 Def00005B
+S A$score_manager$225 Def000051
+S A$score_manager$207 Def00004C
+S A$score_manager$180 Def000035
+S A$score_manager$171 Def00002D
+S A$score_manager$144 Def000022
+S A$score_manager$370 Def0000B4
+S A$score_manager$343 Def0000A6
+S A$score_manager$334 Def00009A
+S A$score_manager$325 Def000090
+S A$score_manager$316 Def000087
+S A$score_manager$280 Def000079
+S A$score_manager$244 Def000067
+S A$score_manager$235 Def00005C
+S A$score_manager$226 Def000053
+S A$score_manager$190 Def00003F
+S A$score_manager$172 Def00002E
+S A$score_manager$154 Def000029
+S A$score_manager$145 Def000025
+S A$score_manager$344 Def0000A7
+S A$score_manager$335 Def00009C
+S A$score_manager$326 Def000091
+S A$score_manager$236 Def00005D
+S A$score_manager$191 Def000041
+S A$score_manager$173 Def00002F
+S A$score_manager$146 Def000028
+S A$score_manager$128 Def000021
+S A$score_manager$119 Def00001C
+S G$engine_score_manager_draw_score_at$0$0 Def0000B6
+S XG$engine_score_manager_update_lives$0$0 Def000081
+S A$score_manager$354 Def0000AC
+S A$score_manager$345 Def0000AA
+S A$score_manager$336 Def00009D
+S A$score_manager$327 Def000094
+S A$score_manager$273 Def00006F
+S A$score_manager$192 Def000042
+S A$score_manager$346 Def0000AB
+S A$score_manager$337 Def00009E
+S A$score_manager$328 Def000095
+S A$score_manager$274 Def000072
+S A$score_manager$193 Def000044
+S A$score_manager$184 Def000036
+S A$score_manager$338 Def00009F
+S A$score_manager$329 Def000096
+S A$score_manager$284 Def00007A
+S A$score_manager$275 Def000073
+S A$score_manager$257 Def00006E
+S A$score_manager$248 Def000068
+S A$score_manager$194 Def000045
+S A$score_manager$185 Def00003A
+S A$score_manager$339 Def0000A0
+S A$score_manager$285 Def00007B
+S A$score_manager$276 Def000074
+S A$score_manager$249 Def00006B
+S A$score_manager$186 Def00003B
+S A$score_manager$177 Def000030
+S A$score_manager$394 Def0000B6
+S A$score_manager$367 Def0000AD
+S A$score_manager$286 Def00007E
+S A$score_manager$277 Def000075
+S A$score_manager$178 Def000033
+A _DATA size 6 flags 0 addr 0
+S _global_score_object Def000000
+S G$global_score_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 02 00 39 4E 3E 04 91 32 00 00 21
+R 00 00 00 00 00 0C 01 00
+T 0C 00 00 02 00 36 00 21 00 00 22 04 00 CD 1C 00
+R 00 00 00 00 00 03 01 00 00 0B 01 00 00 0E 00 00
+T 19 00 00 C3 22 00
+R 00 00 00 00 00 04 00 00
+T 1C 00 00
+R 00 00 00 00
+T 1C 00 00 21 03 00 36 00 C9
+R 00 00 00 00 00 04 01 00
+T 22 00 00
+R 00 00 00 00
+T 22 00 00 01 01 00 3A 00 00 02 C9
+R 00 00 00 00 00 04 01 00 00 07 01 00
+T 2A 00 00
+R 00 00 00 00
+T 2A 00 00 01 02 00 0A 3C 02 01 03 00 0A 3C 02 ED
+R 00 00 00 00 00 04 01 00 00 0A 01 00
+T 37 00 00 4B 04 00 03 ED 43 04 00 3E 0F B9 3E 27
+R 00 00 00 00 00 04 01 00 00 09 01 00
+T 44 00 00 98 D0 21 0F 27 22 04 00 C9
+R 00 00 00 00 00 09 01 00
+T 4D 00 00
+R 00 00 00 00
+T 4D 00 00 01 02 00 0A C6 05 02 ED 4B 04 00 03 03
+R 00 00 00 00 00 04 01 00 00 0C 01 00
+T 5A 00 00 03 03 03 ED 43 04 00 3E 0F B9 3E 27 98
+R 00 00 00 00 00 08 01 00
+T 67 00 00 D0 21 0F 27 22 04 00 C9
+R 00 00 00 00 00 08 01 00
+T 6F 00 00
+R 00 00 00 00
+T 6F 00 00 01 01 00 0A 5F B7 C8 3E 09 93 D8 7B 21
+R 00 00 00 00 00 04 01 00
+T 7C 00 00 02 00 39 86 02 C3 84 00
+R 00 00 00 00 00 09 00 00
+T 84 00 00
+R 00 00 00 00
+T 84 00 00 21 01 00 5E D5 11 1E 16 D5 3E 0D F5 33
+R 00 00 00 00 00 04 01 00
+T 91 00 00 CD 00 00 F1 33 D1 01 00 00 16 00 EB 29
+R 00 00 00 00 02 04 04 00 02 0A 02 00
+T 9E 00 00 09 4E 23 46 11 1F 17 D5 C5 CD 00 00 F1
+R 00 00 00 00 02 0D 00 00
+T AB 00 00 F1 C9
+R 00 00 00 00
+T AD 00 00
+R 00 00 00 00
+T AD 00 00 11 1F 02 D5 CD B6 00 F1 C9
+R 00 00 00 00 00 08 00 00
+T B6 00 00
+R 00 00 00 00
+T B6 00 00 2A 04 00 FD 21 03 00 FD 39 FD 56 00 FD
+R 00 00 00 00 00 04 01 00
+T C3 00 00 5E FF D5 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 08 03 00

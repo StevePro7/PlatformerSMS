@@ -1,0 +1,11 @@
+M:debug_manager
+F:G$engine_debug_manager_draw_grid$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ldebug_manager.engine_debug_manager_draw_grid$x$1_0$8({1}SC:U),R,0,0,[b]
+S:Ldebug_manager.engine_debug_manager_draw_grid$y$1_0$8({1}SC:U),R,0,0,[c]
+S:G$engine_tile_manager_draw_tile$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_guard$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_small$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_tile_side$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_get_tile$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_get_collision$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_get_sprite$0_0$0({2}DF,SV:S),C,0,0

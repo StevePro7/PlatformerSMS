@@ -1,0 +1,849 @@
+;!FILE memo_manager.asm
+XL3
+H 9 areas 20F global symbols
+M memo_manager
+O -mz80
+S _engine_font_manager_draw_text Ref000000
+S .__.ABS. Def000000
+S _engine_tile_manager_draw_small Ref000000
+S _count_text Ref000000
+A _CODE size 3D0 flags 0 addr 0
+S XG$engine_memo_manager_draw_gems$0$0 Def0001A4
+S A$memo_manager$200 Def000087
+S A$memo_manager$110 Def000018
+S A$memo_manager$210 Def000092
+S A$memo_manager$201 Def000088
+S A$memo_manager$120 Def000025
+S A$memo_manager$102 Def00000B
+S _engine_memo_manager_draw_over Def000231
+S A$memo_manager$400 Def00018C
+S A$memo_manager$301 Def000106
+S A$memo_manager$211 Def000093
+S A$memo_manager$103 Def00000C
+S A$memo_manager$500 Def000202
+S A$memo_manager$410 Def000197
+S A$memo_manager$401 Def00018D
+S A$memo_manager$320 Def00011C
+S A$memo_manager$212 Def000094
+S A$memo_manager$104 Def00000D
+S A$memo_manager$600 Def00028A
+S A$memo_manager$501 Def000203
+S A$memo_manager$411 Def00019A
+S A$memo_manager$402 Def00018E
+S A$memo_manager$321 Def00011F
+S A$memo_manager$213 Def000095
+S A$memo_manager$114 Def000019
+S A$memo_manager$105 Def00000F
+S Fmemo_manager$get_tile$0$0 Def0002C2
+S A$memo_manager$700 Def000306
+S A$memo_manager$502 Def000206
+S A$memo_manager$412 Def00019B
+S A$memo_manager$403 Def00018F
+S A$memo_manager$340 Def00013A
+S A$memo_manager$322 Def000120
+S A$memo_manager$313 Def000110
+S A$memo_manager$223 Def0000A0
+S A$memo_manager$214 Def000096
+S A$memo_manager$160 Def000050
+S A$memo_manager$115 Def00001C
+S A$memo_manager$106 Def000010
+S XG$engine_memo_manager_draw_cont$0$0 Def00020F
+S A$memo_manager$800 Def000369
+S A$memo_manager$710 Def000314
+S A$memo_manager$701 Def000307
+S A$memo_manager$503 Def000207
+S A$memo_manager$413 Def00019E
+S A$memo_manager$404 Def000192
+S A$memo_manager$341 Def00013D
+S A$memo_manager$323 Def000123
+S A$memo_manager$314 Def000113
+S A$memo_manager$305 Def000108
+S A$memo_manager$260 Def0000CD
+S A$memo_manager$215 Def000099
+S A$memo_manager$206 Def000089
+S A$memo_manager$170 Def00005D
+S A$memo_manager$161 Def000051
+S A$memo_manager$152 Def000041
+S A$memo_manager$116 Def00001D
+S A$memo_manager$107 Def000013
+S A$memo_manager$810 Def000373
+S A$memo_manager$801 Def00036C
+S A$memo_manager$711 Def000315
+S A$memo_manager$702 Def000308
+S A$memo_manager$540 Def000234
+S A$memo_manager$504 Def00020A
+S A$memo_manager$450 Def0001BD
+S A$memo_manager$414 Def00019F
+S A$memo_manager$405 Def000195
+S A$memo_manager$342 Def00013E
+S A$memo_manager$333 Def00012E
+S A$memo_manager$324 Def000124
+S A$memo_manager$315 Def000114
+S A$memo_manager$306 Def00010B
+S A$memo_manager$270 Def0000E1
+S A$memo_manager$261 Def0000CE
+S A$memo_manager$216 Def00009A
+S A$memo_manager$207 Def00008C
+S A$memo_manager$180 Def00006B
+S A$memo_manager$171 Def000060
+S A$memo_manager$162 Def000054
+S A$memo_manager$153 Def000044
+S A$memo_manager$117 Def000020
+S A$memo_manager$108 Def000014
+S C$memo_manager.c$140$2_0$62 Def00031E
+S G$engine_memo_manager_draw_dead$0$0 Def0001B5
+S A$memo_manager$820 Def00037B
+S A$memo_manager$730 Def000328
+S A$memo_manager$721 Def00031E
+S A$memo_manager$712 Def000316
+S A$memo_manager$703 Def00030B
+S A$memo_manager$640 Def0002CE
+S A$memo_manager$550 Def000245
+S A$memo_manager$541 Def000235
+S A$memo_manager$514 Def00020F
+S A$memo_manager$505 Def00020D
+S A$memo_manager$451 Def0001C0
+S A$memo_manager$424 Def0001A4
+S A$memo_manager$415 Def0001A2
+S A$memo_manager$406 Def000196
+S A$memo_manager$352 Def00014A
+S A$memo_manager$343 Def000141
+S A$memo_manager$334 Def000131
+S A$memo_manager$325 Def000127
+S A$memo_manager$316 Def000116
+S A$memo_manager$307 Def00010C
+S A$memo_manager$271 Def0000E2
+S A$memo_manager$262 Def0000CF
+S A$memo_manager$217 Def00009B
+S A$memo_manager$208 Def00008F
+S A$memo_manager$190 Def000078
+S A$memo_manager$181 Def00006E
+S A$memo_manager$172 Def000061
+S A$memo_manager$163 Def000055
+S A$memo_manager$154 Def000045
+S A$memo_manager$118 Def000021
+S A$memo_manager$109 Def000017
+S C$memo_manager.c$151$2_0$61 Def000360
+S XG$engine_memo_manager_draw_pass$0$0 Def00014C
+S A$memo_manager$830 Def00038D
+S A$memo_manager$821 Def00037C
+S A$memo_manager$740 Def000333
+S A$memo_manager$722 Def00031F
+S A$memo_manager$713 Def000317
+S A$memo_manager$704 Def00030C
+S A$memo_manager$650 Def0002D7
+S A$memo_manager$551 Def000248
+S A$memo_manager$542 Def000237
+S A$memo_manager$506 Def00020E
+S A$memo_manager$452 Def0001C1
+S A$memo_manager$416 Def0001A3
+S A$memo_manager$344 Def000142
+S A$memo_manager$335 Def000132
+S A$memo_manager$326 Def00012A
+S A$memo_manager$317 Def000117
+S A$memo_manager$308 Def00010D
+S A$memo_manager$263 Def0000D2
+S A$memo_manager$218 Def00009E
+S A$memo_manager$209 Def000091
+S A$memo_manager$191 Def00007A
+S A$memo_manager$182 Def00006F
+S A$memo_manager$164 Def000058
+S A$memo_manager$155 Def000047
+S A$memo_manager$146 Def000039
+S A$memo_manager$128 Def000026
+S A$memo_manager$119 Def000024
+S C$memo_manager.c$140$3_0$63 Def0002E7
+S C$memo_manager.c$135$1_0$61 Def0002DF
+S C$memo_manager.c$105$1_0$55 Def0001F3
+S A$memo_manager$840 Def00039D
+S A$memo_manager$831 Def00038E
+S A$memo_manager$822 Def00037F
+S A$memo_manager$750 Def000341
+S A$memo_manager$741 Def000334
+S A$memo_manager$732 Def00032A
+S A$memo_manager$714 Def000318
+S A$memo_manager$705 Def00030D
+S A$memo_manager$651 Def0002DA
+S A$memo_manager$633 Def0002C2
+S A$memo_manager$561 Def00024D
+S A$memo_manager$552 Def00024B
+S A$memo_manager$543 Def000238
+S A$memo_manager$453 Def0001C4
+S A$memo_manager$390 Def00017F
+S A$memo_manager$345 Def000145
+S A$memo_manager$336 Def000134
+S A$memo_manager$327 Def00012B
+S A$memo_manager$318 Def000118
+S A$memo_manager$309 Def00010E
+S A$memo_manager$264 Def0000D3
+S A$memo_manager$228 Def0000A2
+S A$memo_manager$219 Def00009F
+S A$memo_manager$192 Def00007B
+S A$memo_manager$183 Def000070
+S A$memo_manager$165 Def00005B
+S A$memo_manager$156 Def000048
+S A$memo_manager$147 Def00003B
+S XFmemo_manager$draw_memo$0$0 Def0003CF
+S XFmemo_manager$draw_tile$0$0 Def000360
+S C$memo_manager.c$122$1_0$57 Def00026F
+S C$memo_manager.c$114$1_0$56 Def000231
+S C$memo_manager.c$106$1_0$55 Def00020F
+S A$memo_manager$850 Def0003A6
+S A$memo_manager$841 Def0003A0
+S A$memo_manager$832 Def00038F
+S A$memo_manager$823 Def000380
+S A$memo_manager$814 Def000375
+S A$memo_manager$805 Def00036D
+S A$memo_manager$760 Def00034F
+S A$memo_manager$751 Def000342
+S A$memo_manager$742 Def000337
+S A$memo_manager$733 Def00032B
+S A$memo_manager$715 Def00031B
+S A$memo_manager$706 Def000310
+S A$memo_manager$661 Def0002DE
+S A$memo_manager$652 Def0002DC
+S A$memo_manager$634 Def0002C6
+S A$memo_manager$553 Def00024C
+S A$memo_manager$544 Def000239
+S A$memo_manager$454 Def0001C5
+S A$memo_manager$445 Def0001B5
+S A$memo_manager$391 Def000180
+S A$memo_manager$346 Def000148
+S A$memo_manager$337 Def000135
+S A$memo_manager$328 Def00012C
+S A$memo_manager$319 Def00011B
+S A$memo_manager$265 Def0000D6
+S A$memo_manager$193 Def00007C
+S A$memo_manager$166 Def00005C
+S A$memo_manager$157 Def000049
+S A$memo_manager$148 Def00003F
+S C$memo_manager.c$142$3_0$63 Def0002F5
+S C$memo_manager.c$123$1_0$57 Def00028B
+S C$memo_manager.c$115$1_0$56 Def00024D
+S A$memo_manager$860 Def0003B6
+S A$memo_manager$851 Def0003A7
+S A$memo_manager$842 Def0003A1
+S A$memo_manager$833 Def000390
+S A$memo_manager$824 Def000381
+S A$memo_manager$815 Def000376
+S A$memo_manager$761 Def000350
+S A$memo_manager$752 Def000345
+S A$memo_manager$743 Def000338
+S A$memo_manager$734 Def00032D
+S A$memo_manager$716 Def00031C
+S A$memo_manager$707 Def000311
+S A$memo_manager$680 Def0002EC
+S A$memo_manager$671 Def0002DF
+S A$memo_manager$653 Def0002DD
+S A$memo_manager$644 Def0002D0
+S A$memo_manager$608 Def00028B
+S A$memo_manager$590 Def000276
+S A$memo_manager$545 Def00023C
+S A$memo_manager$455 Def0001C8
+S A$memo_manager$446 Def0001B8
+S A$memo_manager$392 Def000182
+S A$memo_manager$347 Def000149
+S A$memo_manager$338 Def000136
+S A$memo_manager$266 Def0000D7
+S A$memo_manager$257 Def0000C7
+S A$memo_manager$194 Def00007D
+S A$memo_manager$176 Def000063
+S A$memo_manager$158 Def00004C
+S C$memo_manager.c$130$2_0$59 Def0002D0
+S A$memo_manager$861 Def0003B9
+S A$memo_manager$852 Def0003A8
+S A$memo_manager$843 Def0003A2
+S A$memo_manager$834 Def000391
+S A$memo_manager$825 Def000384
+S A$memo_manager$816 Def000377
+S A$memo_manager$762 Def000351
+S A$memo_manager$753 Def000346
+S A$memo_manager$744 Def000339
+S A$memo_manager$717 Def00031D
+S A$memo_manager$708 Def000312
+S A$memo_manager$690 Def0002F6
+S A$memo_manager$681 Def0002ED
+S A$memo_manager$672 Def0002E1
+S A$memo_manager$591 Def000277
+S A$memo_manager$546 Def00023D
+S A$memo_manager$492 Def0001F3
+S A$memo_manager$456 Def0001C9
+S A$memo_manager$447 Def0001B9
+S A$memo_manager$393 Def000183
+S A$memo_manager$357 Def00014C
+S A$memo_manager$339 Def000139
+S A$memo_manager$267 Def0000DA
+S A$memo_manager$258 Def0000CA
+S A$memo_manager$195 Def00007E
+S A$memo_manager$177 Def000066
+S A$memo_manager$159 Def00004D
+S C$memo_manager.c$160$1_0$67 Def0003A4
+S C$memo_manager.c$133$1_0$58 Def0002D4
+S XG$engine_memo_manager_draw_over$0$0 Def00024D
+S C$memo_manager.c$108$1_0$56 Def000231
+S A$memo_manager$880 Def0003C8
+S A$memo_manager$862 Def0003BA
+S A$memo_manager$853 Def0003A9
+S A$memo_manager$844 Def0003A3
+S A$memo_manager$835 Def000394
+S A$memo_manager$826 Def000387
+S A$memo_manager$817 Def000378
+S A$memo_manager$763 Def000352
+S A$memo_manager$754 Def000347
+S A$memo_manager$745 Def00033A
+S A$memo_manager$727 Def000321
+S A$memo_manager$709 Def000313
+S A$memo_manager$691 Def0002F9
+S A$memo_manager$673 Def0002E5
+S A$memo_manager$592 Def00027A
+S A$memo_manager$547 Def000240
+S A$memo_manager$493 Def0001F6
+S A$memo_manager$457 Def0001CC
+S A$memo_manager$448 Def0001BB
+S A$memo_manager$394 Def000184
+S A$memo_manager$268 Def0000DB
+S A$memo_manager$259 Def0000CB
+S A$memo_manager$196 Def00007F
+S A$memo_manager$178 Def000067
+S C$memo_manager.c$134$1_0$58 Def0002DE
+S C$memo_manager.c$125$1_0$58 Def0002C2
+S C$memo_manager.c$117$1_0$57 Def00026F
+S A$memo_manager$881 Def0003CB
+S A$memo_manager$872 Def0003C0
+S A$memo_manager$863 Def0003BB
+S A$memo_manager$854 Def0003AA
+S A$memo_manager$836 Def000395
+S A$memo_manager$827 Def000388
+S A$memo_manager$818 Def000379
+S A$memo_manager$809 Def000370
+S A$memo_manager$773 Def00035B
+S A$memo_manager$764 Def000353
+S A$memo_manager$755 Def00034A
+S A$memo_manager$746 Def00033B
+S A$memo_manager$728 Def000324
+S A$memo_manager$692 Def0002FA
+S A$memo_manager$683 Def0002EF
+S A$memo_manager$638 Def0002C9
+S A$memo_manager$593 Def00027B
+S A$memo_manager$548 Def000241
+S A$memo_manager$539 Def000231
+S A$memo_manager$494 Def0001F7
+S A$memo_manager$467 Def0001D1
+S A$memo_manager$458 Def0001CF
+S A$memo_manager$449 Def0001BC
+S A$memo_manager$395 Def000186
+S A$memo_manager$386 Def000179
+S A$memo_manager$269 Def0000DE
+S A$memo_manager$197 Def000082
+S A$memo_manager$188 Def000072
+S A$memo_manager$179 Def00006A
+S C$memo_manager.c$162$1_0$67 Def0003BC
+S C$memo_manager.c$152$2_0$67 Def000361
+S C$memo_manager.c$146$2_0$64 Def00035B
+S A$memo_manager$882 Def0003CC
+S A$memo_manager$855 Def0003AD
+S A$memo_manager$837 Def000396
+S A$memo_manager$828 Def00038B
+S A$memo_manager$819 Def00037A
+S A$memo_manager$774 Def00035C
+S A$memo_manager$765 Def000354
+S A$memo_manager$756 Def00034B
+S A$memo_manager$747 Def00033C
+S A$memo_manager$738 Def00032F
+S A$memo_manager$729 Def000327
+S A$memo_manager$693 Def0002FD
+S A$memo_manager$684 Def0002F0
+S A$memo_manager$639 Def0002CC
+S A$memo_manager$594 Def00027E
+S A$memo_manager$549 Def000244
+S A$memo_manager$495 Def0001F9
+S A$memo_manager$459 Def0001D0
+S A$memo_manager$396 Def000187
+S A$memo_manager$387 Def00017C
+S A$memo_manager$279 Def0000E3
+S A$memo_manager$198 Def000083
+S A$memo_manager$189 Def000075
+S C$memo_manager.c$154$1_0$67 Def000369
+S C$memo_manager.c$127$1_0$58 Def0002C2
+S A$memo_manager$892 Def0003CF
+S A$memo_manager$856 Def0003AE
+S A$memo_manager$838 Def000399
+S A$memo_manager$829 Def00038C
+S A$memo_manager$784 Def000360
+S A$memo_manager$766 Def000355
+S A$memo_manager$757 Def00034C
+S A$memo_manager$748 Def00033D
+S A$memo_manager$739 Def000330
+S A$memo_manager$694 Def0002FE
+S A$memo_manager$685 Def0002F3
+S A$memo_manager$649 Def0002D4
+S A$memo_manager$595 Def00027F
+S A$memo_manager$586 Def00026F
+S A$memo_manager$496 Def0001FA
+S A$memo_manager$397 Def000188
+S A$memo_manager$388 Def00017D
+S A$memo_manager$199 Def000084
+S C$memo_manager.c$155$1_0$67 Def00036D
+S C$memo_manager.c$146$3_0$65 Def000321
+S C$memo_manager.c$128$1_0$58 Def0002C9
+S G$engine_memo_manager_draw_level$0$0 Def000039
+S A$memo_manager$857 Def0003AF
+S A$memo_manager$848 Def0003A4
+S A$memo_manager$839 Def00039C
+S A$memo_manager$794 Def000361
+S A$memo_manager$767 Def000358
+S A$memo_manager$758 Def00034D
+S A$memo_manager$749 Def000340
+S A$memo_manager$695 Def0002FF
+S A$memo_manager$677 Def0002E7
+S A$memo_manager$596 Def000282
+S A$memo_manager$587 Def000272
+S A$memo_manager$497 Def0001FB
+S A$memo_manager$398 Def00018A
+S A$memo_manager$389 Def00017E
+S C$memo_manager.c$156$1_0$67 Def000370
+S C$memo_manager.c$30$1_0$42 Def00000A
+S A$memo_manager$876 Def0003C2
+S A$memo_manager$867 Def0003BC
+S A$memo_manager$858 Def0003B2
+S A$memo_manager$849 Def0003A5
+S A$memo_manager$795 Def000363
+S A$memo_manager$768 Def000359
+S A$memo_manager$759 Def00034E
+S A$memo_manager$696 Def000300
+S A$memo_manager$678 Def0002EA
+S A$memo_manager$597 Def000283
+S A$memo_manager$588 Def000273
+S A$memo_manager$498 Def0001FE
+S A$memo_manager$399 Def00018B
+S C$memo_manager.c$164$2_0$68 Def0003C0
+S C$memo_manager.c$148$3_0$65 Def00032F
+S _engine_memo_manager_draw_dead Def0001B5
+S A$memo_manager$877 Def0003C5
+S A$memo_manager$868 Def0003BF
+S A$memo_manager$859 Def0003B5
+S A$memo_manager$796 Def000367
+S A$memo_manager$769 Def00035A
+S A$memo_manager$697 Def000301
+S A$memo_manager$679 Def0002EB
+S A$memo_manager$598 Def000286
+S A$memo_manager$589 Def000275
+S A$memo_manager$499 Def0001FF
+S C$memo_manager.c$167$1_0$67 Def0003C2
+S C$memo_manager.c$158$1_0$67 Def000375
+S A$memo_manager$887 Def0003CD
+S A$memo_manager$878 Def0003C6
+S A$memo_manager$779 Def00035E
+S A$memo_manager$698 Def000302
+S A$memo_manager$689 Def0002F5
+S A$memo_manager$599 Def000289
+S C$memo_manager.c$168$1_0$67 Def0003CF
+S G$engine_memo_manager_draw_beat$0$0 Def00026F
+S C$memo_manager.c$32$1_0$43 Def00000B
+S A$memo_manager$879 Def0003C7
+S A$memo_manager$699 Def000305
+S A$memo_manager$80 Def000005
+S C$memo_manager.c$80$1_0$50 Def00014C
+S C$memo_manager.c$71$1_0$50 Def000108
+S C$memo_manager.c$26$0_0$42 Def000000
+S A$memo_manager$81 Def000007
+S C$memo_manager.c$34$1_0$43 Def00000B
+S C$memo_manager.c$35$1_0$43 Def000019
+S C$memo_manager.c$65$1_0$50 Def000106
+S C$memo_manager.c$28$1_0$42 Def000000
+S A$memo_manager$75 Def000000
+S C$memo_manager.c$81$1_0$53 Def000179
+S C$memo_manager.c$73$2_0$51 Def000110
+S C$memo_manager.c$44$1_0$45 Def000041
+S C$memo_manager.c$37$1_0$43 Def000026
+S C$memo_manager.c$29$1_0$42 Def000005
+S A$memo_manager$76 Def000002
+S G$engine_memo_manager_draw_title$0$0 Def00000B
+S XFmemo_manager$get_tile$0$0 Def0002DE
+S C$memo_manager.c$91$1_0$54 Def0001B5
+S G$engine_memo_manager_draw_reset$0$0 Def0000C7
+S C$memo_manager.c$55$1_0$45 Def000089
+S C$memo_manager.c$52$2_0$47 Def000072
+S C$memo_manager.c$46$1_0$45 Def00005D
+S Fmemo_manager$__str_10$0_0$0 Def000158
+S C$memo_manager.c$56$1_0$45 Def0000A2
+S _engine_memo_manager_draw_level Def000039
+S Fmemo_manager$__str_20$0_0$0 Def000226
+S Fmemo_manager$__str_11$0_0$0 Def000163
+S C$memo_manager.c$63$1_0$48 Def0000C7
+S C$memo_manager.c$39$1_0$45 Def000039
+S A$memo_manager$89 Def00000A
+S Fmemo_manager$__str_21$0_0$0 Def00024E
+S XG$engine_memo_manager_draw_dead$0$0 Def0001D1
+S Fmemo_manager$__str_12$0_0$0 Def00016E
+S C$memo_manager.c$77$2_0$52 Def00012E
+S C$memo_manager.c$64$1_0$48 Def0000E3
+S Fmemo_manager$__str_22$0_0$0 Def000259
+S Fmemo_manager$__str_13$0_0$0 Def0001A5
+S C$memo_manager.c$87$1_0$53 Def000179
+S C$memo_manager.c$48$2_0$46 Def000063
+S G$engine_memo_manager_init$0$0 Def000000
+S Fmemo_manager$__str_23$0_0$0 Def000264
+S C$memo_manager.c$96$1_0$54 Def0001B5
+S Fmemo_manager$__str_14$0_0$0 Def0001B0
+S C$memo_manager.c$88$1_0$53 Def000197
+S _engine_memo_manager_draw_beat Def00026F
+S Fmemo_manager$__str_24$0_0$0 Def00028C
+S Fmemo_manager$__str_15$0_0$0 Def0001D2
+S C$memo_manager.c$97$1_0$54 Def0001D1
+S C$memo_manager.c$89$1_0$53 Def0001A4
+S C$memo_manager.c$58$1_0$48 Def0000C7
+S Fmemo_manager$__str_25$0_0$0 Def00029E
+S Fmemo_manager$__str_16$0_0$0 Def0001DD
+S Fmemo_manager$__str_26$0_0$0 Def0002B0
+S Fmemo_manager$__str_17$0_0$0 Def0001E8
+S Fmemo_manager$__str_18$0_0$0 Def000210
+S C$memo_manager.c$99$1_0$55 Def0001F3
+S G$engine_memo_manager_draw_gems$0$0 Def000179
+S Fmemo_manager$__str_19$0_0$0 Def00021B
+S _engine_memo_manager_draw_title Def00000B
+S _engine_memo_manager_draw_reset Def0000C7
+S XG$engine_memo_manager_draw_level$0$0 Def0000A2
+S Fmemo_manager$__str_0$0_0$0 Def000027
+S _engine_memo_manager_init Def000000
+S XG$engine_memo_manager_draw_beat$0$0 Def00028B
+S G$engine_memo_manager_draw_cont$0$0 Def0001F3
+S Fmemo_manager$__str_1$0_0$0 Def000030
+S Fmemo_manager$__str_2$0_0$0 Def0000A3
+S Fmemo_manager$__str_3$0_0$0 Def0000AE
+S G$engine_memo_manager_draw_pass$0$0 Def000106
+S Fmemo_manager$__str_4$0_0$0 Def0000B9
+S Fmemo_manager$__str_5$0_0$0 Def0000C4
+S _engine_memo_manager_draw_gems Def000179
+S Fmemo_manager$draw_memo$0$0 Def000361
+S Fmemo_manager$draw_tile$0$0 Def0002DF
+S Fmemo_manager$__str_6$0_0$0 Def0000E4
+S Fmemo_manager$__str_7$0_0$0 Def0000EF
+S XG$engine_memo_manager_draw_title$0$0 Def000026
+S Fmemo_manager$__str_8$0_0$0 Def0000FA
+S XG$engine_memo_manager_draw_reset$0$0 Def0000E3
+S G$engine_memo_manager_draw_over$0$0 Def000231
+S Fmemo_manager$__str_9$0_0$0 Def00014D
+S XG$engine_memo_manager_init$0$0 Def00000A
+S _engine_memo_manager_draw_cont Def0001F3
+S _engine_memo_manager_draw_pass Def000106
+A _DATA size 2 flags 0 addr 0
+S Fmemo_manager$border$0_0$0 Def000000
+S Fmemo_manager$index$0_0$0 Def000001
+A _INITIALIZED size 3 flags 0 addr 0
+S Fmemo_manager$small_tiles$0_0$0 Def000000
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 3 flags 0 addr 0
+S Fmemo_manager$__xinit_small_tiles$0_0$0 Def000000
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 3E 01 32 00 00 3E 00 32 01 00 C9
+R 00 00 00 00 00 06 01 00 00 0B 01 00
+T 0B 00 00
+R 00 00 00 00
+T 0B 00 00 AF 57 1E 0D D5 21 27 00 E5 CD 00 00 F1
+R 00 00 00 00 00 09 00 00 02 0D 00 00
+T 18 00 00 F1 11 0D 01 D5 21 30 00 E5 CD 00 00 F1
+R 00 00 00 00 00 09 00 00 02 0D 00 00
+T 25 00 00 F1 C9
+R 00 00 00 00
+T 27 00 00
+R 00 00 00 00
+T 27 00 00 50 4C 41 54 46 4F 52 4D 00
+R 00 00 00 00
+T 30 00 00
+R 00 00 00 00
+T 30 00 00 45 58 50 4C 4F 52 45 52 00
+R 00 00 00 00
+T 39 00 00
+R 00 00 00 00
+T 39 00 00 DD E5 DD 21 00 00 DD 39 11 14 0C D5 3E
+R 00 00 00 00
+T 46 00 00 0C F5 33 21 B9 00 E5 21 AE 00 E5 21
+R 00 00 00 00 00 07 00 00 00 0B 00 00
+T 52 00 00 A3 00 E5 CD 61 03 21 09 00 39 F9 DD 7E
+R 00 00 00 00 00 03 00 00 00 07 00 00
+T 5F 00 00 04 B7 28 0F 11 13 15 D5 21 C4 00 E5 CD
+R 00 00 00 00 00 0C 00 00
+T 6C 00 00 00 00 F1 F1 18 17
+R 00 00 00 00 02 03 00 00
+T 72 00 00
+R 00 00 00 00
+T 72 00 00 01 00 00 DD 6E 05 26 00 29 09 4E 23 46
+R 00 00 00 00 02 04 03 00
+T 7F 00 00 11 13 15 D5 C5 CD 00 00 F1 F1
+R 00 00 00 00 02 09 00 00
+T 89 00 00
+R 00 00 00 00
+T 89 00 00 01 00 00 DD 6E 06 26 00 29 09 4E 23 46
+R 00 00 00 00 02 04 03 00
+T 96 00 00 11 13 16 D5 C5 CD 00 00 F1 F1 DD E1 C9
+R 00 00 00 00 02 09 00 00
+T A3 00 00
+R 00 00 00 00
+T A3 00 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T AE 00 00
+R 00 00 00 00
+T AE 00 00 20 57 4F 52 4C 44 20 20 20 20 00
+R 00 00 00 00
+T B9 00 00
+R 00 00 00 00
+T B9 00 00 20 52 4F 55 4E 44 20 20 20 20 00
+R 00 00 00 00
+T C4 00 00
+R 00 00 00 00
+T C4 00 00 30 30 00
+R 00 00 00 00
+T C7 00 00
+R 00 00 00 00
+T C7 00 00 11 14 0C D5 3E 0C F5 33 21 FA 00 E5 21
+R 00 00 00 00 00 0C 00 00
+T D4 00 00 EF 00 E5 21 E4 00 E5 CD 61 03 21 09 00
+R 00 00 00 00 00 03 00 00 00 07 00 00 00 0B 00 00
+T E1 00 00 39 F9 C9
+R 00 00 00 00
+T E4 00 00
+R 00 00 00 00
+T E4 00 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T EF 00 00
+R 00 00 00 00
+T EF 00 00 20 20 52 45 53 45 54 3A 20 20 00
+R 00 00 00 00
+T FA 00 00
+R 00 00 00 00
+T FA 00 00 20 20 50 4C 41 59 45 52 20 20 20 00
+R 00 00 00 00
+T 06 01 00
+R 00 00 00 00
+T 06 01 00 DD E5 21 04 00 39 7E B7 28 1E 11 14 0C
+R 00 00 00 00
+T 13 01 00 D5 3E 0C F5 33 21 63 01 E5 21 58 01 E5
+R 00 00 00 00 00 09 00 00 00 0D 00 00
+T 20 01 00 21 4D 01 E5 CD 61 03 21 09 00 39 F9 18
+R 00 00 00 00 00 04 00 00 00 08 00 00
+T 2D 01 00 1C
+R 00 00 00 00
+T 2E 01 00
+R 00 00 00 00
+T 2E 01 00 11 14 0C D5 3E 0C F5 33 21 6E 01 E5 21
+R 00 00 00 00 00 0C 00 00
+T 3B 01 00 58 01 E5 21 4D 01 E5 CD 61 03 21 09 00
+R 00 00 00 00 00 03 00 00 00 07 00 00 00 0B 00 00
+T 48 01 00 39 F9
+R 00 00 00 00
+T 4A 01 00
+R 00 00 00 00
+T 4A 01 00 DD E1 C9
+R 00 00 00 00
+T 4D 01 00
+R 00 00 00 00
+T 4D 01 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T 58 01 00
+R 00 00 00 00
+T 58 01 00 20 4C 45 56 45 4C 20 49 53 20 00
+R 00 00 00 00
+T 63 01 00
+R 00 00 00 00
+T 63 01 00 20 50 45 52 46 45 43 54 21 20 00
+R 00 00 00 00
+T 6E 01 00
+R 00 00 00 00
+T 6E 01 00 20 43 4F 4D 50 4C 45 54 45 20 00
+R 00 00 00 00
+T 79 01 00
+R 00 00 00 00
+T 79 01 00 01 A5 01 69 60 59 50 3E 0C F5 33 3E 14
+R 00 00 00 00 00 04 00 00
+T 86 01 00 F5 33 3E 0C F5 33 E5 D5 C5 CD 61 03 21
+R 00 00 00 00 00 0D 00 00
+T 93 01 00 09 00 39 F9 11 11 15 D5 21 B0 01 E5 CD
+R 00 00 00 00 00 0C 00 00
+T A0 01 00 00 00 F1 F1 C9
+R 00 00 00 00 02 03 00 00
+T A5 01 00
+R 00 00 00 00
+T A5 01 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T B0 01 00
+R 00 00 00 00
+T B0 01 00 47 45 4D 53 00
+R 00 00 00 00
+T B5 01 00
+R 00 00 00 00
+T B5 01 00 11 14 0C D5 3E 0C F5 33 21 E8 01 E5 21
+R 00 00 00 00 00 0C 00 00
+T C2 01 00 DD 01 E5 21 D2 01 E5 CD 61 03 21 09 00
+R 00 00 00 00 00 03 00 00 00 07 00 00 00 0B 00 00
+T CF 01 00 39 F9 C9
+R 00 00 00 00
+T D2 01 00
+R 00 00 00 00
+T D2 01 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T DD 01 00
+R 00 00 00 00
+T DD 01 00 20 41 41 41 41 52 47 48 21 20 00
+R 00 00 00 00
+T E8 01 00
+R 00 00 00 00
+T E8 01 00 20 59 4F 55 20 44 49 45 44 20 00
+R 00 00 00 00
+T F3 01 00
+R 00 00 00 00
+T F3 01 00 11 14 0C D5 3E 0C F5 33 21 26 02 E5 21
+R 00 00 00 00 00 0C 00 00
+T 00 02 00 1B 02 E5 21 10 02 E5 CD 61 03 21 09 00
+R 00 00 00 00 00 03 00 00 00 07 00 00 00 0B 00 00
+T 0D 02 00 39 F9 C9
+R 00 00 00 00
+T 10 02 00
+R 00 00 00 00
+T 10 02 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T 1B 02 00
+R 00 00 00 00
+T 1B 02 00 43 4F 4E 54 49 4E 55 45 3F 3F 00
+R 00 00 00 00
+T 26 02 00
+R 00 00 00 00
+T 26 02 00 20 20 59 45 53 20 20 20 4E 4F 00
+R 00 00 00 00
+T 31 02 00
+R 00 00 00 00
+T 31 02 00 11 14 0C D5 3E 0C F5 33 21 64 02 E5 21
+R 00 00 00 00 00 0C 00 00
+T 3E 02 00 59 02 E5 21 4E 02 E5 CD 61 03 21 09 00
+R 00 00 00 00 00 03 00 00 00 07 00 00 00 0B 00 00
+T 4B 02 00 39 F9 C9
+R 00 00 00 00
+T 4E 02 00
+R 00 00 00 00
+T 4E 02 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T 59 02 00
+R 00 00 00 00
+T 59 02 00 20 20 20 47 41 4D 45 20 20 20 00
+R 00 00 00 00
+T 64 02 00
+R 00 00 00 00
+T 64 02 00 20 20 20 4F 56 45 52 20 20 20 00
+R 00 00 00 00
+T 6F 02 00
+R 00 00 00 00
+T 6F 02 00 11 14 13 D5 3E 09 F5 33 21 B0 02 E5 21
+R 00 00 00 00 00 0C 00 00
+T 7C 02 00 9E 02 E5 21 8C 02 E5 CD 61 03 21 09 00
+R 00 00 00 00 00 03 00 00 00 07 00 00 00 0B 00 00
+T 89 02 00 39 F9 C9
+R 00 00 00 00
+T 8C 02 00
+R 00 00 00 00
+T 8C 02 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 00 00
+T 99 02 00 20 20 20 20 00
+R 00 00 00 00
+T 9E 02 00
+R 00 00 00 00
+T 9E 02 00 20 43 4F 4E 47 4C 41 54 55 52 41 54 49
+R 00 00 00 00
+T AB 02 00 4F 4E 21 20 00
+R 00 00 00 00
+T B0 02 00
+R 00 00 00 00
+T B0 02 00 20 41 20 57 49 4E 4E 45 52 20 49 53 20
+R 00 00 00 00
+T BD 02 00 59 4F 55 20 00
+R 00 00 00 00
+T C2 02 00
+R 00 00 00 00
+T C2 02 00 FD 21 01 00 FD 34 00 FD 7E 00 D6 03 38
+R 00 00 00 00 00 05 01 00
+T CF 02 00 04 FD 36 00 00
+R 00 00 00 00
+T D4 02 00
+R 00 00 00 00
+T D4 02 00 01 00 00 2A 01 00 26 00 09 6E C9
+R 00 00 00 00 00 04 02 00 00 07 01 00
+T DF 02 00
+R 00 00 00 00
+T DF 02 00 DD E5 DD 21 00 00 DD 39 DD 46 05 04 04
+R 00 00 00 00
+T EC 02 00 04 0E 00
+R 00 00 00 00
+T EF 02 00
+R 00 00 00 00
+T EF 02 00 79 DD 96 06 30 2C C5 CD C2 02 C1 DD 7E
+R 00 00 00 00 00 0B 00 00
+T FC 02 00 04 81 57 C5 D5 65 DD 6E 05 E5 D5 33 CD
+R 00 00 00 00
+T 09 03 00 00 00 F1 33 CD C2 02 7D D1 C1 C5 F5 33
+R 00 00 00 00 02 03 02 00 00 08 00 00
+T 16 03 00 4A C5 CD 00 00 F1 33 C1 0C 18 CE
+R 00 00 00 00 02 06 02 00
+T 21 03 00
+R 00 00 00 00
+T 21 03 00 DD 7E 04 DD 86 06 4F 06 01
+R 00 00 00 00
+T 2A 03 00
+R 00 00 00 00
+T 2A 03 00 78 D6 03 30 2F C5 CD C2 02 C1 DD 7E 05
+R 00 00 00 00 00 0A 00 00
+T 37 03 00 80 5F C5 D5 55 D5 DD 7E 04 F5 33 CD
+R 00 00 00 00
+T 43 03 00 00 00 F1 33 CD C2 02 7D D1 C1 69 2D C5
+R 00 00 00 00 02 03 02 00 00 08 00 00
+T 50 03 00 57 D5 7D F5 33 CD 00 00 F1 33 C1 04 18
+R 00 00 00 00 02 09 02 00
+T 5D 03 00 CC
+R 00 00 00 00
+T 5E 03 00
+R 00 00 00 00
+T 5E 03 00 DD E1 C9
+R 00 00 00 00
+T 61 03 00
+R 00 00 00 00
+T 61 03 00 DD E5 DD 21 00 00 DD 39 DD 4E 0A 0D DD
+R 00 00 00 00
+T 6E 03 00 46 0B 21 01 00 36 00 58 53 14 C5 D5 D5
+R 00 00 00 00 00 06 01 00
+T 7B 03 00 33 DD 7E 0A F5 33 DD 6E 04 DD 66 05 E5
+R 00 00 00 00
+T 88 03 00 CD 00 00 F1 F1 D1 D5 D5 33 DD 7E 0A F5
+R 00 00 00 00 02 04 00 00
+T 95 03 00 33 DD 6E 06 DD 66 07 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 0C 00 00
+T A2 03 00 D1 C1 7B 3C 3C C5 F5 33 DD 7E 0A F5 33
+R 00 00 00 00
+T AF 03 00 DD 6E 08 DD 66 09 E5 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 00 00
+T BC 03 00 3A 00 00 B7 28 0B DD 7E 0C F5 33 C5 CD
+R 00 00 00 00 00 04 01 00
+T C9 03 00 DF 02 F1 33
+R 00 00 00 00 00 03 00 00
+T CD 03 00
+R 00 00 00 00
+T CD 03 00 DD E1 C9
+R 00 00 00 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 6C 6D 7C
+R 00 00 07 00

@@ -1,0 +1,148 @@
+XL3
+H 9 areas 1B global symbols
+M global_manager
+O -mz80
+S .__.ABS. Def000000
+A _CODE size 32 flags 0 addr 0
+S Fglobal_manager$__str_10$0_0$0 Def00001E
+S Fglobal_manager$__str_11$0_0$0 Def000020
+S Fglobal_manager$__str_12$0_0$0 Def000022
+S Fglobal_manager$__str_13$0_0$0 Def000024
+S Fglobal_manager$__str_14$0_0$0 Def000026
+S Fglobal_manager$__str_15$0_0$0 Def000028
+S Fglobal_manager$__str_16$0_0$0 Def00002A
+S Fglobal_manager$__str_17$0_0$0 Def00002C
+S Fglobal_manager$__str_18$0_0$0 Def00002E
+S Fglobal_manager$__str_19$0_0$0 Def000030
+S Fglobal_manager$__str_0$0_0$0 Def000000
+S Fglobal_manager$__str_1$0_0$0 Def000003
+S Fglobal_manager$__str_2$0_0$0 Def000006
+S Fglobal_manager$__str_3$0_0$0 Def000009
+S Fglobal_manager$__str_4$0_0$0 Def00000C
+S Fglobal_manager$__str_5$0_0$0 Def00000F
+S Fglobal_manager$__str_6$0_0$0 Def000012
+S Fglobal_manager$__str_7$0_0$0 Def000015
+S Fglobal_manager$__str_8$0_0$0 Def000018
+S Fglobal_manager$__str_9$0_0$0 Def00001B
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 28 flags 0 addr 0
+S _lives_text Def000014
+S G$lives_text$0_0$0 Def000014
+S _count_text Def000000
+S G$count_text$0_0$0 Def000000
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 28 flags 0 addr 0
+S Fglobal_manager$__xinit_lives_text$0_0$0 Def000014
+S Fglobal_manager$__xinit_count_text$0_0$0 Def000000
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 14 00 00
+R 00 00 02 00
+T 14 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 30 31 00
+R 00 00 00 00
+T 03 00 00
+R 00 00 00 00
+T 03 00 00 30 32 00
+R 00 00 00 00
+T 06 00 00
+R 00 00 00 00
+T 06 00 00 30 33 00
+R 00 00 00 00
+T 09 00 00
+R 00 00 00 00
+T 09 00 00 30 34 00
+R 00 00 00 00
+T 0C 00 00
+R 00 00 00 00
+T 0C 00 00 30 35 00
+R 00 00 00 00
+T 0F 00 00
+R 00 00 00 00
+T 0F 00 00 30 36 00
+R 00 00 00 00
+T 12 00 00
+R 00 00 00 00
+T 12 00 00 30 37 00
+R 00 00 00 00
+T 15 00 00
+R 00 00 00 00
+T 15 00 00 30 38 00
+R 00 00 00 00
+T 18 00 00
+R 00 00 00 00
+T 18 00 00 30 39 00
+R 00 00 00 00
+T 1B 00 00
+R 00 00 00 00
+T 1B 00 00 31 30 00
+R 00 00 00 00
+T 1E 00 00
+R 00 00 00 00
+T 1E 00 00 30 00
+R 00 00 00 00
+T 20 00 00
+R 00 00 00 00
+T 20 00 00 31 00
+R 00 00 00 00
+T 22 00 00
+R 00 00 00 00
+T 22 00 00 32 00
+R 00 00 00 00
+T 24 00 00
+R 00 00 00 00
+T 24 00 00 33 00
+R 00 00 00 00
+T 26 00 00
+R 00 00 00 00
+T 26 00 00 34 00
+R 00 00 00 00
+T 28 00 00
+R 00 00 00 00
+T 28 00 00 35 00
+R 00 00 00 00
+T 2A 00 00
+R 00 00 00 00
+T 2A 00 00 36 00
+R 00 00 00 00
+T 2C 00 00
+R 00 00 00 00
+T 2C 00 00 37 00
+R 00 00 00 00
+T 2E 00 00
+R 00 00 00 00
+T 2E 00 00 38 00
+R 00 00 00 00
+T 30 00 00
+R 00 00 00 00
+T 30 00 00 39 00
+R 00 00 00 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 00 00 03 00 06 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 06 00 00 09 00 0C 00 0F 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 0C 00 00 12 00 15 00 18 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 12 00 00 1B 00
+R 00 00 07 00 00 03 00 00
+T 14 00 00
+R 00 00 07 00
+T 14 00 00 1E 00 20 00 22 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 1A 00 00 24 00 26 00 28 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 20 00 00 2A 00 2C 00 2E 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 26 00 00 30 00
+R 00 00 07 00 00 03 00 00

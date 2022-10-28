@@ -1,0 +1,97 @@
+;!FILE splash_screen.asm
+XL3
+H 9 areas 39 global symbols
+M splash_screen
+O -mz80
+S _devkit_SMS_displayOn Ref000000
+S _engine_content_manager_load_splash Ref000000
+S _engine_input_manager_hold_fire1 Ref000000
+S .__.ABS. Def000000
+S _engine_delay_manager_update Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_delay_manager_load Ref000000
+A _CODE size 40 flags 0 addr 0
+S A$splash_screen$100 Def000016
+S A$splash_screen$101 Def00001A
+S A$splash_screen$120 Def000033
+S A$splash_screen$111 Def000023
+S A$splash_screen$102 Def00001C
+S A$splash_screen$121 Def000035
+S A$splash_screen$112 Def000027
+S A$splash_screen$131 Def00003A
+S A$splash_screen$122 Def000036
+S A$splash_screen$113 Def000029
+S A$splash_screen$141 Def00003E
+S A$splash_screen$114 Def00002C
+S A$splash_screen$106 Def00001F
+S _screen_splash_screen_update Def000011
+S A$splash_screen$107 Def000022
+S A$splash_screen$136 Def00003C
+S A$splash_screen$127 Def000038
+S A$splash_screen$118 Def00002F
+S A$splash_screen$146 Def00003F
+S A$splash_screen$119 Def000032
+S C$splash_screen.c$10$0_0$16 Def000000
+S XG$screen_splash_screen_update$0$0 Def00003F
+S C$splash_screen.c$12$1_0$16 Def000000
+S C$splash_screen.c$14$1_0$16 Def000008
+S A$splash_screen$62 Def000000
+S C$splash_screen.c$15$1_0$16 Def00000B
+S G$screen_splash_screen_load$0$0 Def000000
+S A$splash_screen$63 Def000003
+S C$splash_screen.c$30$2_0$19 Def00003A
+S C$splash_screen.c$16$1_0$16 Def00000E
+S A$splash_screen$73 Def00000B
+S A$splash_screen$64 Def000004
+S C$splash_screen.c$33$1_0$18 Def00003C
+S C$splash_screen.c$24$1_0$18 Def000012
+S C$splash_screen.c$17$1_0$16 Def00000E
+S A$splash_screen$65 Def000007
+S C$splash_screen.c$34$1_0$18 Def00003F
+S C$splash_screen.c$25$1_0$18 Def00001F
+S A$splash_screen$84 Def00000E
+S A$splash_screen$94 Def000011
+S C$splash_screen.c$27$1_0$18 Def00002F
+S C$splash_screen.c$19$1_0$18 Def000011
+S A$splash_screen$69 Def000008
+S C$splash_screen.c$29$1_0$18 Def000023
+S A$splash_screen$98 Def000012
+S C$splash_screen.c$29$2_0$19 Def000038
+S A$splash_screen$99 Def000015
+S _screen_splash_screen_load Def000000
+S XG$screen_splash_screen_load$0$0 Def00000E
+S G$screen_splash_screen_update$0$0 Def000011
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 96 00 E5 CD 00 00 F1 CD 00 00 CD
+R 00 00 00 00 02 08 06 00 02 0C 05 00
+T 0C 00 00 00 00 C3 00 00
+R 00 00 00 00 02 03 01 00 02 06 00 00
+T 11 00 00
+R 00 00 00 00
+T 11 00 00 3B CD 00 00 7D FD 21 00 00 FD 39 FD 77
+R 00 00 00 00 02 05 04 00
+T 1E 00 00 00 CD 00 00 4D FD 21 03 00 FD 39 FD 6E
+R 00 00 00 00 02 05 02 00
+T 2B 00 00 00 FD 66 01 FD 7E FD B7 20 03 B1 28 04
+R 00 00 00 00
+T 38 00 00
+R 00 00 00 00
+T 38 00 00 36 02 18 02
+R 00 00 00 00
+T 3C 00 00
+R 00 00 00 00
+T 3C 00 00 36 01
+R 00 00 00 00
+T 3E 00 00
+R 00 00 00 00
+T 3E 00 00 33 C9
+R 00 00 00 00

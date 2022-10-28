@@ -1,0 +1,16 @@
+M:game_manager
+F:G$engine_game_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lgame_manager.engine_game_manager_init$go$1_0$5({2}DG,STtag_struct_game_object:S),R,0,0,[]
+F:G$engine_game_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lgame_manager.engine_game_manager_draw$go$1_0$6({2}DG,STtag_struct_game_object:S),R,0,0,[]
+T:Fgame_manager$tag_struct_game_object[({0}S:S$invincible$0_0$0({1}SC:U),Z,0,0)({1}S:S$localcheat$0_0$0({1}SC:U),Z,0,0)({2}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_speed$0_0$0({1}SC:U),Z,0,0)({4}S:S$tutorial$0_0$0({1}SC:U),Z,0,0)({5}S:S$world_no$0_0$0({1}SC:U),Z,0,0)({6}S:S$round_no$0_0$0({1}SC:U),Z,0,0)]
+S:Fgame_manager$diff_text$0_0$0({4}DA2d,DG,SC:U),E,0,0
+S:G$count_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$lives_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
+S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data_ZERO$0_0$0({2}DF,SV:S),C,0,0
+S:Fgame_manager$__str_1$0_0$0({5}DA5d,SC:U),D,0,0
+S:Fgame_manager$__str_2$0_0$0({5}DA5d,SC:U),D,0,0

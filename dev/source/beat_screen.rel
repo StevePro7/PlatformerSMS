@@ -1,0 +1,86 @@
+;!FILE beat_screen.asm
+XL3
+H 9 areas 38 global symbols
+M beat_screen
+O -mz80
+S .__.ABS. Def000000
+S _engine_delay_manager_update Ref000000
+S _engine_enemyX_manager_draw_enemys Ref000000
+S _engine_memo_manager_draw_beat Ref000000
+S _engine_audio_manager_music_stop Ref000000
+S _engine_player_manager_hide Ref000000
+S _engine_audio_manager_music_beat Ref000000
+S _engine_delay_manager_load Ref000000
+A _CODE size 2E flags 0 addr 0
+S C$beat_screen.c$36$1_0$8 Def00002D
+S C$beat_screen.c$27$1_0$8 Def000017
+S C$beat_screen.c$28$1_0$8 Def00001F
+S C$beat_screen.c$19$1_0$8 Def000011
+S XG$screen_beat_screen_load$0$0 Def00000E
+S G$screen_beat_screen_update$0$0 Def000011
+S A$beat_screen$120 Def000021
+S A$beat_screen$111 Def00001B
+S A$beat_screen$102 Def000014
+S A$beat_screen$130 Def000028
+S A$beat_screen$112 Def00001C
+S A$beat_screen$113 Def00001D
+S A$beat_screen$114 Def00001E
+S A$beat_screen$124 Def000023
+S A$beat_screen$106 Def000017
+S _screen_beat_screen_update Def000011
+S A$beat_screen$134 Def00002A
+S A$beat_screen$125 Def000024
+S A$beat_screen$107 Def00001A
+S A$beat_screen$126 Def000027
+S A$beat_screen$118 Def00001F
+S A$beat_screen$119 Def000020
+S A$beat_screen$147 Def00002D
+S A$beat_screen$139 Def00002B
+S XG$screen_beat_screen_update$0$0 Def00002D
+S A$beat_screen$71 Def000006
+S G$screen_beat_screen_load$0$0 Def000000
+S A$beat_screen$72 Def000009
+S A$beat_screen$63 Def000000
+S A$beat_screen$73 Def00000A
+S A$beat_screen$74 Def00000D
+S A$beat_screen$85 Def00000E
+S A$beat_screen$67 Def000003
+S A$beat_screen$98 Def000011
+S C$beat_screen.c$11$0_0$6 Def000000
+S _screen_beat_screen_load Def000000
+S C$beat_screen.c$13$1_0$6 Def000000
+S C$beat_screen.c$14$1_0$6 Def000003
+S C$beat_screen.c$31$1_0$8 Def00001B
+S C$beat_screen.c$15$1_0$6 Def000006
+S C$beat_screen.c$30$2_0$9 Def000023
+S C$beat_screen.c$16$1_0$6 Def00000E
+S C$beat_screen.c$31$2_0$9 Def000028
+S C$beat_screen.c$24$1_0$8 Def000011
+S C$beat_screen.c$17$1_0$6 Def00000E
+S C$beat_screen.c$32$2_0$9 Def00002A
+S C$beat_screen.c$25$1_0$8 Def000014
+S C$beat_screen.c$35$1_0$8 Def00002B
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 21 84 03 E5 CD 00 00
+R 00 00 00 00 02 04 04 00 02 07 06 00 02 0E 07 00
+T 0D 00 00 F1 C3 00 00
+R 00 00 00 00 02 05 03 00
+T 11 00 00
+R 00 00 00 00
+T 11 00 00 CD 00 00 CD 00 00 CD 00 00 4D D1 E1 E5
+R 00 00 00 00 02 04 02 00 02 07 05 00 02 0A 01 00
+T 1E 00 00 D5 79 B7 28 08 E5 CD 00 00 E1 36 03 C9
+R 00 00 00 00 02 0A 04 00
+T 2B 00 00
+R 00 00 00 00
+T 2B 00 00 36 14 C9
+R 00 00 00 00

@@ -1,0 +1,315 @@
+;!FILE stats_manager.asm
+XL3
+H 9 areas E9 global symbols
+M stats_manager
+O -mz80
+S .__.ABS. Def000000
+A _CODE size 16F flags 0 addr 0
+S A$stats_manager$102 Def000028
+S A$stats_manager$202 Def00008C
+S A$stats_manager$112 Def000032
+S A$stats_manager$103 Def00002B
+S A$stats_manager$410 Def00015C
+S A$stats_manager$302 Def0000F0
+S A$stats_manager$212 Def000096
+S A$stats_manager$203 Def00008F
+S A$stats_manager$122 Def00003C
+S A$stats_manager$113 Def000035
+S A$stats_manager$411 Def00015D
+S A$stats_manager$312 Def0000FA
+S A$stats_manager$303 Def0000F3
+S A$stats_manager$222 Def0000A0
+S A$stats_manager$213 Def000099
+S A$stats_manager$132 Def000046
+S A$stats_manager$123 Def00003F
+S A$stats_manager$421 Def000165
+S A$stats_manager$403 Def000153
+S A$stats_manager$322 Def000104
+S A$stats_manager$313 Def0000FD
+S A$stats_manager$232 Def0000AA
+S A$stats_manager$223 Def0000A3
+S A$stats_manager$142 Def000050
+S A$stats_manager$133 Def000049
+S A$stats_manager$422 Def000166
+S A$stats_manager$404 Def000156
+S A$stats_manager$332 Def00010E
+S A$stats_manager$323 Def000107
+S A$stats_manager$242 Def0000B4
+S A$stats_manager$233 Def0000AD
+S A$stats_manager$152 Def00005A
+S A$stats_manager$143 Def000053
+S A$stats_manager$107 Def00002D
+S A$stats_manager$423 Def000167
+S A$stats_manager$405 Def000157
+S A$stats_manager$342 Def000118
+S A$stats_manager$333 Def000111
+S A$stats_manager$252 Def0000BE
+S A$stats_manager$243 Def0000B7
+S A$stats_manager$207 Def000091
+S A$stats_manager$162 Def000064
+S A$stats_manager$153 Def00005D
+S A$stats_manager$117 Def000037
+S A$stats_manager$108 Def000030
+S A$stats_manager$424 Def000169
+S A$stats_manager$415 Def00015F
+S A$stats_manager$352 Def000122
+S A$stats_manager$343 Def00011B
+S A$stats_manager$307 Def0000F5
+S A$stats_manager$262 Def0000C8
+S A$stats_manager$253 Def0000C1
+S A$stats_manager$217 Def00009B
+S A$stats_manager$208 Def000094
+S A$stats_manager$172 Def00006E
+S A$stats_manager$163 Def000067
+S A$stats_manager$127 Def000041
+S A$stats_manager$118 Def00003A
+S A$stats_manager$434 Def00016E
+S A$stats_manager$425 Def00016A
+S A$stats_manager$416 Def000162
+S A$stats_manager$362 Def00012C
+S A$stats_manager$353 Def000125
+S A$stats_manager$317 Def0000FF
+S A$stats_manager$308 Def0000F8
+S A$stats_manager$272 Def0000D2
+S A$stats_manager$263 Def0000CB
+S A$stats_manager$227 Def0000A5
+S A$stats_manager$218 Def00009E
+S A$stats_manager$182 Def000078
+S A$stats_manager$173 Def000071
+S A$stats_manager$137 Def00004B
+S A$stats_manager$128 Def000044
+S A$stats_manager$426 Def00016C
+S A$stats_manager$417 Def000163
+S A$stats_manager$372 Def000136
+S A$stats_manager$363 Def00012F
+S A$stats_manager$327 Def000109
+S A$stats_manager$318 Def000102
+S A$stats_manager$282 Def0000DC
+S A$stats_manager$273 Def0000D5
+S A$stats_manager$237 Def0000AF
+S A$stats_manager$228 Def0000A8
+S A$stats_manager$192 Def000082
+S A$stats_manager$183 Def00007B
+S A$stats_manager$147 Def000055
+S A$stats_manager$138 Def00004E
+S A$stats_manager$409 Def000159
+S A$stats_manager$382 Def000140
+S A$stats_manager$373 Def000139
+S A$stats_manager$337 Def000113
+S A$stats_manager$328 Def00010C
+S A$stats_manager$292 Def0000E6
+S A$stats_manager$283 Def0000DF
+S A$stats_manager$247 Def0000B9
+S A$stats_manager$238 Def0000B2
+S A$stats_manager$193 Def000085
+S A$stats_manager$157 Def00005F
+S A$stats_manager$148 Def000058
+S A$stats_manager$392 Def00014A
+S A$stats_manager$383 Def000143
+S A$stats_manager$347 Def00011D
+S A$stats_manager$338 Def000116
+S A$stats_manager$293 Def0000E9
+S A$stats_manager$257 Def0000C3
+S A$stats_manager$248 Def0000BC
+S A$stats_manager$167 Def000069
+S A$stats_manager$158 Def000062
+S A$stats_manager$357 Def000127
+S A$stats_manager$348 Def000120
+S A$stats_manager$267 Def0000CD
+S A$stats_manager$258 Def0000C6
+S A$stats_manager$177 Def000073
+S A$stats_manager$168 Def00006C
+S A$stats_manager$367 Def000131
+S A$stats_manager$358 Def00012A
+S A$stats_manager$277 Def0000D7
+S A$stats_manager$268 Def0000D0
+S A$stats_manager$187 Def00007D
+S A$stats_manager$178 Def000076
+S A$stats_manager$377 Def00013B
+S A$stats_manager$368 Def000134
+S A$stats_manager$287 Def0000E1
+S A$stats_manager$278 Def0000DA
+S A$stats_manager$197 Def000087
+S A$stats_manager$188 Def000080
+S A$stats_manager$387 Def000145
+S A$stats_manager$378 Def00013E
+S A$stats_manager$297 Def0000EB
+S A$stats_manager$288 Def0000E4
+S A$stats_manager$198 Def00008A
+S C$stats_manager.c$101$3_0$3 Def000159
+S A$stats_manager$397 Def00014D
+S A$stats_manager$388 Def000148
+S A$stats_manager$298 Def0000EE
+S C$stats_manager.c$105$2_0$1 Def00016E
+S C$stats_manager.c$102$3_0$3 Def00015F
+S A$stats_manager$398 Def000150
+S A$stats_manager$399 Def000151
+S A$stats_manager$62 Def000000
+S A$stats_manager$72 Def00000A
+S A$stats_manager$63 Def000003
+S A$stats_manager$82 Def000014
+S A$stats_manager$73 Def00000D
+S A$stats_manager$92 Def00001E
+S A$stats_manager$83 Def000017
+S A$stats_manager$93 Def000021
+S A$stats_manager$67 Def000005
+S C$stats_manager.c$10$1_0$1 Def000000
+S A$stats_manager$77 Def00000F
+S A$stats_manager$68 Def000008
+S C$stats_manager.c$20$1_0$1 Def000014
+S A$stats_manager$87 Def000019
+S A$stats_manager$78 Def000012
+S C$stats_manager.c$30$1_0$1 Def000041
+S C$stats_manager.c$21$1_0$1 Def000019
+S A$stats_manager$97 Def000023
+S A$stats_manager$88 Def00001C
+S C$stats_manager.c$40$1_0$1 Def000064
+S C$stats_manager.c$31$1_0$1 Def000046
+S C$stats_manager.c$22$1_0$1 Def00001E
+S A$stats_manager$98 Def000026
+S C$stats_manager.c$50$1_0$1 Def000091
+S C$stats_manager.c$41$1_0$1 Def000069
+S C$stats_manager.c$32$1_0$1 Def00004B
+S C$stats_manager.c$23$1_0$1 Def000023
+S C$stats_manager.c$14$1_0$1 Def000000
+S C$stats_manager.c$60$1_0$1 Def0000BE
+S C$stats_manager.c$51$1_0$1 Def000096
+S C$stats_manager.c$42$1_0$1 Def00006E
+S C$stats_manager.c$33$1_0$1 Def000050
+S C$stats_manager.c$24$1_0$1 Def000028
+S C$stats_manager.c$15$1_0$1 Def000005
+S G$engine_stats_manager_init$0$0 Def000000
+S C$stats_manager.c$70$1_0$1 Def0000EB
+S C$stats_manager.c$61$1_0$1 Def0000C3
+S C$stats_manager.c$52$1_0$1 Def00009B
+S C$stats_manager.c$43$1_0$1 Def000073
+S C$stats_manager.c$34$1_0$1 Def000055
+S C$stats_manager.c$25$1_0$1 Def00002D
+S C$stats_manager.c$80$1_0$1 Def00010E
+S C$stats_manager.c$71$1_0$1 Def0000F0
+S C$stats_manager.c$62$1_0$1 Def0000C8
+S C$stats_manager.c$53$1_0$1 Def0000A0
+S C$stats_manager.c$44$1_0$1 Def000078
+S C$stats_manager.c$90$1_0$1 Def00013B
+S C$stats_manager.c$81$1_0$1 Def000113
+S C$stats_manager.c$72$1_0$1 Def0000F5
+S C$stats_manager.c$63$1_0$1 Def0000CD
+S C$stats_manager.c$54$1_0$1 Def0000A5
+S C$stats_manager.c$45$1_0$1 Def00007D
+S C$stats_manager.c$27$1_0$1 Def000032
+S C$stats_manager.c$18$1_0$1 Def00000A
+S C$stats_manager.c$91$1_0$1 Def000140
+S C$stats_manager.c$82$1_0$1 Def000118
+S C$stats_manager.c$28$1_0$1 Def000037
+S C$stats_manager.c$19$1_0$1 Def00000F
+S C$stats_manager.c$92$1_0$1 Def000145
+S C$stats_manager.c$83$1_0$1 Def00011D
+S C$stats_manager.c$65$1_0$1 Def0000D2
+S C$stats_manager.c$56$1_0$1 Def0000AA
+S C$stats_manager.c$47$1_0$1 Def000082
+S C$stats_manager.c$38$1_0$1 Def00005A
+S C$stats_manager.c$29$1_0$1 Def00003C
+S C$stats_manager.c$66$1_0$1 Def0000D7
+S C$stats_manager.c$57$1_0$1 Def0000AF
+S C$stats_manager.c$48$1_0$1 Def000087
+S C$stats_manager.c$39$1_0$1 Def00005F
+S C$stats_manager.c$85$1_0$1 Def000122
+S C$stats_manager.c$76$1_0$1 Def0000FA
+S C$stats_manager.c$67$1_0$1 Def0000DC
+S C$stats_manager.c$58$1_0$1 Def0000B4
+S C$stats_manager.c$49$1_0$1 Def00008C
+S C$stats_manager.c$86$1_0$1 Def000127
+S C$stats_manager.c$77$1_0$1 Def0000FF
+S C$stats_manager.c$68$1_0$1 Def0000E1
+S C$stats_manager.c$59$1_0$1 Def0000B9
+S C$stats_manager.c$87$1_0$1 Def00012C
+S C$stats_manager.c$78$1_0$1 Def000104
+S C$stats_manager.c$69$1_0$1 Def0000E6
+S C$stats_manager.c$88$1_0$1 Def000131
+S C$stats_manager.c$79$1_0$1 Def000109
+S C$stats_manager.c$96$2_0$2 Def000165
+S C$stats_manager.c$89$1_0$1 Def000136
+S _engine_stats_manager_init Def000000
+S C$stats_manager.c$96$3_0$3 Def00014A
+S C$stats_manager.c$98$3_0$3 Def00014D
+S C$stats_manager.c$99$3_0$3 Def000153
+S C$stats_manager.c$8$0_0$1 Def000000
+S XG$engine_stats_manager_init$0$0 Def00016E
+A _DATA size 62 flags 0 addr 0
+S _global_stats_object Def000000
+S G$global_stats_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 00 00 36 08 21 01 00 36 0C 21 02 00
+R 00 00 00 00 00 04 01 00 00 09 01 00 00 0E 01 00
+T 0D 00 00 36 01 21 03 00 36 01 21 04 00 36 01 21
+R 00 00 00 00 00 06 01 00 00 0B 01 00
+T 1A 00 00 05 00 36 02 21 06 00 36 01 21 07 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 27 00 00 01 21 08 00 36 02 21 09 00 36 02 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 33 00 00 12 00 36 01 21 13 00 36 01 21 14 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 40 00 00 01 21 15 00 36 02 21 16 00 36 02 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 4C 00 00 17 00 36 01 21 18 00 36 01 21 19 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 59 00 00 02 21 22 00 36 FA 21 23 00 36 E1 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 65 00 00 24 00 36 C8 21 25 00 36 AF 21 26 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 72 00 00 96 21 27 00 36 96 21 28 00 36 7D 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 7E 00 00 29 00 36 7D 21 2A 00 36 7D 21 2B 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 8B 00 00 6E 21 2C 00 36 64 21 2D 00 36 5F 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 97 00 00 2E 00 36 5A 21 2F 00 36 55 21 30 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T A4 00 00 50 21 31 00 36 4B 21 32 00 36 C8 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T B0 00 00 33 00 36 AF 21 34 00 36 96 21 35 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T BD 00 00 96 21 36 00 36 7D 21 37 00 36 7D 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T C9 00 00 38 00 36 64 21 39 00 36 64 21 3A 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T D6 00 00 64 21 3B 00 36 5A 21 3C 00 36 50 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T E2 00 00 3D 00 36 50 21 3E 00 36 46 21 3F 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T EF 00 00 46 21 40 00 36 3C 21 41 00 36 32 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T FB 00 00 42 00 36 80 21 43 00 36 80 21 44 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 08 01 00 80 21 45 00 36 40 21 46 00 36 40 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 14 01 00 47 00 36 40 21 48 00 36 20 21 49 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 21 01 00 20 21 52 00 36 40 21 53 00 36 40 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 2D 01 00 54 00 36 20 21 55 00 36 20 21 56 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 3A 01 00 18 21 57 00 36 18 21 58 00 36 10 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00
+T 46 01 00 59 00 36 10 01 00 00
+R 00 00 00 00 00 03 01 00
+T 4D 01 00
+R 00 00 00 00
+T 4D 01 00 21 0A 00 09 36 01 21 1A 00 09 36 02 21
+R 00 00 00 00 00 04 01 00 00 0A 01 00
+T 5A 01 00 4A 00 09 36 00 21 5A 00 09 36 00 03 79
+R 00 00 00 00 00 03 01 00 00 09 01 00
+T 67 01 00 D6 08 78 DE 00 38 DF C9
+R 00 00 00 00

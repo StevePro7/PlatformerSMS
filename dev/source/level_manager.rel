@@ -1,0 +1,1557 @@
+;!FILE level_manager.asm
+XL3
+H 9 areas 45D global symbols
+M level_manager
+O -mz80
+S _engine_tile_manager_get_tile Ref000000
+S _tutorialsize Ref000000
+S _levelAAdata Ref000000
+S _levelBBdata Ref000000
+S _levelAAbank Ref000000
+S __mulint Ref000000
+S _levelBBbank Ref000000
+S .__.ABS. Def000000
+S _engine_tile_manager_get_collision Ref000000
+S _tutorialdata Ref000000
+S _tutorialbank Ref000000
+S _engine_tile_manager_get_sprite Ref000000
+S _levelAAsize Ref000000
+S _levelBBsize Ref000000
+S _engine_tile_manager_draw_tile Ref000000
+S _engine_tile_manager_draw_tile_side Ref000000
+S __divsint Ref000000
+S _devkit_SMS_mapROMBank Ref000000
+A _CODE size 662 flags 0 addr 0
+S A$level_manager$993 Def00043C
+S A$level_manager$975 Def000429
+S A$level_manager$966 Def00041C
+S A$level_manager$957 Def000413
+S A$level_manager$948 Def000409
+S A$level_manager$939 Def0003FE
+S A$level_manager$894 Def0003DB
+S A$level_manager$885 Def0003D5
+S A$level_manager$876 Def0003CB
+S A$level_manager$867 Def0003C3
+S A$level_manager$858 Def0003B9
+S A$level_manager$849 Def0003AE
+S A$level_manager$795 Def00037A
+S A$level_manager$777 Def000368
+S A$level_manager$768 Def00035F
+S A$level_manager$759 Def000356
+S A$level_manager$687 Def0002F0
+S A$level_manager$678 Def0002E6
+S A$level_manager$588 Def00027D
+S A$level_manager$498 Def000216
+S A$level_manager$399 Def000191
+S C$level_manager.c$129$1_0$68 Def00024F
+S A$level_manager$976 Def00042C
+S A$level_manager$967 Def00041F
+S A$level_manager$958 Def000415
+S A$level_manager$949 Def00040A
+S A$level_manager$895 Def0003DD
+S A$level_manager$877 Def0003CC
+S A$level_manager$868 Def0003C4
+S A$level_manager$859 Def0003BA
+S A$level_manager$796 Def00037D
+S A$level_manager$778 Def000369
+S A$level_manager$769 Def000360
+S A$level_manager$688 Def0002F1
+S A$level_manager$679 Def0002E7
+S A$level_manager$589 Def00027E
+S A$level_manager$499 Def000219
+S Flevel_manager$setup_player$0$0 Def0005F4
+S C$level_manager.c$177$3_0$82 Def0002FD
+S C$level_manager.c$172$5_0$85 Def0002F8
+S C$level_manager.c$148$1_0$68 Def000290
+S A$level_manager$986 Def000431
+S A$level_manager$977 Def00042D
+S A$level_manager$968 Def000420
+S A$level_manager$959 Def000416
+S A$level_manager$869 Def0003C6
+S A$level_manager$797 Def00037E
+S A$level_manager$698 Def0002F8
+S A$level_manager$689 Def0002F2
+S A$level_manager$70 Def000002
+S XFlevel_manager$setup_enemyX$0$0 Def000661
+S C$level_manager.c$226$4_0$96 Def0003D8
+S C$level_manager.c$217$4_0$96 Def0003BE
+S C$level_manager.c$195$5_0$90 Def00036B
+S C$level_manager.c$164$5_0$85 Def0002D3
+S C$level_manager.c$104$8_0$79 Def0001BC
+S C$level_manager.c$24$1_0$60 Def00000A
+S A$level_manager$987 Def000434
+S A$level_manager$969 Def000421
+S A$level_manager$798 Def00037F
+S A$level_manager$789 Def000373
+S A$level_manager$699 Def0002FB
+S A$level_manager$71 Def000006
+S XG$engine_level_manager_draw_level_column$0$0 Def00050E
+S C$level_manager.c$196$5_0$90 Def000373
+S C$level_manager.c$187$5_0$90 Def00032F
+S C$level_manager.c$165$5_0$85 Def0002DB
+S C$level_manager.c$156$5_0$85 Def000299
+S A$level_manager$997 Def00043D
+S A$level_manager$988 Def000435
+S A$level_manager$889 Def0003D8
+S A$level_manager$799 Def000382
+S A$level_manager$81 Def00000D
+S A$level_manager$72 Def000008
+S G$engine_level_manager_get_collision$0$0 Def000584
+S C$level_manager.c$219$4_0$96 Def0003C7
+S C$level_manager.c$197$5_0$90 Def000383
+S C$level_manager.c$188$5_0$90 Def000345
+S C$level_manager.c$166$5_0$85 Def0002EB
+S C$level_manager.c$157$5_0$85 Def0002AF
+S G$engine_level_manager_init_level$0$0 Def000000
+S A$level_manager$998 Def00043E
+S A$level_manager$989 Def000436
+S A$level_manager$82 Def000010
+S A$level_manager$73 Def000009
+S C$level_manager.c$198$5_0$90 Def00038F
+S C$level_manager.c$189$5_0$90 Def00035C
+S C$level_manager.c$179$1_0$68 Def000316
+S C$level_manager.c$167$5_0$85 Def0002F5
+S C$level_manager.c$158$5_0$85 Def0002C6
+S A$level_manager$999 Def000440
+S A$level_manager$83 Def000011
+S XG$engine_level_manager_draw_blank$0$0 Def000583
+S C$level_manager.c$159$5_0$85 Def0002D0
+S A$level_manager$84 Def000012
+S XG$engine_level_manager_draw_level_column_side$0$0 Def000567
+S C$level_manager.c$228$5_0$98 Def0003DB
+S C$level_manager.c$46$2_0$60 Def00008D
+S C$level_manager.c$27$2_0$61 Def000040
+S A$level_manager$94 Def00001A
+S XG$engine_level_manager_load_level$0$0 Def0004B8
+S C$level_manager.c$40$3_0$66 Def000059
+S C$level_manager.c$31$5_0$64 Def00001A
+S C$level_manager.c$29$2_0$60 Def000016
+S A$level_manager$95 Def00001D
+S A$level_manager$77 Def00000A
+S C$level_manager.c$71$4_0$71 Def000201
+S C$level_manager.c$50$1_0$68 Def00009B
+S C$level_manager.c$41$3_0$66 Def000063
+S C$level_manager.c$32$5_0$64 Def000025
+S A$level_manager$96 Def00001E
+S A$level_manager$69 Def000000
+S C$level_manager.c$42$3_0$66 Def00006B
+S C$level_manager.c$33$5_0$64 Def00002E
+S _engine_level_manager_draw_level Def0004B9
+S A$level_manager$97 Def00001F
+S C$level_manager.c$52$1_0$68 Def00009B
+S C$level_manager.c$43$3_0$66 Def000073
+S A$level_manager$98 Def000020
+S A$level_manager$89 Def000016
+S C$level_manager.c$71$1_0$68 Def0000DD
+S C$level_manager.c$62$1_0$68 Def0000A7
+S C$level_manager.c$37$2_0$65 Def000083
+S C$level_manager.c$44$3_0$66 Def00007B
+S A$level_manager$99 Def000021
+S C$level_manager.c$80$6_0$73 Def000156
+S C$level_manager.c$73$5_0$72 Def0000FF
+S C$level_manager.c$29$4_0$63 Def000036
+S C$level_manager.c$27$5_0$64 Def00000D
+S C$level_manager.c$74$5_0$72 Def000106
+S C$level_manager.c$64$1_0$68 Def0000A9
+S C$level_manager.c$37$3_0$66 Def00004A
+S C$level_manager.c$65$1_0$68 Def0000BF
+S C$level_manager.c$66$1_0$68 Def0000C9
+S C$level_manager.c$39$3_0$66 Def00004C
+S _engine_level_manager_get_collision Def000584
+S _engine_level_manager_init_level Def000000
+S C$level_manager.c$82$7_0$74 Def00015D
+S C$level_manager.c$48$2_0$68 Def00008E
+S Flevel_manager$draw_tiles$0$0 Def0005BD
+S C$level_manager.c$85$6_0$73 Def00016B
+S C$level_manager.c$83$7_0$74 Def000164
+S C$level_manager.c$76$6_0$73 Def000116
+S C$level_manager.c$68$1_0$68 Def0000CE
+S XFlevel_manager$load_level$0$0 Def0003E5
+S C$level_manager.c$91$7_0$76 Def000180
+S C$level_manager.c$78$6_0$73 Def00012B
+S C$level_manager.c$69$6_0$73 Def0000D7
+S C$level_manager.c$69$2_0$69 Def000216
+S C$level_manager.c$97$6_0$73 Def00018E
+S C$level_manager.c$79$6_0$73 Def00013C
+S XG$engine_level_manager_draw_level$0$0 Def0004DD
+S C$level_manager.c$89$6_0$73 Def000179
+S C$level_manager.c$99$6_0$73 Def00019F
+S C$level_manager.c$93$8_0$77 Def000186
+S C$level_manager.c$87$7_0$75 Def000172
+S XFlevel_manager$setup_player$0$0 Def000603
+S G$engine_level_manager_draw_section$0$0 Def0004DE
+S A$level_manager$1000 Def000442
+S XG$engine_level_manager_get_collision$0$0 Def0005BC
+S XG$engine_level_manager_init_level$0$0 Def00008D
+S A$level_manager$1001 Def000443
+S C$level_manager.c$240$1_0$100 Def0003EE
+S A$level_manager$1110 Def0004AC
+S A$level_manager$1101 Def00049F
+S A$level_manager$1020 Def000450
+S A$level_manager$1002 Def000444
+S C$level_manager.c$250$1_0$100 Def000431
+S A$level_manager$1210 Def0004E3
+S A$level_manager$1120 Def0004B6
+S A$level_manager$1111 Def0004AD
+S A$level_manager$1102 Def0004A2
+S A$level_manager$1021 Def000451
+S A$level_manager$1003 Def000446
+S A$level_manager$1400 Def00057D
+S A$level_manager$1211 Def0004E4
+S A$level_manager$1112 Def0004AE
+S A$level_manager$1103 Def0004A3
+S A$level_manager$1040 Def000460
+S A$level_manager$1031 Def000456
+S C$level_manager.c$321$1_0$121 Def000518
+S C$level_manager.c$234$1_0$100 Def0003E6
+S A$level_manager$1500 Def0005C8
+S A$level_manager$1401 Def00057E
+S A$level_manager$1320 Def00052F
+S A$level_manager$1302 Def000518
+S A$level_manager$1230 Def0004F5
+S A$level_manager$1221 Def0004ED
+S A$level_manager$1212 Def0004E5
+S A$level_manager$1113 Def0004B1
+S A$level_manager$1104 Def0004A4
+S A$level_manager$1050 Def00046A
+S A$level_manager$1041 Def000462
+S A$level_manager$1032 Def000459
+S C$level_manager.c$303$2_0$112 Def0004F9
+S C$level_manager.c$262$1_0$100 Def000452
+S C$level_manager.c$253$1_0$100 Def00043D
+S C$level_manager.c$242$2_0$101 Def0003F4
+S A$level_manager$1600 Def000620
+S A$level_manager$1501 Def0005CB
+S A$level_manager$1411 Def000583
+S A$level_manager$1402 Def000581
+S A$level_manager$1330 Def000539
+S A$level_manager$1321 Def000532
+S A$level_manager$1231 Def0004F7
+S A$level_manager$1222 Def0004EE
+S A$level_manager$1213 Def0004E6
+S A$level_manager$1204 Def0004E0
+S A$level_manager$1150 Def0004C2
+S A$level_manager$1141 Def0004B9
+S A$level_manager$1114 Def0004B4
+S A$level_manager$1105 Def0004A7
+S A$level_manager$1060 Def000476
+S A$level_manager$1051 Def00046C
+S A$level_manager$1042 Def000463
+S A$level_manager$1033 Def00045A
+S C$level_manager.c$243$2_0$101 Def000401
+S A$level_manager$1610 Def00062B
+S A$level_manager$1601 Def000622
+S A$level_manager$1520 Def0005E2
+S A$level_manager$1502 Def0005CD
+S A$level_manager$1430 Def00058C
+S A$level_manager$1421 Def000584
+S A$level_manager$1403 Def000582
+S A$level_manager$1331 Def00053C
+S A$level_manager$1322 Def000533
+S A$level_manager$1223 Def0004EF
+S A$level_manager$1214 Def0004E7
+S A$level_manager$1160 Def0004CC
+S A$level_manager$1151 Def0004C4
+S A$level_manager$1115 Def0004B5
+S A$level_manager$1106 Def0004A8
+S A$level_manager$1070 Def000484
+S A$level_manager$1061 Def000477
+S A$level_manager$1052 Def00046D
+S A$level_manager$1034 Def00045B
+S A$level_manager$1025 Def000452
+S A$level_manager$1007 Def000448
+S C$level_manager.c$322$2_0$122 Def000559
+S C$level_manager.c$264$1_0$100 Def00044C
+S C$level_manager.c$244$2_0$101 Def00040B
+S A$level_manager$1611 Def00062E
+S A$level_manager$1602 Def000623
+S A$level_manager$1530 Def0005F0
+S A$level_manager$1521 Def0005E3
+S A$level_manager$1503 Def0005CE
+S A$level_manager$1431 Def00058F
+S A$level_manager$1422 Def000586
+S A$level_manager$1350 Def000550
+S A$level_manager$1332 Def00053D
+S A$level_manager$1323 Def000534
+S A$level_manager$1314 Def000524
+S A$level_manager$1224 Def0004F1
+S A$level_manager$1215 Def0004E8
+S A$level_manager$1170 Def0004D5
+S A$level_manager$1161 Def0004CD
+S A$level_manager$1152 Def0004C5
+S A$level_manager$1125 Def0004B8
+S A$level_manager$1107 Def0004A9
+S A$level_manager$1080 Def00048D
+S A$level_manager$1071 Def000485
+S A$level_manager$1062 Def000478
+S A$level_manager$1035 Def00045C
+S A$level_manager$1026 Def000453
+S A$level_manager$1017 Def00044C
+S A$level_manager$1008 Def000449
+S C$level_manager.c$315$2_0$121 Def00050F
+S C$level_manager.c$310$2_0$117 Def0004FF
+S C$level_manager.c$300$5_0$115 Def0004E2
+S C$level_manager.c$245$2_0$101 Def000417
+S A$level_manager$1630 Def000646
+S A$level_manager$1621 Def000639
+S A$level_manager$1612 Def000630
+S A$level_manager$1603 Def000626
+S A$level_manager$1522 Def0005E4
+S A$level_manager$1513 Def0005DA
+S A$level_manager$1504 Def0005CF
+S A$level_manager$1441 Def000599
+S A$level_manager$1423 Def00058A
+S A$level_manager$1351 Def000551
+S A$level_manager$1342 Def000542
+S A$level_manager$1333 Def00053E
+S A$level_manager$1324 Def000535
+S A$level_manager$1315 Def000527
+S A$level_manager$1306 Def00051B
+S A$level_manager$1252 Def0004FA
+S A$level_manager$1216 Def0004EB
+S A$level_manager$1162 Def0004CE
+S A$level_manager$1153 Def0004C7
+S A$level_manager$1108 Def0004AA
+S A$level_manager$1063 Def000479
+S A$level_manager$1027 Def000454
+S A$level_manager$1018 Def00044D
+S A$level_manager$1009 Def00044B
+S C$level_manager.c$370$1_0$131 Def0005F3
+S C$level_manager.c$334$2_0$121 Def000567
+S C$level_manager.c$317$1_0$121 Def000518
+S C$level_manager.c$310$2_0$118 Def000508
+S C$level_manager.c$246$2_0$101 Def00042E
+S A$level_manager$1631 Def000648
+S A$level_manager$1622 Def00063C
+S A$level_manager$1613 Def000631
+S A$level_manager$1604 Def000628
+S A$level_manager$1523 Def0005E7
+S A$level_manager$1514 Def0005DD
+S A$level_manager$1505 Def0005D2
+S A$level_manager$1460 Def0005AD
+S A$level_manager$1451 Def00059D
+S A$level_manager$1442 Def00059A
+S A$level_manager$1361 Def000559
+S A$level_manager$1352 Def000552
+S A$level_manager$1343 Def000545
+S A$level_manager$1325 Def000537
+S A$level_manager$1316 Def00052A
+S A$level_manager$1307 Def00051C
+S A$level_manager$1271 Def000508
+S A$level_manager$1253 Def0004FD
+S A$level_manager$1217 Def0004EC
+S A$level_manager$1163 Def0004CF
+S A$level_manager$1109 Def0004AB
+S A$level_manager$1091 Def000495
+S A$level_manager$1064 Def00047A
+S A$level_manager$1046 Def000464
+S A$level_manager$1019 Def00044F
+S C$level_manager.c$276$1_0$100 Def0004B8
+S C$level_manager.c$255$2_0$102 Def000448
+S A$level_manager$1632 Def00064B
+S A$level_manager$1623 Def00063E
+S A$level_manager$1614 Def000634
+S A$level_manager$1605 Def000629
+S A$level_manager$1524 Def0005E8
+S A$level_manager$1515 Def0005DE
+S A$level_manager$1506 Def0005D3
+S A$level_manager$1470 Def0005B9
+S A$level_manager$1461 Def0005AE
+S A$level_manager$1452 Def0005A0
+S A$level_manager$1362 Def00055C
+S A$level_manager$1353 Def000553
+S A$level_manager$1344 Def000546
+S A$level_manager$1326 Def000538
+S A$level_manager$1317 Def00052C
+S A$level_manager$1308 Def00051D
+S A$level_manager$1272 Def000509
+S A$level_manager$1263 Def000501
+S A$level_manager$1254 Def0004FE
+S A$level_manager$1209 Def0004E2
+S A$level_manager$1164 Def0004D2
+S A$level_manager$1146 Def0004BB
+S A$level_manager$1092 Def000497
+S A$level_manager$1065 Def00047B
+S A$level_manager$1056 Def00046E
+S A$level_manager$1047 Def000466
+S C$level_manager.c$363$1_0$131 Def0005C5
+S C$level_manager.c$331$4_0$124 Def000542
+S C$level_manager.c$324$3_0$123 Def000524
+S C$level_manager.c$322$4_0$124 Def00051B
+S C$level_manager.c$291$2_0$112 Def0004DE
+S C$level_manager.c$280$1_0$106 Def0004B9
+S C$level_manager.c$271$2_0$105 Def000487
+S _engine_level_manager_draw_section Def0004DE
+S A$level_manager$1633 Def00064D
+S A$level_manager$1624 Def00063F
+S A$level_manager$1615 Def000636
+S A$level_manager$1606 Def00062A
+S A$level_manager$1534 Def0005F1
+S A$level_manager$1525 Def0005E9
+S A$level_manager$1507 Def0005D4
+S A$level_manager$1480 Def0005BC
+S A$level_manager$1462 Def0005B1
+S A$level_manager$1453 Def0005A3
+S A$level_manager$1435 Def000592
+S A$level_manager$1390 Def000571
+S A$level_manager$1363 Def00055F
+S A$level_manager$1354 Def000556
+S A$level_manager$1345 Def000549
+S A$level_manager$1318 Def00052D
+S A$level_manager$1309 Def000520
+S A$level_manager$1282 Def00050E
+S A$level_manager$1273 Def00050A
+S A$level_manager$1264 Def000502
+S A$level_manager$1228 Def0004F3
+S A$level_manager$1165 Def0004D3
+S A$level_manager$1093 Def000498
+S A$level_manager$1084 Def00048E
+S A$level_manager$1066 Def00047C
+S A$level_manager$1057 Def000471
+S A$level_manager$1048 Def000467
+S A$level_manager$1039 Def00045D
+S C$level_manager.c$371$1_0$133 Def0005F4
+S C$level_manager.c$364$1_0$131 Def0005DA
+S C$level_manager.c$314$2_0$117 Def00050E
+S C$level_manager.c$305$2_0$117 Def0004FA
+S C$level_manager.c$272$2_0$105 Def00048E
+S C$level_manager.c$264$2_0$104 Def000456
+S A$level_manager$1634 Def00064F
+S A$level_manager$1616 Def000637
+S A$level_manager$1526 Def0005EA
+S A$level_manager$1508 Def0005D7
+S A$level_manager$1490 Def0005BD
+S A$level_manager$1463 Def0005B3
+S A$level_manager$1454 Def0005A5
+S A$level_manager$1436 Def000595
+S A$level_manager$1391 Def000572
+S A$level_manager$1364 Def000561
+S A$level_manager$1355 Def000557
+S A$level_manager$1346 Def00054A
+S A$level_manager$1337 Def00053F
+S A$level_manager$1319 Def00052E
+S A$level_manager$1292 Def00050F
+S A$level_manager$1274 Def00050C
+S A$level_manager$1265 Def000503
+S A$level_manager$1229 Def0004F4
+S A$level_manager$1175 Def0004D7
+S A$level_manager$1157 Def0004C9
+S A$level_manager$1148 Def0004BD
+S A$level_manager$1094 Def000499
+S A$level_manager$1085 Def000491
+S A$level_manager$1076 Def000487
+S A$level_manager$1067 Def00047D
+S A$level_manager$1058 Def000472
+S A$level_manager$1049 Def000468
+S C$level_manager.c$341$1_0$128 Def000584
+S C$level_manager.c$326$3_0$123 Def000539
+S C$level_manager.c$312$3_0$119 Def000501
+S C$level_manager.c$273$2_0$105 Def000495
+S C$level_manager.c$265$2_0$104 Def00045D
+S A$level_manager$1644 Def00065D
+S A$level_manager$1635 Def000652
+S A$level_manager$1617 Def000638
+S A$level_manager$1590 Def000615
+S A$level_manager$1527 Def0005EB
+S A$level_manager$1509 Def0005D9
+S A$level_manager$1491 Def0005BF
+S A$level_manager$1455 Def0005A6
+S A$level_manager$1446 Def00059B
+S A$level_manager$1437 Def000597
+S A$level_manager$1392 Def000573
+S A$level_manager$1374 Def000567
+S A$level_manager$1356 Def000558
+S A$level_manager$1347 Def00054B
+S A$level_manager$1338 Def000540
+S A$level_manager$1293 Def000511
+S A$level_manager$1266 Def000506
+S A$level_manager$1239 Def0004F9
+S A$level_manager$1176 Def0004D8
+S A$level_manager$1158 Def0004CA
+S A$level_manager$1149 Def0004C1
+S A$level_manager$1095 Def00049B
+S A$level_manager$1086 Def000493
+S A$level_manager$1077 Def00048A
+S A$level_manager$1068 Def000480
+S A$level_manager$1059 Def000473
+S C$level_manager.c$380$1_0$135 Def00060C
+S Flevel_manager$setup_enemyX$0$0 Def000604
+S C$level_manager.c$373$1_0$133 Def0005F4
+S XFlevel_manager$draw_tiles$0$0 Def0005F3
+S C$level_manager.c$357$1_0$131 Def0005BD
+S C$level_manager.c$274$2_0$105 Def00049F
+S C$level_manager.c$266$2_0$104 Def000464
+S A$level_manager$1654 Def000661
+S A$level_manager$1636 Def000654
+S A$level_manager$1591 Def000616
+S A$level_manager$1555 Def0005F4
+S A$level_manager$1528 Def0005EC
+S A$level_manager$1519 Def0005DF
+S A$level_manager$1492 Def0005C3
+S A$level_manager$1456 Def0005A7
+S A$level_manager$1393 Def000576
+S A$level_manager$1348 Def00054C
+S A$level_manager$1294 Def000515
+S A$level_manager$1267 Def000507
+S A$level_manager$1258 Def0004FF
+S A$level_manager$1186 Def0004DD
+S A$level_manager$1177 Def0004D9
+S A$level_manager$1159 Def0004CB
+S A$level_manager$1096 Def00049D
+S A$level_manager$1087 Def000494
+S A$level_manager$1078 Def00048B
+S A$level_manager$1069 Def000483
+S C$level_manager.c$381$1_0$135 Def00061A
+S C$level_manager.c$374$1_0$133 Def0005F4
+S C$level_manager.c$350$2_0$129 Def00059B
+S C$level_manager.c$343$1_0$128 Def00058C
+S C$level_manager.c$309$1_0$117 Def0004FA
+S G$engine_level_manager_draw_level_column$0$0 Def0004FA
+S C$level_manager.c$295$2_0$112 Def0004F3
+S C$level_manager.c$282$2_0$107 Def0004D7
+S C$level_manager.c$267$2_0$104 Def00046E
+S C$level_manager.c$259$2_0$103 Def00044C
+S A$level_manager$1637 Def000656
+S A$level_manager$1628 Def000641
+S A$level_manager$1592 Def000619
+S A$level_manager$1556 Def0005F8
+S A$level_manager$1529 Def0005EF
+S A$level_manager$1475 Def0005BA
+S A$level_manager$1457 Def0005A8
+S A$level_manager$1394 Def000577
+S A$level_manager$1349 Def00054F
+S A$level_manager$1295 Def000517
+S A$level_manager$1178 Def0004DB
+S A$level_manager$1169 Def0004D4
+S A$level_manager$1097 Def00049E
+S A$level_manager$1079 Def00048C
+S A$level_manager$100 Def000024
+S C$level_manager.c$382$1_0$135 Def00062B
+S C$level_manager.c$375$1_0$133 Def000603
+S C$level_manager.c$368$1_0$131 Def0005DF
+S C$level_manager.c$359$1_0$131 Def0005C5
+S C$level_manager.c$353$1_0$128 Def00059D
+S C$level_manager.c$336$2_0$126 Def000568
+S C$level_manager.c$329$3_0$123 Def00053F
+S C$level_manager.c$286$5_0$110 Def0004C9
+S A$level_manager$1638 Def000659
+S A$level_manager$1629 Def000644
+S A$level_manager$1557 Def0005FA
+S A$level_manager$1539 Def0005F3
+S A$level_manager$1467 Def0005B4
+S A$level_manager$1458 Def0005AB
+S A$level_manager$1395 Def000578
+S A$level_manager$1368 Def000563
+S C$level_manager.c$354$1_0$128 Def0005B4
+S C$level_manager.c$338$1_0$126 Def000568
+S C$level_manager.c$284$2_0$107 Def0004BB
+S A$level_manager$1639 Def00065B
+S A$level_manager$1567 Def000603
+S A$level_manager$1558 Def0005FD
+S A$level_manager$1468 Def0005B7
+S A$level_manager$1459 Def0005AC
+S A$level_manager$1396 Def000579
+S A$level_manager$1387 Def000568
+S A$level_manager$1369 Def000565
+S A$level_manager$300 Def000109
+S A$level_manager$120 Def000039
+S C$level_manager.c$384$1_0$135 Def000639
+S C$level_manager.c$355$1_0$128 Def0005BC
+S C$level_manager.c$339$1_0$126 Def000583
+S G$engine_level_manager_draw_blank$0$0 Def000568
+S C$level_manager.c$298$2_0$112 Def0004E0
+S A$level_manager$1649 Def00065F
+S A$level_manager$1586 Def00060C
+S A$level_manager$1577 Def000604
+S A$level_manager$1559 Def0005FF
+S A$level_manager$1469 Def0005B8
+S A$level_manager$1397 Def00057A
+S A$level_manager$1388 Def00056C
+S A$level_manager$1199 Def0004DE
+S A$level_manager$400 Def000192
+S A$level_manager$310 Def00011B
+S A$level_manager$301 Def00010B
+S A$level_manager$202 Def00008D
+S A$level_manager$121 Def00003C
+S A$level_manager$112 Def00002E
+S C$level_manager.c$385$1_0$135 Def000641
+S C$level_manager.c$376$1_0$135 Def000604
+S C$level_manager.c$347$1_0$128 Def000592
+S G$engine_level_manager_draw_level_column_side$0$0 Def00050F
+S C$level_manager.c$278$1_0$107 Def0004B9
+S A$level_manager$1596 Def00061A
+S A$level_manager$1587 Def00060F
+S A$level_manager$1578 Def000606
+S A$level_manager$1398 Def00057B
+S A$level_manager$1389 Def00056E
+S A$level_manager$500 Def00021C
+S A$level_manager$410 Def00019F
+S A$level_manager$401 Def000195
+S A$level_manager$311 Def00011C
+S A$level_manager$302 Def00010E
+S A$level_manager$212 Def00008E
+S A$level_manager$140 Def00004E
+S A$level_manager$122 Def00003E
+S A$level_manager$113 Def000031
+S A$level_manager$104 Def000025
+S G$engine_level_manager_load_level$0$0 Def0003E6
+S A$level_manager$1597 Def00061D
+S A$level_manager$1588 Def000612
+S A$level_manager$1579 Def00060A
+S A$level_manager$1399 Def00057C
+S A$level_manager$600 Def000289
+S A$level_manager$510 Def000228
+S A$level_manager$501 Def00021E
+S A$level_manager$411 Def0001A2
+S A$level_manager$402 Def000198
+S A$level_manager$330 Def00013B
+S A$level_manager$312 Def00011D
+S A$level_manager$303 Def000111
+S A$level_manager$240 Def0000B3
+S A$level_manager$231 Def0000A7
+S A$level_manager$213 Def000090
+S A$level_manager$141 Def00004F
+S A$level_manager$114 Def000033
+S A$level_manager$105 Def000028
+S C$level_manager.c$378$1_0$135 Def00060C
+S C$level_manager.c$349$1_0$128 Def00058C
+S C$level_manager.c$284$4_0$109 Def0004D4
+S A$level_manager$1598 Def00061E
+S A$level_manager$1589 Def000613
+S A$level_manager$1499 Def0005C5
+S A$level_manager$601 Def00028B
+S A$level_manager$520 Def000231
+S A$level_manager$511 Def000229
+S A$level_manager$430 Def0001BA
+S A$level_manager$412 Def0001A3
+S A$level_manager$403 Def000199
+S A$level_manager$340 Def00014C
+S A$level_manager$322 Def00012B
+S A$level_manager$313 Def00011E
+S A$level_manager$304 Def000113
+S A$level_manager$250 Def0000BF
+S A$level_manager$241 Def0000B4
+S A$level_manager$214 Def000094
+S A$level_manager$151 Def000059
+S A$level_manager$142 Def000052
+S A$level_manager$133 Def00004A
+S A$level_manager$115 Def000034
+S A$level_manager$106 Def000029
+S C$level_manager.c$298$4_0$114 Def0004ED
+S C$level_manager.c$289$2_0$107 Def0004DD
+S A$level_manager$1599 Def00061F
+S A$level_manager$710 Def00030E
+S A$level_manager$611 Def000293
+S A$level_manager$602 Def00028E
+S A$level_manager$530 Def000239
+S A$level_manager$512 Def00022A
+S A$level_manager$422 Def0001AE
+S A$level_manager$413 Def0001A6
+S A$level_manager$404 Def00019A
+S A$level_manager$341 Def00014F
+S A$level_manager$323 Def00012E
+S A$level_manager$314 Def00011F
+S A$level_manager$251 Def0000C3
+S A$level_manager$242 Def0000B7
+S A$level_manager$224 Def00009B
+S A$level_manager$215 Def000096
+S A$level_manager$170 Def000070
+S A$level_manager$161 Def000063
+S A$level_manager$152 Def00005C
+S A$level_manager$143 Def000054
+S A$level_manager$107 Def00002B
+S C$level_manager.c$389$1_0$135 Def000661
+S C$level_manager.c$387$2_0$136 Def00065D
+S C$level_manager.c$349$2_0$129 Def000599
+S XG$engine_level_manager_draw_section$0$0 Def0004F9
+S A$level_manager$900 Def0003DE
+S A$level_manager$810 Def00038C
+S A$level_manager$711 Def00030F
+S A$level_manager$621 Def000299
+S A$level_manager$540 Def000247
+S A$level_manager$531 Def00023C
+S A$level_manager$513 Def00022B
+S A$level_manager$450 Def0001D5
+S A$level_manager$423 Def0001B1
+S A$level_manager$414 Def0001A7
+S A$level_manager$405 Def00019D
+S A$level_manager$360 Def000167
+S A$level_manager$342 Def000152
+S A$level_manager$324 Def00012F
+S A$level_manager$315 Def000122
+S A$level_manager$270 Def0000D7
+S A$level_manager$252 Def0000C4
+S A$level_manager$243 Def0000B8
+S A$level_manager$225 Def00009E
+S A$level_manager$216 Def000099
+S A$level_manager$171 Def000071
+S A$level_manager$162 Def000066
+S A$level_manager$153 Def00005E
+S A$level_manager$144 Def000055
+S A$level_manager$126 Def000040
+S A$level_manager$108 Def00002C
+S A$level_manager$901 Def0003DF
+S A$level_manager$820 Def000393
+S A$level_manager$730 Def000325
+S A$level_manager$712 Def000312
+S A$level_manager$640 Def0002B9
+S A$level_manager$622 Def00029B
+S A$level_manager$541 Def000248
+S A$level_manager$532 Def00023D
+S A$level_manager$514 Def00022C
+S A$level_manager$505 Def000221
+S A$level_manager$460 Def0001E3
+S A$level_manager$451 Def0001D6
+S A$level_manager$424 Def0001B3
+S A$level_manager$415 Def0001A8
+S A$level_manager$406 Def00019E
+S A$level_manager$361 Def00016A
+S A$level_manager$343 Def000155
+S A$level_manager$334 Def00013C
+S A$level_manager$325 Def000132
+S A$level_manager$316 Def000124
+S A$level_manager$280 Def0000E6
+S A$level_manager$271 Def0000DB
+S A$level_manager$262 Def0000CE
+S A$level_manager$253 Def0000C5
+S A$level_manager$244 Def0000B9
+S A$level_manager$235 Def0000A9
+S A$level_manager$226 Def0000A1
+S A$level_manager$217 Def00009A
+S A$level_manager$190 Def000084
+S A$level_manager$163 Def000068
+S A$level_manager$154 Def00005F
+S A$level_manager$145 Def000056
+S A$level_manager$127 Def000043
+S A$level_manager$803 Def000383
+S A$level_manager$740 Def000334
+S A$level_manager$731 Def000326
+S A$level_manager$722 Def000319
+S A$level_manager$713 Def000313
+S A$level_manager$704 Def0002FD
+S A$level_manager$650 Def0002C7
+S A$level_manager$641 Def0002BD
+S A$level_manager$623 Def00029E
+S A$level_manager$551 Def00024F
+S A$level_manager$533 Def00023E
+S A$level_manager$524 Def000233
+S A$level_manager$506 Def000224
+S A$level_manager$470 Def0001EE
+S A$level_manager$461 Def0001E6
+S A$level_manager$452 Def0001D7
+S A$level_manager$434 Def0001BC
+S A$level_manager$416 Def0001A9
+S A$level_manager$380 Def00017C
+S A$level_manager$353 Def00015D
+S A$level_manager$335 Def00013E
+S A$level_manager$326 Def000135
+S A$level_manager$317 Def000125
+S A$level_manager$308 Def000116
+S A$level_manager$281 Def0000E9
+S A$level_manager$272 Def0000DC
+S A$level_manager$263 Def0000CF
+S A$level_manager$245 Def0000BA
+S A$level_manager$236 Def0000AC
+S A$level_manager$227 Def0000A4
+S A$level_manager$191 Def000085
+S A$level_manager$182 Def00007B
+S A$level_manager$164 Def000069
+S A$level_manager$155 Def000060
+S A$level_manager$146 Def000057
+S A$level_manager$128 Def000046
+S A$level_manager$119 Def000036
+S C$level_manager.c$100$6_0$73 Def0001AE
+S A$level_manager$930 Def0003F2
+S A$level_manager$912 Def0003E5
+S A$level_manager$804 Def000385
+S A$level_manager$750 Def000345
+S A$level_manager$741 Def000337
+S A$level_manager$732 Def000329
+S A$level_manager$705 Def000300
+S A$level_manager$651 Def0002CA
+S A$level_manager$642 Def0002C0
+S A$level_manager$633 Def0002AF
+S A$level_manager$624 Def0002A1
+S A$level_manager$615 Def000294
+S A$level_manager$606 Def000290
+S A$level_manager$552 Def000252
+S A$level_manager$534 Def00023F
+S A$level_manager$525 Def000236
+S A$level_manager$507 Def000225
+S A$level_manager$480 Def0001F9
+S A$level_manager$471 Def0001EF
+S A$level_manager$462 Def0001E7
+S A$level_manager$453 Def0001DA
+S A$level_manager$444 Def0001C7
+S A$level_manager$435 Def0001BF
+S A$level_manager$417 Def0001AC
+S A$level_manager$381 Def00017E
+S A$level_manager$372 Def000172
+S A$level_manager$354 Def000160
+S A$level_manager$336 Def000141
+S A$level_manager$327 Def000136
+S A$level_manager$318 Def000128
+S A$level_manager$309 Def000119
+S A$level_manager$282 Def0000EC
+S A$level_manager$264 Def0000D2
+S A$level_manager$246 Def0000BB
+S A$level_manager$237 Def0000AE
+S A$level_manager$192 Def000087
+S A$level_manager$183 Def00007E
+S A$level_manager$156 Def000061
+S A$level_manager$147 Def000058
+S A$level_manager$138 Def00004C
+S A$level_manager$129 Def000048
+S _engine_level_manager_draw_level_column Def0004FA
+S A$level_manager$940 Def0003FF
+S A$level_manager$922 Def0003E6
+S A$level_manager$841 Def0003A6
+S A$level_manager$814 Def00038F
+S A$level_manager$805 Def000386
+S A$level_manager$760 Def000357
+S A$level_manager$751 Def000347
+S A$level_manager$742 Def000339
+S A$level_manager$733 Def00032A
+S A$level_manager$706 Def000301
+S A$level_manager$670 Def0002DB
+S A$level_manager$652 Def0002CB
+S A$level_manager$643 Def0002C1
+S A$level_manager$634 Def0002B1
+S A$level_manager$625 Def0002A3
+S A$level_manager$616 Def000295
+S A$level_manager$580 Def00026E
+S A$level_manager$571 Def000263
+S A$level_manager$553 Def000253
+S A$level_manager$535 Def000240
+S A$level_manager$526 Def000237
+S A$level_manager$508 Def000226
+S A$level_manager$490 Def000207
+S A$level_manager$481 Def0001FC
+S A$level_manager$472 Def0001F1
+S A$level_manager$463 Def0001E8
+S A$level_manager$454 Def0001DB
+S A$level_manager$445 Def0001CA
+S A$level_manager$436 Def0001C0
+S A$level_manager$418 Def0001AD
+S A$level_manager$391 Def000186
+S A$level_manager$373 Def000175
+S A$level_manager$355 Def000163
+S A$level_manager$337 Def000144
+S A$level_manager$328 Def000137
+S A$level_manager$265 Def0000D3
+S A$level_manager$238 Def0000AF
+S A$level_manager$184 Def000080
+S A$level_manager$175 Def000073
+S A$level_manager$157 Def000062
+S A$level_manager$139 Def00004D
+S C$level_manager.c$134$2_0$81 Def0003A6
+S C$level_manager.c$203$5_0$90 Def000392
+S A$level_manager$941 Def000400
+S A$level_manager$923 Def0003E8
+S A$level_manager$860 Def0003BC
+S A$level_manager$842 Def0003A7
+S A$level_manager$833 Def00039F
+S A$level_manager$815 Def000390
+S A$level_manager$806 Def000387
+S A$level_manager$770 Def000362
+S A$level_manager$761 Def000358
+S A$level_manager$752 Def000348
+S A$level_manager$743 Def00033B
+S A$level_manager$734 Def00032D
+S A$level_manager$707 Def000304
+S A$level_manager$680 Def0002EA
+S A$level_manager$671 Def0002DD
+S A$level_manager$653 Def0002CC
+S A$level_manager$644 Def0002C2
+S A$level_manager$635 Def0002B2
+S A$level_manager$626 Def0002A5
+S A$level_manager$617 Def000297
+S A$level_manager$581 Def00026F
+S A$level_manager$572 Def000266
+S A$level_manager$563 Def00025C
+S A$level_manager$545 Def000249
+S A$level_manager$536 Def000241
+S A$level_manager$518 Def00022D
+S A$level_manager$509 Def000227
+S A$level_manager$491 Def00020A
+S A$level_manager$482 Def0001FE
+S A$level_manager$473 Def0001F4
+S A$level_manager$455 Def0001DC
+S A$level_manager$446 Def0001CD
+S A$level_manager$437 Def0001C1
+S A$level_manager$428 Def0001B5
+S A$level_manager$392 Def000189
+S A$level_manager$374 Def000176
+S A$level_manager$347 Def000156
+S A$level_manager$338 Def000146
+S A$level_manager$329 Def00013A
+S A$level_manager$293 Def0000FF
+S A$level_manager$284 Def0000F0
+S A$level_manager$266 Def0000D4
+S A$level_manager$257 Def0000C9
+S A$level_manager$239 Def0000B2
+S A$level_manager$185 Def000081
+S A$level_manager$176 Def000076
+S C$level_manager.c$212$1_0$68 Def0003AA
+S C$level_manager.c$142$3_0$82 Def00026E
+S C$level_manager.c$122$1_0$68 Def000221
+S C$level_manager.c$112$6_0$73 Def0001E9
+S A$level_manager$924 Def0003EC
+S A$level_manager$906 Def0003E1
+S A$level_manager$834 Def0003A2
+S A$level_manager$825 Def000395
+S A$level_manager$807 Def000389
+S A$level_manager$771 Def000363
+S A$level_manager$762 Def00035B
+S A$level_manager$753 Def000349
+S A$level_manager$744 Def00033E
+S A$level_manager$726 Def00031A
+S A$level_manager$717 Def000316
+S A$level_manager$708 Def000307
+S A$level_manager$672 Def0002DE
+S A$level_manager$663 Def0002D3
+S A$level_manager$654 Def0002CD
+S A$level_manager$645 Def0002C5
+S A$level_manager$636 Def0002B3
+S A$level_manager$627 Def0002A8
+S A$level_manager$582 Def000270
+S A$level_manager$573 Def000268
+S A$level_manager$546 Def00024C
+S A$level_manager$537 Def000242
+S A$level_manager$519 Def000230
+S A$level_manager$492 Def00020D
+S A$level_manager$474 Def0001F5
+S A$level_manager$456 Def0001DD
+S A$level_manager$447 Def0001D0
+S A$level_manager$438 Def0001C4
+S A$level_manager$429 Def0001B8
+S A$level_manager$393 Def00018C
+S A$level_manager$366 Def00016B
+S A$level_manager$348 Def000159
+S A$level_manager$339 Def000149
+S A$level_manager$294 Def000102
+S A$level_manager$285 Def0000F4
+S A$level_manager$258 Def0000CC
+S A$level_manager$177 Def000078
+S A$level_manager$168 Def00006B
+S C$level_manager.c$143$3_0$82 Def00027F
+S C$level_manager.c$123$1_0$68 Def00022D
+S C$level_manager.c$115$5_0$72 Def0001F9
+S _engine_level_manager_draw_blank Def000568
+S A$level_manager$970 Def000422
+S A$level_manager$934 Def0003F4
+S A$level_manager$907 Def0003E3
+S A$level_manager$853 Def0003B0
+S A$level_manager$835 Def0003A4
+S A$level_manager$826 Def000398
+S A$level_manager$808 Def00038A
+S A$level_manager$790 Def000375
+S A$level_manager$772 Def000364
+S A$level_manager$754 Def00034A
+S A$level_manager$745 Def000341
+S A$level_manager$727 Def00031D
+S A$level_manager$709 Def00030B
+S A$level_manager$673 Def0002DF
+S A$level_manager$664 Def0002D6
+S A$level_manager$637 Def0002B4
+S A$level_manager$628 Def0002AB
+S A$level_manager$583 Def000273
+S A$level_manager$574 Def000269
+S A$level_manager$565 Def00025E
+S A$level_manager$547 Def00024D
+S A$level_manager$538 Def000243
+S A$level_manager$493 Def000210
+S A$level_manager$475 Def0001F8
+S A$level_manager$457 Def0001DE
+S A$level_manager$448 Def0001D1
+S A$level_manager$439 Def0001C5
+S A$level_manager$385 Def000180
+S A$level_manager$367 Def00016E
+S A$level_manager$349 Def00015B
+S A$level_manager$295 Def000105
+S A$level_manager$286 Def0000F7
+S A$level_manager$277 Def0000DD
+S A$level_manager$196 Def000089
+S A$level_manager$178 Def000079
+S A$level_manager$169 Def00006E
+S C$level_manager.c$232$1_0$68 Def0003E5
+S C$level_manager.c$207$3_0$82 Def000395
+S C$level_manager.c$133$1_0$68 Def000255
+S C$level_manager.c$124$1_0$68 Def000233
+S Flevel_manager$load_level$0$0 Def00008E
+S _engine_level_manager_draw_level_column_side Def00050F
+S A$level_manager$971 Def000423
+S A$level_manager$953 Def00040B
+S A$level_manager$935 Def0003F7
+S A$level_manager$890 Def0003D9
+S A$level_manager$881 Def0003CF
+S A$level_manager$836 Def0003A5
+S A$level_manager$827 Def00039A
+S A$level_manager$809 Def00038B
+S A$level_manager$791 Def000376
+S A$level_manager$782 Def00036B
+S A$level_manager$773 Def000365
+S A$level_manager$755 Def00034B
+S A$level_manager$746 Def000344
+S A$level_manager$728 Def00031E
+S A$level_manager$674 Def0002E0
+S A$level_manager$665 Def0002D9
+S A$level_manager$638 Def0002B5
+S A$level_manager$629 Def0002AE
+S A$level_manager$593 Def00027F
+S A$level_manager$584 Def000275
+S A$level_manager$575 Def00026A
+S A$level_manager$566 Def00025F
+S A$level_manager$557 Def000255
+S A$level_manager$539 Def000244
+S A$level_manager$494 Def000213
+S A$level_manager$458 Def0001E1
+S A$level_manager$449 Def0001D2
+S A$level_manager$386 Def000183
+S A$level_manager$368 Def000170
+S A$level_manager$359 Def000164
+S A$level_manager$287 Def0000F9
+S A$level_manager$278 Def0000E0
+S A$level_manager$197 Def00008B
+S C$level_manager.c$220$4_0$96 Def0003CF
+S C$level_manager.c$215$1_0$68 Def0003B0
+S C$level_manager.c$208$3_0$82 Def00039F
+S C$level_manager.c$136$3_0$82 Def000263
+S _engine_level_manager_load_level Def0003E6
+S A$level_manager$990 Def000437
+S A$level_manager$981 Def00042E
+S A$level_manager$972 Def000424
+S A$level_manager$963 Def000417
+S A$level_manager$954 Def00040D
+S A$level_manager$945 Def000401
+S A$level_manager$936 Def0003FA
+S A$level_manager$882 Def0003D2
+S A$level_manager$864 Def0003BE
+S A$level_manager$855 Def0003B2
+S A$level_manager$828 Def00039B
+S A$level_manager$819 Def000392
+S A$level_manager$792 Def000377
+S A$level_manager$783 Def00036E
+S A$level_manager$756 Def00034C
+S A$level_manager$738 Def00032F
+S A$level_manager$729 Def000321
+S A$level_manager$693 Def0002F5
+S A$level_manager$684 Def0002EB
+S A$level_manager$675 Def0002E1
+S A$level_manager$666 Def0002DA
+S A$level_manager$639 Def0002B6
+S A$level_manager$594 Def000282
+S A$level_manager$585 Def000278
+S A$level_manager$576 Def00026B
+S A$level_manager$567 Def000260
+S A$level_manager$558 Def000258
+S A$level_manager$468 Def0001E9
+S A$level_manager$459 Def0001E2
+S A$level_manager$387 Def000184
+S A$level_manager$288 Def0000FA
+S A$level_manager$279 Def0000E3
+S A$level_manager$189 Def000083
+S C$level_manager.c$190$5_0$90 Def000368
+S C$level_manager.c$181$5_0$90 Def000319
+S C$level_manager.c$150$5_0$85 Def000293
+S C$level_manager.c$146$3_0$82 Def000289
+S A$level_manager$991 Def000438
+S A$level_manager$973 Def000425
+S A$level_manager$964 Def00041A
+S A$level_manager$955 Def000410
+S A$level_manager$946 Def000404
+S A$level_manager$937 Def0003FC
+S A$level_manager$928 Def0003EE
+S A$level_manager$883 Def0003D3
+S A$level_manager$874 Def0003C7
+S A$level_manager$865 Def0003BF
+S A$level_manager$856 Def0003B6
+S A$level_manager$847 Def0003AA
+S A$level_manager$829 Def00039E
+S A$level_manager$793 Def000378
+S A$level_manager$784 Def000371
+S A$level_manager$766 Def00035C
+S A$level_manager$757 Def00034F
+S A$level_manager$739 Def000331
+S A$level_manager$694 Def0002F6
+S A$level_manager$685 Def0002EC
+S A$level_manager$676 Def0002E2
+S A$level_manager$658 Def0002D0
+S A$level_manager$649 Def0002C6
+S A$level_manager$595 Def000283
+S A$level_manager$586 Def000279
+S A$level_manager$559 Def00025B
+S A$level_manager$487 Def000201
+S A$level_manager$469 Def0001EB
+S A$level_manager$379 Def000179
+S A$level_manager$289 Def0000FC
+S G$engine_level_manager_draw_level$0$0 Def0004B9
+S C$level_manager.c$215$3_0$95 Def0003DE
+S C$level_manager.c$182$5_0$90 Def00031A
+S C$level_manager.c$151$5_0$85 Def000294
+S C$level_manager.c$127$1_0$68 Def000239
+S C$level_manager.c$108$8_0$80 Def0001C7
+S C$level_manager.c$102$7_0$78 Def0001B5
+S A$level_manager$992 Def000439
+S A$level_manager$974 Def000426
+S A$level_manager$965 Def00041B
+S A$level_manager$956 Def000411
+S A$level_manager$947 Def000407
+S A$level_manager$938 Def0003FD
+S A$level_manager$929 Def0003F1
+S A$level_manager$884 Def0003D4
+S A$level_manager$875 Def0003CA
+S A$level_manager$866 Def0003C1
+S A$level_manager$857 Def0003B7
+S A$level_manager$848 Def0003AD
+S A$level_manager$794 Def000379
+S A$level_manager$785 Def000372
+S A$level_manager$767 Def00035E
+S A$level_manager$758 Def000353
+S A$level_manager$686 Def0002EF
+S A$level_manager$677 Def0002E5
+S A$level_manager$659 Def0002D1
+S A$level_manager$596 Def000286
+S A$level_manager$587 Def00027B
+S A$level_manager$488 Def000204
+S A$level_manager$398 Def00018E
+S A$level_manager$299 Def000106
+S C$level_manager.c$134$5_0$85 Def00025C
+S C$level_manager.c$128$1_0$68 Def000249
+S C$level_manager.c$22$0_0$60 Def000000
+A _DATA size 1AA flags 0 addr 0
+S _global_level_object Def000000
+S G$global_level_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 DD E5 DD 21 00 00 DD 39 F5 3B 01 00 00
+R 00 00 00 00 00 0E 01 00
+T 0D 00 00 21 C0 00 09 EB DD 36 FE 00
+R 00 00 00 00
+T 16 00 00
+R 00 00 00 00
+T 16 00 00 DD 36 FF 00
+R 00 00 00 00
+T 1A 00 00
+R 00 00 00 00
+T 1A 00 00 DD 7E FE 87 87 87 87 DD 6E FF 85 DD 77
+R 00 00 00 00
+T 27 00 00 FD 6F 26 00 09 36 00 DD 6E FD 26 00 19
+R 00 00 00 00
+T 34 00 00 36 00 DD 34 FF DD 7E FF D6 10 38 DA DD
+R 00 00 00 00
+T 41 00 00 34 FE DD 7E FE D6 0C 38 CC 0E 00
+R 00 00 00 00
+T 4C 00 00
+R 00 00 00 00
+T 4C 00 00 79 87 5F 21 89 01 16 00 19 AF 77 23 77
+R 00 00 00 00 00 07 01 00
+T 59 00 00 21 91 01 16 00 19 AF 77 23 77 21 99 01
+R 00 00 00 00 00 04 01 00 00 0E 01 00
+T 66 00 00 06 00 09 36 05 21 9D 01 06 00 09 36 00
+R 00 00 00 00 00 09 01 00
+T 73 00 00 21 A1 01 06 00 09 36 00 21 A5 01 06 00
+R 00 00 00 00 00 04 01 00 00 0C 01 00
+T 80 00 00 09 36 03 0C 79 D6 04 38 C3 DD F9 DD E1
+R 00 00 00 00
+T 8D 00 00 C9
+R 00 00 00 00
+T 8E 00 00
+R 00 00 00 00
+T 8E 00 00 DD E5 DD 21 00 00 DD 39 21 F3 FF 39 F9
+R 00 00 00 00
+T 9B 00 00 DD 7E 04 DD 77 F9 DD 7E 05 DD 77 FA 0E
+R 00 00 00 00
+T A8 00 00 00 DD 5E 07 16 00 C5 21 0C 00 E5 D5 CD
+R 00 00 00 00
+T B5 00 00 00 00 F1 F1 EB C1 ED 53 80 01 ED 5B
+R 00 00 00 00 02 03 10 00 00 0B 01 00
+T C1 00 00 80 01 1B 1B ED 53 82 01 21 86 01 36 00
+R 00 00 00 00 00 03 01 00 00 09 01 00 00 0C 01 00
+T CE 00 00 C5 DD 7E 06 F5 33 CD 00 00 DD 36 FB 00
+R 00 00 00 00 02 0A 11 00
+T DB 00 00 33 C1
+R 00 00 00 00
+T DD 00 00
+R 00 00 00 00
+T DD 00 00 DD 71 FC DD 7E F9 DD 77 FD DD 7E FA DD
+R 00 00 00 00
+T EA 00 00 77 FE DD 36 FF 00
+R 00 00 00 00
+T F0 00 00
+R 00 00 00 00
+T F0 00 00 ED 4B 80 01 DD 6E FF 26 00 AF ED 42 D2
+R 00 00 00 00 00 05 01 00
+T FD 00 00 07 02 DD 6E FD DD 66 FE 7E DD 77 F6 D6
+R 00 00 00 00 00 03 00 00
+T 0A 01 00 0D CA F9 01 DD 7E F6 D6 0A CA F9 01 DD
+R 00 00 00 00 00 05 00 00 00 0D 00 00
+T 17 01 00 6E FB 26 00 29 29 29 29 DD 4E FF 06 00
+R 00 00 00 00
+T 24 01 00 09 DD 75 F7 DD 74 F8 21 00 00 39 DD 56
+R 00 00 00 00
+T 31 01 00 09 DD 5E F6 D5 E5 CD 00 00 F1 F1 3E
+R 00 00 00 00 02 0A 00 00
+T 3D 01 00 C0 00 00 DD 86 F7 DD 77 F9 3E C0 00 00
+R 00 00 00 00 09 03 01 00 89 0D 01 00
+T 46 01 00 DD 8E F8 DD 77 FA DD 6E F9 DD 66 FA DD
+R 00 00 00 00
+T 53 01 00 7E F3 77 DD 7E F3 D6 0B 20 0E 21 84 01
+R 00 00 00 00 00 0E 01 00
+T 60 01 00 DD 7E FF 77 21 85 01 DD 7E FB 77
+R 00 00 00 00 00 08 01 00
+T 6B 01 00
+R 00 00 00 00
+T 6B 01 00 DD 7E F3 D6 0C 20 07 3A 86 01 3C 32
+R 00 00 00 00 00 0B 01 00
+T 77 01 00 86 01
+R 00 00 00 00 00 03 01 00
+T 79 01 00
+R 00 00 00 00
+T 79 01 00 DD 7E F3 D6 0D 20 0E DD 7E 08 B7 28 08
+R 00 00 00 00
+T 86 01 00 DD 6E F9 DD 66 FA 36 00
+R 00 00 00 00
+T 8E 01 00
+R 00 00 00 00
+T 8E 01 00 21 01 00 39 DD 56 09 DD 5E F6 D5 E5 CD
+R 00 00 00 00
+T 9B 01 00 00 00 F1 F1 21 02 00 39 DD 7E F6 F5 33
+R 00 00 00 00 02 03 08 00
+T A8 01 00 E5 CD 00 00 F1 33 DD 7E F5 D6 05 28 34
+R 00 00 00 00 02 05 0B 00
+T B5 01 00 DD 7E F5 D6 04 20 0B DD 7E F7 F5 33 CD
+R 00 00 00 00
+T C2 01 00 F4 05 33 18 22
+R 00 00 00 00 00 03 00 00
+T C7 01 00
+R 00 00 00 00
+T C7 01 00 DD 7E FC DD 34 FC DD 66 FF E5 33 DD 66
+R 00 00 00 00
+T D4 01 00 FB E5 33 DD 66 F6 E5 33 F5 33 DD 7E F5
+R 00 00 00 00
+T E1 01 00 F5 33 CD 04 06 F1 F1 33
+R 00 00 00 00 00 06 00 00
+T E9 01 00
+R 00 00 00 00
+T E9 01 00 3E 00 00 00 DD 86 F7 4F 3E 00 00 00 DD
+R 00 00 00 00 09 04 01 00 89 0C 01 00
+T F2 01 00 8E F8 47 DD 7E F4 02
+R 00 00 00 00
+T F9 01 00
+R 00 00 00 00
+T F9 01 00 DD 34 FD 20 03 DD 34 FE
+R 00 00 00 00
+T 01 02 00
+R 00 00 00 00
+T 01 02 00 DD 34 FF C3 F0 00
+R 00 00 00 00 00 07 00 00
+T 07 02 00
+R 00 00 00 00
+T 07 02 00 DD 4E FC DD 7E FD DD 77 F9 DD 7E FE DD
+R 00 00 00 00
+T 14 02 00 77 FA DD 34 FB DD 7E FB D6 0C DA DD 00
+R 00 00 00 00 00 0E 00 00
+T 21 02 00 2A 82 01 5D 54 29 29 19 29 19 EB 13 21
+R 00 00 00 00 00 04 01 00
+T 2E 02 00 C0 00 19 36 00 21 00 00 19 36 00 2A
+R 00 00 00 00 00 03 01 00 00 09 01 00
+T 3A 02 00 82 01 5D 54 29 29 19 29 19 EB 21 0F 00
+R 00 00 00 00 00 03 01 00
+T 47 02 00 19 EB 21 C0 00 19 36 00 21 00 00 19 36
+R 00 00 00 00 00 06 01 00 00 0C 01 00
+T 54 02 00 00 21 A9 01 DD 7E FC 77 1E 00
+R 00 00 00 00 00 05 01 00
+T 5E 02 00
+R 00 00 00 00
+T 5E 02 00 7B 91 D2 AA 03 21 A5 01 16 00 19 7E 3D
+R 00 00 00 00 00 06 00 00 00 09 01 00
+T 6B 02 00 CA A6 03 7B 87 DD 77 F9 3E 89 01 00 DD
+R 00 00 00 00 00 04 00 00 09 0C 01 00
+T 76 02 00 86 F9 6F 3E 89 01 00 CE 00 67 7E DD 77
+R 00 00 00 00 89 07 01 00
+T 81 02 00 FA 47 DD 7E FA DD 77 FB 3E 01 DD 96 FA
+R 00 00 00 00
+T 8E 02 00 30 6D DD 56 FA
+R 00 00 00 00
+T 93 02 00
+R 00 00 00 00
+T 93 02 00 15 7A D6 01 38 64 3E 91 01 00 DD 86 F9
+R 00 00 00 00 09 0A 01 00
+T 9E 02 00 DD 77 FC 3E 91 01 00 CE 00 DD 77 FD DD
+R 00 00 00 00 89 07 01 00
+T A9 02 00 6E FC DD 66 FD 6E 26 00 29 29 29 29 7D
+R 00 00 00 00
+T B6 02 00 DD 72 FE DD 36 FF 00 DD 86 FE 6F 7C DD
+R 00 00 00 00
+T C3 02 00 8E FF 67 D5 11 00 00 19 D1 7E DD 77 F4
+R 00 00 00 00 00 08 01 00
+T D0 02 00 3D 28 2A DD 6E FC DD 66 FD 6E 2C 26 00
+R 00 00 00 00
+T DD 02 00 29 29 29 29 7D DD 86 FE 6F 7C DD 8E FF
+R 00 00 00 00
+T EA 02 00 67 D5 11 00 00 19 D1 7E DD 77 F4 B7 28
+R 00 00 00 00 00 06 01 00
+T F7 02 00 05 DD 72 FB 18 96
+R 00 00 00 00
+T FD 02 00
+R 00 00 00 00
+T FD 02 00 2A 82 01 2B DD 7E FA DD 77 FE DD 36 FF
+R 00 00 00 00 00 04 01 00
+T 0A 03 00 00 DD 7E FE 95 DD 7E FF 9C D2 95 03 DD
+R 00 00 00 00 00 0D 00 00
+T 17 03 00 56 FA
+R 00 00 00 00
+T 19 03 00
+R 00 00 00 00
+T 19 03 00 14 2A 82 01 2B DD 72 FE DD 36 FF 00 7D
+R 00 00 00 00 00 05 01 00
+T 26 03 00 DD 96 FE 7C DD 9E FF 38 66 3E 91 01 00
+R 00 00 00 00 09 0D 01 00
+T 31 03 00 DD 86 F9 DD 77 FC 3E 91 01 00 CE 00 DD
+R 00 00 00 00 89 0A 01 00
+T 3C 03 00 77 FD DD 6E FC DD 66 FD 6E 26 00 29 29
+R 00 00 00 00
+T 49 03 00 29 29 7D DD 72 FE DD 36 FF 00 DD 86 FE
+R 00 00 00 00
+T 56 03 00 6F 7C DD 8E FF 67 3E 00 00 00 85 6F 3E
+R 00 00 00 00 09 0A 01 00
+T 61 03 00 00 00 00 8C 67 7E DD 77 F4 3D 28 2A DD
+R 00 00 00 00 89 03 01 00
+T 6C 03 00 6E FC DD 66 FD 6E 2C 26 00 29 29 29 29
+R 00 00 00 00
+T 79 03 00 7D DD 86 FE 6F 7C DD 8E FF 67 3E
+R 00 00 00 00
+T 84 03 00 00 00 00 85 6F 3E 00 00 00 8C 67 7E DD
+R 00 00 00 00 09 03 01 00 89 09 01 00
+T 8D 03 00 77 F4 B7 28 03 42 18 84
+R 00 00 00 00
+T 95 03 00
+R 00 00 00 00
+T 95 03 00 21 9D 01 16 00 19 DD 7E FB 77 21 A1 01
+R 00 00 00 00 00 04 01 00 00 0E 01 00
+T A2 03 00 16 00 19 70
+R 00 00 00 00
+T A6 03 00
+R 00 00 00 00
+T A6 03 00 1C C3 5E 02
+R 00 00 00 00 00 05 00 00
+T AA 03 00
+R 00 00 00 00
+T AA 03 00 DD 7E 08 B7 28 31 0E 01
+R 00 00 00 00
+T B2 03 00
+R 00 00 00 00
+T B2 03 00 ED 5B 82 01 69 26 00 AF ED 52 30 23 79
+R 00 00 00 00 00 05 01 00
+T BF 03 00 16 00 C6 B0 5F 30 01 14
+R 00 00 00 00
+T C7 03 00
+R 00 00 00 00
+T C7 03 00 21 C0 00 19 7E DD 77 F3 21 00 00 19 EB
+R 00 00 00 00 00 04 01 00 00 0C 01 00
+T D4 03 00 1A DD 77 F4 B7 20 03 3E 01 12
+R 00 00 00 00
+T DE 03 00
+R 00 00 00 00
+T DE 03 00 0C 18 D1
+R 00 00 00 00
+T E1 03 00
+R 00 00 00 00
+T E1 03 00 DD F9 DD E1 C9
+R 00 00 00 00
+T E6 03 00
+R 00 00 00 00
+T E6 03 00 DD E5 DD 21 00 00 DD 39 DD 7E 04 B7 28
+R 00 00 00 00
+T F3 03 00 3D 01 00 00 DD 6E 06 26 00 29 09 4E 23
+R 00 00 00 00 02 05 09 00
+T 00 04 00 46 11 00 00 DD 6E 06 26 00 19 56 3E
+R 00 00 00 00 02 05 0A 00
+T 0C 04 00 00 00 00 DD 86 06 6F 3E 00 00 00 CE 00
+R 00 00 00 00 0B 03 01 00 8B 0B 01 00
+T 15 04 00 67 7E DD 66 08 E5 33 DD 66 07 E5 33 F5
+R 00 00 00 00
+T 22 04 00 33 D5 33 C5 CD 8E 00 21 06 00 39 F9 C3
+R 00 00 00 00 00 08 00 00
+T 2F 04 00 B6 04
+R 00 00 00 00 00 03 00 00
+T 31 04 00
+R 00 00 00 00
+T 31 04 00 DD 7E 05 4F 87 87 81 87 DD 4E 06 81 4F
+R 00 00 00 00
+T 3E 04 00 D6 28 3E 00 17 47 CB 40 20 04 79 C6 D8
+R 00 00 00 00
+T 4B 04 00 4F
+R 00 00 00 00
+T 4C 04 00
+R 00 00 00 00
+T 4C 04 00 59 16 00 EB 29 EB 78 B7 28 31 21 00 00
+R 00 00 00 00 02 0E 02 00
+T 59 04 00 19 5E 23 56 21 00 00 06 00 09 46 3E
+R 00 00 00 00 02 08 04 00
+T 65 04 00 00 00 00 81 6F 3E 00 00 00 CE 00 67 7E
+R 00 00 00 00 0B 03 0C 00 8B 09 0C 00
+T 6E 04 00 DD 66 08 E5 33 DD 66 07 E5 33 F5 33 C5
+R 00 00 00 00
+T 7B 04 00 33 D5 CD 8E 00 21 06 00 39 F9 18 2F
+R 00 00 00 00 00 06 00 00
+T 87 04 00
+R 00 00 00 00
+T 87 04 00 21 00 00 19 5E 23 56 21 00 00 06 00 09
+R 00 00 00 00 02 04 03 00 02 0B 06 00
+T 94 04 00 46 3E 00 00 00 81 6F 3E 00 00 00 CE 00
+R 00 00 00 00 0B 05 0D 00 8B 0B 0D 00
+T 9D 04 00 67 7E DD 66 08 E5 33 DD 66 07 E5 33 F5
+R 00 00 00 00
+T AA 04 00 33 C5 33 D5 CD 8E 00 21 06 00 39 F9
+R 00 00 00 00 00 08 00 00
+T B6 04 00
+R 00 00 00 00
+T B6 04 00 DD E1 C9
+R 00 00 00 00
+T B9 04 00
+R 00 00 00 00
+T B9 04 00 0E 00
+R 00 00 00 00
+T BB 04 00
+R 00 00 00 00
+T BB 04 00 06 00
+R 00 00 00 00
+T BD 04 00
+R 00 00 00 00
+T BD 04 00 ED 5B 82 01 68 26 00 AF ED 52 30 0E C5
+R 00 00 00 00 00 05 01 00
+T CA 04 00 79 F5 33 C5 33 CD BD 05 F1 C1 04 18 E6
+R 00 00 00 00 00 09 00 00
+T D7 04 00
+R 00 00 00 00
+T D7 04 00 0C 79 D6 0C 38 DE C9
+R 00 00 00 00
+T DE 04 00
+R 00 00 00 00
+T DE 04 00 0E 0A
+R 00 00 00 00
+T E0 04 00
+R 00 00 00 00
+T E0 04 00 06 05
+R 00 00 00 00
+T E2 04 00
+R 00 00 00 00
+T E2 04 00 C5 79 F5 33 C5 33 CD BD 05 F1 C1 04 78
+R 00 00 00 00 00 0A 00 00
+T EF 04 00 D6 0C 38 EF 0C 79 D6 0C 38 E7 C9
+R 00 00 00 00
+T FA 04 00
+R 00 00 00 00
+T FA 04 00 21 02 00 39 4E 06 00
+R 00 00 00 00
+T 01 05 00
+R 00 00 00 00
+T 01 05 00 C5 C5 CD BD 05 F1 C1 04 78 D6 0C 38 F3
+R 00 00 00 00 00 06 00 00
+T 0E 05 00 C9
+R 00 00 00 00
+T 0F 05 00
+R 00 00 00 00
+T 0F 05 00 DD E5 DD 21 00 00 DD 39 F5 DD 4E 06 79
+R 00 00 00 00
+T 1C 05 00 87 DD 77 FE DD 36 FF 00
+R 00 00 00 00
+T 24 05 00
+R 00 00 00 00
+T 24 05 00 2A 82 01 DD 5E FF 16 00 C5 E5 D5 CD
+R 00 00 00 00 00 04 01 00
+T 30 05 00 00 00 F1 F1 C1 16 00 59 19 11 C0 00 19
+R 00 00 00 00 02 03 05 00 00 0D 01 00
+T 3D 05 00 7E 47 B7 28 17 DD 7E FF 87 DD 56 04 C5
+R 00 00 00 00
+T 4A 05 00 F5 33 DD 7E FE F5 33 4A C5 CD 00 00 F1
+R 00 00 00 00 02 0D 0F 00
+T 57 05 00 F1 C1
+R 00 00 00 00
+T 59 05 00
+R 00 00 00 00
+T 59 05 00 DD 34 FF DD 7E FF D6 0C 38 C1 DD F9 DD
+R 00 00 00 00
+T 66 05 00 E1 C9
+R 00 00 00 00
+T 68 05 00
+R 00 00 00 00
+T 68 05 00 FD 21 03 00 FD 39 FD 7E 00 87 47 FD 7E
+R 00 00 00 00
+T 75 05 00 FF 87 C5 33 F5 33 AF F5 33 CD 00 00 F1
+R 00 00 00 00 02 0D 0E 00
+T 82 05 00 33 C9
+R 00 00 00 00
+T 84 05 00
+R 00 00 00 00
+T 84 05 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46
+R 00 00 00 00
+T 91 05 00 05 DD 7E 07 D6 0C 38 04 AF 02 18 1D
+R 00 00 00 00
+T 9D 05 00
+R 00 00 00 00
+T 9D 05 00 2A 82 01 DD 5E 07 16 00 C5 E5 D5 CD
+R 00 00 00 00 00 04 01 00
+T A9 05 00 00 00 F1 F1 C1 DD 5E 06 16 00 19 11
+R 00 00 00 00 02 03 05 00
+T B5 05 00 00 00 19 7E 02
+R 00 00 00 00 00 03 01 00
+T BA 05 00
+R 00 00 00 00
+T BA 05 00 DD E1 C9
+R 00 00 00 00
+T BD 05 00
+R 00 00 00 00
+T BD 05 00 DD E5 DD 21 00 00 DD 39 2A 82 01 DD 4E
+R 00 00 00 00 00 0C 01 00
+T CA 05 00 05 06 00 E5 C5 CD 00 00 F1 F1 DD 4E 04
+R 00 00 00 00 02 09 05 00
+T D7 05 00 06 00 09 11 C0 00 19 4E DD 7E 05 87 47
+R 00 00 00 00 00 07 01 00
+T E4 05 00 DD 7E 04 87 C5 33 47 C5 CD 00 00 F1 33
+R 00 00 00 00 02 0C 0E 00
+T F1 05 00 DD E1 C9
+R 00 00 00 00
+T F4 05 00
+R 00 00 00 00
+T F4 05 00 FD 21 02 00 FD 39 FD 4E 00 06 00 ED 43
+R 00 00 00 00
+T 01 06 00 87 01 C9
+R 00 00 00 00 00 03 01 00
+T 04 06 00
+R 00 00 00 00
+T 04 06 00 DD E5 DD 21 00 00 DD 39 01 99 01 DD 5E
+R 00 00 00 00 00 0C 01 00
+T 11 06 00 05 6B 26 00 09 DD 7E 04 77 21 91 01 7B
+R 00 00 00 00 00 0D 01 00
+T 1E 06 00 87 4F 06 00 09 DD 7E 07 06 00 77 23 70
+R 00 00 00 00
+T 2B 06 00 21 89 01 06 00 09 DD 7E 08 0E 00 77 23
+R 00 00 00 00 00 04 01 00
+T 38 06 00 71 21 A5 01 16 00 19 36 00 DD 7E 06 D6
+R 00 00 00 00 00 05 01 00
+T 45 06 00 61 28 15 DD 7E 06 D6 62 28 0E DD 7E 06
+R 00 00 00 00
+T 52 06 00 D6 63 28 07 DD 7E 06 D6 64 20 02
+R 00 00 00 00
+T 5D 06 00
+R 00 00 00 00
+T 5D 06 00 36 01
+R 00 00 00 00
+T 5F 06 00
+R 00 00 00 00
+T 5F 06 00 DD E1 C9
+R 00 00 00 00

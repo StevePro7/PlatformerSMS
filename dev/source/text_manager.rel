@@ -1,0 +1,660 @@
+;!FILE text_manager.asm
+XL3
+H 9 areas 1C4 global symbols
+M text_manager
+O -mz80
+S _engine_font_manager_draw_text Ref000000
+S _tutorial_textBot Ref000000
+S .__.ABS. Def000000
+S _tutorial_textTop Ref000000
+A _CODE size 2D6 flags 0 addr 0
+S C$text_manager.c$13$3_0$8 Def000000
+S C$text_manager.c$17$2_0$7 Def000018
+S C$text_manager.c$15$3_0$8 Def000002
+S G$engine_text_manager_clear_three$0$0 Def00003A
+S Ftext_manager$__str_0$0_0$0 Def000019
+S Ftext_manager$__str_1$0_0$0 Def000056
+S Ftext_manager$__str_2$0_0$0 Def000085
+S _engine_text_manager_write_info Def0000B8
+S _engine_text_manager_write_gems Def0000A5
+S Ftext_manager$__str_3$0_0$0 Def00009E
+S Ftext_manager$__str_4$0_0$0 Def0000B3
+S XG$engine_text_manager_cheat_blank$0$0 Def000084
+S Ftext_manager$__str_5$0_0$0 Def0002BD
+S Ftext_manager$__str_6$0_0$0 Def0002C2
+S Ftext_manager$__str_7$0_0$0 Def0002CC
+S _engine_text_manager_clear_three Def00003A
+S XG$engine_text_manager_write_info$0$0 Def0002BC
+S XG$engine_text_manager_write_gems$0$0 Def0000B2
+S G$engine_text_manager_cheat_write$0$0 Def000090
+S A$text_manager$300 Def0000FA
+S A$text_manager$120 Def000043
+S A$text_manager$310 Def000106
+S A$text_manager$301 Def0000FD
+S A$text_manager$121 Def000044
+S C$text_manager.c$101$1_0$16 Def0002BC
+S XG$engine_text_manager_clear_three$0$0 Def000055
+S A$text_manager$500 Def0001FA
+S A$text_manager$410 Def000186
+S A$text_manager$320 Def000113
+S A$text_manager$302 Def0000FE
+S A$text_manager$221 Def0000A5
+S A$text_manager$131 Def00004F
+S A$text_manager$122 Def000045
+S A$text_manager$600 Def000273
+S A$text_manager$501 Def0001FB
+S A$text_manager$411 Def000189
+S A$text_manager$402 Def000179
+S A$text_manager$330 Def000121
+S A$text_manager$321 Def000114
+S A$text_manager$303 Def0000FF
+S A$text_manager$222 Def0000A8
+S A$text_manager$204 Def00009D
+S A$text_manager$132 Def000050
+S A$text_manager$123 Def000048
+S A$text_manager$114 Def00003C
+S A$text_manager$610 Def000282
+S A$text_manager$601 Def000275
+S A$text_manager$520 Def000212
+S A$text_manager$502 Def0001FC
+S A$text_manager$430 Def0001A0
+S A$text_manager$421 Def000193
+S A$text_manager$412 Def00018A
+S A$text_manager$403 Def00017C
+S A$text_manager$340 Def00012A
+S A$text_manager$331 Def000122
+S A$text_manager$322 Def000115
+S A$text_manager$250 Def0000BA
+S A$text_manager$223 Def0000A9
+S A$text_manager$160 Def00007A
+S A$text_manager$142 Def000055
+S A$text_manager$133 Def000051
+S A$text_manager$124 Def000049
+S A$text_manager$115 Def00003D
+S A$text_manager$611 Def000285
+S A$text_manager$602 Def000276
+S A$text_manager$530 Def000220
+S A$text_manager$521 Def000213
+S A$text_manager$440 Def0001AE
+S A$text_manager$431 Def0001A1
+S A$text_manager$422 Def000196
+S A$text_manager$413 Def00018B
+S A$text_manager$404 Def00017E
+S A$text_manager$350 Def000137
+S A$text_manager$341 Def00012D
+S A$text_manager$323 Def000116
+S A$text_manager$314 Def000108
+S A$text_manager$251 Def0000BE
+S A$text_manager$224 Def0000AC
+S A$text_manager$161 Def00007B
+S A$text_manager$134 Def000053
+S A$text_manager$125 Def00004C
+S A$text_manager$116 Def00003F
+S A$text_manager$630 Def00029A
+S A$text_manager$612 Def000286
+S A$text_manager$603 Def000279
+S A$text_manager$540 Def00022B
+S A$text_manager$522 Def000214
+S A$text_manager$513 Def000206
+S A$text_manager$450 Def0001B9
+S A$text_manager$441 Def0001AF
+S A$text_manager$432 Def0001A2
+S A$text_manager$423 Def000198
+S A$text_manager$414 Def00018E
+S A$text_manager$405 Def00017F
+S A$text_manager$360 Def000144
+S A$text_manager$351 Def000138
+S A$text_manager$342 Def00012E
+S A$text_manager$324 Def000117
+S A$text_manager$315 Def00010B
+S A$text_manager$270 Def0000D4
+S A$text_manager$261 Def0000C6
+S A$text_manager$225 Def0000AD
+S A$text_manager$162 Def00007E
+S A$text_manager$126 Def00004D
+S A$text_manager$117 Def000040
+S _engine_text_manager_cheat_write Def000090
+S A$text_manager$640 Def0002A8
+S A$text_manager$631 Def00029B
+S A$text_manager$604 Def00027A
+S A$text_manager$550 Def000234
+S A$text_manager$541 Def00022C
+S A$text_manager$523 Def000215
+S A$text_manager$514 Def000209
+S A$text_manager$451 Def0001BA
+S A$text_manager$442 Def0001B2
+S A$text_manager$433 Def0001A5
+S A$text_manager$415 Def00018F
+S A$text_manager$406 Def000182
+S A$text_manager$361 Def000145
+S A$text_manager$352 Def00013B
+S A$text_manager$343 Def00012F
+S A$text_manager$325 Def000118
+S A$text_manager$316 Def00010D
+S A$text_manager$271 Def0000D5
+S A$text_manager$262 Def0000C9
+S A$text_manager$235 Def0000B2
+S A$text_manager$226 Def0000B0
+S A$text_manager$190 Def000090
+S A$text_manager$163 Def00007F
+S A$text_manager$127 Def00004E
+S A$text_manager$118 Def000041
+S A$text_manager$109 Def00003A
+S A$text_manager$650 Def0002B3
+S A$text_manager$632 Def00029C
+S A$text_manager$623 Def00028E
+S A$text_manager$605 Def00027B
+S A$text_manager$560 Def000242
+S A$text_manager$551 Def000237
+S A$text_manager$542 Def00022D
+S A$text_manager$524 Def000216
+S A$text_manager$515 Def00020B
+S A$text_manager$470 Def0001D0
+S A$text_manager$452 Def0001BB
+S A$text_manager$443 Def0001B3
+S A$text_manager$434 Def0001A6
+S A$text_manager$416 Def000190
+S A$text_manager$407 Def000183
+S A$text_manager$380 Def00015E
+S A$text_manager$371 Def000151
+S A$text_manager$362 Def000148
+S A$text_manager$353 Def00013C
+S A$text_manager$344 Def000132
+S A$text_manager$335 Def000123
+S A$text_manager$326 Def00011B
+S A$text_manager$317 Def00010E
+S A$text_manager$308 Def000102
+S A$text_manager$290 Def0000ED
+S A$text_manager$272 Def0000D6
+S A$text_manager$263 Def0000CC
+S A$text_manager$227 Def0000B1
+S A$text_manager$191 Def000093
+S A$text_manager$173 Def000084
+S A$text_manager$164 Def000082
+S A$text_manager$119 Def000042
+S A$text_manager$651 Def0002B4
+S A$text_manager$633 Def00029D
+S A$text_manager$624 Def000291
+S A$text_manager$606 Def00027C
+S A$text_manager$570 Def000250
+S A$text_manager$561 Def000243
+S A$text_manager$552 Def000239
+S A$text_manager$543 Def000230
+S A$text_manager$534 Def000221
+S A$text_manager$525 Def000219
+S A$text_manager$516 Def00020C
+S A$text_manager$507 Def0001FF
+S A$text_manager$480 Def0001DF
+S A$text_manager$471 Def0001D3
+S A$text_manager$453 Def0001BC
+S A$text_manager$444 Def0001B4
+S A$text_manager$435 Def0001A7
+S A$text_manager$408 Def000184
+S A$text_manager$390 Def00016E
+S A$text_manager$381 Def000161
+S A$text_manager$372 Def000154
+S A$text_manager$363 Def000149
+S A$text_manager$354 Def00013F
+S A$text_manager$345 Def000133
+S A$text_manager$336 Def000126
+S A$text_manager$327 Def00011C
+S A$text_manager$318 Def00010F
+S A$text_manager$309 Def000105
+S A$text_manager$291 Def0000F0
+S A$text_manager$282 Def0000E1
+S A$text_manager$273 Def0000D9
+S A$text_manager$264 Def0000CE
+S A$text_manager$255 Def0000C0
+S A$text_manager$192 Def000094
+S A$text_manager$165 Def000083
+S A$text_manager$652 Def0002B5
+S A$text_manager$634 Def00029E
+S A$text_manager$625 Def000294
+S A$text_manager$607 Def00027D
+S A$text_manager$580 Def00025B
+S A$text_manager$571 Def000253
+S A$text_manager$562 Def000246
+S A$text_manager$544 Def000231
+S A$text_manager$535 Def000224
+S A$text_manager$526 Def00021A
+S A$text_manager$517 Def00020D
+S A$text_manager$508 Def000202
+S A$text_manager$481 Def0001E0
+S A$text_manager$472 Def0001D5
+S A$text_manager$454 Def0001BF
+S A$text_manager$436 Def0001A8
+S A$text_manager$427 Def00019A
+S A$text_manager$409 Def000185
+S A$text_manager$391 Def00016F
+S A$text_manager$382 Def000162
+S A$text_manager$373 Def000156
+S A$text_manager$364 Def00014C
+S A$text_manager$355 Def000140
+S A$text_manager$337 Def000127
+S A$text_manager$328 Def00011D
+S A$text_manager$319 Def000110
+S A$text_manager$292 Def0000F1
+S A$text_manager$283 Def0000E4
+S A$text_manager$274 Def0000DA
+S A$text_manager$265 Def0000CF
+S A$text_manager$256 Def0000C3
+S A$text_manager$193 Def000097
+S G$engine_text_manager_clear_all$0$0 Def000000
+S A$text_manager$653 Def0002B8
+S A$text_manager$644 Def0002A9
+S A$text_manager$635 Def0002A1
+S A$text_manager$626 Def000296
+S A$text_manager$617 Def000287
+S A$text_manager$608 Def000280
+S A$text_manager$581 Def00025C
+S A$text_manager$572 Def000254
+S A$text_manager$563 Def000247
+S A$text_manager$545 Def000232
+S A$text_manager$536 Def000225
+S A$text_manager$527 Def00021B
+S A$text_manager$518 Def00020E
+S A$text_manager$509 Def000204
+S A$text_manager$491 Def0001EB
+S A$text_manager$482 Def0001E3
+S A$text_manager$473 Def0001D6
+S A$text_manager$464 Def0001C9
+S A$text_manager$455 Def0001C0
+S A$text_manager$437 Def0001A9
+S A$text_manager$428 Def00019D
+S A$text_manager$383 Def000163
+S A$text_manager$365 Def00014D
+S A$text_manager$338 Def000128
+S A$text_manager$329 Def000120
+S A$text_manager$284 Def0000E5
+S A$text_manager$275 Def0000DB
+S A$text_manager$266 Def0000D0
+S A$text_manager$257 Def0000C4
+S A$text_manager$194 Def000098
+S A$text_manager$654 Def0002B9
+S A$text_manager$645 Def0002AC
+S A$text_manager$636 Def0002A2
+S A$text_manager$627 Def000297
+S A$text_manager$618 Def00028A
+S A$text_manager$609 Def000281
+S A$text_manager$582 Def00025D
+S A$text_manager$573 Def000255
+S A$text_manager$564 Def000248
+S A$text_manager$537 Def000226
+S A$text_manager$528 Def00021E
+S A$text_manager$519 Def000211
+S A$text_manager$492 Def0001EE
+S A$text_manager$483 Def0001E4
+S A$text_manager$474 Def0001D7
+S A$text_manager$465 Def0001CC
+S A$text_manager$456 Def0001C1
+S A$text_manager$438 Def0001AA
+S A$text_manager$429 Def00019F
+S A$text_manager$384 Def000164
+S A$text_manager$366 Def00014E
+S A$text_manager$339 Def000129
+S A$text_manager$285 Def0000E6
+S A$text_manager$276 Def0000DE
+S A$text_manager$267 Def0000D1
+S A$text_manager$249 Def0000B8
+S A$text_manager$195 Def00009B
+S A$text_manager$159 Def000077
+S A$text_manager$664 Def0002BC
+S A$text_manager$646 Def0002AD
+S A$text_manager$637 Def0002A3
+S A$text_manager$628 Def000298
+S A$text_manager$619 Def00028C
+S A$text_manager$583 Def000260
+S A$text_manager$565 Def000249
+S A$text_manager$556 Def00023B
+S A$text_manager$538 Def000227
+S A$text_manager$529 Def00021F
+S A$text_manager$493 Def0001EF
+S A$text_manager$484 Def0001E5
+S A$text_manager$475 Def0001D8
+S A$text_manager$466 Def0001CE
+S A$text_manager$457 Def0001C4
+S A$text_manager$448 Def0001B5
+S A$text_manager$439 Def0001AD
+S A$text_manager$385 Def000165
+S A$text_manager$349 Def000134
+S A$text_manager$286 Def0000E7
+S A$text_manager$277 Def0000DF
+S A$text_manager$268 Def0000D2
+S A$text_manager$196 Def00009C
+S A$text_manager$647 Def0002AE
+S A$text_manager$638 Def0002A6
+S A$text_manager$629 Def000299
+S A$text_manager$593 Def000269
+S A$text_manager$584 Def000261
+S A$text_manager$566 Def00024A
+S A$text_manager$557 Def00023E
+S A$text_manager$539 Def000228
+S A$text_manager$494 Def0001F0
+S A$text_manager$485 Def0001E8
+S A$text_manager$476 Def0001DB
+S A$text_manager$458 Def0001C5
+S A$text_manager$449 Def0001B8
+S A$text_manager$386 Def000168
+S A$text_manager$377 Def000158
+S A$text_manager$359 Def000141
+S A$text_manager$296 Def0000F2
+S A$text_manager$287 Def0000E8
+S A$text_manager$278 Def0000E0
+S A$text_manager$269 Def0000D3
+S A$text_manager$648 Def0002AF
+S A$text_manager$639 Def0002A7
+S A$text_manager$594 Def00026C
+S A$text_manager$585 Def000262
+S A$text_manager$567 Def00024B
+S A$text_manager$558 Def000240
+S A$text_manager$495 Def0001F1
+S A$text_manager$486 Def0001E9
+S A$text_manager$477 Def0001DC
+S A$text_manager$459 Def0001C6
+S A$text_manager$396 Def000172
+S A$text_manager$387 Def000169
+S A$text_manager$378 Def00015B
+S A$text_manager$297 Def0000F5
+S A$text_manager$288 Def0000EB
+S C$text_manager.c$31$1_0$12 Def000077
+S C$text_manager.c$23$2_0$10 Def00004F
+S A$text_manager$649 Def0002B0
+S A$text_manager$595 Def00026E
+S A$text_manager$586 Def000265
+S A$text_manager$577 Def000256
+S A$text_manager$568 Def00024E
+S A$text_manager$559 Def000241
+S A$text_manager$496 Def0001F2
+S A$text_manager$487 Def0001EA
+S A$text_manager$478 Def0001DD
+S A$text_manager$397 Def000175
+S A$text_manager$388 Def00016A
+S A$text_manager$379 Def00015D
+S A$text_manager$298 Def0000F6
+S A$text_manager$289 Def0000EC
+S C$text_manager.c$32$1_0$12 Def000084
+S A$text_manager$659 Def0002BA
+S A$text_manager$587 Def000266
+S A$text_manager$578 Def000259
+S A$text_manager$569 Def00024F
+S A$text_manager$497 Def0001F5
+S A$text_manager$479 Def0001DE
+S A$text_manager$398 Def000177
+S A$text_manager$389 Def00016D
+S A$text_manager$299 Def0000F9
+S C$text_manager.c$40$1_0$14 Def0000A5
+S C$text_manager.c$23$3_0$11 Def00003A
+S A$text_manager$588 Def000267
+S A$text_manager$579 Def00025A
+S A$text_manager$498 Def0001F6
+S C$text_manager.c$41$1_0$14 Def0000B2
+S XG$engine_text_manager_cheat_write$0$0 Def00009D
+S C$text_manager.c$33$1_0$13 Def000090
+S A$text_manager$499 Def0001F7
+S C$text_manager.c$27$2_0$10 Def000055
+S C$text_manager.c$25$3_0$11 Def00003C
+S C$text_manager.c$18$2_0$10 Def00003A
+S A$text_manager$599 Def000270
+S A$text_manager$70 Def000006
+S A$text_manager$61 Def000000
+S C$text_manager.c$35$1_0$13 Def000090
+S A$text_manager$71 Def000007
+S C$text_manager.c$36$1_0$13 Def00009D
+S A$text_manager$81 Def000012
+S A$text_manager$72 Def000008
+S C$text_manager.c$73$2_0$21 Def00019A
+S C$text_manager.c$43$1_0$16 Def0000B8
+S _engine_text_manager_clear_all Def000000
+S A$text_manager$82 Def000013
+S A$text_manager$73 Def00000B
+S C$text_manager.c$74$2_0$21 Def0001B5
+S C$text_manager.c$71$1_0$16 Def000193
+S C$text_manager.c$51$2_0$17 Def0000C6
+S C$text_manager.c$29$2_0$12 Def000077
+S G$engine_text_manager_cheat_blank$0$0 Def000077
+S A$text_manager$92 Def000018
+S A$text_manager$83 Def000014
+S A$text_manager$74 Def00000C
+S C$text_manager.c$81$1_0$16 Def0001FF
+S C$text_manager.c$63$1_0$16 Def000151
+S C$text_manager.c$60$2_0$18 Def000134
+S C$text_manager.c$52$2_0$17 Def0000E1
+S C$text_manager.c$38$1_0$14 Def0000A5
+S A$text_manager$84 Def000016
+S A$text_manager$75 Def00000F
+S A$text_manager$66 Def000002
+S C$text_manager.c$91$1_0$16 Def000269
+S C$text_manager.c$83$2_0$23 Def000206
+S C$text_manager.c$61$2_0$18 Def000141
+S C$text_manager.c$55$1_0$16 Def000102
+S C$text_manager.c$53$2_0$17 Def0000F2
+S A$text_manager$76 Def000010
+S A$text_manager$67 Def000003
+S C$text_manager.c$84$2_0$23 Def000221
+S C$text_manager.c$69$2_0$20 Def000179
+S A$text_manager$77 Def000011
+S A$text_manager$68 Def000004
+S A$text_manager$69 Def000005
+S C$text_manager.c$93$2_0$25 Def000270
+S C$text_manager.c$78$2_0$22 Def0001D0
+S C$text_manager.c$76$1_0$16 Def0001C9
+S C$text_manager.c$67$1_0$16 Def000172
+S C$text_manager.c$49$1_0$16 Def0000C0
+S C$text_manager.c$95$1_0$16 Def000287
+S C$text_manager.c$86$1_0$16 Def000234
+S C$text_manager.c$79$2_0$22 Def0001EB
+S C$text_manager.c$65$2_0$19 Def000158
+S C$text_manager.c$57$2_0$18 Def000108
+S C$text_manager.c$88$2_0$24 Def00023B
+S C$text_manager.c$58$2_0$18 Def000123
+S C$text_manager.c$10$0_0$7 Def000000
+S C$text_manager.c$89$2_0$24 Def000256
+S C$text_manager.c$97$2_0$26 Def00028E
+S G$engine_text_manager_write_info$0$0 Def0000B8
+S G$engine_text_manager_write_gems$0$0 Def0000A5
+S C$text_manager.c$98$2_0$26 Def0002A9
+S XG$engine_text_manager_clear_all$0$0 Def000018
+S _engine_text_manager_cheat_blank Def000077
+S C$text_manager.c$13$2_0$7 Def000012
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 06 00
+R 00 00 00 00
+T 02 00 00
+R 00 00 00 00
+T 02 00 00 C5 C5 33 AF F5 33 21 19 00 E5 CD 00 00
+R 00 00 00 00 00 0A 00 00 02 0E 00 00
+T 0F 00 00 F1 F1 C1 04 78 D6 18 38 EA C9
+R 00 00 00 00
+T 19 00 00
+R 00 00 00 00
+T 19 00 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 00 00
+T 26 00 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 00 00
+T 33 00 00 20 20 20 20 20 20 00
+R 00 00 00 00
+T 3A 00 00
+R 00 00 00 00
+T 3A 00 00 0E 00
+R 00 00 00 00
+T 3C 00 00
+R 00 00 00 00
+T 3C 00 00 79 C6 12 C5 F5 33 AF F5 33 21 56 00 E5
+R 00 00 00 00 00 0D 00 00
+T 49 00 00 CD 00 00 F1 F1 C1 0C 79 D6 03 38 E7 C9
+R 00 00 00 00 02 04 00 00
+T 56 00 00
+R 00 00 00 00
+T 56 00 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 00 00
+T 63 00 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 00 00
+T 70 00 00 20 20 20 20 20 20 00
+R 00 00 00 00
+T 77 00 00
+R 00 00 00 00
+T 77 00 00 11 02 15 D5 21 85 00 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 08 00 00 02 0C 00 00
+T 84 00 00 C9
+R 00 00 00 00
+T 85 00 00
+R 00 00 00 00
+T 85 00 00 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 00 00
+T 90 00 00
+R 00 00 00 00
+T 90 00 00 11 02 15 D5 21 9E 00 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 08 00 00 02 0C 00 00
+T 9D 00 00 C9
+R 00 00 00 00
+T 9E 00 00
+R 00 00 00 00
+T 9E 00 00 43 48 45 41 54 21 00
+R 00 00 00 00
+T A5 00 00
+R 00 00 00 00
+T A5 00 00 11 1C 01 D5 21 B3 00 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 08 00 00 02 0C 00 00
+T B2 00 00 C9
+R 00 00 00 00
+T B3 00 00
+R 00 00 00 00
+T B3 00 00 47 45 4D 53 00
+R 00 00 00 00
+T B8 00 00
+R 00 00 00 00
+T B8 00 00 DD E5 DD 21 00 00 DD 39 DD 7E 04 B7 20
+R 00 00 00 00
+T C5 00 00 3C 21 00 00 DD 5E 04 16 00 EB 29 EB 19
+R 00 00 00 00 02 05 03 00
+T D2 00 00 4E 23 46 D5 11 06 07 D5 C5 CD 00 00 F1
+R 00 00 00 00 02 0D 00 00
+T DF 00 00 F1 D1 21 00 00 19 4E 23 46 11 06 08 D5
+R 00 00 00 00 02 06 01 00
+T EC 00 00 C5 CD 00 00 F1 F1 11 17 0F D5 21 BD 02
+R 00 00 00 00 02 05 00 00 00 0E 00 00
+T F9 00 00 E5 CD 00 00 F1 F1 C3 87 02
+R 00 00 00 00 02 05 00 00 00 0A 00 00
+T 02 01 00
+R 00 00 00 00
+T 02 01 00 DD 7E 04 3D 20 49 DD 6E 04 26 00 29 4D
+R 00 00 00 00
+T 0F 01 00 44 21 00 00 09 5E 23 56 C5 21 03 09 E5
+R 00 00 00 00 02 05 03 00
+T 1C 01 00 D5 CD 00 00 F1 F1 C1 21 00 00 09 4E 23
+R 00 00 00 00 02 05 00 00 02 0B 01 00
+T 29 01 00 46 11 03 0A D5 C5 CD 00 00 F1 F1 11
+R 00 00 00 00 02 0A 00 00
+T 35 01 00 14 0D D5 21 C2 02 E5 CD 00 00 F1 F1 11
+R 00 00 00 00 00 07 00 00 02 0B 00 00
+T 42 01 00 14 0E D5 21 CC 02 E5 CD 00 00 F1 F1 C3
+R 00 00 00 00 00 07 00 00 02 0B 00 00
+T 4F 01 00 87 02
+R 00 00 00 00 00 03 00 00
+T 51 01 00
+R 00 00 00 00
+T 51 01 00 DD 7E 04 D6 02 20 1A DD 6E 04 26 00 29
+R 00 00 00 00
+T 5E 01 00 11 00 00 19 4E 23 46 11 09 06 D5 C5 CD
+R 00 00 00 00 02 04 03 00
+T 6B 01 00 00 00 F1 F1 C3 87 02
+R 00 00 00 00 02 03 00 00 00 08 00 00
+T 72 01 00
+R 00 00 00 00
+T 72 01 00 DD 7E 04 D6 03 20 1A DD 6E 04 26 00 29
+R 00 00 00 00
+T 7F 01 00 11 00 00 19 4E 23 46 11 0A 08 D5 C5 CD
+R 00 00 00 00 02 04 03 00
+T 8C 01 00 00 00 F1 F1 C3 87 02
+R 00 00 00 00 02 03 00 00 00 08 00 00
+T 93 01 00
+R 00 00 00 00
+T 93 01 00 DD 7E 04 D6 04 20 2F DD 5E 04 16 00 EB
+R 00 00 00 00
+T A0 01 00 29 EB 21 00 00 19 4E 23 46 D5 11 02 05
+R 00 00 00 00 02 06 03 00
+T AD 01 00 D5 C5 CD 00 00 F1 F1 D1 21 00 00 19 4E
+R 00 00 00 00 02 06 00 00 02 0C 01 00
+T BA 01 00 23 46 11 02 06 D5 C5 CD 00 00 F1 F1 C3
+R 00 00 00 00 02 0B 00 00
+T C7 01 00 87 02
+R 00 00 00 00 00 03 00 00
+T C9 01 00
+R 00 00 00 00
+T C9 01 00 DD 7E 04 D6 05 20 2F DD 5E 04 16 00 EB
+R 00 00 00 00
+T D6 01 00 29 EB 21 00 00 19 4E 23 46 D5 11 02 04
+R 00 00 00 00 02 06 03 00
+T E3 01 00 D5 C5 CD 00 00 F1 F1 D1 21 00 00 19 4E
+R 00 00 00 00 02 06 00 00 02 0C 01 00
+T F0 01 00 23 46 11 02 05 D5 C5 CD 00 00 F1 F1 C3
+R 00 00 00 00 02 0B 00 00
+T FD 01 00 87 02
+R 00 00 00 00 00 03 00 00
+T FF 01 00
+R 00 00 00 00
+T FF 01 00 DD 7E 04 D6 06 20 2E DD 5E 04 16 00 EB
+R 00 00 00 00
+T 0C 02 00 29 EB 21 00 00 19 4E 23 46 D5 11 02 04
+R 00 00 00 00 02 06 03 00
+T 19 02 00 D5 C5 CD 00 00 F1 F1 D1 21 00 00 19 4E
+R 00 00 00 00 02 06 00 00 02 0C 01 00
+T 26 02 00 23 46 11 02 05 D5 C5 CD 00 00 F1 F1 18
+R 00 00 00 00 02 0B 00 00
+T 33 02 00 53
+R 00 00 00 00
+T 34 02 00
+R 00 00 00 00
+T 34 02 00 DD 7E 04 D6 07 20 2E DD 5E 04 16 00 EB
+R 00 00 00 00
+T 41 02 00 29 EB 21 00 00 19 4E 23 46 D5 11 02 04
+R 00 00 00 00 02 06 03 00
+T 4E 02 00 D5 C5 CD 00 00 F1 F1 D1 21 00 00 19 4E
+R 00 00 00 00 02 06 00 00 02 0C 01 00
+T 5B 02 00 23 46 11 02 05 D5 C5 CD 00 00 F1 F1 18
+R 00 00 00 00 02 0B 00 00
+T 68 02 00 1E
+R 00 00 00 00
+T 69 02 00
+R 00 00 00 00
+T 69 02 00 DD 7E 04 D6 08 20 17 DD 6E 04 26 00 29
+R 00 00 00 00
+T 76 02 00 11 00 00 19 4E 23 46 11 02 05 D5 C5 CD
+R 00 00 00 00 02 04 03 00
+T 83 02 00 00 00 F1 F1
+R 00 00 00 00 02 03 00 00
+T 87 02 00
+R 00 00 00 00
+T 87 02 00 DD 7E 04 D6 09 20 2C 21 00 00 DD 5E 04
+R 00 00 00 00 02 0B 03 00
+T 94 02 00 16 00 EB 29 EB 19 4E 23 46 D5 11 02 04
+R 00 00 00 00
+T A1 02 00 D5 C5 CD 00 00 F1 F1 D1 21 00 00 19 4E
+R 00 00 00 00 02 06 00 00 02 0C 01 00
+T AE 02 00 23 46 11 16 05 D5 C5 CD 00 00 F1 F1
+R 00 00 00 00 02 0B 00 00
+T BA 02 00
+R 00 00 00 00
+T BA 02 00 DD E1 C9
+R 00 00 00 00
+T BD 02 00
+R 00 00 00 00
+T BD 02 00 45 58 49 54 00
+R 00 00 00 00
+T C2 02 00
+R 00 00 00 00
+T C2 02 00 57 41 4C 4B 20 54 48 52 55 00
+R 00 00 00 00
+T CC 02 00
+R 00 00 00 00
+T CC 02 00 50 4C 41 54 46 4F 52 4D 53 00
+R 00 00 00 00

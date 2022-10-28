@@ -1,0 +1,89 @@
+;!FILE over_screen.asm
+XL3
+H 9 areas 3B global symbols
+M over_screen
+O -mz80
+S _engine_memo_manager_draw_over Ref000000
+S _engine_player_manager_draw Ref000000
+S _engine_audio_manager_music_over Ref000000
+S .__.ABS. Def000000
+S _global_game_object Ref000000
+S _engine_delay_manager_update Ref000000
+S _engine_enemyX_manager_draw_enemys Ref000000
+S _engine_audio_manager_music_stop Ref000000
+S _engine_delay_manager_load Ref000000
+A _CODE size 30 flags 0 addr 0
+S A$over_screen$138 Def00002C
+S A$over_screen$129 Def000026
+S XG$screen_over_screen_update$0$0 Def00002F
+S C$over_screen.c$21$1_0$24 Def000000
+S C$over_screen.c$40$1_0$26 Def000021
+S C$over_screen.c$31$1_0$26 Def000013
+S C$over_screen.c$24$1_0$24 Def000000
+S A$over_screen$71 Def000005
+S G$screen_over_screen_load$0$0 Def000000
+S C$over_screen.c$26$1_0$24 Def000005
+S C$over_screen.c$43$1_0$26 Def00001D
+S C$over_screen.c$27$1_0$24 Def000008
+S C$over_screen.c$19$0_0$24 Def000000
+S C$over_screen.c$42$2_0$27 Def000025
+S C$over_screen.c$28$1_0$24 Def000010
+S A$over_screen$75 Def000008
+S A$over_screen$66 Def000000
+S C$over_screen.c$43$2_0$27 Def00002A
+S C$over_screen.c$36$1_0$26 Def000013
+S C$over_screen.c$29$1_0$24 Def000010
+S A$over_screen$76 Def00000B
+S A$over_screen$67 Def000003
+S C$over_screen.c$44$2_0$27 Def00002C
+S C$over_screen.c$37$1_0$26 Def000016
+S A$over_screen$77 Def00000C
+S C$over_screen.c$47$1_0$26 Def00002D
+S A$over_screen$78 Def00000F
+S C$over_screen.c$48$1_0$26 Def00002F
+S C$over_screen.c$39$1_0$26 Def000019
+S A$over_screen$89 Def000010
+S _screen_over_screen_load Def000000
+S XG$screen_over_screen_load$0$0 Def000010
+S G$screen_over_screen_update$0$0 Def000013
+S A$over_screen$110 Def000019
+S A$over_screen$111 Def00001C
+S A$over_screen$102 Def000013
+S A$over_screen$130 Def000029
+S A$over_screen$122 Def000021
+S A$over_screen$123 Def000022
+S A$over_screen$151 Def00002F
+S A$over_screen$124 Def000023
+S A$over_screen$115 Def00001D
+S A$over_screen$106 Def000016
+S _screen_over_screen_update Def000013
+S A$over_screen$143 Def00002D
+S A$over_screen$134 Def00002A
+S A$over_screen$116 Def00001E
+S A$over_screen$117 Def00001F
+S A$over_screen$118 Def000020
+S A$over_screen$128 Def000025
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 04 00 36 00 CD 00 00 21 FA 00 E5 CD
+R 00 00 00 00 02 04 04 00 02 09 02 00
+T 0D 00 00 00 00 F1 C3 00 00
+R 00 00 00 00 02 03 08 00 02 07 00 00
+T 13 00 00
+R 00 00 00 00
+T 13 00 00 CD 00 00 CD 00 00 CD 00 00 4D D1 E1 E5
+R 00 00 00 00 02 04 06 00 02 07 01 00 02 0A 05 00
+T 20 00 00 D5 79 B7 28 08 E5 CD 00 00 E1 36 03 C9
+R 00 00 00 00 02 0A 07 00
+T 2D 00 00
+R 00 00 00 00
+T 2D 00 00 36 13 C9
+R 00 00 00 00

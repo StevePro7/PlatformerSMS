@@ -1,0 +1,153 @@
+;!FILE dead_screen.asm
+XL3
+H 9 areas 63 global symbols
+M dead_screen
+O -mz80
+S _engine_player_manager_draw Ref000000
+S _global_player_object Ref000000
+S _engine_memo_manager_draw_dead Ref000000
+S _global_hack_object Ref000000
+S .__.ABS. Def000000
+S _engine_delay_manager_update Ref000000
+S _global_score_object Ref000000
+S _engine_enemyX_manager_draw_enemys Ref000000
+S _engine_audio_manager_music_stop Ref000000
+S _engine_audio_manager_sound_death Ref000000
+S _engine_score_manager_update_lives Ref000000
+S _engine_delay_manager_load Ref000000
+A _CODE size 6E flags 0 addr 0
+S G$screen_dead_screen_update$0$0 Def000036
+S A$dead_screen$103 Def000024
+S A$dead_screen$203 Def000068
+S A$dead_screen$113 Def00002D
+S A$dead_screen$104 Def000027
+S A$dead_screen$204 Def00006A
+S A$dead_screen$114 Def00002F
+S A$dead_screen$214 Def00006D
+S A$dead_screen$151 Def000041
+S A$dead_screen$115 Def000030
+S _screen_dead_screen_update Def000036
+S A$dead_screen$152 Def000044
+S A$dead_screen$125 Def000035
+S A$dead_screen$116 Def000031
+S A$dead_screen$171 Def000054
+S A$dead_screen$162 Def00004B
+S A$dead_screen$153 Def000046
+S A$dead_screen$135 Def000036
+S A$dead_screen$117 Def000034
+S A$dead_screen$172 Def000055
+S A$dead_screen$136 Def000038
+S A$dead_screen$109 Def00002A
+S A$dead_screen$209 Def00006B
+S A$dead_screen$173 Def000056
+S A$dead_screen$137 Def00003C
+S A$dead_screen$183 Def00005E
+S A$dead_screen$147 Def00003E
+S A$dead_screen$193 Def000063
+S A$dead_screen$184 Def000060
+S A$dead_screen$166 Def00004E
+S A$dead_screen$157 Def000048
+S A$dead_screen$194 Def000065
+S A$dead_screen$167 Def000051
+S A$dead_screen$177 Def000058
+S A$dead_screen$178 Def00005B
+S A$dead_screen$188 Def000061
+S A$dead_screen$179 Def00005C
+S A$dead_screen$198 Def000066
+S C$dead_screen.c$31$2_0$11 Def000024
+S C$dead_screen.c$23$2_0$10 Def000009
+S XG$screen_dead_screen_update$0$0 Def00006D
+S C$dead_screen.c$40$1_0$13 Def00003E
+S C$dead_screen.c$41$1_0$13 Def00003E
+S C$dead_screen.c$50$2_0$14 Def000048
+S A$dead_screen$70 Def000000
+S C$dead_screen.c$53$1_0$13 Def00004B
+S A$dead_screen$80 Def000009
+S C$dead_screen.c$54$1_0$13 Def000054
+S C$dead_screen.c$45$1_0$13 Def00003E
+S G$screen_dead_screen_load$0$0 Def000000
+S C$dead_screen.c$62$2_0$15 Def000063
+S C$dead_screen.c$38$1_0$13 Def000036
+S A$dead_screen$92 Def000014
+S A$dead_screen$74 Def000003
+S C$dead_screen.c$66$1_0$13 Def000068
+S C$dead_screen.c$63$2_0$15 Def000066
+S C$dead_screen.c$48$1_0$13 Def000041
+S A$dead_screen$93 Def000017
+S A$dead_screen$75 Def000006
+S C$dead_screen.c$67$1_0$13 Def00006D
+S C$dead_screen.c$58$1_0$13 Def00004E
+S A$dead_screen$94 Def00001A
+S A$dead_screen$85 Def00000C
+S A$dead_screen$76 Def000007
+S C$dead_screen.c$56$2_0$15 Def000058
+S A$dead_screen$95 Def00001B
+S A$dead_screen$86 Def00000F
+S A$dead_screen$96 Def00001C
+S A$dead_screen$87 Def000010
+S A$dead_screen$97 Def00001E
+S A$dead_screen$88 Def000013
+S A$dead_screen$98 Def000020
+S C$dead_screen.c$58$3_0$16 Def00005E
+S A$dead_screen$99 Def000022
+S C$dead_screen.c$59$3_0$16 Def000061
+S _screen_dead_screen_load Def000000
+S C$dead_screen.c$20$1_0$9 Def000000
+S C$dead_screen.c$21$1_0$9 Def000003
+S C$dead_screen.c$15$0_0$9 Def000000
+S C$dead_screen.c$34$1_0$9 Def00002A
+S C$dead_screen.c$35$1_0$9 Def00002D
+S C$dead_screen.c$26$1_0$9 Def00000C
+S C$dead_screen.c$17$1_0$9 Def000000
+S C$dead_screen.c$36$1_0$9 Def000035
+S C$dead_screen.c$18$1_0$9 Def000000
+S C$dead_screen.c$29$1_0$9 Def000014
+S XG$screen_dead_screen_load$0$0 Def000035
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 3A 00 00 B7 28 03 CD 00 00
+R 00 00 00 00 02 04 08 00 02 07 03 00 02 0D 09 00
+T 0C 00 00
+R 00 00 00 00
+T 0C 00 00 21 96 00 E5 CD 00 00 F1 2A 07 00 11
+R 00 00 00 00 02 08 0B 00 02 0C 01 00
+T 18 00 00 20 80 29 3F CB 1C CB 1D ED 52 30 06 21
+R 00 00 00 00
+T 25 00 00 14 00 22 07 00
+R 00 00 00 00 02 06 01 00
+T 2A 00 00
+R 00 00 00 00
+T 2A 00 00 CD 00 00 3E FF F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 04 02 00 02 0B 0A 00
+T 36 00 00
+R 00 00 00 00
+T 36 00 00 DD E5 DD 21 00 00 DD 39 CD 00 00 2A
+R 00 00 00 00 02 0C 07 00
+T 42 00 00 07 00 CB 7C 20 03 CD 00 00
+R 00 00 00 00 02 03 01 00 02 0A 00 00
+T 4B 00 00
+R 00 00 00 00
+T 4B 00 00 CD 00 00 DD 5E 04 DD 56 05 7D B7 28 10
+R 00 00 00 00 02 04 05 00
+T 58 00 00 3A 01 00 B7 20 05 3E 12 12 18 08
+R 00 00 00 00 02 04 06 00
+T 63 00 00
+R 00 00 00 00
+T 63 00 00 3E 0B 12 18 03
+R 00 00 00 00
+T 68 00 00
+R 00 00 00 00
+T 68 00 00 3E 11 12
+R 00 00 00 00
+T 6B 00 00
+R 00 00 00 00
+T 6B 00 00 DD E1 C9
+R 00 00 00 00
