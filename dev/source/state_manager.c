@@ -55,7 +55,7 @@ void engine_state_manager_load()
 	// Player setup.
 	po->spotY = lo->player_spot / lo->draw_cols;
 	po->spotX = lo->player_spot % lo->draw_cols;
-	po->anim_count = PLAYER_ANIMS_COUNT;
+	//po->anim_count = PLAYER_ANIMS_COUNT;
 
 	// EnemyX setup.
 	em->max_enemies = lo->enemyCount;

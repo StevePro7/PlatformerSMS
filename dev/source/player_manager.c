@@ -103,9 +103,9 @@ void engine_player_manager_load()
 	po->coll_horz = 0;	po->coll_vert = 0;
 	po->coll_left = 0;	po->coll_rght = 0;	po->coll_topX = 0;	po->coll_botX = 0;
 	po->previousBottom = 0;
-	po->anim_index = 0;
-	po->anim_start = 0; po->anim_maxim = 0;
-	po->anim_frame = 0;
+	//po->anim_index = 0;
+	//po->anim_start = 0; po->anim_maxim = 0;
+	//po->anim_frame = 0;
 	po->kill_idx = INVALID_INDEX;
 }
 
@@ -120,18 +120,19 @@ void engine_player_manager_get_input()
 		if( move_type_left != po->player_move_type )
 		{
 			po->player_move_type = move_type_left;
-			po->anim_index = ANIMATE_IDX_LEFT;
+			//po->anim_index = ANIMATE_IDX_LEFT;
 			setup_animation();
 		}
 	}
 
 	test2 = engine_input_manager_move_right();
+	//test2 = 1;		// suzanne
 	if( test2 )
 	{
 		if( move_type_rght != po->player_move_type )
 		{
 			po->player_move_type = move_type_rght;
-			po->anim_index = ANIMATE_IDX_RGHT;
+			//po->anim_index = ANIMATE_IDX_RGHT;
 			setup_animation();
 		}
 	}
@@ -141,18 +142,18 @@ void engine_player_manager_get_input()
 	if( test1 || test2 )
 	{
 		po->player_idxX++;
-		po->anim_frame++;
+		//po->anim_frame++;
 
-		if( po->anim_frame >= po->anim_count )
-		{
-			po->anim_frame = 0;
-			po->anim_index++;
+		//if( po->anim_frame >= po->anim_count )
+		//{
+		//	po->anim_frame = 0;
+		//	po->anim_index++;
 
-			if( po->anim_index >= po->anim_maxim )
-			{
-				po->anim_index = po->anim_start;
-			}
-		}
+		//	if( po->anim_index >= po->anim_maxim )
+		//	{
+		//		po->anim_index = po->anim_start;
+		//	}
+		//}
 
 		if( po->player_idxX > MAX_VELOCITY_X - 1 )
 		{
@@ -166,8 +167,8 @@ void engine_player_manager_get_input()
 	{
 		po->player_move_type = move_type_idle;
 		po->velX = 0;
-		po->anim_index = 0;
-		po->anim_frame = 0;
+		//po->anim_index = 0;
+		//po->anim_frame = 0;
 	}
 }
 
@@ -418,7 +419,8 @@ void engine_player_manager_draw()
 	if( po->posnY >= 0 )
 	{
 		get_draw_position();
-		tile = PLAYER_SPRITE_TILE + po->anim_index * SPRITE_TILES_NUMBER;
+		//tile = PLAYER_SPRITE_TILE + po->anim_index * SPRITE_TILES_NUMBER;
+		tile = PLAYER_SPRITE_TILE + 0 * SPRITE_TILES_NUMBER;
 		engine_sprite_manager_draw_player( po->drawX, po->drawY, tile );
 	}
 }
@@ -441,15 +443,16 @@ static void setup_animation()
 {
 	struct_player_object *po = &global_player_object;
 	po->player_idxX = INVALID_INDEX;
-	po->anim_frame = INVALID_INDEX;
-
-	po->anim_start = po->anim_index;
-	po->anim_maxim = po->anim_start + ANIMATE_MOVE_MAX;
+//	po->anim_frame = INVALID_INDEX;
+//
+//	po->anim_start = po->anim_index;
+//	po->anim_maxim = po->anim_start + ANIMATE_MOVE_MAX;
 }
 
 static int do_jump( int inpVelocityY )
 {
 	struct_player_object *po = &global_player_object;
+	// if you were jumping but not at apex and let go of fire i.e. jumpFrame > 0 || you are jump and at apex then gravIdx = 0 && velY=0
 	if( !po->isJumping && po->jumpFrame > 0 || po->isJumping && po->jumpFrame >= MAX_VELOCITY_Y )
 	{
 		po->player_grav = 0;

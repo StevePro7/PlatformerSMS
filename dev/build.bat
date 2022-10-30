@@ -52,8 +52,8 @@ cd source
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 entry_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 diff_screen.c
-"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pace_screen.c
-"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_screen.c
+::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pace_screen.c
+::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 view_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c

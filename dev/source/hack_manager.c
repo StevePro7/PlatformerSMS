@@ -90,6 +90,6 @@ void engine_hack_manager_invert()
 
 	// TODO delete - adriana
 	ho->hack_delayspeed = 0;
-	ho->hack_invincible = 1;
+//	ho->hack_invincible = 1;
 	ho->hack_difficulty = 1;
 }

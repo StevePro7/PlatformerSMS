@@ -26,8 +26,8 @@ typedef struct tag_struct_player_object
 	signed char coll_horz, coll_vert;
 	signed char coll_left, coll_rght, coll_topX, coll_botX;
 	int previousBottom;
-	unsigned char anim_index, anim_start, anim_maxim;
-	signed char anim_frame, anim_count;
+	//unsigned char anim_index, anim_start, anim_maxim;
+	//signed char anim_frame, anim_count;
 	signed char kill_idx;
 
 } struct_player_object;

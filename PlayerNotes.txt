@@ -1,0 +1,141 @@
+Player jump notes
+30-Oct-2022
+
+difficulty		0, 1	E, H
+collision offsets	8, 12
+
+
+coll
+0	passable	can go thru
+1	impassable	can not go thru
+2	platform	can go thru but can land on	squiggly tile
+
+
+Player object
+
+
+tile
+16	wide	8	half
+16	high
+
+world01
+round01
+level0101
+x=4	po->spotX
+y=9	po->spotY
+idx = y * 16 + x
+idx = 9 * 16 + 4
+idx = 144 + 4
+idx = 148
+
+x=3	y=10	1	impassable
+x=4	y=10	1	impassable
+x=5	y=10	0	passable
+
+
+po->spotX	4	left	64 
+po->spotY	9	top	144
+
+po->posnX	72	middle of player	= 4 * 16 +  8 = 64  +  8 =  72
+po->posnY	160	bottom of player	= 9 * 16 + 16 = 144 + 16 = 160
+po->drawX
+
+move = idle
+
+engine_player_manager_get_input()
+if not move left || right then set move as left || right && init anim
+
+if move then check po->player_idxX not gt MAX velX idx
+
+get deltaX depend on isGround || isAir && player_idxX
+po->velX = -1 or +1	depending on left || right
+
+
+engine_player_manager_apply_physics()
+
+prev	= posn		72, 160
+
+if player isGround then gravIdx = 0	
+i.e. 
+po->deltaY	= 1
+po->velY	= 1
+
+velY = doJump( velY )
+
+
+engine_player_manager_handle_collisions()
+
+
+localBoundsWidth	12
+halfBoundsWidth		 6
+
+
+get_common_position( 72, 161, 0 )
+
+halfTileSizeX		 8	16/2
+twiceTileSizeY		32	16*2
+
+po->commX =  64		 72 -  8
+po->commY = 129		161 - 32
+
+po->collX =  64		 72 -  8
+po->collY = 129		161 - 32
+
+idxX = 64
+quoX = 4
+remX = 0
+
+X = col4
+
+idxY = 129
+quoY = 8
+remY = 1
+
+topXTile = 8		0 + 8;
+botXTile = 10		2 + 8;
+	
+assume
+- not on ground
+- coll horz -1
+- coll vert -1
+
+collide with tile (4, 10)
+tileBoundsLeft	= 64
+tileBoundstop	= 160
+
+
+
+#define localBoundsWidth	12
+#define localBoundsHeight	26
+#define halfBoundsWidth		 6	localBoundsWidth / 2
+
+#define rectAWidth		12	localBoundsWidth
+#define rectAHeight		26	localBoundsHeight
+#define rectBWidth		16	TILE_WIDE
+#define rectBHeight		16	TILE_HIGH
+
+#define halfWidthA		 6	rectAWidth / 2
+#define halfHeightA		13	rectAHeight / 2
+#define halfWidthB		 8	rectBWidth / 2
+#define halfHeightB		 8	rectBHeight / 2
+
+minDistanceX 			14	halfWidthA + halfWidthB;	6 + 8
+minDistanceY			21	halfHeightA + halfHeightB;	13 + 8
+negMinDistanceX 		-14
+negMinDistanceY			-21
+
+
+
+
+process_collision( 66, 135, 64, 160 )
+
+rectALeft	 66
+rectATop	135
+rectBLeft	 64
+rectBTop	160
+
+
+centerAX 	 72	 66 + 6		rectALeft + halfWidthA;
+centerAY	148	135 + 13 	rectATop + halfHeightA;
+centerBX 	 72	 64 + 8		rectBLeft + halfWidthB;
+centerBY 	168	160 + 8		rectBTop + halfHeightB;
