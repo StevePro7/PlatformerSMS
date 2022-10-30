@@ -41,7 +41,8 @@ void screen_pace_screen_update( unsigned char *screen_type )
 
 	// stevepro
 	//test[ 2 ] = engine_input_manager_hold_fire1();
-	//if( test[ 2 ] )
+	test[ 2 ] = 1;		// adriana
+	if( test[ 2 ] )
 	{
 		engine_audio_manager_sound_accept();
 		*screen_type = screen_type_level;

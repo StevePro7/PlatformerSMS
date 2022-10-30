@@ -6,7 +6,7 @@ F:G$screen_level_screen_update$0_0$0({2}DF,SV:S),Z,0,6,0,0,0
 S:Llevel_screen.screen_level_screen_update$screen_type$1_0$19({2}DG,SC:U),B,1,4
 S:Llevel_screen.screen_level_screen_update$go$1_0$20({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Llevel_screen.screen_level_screen_update$test$1_0$20({6}DA6d,SC:U),B,1,-16
-S:Llevel_screen.screen_level_screen_update$delay$1_0$20({1}SC:U),R,0,0,[l]
+S:Llevel_screen.screen_level_screen_update$delay$1_0$20({1}SC:U),R,0,0,[]
 S:Llevel_screen.screen_level_screen_update$sloc0$0_1$0({2}DD,SC:U),B,1,-10
 S:Llevel_screen.screen_level_screen_update$sloc1$0_1$0({2}DD,SC:U),B,1,-8
 S:Llevel_screen.screen_level_screen_update$sloc2$0_1$0({2}DD,SC:U),B,1,-6

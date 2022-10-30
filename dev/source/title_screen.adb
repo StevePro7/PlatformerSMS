@@ -7,8 +7,7 @@ S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$57({2}DG,SC:U),B,1,4
 S:Ltitle_screen.screen_title_screen_update$ho$1_0$58({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Ltitle_screen.screen_title_screen_update$go$1_0$58({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Ltitle_screen.screen_title_screen_update$delay$1_0$58({1}SC:U),R,0,0,[a]
-S:Ltitle_screen.screen_title_screen_update$input$1_0$58({1}SC:U),R,0,0,[l]
-S:Ltitle_screen.screen_title_screen_update$sloc0$0_1$0({2}DG,SC:U),B,1,-2
+S:Ltitle_screen.screen_title_screen_update$input$1_0$58({1}SC:U),R,0,0,[]
 T:Ftitle_screen$tag_struct_hack_object[({0}S:S$hack_delayspeed$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_invincible$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_difficulty$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_game_speed$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_world$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_round$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({7}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({8}S:S$hack_enemy$0_0$0({1}SC:U),Z,0,0)]
 T:Ftitle_screen$tag_struct_game_object[({0}S:S$invincible$0_0$0({1}SC:U),Z,0,0)({1}S:S$localcheat$0_0$0({1}SC:U),Z,0,0)({2}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_speed$0_0$0({1}SC:U),Z,0,0)({4}S:S$tutorial$0_0$0({1}SC:U),Z,0,0)({5}S:S$world_no$0_0$0({1}SC:U),Z,0,0)({6}S:S$round_no$0_0$0({1}SC:U),Z,0,0)]
 T:Ftitle_screen$tag_struct_delay_object[({0}S:S$delay_delay$0_0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0_0$0({2}SI:U),Z,0,0)]

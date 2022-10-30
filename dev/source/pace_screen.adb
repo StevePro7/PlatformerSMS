@@ -3,10 +3,9 @@ F:G$screen_pace_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_pace_screen_update$0_0$0({2}DF,SV:S),Z,0,5,0,0,0
 S:Lpace_screen.screen_pace_screen_update$screen_type$1_0$9({2}DG,SC:U),B,1,4
 S:Lpace_screen.screen_pace_screen_update$go$1_0$10({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lpace_screen.screen_pace_screen_update$test$1_0$10({5}DA5d,SC:U),B,1,-8
-S:Lpace_screen.screen_pace_screen_update$sloc0$0_1$0({2}DD,SC:U),B,1,-10
-S:Lpace_screen.screen_pace_screen_update$sloc1$0_1$0({2}DD,SC:U),B,1,-3
-S:Lpace_screen.screen_pace_screen_update$sloc2$0_1$0({1}SC:U),B,1,-1
+S:Lpace_screen.screen_pace_screen_update$test$1_0$10({5}DA5d,SC:U),B,1,-9
+S:Lpace_screen.screen_pace_screen_update$sloc0$0_1$0({2}DD,SC:U),B,1,-4
+S:Lpace_screen.screen_pace_screen_update$sloc1$0_1$0({2}DD,SC:U),B,1,-2
 F:Fpace_screen$display_cursor$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lpace_screen.display_cursor$go$1_0$14({2}DG,STtag_struct_game_object:S),R,0,0,[]
 T:Fpace_screen$tag_struct_game_object[({0}S:S$invincible$0_0$0({1}SC:U),Z,0,0)({1}S:S$localcheat$0_0$0({1}SC:U),Z,0,0)({2}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_speed$0_0$0({1}SC:U),Z,0,0)({4}S:S$tutorial$0_0$0({1}SC:U),Z,0,0)({5}S:S$world_no$0_0$0({1}SC:U),Z,0,0)({6}S:S$round_no$0_0$0({1}SC:U),Z,0,0)]

@@ -87,4 +87,9 @@ void engine_hack_manager_invert()
 	ho->hack_music = !ho->hack_music;
 	ho->hack_sound = !ho->hack_sound;
 	ho->hack_enemy = !ho->hack_enemy;
+
+	// TODO delete - adriana
+	ho->hack_delayspeed = 0;
+	ho->hack_invincible = 1;
+	ho->hack_difficulty = 1;
 }

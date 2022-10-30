@@ -41,6 +41,7 @@ void screen_level_screen_load()
 	engine_font_manager_draw_text( LOCALE_SELECT_ROUND, TEXT_X + 0, TEXT_Y + 2 );
 
 	// Select round only if tutorial entry.
+	go->tutorial = 0;
 	if( go->tutorial )
 	{
 		cursor = 1;
@@ -60,7 +61,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 	{
 		// stevepro
 		delay = engine_delay_manager_update();
-		//if( delay )
 		if ( 1 )
 		{
 			*screen_type = screen_type_init;
@@ -143,8 +143,9 @@ void screen_level_screen_update( unsigned char *screen_type )
 	}
 
 	// stevepro
-	//test[ 4 ] = engine_input_manager_hold_fire1();
-	//if( test[4] )
+	test[ 4 ] = engine_input_manager_hold_fire1();
+	test[ 4 ] = 1;		// adriana
+	if( test[4] )
 	{
 		engine_audio_manager_sound_accept();
 		stage = event_stage_pause;
