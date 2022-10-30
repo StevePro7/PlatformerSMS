@@ -58,8 +58,10 @@ void screen_level_screen_update( unsigned char *screen_type )
 
 	if( event_stage_pause == stage )
 	{
+		// stevepro
 		delay = engine_delay_manager_update();
-		if( delay )
+		//if( delay )
+		if ( 1 )
 		{
 			*screen_type = screen_type_init;
 			return;
@@ -140,8 +142,9 @@ void screen_level_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	test[ 4 ] = engine_input_manager_hold_fire1();
-	if( test[4] )
+	// stevepro
+	//test[ 4 ] = engine_input_manager_hold_fire1();
+	//if( test[4] )
 	{
 		engine_audio_manager_sound_accept();
 		stage = event_stage_pause;

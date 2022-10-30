@@ -45,8 +45,9 @@ void screen_entry_screen_update( unsigned char *screen_type )
 		display_cursor();
 	}
 
-	test[ 2 ] = engine_input_manager_hold_fire1();
-	if( test[ 2 ] )
+	// stevepro
+	//test[ 2 ] = engine_input_manager_hold_fire1();
+	//if( test[ 2 ] )
 	{
 		engine_audio_manager_sound_accept();
 		*screen_type = screen_type_diff;

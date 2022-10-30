@@ -62,8 +62,9 @@ void screen_title_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	input = engine_input_manager_hold_fire1();
-	if( input )
+	// stevepro
+	//input = engine_input_manager_hold_fire1();
+	//if( input )
 	{
 		engine_audio_manager_sound_accept();
 		*screen_type = screen_type_entry;
